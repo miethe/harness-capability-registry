@@ -1,0 +1,258 @@
+{
+  "harness": {
+    "id": "github-copilot-cli",
+    "name": "GitHub Copilot CLI",
+    "vendor": "GitHub",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "secondary",
+    "current_version": null,
+    "version_as_of": "2026-08-08",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/github/copilot-cli",
+    "docs_url": "https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli",
+    "surfaces": [
+      "terminal",
+      "GitHub Agentic Workflows"
+    ],
+    "auth_modes": [
+      "GitHub Copilot entitlement",
+      "GitHub token"
+    ],
+    "source_ids": [
+      "src.copilot-cli.releases",
+      "src.copilot-cli.docs",
+      "src.github-agentic-workflows.engine-matrix"
+    ],
+    "recommended_when": [
+      "GitHub-native automation",
+      "Broad GitHub Agentic Workflows feature support"
+    ],
+    "avoid_when": [
+      "Non-GitHub environments are the primary control plane"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "strong",
+      "multi_agent": "moderate",
+      "structured_automation": "strong",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  "capabilities": [
+    {
+      "id": "impl.github-copilot-cli.interaction.terminal",
+      "harness_id": "github-copilot-cli",
+      "capability_id": "interaction.terminal",
+      "status": "stable",
+      "summary": "GitHub Copilot CLI provides an interactive terminal agent.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "unavailable",
+        "ci_runner": "unavailable",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "terminal"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": null,
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.copilot-cli.docs",
+          "url": "https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli",
+          "claim": "GitHub Copilot CLI provides an interactive terminal agent.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.github-copilot-cli.execution.headless",
+      "harness_id": "github-copilot-cli",
+      "capability_id": "execution.headless",
+      "status": "stable",
+      "summary": "Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "native",
+        "ci_runner": "native",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "GitHub Actions"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": null,
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.github-agentic-workflows.engine-matrix",
+          "url": "https://github.github.com/gh-aw/reference/engines/",
+          "claim": "Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.github-copilot-cli.automation.ci",
+      "harness_id": "github-copilot-cli",
+      "capability_id": "automation.ci",
+      "status": "stable",
+      "summary": "GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "native",
+        "ci_runner": "native",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "GitHub Actions",
+        "Agentic Workflows"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": null,
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.github-agentic-workflows.engine-matrix",
+          "url": "https://github.github.com/gh-aw/reference/engines/",
+          "claim": "GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.github-copilot-cli.security.enterprise_policy",
+      "harness_id": "github-copilot-cli",
+      "capability_id": "security.enterprise_policy",
+      "status": "stable",
+      "summary": "GitHub organization controls and workflow permissions govern Copilot use.",
+      "actor_access": {
+        "human_operator": "mediated",
+        "in_harness_agent": "mediated",
+        "external_orchestrator": "mediated",
+        "ci_runner": "mediated",
+        "administrator": "native"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "GitHub organization"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": null,
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.copilot-cli.docs",
+          "url": "https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli",
+          "claim": "GitHub organization controls and workflow permissions govern Copilot use.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    }
+  ],
+  "releases": [],
+  "sources": [
+    {
+      "id": "src.copilot-cli.releases",
+      "name": "GitHub Copilot CLI releases",
+      "url": "https://github.com/github/copilot-cli/releases",
+      "harness_ids": [
+        "github-copilot-cli"
+      ],
+      "source_type": "github_releases",
+      "purpose": "release_history",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "github_releases",
+        "repo": "github/copilot-cli"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    },
+    {
+      "id": "src.copilot-cli.docs",
+      "name": "GitHub Copilot CLI documentation",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli",
+      "harness_ids": [
+        "github-copilot-cli"
+      ],
+      "source_type": "documentation",
+      "purpose": "capability_reference",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "manual_reference"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    },
+    {
+      "id": "src.github-agentic-workflows.engine-matrix",
+      "name": "GitHub Agentic Workflows engine comparison",
+      "url": "https://github.github.com/gh-aw/reference/engines/",
+      "harness_ids": [
+        "claude-code",
+        "openai-codex",
+        "gemini-cli",
+        "github-copilot-cli",
+        "pi-agent",
+        "opencode"
+      ],
+      "source_type": "official_secondary_matrix",
+      "purpose": "comparison_reference",
+      "authority": "official_secondary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "manual_reference"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": "Useful as a normalized secondary source for GitHub Actions compatibility, not as canonical product capability truth."
+    }
+  ]
+}

@@ -1,0 +1,946 @@
+[
+  {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "vendor": "Anthropic",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "core",
+    "current_version": "2.1.226",
+    "version_as_of": "2026-08-08",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/anthropics/claude-code",
+    "docs_url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+    "surfaces": [
+      "terminal",
+      "IDE",
+      "desktop",
+      "web",
+      "mobile_remote",
+      "SDK"
+    ],
+    "auth_modes": [
+      "Claude subscription",
+      "Anthropic API key",
+      "Amazon Bedrock",
+      "Google Vertex AI",
+      "enterprise gateway"
+    ],
+    "source_ids": [
+      "src.claude-code.changelog",
+      "src.claude-code.releases",
+      "src.claude-code.docs.overview",
+      "src.claude-code.docs.headless",
+      "src.claude-code.docs.skills",
+      "src.claude-code.docs.hooks",
+      "src.claude-code.docs.settings",
+      "src.claude-code.docs.sdk",
+      "src.claude-code.docs.cli",
+      "src.github-agentic-workflows.engine-matrix"
+    ],
+    "recommended_when": [
+      "Long-horizon repository work",
+      "Rich skills/hooks/plugins",
+      "Deep subagent orchestration",
+      "Cross-device or self-hosted execution"
+    ],
+    "avoid_when": [
+      "A provider-neutral local harness is mandatory",
+      "The workflow cannot tolerate rapid release churn without pinning"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "strong",
+      "multi_agent": "strong",
+      "structured_automation": "strong",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "openai-codex",
+    "name": "OpenAI Codex",
+    "vendor": "OpenAI",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "core",
+    "current_version": "0.147.0",
+    "version_as_of": "2026-08-07",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/openai/codex",
+    "docs_url": "https://developers.openai.com/codex/cli",
+    "surfaces": [
+      "terminal",
+      "IDE",
+      "desktop",
+      "web/cloud",
+      "SDK",
+      "app-server"
+    ],
+    "auth_modes": [
+      "ChatGPT sign-in",
+      "OpenAI API key",
+      "managed workspace"
+    ],
+    "source_ids": [
+      "src.codex.releases",
+      "src.codex.product-changelog",
+      "src.codex.docs.cli",
+      "src.codex.docs.noninteractive",
+      "src.codex.docs.commands",
+      "src.codex.docs.app-server",
+      "src.codex.docs.sdk",
+      "src.codex.docs.skills",
+      "src.codex.docs.agents-md",
+      "src.codex.docs.mcp",
+      "src.codex.docs.subagents",
+      "src.codex.docs.security",
+      "src.codex.docs.github-action",
+      "src.github-agentic-workflows.engine-matrix"
+    ],
+    "recommended_when": [
+      "Codex local plus cloud continuity",
+      "Machine-readable app-server integration",
+      "OpenAI model and plugin ecosystem",
+      "GitHub Action automation"
+    ],
+    "avoid_when": [
+      "You require broad model-provider portability inside the same harness"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "strong",
+      "multi_agent": "strong",
+      "structured_automation": "strong",
+      "provider_portability": "limited",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "opencode",
+    "name": "OpenCode",
+    "vendor": "Anomaly",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "core",
+    "current_version": "1.18.15",
+    "version_as_of": "2026-08-07",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/anomalyco/opencode",
+    "docs_url": "https://opencode.ai/docs/",
+    "surfaces": [
+      "terminal",
+      "desktop",
+      "IDE"
+    ],
+    "auth_modes": [
+      "provider API keys",
+      "GitHub Copilot account",
+      "ChatGPT subscription"
+    ],
+    "source_ids": [
+      "src.opencode.releases",
+      "src.opencode.docs.intro",
+      "src.opencode.docs.skills",
+      "src.opencode.docs.plugins",
+      "src.opencode.docs.github",
+      "src.opencode.repo",
+      "src.github-agentic-workflows.engine-matrix"
+    ],
+    "recommended_when": [
+      "Open-source and multi-provider operation",
+      "Parallel local sessions",
+      "LSP-aware coding",
+      "Portable Agent Skills"
+    ],
+    "avoid_when": [
+      "You need a mature enterprise policy plane supplied by the harness vendor"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "moderate",
+      "multi_agent": "moderate",
+      "structured_automation": "moderate",
+      "provider_portability": "strong",
+      "enterprise_controls": "limited"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "hermes-agent",
+    "name": "Hermes Agent",
+    "vendor": "Nous Research",
+    "family": "general_agent_harness",
+    "lifecycle": "active",
+    "maturity": "rapidly_evolving",
+    "tracking_priority": "core",
+    "current_version": "0.20.0",
+    "version_as_of": "2026-08-03",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/NousResearch/hermes-agent",
+    "docs_url": "https://hermes-agent.nousresearch.com/",
+    "surfaces": [
+      "terminal/TUI",
+      "desktop",
+      "messaging gateway",
+      "voice"
+    ],
+    "auth_modes": [
+      "Nous Portal",
+      "provider API keys",
+      "self-hosted models"
+    ],
+    "source_ids": [
+      "src.hermes.releases",
+      "src.hermes.repo",
+      "src.hermes.docs",
+      "src.hermes.docs.quickstart",
+      "src.hermes.docs.skills",
+      "src.hermes.docs.memory",
+      "src.hermes.docs.voice"
+    ],
+    "recommended_when": [
+      "Persistent personal-agent memory",
+      "Self-improving skill creation",
+      "Voice and messaging gateways",
+      "Provider-neutral general agent workflows"
+    ],
+    "avoid_when": [
+      "You need conservative release management without pinning",
+      "You need an enterprise support contract from a major platform vendor"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "strong",
+      "multi_agent": "strong",
+      "structured_automation": "moderate",
+      "provider_portability": "strong",
+      "enterprise_controls": "emerging"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "antigravity-cli",
+    "name": "Antigravity CLI",
+    "vendor": "Google",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "core",
+    "current_version": "1.1.11",
+    "version_as_of": "2026-08-08",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": "gemini-cli",
+    "successor": null,
+    "repo_url": "https://github.com/google-antigravity/antigravity-cli",
+    "docs_url": "https://antigravity.google/",
+    "surfaces": [
+      "terminal",
+      "Antigravity desktop",
+      "SDK"
+    ],
+    "auth_modes": [
+      "Google AI account",
+      "Google Cloud project",
+      "Gemini Enterprise",
+      "Workforce Identity Federation",
+      "Application Default Credentials"
+    ],
+    "source_ids": [
+      "src.antigravity.changelog",
+      "src.antigravity.releases",
+      "src.antigravity.repo",
+      "src.antigravity.site",
+      "src.antigravity.transition-blog",
+      "src.gemini.transition"
+    ],
+    "recommended_when": [
+      "Google Antigravity multi-agent backend",
+      "Background orchestration",
+      "Structured print-mode automation",
+      "Google enterprise identity"
+    ],
+    "avoid_when": [
+      "You need compatibility with Gemini CLI behavior without migration testing"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "strong",
+      "multi_agent": "strong",
+      "structured_automation": "strong",
+      "provider_portability": "limited",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [
+      {
+        "date": "2026-05-19",
+        "type": "product_launch",
+        "summary": "Google announced Antigravity CLI as the successor terminal experience to Gemini CLI."
+      }
+    ],
+    "notes": null
+  },
+  {
+    "id": "gemini-cli",
+    "name": "Gemini CLI",
+    "vendor": "Google",
+    "family": "agentic_harness",
+    "lifecycle": "legacy",
+    "maturity": "legacy_for_individuals",
+    "tracking_priority": "historical",
+    "current_version": "0.56.0-nightly.20260808.gcf22ac7e8",
+    "version_as_of": "2026-08-08",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": "antigravity-cli",
+    "repo_url": "https://github.com/google-gemini/gemini-cli",
+    "docs_url": "https://geminicli.com/docs/",
+    "surfaces": [
+      "terminal",
+      "IDE integration"
+    ],
+    "auth_modes": [
+      "API key",
+      "enterprise license",
+      "legacy individual sign-in"
+    ],
+    "source_ids": [
+      "src.antigravity.transition-blog",
+      "src.gemini.releases",
+      "src.gemini.repo",
+      "src.gemini.docs",
+      "src.gemini.transition",
+      "src.github-agentic-workflows.engine-matrix"
+    ],
+    "recommended_when": [
+      "Historical compatibility analysis",
+      "Enterprise or API-key deployments that remain supported"
+    ],
+    "avoid_when": [
+      "New individual-user workflows; migrate to Antigravity CLI"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "limited",
+      "multi_agent": "moderate",
+      "structured_automation": "strong",
+      "provider_portability": "limited",
+      "enterprise_controls": "moderate"
+    },
+    "lifecycle_events": [
+      {
+        "date": "2026-05-19",
+        "type": "transition_announced",
+        "summary": "Google announced migration to Antigravity CLI."
+      },
+      {
+        "date": "2026-06-18",
+        "type": "individual_service_end",
+        "summary": "Gemini CLI stopped serving free, Google AI Pro, and Google AI Ultra individual accounts; enterprise and API-key paths remained."
+      }
+    ],
+    "notes": null
+  },
+  {
+    "id": "qwen-code",
+    "name": "Qwen Code",
+    "vendor": "Alibaba / Qwen",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "secondary",
+    "current_version": "0.21.8",
+    "version_as_of": "2026-08-08",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/QwenLM/qwen-code",
+    "docs_url": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
+    "surfaces": [
+      "terminal",
+      "desktop"
+    ],
+    "auth_modes": [
+      "Qwen",
+      "OpenAI-compatible",
+      "Anthropic",
+      "Gemini APIs"
+    ],
+    "source_ids": [
+      "src.qwen.releases",
+      "src.qwen.repo",
+      "src.qwen.docs"
+    ],
+    "recommended_when": [
+      "Open-source terminal agent with broad provider support",
+      "Qwen-native workflows"
+    ],
+    "avoid_when": [
+      "You need the deepest enterprise governance controls from the harness itself"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "moderate",
+      "multi_agent": "moderate",
+      "structured_automation": "moderate",
+      "provider_portability": "strong",
+      "enterprise_controls": "limited"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "goose",
+    "name": "goose",
+    "vendor": "Block",
+    "family": "general_agent_harness",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "secondary",
+    "current_version": null,
+    "version_as_of": "2026-08-08",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/block/goose",
+    "docs_url": "https://block.github.io/goose/",
+    "surfaces": [
+      "CLI",
+      "desktop",
+      "server/API"
+    ],
+    "auth_modes": [
+      "multiple provider APIs",
+      "local models"
+    ],
+    "source_ids": [
+      "src.goose.releases",
+      "src.goose.repo",
+      "src.goose.docs"
+    ],
+    "recommended_when": [
+      "Open-source extensible agent beyond coding",
+      "MCP-first integrations",
+      "Provider-neutral local operation"
+    ],
+    "avoid_when": [
+      "You require a canonical managed cloud execution plane"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "moderate",
+      "multi_agent": "moderate",
+      "structured_automation": "strong",
+      "provider_portability": "strong",
+      "enterprise_controls": "emerging"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "github-copilot-cli",
+    "name": "GitHub Copilot CLI",
+    "vendor": "GitHub",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "secondary",
+    "current_version": null,
+    "version_as_of": "2026-08-08",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/github/copilot-cli",
+    "docs_url": "https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli",
+    "surfaces": [
+      "terminal",
+      "GitHub Agentic Workflows"
+    ],
+    "auth_modes": [
+      "GitHub Copilot entitlement",
+      "GitHub token"
+    ],
+    "source_ids": [
+      "src.copilot-cli.releases",
+      "src.copilot-cli.docs",
+      "src.github-agentic-workflows.engine-matrix"
+    ],
+    "recommended_when": [
+      "GitHub-native automation",
+      "Broad GitHub Agentic Workflows feature support"
+    ],
+    "avoid_when": [
+      "Non-GitHub environments are the primary control plane"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "strong",
+      "multi_agent": "moderate",
+      "structured_automation": "strong",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "pi-agent",
+    "name": "Pi Agent Harness",
+    "vendor": "Earendil Works",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "maturity": "experimental_to_stable",
+    "tracking_priority": "discovery",
+    "current_version": null,
+    "version_as_of": "2026-08-08",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/earendil-works/pi",
+    "docs_url": "https://github.com/earendil-works/pi",
+    "surfaces": [
+      "terminal",
+      "library/runtime"
+    ],
+    "auth_modes": [
+      "multiple provider APIs"
+    ],
+    "source_ids": [
+      "src.pi.repo",
+      "src.pi.releases",
+      "src.github-agentic-workflows.engine-matrix"
+    ],
+    "recommended_when": [
+      "Minimal self-extensible harness",
+      "Provider-neutral agent runtime experiments"
+    ],
+    "avoid_when": [
+      "You need a fully managed enterprise product"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "limited",
+      "multi_agent": "moderate",
+      "structured_automation": "moderate",
+      "provider_portability": "strong",
+      "enterprise_controls": "limited"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "claude-agent-sdk-python",
+    "name": "Claude Agent SDK — Python",
+    "vendor": "Anthropic",
+    "family": "agent_sdk",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "core",
+    "current_version": "0.2.134",
+    "version_as_of": "2026-08-08",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/anthropics/claude-agent-sdk-python",
+    "docs_url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+    "surfaces": [
+      "Python library",
+      "bundled Claude Code runtime"
+    ],
+    "auth_modes": [
+      "Anthropic API",
+      "Bedrock",
+      "Vertex"
+    ],
+    "source_ids": [
+      "src.claude-code.docs.sdk",
+      "src.claude-agent-sdk-python.changelog",
+      "src.claude-agent-sdk-python.releases"
+    ],
+    "recommended_when": [
+      "Embedding the Claude Code agent loop in Python applications"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "strong",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "claude-agent-sdk-typescript",
+    "name": "Claude Agent SDK — TypeScript",
+    "vendor": "Anthropic",
+    "family": "agent_sdk",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "core",
+    "current_version": "0.3.226",
+    "version_as_of": "2026-08-08",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/anthropics/claude-agent-sdk-typescript",
+    "docs_url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+    "surfaces": [
+      "TypeScript library",
+      "bundled Claude Code runtime"
+    ],
+    "auth_modes": [
+      "Anthropic API",
+      "Bedrock",
+      "Vertex"
+    ],
+    "source_ids": [
+      "src.claude-code.docs.sdk",
+      "src.claude-agent-sdk-typescript.changelog",
+      "src.claude-agent-sdk-typescript.releases"
+    ],
+    "recommended_when": [
+      "Embedding the Claude Code agent loop in TypeScript applications"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "strong",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "codex-sdk-python",
+    "name": "Codex SDK — Python",
+    "vendor": "OpenAI",
+    "family": "agent_sdk",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "core",
+    "current_version": "0.144.4",
+    "version_as_of": "2026-07-17",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/openai/codex",
+    "docs_url": "https://developers.openai.com/codex/codex-sdk",
+    "surfaces": [
+      "Python library",
+      "local app-server JSON-RPC"
+    ],
+    "auth_modes": [
+      "ChatGPT sign-in",
+      "OpenAI API key"
+    ],
+    "source_ids": [
+      "src.codex.docs.app-server",
+      "src.codex.docs.sdk",
+      "src.codex-sdk-python.releases"
+    ],
+    "recommended_when": [
+      "Programmatic control of the local Codex app-server from Python"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "strong",
+      "provider_portability": "limited",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "codex-sdk-typescript",
+    "name": "Codex SDK — TypeScript",
+    "vendor": "OpenAI",
+    "family": "agent_sdk",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "core",
+    "current_version": "0.146.0",
+    "version_as_of": "2026-07-29",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/openai/codex/tree/main/sdk/typescript",
+    "docs_url": "https://developers.openai.com/codex/codex-sdk",
+    "surfaces": [
+      "TypeScript library",
+      "CLI JSONL transport"
+    ],
+    "auth_modes": [
+      "ChatGPT sign-in",
+      "OpenAI API key"
+    ],
+    "source_ids": [
+      "src.codex.docs.sdk",
+      "src.codex-sdk-typescript.releases"
+    ],
+    "recommended_when": [
+      "Embedding local Codex threads in server-side Node.js applications and CI"
+    ],
+    "avoid_when": [
+      "You need the richer JSON-RPC app-server surface exposed by the Python SDK"
+    ],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "moderate",
+      "provider_portability": "limited",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "openai-agents-sdk-python",
+    "name": "OpenAI Agents SDK — Python",
+    "vendor": "OpenAI",
+    "family": "agent_sdk",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "core",
+    "current_version": "0.14.0",
+    "version_as_of": "2026-08-06",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/openai/openai-agents-python",
+    "docs_url": "https://openai.github.io/openai-agents-python/",
+    "surfaces": [
+      "Python library"
+    ],
+    "auth_modes": [
+      "OpenAI API",
+      "provider-compatible models"
+    ],
+    "source_ids": [
+      "src.openai-agents-python.releases",
+      "src.openai-agents-python.docs"
+    ],
+    "recommended_when": [
+      "Building provider-agnostic multi-agent applications with tracing, guardrails, sessions, and handoffs"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "strong",
+      "provider_portability": "strong",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "openai-agents-sdk-js",
+    "name": "OpenAI Agents SDK — JavaScript/TypeScript",
+    "vendor": "OpenAI",
+    "family": "agent_sdk",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "core",
+    "current_version": "0.14.3",
+    "version_as_of": "2026-08-06",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/openai/openai-agents-js",
+    "docs_url": "https://openai.github.io/openai-agents-js/",
+    "surfaces": [
+      "JavaScript/TypeScript library"
+    ],
+    "auth_modes": [
+      "OpenAI API",
+      "provider-compatible models"
+    ],
+    "source_ids": [
+      "src.openai-agents-js.releases",
+      "src.openai-agents-js.docs"
+    ],
+    "recommended_when": [
+      "Building multi-agent JS/TS applications with tracing, guardrails, sessions, and handoffs"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "strong",
+      "provider_portability": "strong",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "openai-python-sdk",
+    "name": "OpenAI API SDK — Python",
+    "vendor": "OpenAI",
+    "family": "provider_sdk",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "provider_sdk",
+    "current_version": "2.53.0",
+    "version_as_of": "2026-08-03",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/openai/openai-python",
+    "docs_url": "https://github.com/openai/openai-python",
+    "surfaces": [
+      "Python library"
+    ],
+    "auth_modes": [
+      "OpenAI API key",
+      "Azure/OpenAI-compatible targets"
+    ],
+    "source_ids": [
+      "src.openai-python.changelog"
+    ],
+    "recommended_when": [
+      "Low-level typed OpenAI API access"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "application_defined",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "openai-node-sdk",
+    "name": "OpenAI API SDK — Node",
+    "vendor": "OpenAI",
+    "family": "provider_sdk",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "provider_sdk",
+    "current_version": "7.4.0",
+    "version_as_of": "2026-08-03",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/openai/openai-node",
+    "docs_url": "https://github.com/openai/openai-node",
+    "surfaces": [
+      "JavaScript/TypeScript library"
+    ],
+    "auth_modes": [
+      "OpenAI API key"
+    ],
+    "source_ids": [
+      "src.openai-node.changelog"
+    ],
+    "recommended_when": [
+      "Low-level typed OpenAI API access from JS/TS"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "application_defined",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "anthropic-python-sdk",
+    "name": "Claude API SDK — Python",
+    "vendor": "Anthropic",
+    "family": "provider_sdk",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "provider_sdk",
+    "current_version": "0.121.0",
+    "version_as_of": "2026-08-07",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/anthropics/anthropic-sdk-python",
+    "docs_url": "https://platform.claude.com/docs/en/api/sdks/python",
+    "surfaces": [
+      "Python library"
+    ],
+    "auth_modes": [
+      "Anthropic API",
+      "AWS",
+      "Vertex"
+    ],
+    "source_ids": [
+      "src.anthropic-python.changelog"
+    ],
+    "recommended_when": [
+      "Low-level typed Claude API and managed-agent access"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "application_defined",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  {
+    "id": "anthropic-typescript-sdk",
+    "name": "Claude API SDK — TypeScript",
+    "vendor": "Anthropic",
+    "family": "provider_sdk",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "provider_sdk",
+    "current_version": "0.116.0",
+    "version_as_of": "2026-08-07",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/anthropics/anthropic-sdk-typescript",
+    "docs_url": "https://platform.claude.com/docs/en/api/sdks/typescript",
+    "surfaces": [
+      "JavaScript/TypeScript library"
+    ],
+    "auth_modes": [
+      "Anthropic API",
+      "AWS",
+      "Vertex"
+    ],
+    "source_ids": [
+      "src.anthropic-typescript.changelog"
+    ],
+    "recommended_when": [
+      "Low-level typed Claude API and managed-agent access from JS/TS"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "application_defined",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  }
+]

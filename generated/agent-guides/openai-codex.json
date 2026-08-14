@@ -1,0 +1,3303 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-08T20:00:00Z",
+  "guide_type": "agent_consumable_harness_capability_guide",
+  "harness": {
+    "id": "openai-codex",
+    "name": "OpenAI Codex",
+    "vendor": "OpenAI",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "current_version": "0.147.0",
+    "predecessor": null,
+    "successor": null
+  },
+  "freshness": {
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "latest_release_in_registry": "0.147.0",
+    "latest_release_published_at": "2026-08-07T00:00:00Z",
+    "warning": "Treat unavailable or unknown actor access as unsupported until verified. UI-only capability is not agent-callable by implication."
+  },
+  "capabilities_by_actor": {
+    "human_operator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Interactive Codex CLI for repository inspection, editing, commands, review, and cloud handoff.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [
+          "codex"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Interactive Codex CLI for repository inspection, editing, commands, review, and cloud handoff."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "interaction.ide",
+        "name": "IDE integration",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Codex is available through an IDE extension sharing core sessions and agent capabilities.",
+        "surfaces": [
+          "IDE extension"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex is available through an IDE extension sharing core sessions and agent capabilities."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "interaction.desktop_web",
+        "name": "Desktop or web surface",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Codex spans the ChatGPT desktop app and Codex cloud/web surfaces.",
+        "surfaces": [
+          "desktop",
+          "web/cloud"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex spans the ChatGPT desktop app and Codex cloud/web surfaces."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex can inspect and edit repository files under sandbox and approval policies.",
+        "surfaces": [
+          "CLI",
+          "IDE",
+          "cloud"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex can inspect and edit repository files under sandbox and approval policies."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex runs commands within configurable sandbox and approval modes.",
+        "surfaces": [
+          "CLI",
+          "cloud"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex runs commands within configurable sandbox and approval modes."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "`codex exec` is the supported non-interactive interface for scripts and CI.",
+        "surfaces": [
+          "CLI",
+          "stdin/stdout"
+        ],
+        "invocation": [
+          "codex exec"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.noninteractive",
+            "url": "https://developers.openai.com/codex/non-interactive-mode",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`codex exec` is the supported non-interactive interface for scripts and CI."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "`codex exec` streams text or JSONL and can resume scripted sessions.",
+        "surfaces": [
+          "JSONL",
+          "stdout"
+        ],
+        "invocation": [
+          "codex exec --json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`codex exec` streams text or JSONL and can resume scripted sessions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Official Python and TypeScript Codex SDKs embed local Codex threads for applications and CI.",
+        "surfaces": [
+          "Python SDK",
+          "TypeScript SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Official Python and TypeScript Codex SDKs embed local Codex threads for applications and CI."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.rpc_server",
+        "name": "RPC/app-server protocol",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex app-server exposes version-specific JSON-RPC schemas and event notifications.",
+        "surfaces": [
+          "JSON-RPC"
+        ],
+        "invocation": [
+          "codex app-server",
+          "generate-json-schema"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex app-server exposes version-specific JSON-RPC schemas and event notifications."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Local Codex clients connect to local or remote MCP servers and share configuration.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Local Codex clients connect to local or remote MCP servers and share configuration."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "plugins"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "plugin directory"
+        ],
+        "invocation": [],
+        "minimum_version": "0.147.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": "0.147.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes.",
+        "surfaces": [
+          "global",
+          "repository",
+          "directory"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.agents-md",
+            "url": "https://developers.openai.com/codex/agent-configuration/agents-md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Saved sessions can be resumed, forked, named, and deleted through stable CLI commands.",
+        "surfaces": [
+          "CLI",
+          "app-server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Saved sessions can be resumed, forked, named, and deleted through stable CLI commands."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection.",
+        "surfaces": [
+          "app",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Codex cloud and local subagent surfaces support parallel/background work.",
+        "surfaces": [
+          "cloud",
+          "app",
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex cloud and local subagent surfaces support parallel/background work."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "The main thread can coordinate multiple subagent threads and collect their results.",
+        "surfaces": [
+          "app",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The main thread can coordinate multiple subagent threads and collect their results."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "CLI and IDE can hand work to Codex cloud and later inspect or apply results locally.",
+        "surfaces": [
+          "Codex cloud",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLI and IDE can hand work to Codex cloud and later inspect or apply results locally."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.ci",
+        "name": "CI/GitHub automation",
+        "category": "automation",
+        "status": "stable",
+        "summary": "The official Codex GitHub Action runs `codex exec` in CI to apply patches or post reviews.",
+        "surfaces": [
+          "GitHub Actions",
+          "CI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.github-action",
+            "url": "https://developers.openai.com/codex/github-action",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The official Codex GitHub Action runs `codex exec` in CI to apply patches or post reviews."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "experimental",
+        "summary": "Scheduled tasks are supported through Codex/ChatGPT workflow surfaces; exact availability depends on surface and workspace.",
+        "surfaces": [
+          "desktop",
+          "cloud",
+          "CI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Verify workspace/surface availability before relying on it."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Scheduled tasks are supported through Codex/ChatGPT workflow surfaces; exact availability depends on surface and workspace."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Codex provides platform-specific sandbox commands and read-only/workspace-write modes.",
+        "surfaces": [
+          "macOS",
+          "Linux",
+          "Windows"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex provides platform-specific sandbox commands and read-only/workspace-write modes."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Approval policies and permission profiles define when commands can run automatically.",
+        "surfaces": [
+          "CLI",
+          "config.toml",
+          "requirements.toml"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Approval policies and permission profiles define when commands can run automatically."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.usage_cost",
+        "name": "Usage and cost telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Structured outputs and product surfaces expose usage, limits, and model information for attribution.",
+        "surfaces": [
+          "CLI",
+          "JSONL",
+          "workspace"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Structured outputs and product surfaces expose usage, limits, and model information for attribution."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "App-server notifications and JSONL execution events expose turn and tool lifecycle data.",
+        "surfaces": [
+          "JSON-RPC",
+          "JSONL"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "App-server notifications and JSONL execution events expose turn and tool lifecycle data."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Codex supports opt-in web search and MCP-based external tools.",
+        "surfaces": [
+          "web search",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex supports opt-in web search and MCP-based external tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "experimental",
+        "summary": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface.",
+        "surfaces": [
+          "desktop",
+          "web",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Capability depends on the selected model and enabled tools."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "interfaces.artifacts",
+        "name": "Artifacts, diffs, and rich result views",
+        "category": "interfaces",
+        "status": "stable",
+        "summary": "The app, IDE, CLI, and cloud surfaces expose diffs, conversation sections, and task results for review.",
+        "surfaces": [
+          "app",
+          "IDE",
+          "cloud",
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The app, IDE, CLI, and cloud surfaces expose diffs, conversation sections, and task results for review."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "limited",
+        "summary": "Codex is primarily an OpenAI-model harness; custom API targets do not imply arbitrary provider compatibility.",
+        "surfaces": [
+          "OpenAI",
+          "Bedrock-backed paths"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Treat as limited rather than provider-neutral."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex is primarily an OpenAI-model harness; custom API targets do not imply arbitrary provider compatibility."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration.",
+        "surfaces": [
+          "/model",
+          "--model",
+          "config.toml"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts.",
+        "surfaces": [
+          "JSON-RPC",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "administrator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Interactive Codex CLI for repository inspection, editing, commands, review, and cloud handoff.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [
+          "codex"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Interactive Codex CLI for repository inspection, editing, commands, review, and cloud handoff."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "interaction.ide",
+        "name": "IDE integration",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Codex is available through an IDE extension sharing core sessions and agent capabilities.",
+        "surfaces": [
+          "IDE extension"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex is available through an IDE extension sharing core sessions and agent capabilities."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "interaction.desktop_web",
+        "name": "Desktop or web surface",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Codex spans the ChatGPT desktop app and Codex cloud/web surfaces.",
+        "surfaces": [
+          "desktop",
+          "web/cloud"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex spans the ChatGPT desktop app and Codex cloud/web surfaces."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex can inspect and edit repository files under sandbox and approval policies.",
+        "surfaces": [
+          "CLI",
+          "IDE",
+          "cloud"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex can inspect and edit repository files under sandbox and approval policies."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex runs commands within configurable sandbox and approval modes.",
+        "surfaces": [
+          "CLI",
+          "cloud"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex runs commands within configurable sandbox and approval modes."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "`codex exec` is the supported non-interactive interface for scripts and CI.",
+        "surfaces": [
+          "CLI",
+          "stdin/stdout"
+        ],
+        "invocation": [
+          "codex exec"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.noninteractive",
+            "url": "https://developers.openai.com/codex/non-interactive-mode",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`codex exec` is the supported non-interactive interface for scripts and CI."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "`codex exec` streams text or JSONL and can resume scripted sessions.",
+        "surfaces": [
+          "JSONL",
+          "stdout"
+        ],
+        "invocation": [
+          "codex exec --json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`codex exec` streams text or JSONL and can resume scripted sessions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Official Python and TypeScript Codex SDKs embed local Codex threads for applications and CI.",
+        "surfaces": [
+          "Python SDK",
+          "TypeScript SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Official Python and TypeScript Codex SDKs embed local Codex threads for applications and CI."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.rpc_server",
+        "name": "RPC/app-server protocol",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex app-server exposes version-specific JSON-RPC schemas and event notifications.",
+        "surfaces": [
+          "JSON-RPC"
+        ],
+        "invocation": [
+          "codex app-server",
+          "generate-json-schema"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex app-server exposes version-specific JSON-RPC schemas and event notifications."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Local Codex clients connect to local or remote MCP servers and share configuration.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Local Codex clients connect to local or remote MCP servers and share configuration."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "plugins"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "plugin directory"
+        ],
+        "invocation": [],
+        "minimum_version": "0.147.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": "0.147.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes.",
+        "surfaces": [
+          "global",
+          "repository",
+          "directory"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.agents-md",
+            "url": "https://developers.openai.com/codex/agent-configuration/agents-md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Saved sessions can be resumed, forked, named, and deleted through stable CLI commands.",
+        "surfaces": [
+          "CLI",
+          "app-server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Saved sessions can be resumed, forked, named, and deleted through stable CLI commands."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection.",
+        "surfaces": [
+          "app",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Codex cloud and local subagent surfaces support parallel/background work.",
+        "surfaces": [
+          "cloud",
+          "app",
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex cloud and local subagent surfaces support parallel/background work."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "The main thread can coordinate multiple subagent threads and collect their results.",
+        "surfaces": [
+          "app",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The main thread can coordinate multiple subagent threads and collect their results."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "CLI and IDE can hand work to Codex cloud and later inspect or apply results locally.",
+        "surfaces": [
+          "Codex cloud",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLI and IDE can hand work to Codex cloud and later inspect or apply results locally."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "automation.ci",
+        "name": "CI/GitHub automation",
+        "category": "automation",
+        "status": "stable",
+        "summary": "The official Codex GitHub Action runs `codex exec` in CI to apply patches or post reviews.",
+        "surfaces": [
+          "GitHub Actions",
+          "CI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.github-action",
+            "url": "https://developers.openai.com/codex/github-action",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The official Codex GitHub Action runs `codex exec` in CI to apply patches or post reviews."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "experimental",
+        "summary": "Scheduled tasks are supported through Codex/ChatGPT workflow surfaces; exact availability depends on surface and workspace.",
+        "surfaces": [
+          "desktop",
+          "cloud",
+          "CI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Verify workspace/surface availability before relying on it."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Scheduled tasks are supported through Codex/ChatGPT workflow surfaces; exact availability depends on surface and workspace."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Codex provides platform-specific sandbox commands and read-only/workspace-write modes.",
+        "surfaces": [
+          "macOS",
+          "Linux",
+          "Windows"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex provides platform-specific sandbox commands and read-only/workspace-write modes."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Approval policies and permission profiles define when commands can run automatically.",
+        "surfaces": [
+          "CLI",
+          "config.toml",
+          "requirements.toml"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Approval policies and permission profiles define when commands can run automatically."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.enterprise_policy",
+        "name": "Enterprise managed policy",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Managed workspace roles, permissions, retention, residency, and authentication policies apply to Codex surfaces.",
+        "surfaces": [
+          "managed ChatGPT workspace",
+          "API organization"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Managed workspace roles, permissions, retention, residency, and authentication policies apply to Codex surfaces."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.usage_cost",
+        "name": "Usage and cost telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Structured outputs and product surfaces expose usage, limits, and model information for attribution.",
+        "surfaces": [
+          "CLI",
+          "JSONL",
+          "workspace"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Structured outputs and product surfaces expose usage, limits, and model information for attribution."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "App-server notifications and JSONL execution events expose turn and tool lifecycle data.",
+        "surfaces": [
+          "JSON-RPC",
+          "JSONL"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "App-server notifications and JSONL execution events expose turn and tool lifecycle data."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Codex supports opt-in web search and MCP-based external tools.",
+        "surfaces": [
+          "web search",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex supports opt-in web search and MCP-based external tools."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "experimental",
+        "summary": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface.",
+        "surfaces": [
+          "desktop",
+          "web",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Capability depends on the selected model and enabled tools."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "interfaces.artifacts",
+        "name": "Artifacts, diffs, and rich result views",
+        "category": "interfaces",
+        "status": "stable",
+        "summary": "The app, IDE, CLI, and cloud surfaces expose diffs, conversation sections, and task results for review.",
+        "surfaces": [
+          "app",
+          "IDE",
+          "cloud",
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The app, IDE, CLI, and cloud surfaces expose diffs, conversation sections, and task results for review."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "limited",
+        "summary": "Codex is primarily an OpenAI-model harness; custom API targets do not imply arbitrary provider compatibility.",
+        "surfaces": [
+          "OpenAI",
+          "Bedrock-backed paths"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Treat as limited rather than provider-neutral."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex is primarily an OpenAI-model harness; custom API targets do not imply arbitrary provider compatibility."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration.",
+        "surfaces": [
+          "/model",
+          "--model",
+          "config.toml"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts.",
+        "surfaces": [
+          "JSON-RPC",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts."
+          }
+        ],
+        "access": "configurable"
+      }
+    ],
+    "in_harness_agent": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex can inspect and edit repository files under sandbox and approval policies.",
+        "surfaces": [
+          "CLI",
+          "IDE",
+          "cloud"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex can inspect and edit repository files under sandbox and approval policies."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex runs commands within configurable sandbox and approval modes.",
+        "surfaces": [
+          "CLI",
+          "cloud"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex runs commands within configurable sandbox and approval modes."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Local Codex clients connect to local or remote MCP servers and share configuration.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Local Codex clients connect to local or remote MCP servers and share configuration."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "plugins"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "plugin directory"
+        ],
+        "invocation": [],
+        "minimum_version": "0.147.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": "0.147.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes.",
+        "surfaces": [
+          "global",
+          "repository",
+          "directory"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.agents-md",
+            "url": "https://developers.openai.com/codex/agent-configuration/agents-md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection.",
+        "surfaces": [
+          "app",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Codex cloud and local subagent surfaces support parallel/background work.",
+        "surfaces": [
+          "cloud",
+          "app",
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex cloud and local subagent surfaces support parallel/background work."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "The main thread can coordinate multiple subagent threads and collect their results.",
+        "surfaces": [
+          "app",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The main thread can coordinate multiple subagent threads and collect their results."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Codex supports opt-in web search and MCP-based external tools.",
+        "surfaces": [
+          "web search",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex supports opt-in web search and MCP-based external tools."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "experimental",
+        "summary": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface.",
+        "surfaces": [
+          "desktop",
+          "web",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Capability depends on the selected model and enabled tools."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration.",
+        "surfaces": [
+          "/model",
+          "--model",
+          "config.toml"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "external_orchestrator": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex can inspect and edit repository files under sandbox and approval policies.",
+        "surfaces": [
+          "CLI",
+          "IDE",
+          "cloud"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex can inspect and edit repository files under sandbox and approval policies."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex runs commands within configurable sandbox and approval modes.",
+        "surfaces": [
+          "CLI",
+          "cloud"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex runs commands within configurable sandbox and approval modes."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "`codex exec` is the supported non-interactive interface for scripts and CI.",
+        "surfaces": [
+          "CLI",
+          "stdin/stdout"
+        ],
+        "invocation": [
+          "codex exec"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.noninteractive",
+            "url": "https://developers.openai.com/codex/non-interactive-mode",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`codex exec` is the supported non-interactive interface for scripts and CI."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "`codex exec` streams text or JSONL and can resume scripted sessions.",
+        "surfaces": [
+          "JSONL",
+          "stdout"
+        ],
+        "invocation": [
+          "codex exec --json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`codex exec` streams text or JSONL and can resume scripted sessions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Official Python and TypeScript Codex SDKs embed local Codex threads for applications and CI.",
+        "surfaces": [
+          "Python SDK",
+          "TypeScript SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Official Python and TypeScript Codex SDKs embed local Codex threads for applications and CI."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.rpc_server",
+        "name": "RPC/app-server protocol",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex app-server exposes version-specific JSON-RPC schemas and event notifications.",
+        "surfaces": [
+          "JSON-RPC"
+        ],
+        "invocation": [
+          "codex app-server",
+          "generate-json-schema"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex app-server exposes version-specific JSON-RPC schemas and event notifications."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Local Codex clients connect to local or remote MCP servers and share configuration.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Local Codex clients connect to local or remote MCP servers and share configuration."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "plugins"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "plugin directory"
+        ],
+        "invocation": [],
+        "minimum_version": "0.147.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": "0.147.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes.",
+        "surfaces": [
+          "global",
+          "repository",
+          "directory"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.agents-md",
+            "url": "https://developers.openai.com/codex/agent-configuration/agents-md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Saved sessions can be resumed, forked, named, and deleted through stable CLI commands.",
+        "surfaces": [
+          "CLI",
+          "app-server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Saved sessions can be resumed, forked, named, and deleted through stable CLI commands."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection.",
+        "surfaces": [
+          "app",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Codex cloud and local subagent surfaces support parallel/background work.",
+        "surfaces": [
+          "cloud",
+          "app",
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex cloud and local subagent surfaces support parallel/background work."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "The main thread can coordinate multiple subagent threads and collect their results.",
+        "surfaces": [
+          "app",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The main thread can coordinate multiple subagent threads and collect their results."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "CLI and IDE can hand work to Codex cloud and later inspect or apply results locally.",
+        "surfaces": [
+          "Codex cloud",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLI and IDE can hand work to Codex cloud and later inspect or apply results locally."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "automation.ci",
+        "name": "CI/GitHub automation",
+        "category": "automation",
+        "status": "stable",
+        "summary": "The official Codex GitHub Action runs `codex exec` in CI to apply patches or post reviews.",
+        "surfaces": [
+          "GitHub Actions",
+          "CI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.github-action",
+            "url": "https://developers.openai.com/codex/github-action",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The official Codex GitHub Action runs `codex exec` in CI to apply patches or post reviews."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "experimental",
+        "summary": "Scheduled tasks are supported through Codex/ChatGPT workflow surfaces; exact availability depends on surface and workspace.",
+        "surfaces": [
+          "desktop",
+          "cloud",
+          "CI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Verify workspace/surface availability before relying on it."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Scheduled tasks are supported through Codex/ChatGPT workflow surfaces; exact availability depends on surface and workspace."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Codex provides platform-specific sandbox commands and read-only/workspace-write modes.",
+        "surfaces": [
+          "macOS",
+          "Linux",
+          "Windows"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex provides platform-specific sandbox commands and read-only/workspace-write modes."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Approval policies and permission profiles define when commands can run automatically.",
+        "surfaces": [
+          "CLI",
+          "config.toml",
+          "requirements.toml"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Approval policies and permission profiles define when commands can run automatically."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "observability.usage_cost",
+        "name": "Usage and cost telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Structured outputs and product surfaces expose usage, limits, and model information for attribution.",
+        "surfaces": [
+          "CLI",
+          "JSONL",
+          "workspace"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Structured outputs and product surfaces expose usage, limits, and model information for attribution."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "App-server notifications and JSONL execution events expose turn and tool lifecycle data.",
+        "surfaces": [
+          "JSON-RPC",
+          "JSONL"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "App-server notifications and JSONL execution events expose turn and tool lifecycle data."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Codex supports opt-in web search and MCP-based external tools.",
+        "surfaces": [
+          "web search",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex supports opt-in web search and MCP-based external tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "experimental",
+        "summary": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface.",
+        "surfaces": [
+          "desktop",
+          "web",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Capability depends on the selected model and enabled tools."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "limited",
+        "summary": "Codex is primarily an OpenAI-model harness; custom API targets do not imply arbitrary provider compatibility.",
+        "surfaces": [
+          "OpenAI",
+          "Bedrock-backed paths"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Treat as limited rather than provider-neutral."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex is primarily an OpenAI-model harness; custom API targets do not imply arbitrary provider compatibility."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration.",
+        "surfaces": [
+          "/model",
+          "--model",
+          "config.toml"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts.",
+        "surfaces": [
+          "JSON-RPC",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "ci_runner": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex can inspect and edit repository files under sandbox and approval policies.",
+        "surfaces": [
+          "CLI",
+          "IDE",
+          "cloud"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex can inspect and edit repository files under sandbox and approval policies."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex runs commands within configurable sandbox and approval modes.",
+        "surfaces": [
+          "CLI",
+          "cloud"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex runs commands within configurable sandbox and approval modes."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "`codex exec` is the supported non-interactive interface for scripts and CI.",
+        "surfaces": [
+          "CLI",
+          "stdin/stdout"
+        ],
+        "invocation": [
+          "codex exec"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.noninteractive",
+            "url": "https://developers.openai.com/codex/non-interactive-mode",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`codex exec` is the supported non-interactive interface for scripts and CI."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "`codex exec` streams text or JSONL and can resume scripted sessions.",
+        "surfaces": [
+          "JSONL",
+          "stdout"
+        ],
+        "invocation": [
+          "codex exec --json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`codex exec` streams text or JSONL and can resume scripted sessions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Official Python and TypeScript Codex SDKs embed local Codex threads for applications and CI.",
+        "surfaces": [
+          "Python SDK",
+          "TypeScript SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Official Python and TypeScript Codex SDKs embed local Codex threads for applications and CI."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.rpc_server",
+        "name": "RPC/app-server protocol",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Codex app-server exposes version-specific JSON-RPC schemas and event notifications.",
+        "surfaces": [
+          "JSON-RPC"
+        ],
+        "invocation": [
+          "codex app-server",
+          "generate-json-schema"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex app-server exposes version-specific JSON-RPC schemas and event notifications."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Local Codex clients connect to local or remote MCP servers and share configuration.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Local Codex clients connect to local or remote MCP servers and share configuration."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "plugins"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces.",
+        "surfaces": [
+          "CLI",
+          "desktop",
+          "plugin directory"
+        ],
+        "invocation": [],
+        "minimum_version": "0.147.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": "0.147.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes.",
+        "surfaces": [
+          "global",
+          "repository",
+          "directory"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.agents-md",
+            "url": "https://developers.openai.com/codex/agent-configuration/agents-md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Saved sessions can be resumed, forked, named, and deleted through stable CLI commands.",
+        "surfaces": [
+          "CLI",
+          "app-server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Saved sessions can be resumed, forked, named, and deleted through stable CLI commands."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection.",
+        "surfaces": [
+          "app",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Codex cloud and local subagent surfaces support parallel/background work.",
+        "surfaces": [
+          "cloud",
+          "app",
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex cloud and local subagent surfaces support parallel/background work."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "The main thread can coordinate multiple subagent threads and collect their results.",
+        "surfaces": [
+          "app",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The main thread can coordinate multiple subagent threads and collect their results."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "CLI and IDE can hand work to Codex cloud and later inspect or apply results locally.",
+        "surfaces": [
+          "Codex cloud",
+          "CLI",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLI and IDE can hand work to Codex cloud and later inspect or apply results locally."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "automation.ci",
+        "name": "CI/GitHub automation",
+        "category": "automation",
+        "status": "stable",
+        "summary": "The official Codex GitHub Action runs `codex exec` in CI to apply patches or post reviews.",
+        "surfaces": [
+          "GitHub Actions",
+          "CI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.github-action",
+            "url": "https://developers.openai.com/codex/github-action",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The official Codex GitHub Action runs `codex exec` in CI to apply patches or post reviews."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "experimental",
+        "summary": "Scheduled tasks are supported through Codex/ChatGPT workflow surfaces; exact availability depends on surface and workspace.",
+        "surfaces": [
+          "desktop",
+          "cloud",
+          "CI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Verify workspace/surface availability before relying on it."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Scheduled tasks are supported through Codex/ChatGPT workflow surfaces; exact availability depends on surface and workspace."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Codex provides platform-specific sandbox commands and read-only/workspace-write modes.",
+        "surfaces": [
+          "macOS",
+          "Linux",
+          "Windows"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex provides platform-specific sandbox commands and read-only/workspace-write modes."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Approval policies and permission profiles define when commands can run automatically.",
+        "surfaces": [
+          "CLI",
+          "config.toml",
+          "requirements.toml"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Approval policies and permission profiles define when commands can run automatically."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "observability.usage_cost",
+        "name": "Usage and cost telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Structured outputs and product surfaces expose usage, limits, and model information for attribution.",
+        "surfaces": [
+          "CLI",
+          "JSONL",
+          "workspace"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Structured outputs and product surfaces expose usage, limits, and model information for attribution."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "App-server notifications and JSONL execution events expose turn and tool lifecycle data.",
+        "surfaces": [
+          "JSON-RPC",
+          "JSONL"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "App-server notifications and JSONL execution events expose turn and tool lifecycle data."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Codex supports opt-in web search and MCP-based external tools.",
+        "surfaces": [
+          "web search",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex supports opt-in web search and MCP-based external tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "experimental",
+        "summary": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface.",
+        "surfaces": [
+          "desktop",
+          "web",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Capability depends on the selected model and enabled tools."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "limited",
+        "summary": "Codex is primarily an OpenAI-model harness; custom API targets do not imply arbitrary provider compatibility.",
+        "surfaces": [
+          "OpenAI",
+          "Bedrock-backed paths"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Treat as limited rather than provider-neutral."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Codex is primarily an OpenAI-model harness; custom API targets do not imply arbitrary provider compatibility."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration.",
+        "surfaces": [
+          "/model",
+          "--model",
+          "config.toml"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/changelog",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts.",
+        "surfaces": [
+          "JSON-RPC",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts."
+          }
+        ],
+        "access": "supported"
+      }
+    ]
+  },
+  "human_mediation_required": [],
+  "unverified_or_low_confidence": [],
+  "routing_hint": {
+    "recommended_when": [
+      "Codex local plus cloud continuity",
+      "Machine-readable app-server integration",
+      "OpenAI model and plugin ecosystem",
+      "GitHub Action automation"
+    ],
+    "avoid_when": [
+      "You require broad model-provider portability inside the same harness"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "strong",
+      "multi_agent": "strong",
+      "structured_automation": "strong",
+      "provider_portability": "limited",
+      "enterprise_controls": "strong"
+    }
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meatyos.dev/schemas/hcr/releases.schema.json",
+  "title": "Immutable release-event ledger",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "harness_id",
+      "version",
+      "channel",
+      "published_at",
+      "date_precision",
+      "retrieved_at",
+      "source_id",
+      "source_url",
+      "raw_snapshot_path",
+      "raw_sha256",
+      "title",
+      "notes_excerpt",
+      "change_count",
+      "flags",
+      "changes",
+      "provenance"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "harness_id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "version": {
+        "type": "string",
+        "minLength": 1
+      },
+      "channel": {
+        "type": "string"
+      },
+      "published_at": {
+        "$ref": "common.schema.json#/$defs/timestamp"
+      },
+      "date_precision": {
+        "type": "string",
+        "enum": [
+          "second",
+          "day",
+          "month",
+          "unknown"
+        ]
+      },
+      "retrieved_at": {
+        "$ref": "common.schema.json#/$defs/timestamp"
+      },
+      "source_id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "source_url": {
+        "$ref": "common.schema.json#/$defs/uri"
+      },
+      "raw_snapshot_path": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "raw_sha256": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "title": {
+        "type": "string"
+      },
+      "notes_excerpt": {
+        "type": "string"
+      },
+      "change_count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "flags": {
+        "type": "object",
+        "required": [
+          "security",
+          "breaking",
+          "deprecation"
+        ],
+        "properties": {
+          "security": {
+            "type": "boolean"
+          },
+          "breaking": {
+            "type": "boolean"
+          },
+          "deprecation": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "changes": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/changeItem"
+        }
+      },
+      "assets": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "url": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "size": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "content_type": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "digest": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "provenance": {
+        "type": "object",
+        "required": [
+          "authority",
+          "ingestion",
+          "immutable"
+        ],
+        "properties": {
+          "authority": {
+            "type": "string"
+          },
+          "ingestion": {
+            "type": "string"
+          },
+          "immutable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "additionalProperties": false
+  }
+}

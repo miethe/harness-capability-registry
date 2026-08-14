@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Actor-aware capability and release intelligence for agentic harnesses and SDKs.">
+  <title>Harness Matrix · Capability Intelligence</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">H</div>
+      <div>
+        <div class="brand-title">Harness Matrix</div>
+        <div class="brand-subtitle">Capability Intelligence Registry</div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <div id="freshnessBadge" class="freshness-badge">Loading registry…</div>
+      <button id="openAbout" class="button button-quiet" type="button">Method</button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="sidebar" aria-label="Application navigation">
+      <nav id="primaryNav" class="nav-list">
+        <button class="nav-item active" data-tab="overview" type="button"><span>Overview</span></button>
+        <button class="nav-item" data-tab="harnesses" type="button"><span>Harnesses</span></button>
+        <button class="nav-item" data-tab="matrix" type="button"><span>Capability matrix</span></button>
+        <button class="nav-item" data-tab="actors" type="button"><span>Actor access</span></button>
+        <button class="nav-item" data-tab="releases" type="button"><span>Releases</span></button>
+        <button class="nav-item" data-tab="sources" type="button"><span>Sources</span></button>
+        <button class="nav-item" data-tab="guide" type="button"><span>Agent guide</span></button>
+      </nav>
+      <div class="sidebar-note">
+        <strong>Core rule</strong>
+        <span>Human UI availability never implies agent-callability.</span>
+      </div>
+    </aside>
+
+    <main id="main" class="main" tabindex="-1">
+      <section id="view-overview" class="view active" aria-labelledby="overviewTitle">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Current registry</p>
+            <h1 id="overviewTitle">What can each agentic harness actually do?</h1>
+            <p class="lede">Compare current capabilities by actor, inspect official evidence, and trace each feature through release history.</p>
+          </div>
+          <a id="downloadBundle" class="button" href="data/registry.bundle.json" download>Download bundle</a>
+        </div>
+        <div id="statsGrid" class="stats-grid"></div>
+        <div class="two-column">
+          <section class="panel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">Priority tracks</p><h2>Core harnesses</h2></div>
+            </div>
+            <div id="coreHarnesses" class="harness-mini-grid"></div>
+          </section>
+          <section class="panel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">Watchlist</p><h2>High-impact release changes</h2></div>
+            </div>
+            <div id="impactChanges" class="timeline-list"></div>
+          </section>
+        </div>
+        <section class="panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">Coverage</p><h2>Evidence posture</h2></div>
+          </div>
+          <div id="coverageSummary" class="coverage-grid"></div>
+        </section>
+      </section>
+
+      <section id="view-harnesses" class="view" aria-labelledby="harnessesTitle">
+        <div class="page-heading compact">
+          <div><p class="eyebrow">Product catalog</p><h1 id="harnessesTitle">Harnesses and SDK tracks</h1></div>
+        </div>
+        <div class="toolbar">
+          <label class="search-field"><span class="sr-only">Search harnesses</span><input id="harnessSearch" type="search" placeholder="Search name, vendor, surface, or use case"></label>
+          <select id="harnessFamily" aria-label="Filter by family"><option value="all">All families</option></select>
+          <select id="harnessLifecycle" aria-label="Filter by lifecycle"><option value="all">All lifecycle states</option></select>
+        </div>
+        <div id="harnessGrid" class="harness-grid"></div>
+        <div id="harnessEmpty" class="empty-state hidden">No harness tracks match these filters.</div>
+      </section>
+
+      <section id="view-matrix" class="view" aria-labelledby="matrixTitle">
+        <div class="page-heading compact">
+          <div>
+            <p class="eyebrow">Cross-harness comparison</p>
+            <h1 id="matrixTitle">Capability matrix</h1>
+            <p class="lede">Every cell is evaluated for the selected actor. Unknown is not equivalent to unavailable.</p>
+          </div>
+        </div>
+        <div class="toolbar matrix-toolbar">
+          <select id="matrixActor" aria-label="Actor perspective"></select>
+          <select id="matrixCategory" aria-label="Capability category"><option value="all">All capability categories</option></select>
+          <label class="search-field"><span class="sr-only">Search capabilities</span><input id="matrixSearch" type="search" placeholder="Search capabilities"></label>
+          <button id="chooseHarnesses" class="button button-quiet" type="button">Choose columns</button>
+        </div>
+        <div id="selectedHarnessChips" class="chip-row"></div>
+        <div class="table-shell">
+          <table id="matrixTable" class="matrix-table">
+            <thead id="matrixHead"></thead>
+            <tbody id="matrixBody"></tbody>
+          </table>
+        </div>
+        <div class="legend" aria-label="Access-state legend">
+          <span><i class="dot access-native"></i>Native</span>
+          <span><i class="dot access-supported"></i>Supported</span>
+          <span><i class="dot access-configurable"></i>Configurable</span>
+          <span><i class="dot access-experimental"></i>Experimental</span>
+          <span><i class="dot access-mediated"></i>Mediated</span>
+          <span><i class="dot access-unavailable"></i>Unavailable</span>
+          <span><i class="dot access-unknown"></i>Unknown / unmodeled</span>
+        </div>
+      </section>
+
+      <section id="view-actors" class="view" aria-labelledby="actorsTitle">
+        <div class="page-heading compact">
+          <div><p class="eyebrow">Reachability lens</p><h1 id="actorsTitle">Capabilities by actor</h1><p class="lede">See where the same capability is direct, mediated, or absent for different participants.</p></div>
+        </div>
+        <div class="toolbar">
+          <select id="actorSelect" aria-label="Actor"></select>
+          <select id="actorHarness" aria-label="Harness"><option value="all">All harnesses</option></select>
+          <select id="actorAccess" aria-label="Access state"><option value="all">All access states</option></select>
+          <label class="search-field"><span class="sr-only">Search actor capabilities</span><input id="actorSearch" type="search" placeholder="Search capability or harness"></label>
+        </div>
+        <div id="actorSummary" class="stats-grid small"></div>
+        <div id="actorResults" class="result-list"></div>
+      </section>
+
+      <section id="view-releases" class="view" aria-labelledby="releasesTitle">
+        <div class="page-heading compact">
+          <div><p class="eyebrow">Historical ledger</p><h1 id="releasesTitle">Release timeline</h1><p class="lede">Source-faithful events remain distinct from reviewed current-state capability claims.</p></div>
+        </div>
+        <div class="toolbar">
+          <select id="releaseHarness" aria-label="Harness"><option value="all">All harnesses</option></select>
+          <select id="releaseFlag" aria-label="Impact filter">
+            <option value="all">All changes</option>
+            <option value="security">Security-related</option>
+            <option value="breaking">Breaking/deprecation</option>
+            <option value="added">Added capabilities</option>
+          </select>
+          <label class="search-field"><span class="sr-only">Search releases</span><input id="releaseSearch" type="search" placeholder="Search version or release-note text"></label>
+        </div>
+        <div id="releaseResults" class="release-list"></div>
+        <button id="loadMoreReleases" class="button button-quiet load-more" type="button">Load more</button>
+      </section>
+
+      <section id="view-sources" class="view" aria-labelledby="sourcesTitle">
+        <div class="page-heading compact">
+          <div><p class="eyebrow">Evidence inventory</p><h1 id="sourcesTitle">Official sources</h1><p class="lede">Release history, current documentation, lifecycle notices, and corroborating compatibility sources.</p></div>
+        </div>
+        <div class="toolbar">
+          <select id="sourcePurpose" aria-label="Source purpose"><option value="all">All purposes</option></select>
+          <select id="sourceAuthority" aria-label="Source authority"><option value="all">All authority levels</option></select>
+          <label class="search-field"><span class="sr-only">Search sources</span><input id="sourceSearch" type="search" placeholder="Search source or product"></label>
+        </div>
+        <div class="table-shell">
+          <table class="data-table">
+            <thead><tr><th>Source</th><th>Purpose</th><th>Authority</th><th>Tracks</th><th>Collector</th><th>Cadence</th></tr></thead>
+            <tbody id="sourceBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="view-guide" class="view" aria-labelledby="guideTitle">
+        <div class="page-heading compact">
+          <div><p class="eyebrow">Agent-consumable view</p><h1 id="guideTitle">Harness agent guide</h1><p class="lede">Compact routing context grouped by actor, with evidence and mediation warnings.</p></div>
+          <div class="guide-actions">
+            <select id="guideHarness" aria-label="Harness guide"></select>
+            <button id="copyGuide" class="button" type="button">Copy JSON</button>
+          </div>
+        </div>
+        <div id="guideContent"></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="detailDialog" class="dialog">
+    <div class="dialog-head">
+      <div><p id="dialogEyebrow" class="eyebrow"></p><h2 id="dialogTitle"></h2></div>
+      <button id="closeDialog" class="icon-button" type="button" aria-label="Close">×</button>
+    </div>
+    <div id="dialogBody" class="dialog-body"></div>
+  </dialog>
+
+  <dialog id="columnDialog" class="dialog column-dialog">
+    <div class="dialog-head">
+      <div><p class="eyebrow">Matrix configuration</p><h2>Choose harness columns</h2></div>
+      <button id="closeColumns" class="icon-button" type="button" aria-label="Close">×</button>
+    </div>
+    <div id="columnChoices" class="choice-grid"></div>
+    <div class="dialog-footer"><button id="applyColumns" class="button" type="button">Apply selection</button></div>
+  </dialog>
+
+  <dialog id="aboutDialog" class="dialog">
+    <div class="dialog-head">
+      <div><p class="eyebrow">Method</p><h2>How to read this registry</h2></div>
+      <button id="closeAbout" class="icon-button" type="button" aria-label="Close">×</button>
+    </div>
+    <div class="dialog-body prose">
+      <p>The registry keeps an immutable/source-faithful release ledger separate from a reviewed current capability graph.</p>
+      <ul>
+        <li><strong>Unknown</strong> means evidence is incomplete; it is not a negative claim.</li>
+        <li>Every capability is evaluated independently for a human, the in-harness model, an external orchestrator, CI, and an administrator.</li>
+        <li>Release-note extraction creates candidates. Current capability claims require official evidence.</li>
+        <li>Click any matrix cell or result card to inspect evidence, invocation surfaces, versions, and limitations.</li>
+      </ul>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="data/registry.bundle.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

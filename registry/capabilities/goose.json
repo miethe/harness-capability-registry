@@ -1,0 +1,372 @@
+[
+  {
+    "id": "impl.goose.interaction.terminal",
+    "harness_id": "goose",
+    "capability_id": "interaction.terminal",
+    "status": "stable",
+    "summary": "goose provides a CLI agent interface.",
+    "actor_access": {
+      "human_operator": "native",
+      "in_harness_agent": "unavailable",
+      "external_orchestrator": "unavailable",
+      "ci_runner": "unavailable",
+      "administrator": "configurable"
+    },
+    "requires_human_mediation": false,
+    "surfaces": [
+      "CLI"
+    ],
+    "invocation": [],
+    "minimum_version": null,
+    "current_version_verified": null,
+    "limitations": [],
+    "confidence": "verified_official",
+    "verified_at": "2026-08-08T20:00:00Z",
+    "evidence": [
+      {
+        "source_id": "src.goose.repo",
+        "url": "https://github.com/block/goose",
+        "claim": "goose provides a CLI agent interface.",
+        "version": null,
+        "verified_at": "2026-08-08T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "impl.goose.interaction.desktop_web",
+    "harness_id": "goose",
+    "capability_id": "interaction.desktop_web",
+    "status": "stable",
+    "summary": "goose provides an Electron desktop interface.",
+    "actor_access": {
+      "human_operator": "native",
+      "in_harness_agent": "unavailable",
+      "external_orchestrator": "unavailable",
+      "ci_runner": "unavailable",
+      "administrator": "configurable"
+    },
+    "requires_human_mediation": false,
+    "surfaces": [
+      "desktop"
+    ],
+    "invocation": [],
+    "minimum_version": null,
+    "current_version_verified": null,
+    "limitations": [],
+    "confidence": "verified_official",
+    "verified_at": "2026-08-08T20:00:00Z",
+    "evidence": [
+      {
+        "source_id": "src.goose.repo",
+        "url": "https://github.com/block/goose",
+        "claim": "goose provides an Electron desktop interface.",
+        "version": null,
+        "verified_at": "2026-08-08T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "impl.goose.execution.file_edit",
+    "harness_id": "goose",
+    "capability_id": "execution.file_edit",
+    "status": "stable",
+    "summary": "goose can install, execute, edit, and test through agent tools.",
+    "actor_access": {
+      "human_operator": "supported",
+      "in_harness_agent": "native",
+      "external_orchestrator": "supported",
+      "ci_runner": "supported",
+      "administrator": "configurable"
+    },
+    "requires_human_mediation": false,
+    "surfaces": [
+      "CLI",
+      "desktop"
+    ],
+    "invocation": [],
+    "minimum_version": null,
+    "current_version_verified": null,
+    "limitations": [],
+    "confidence": "verified_official",
+    "verified_at": "2026-08-08T20:00:00Z",
+    "evidence": [
+      {
+        "source_id": "src.goose.repo",
+        "url": "https://github.com/block/goose",
+        "claim": "goose can install, execute, edit, and test through agent tools.",
+        "version": null,
+        "verified_at": "2026-08-08T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "impl.goose.execution.shell",
+    "harness_id": "goose",
+    "capability_id": "execution.shell",
+    "status": "stable",
+    "summary": "goose can execute local commands.",
+    "actor_access": {
+      "human_operator": "supported",
+      "in_harness_agent": "native",
+      "external_orchestrator": "supported",
+      "ci_runner": "supported",
+      "administrator": "configurable"
+    },
+    "requires_human_mediation": false,
+    "surfaces": [
+      "CLI",
+      "desktop"
+    ],
+    "invocation": [],
+    "minimum_version": null,
+    "current_version_verified": null,
+    "limitations": [],
+    "confidence": "verified_official",
+    "verified_at": "2026-08-08T20:00:00Z",
+    "evidence": [
+      {
+        "source_id": "src.goose.repo",
+        "url": "https://github.com/block/goose",
+        "claim": "goose can execute local commands.",
+        "version": null,
+        "verified_at": "2026-08-08T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "impl.goose.execution.headless",
+    "harness_id": "goose",
+    "capability_id": "execution.headless",
+    "status": "stable",
+    "summary": "goose server and CLI paths support external automation.",
+    "actor_access": {
+      "human_operator": "supported",
+      "in_harness_agent": "unavailable",
+      "external_orchestrator": "native",
+      "ci_runner": "native",
+      "administrator": "configurable"
+    },
+    "requires_human_mediation": false,
+    "surfaces": [
+      "CLI",
+      "goosed server"
+    ],
+    "invocation": [],
+    "minimum_version": null,
+    "current_version_verified": null,
+    "limitations": [],
+    "confidence": "inferred_high",
+    "verified_at": "2026-08-08T20:00:00Z",
+    "evidence": [
+      {
+        "source_id": "src.goose.docs",
+        "url": "https://block.github.io/goose/",
+        "claim": "goose server and CLI paths support external automation.",
+        "version": null,
+        "verified_at": "2026-08-08T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "impl.goose.execution.rpc_server",
+    "harness_id": "goose",
+    "capability_id": "execution.rpc_server",
+    "status": "stable",
+    "summary": "The goosed server exposes agent functionality to clients.",
+    "actor_access": {
+      "human_operator": "supported",
+      "in_harness_agent": "unavailable",
+      "external_orchestrator": "native",
+      "ci_runner": "native",
+      "administrator": "configurable"
+    },
+    "requires_human_mediation": false,
+    "surfaces": [
+      "goosed server"
+    ],
+    "invocation": [],
+    "minimum_version": null,
+    "current_version_verified": null,
+    "limitations": [],
+    "confidence": "inferred_high",
+    "verified_at": "2026-08-08T20:00:00Z",
+    "evidence": [
+      {
+        "source_id": "src.goose.docs",
+        "url": "https://block.github.io/goose/",
+        "claim": "The goosed server exposes agent functionality to clients.",
+        "version": null,
+        "verified_at": "2026-08-08T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "impl.goose.extensions.mcp_client",
+    "harness_id": "goose",
+    "capability_id": "extensions.mcp_client",
+    "status": "stable",
+    "summary": "goose is MCP-first and can use MCP extensions and apps.",
+    "actor_access": {
+      "human_operator": "configurable",
+      "in_harness_agent": "native",
+      "external_orchestrator": "supported",
+      "ci_runner": "supported",
+      "administrator": "configurable"
+    },
+    "requires_human_mediation": false,
+    "surfaces": [
+      "MCP extensions",
+      "MCP apps"
+    ],
+    "invocation": [],
+    "minimum_version": null,
+    "current_version_verified": null,
+    "limitations": [],
+    "confidence": "verified_official",
+    "verified_at": "2026-08-08T20:00:00Z",
+    "evidence": [
+      {
+        "source_id": "src.goose.repo",
+        "url": "https://github.com/block/goose",
+        "claim": "goose is MCP-first and can use MCP extensions and apps.",
+        "version": null,
+        "verified_at": "2026-08-08T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "impl.goose.extensions.skills",
+    "harness_id": "goose",
+    "capability_id": "extensions.skills",
+    "status": "stable",
+    "summary": "Recipes and reusable instructions package workflows for agents.",
+    "actor_access": {
+      "human_operator": "configurable",
+      "in_harness_agent": "native",
+      "external_orchestrator": "supported",
+      "ci_runner": "supported",
+      "administrator": "configurable"
+    },
+    "requires_human_mediation": false,
+    "surfaces": [
+      "recipes"
+    ],
+    "invocation": [],
+    "minimum_version": null,
+    "current_version_verified": null,
+    "limitations": [],
+    "confidence": "inferred_high",
+    "verified_at": "2026-08-08T20:00:00Z",
+    "evidence": [
+      {
+        "source_id": "src.goose.docs",
+        "url": "https://block.github.io/goose/",
+        "claim": "Recipes and reusable instructions package workflows for agents.",
+        "version": null,
+        "verified_at": "2026-08-08T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "impl.goose.orchestration.subagents",
+    "harness_id": "goose",
+    "capability_id": "orchestration.subagents",
+    "status": "stable",
+    "summary": "goose supports delegated/subagent workflows through recipes and summon/delegate primitives.",
+    "actor_access": {
+      "human_operator": "supported",
+      "in_harness_agent": "native",
+      "external_orchestrator": "supported",
+      "ci_runner": "supported",
+      "administrator": "configurable"
+    },
+    "requires_human_mediation": false,
+    "surfaces": [
+      "delegate",
+      "summon"
+    ],
+    "invocation": [],
+    "minimum_version": null,
+    "current_version_verified": null,
+    "limitations": [],
+    "confidence": "inferred_high",
+    "verified_at": "2026-08-08T20:00:00Z",
+    "evidence": [
+      {
+        "source_id": "src.goose.repo",
+        "url": "https://github.com/block/goose",
+        "claim": "goose supports delegated/subagent workflows through recipes and summon/delegate primitives.",
+        "version": null,
+        "verified_at": "2026-08-08T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "impl.goose.runtime.self_hosted",
+    "harness_id": "goose",
+    "capability_id": "runtime.self_hosted",
+    "status": "stable",
+    "summary": "goose runs locally or on user-managed servers.",
+    "actor_access": {
+      "human_operator": "configurable",
+      "in_harness_agent": "mediated",
+      "external_orchestrator": "supported",
+      "ci_runner": "supported",
+      "administrator": "native"
+    },
+    "requires_human_mediation": false,
+    "surfaces": [
+      "local",
+      "server"
+    ],
+    "invocation": [],
+    "minimum_version": null,
+    "current_version_verified": null,
+    "limitations": [],
+    "confidence": "verified_official",
+    "verified_at": "2026-08-08T20:00:00Z",
+    "evidence": [
+      {
+        "source_id": "src.goose.repo",
+        "url": "https://github.com/block/goose",
+        "claim": "goose runs locally or on user-managed servers.",
+        "version": null,
+        "verified_at": "2026-08-08T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "impl.goose.models.provider_portability",
+    "harness_id": "goose",
+    "capability_id": "models.provider_portability",
+    "status": "stable",
+    "summary": "goose is designed to work with multiple LLM providers and local models.",
+    "actor_access": {
+      "human_operator": "native",
+      "in_harness_agent": "supported",
+      "external_orchestrator": "configurable",
+      "ci_runner": "configurable",
+      "administrator": "configurable"
+    },
+    "requires_human_mediation": false,
+    "surfaces": [
+      "multiple providers",
+      "local inference"
+    ],
+    "invocation": [],
+    "minimum_version": null,
+    "current_version_verified": null,
+    "limitations": [],
+    "confidence": "verified_official",
+    "verified_at": "2026-08-08T20:00:00Z",
+    "evidence": [
+      {
+        "source_id": "src.goose.repo",
+        "url": "https://github.com/block/goose",
+        "claim": "goose is designed to work with multiple LLM providers and local models.",
+        "version": null,
+        "verified_at": "2026-08-08T20:00:00Z"
+      }
+    ]
+  }
+]

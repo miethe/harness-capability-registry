@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meatyos.dev/schemas/hcr/sources.schema.json",
+  "title": "HCR source registry",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "url",
+      "harness_ids",
+      "source_type",
+      "purpose",
+      "authority",
+      "official",
+      "enabled",
+      "collector",
+      "refresh"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "url": {
+        "$ref": "common.schema.json#/$defs/uri"
+      },
+      "harness_ids": {
+        "$ref": "common.schema.json#/$defs/stringList"
+      },
+      "source_type": {
+        "type": "string"
+      },
+      "purpose": {
+        "type": "string",
+        "enum": [
+          "release_history",
+          "capability_reference",
+          "lifecycle_reference",
+          "compatibility_reference",
+          "package_metadata",
+          "discovery_only",
+          "comparison_reference"
+        ]
+      },
+      "authority": {
+        "type": "string",
+        "enum": [
+          "official_primary",
+          "official_secondary",
+          "package_registry",
+          "community_discovery"
+        ]
+      },
+      "official": {
+        "type": "boolean"
+      },
+      "enabled": {
+        "type": "boolean"
+      },
+      "collector": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "repo": {
+            "type": "string"
+          },
+          "local_seed_path": {
+            "type": "string"
+          },
+          "package": {
+            "type": "string"
+          },
+          "url": {
+            "$ref": "common.schema.json#/$defs/uri"
+          }
+        },
+        "additionalProperties": true
+      },
+      "refresh": {
+        "type": "object",
+        "required": [
+          "cadence",
+          "historical_backfill_days",
+          "staleness_sla_hours"
+        ],
+        "properties": {
+          "cadence": {
+            "type": "string"
+          },
+          "historical_backfill_days": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "staleness_sla_hours": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "additionalProperties": true
+      },
+      "notes": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meatyos.dev/schemas/hcr/capabilities.schema.json",
+  "title": "Actor-aware capability implementations",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "harness_id",
+      "capability_id",
+      "status",
+      "summary",
+      "actor_access",
+      "requires_human_mediation",
+      "surfaces",
+      "invocation",
+      "limitations",
+      "confidence",
+      "verified_at",
+      "evidence"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "harness_id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "capability_id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "status": {
+        "type": "string"
+      },
+      "summary": {
+        "type": "string",
+        "minLength": 1
+      },
+      "actor_access": {
+        "$ref": "common.schema.json#/$defs/actorAccess"
+      },
+      "requires_human_mediation": {
+        "type": "boolean"
+      },
+      "surfaces": {
+        "$ref": "common.schema.json#/$defs/stringList"
+      },
+      "invocation": {
+        "$ref": "common.schema.json#/$defs/stringList"
+      },
+      "minimum_version": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "current_version_verified": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "limitations": {
+        "$ref": "common.schema.json#/$defs/stringList"
+      },
+      "confidence": {
+        "$ref": "common.schema.json#/$defs/confidence"
+      },
+      "verified_at": {
+        "$ref": "common.schema.json#/$defs/timestamp"
+      },
+      "evidence": {
+        "type": "array",
+        "items": {
+          "$ref": "common.schema.json#/$defs/evidence"
+        },
+        "minItems": 1
+      }
+    },
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,3986 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-08T20:00:00Z",
+  "guide_type": "agent_consumable_harness_capability_guide",
+  "harness": {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "vendor": "Anthropic",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "current_version": "2.1.226",
+    "predecessor": null,
+    "successor": null
+  },
+  "freshness": {
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "latest_release_in_registry": "2.1.226",
+    "latest_release_published_at": null,
+    "warning": "Treat unavailable or unknown actor access as unsupported until verified. UI-only capability is not agent-callable by implication."
+  },
+  "capabilities_by_actor": {
+    "human_operator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Interactive terminal agent with slash commands, session controls, and tool approvals.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [
+          "claude"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.overview",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Interactive terminal agent with slash commands, session controls, and tool approvals."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "interaction.ide",
+        "name": "IDE integration",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "First-party IDE integration, including VS Code surfaces tracked in the changelog.",
+        "surfaces": [
+          "VS Code",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.overview",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "First-party IDE integration, including VS Code surfaces tracked in the changelog."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "interaction.desktop_web",
+        "name": "Desktop or web surface",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Claude Code sessions are available through desktop and browser surfaces and can attach through Remote Control.",
+        "surfaces": [
+          "desktop",
+          "web",
+          "mobile"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.overview",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude Code sessions are available through desktop and browser surfaces and can attach through Remote Control."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Claude can read and edit repository files through native tools.",
+        "surfaces": [
+          "terminal",
+          "IDE",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.overview",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can read and edit repository files through native tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Claude can run shell commands with configurable permission modes and sandbox controls.",
+        "surfaces": [
+          "terminal",
+          "SDK"
+        ],
+        "invocation": [
+          "Bash tool"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can run shell commands with configurable permission modes and sandbox controls."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "`claude -p` provides supported non-interactive execution for scripts and CI; `--bare` disables ambient project customization for reproducibility.",
+        "surfaces": [
+          "CLI",
+          "stdin/stdout"
+        ],
+        "invocation": [
+          "claude -p",
+          "claude -p --bare"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`claude -p` provides supported non-interactive execution for scripts and CI; `--bare` disables ambient project customization for reproducibility."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Headless execution supports machine-readable JSON and streaming event output.",
+        "surfaces": [
+          "CLI",
+          "JSON",
+          "stream JSON"
+        ],
+        "invocation": [
+          "--output-format json",
+          "--output-format stream-json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless execution supports machine-readable JSON and streaming event output."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The Claude Agent SDK exposes the same agent loop, tools, and context management as Claude Code in Python and TypeScript.",
+        "surfaces": [
+          "Python SDK",
+          "TypeScript SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Claude Agent SDK exposes the same agent loop, tools, and context management as Claude Code in Python and TypeScript."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Claude Code connects to local and remote MCP servers and supports OAuth-backed tools.",
+        "surfaces": [
+          "terminal",
+          "SDK",
+          "plugins"
+        ],
+        "invocation": [
+          ".mcp.json",
+          "plugin MCP servers"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.settings",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude Code connects to local and remote MCP servers and supports OAuth-backed tools."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "SKILL.md bundles can be selected by Claude or invoked explicitly; Claude Code extends the Agent Skills standard with invocation controls and subagent execution.",
+        "surfaces": [
+          "terminal",
+          "plugins"
+        ],
+        "invocation": [
+          "/skill-name",
+          ".claude/skills/*/SKILL.md"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SKILL.md bundles can be selected by Claude or invoked explicitly; Claude Code extends the Agent Skills standard with invocation controls and subagent execution."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Plugins distribute skills, agents, hooks, and MCP servers through project/user configuration and marketplaces.",
+        "surfaces": [
+          "marketplaces",
+          "archive source"
+        ],
+        "invocation": [
+          "plugin install",
+          "settings.json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.settings",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Plugins distribute skills, agents, hooks, and MCP servers through project/user configuration and marketplaces."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hooks execute code at lifecycle events to inject context, enforce policy, format files, or notify humans.",
+        "surfaces": [
+          "settings",
+          "agents",
+          "skills"
+        ],
+        "invocation": [
+          "PreToolUse",
+          "PostToolUse",
+          "Stop",
+          "SessionStart"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.hooks",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/hooks-guide",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hooks execute code at lifecycle events to inject context, enforce policy, format files, or notify humans."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "CLAUDE.md and scoped configuration provide durable project instructions.",
+        "surfaces": [
+          "project",
+          "user",
+          "managed"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLAUDE.md and scoped configuration provide durable project instructions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "context.dynamic_injection",
+        "name": "Dynamic context injection",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Skills, hooks, and MCP tools can inject context only when relevant.",
+        "surfaces": [
+          "skills",
+          "hooks",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Skills, hooks, and MCP tools can inject context only when relevant."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "context.persistent_memory",
+        "name": "Persistent memory",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Auto memory and project memory preserve selected knowledge across sessions.",
+        "surfaces": [
+          "auto memory",
+          "CLAUDE.md"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Bare mode intentionally skips auto memory and CLAUDE.md."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Auto memory and project memory preserve selected knowledge across sessions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Sessions can be resumed, continued, renamed, forked, and moved between local/cloud contexts.",
+        "surfaces": [
+          "CLI",
+          "Remote Control"
+        ],
+        "invocation": [
+          "--resume",
+          "--continue",
+          "/resume"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Sessions can be resumed, continued, renamed, forked, and moved between local/cloud contexts."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Claude can delegate work to defined or dynamic subagents with separate prompts and tool restrictions.",
+        "surfaces": [
+          "agents",
+          "skills",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can delegate work to defined or dynamic subagents with separate prompts and tool restrictions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Subagents and forked skills can run in the background with concurrency and spawn-depth controls.",
+        "surfaces": [
+          "terminal",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.218",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.218",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Subagents and forked skills can run in the background with concurrency and spawn-depth controls."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.cross_session_messaging",
+        "name": "Cross-session agent messaging",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines.",
+        "surfaces": [
+          "local sessions",
+          "Remote Control"
+        ],
+        "invocation": [
+          "ListAgents",
+          "SendMessage"
+        ],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "experimental",
+        "summary": "Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives.",
+        "surfaces": [
+          "agents",
+          "teams",
+          "sessions"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.219",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.219",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "Remote Control and cloud sessions let work continue across terminal, web, desktop, and mobile surfaces.",
+        "surfaces": [
+          "Remote Control",
+          "web",
+          "desktop",
+          "mobile"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Remote Control and cloud sessions let work continue across terminal, web, desktop, and mobile surfaces."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "runtime.self_hosted",
+        "name": "Self-hosted worker/runtime",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "`claude self-hosted-runner` registers user-owned machines or containers as execution environments for web/mobile/desktop sessions.",
+        "surfaces": [
+          "self-hosted worker"
+        ],
+        "invocation": [
+          "claude self-hosted-runner"
+        ],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`claude self-hosted-runner` registers user-owned machines or containers as execution environments for web/mobile/desktop sessions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "automation.ci",
+        "name": "CI/GitHub automation",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Headless mode and the Agent SDK support CI, batch, and scripted workflows.",
+        "surfaces": [
+          "CI",
+          "shell pipelines"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless mode and the Agent SDK support CI, batch, and scripted workflows."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "experimental",
+        "summary": "Workflow and scheduled-task primitives are present, but coverage is less mature than headless execution.",
+        "surfaces": [
+          "workflows",
+          "scheduled tasks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Verify exact schedule semantics for the pinned version before relying on them."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Workflow and scheduled-task primitives are present, but coverage is less mature than headless execution."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Filesystem and network sandbox controls constrain tool execution, including credential masking and TLS termination options.",
+        "surfaces": [
+          "filesystem sandbox",
+          "network sandbox"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Filesystem and network sandbox controls constrain tool execution, including credential masking and TLS termination options."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Permission modes, allow/deny rules, workspace trust, and approval hooks govern agent actions.",
+        "surfaces": [
+          "CLI flags",
+          "settings",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Permission modes, allow/deny rules, workspace trust, and approval hooks govern agent actions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.usage_cost",
+        "name": "Usage and cost telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths.",
+        "surfaces": [
+          "status",
+          "SDK result",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Headless/SDK event streams and hook events provide structured execution telemetry.",
+        "surfaces": [
+          "SDK messages",
+          "stream JSON",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless/SDK event streams and hook events provide structured execution telemetry."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Built-in deep research is manually invoked; web access can also be supplied through MCP and browser tools.",
+        "surfaces": [
+          "/deep-research",
+          "MCP"
+        ],
+        "invocation": [
+          "/deep-research"
+        ],
+        "minimum_version": "2.1.218",
+        "limitations": [
+          "The changelog explicitly states Claude does not autonomously start /deep-research."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.218",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in deep research is manually invoked; web access can also be supplied through MCP and browser tools."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "experimental",
+        "summary": "Claude-in-Chrome and browser/MCP integrations provide browser interaction.",
+        "surfaces": [
+          "Chrome",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude-in-Chrome and browser/MCP integrations provide browser interaction."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "interfaces.artifacts",
+        "name": "Artifacts, diffs, and rich result views",
+        "category": "interfaces",
+        "status": "stable",
+        "summary": "IDE, desktop, web, attachments, diffs, and review flows provide rich result inspection beyond terminal text.",
+        "surfaces": [
+          "IDE",
+          "web",
+          "desktop",
+          "attachments"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "IDE, desktop, web, attachments, diffs, and review flows provide rich result inspection beyond terminal text."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric.",
+        "surfaces": [
+          "Anthropic",
+          "Bedrock",
+          "Vertex",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "This is deployment-provider portability, not arbitrary model-provider portability."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model selection, fast mode, context-window enforcement, and subagent model selection are configurable.",
+        "surfaces": [
+          "/model",
+          "settings",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model selection, fast mode, context-window enforcement, and subagent model selection are configurable."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "evaluation.schema_enforcement",
+        "name": "Output schema enforcement",
+        "category": "evaluation",
+        "status": "stable",
+        "summary": "Headless and SDK flows can request structured output contracts for downstream automation.",
+        "surfaces": [
+          "CLI",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless and SDK flows can request structured output contracts for downstream automation."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "SDK permission callbacks and hooks let an embedding application mediate tool use programmatically.",
+        "surfaces": [
+          "SDK callbacks",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK permission callbacks and hooks let an embedding application mediate tool use programmatically."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "administrator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Interactive terminal agent with slash commands, session controls, and tool approvals.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [
+          "claude"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.overview",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Interactive terminal agent with slash commands, session controls, and tool approvals."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "interaction.ide",
+        "name": "IDE integration",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "First-party IDE integration, including VS Code surfaces tracked in the changelog.",
+        "surfaces": [
+          "VS Code",
+          "IDE"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.overview",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "First-party IDE integration, including VS Code surfaces tracked in the changelog."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "interaction.desktop_web",
+        "name": "Desktop or web surface",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Claude Code sessions are available through desktop and browser surfaces and can attach through Remote Control.",
+        "surfaces": [
+          "desktop",
+          "web",
+          "mobile"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.overview",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude Code sessions are available through desktop and browser surfaces and can attach through Remote Control."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Claude can read and edit repository files through native tools.",
+        "surfaces": [
+          "terminal",
+          "IDE",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.overview",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can read and edit repository files through native tools."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Claude can run shell commands with configurable permission modes and sandbox controls.",
+        "surfaces": [
+          "terminal",
+          "SDK"
+        ],
+        "invocation": [
+          "Bash tool"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can run shell commands with configurable permission modes and sandbox controls."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "`claude -p` provides supported non-interactive execution for scripts and CI; `--bare` disables ambient project customization for reproducibility.",
+        "surfaces": [
+          "CLI",
+          "stdin/stdout"
+        ],
+        "invocation": [
+          "claude -p",
+          "claude -p --bare"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`claude -p` provides supported non-interactive execution for scripts and CI; `--bare` disables ambient project customization for reproducibility."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Headless execution supports machine-readable JSON and streaming event output.",
+        "surfaces": [
+          "CLI",
+          "JSON",
+          "stream JSON"
+        ],
+        "invocation": [
+          "--output-format json",
+          "--output-format stream-json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless execution supports machine-readable JSON and streaming event output."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The Claude Agent SDK exposes the same agent loop, tools, and context management as Claude Code in Python and TypeScript.",
+        "surfaces": [
+          "Python SDK",
+          "TypeScript SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Claude Agent SDK exposes the same agent loop, tools, and context management as Claude Code in Python and TypeScript."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Claude Code connects to local and remote MCP servers and supports OAuth-backed tools.",
+        "surfaces": [
+          "terminal",
+          "SDK",
+          "plugins"
+        ],
+        "invocation": [
+          ".mcp.json",
+          "plugin MCP servers"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.settings",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude Code connects to local and remote MCP servers and supports OAuth-backed tools."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "SKILL.md bundles can be selected by Claude or invoked explicitly; Claude Code extends the Agent Skills standard with invocation controls and subagent execution.",
+        "surfaces": [
+          "terminal",
+          "plugins"
+        ],
+        "invocation": [
+          "/skill-name",
+          ".claude/skills/*/SKILL.md"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SKILL.md bundles can be selected by Claude or invoked explicitly; Claude Code extends the Agent Skills standard with invocation controls and subagent execution."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Plugins distribute skills, agents, hooks, and MCP servers through project/user configuration and marketplaces.",
+        "surfaces": [
+          "marketplaces",
+          "archive source"
+        ],
+        "invocation": [
+          "plugin install",
+          "settings.json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.settings",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Plugins distribute skills, agents, hooks, and MCP servers through project/user configuration and marketplaces."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hooks execute code at lifecycle events to inject context, enforce policy, format files, or notify humans.",
+        "surfaces": [
+          "settings",
+          "agents",
+          "skills"
+        ],
+        "invocation": [
+          "PreToolUse",
+          "PostToolUse",
+          "Stop",
+          "SessionStart"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.hooks",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/hooks-guide",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hooks execute code at lifecycle events to inject context, enforce policy, format files, or notify humans."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "CLAUDE.md and scoped configuration provide durable project instructions.",
+        "surfaces": [
+          "project",
+          "user",
+          "managed"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLAUDE.md and scoped configuration provide durable project instructions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "context.dynamic_injection",
+        "name": "Dynamic context injection",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Skills, hooks, and MCP tools can inject context only when relevant.",
+        "surfaces": [
+          "skills",
+          "hooks",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Skills, hooks, and MCP tools can inject context only when relevant."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "context.persistent_memory",
+        "name": "Persistent memory",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Auto memory and project memory preserve selected knowledge across sessions.",
+        "surfaces": [
+          "auto memory",
+          "CLAUDE.md"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Bare mode intentionally skips auto memory and CLAUDE.md."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Auto memory and project memory preserve selected knowledge across sessions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Sessions can be resumed, continued, renamed, forked, and moved between local/cloud contexts.",
+        "surfaces": [
+          "CLI",
+          "Remote Control"
+        ],
+        "invocation": [
+          "--resume",
+          "--continue",
+          "/resume"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Sessions can be resumed, continued, renamed, forked, and moved between local/cloud contexts."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Claude can delegate work to defined or dynamic subagents with separate prompts and tool restrictions.",
+        "surfaces": [
+          "agents",
+          "skills",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can delegate work to defined or dynamic subagents with separate prompts and tool restrictions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Subagents and forked skills can run in the background with concurrency and spawn-depth controls.",
+        "surfaces": [
+          "terminal",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.218",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.218",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Subagents and forked skills can run in the background with concurrency and spawn-depth controls."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.cross_session_messaging",
+        "name": "Cross-session agent messaging",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines.",
+        "surfaces": [
+          "local sessions",
+          "Remote Control"
+        ],
+        "invocation": [
+          "ListAgents",
+          "SendMessage"
+        ],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "experimental",
+        "summary": "Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives.",
+        "surfaces": [
+          "agents",
+          "teams",
+          "sessions"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.219",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.219",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "Remote Control and cloud sessions let work continue across terminal, web, desktop, and mobile surfaces.",
+        "surfaces": [
+          "Remote Control",
+          "web",
+          "desktop",
+          "mobile"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Remote Control and cloud sessions let work continue across terminal, web, desktop, and mobile surfaces."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "runtime.self_hosted",
+        "name": "Self-hosted worker/runtime",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "`claude self-hosted-runner` registers user-owned machines or containers as execution environments for web/mobile/desktop sessions.",
+        "surfaces": [
+          "self-hosted worker"
+        ],
+        "invocation": [
+          "claude self-hosted-runner"
+        ],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`claude self-hosted-runner` registers user-owned machines or containers as execution environments for web/mobile/desktop sessions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.ci",
+        "name": "CI/GitHub automation",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Headless mode and the Agent SDK support CI, batch, and scripted workflows.",
+        "surfaces": [
+          "CI",
+          "shell pipelines"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless mode and the Agent SDK support CI, batch, and scripted workflows."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "experimental",
+        "summary": "Workflow and scheduled-task primitives are present, but coverage is less mature than headless execution.",
+        "surfaces": [
+          "workflows",
+          "scheduled tasks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Verify exact schedule semantics for the pinned version before relying on them."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Workflow and scheduled-task primitives are present, but coverage is less mature than headless execution."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Filesystem and network sandbox controls constrain tool execution, including credential masking and TLS termination options.",
+        "surfaces": [
+          "filesystem sandbox",
+          "network sandbox"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Filesystem and network sandbox controls constrain tool execution, including credential masking and TLS termination options."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Permission modes, allow/deny rules, workspace trust, and approval hooks govern agent actions.",
+        "surfaces": [
+          "CLI flags",
+          "settings",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Permission modes, allow/deny rules, workspace trust, and approval hooks govern agent actions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.enterprise_policy",
+        "name": "Enterprise managed policy",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Managed settings and organization policies govern marketplaces, permissions, telemetry, and environment behavior.",
+        "surfaces": [
+          "managed settings",
+          "MDM",
+          "organization gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.settings",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Managed settings and organization policies govern marketplaces, permissions, telemetry, and environment behavior."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.usage_cost",
+        "name": "Usage and cost telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths.",
+        "surfaces": [
+          "status",
+          "SDK result",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Headless/SDK event streams and hook events provide structured execution telemetry.",
+        "surfaces": [
+          "SDK messages",
+          "stream JSON",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless/SDK event streams and hook events provide structured execution telemetry."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Built-in deep research is manually invoked; web access can also be supplied through MCP and browser tools.",
+        "surfaces": [
+          "/deep-research",
+          "MCP"
+        ],
+        "invocation": [
+          "/deep-research"
+        ],
+        "minimum_version": "2.1.218",
+        "limitations": [
+          "The changelog explicitly states Claude does not autonomously start /deep-research."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.218",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in deep research is manually invoked; web access can also be supplied through MCP and browser tools."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "experimental",
+        "summary": "Claude-in-Chrome and browser/MCP integrations provide browser interaction.",
+        "surfaces": [
+          "Chrome",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude-in-Chrome and browser/MCP integrations provide browser interaction."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "interfaces.artifacts",
+        "name": "Artifacts, diffs, and rich result views",
+        "category": "interfaces",
+        "status": "stable",
+        "summary": "IDE, desktop, web, attachments, diffs, and review flows provide rich result inspection beyond terminal text.",
+        "surfaces": [
+          "IDE",
+          "web",
+          "desktop",
+          "attachments"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "IDE, desktop, web, attachments, diffs, and review flows provide rich result inspection beyond terminal text."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric.",
+        "surfaces": [
+          "Anthropic",
+          "Bedrock",
+          "Vertex",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "This is deployment-provider portability, not arbitrary model-provider portability."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model selection, fast mode, context-window enforcement, and subagent model selection are configurable.",
+        "surfaces": [
+          "/model",
+          "settings",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model selection, fast mode, context-window enforcement, and subagent model selection are configurable."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "evaluation.schema_enforcement",
+        "name": "Output schema enforcement",
+        "category": "evaluation",
+        "status": "stable",
+        "summary": "Headless and SDK flows can request structured output contracts for downstream automation.",
+        "surfaces": [
+          "CLI",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless and SDK flows can request structured output contracts for downstream automation."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "SDK permission callbacks and hooks let an embedding application mediate tool use programmatically.",
+        "surfaces": [
+          "SDK callbacks",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK permission callbacks and hooks let an embedding application mediate tool use programmatically."
+          }
+        ],
+        "access": "configurable"
+      }
+    ],
+    "in_harness_agent": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Claude can read and edit repository files through native tools.",
+        "surfaces": [
+          "terminal",
+          "IDE",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.overview",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can read and edit repository files through native tools."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Claude can run shell commands with configurable permission modes and sandbox controls.",
+        "surfaces": [
+          "terminal",
+          "SDK"
+        ],
+        "invocation": [
+          "Bash tool"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can run shell commands with configurable permission modes and sandbox controls."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Claude Code connects to local and remote MCP servers and supports OAuth-backed tools.",
+        "surfaces": [
+          "terminal",
+          "SDK",
+          "plugins"
+        ],
+        "invocation": [
+          ".mcp.json",
+          "plugin MCP servers"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.settings",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude Code connects to local and remote MCP servers and supports OAuth-backed tools."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "SKILL.md bundles can be selected by Claude or invoked explicitly; Claude Code extends the Agent Skills standard with invocation controls and subagent execution.",
+        "surfaces": [
+          "terminal",
+          "plugins"
+        ],
+        "invocation": [
+          "/skill-name",
+          ".claude/skills/*/SKILL.md"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SKILL.md bundles can be selected by Claude or invoked explicitly; Claude Code extends the Agent Skills standard with invocation controls and subagent execution."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Plugins distribute skills, agents, hooks, and MCP servers through project/user configuration and marketplaces.",
+        "surfaces": [
+          "marketplaces",
+          "archive source"
+        ],
+        "invocation": [
+          "plugin install",
+          "settings.json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.settings",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Plugins distribute skills, agents, hooks, and MCP servers through project/user configuration and marketplaces."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "CLAUDE.md and scoped configuration provide durable project instructions.",
+        "surfaces": [
+          "project",
+          "user",
+          "managed"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLAUDE.md and scoped configuration provide durable project instructions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "context.dynamic_injection",
+        "name": "Dynamic context injection",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Skills, hooks, and MCP tools can inject context only when relevant.",
+        "surfaces": [
+          "skills",
+          "hooks",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Skills, hooks, and MCP tools can inject context only when relevant."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "context.persistent_memory",
+        "name": "Persistent memory",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Auto memory and project memory preserve selected knowledge across sessions.",
+        "surfaces": [
+          "auto memory",
+          "CLAUDE.md"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Bare mode intentionally skips auto memory and CLAUDE.md."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Auto memory and project memory preserve selected knowledge across sessions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Claude can delegate work to defined or dynamic subagents with separate prompts and tool restrictions.",
+        "surfaces": [
+          "agents",
+          "skills",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can delegate work to defined or dynamic subagents with separate prompts and tool restrictions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Subagents and forked skills can run in the background with concurrency and spawn-depth controls.",
+        "surfaces": [
+          "terminal",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.218",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.218",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Subagents and forked skills can run in the background with concurrency and spawn-depth controls."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.cross_session_messaging",
+        "name": "Cross-session agent messaging",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines.",
+        "surfaces": [
+          "local sessions",
+          "Remote Control"
+        ],
+        "invocation": [
+          "ListAgents",
+          "SendMessage"
+        ],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "experimental",
+        "summary": "Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives.",
+        "surfaces": [
+          "agents",
+          "teams",
+          "sessions"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.219",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.219",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "experimental",
+        "summary": "Workflow and scheduled-task primitives are present, but coverage is less mature than headless execution.",
+        "surfaces": [
+          "workflows",
+          "scheduled tasks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Verify exact schedule semantics for the pinned version before relying on them."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Workflow and scheduled-task primitives are present, but coverage is less mature than headless execution."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "experimental",
+        "summary": "Claude-in-Chrome and browser/MCP integrations provide browser interaction.",
+        "surfaces": [
+          "Chrome",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude-in-Chrome and browser/MCP integrations provide browser interaction."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model selection, fast mode, context-window enforcement, and subagent model selection are configurable.",
+        "surfaces": [
+          "/model",
+          "settings",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model selection, fast mode, context-window enforcement, and subagent model selection are configurable."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "external_orchestrator": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Claude can read and edit repository files through native tools.",
+        "surfaces": [
+          "terminal",
+          "IDE",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.overview",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can read and edit repository files through native tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Claude can run shell commands with configurable permission modes and sandbox controls.",
+        "surfaces": [
+          "terminal",
+          "SDK"
+        ],
+        "invocation": [
+          "Bash tool"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can run shell commands with configurable permission modes and sandbox controls."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "`claude -p` provides supported non-interactive execution for scripts and CI; `--bare` disables ambient project customization for reproducibility.",
+        "surfaces": [
+          "CLI",
+          "stdin/stdout"
+        ],
+        "invocation": [
+          "claude -p",
+          "claude -p --bare"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`claude -p` provides supported non-interactive execution for scripts and CI; `--bare` disables ambient project customization for reproducibility."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Headless execution supports machine-readable JSON and streaming event output.",
+        "surfaces": [
+          "CLI",
+          "JSON",
+          "stream JSON"
+        ],
+        "invocation": [
+          "--output-format json",
+          "--output-format stream-json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless execution supports machine-readable JSON and streaming event output."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The Claude Agent SDK exposes the same agent loop, tools, and context management as Claude Code in Python and TypeScript.",
+        "surfaces": [
+          "Python SDK",
+          "TypeScript SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Claude Agent SDK exposes the same agent loop, tools, and context management as Claude Code in Python and TypeScript."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Claude Code connects to local and remote MCP servers and supports OAuth-backed tools.",
+        "surfaces": [
+          "terminal",
+          "SDK",
+          "plugins"
+        ],
+        "invocation": [
+          ".mcp.json",
+          "plugin MCP servers"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.settings",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude Code connects to local and remote MCP servers and supports OAuth-backed tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "SKILL.md bundles can be selected by Claude or invoked explicitly; Claude Code extends the Agent Skills standard with invocation controls and subagent execution.",
+        "surfaces": [
+          "terminal",
+          "plugins"
+        ],
+        "invocation": [
+          "/skill-name",
+          ".claude/skills/*/SKILL.md"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SKILL.md bundles can be selected by Claude or invoked explicitly; Claude Code extends the Agent Skills standard with invocation controls and subagent execution."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Plugins distribute skills, agents, hooks, and MCP servers through project/user configuration and marketplaces.",
+        "surfaces": [
+          "marketplaces",
+          "archive source"
+        ],
+        "invocation": [
+          "plugin install",
+          "settings.json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.settings",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Plugins distribute skills, agents, hooks, and MCP servers through project/user configuration and marketplaces."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hooks execute code at lifecycle events to inject context, enforce policy, format files, or notify humans.",
+        "surfaces": [
+          "settings",
+          "agents",
+          "skills"
+        ],
+        "invocation": [
+          "PreToolUse",
+          "PostToolUse",
+          "Stop",
+          "SessionStart"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.hooks",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/hooks-guide",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hooks execute code at lifecycle events to inject context, enforce policy, format files, or notify humans."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "CLAUDE.md and scoped configuration provide durable project instructions.",
+        "surfaces": [
+          "project",
+          "user",
+          "managed"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLAUDE.md and scoped configuration provide durable project instructions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "context.dynamic_injection",
+        "name": "Dynamic context injection",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Skills, hooks, and MCP tools can inject context only when relevant.",
+        "surfaces": [
+          "skills",
+          "hooks",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Skills, hooks, and MCP tools can inject context only when relevant."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "context.persistent_memory",
+        "name": "Persistent memory",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Auto memory and project memory preserve selected knowledge across sessions.",
+        "surfaces": [
+          "auto memory",
+          "CLAUDE.md"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Bare mode intentionally skips auto memory and CLAUDE.md."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Auto memory and project memory preserve selected knowledge across sessions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Sessions can be resumed, continued, renamed, forked, and moved between local/cloud contexts.",
+        "surfaces": [
+          "CLI",
+          "Remote Control"
+        ],
+        "invocation": [
+          "--resume",
+          "--continue",
+          "/resume"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Sessions can be resumed, continued, renamed, forked, and moved between local/cloud contexts."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Claude can delegate work to defined or dynamic subagents with separate prompts and tool restrictions.",
+        "surfaces": [
+          "agents",
+          "skills",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can delegate work to defined or dynamic subagents with separate prompts and tool restrictions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Subagents and forked skills can run in the background with concurrency and spawn-depth controls.",
+        "surfaces": [
+          "terminal",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.218",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.218",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Subagents and forked skills can run in the background with concurrency and spawn-depth controls."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.cross_session_messaging",
+        "name": "Cross-session agent messaging",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines.",
+        "surfaces": [
+          "local sessions",
+          "Remote Control"
+        ],
+        "invocation": [
+          "ListAgents",
+          "SendMessage"
+        ],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "experimental",
+        "summary": "Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives.",
+        "surfaces": [
+          "agents",
+          "teams",
+          "sessions"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.219",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.219",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "Remote Control and cloud sessions let work continue across terminal, web, desktop, and mobile surfaces.",
+        "surfaces": [
+          "Remote Control",
+          "web",
+          "desktop",
+          "mobile"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Remote Control and cloud sessions let work continue across terminal, web, desktop, and mobile surfaces."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.self_hosted",
+        "name": "Self-hosted worker/runtime",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "`claude self-hosted-runner` registers user-owned machines or containers as execution environments for web/mobile/desktop sessions.",
+        "surfaces": [
+          "self-hosted worker"
+        ],
+        "invocation": [
+          "claude self-hosted-runner"
+        ],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`claude self-hosted-runner` registers user-owned machines or containers as execution environments for web/mobile/desktop sessions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "automation.ci",
+        "name": "CI/GitHub automation",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Headless mode and the Agent SDK support CI, batch, and scripted workflows.",
+        "surfaces": [
+          "CI",
+          "shell pipelines"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless mode and the Agent SDK support CI, batch, and scripted workflows."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "experimental",
+        "summary": "Workflow and scheduled-task primitives are present, but coverage is less mature than headless execution.",
+        "surfaces": [
+          "workflows",
+          "scheduled tasks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Verify exact schedule semantics for the pinned version before relying on them."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Workflow and scheduled-task primitives are present, but coverage is less mature than headless execution."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Filesystem and network sandbox controls constrain tool execution, including credential masking and TLS termination options.",
+        "surfaces": [
+          "filesystem sandbox",
+          "network sandbox"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Filesystem and network sandbox controls constrain tool execution, including credential masking and TLS termination options."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Permission modes, allow/deny rules, workspace trust, and approval hooks govern agent actions.",
+        "surfaces": [
+          "CLI flags",
+          "settings",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Permission modes, allow/deny rules, workspace trust, and approval hooks govern agent actions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "observability.usage_cost",
+        "name": "Usage and cost telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths.",
+        "surfaces": [
+          "status",
+          "SDK result",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Headless/SDK event streams and hook events provide structured execution telemetry.",
+        "surfaces": [
+          "SDK messages",
+          "stream JSON",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless/SDK event streams and hook events provide structured execution telemetry."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Built-in deep research is manually invoked; web access can also be supplied through MCP and browser tools.",
+        "surfaces": [
+          "/deep-research",
+          "MCP"
+        ],
+        "invocation": [
+          "/deep-research"
+        ],
+        "minimum_version": "2.1.218",
+        "limitations": [
+          "The changelog explicitly states Claude does not autonomously start /deep-research."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.218",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in deep research is manually invoked; web access can also be supplied through MCP and browser tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "experimental",
+        "summary": "Claude-in-Chrome and browser/MCP integrations provide browser interaction.",
+        "surfaces": [
+          "Chrome",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude-in-Chrome and browser/MCP integrations provide browser interaction."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric.",
+        "surfaces": [
+          "Anthropic",
+          "Bedrock",
+          "Vertex",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "This is deployment-provider portability, not arbitrary model-provider portability."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model selection, fast mode, context-window enforcement, and subagent model selection are configurable.",
+        "surfaces": [
+          "/model",
+          "settings",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model selection, fast mode, context-window enforcement, and subagent model selection are configurable."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "evaluation.schema_enforcement",
+        "name": "Output schema enforcement",
+        "category": "evaluation",
+        "status": "stable",
+        "summary": "Headless and SDK flows can request structured output contracts for downstream automation.",
+        "surfaces": [
+          "CLI",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless and SDK flows can request structured output contracts for downstream automation."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "SDK permission callbacks and hooks let an embedding application mediate tool use programmatically.",
+        "surfaces": [
+          "SDK callbacks",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK permission callbacks and hooks let an embedding application mediate tool use programmatically."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "ci_runner": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Claude can read and edit repository files through native tools.",
+        "surfaces": [
+          "terminal",
+          "IDE",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.overview",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can read and edit repository files through native tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Claude can run shell commands with configurable permission modes and sandbox controls.",
+        "surfaces": [
+          "terminal",
+          "SDK"
+        ],
+        "invocation": [
+          "Bash tool"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can run shell commands with configurable permission modes and sandbox controls."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "`claude -p` provides supported non-interactive execution for scripts and CI; `--bare` disables ambient project customization for reproducibility.",
+        "surfaces": [
+          "CLI",
+          "stdin/stdout"
+        ],
+        "invocation": [
+          "claude -p",
+          "claude -p --bare"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`claude -p` provides supported non-interactive execution for scripts and CI; `--bare` disables ambient project customization for reproducibility."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Headless execution supports machine-readable JSON and streaming event output.",
+        "surfaces": [
+          "CLI",
+          "JSON",
+          "stream JSON"
+        ],
+        "invocation": [
+          "--output-format json",
+          "--output-format stream-json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless execution supports machine-readable JSON and streaming event output."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The Claude Agent SDK exposes the same agent loop, tools, and context management as Claude Code in Python and TypeScript.",
+        "surfaces": [
+          "Python SDK",
+          "TypeScript SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Claude Agent SDK exposes the same agent loop, tools, and context management as Claude Code in Python and TypeScript."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Claude Code connects to local and remote MCP servers and supports OAuth-backed tools.",
+        "surfaces": [
+          "terminal",
+          "SDK",
+          "plugins"
+        ],
+        "invocation": [
+          ".mcp.json",
+          "plugin MCP servers"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.settings",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude Code connects to local and remote MCP servers and supports OAuth-backed tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "SKILL.md bundles can be selected by Claude or invoked explicitly; Claude Code extends the Agent Skills standard with invocation controls and subagent execution.",
+        "surfaces": [
+          "terminal",
+          "plugins"
+        ],
+        "invocation": [
+          "/skill-name",
+          ".claude/skills/*/SKILL.md"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SKILL.md bundles can be selected by Claude or invoked explicitly; Claude Code extends the Agent Skills standard with invocation controls and subagent execution."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Plugins distribute skills, agents, hooks, and MCP servers through project/user configuration and marketplaces.",
+        "surfaces": [
+          "marketplaces",
+          "archive source"
+        ],
+        "invocation": [
+          "plugin install",
+          "settings.json"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.settings",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Plugins distribute skills, agents, hooks, and MCP servers through project/user configuration and marketplaces."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hooks execute code at lifecycle events to inject context, enforce policy, format files, or notify humans.",
+        "surfaces": [
+          "settings",
+          "agents",
+          "skills"
+        ],
+        "invocation": [
+          "PreToolUse",
+          "PostToolUse",
+          "Stop",
+          "SessionStart"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.hooks",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/hooks-guide",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hooks execute code at lifecycle events to inject context, enforce policy, format files, or notify humans."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "CLAUDE.md and scoped configuration provide durable project instructions.",
+        "surfaces": [
+          "project",
+          "user",
+          "managed"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLAUDE.md and scoped configuration provide durable project instructions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "context.dynamic_injection",
+        "name": "Dynamic context injection",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Skills, hooks, and MCP tools can inject context only when relevant.",
+        "surfaces": [
+          "skills",
+          "hooks",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Skills, hooks, and MCP tools can inject context only when relevant."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Sessions can be resumed, continued, renamed, forked, and moved between local/cloud contexts.",
+        "surfaces": [
+          "CLI",
+          "Remote Control"
+        ],
+        "invocation": [
+          "--resume",
+          "--continue",
+          "/resume"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Sessions can be resumed, continued, renamed, forked, and moved between local/cloud contexts."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Claude can delegate work to defined or dynamic subagents with separate prompts and tool restrictions.",
+        "surfaces": [
+          "agents",
+          "skills",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.skills",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude can delegate work to defined or dynamic subagents with separate prompts and tool restrictions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Subagents and forked skills can run in the background with concurrency and spawn-depth controls.",
+        "surfaces": [
+          "terminal",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.218",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.218",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Subagents and forked skills can run in the background with concurrency and spawn-depth controls."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.cross_session_messaging",
+        "name": "Cross-session agent messaging",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines.",
+        "surfaces": [
+          "local sessions",
+          "Remote Control"
+        ],
+        "invocation": [
+          "ListAgents",
+          "SendMessage"
+        ],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "experimental",
+        "summary": "Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives.",
+        "surfaces": [
+          "agents",
+          "teams",
+          "sessions"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.219",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.219",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "Remote Control and cloud sessions let work continue across terminal, web, desktop, and mobile surfaces.",
+        "surfaces": [
+          "Remote Control",
+          "web",
+          "desktop",
+          "mobile"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Remote Control and cloud sessions let work continue across terminal, web, desktop, and mobile surfaces."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.self_hosted",
+        "name": "Self-hosted worker/runtime",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "`claude self-hosted-runner` registers user-owned machines or containers as execution environments for web/mobile/desktop sessions.",
+        "surfaces": [
+          "self-hosted worker"
+        ],
+        "invocation": [
+          "claude self-hosted-runner"
+        ],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`claude self-hosted-runner` registers user-owned machines or containers as execution environments for web/mobile/desktop sessions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "automation.ci",
+        "name": "CI/GitHub automation",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Headless mode and the Agent SDK support CI, batch, and scripted workflows.",
+        "surfaces": [
+          "CI",
+          "shell pipelines"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless mode and the Agent SDK support CI, batch, and scripted workflows."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "experimental",
+        "summary": "Workflow and scheduled-task primitives are present, but coverage is less mature than headless execution.",
+        "surfaces": [
+          "workflows",
+          "scheduled tasks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "Verify exact schedule semantics for the pinned version before relying on them."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Workflow and scheduled-task primitives are present, but coverage is less mature than headless execution."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Filesystem and network sandbox controls constrain tool execution, including credential masking and TLS termination options.",
+        "surfaces": [
+          "filesystem sandbox",
+          "network sandbox"
+        ],
+        "invocation": [],
+        "minimum_version": "2.1.224",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.224",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Filesystem and network sandbox controls constrain tool execution, including credential masking and TLS termination options."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Permission modes, allow/deny rules, workspace trust, and approval hooks govern agent actions.",
+        "surfaces": [
+          "CLI flags",
+          "settings",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Permission modes, allow/deny rules, workspace trust, and approval hooks govern agent actions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "observability.usage_cost",
+        "name": "Usage and cost telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths.",
+        "surfaces": [
+          "status",
+          "SDK result",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Headless/SDK event streams and hook events provide structured execution telemetry.",
+        "surfaces": [
+          "SDK messages",
+          "stream JSON",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless/SDK event streams and hook events provide structured execution telemetry."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Built-in deep research is manually invoked; web access can also be supplied through MCP and browser tools.",
+        "surfaces": [
+          "/deep-research",
+          "MCP"
+        ],
+        "invocation": [
+          "/deep-research"
+        ],
+        "minimum_version": "2.1.218",
+        "limitations": [
+          "The changelog explicitly states Claude does not autonomously start /deep-research."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": "2.1.218",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in deep research is manually invoked; web access can also be supplied through MCP and browser tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "experimental",
+        "summary": "Claude-in-Chrome and browser/MCP integrations provide browser interaction.",
+        "surfaces": [
+          "Chrome",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude-in-Chrome and browser/MCP integrations provide browser interaction."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric.",
+        "surfaces": [
+          "Anthropic",
+          "Bedrock",
+          "Vertex",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "This is deployment-provider portability, not arbitrary model-provider portability."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.cli",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model selection, fast mode, context-window enforcement, and subagent model selection are configurable.",
+        "surfaces": [
+          "/model",
+          "settings",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.changelog",
+            "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model selection, fast mode, context-window enforcement, and subagent model selection are configurable."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "evaluation.schema_enforcement",
+        "name": "Output schema enforcement",
+        "category": "evaluation",
+        "status": "stable",
+        "summary": "Headless and SDK flows can request structured output contracts for downstream automation.",
+        "surfaces": [
+          "CLI",
+          "SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.headless",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless and SDK flows can request structured output contracts for downstream automation."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "SDK permission callbacks and hooks let an embedding application mediate tool use programmatically.",
+        "surfaces": [
+          "SDK callbacks",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK permission callbacks and hooks let an embedding application mediate tool use programmatically."
+          }
+        ],
+        "access": "supported"
+      }
+    ]
+  },
+  "human_mediation_required": [],
+  "unverified_or_low_confidence": [],
+  "routing_hint": {
+    "recommended_when": [
+      "Long-horizon repository work",
+      "Rich skills/hooks/plugins",
+      "Deep subagent orchestration",
+      "Cross-device or self-hosted execution"
+    ],
+    "avoid_when": [
+      "A provider-neutral local harness is mandatory",
+      "The workflow cannot tolerate rapid release churn without pinning"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "strong",
+      "multi_agent": "strong",
+      "structured_automation": "strong",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    }
+  }
+}

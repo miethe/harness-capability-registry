@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meatyos.dev/schemas/hcr/registry-meta.schema.json",
+  "title": "HCR registry metadata",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "registry_id",
+    "name",
+    "artifact_unit",
+    "description",
+    "created_at",
+    "updated_at",
+    "historical_window_target_days",
+    "seed_scope",
+    "quality_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "registry_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "artifact_unit": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "created_at": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "updated_at": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "historical_window_target_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "seed_scope": {
+      "type": "object"
+    },
+    "quality_policy": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

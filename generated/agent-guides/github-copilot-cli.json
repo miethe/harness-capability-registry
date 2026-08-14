@@ -1,0 +1,318 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-08T20:00:00Z",
+  "guide_type": "agent_consumable_harness_capability_guide",
+  "harness": {
+    "id": "github-copilot-cli",
+    "name": "GitHub Copilot CLI",
+    "vendor": "GitHub",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "current_version": null,
+    "predecessor": null,
+    "successor": null
+  },
+  "freshness": {
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "latest_release_in_registry": null,
+    "latest_release_published_at": null,
+    "warning": "Treat unavailable or unknown actor access as unsupported until verified. UI-only capability is not agent-callable by implication."
+  },
+  "capabilities_by_actor": {
+    "human_operator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "GitHub Copilot CLI provides an interactive terminal agent.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.copilot-cli.docs",
+            "url": "https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "GitHub Copilot CLI provides an interactive terminal agent."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution.",
+        "surfaces": [
+          "GitHub Actions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "automation.ci",
+        "name": "CI/GitHub automation",
+        "category": "automation",
+        "status": "stable",
+        "summary": "GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls.",
+        "surfaces": [
+          "GitHub Actions",
+          "Agentic Workflows"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "administrator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "GitHub Copilot CLI provides an interactive terminal agent.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.copilot-cli.docs",
+            "url": "https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "GitHub Copilot CLI provides an interactive terminal agent."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution.",
+        "surfaces": [
+          "GitHub Actions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "automation.ci",
+        "name": "CI/GitHub automation",
+        "category": "automation",
+        "status": "stable",
+        "summary": "GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls.",
+        "surfaces": [
+          "GitHub Actions",
+          "Agentic Workflows"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.enterprise_policy",
+        "name": "Enterprise managed policy",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "GitHub organization controls and workflow permissions govern Copilot use.",
+        "surfaces": [
+          "GitHub organization"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.copilot-cli.docs",
+            "url": "https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "GitHub organization controls and workflow permissions govern Copilot use."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "external_orchestrator": [
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution.",
+        "surfaces": [
+          "GitHub Actions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.ci",
+        "name": "CI/GitHub automation",
+        "category": "automation",
+        "status": "stable",
+        "summary": "GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls.",
+        "surfaces": [
+          "GitHub Actions",
+          "Agentic Workflows"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "ci_runner": [
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution.",
+        "surfaces": [
+          "GitHub Actions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.ci",
+        "name": "CI/GitHub automation",
+        "category": "automation",
+        "status": "stable",
+        "summary": "GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls.",
+        "surfaces": [
+          "GitHub Actions",
+          "Agentic Workflows"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls."
+          }
+        ],
+        "access": "native"
+      }
+    ]
+  },
+  "human_mediation_required": [],
+  "unverified_or_low_confidence": [],
+  "routing_hint": {
+    "recommended_when": [
+      "GitHub-native automation",
+      "Broad GitHub Agentic Workflows feature support"
+    ],
+    "avoid_when": [
+      "Non-GitHub environments are the primary control plane"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "strong",
+      "multi_agent": "moderate",
+      "structured_automation": "strong",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    }
+  }
+}

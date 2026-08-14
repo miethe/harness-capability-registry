@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "intent": "Run a long-horizon repository refactor from an external control plane and return machine-readable events.",
+  "required_actor": "external_orchestrator",
+  "required_capabilities": [
+    "execution.headless",
+    "execution.structured_output",
+    "execution.file_edit",
+    "execution.shell",
+    "sessions.resume_fork"
+  ],
+  "constraints": {
+    "human_mediation_allowed": false,
+    "experimental_allowed": false,
+    "provider_portability_preferred": true,
+    "remote_execution_required": false
+  },
+  "expected_response": {
+    "ranked_harnesses": true,
+    "missing_or_unknown_capabilities": true,
+    "evidence_refs": true,
+    "minimum_versions": true,
+    "routing_rationale": true
+  }
+}

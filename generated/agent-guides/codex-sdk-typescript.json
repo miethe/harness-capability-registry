@@ -1,0 +1,443 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-08T20:00:00Z",
+  "guide_type": "agent_consumable_harness_capability_guide",
+  "harness": {
+    "id": "codex-sdk-typescript",
+    "name": "Codex SDK — TypeScript",
+    "vendor": "OpenAI",
+    "family": "agent_sdk",
+    "lifecycle": "active",
+    "current_version": "0.146.0",
+    "predecessor": null,
+    "successor": null
+  },
+  "freshness": {
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "latest_release_in_registry": "0.146.0",
+    "latest_release_published_at": "2026-07-29T00:00:00Z",
+    "warning": "Treat unavailable or unknown actor access as unsupported until verified. UI-only capability is not agent-callable by implication."
+  },
+  "capabilities_by_actor": {
+    "human_operator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The server-side TypeScript SDK starts, continues, and resumes local Codex threads.",
+        "surfaces": [
+          "TypeScript library",
+          "Node.js 18+"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The server-side TypeScript SDK starts, continues, and resumes local Codex threads."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress.",
+        "surfaces": [
+          "JSONL event stream"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Applications can continue the same thread or resume a prior thread by ID.",
+        "surfaces": [
+          "threads"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Applications can continue the same thread or resume a prior thread by ID."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Thread options inherit Codex sandbox and approval controls available through the underlying CLI.",
+        "surfaces": [
+          "thread options"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "The TypeScript surface may lag CLI/app-server options; verify per release before relying on parity."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Thread options inherit Codex sandbox and approval controls available through the underlying CLI."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "external_orchestrator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The server-side TypeScript SDK starts, continues, and resumes local Codex threads.",
+        "surfaces": [
+          "TypeScript library",
+          "Node.js 18+"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The server-side TypeScript SDK starts, continues, and resumes local Codex threads."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress.",
+        "surfaces": [
+          "JSONL event stream"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Applications can continue the same thread or resume a prior thread by ID.",
+        "surfaces": [
+          "threads"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Applications can continue the same thread or resume a prior thread by ID."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Thread options inherit Codex sandbox and approval controls available through the underlying CLI.",
+        "surfaces": [
+          "thread options"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "The TypeScript surface may lag CLI/app-server options; verify per release before relying on parity."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Thread options inherit Codex sandbox and approval controls available through the underlying CLI."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "ci_runner": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The server-side TypeScript SDK starts, continues, and resumes local Codex threads.",
+        "surfaces": [
+          "TypeScript library",
+          "Node.js 18+"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The server-side TypeScript SDK starts, continues, and resumes local Codex threads."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress.",
+        "surfaces": [
+          "JSONL event stream"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Applications can continue the same thread or resume a prior thread by ID.",
+        "surfaces": [
+          "threads"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Applications can continue the same thread or resume a prior thread by ID."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Thread options inherit Codex sandbox and approval controls available through the underlying CLI.",
+        "surfaces": [
+          "thread options"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "The TypeScript surface may lag CLI/app-server options; verify per release before relying on parity."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Thread options inherit Codex sandbox and approval controls available through the underlying CLI."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "administrator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The server-side TypeScript SDK starts, continues, and resumes local Codex threads.",
+        "surfaces": [
+          "TypeScript library",
+          "Node.js 18+"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The server-side TypeScript SDK starts, continues, and resumes local Codex threads."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress.",
+        "surfaces": [
+          "JSONL event stream"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Applications can continue the same thread or resume a prior thread by ID.",
+        "surfaces": [
+          "threads"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Applications can continue the same thread or resume a prior thread by ID."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Thread options inherit Codex sandbox and approval controls available through the underlying CLI.",
+        "surfaces": [
+          "thread options"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "The TypeScript surface may lag CLI/app-server options; verify per release before relying on parity."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Thread options inherit Codex sandbox and approval controls available through the underlying CLI."
+          }
+        ],
+        "access": "configurable"
+      }
+    ]
+  },
+  "human_mediation_required": [],
+  "unverified_or_low_confidence": [],
+  "routing_hint": {
+    "recommended_when": [
+      "Embedding local Codex threads in server-side Node.js applications and CI"
+    ],
+    "avoid_when": [
+      "You need the richer JSON-RPC app-server surface exposed by the Python SDK"
+    ],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "moderate",
+      "provider_portability": "limited",
+      "enterprise_controls": "strong"
+    }
+  }
+}

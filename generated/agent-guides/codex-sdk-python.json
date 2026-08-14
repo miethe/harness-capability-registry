@@ -1,0 +1,629 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-08T20:00:00Z",
+  "guide_type": "agent_consumable_harness_capability_guide",
+  "harness": {
+    "id": "codex-sdk-python",
+    "name": "Codex SDK — Python",
+    "vendor": "OpenAI",
+    "family": "agent_sdk",
+    "lifecycle": "active",
+    "current_version": "0.144.4",
+    "predecessor": null,
+    "successor": null
+  },
+  "freshness": {
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "latest_release_in_registry": "0.144.4",
+    "latest_release_published_at": "2026-07-17T00:00:00Z",
+    "warning": "Treat unavailable or unknown actor access as unsupported until verified. UI-only capability is not agent-callable by implication."
+  },
+  "capabilities_by_actor": {
+    "human_operator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime.",
+        "surfaces": [
+          "Python library"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.rpc_server",
+        "name": "RPC/app-server protocol",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas.",
+        "surfaces": [
+          "JSON-RPC"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Typed notifications and generated schemas expose machine-readable turn events.",
+        "surfaces": [
+          "events",
+          "JSON Schema"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed notifications and generated schemas expose machine-readable turn events."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "SDK clients control Codex threads and turns.",
+        "surfaces": [
+          "threads"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK clients control Codex threads and turns."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write.",
+        "surfaces": [
+          "Python API",
+          "sandbox presets"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "SDK/app-server clients can participate in approval flows and return decisions through the machine protocol.",
+        "surfaces": [
+          "JSON-RPC"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK/app-server clients can participate in approval flows and return decisions through the machine protocol."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "external_orchestrator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime.",
+        "surfaces": [
+          "Python library"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.rpc_server",
+        "name": "RPC/app-server protocol",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas.",
+        "surfaces": [
+          "JSON-RPC"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Typed notifications and generated schemas expose machine-readable turn events.",
+        "surfaces": [
+          "events",
+          "JSON Schema"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed notifications and generated schemas expose machine-readable turn events."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "SDK clients control Codex threads and turns.",
+        "surfaces": [
+          "threads"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK clients control Codex threads and turns."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write.",
+        "surfaces": [
+          "Python API",
+          "sandbox presets"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "SDK/app-server clients can participate in approval flows and return decisions through the machine protocol.",
+        "surfaces": [
+          "JSON-RPC"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK/app-server clients can participate in approval flows and return decisions through the machine protocol."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "ci_runner": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime.",
+        "surfaces": [
+          "Python library"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.rpc_server",
+        "name": "RPC/app-server protocol",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas.",
+        "surfaces": [
+          "JSON-RPC"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Typed notifications and generated schemas expose machine-readable turn events.",
+        "surfaces": [
+          "events",
+          "JSON Schema"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed notifications and generated schemas expose machine-readable turn events."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "SDK clients control Codex threads and turns.",
+        "surfaces": [
+          "threads"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK clients control Codex threads and turns."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write.",
+        "surfaces": [
+          "Python API",
+          "sandbox presets"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "SDK/app-server clients can participate in approval flows and return decisions through the machine protocol.",
+        "surfaces": [
+          "JSON-RPC"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK/app-server clients can participate in approval flows and return decisions through the machine protocol."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "administrator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime.",
+        "surfaces": [
+          "Python library"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.rpc_server",
+        "name": "RPC/app-server protocol",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas.",
+        "surfaces": [
+          "JSON-RPC"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Typed notifications and generated schemas expose machine-readable turn events.",
+        "surfaces": [
+          "events",
+          "JSON Schema"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed notifications and generated schemas expose machine-readable turn events."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "SDK clients control Codex threads and turns.",
+        "surfaces": [
+          "threads"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK clients control Codex threads and turns."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write.",
+        "surfaces": [
+          "Python API",
+          "sandbox presets"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "SDK/app-server clients can participate in approval flows and return decisions through the machine protocol.",
+        "surfaces": [
+          "JSON-RPC"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK/app-server clients can participate in approval flows and return decisions through the machine protocol."
+          }
+        ],
+        "access": "configurable"
+      }
+    ]
+  },
+  "human_mediation_required": [],
+  "unverified_or_low_confidence": [],
+  "routing_hint": {
+    "recommended_when": [
+      "Programmatic control of the local Codex app-server from Python"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "strong",
+      "provider_portability": "limited",
+      "enterprise_controls": "strong"
+    }
+  }
+}

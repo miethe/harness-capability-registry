@@ -1,0 +1,3088 @@
+{
+  "harness": {
+    "id": "anthropic-python-sdk",
+    "name": "Claude API SDK — Python",
+    "vendor": "Anthropic",
+    "family": "provider_sdk",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "provider_sdk",
+    "current_version": "0.121.0",
+    "version_as_of": "2026-08-07",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/anthropics/anthropic-sdk-python",
+    "docs_url": "https://platform.claude.com/docs/en/api/sdks/python",
+    "surfaces": [
+      "Python library"
+    ],
+    "auth_modes": [
+      "Anthropic API",
+      "AWS",
+      "Vertex"
+    ],
+    "source_ids": [
+      "src.anthropic-python.changelog"
+    ],
+    "recommended_when": [
+      "Low-level typed Claude API and managed-agent access"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "application_defined",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  "capabilities": [
+    {
+      "id": "impl.anthropic-python-sdk.execution.sdk_embedding",
+      "harness_id": "anthropic-python-sdk",
+      "capability_id": "execution.sdk_embedding",
+      "status": "stable",
+      "summary": "Typed Python access to the Anthropic API.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "native",
+        "ci_runner": "native",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "Python library"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "0.121.0",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.anthropic-python.changelog",
+          "url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+          "claim": "Typed Python access to the Anthropic API.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.anthropic-python-sdk.execution.structured_output",
+      "harness_id": "anthropic-python-sdk",
+      "capability_id": "execution.structured_output",
+      "status": "stable",
+      "summary": "Streaming and typed response objects support machine-readable application logic.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "native",
+        "ci_runner": "native",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "streaming",
+        "typed API objects"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "0.121.0",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.anthropic-python.changelog",
+          "url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+          "claim": "Streaming and typed response objects support machine-readable application logic.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.anthropic-python-sdk.models.reasoning_control",
+      "harness_id": "anthropic-python-sdk",
+      "capability_id": "models.reasoning_control",
+      "status": "stable",
+      "summary": "Model and API feature parameters are exposed as generated typed interfaces.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "native",
+        "ci_runner": "native",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "API parameters"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "0.121.0",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.anthropic-python.changelog",
+          "url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+          "claim": "Model and API feature parameters are exposed as generated typed interfaces.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    }
+  ],
+  "releases": [
+    {
+      "id": "rel.anthropic-python-sdk.0.121.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.121.0",
+      "channel": "stable",
+      "published_at": "2026-08-07T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.802508Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "4e6d6b2d0fad43572c904bb774a45543884eb3115fbba2ba9ba9f53c61765cbb",
+      "title": "anthropic-python-sdk 0.121.0",
+      "notes_excerpt": "**api:** add `mid-conversation-tool-changes-2026-07-01` beta ([c7d1531](https://github.com/anthropics/anthropic-sdk-python/commit/c7d1531d9d63a35430333039f8c975bba4ef0411))",
+      "change_count": 6,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.121.0.001",
+          "kind": "changed",
+          "summary": "**api:** add `mid-conversation-tool-changes-2026-07-01` beta ([c7d1531](https://github.com/anthropics/anthropic-sdk-python/commit/c7d1531d9d63a35430333039f8c975bba4ef0411))",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.121.0.002",
+          "kind": "changed",
+          "summary": "**api:** add support for session budgets, advisor tool, pinned inference location and skills auto-loading from GitHub ([193bae0](https://github.com/anthropics/anthropic-sdk-python/commit/193bae02806219047d484d7efcb9b91776a6c45c))",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.121.0.003",
+          "kind": "changed",
+          "summary": "**api:** remove retired Claude Opus 4.1 models ([5352a33](https://github.com/anthropics/anthropic-sdk-python/commit/5352a33ade5b62ad782b522f1791b7eeeeff83be))",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.121.0.004",
+          "kind": "changed",
+          "summary": "**docs:** small updates to descriptions ([b8d4176](https://github.com/anthropics/anthropic-sdk-python/commit/b8d41762e264fe6721847f77daa337eab4905162))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.121.0.005",
+          "kind": "changed",
+          "summary": "**docs:** updates to a few documentation strings ([3a5dd69](https://github.com/anthropics/anthropic-sdk-python/commit/3a5dd6971e0f43023533db3ed35f94ceb6c0ebde))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.121.0.006",
+          "kind": "changed",
+          "summary": "ensure all dependencies have major version constraints ([#274](https://github.com/anthropics/anthropic-sdk-python/issues/274)) ([d52999b](https://github.com/anthropics/anthropic-sdk-python/commit/d52999b4f66002ffe8263756c59ab0e276c74264))",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk",
+            "ci"
+          ],
+          "actors": [
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.120.2",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.120.2",
+      "channel": "stable",
+      "published_at": "2026-07-28T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.802843Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "a0969e257aa1d628f541fe2c2e811dea3426f7186391137bdbefc30c3728f33b",
+      "title": "anthropic-python-sdk 0.120.2",
+      "notes_excerpt": "**mcp:** support mcp sdk v2 alongside v1 ([#300](https://github.com/anthropics/anthropic-sdk-python/issues/300)) ([177f88c](https://github.com/anthropics/anthropic-sdk-python/commit/177f88ccd7f966e47b654cb19ad0e9cfa4c58ac2))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.120.2.001",
+          "kind": "changed",
+          "summary": "**mcp:** support mcp sdk v2 alongside v1 ([#300](https://github.com/anthropics/anthropic-sdk-python/issues/300)) ([177f88c](https://github.com/anthropics/anthropic-sdk-python/commit/177f88ccd7f966e47b654cb19ad0e9cfa4c58ac2))",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.120.1",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.120.1",
+      "channel": "stable",
+      "published_at": "2026-07-28T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.802904Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "b839a6b80225d8a5d0d3f70ebe2cd675b5f35cef275f47bfa855bc7b5f3685b5",
+      "title": "anthropic-python-sdk 0.120.1",
+      "notes_excerpt": "**mcp:** pin mcp extra to &lt;2 ([#1783](https://github.com/anthropics/anthropic-sdk-python/issues/1783)) ([fb66371](https://github.com/anthropics/anthropic-sdk-python/commit/fb66371322621be23a0956f1998da39c4686f4cb))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.120.1.001",
+          "kind": "changed",
+          "summary": "**mcp:** pin mcp extra to &lt;2 ([#1783](https://github.com/anthropics/anthropic-sdk-python/issues/1783)) ([fb66371](https://github.com/anthropics/anthropic-sdk-python/commit/fb66371322621be23a0956f1998da39c4686f4cb))",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.120.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.120.0",
+      "channel": "stable",
+      "published_at": "2026-07-24T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.802962Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "32ad4096da0ba8e78163a29cfb910ff32bf0944f7b03ab7bb9b488a401182619",
+      "title": "anthropic-python-sdk 0.120.0",
+      "notes_excerpt": "**api:** add claude-opus-5 model ([bf4e31c](https://github.com/anthropics/anthropic-sdk-python/commit/bf4e31c17c43ba2b409bec57e1856b025d159f1a))",
+      "change_count": 3,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.120.0.001",
+          "kind": "changed",
+          "summary": "**api:** add claude-opus-5 model ([bf4e31c](https://github.com/anthropics/anthropic-sdk-python/commit/bf4e31c17c43ba2b409bec57e1856b025d159f1a))",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.120.0.002",
+          "kind": "changed",
+          "summary": "**api:** add tool addition/removal blocks and tool_change events ([bf4e31c](https://github.com/anthropics/anthropic-sdk-python/commit/bf4e31c17c43ba2b409bec57e1856b025d159f1a))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.120.0.003",
+          "kind": "changed",
+          "summary": "**api:** expand client-side fallback credit token types and add server-side fallbacks default option ([bf4e31c](https://github.com/anthropics/anthropic-sdk-python/commit/bf4e31c17c43ba2b409bec57e1856b025d159f1a))",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.119.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.119.0",
+      "channel": "stable",
+      "published_at": "2026-07-23T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.803109Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "ecb2668a8e264b5a761c4002954af1d5d1b6100715e0aa27d64c76fddb1ebbf5",
+      "title": "anthropic-python-sdk 0.119.0",
+      "notes_excerpt": "**api:** add new stop reason 'model_context_window_exceeded' ([d983cde](https://github.com/anthropics/anthropic-sdk-python/commit/d983cdecdea27fb8ae36fd293930b978c9bebf4f))",
+      "change_count": 2,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.119.0.001",
+          "kind": "changed",
+          "summary": "**api:** add new stop reason 'model_context_window_exceeded' ([d983cde](https://github.com/anthropics/anthropic-sdk-python/commit/d983cdecdea27fb8ae36fd293930b978c9bebf4f))",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.119.0.002",
+          "kind": "changed",
+          "summary": "**tools:** handle binary files in agent toolset read/edit ([#283](https://github.com/anthropics/anthropic-sdk-python/issues/283)) ([417b76b](https://github.com/anthropics/anthropic-sdk-python/commit/417b76b9adcb69ee9effa2e9af1536dd08e6764e))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.118.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.118.0",
+      "channel": "stable",
+      "published_at": "2026-07-22T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.803220Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "c26e9fb8eb63205aedb3348c36563ff23a5a6400fb6c47a22a8e732cd0039c48",
+      "title": "anthropic-python-sdk 0.118.0",
+      "notes_excerpt": "**api:** add support for Managed Agents model effort, initial session events, and threads delta streaming ([712bc6f](https://github.com/anthropics/anthropic-sdk-python/commit/712bc6f5e07ca7607e13f24fba4eea57c2e73478))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.118.0.001",
+          "kind": "changed",
+          "summary": "**api:** add support for Managed Agents model effort, initial session events, and threads delta streaming ([712bc6f](https://github.com/anthropics/anthropic-sdk-python/commit/712bc6f5e07ca7607e13f24fba4eea57c2e73478))",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.117.1",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.117.1",
+      "channel": "stable",
+      "published_at": "2026-07-21T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.803282Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "ae9e26d41a0cdc6e8cdd3be06d00e68849da431e2b946d468ea79cb2e4eebcf8",
+      "title": "anthropic-python-sdk 0.117.1",
+      "notes_excerpt": "**aws:** handle credentials correctly when using AnthropicAWS.copy() ([85d3881](https://github.com/anthropics/anthropic-sdk-python/commit/85d3881b2e178dd30b30f9ac4c462f20ea88693d))",
+      "change_count": 8,
+      "flags": {
+        "security": true,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.117.1.001",
+          "kind": "changed",
+          "summary": "**aws:** handle credentials correctly when using AnthropicAWS.copy() ([85d3881](https://github.com/anthropics/anthropic-sdk-python/commit/85d3881b2e178dd30b30f9ac4c462f20ea88693d))",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.117.1.002",
+          "kind": "changed",
+          "summary": "**api:** add support for new refusal category ([d1dea0b](https://github.com/anthropics/anthropic-sdk-python/commit/d1dea0b51164c859de1e05a78468f5be2b6a67de))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.117.1.003",
+          "kind": "changed",
+          "summary": "**client:** docs updates ([b14f94c](https://github.com/anthropics/anthropic-sdk-python/commit/b14f94c231f9adc6bb2ad96eddfc27cc1a4cfea7))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.117.1.004",
+          "kind": "changed",
+          "summary": "**deps:** bump http-snapshot to 0.1.9 ([#275](https://github.com/anthropics/anthropic-sdk-python/issues/275)) ([434b657](https://github.com/anthropics/anthropic-sdk-python/commit/434b65772633f1c0d1899de64d40a67b7cb943fe))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.117.1.005",
+          "kind": "changed",
+          "summary": "**deps:** pin httpx_aiohttp major version ([#271](https://github.com/anthropics/anthropic-sdk-python/issues/271)) ([924487f](https://github.com/anthropics/anthropic-sdk-python/commit/924487f7c8b3afd69ec382af78326ba224779141))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.117.1.006",
+          "kind": "changed",
+          "summary": "**docs:** small updates ([c48db8b](https://github.com/anthropics/anthropic-sdk-python/commit/c48db8b6cdd800a98bf57088f530de8fe4dc82e8))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.117.1.007",
+          "kind": "changed",
+          "summary": "**docs:** small updates ([755c06c](https://github.com/anthropics/anthropic-sdk-python/commit/755c06cc06161ccdf9b28b77d5e6de58adb462ce))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.117.1.008",
+          "kind": "changed",
+          "summary": "**internal:** codegen related update ([a4fbecf](https://github.com/anthropics/anthropic-sdk-python/commit/a4fbecf6a2b002c8807da2336a75ddef7864f47c))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.117.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.117.0",
+      "channel": "stable",
+      "published_at": "2026-07-16T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.803686Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "90eb8fb0edb0a8539b78fda08cb9e96803f0b934bf9f98f5b1c3949a149fd418",
+      "title": "anthropic-python-sdk 0.117.0",
+      "notes_excerpt": "**api:** add support for dreaming ([642eee7](https://github.com/anthropics/anthropic-sdk-python/commit/642eee707b0fe3c35c21917f60b06846b2a3b291))",
+      "change_count": 6,
+      "flags": {
+        "security": true,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.117.0.001",
+          "kind": "changed",
+          "summary": "**api:** add support for dreaming ([642eee7](https://github.com/anthropics/anthropic-sdk-python/commit/642eee707b0fe3c35c21917f60b06846b2a3b291))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.117.0.002",
+          "kind": "changed",
+          "summary": "**api:** add support for MCP Tunnels ([d716df6](https://github.com/anthropics/anthropic-sdk-python/commit/d716df6edb1df7de25f1b5e14dcab33b9aafc2ff))",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.117.0.003",
+          "kind": "changed",
+          "summary": "**credentials:** keep credential material out of traceback frame locals via SecretStr ([aa93a4d](https://github.com/anthropics/anthropic-sdk-python/commit/aa93a4dbf383f7fdab1404c136e86d4679d644c1))",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.117.0.004",
+          "kind": "changed",
+          "summary": "**docs:** small updates to field descriptions ([75d8dcc](https://github.com/anthropics/anthropic-sdk-python/commit/75d8dcc0ac8cb381fa327a61a9ac84022b3a1677))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.117.0.005",
+          "kind": "changed",
+          "summary": "**docs:** update model example ([a57e30a](https://github.com/anthropics/anthropic-sdk-python/commit/a57e30ac1bafb54387bf631be2081bfdb3782911))",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.117.0.006",
+          "kind": "changed",
+          "summary": "**docs:** updates to descriptions and examples ([e1535b6](https://github.com/anthropics/anthropic-sdk-python/commit/e1535b6919441448dddf00e2636cb8c60a721a43))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.116.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.116.0",
+      "channel": "stable",
+      "published_at": "2026-07-02T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.803968Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "baedc91b2055c59e6db35ee3ca71c7d23ba8083d3f427fb7bb162f8c1288032e",
+      "title": "anthropic-python-sdk 0.116.0",
+      "notes_excerpt": "**api:** add agent-memory-2026-07-22 beta header ([e181d5c](https://github.com/anthropics/anthropic-sdk-python/commit/e181d5c1b233d5b0b313c78b27cf1dd27f620e74))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.116.0.001",
+          "kind": "changed",
+          "summary": "**api:** add agent-memory-2026-07-22 beta header ([e181d5c](https://github.com/anthropics/anthropic-sdk-python/commit/e181d5c1b233d5b0b313c78b27cf1dd27f620e74))",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "context.persistent_memory"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.115.1",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.115.1",
+      "channel": "stable",
+      "published_at": "2026-07-01T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.804021Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "5fcd71902811453b657b158cd46548589d6625a6eeb2c50387de177d3da879ac",
+      "title": "anthropic-python-sdk 0.115.1",
+      "notes_excerpt": "**api:** remove some nonfunctional types from the SDKs ([5e7c431](https://github.com/anthropics/anthropic-sdk-python/commit/5e7c431ef31b72b3f1f59902e678316fea14d983))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.115.1.001",
+          "kind": "changed",
+          "summary": "**api:** remove some nonfunctional types from the SDKs ([5e7c431](https://github.com/anthropics/anthropic-sdk-python/commit/5e7c431ef31b72b3f1f59902e678316fea14d983))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.115.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.115.0",
+      "channel": "stable",
+      "published_at": "2026-06-30T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.804074Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "a333172df0289ef85fc9243214bccb1940d517f1be1ff4b483720d033944ed6b",
+      "title": "anthropic-python-sdk 0.115.0",
+      "notes_excerpt": "**api:** add support for Managed Agents event delta streaming, agent overrides, reverse pagination, vault credential injection scoping, and agent and deployment webhook events ([8c23f7e](https://github.com/anthropics/anthropic-sdk-python/commit/8c23f7ef103c287362364c12503de85eb31f07fb))",
+      "change_count": 1,
+      "flags": {
+        "security": true,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.115.0.001",
+          "kind": "changed",
+          "summary": "**api:** add support for Managed Agents event delta streaming, agent overrides, reverse pagination, vault credential injection scoping, and agent and deployment webhook events ([8c23f7e](https://github.com/anthropics/anthropic-sdk-python/commit/8c23f7ef103c287362364c12503de85eb31f07fb))",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "web",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "extensions.hooks"
+          ],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.114.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.114.0",
+      "channel": "stable",
+      "published_at": "2026-06-30T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.804145Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "f492280241f4120ee4f9a840c04986cd2d9f42e4f3034eccaefca8999928c551",
+      "title": "anthropic-python-sdk 0.114.0",
+      "notes_excerpt": "**api:** add support for claude-sonnet-5 ([b893033](https://github.com/anthropics/anthropic-sdk-python/commit/b893033b32951e0e2e04afa36a3a7eb016ae4b99))",
+      "change_count": 2,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.114.0.001",
+          "kind": "changed",
+          "summary": "**api:** add support for claude-sonnet-5 ([b893033](https://github.com/anthropics/anthropic-sdk-python/commit/b893033b32951e0e2e04afa36a3a7eb016ae4b99))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.114.0.002",
+          "kind": "changed",
+          "summary": "**agent_toolset:** allow absolute paths that resolve inside workdir ([#121](https://github.com/anthropics/anthropic-sdk-python/issues/121)) ([0105529](https://github.com/anthropics/anthropic-sdk-python/commit/0105529fe15b1f80bbf9c56f4ae684fdfa10e2b3))",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.113.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.113.0",
+      "channel": "stable",
+      "published_at": "2026-06-29T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.804251Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "b6dac569eddf116eb016300289378f0c653bb2664336ddba365a88776021e2e5",
+      "title": "anthropic-python-sdk 0.113.0",
+      "notes_excerpt": "**api:** add support for 20260318 web fetch and support tools ([88dbfb1](https://github.com/anthropics/anthropic-sdk-python/commit/88dbfb14a2a838eda889469ad7fe07a47618e85f))",
+      "change_count": 4,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.113.0.001",
+          "kind": "changed",
+          "summary": "**api:** add support for 20260318 web fetch and support tools ([88dbfb1](https://github.com/anthropics/anthropic-sdk-python/commit/88dbfb14a2a838eda889469ad7fe07a47618e85f))",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "web",
+            "sdk"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.113.0.002",
+          "kind": "changed",
+          "summary": "async count_tokens missing output_format/output_config merge block ([#162](https://github.com/anthropics/anthropic-sdk-python/issues/162)) ([122c958](https://github.com/anthropics/anthropic-sdk-python/commit/122c95811566bf6f5cbc682ae0a74972ae75a223))",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.113.0.003",
+          "kind": "changed",
+          "summary": "**api:** accept user profile ID's when counting tokens ([0b4d17a](https://github.com/anthropics/anthropic-sdk-python/commit/0b4d17a49d39e8224adbee6a97be0e8b1b7ebff5))",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.113.0.004",
+          "kind": "changed",
+          "summary": "**docs:** updates to descriptions and example values ([f3ab694](https://github.com/anthropics/anthropic-sdk-python/commit/f3ab694453326a2765623b9aafeb7588ea296325))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.112.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.112.0",
+      "channel": "stable",
+      "published_at": "2026-06-24T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.804452Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "b9ecc5bff2a230a9b0b356cecf3808f42ec9f0573e399a406411ee1c216a54dd",
+      "title": "anthropic-python-sdk 0.112.0",
+      "notes_excerpt": "**client:** add support for system.message streaming events ([2450d59](https://github.com/anthropics/anthropic-sdk-python/commit/2450d595731f9532080bb94eb8a43c0bd5189659))",
+      "change_count": 4,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.112.0.001",
+          "kind": "changed",
+          "summary": "**client:** add support for system.message streaming events ([2450d59](https://github.com/anthropics/anthropic-sdk-python/commit/2450d595731f9532080bb94eb8a43c0bd5189659))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.112.0.002",
+          "kind": "changed",
+          "summary": "**memory tool:** create parent directories with the correct permissions ([#135](https://github.com/anthropics/anthropic-sdk-python/issues/135)) ([f2fc2a9](https://github.com/anthropics/anthropic-sdk-python/commit/f2fc2a9e0ad8507e4108e9a6b85d023416c2f14c))",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "context.persistent_memory",
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.112.0.003",
+          "kind": "changed",
+          "summary": "**api:** add support for new refusal category ([5ab533e](https://github.com/anthropics/anthropic-sdk-python/commit/5ab533e58ee99bcd2e5071bab91d99caee66aa6a))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.112.0.004",
+          "kind": "changed",
+          "summary": "**api:** add support for sending User Profile ID in request headers ([83319be](https://github.com/anthropics/anthropic-sdk-python/commit/83319bed74f4414d54e0f4237d70b945ed671008))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.111.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.111.0",
+      "channel": "stable",
+      "published_at": "2026-06-18T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.804657Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "a5d9345d748fac8025ebed5b51273c79ad79350cee32be4fbb8258d25fb016dc",
+      "title": "anthropic-python-sdk 0.111.0",
+      "notes_excerpt": "**helpers:** tag refusal-fallback middleware requests with fallback-refusal-middleware ([#96](https://github.com/anthropics/anthropic-sdk-python/issues/96)) ([2f8ac78](https://github.com/anthropics/anthropic-sdk-python/commit/2f8ac789506efc0719b06f1f646c9a98bb25ce7b))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.111.0.001",
+          "kind": "changed",
+          "summary": "**helpers:** tag refusal-fallback middleware requests with fallback-refusal-middleware ([#96](https://github.com/anthropics/anthropic-sdk-python/issues/96)) ([2f8ac78](https://github.com/anthropics/anthropic-sdk-python/commit/2f8ac789506efc0719b06f1f646c9a98bb25ce7b))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.110.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.110.0",
+      "channel": "stable",
+      "published_at": "2026-06-18T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.804722Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "1cc87b40f25963ec596eefb63173eb7440cdd8e8b291c669f001d419325fdad9",
+      "title": "anthropic-python-sdk 0.110.0",
+      "notes_excerpt": "**api:** add support for new code_execution_20260120 tool ([5e23212](https://github.com/anthropics/anthropic-sdk-python/commit/5e23212dc0883174c879b97ef8e7e33ead4e8da5))",
+      "change_count": 4,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.110.0.001",
+          "kind": "changed",
+          "summary": "**api:** add support for new code_execution_20260120 tool ([5e23212](https://github.com/anthropics/anthropic-sdk-python/commit/5e23212dc0883174c879b97ef8e7e33ead4e8da5))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.110.0.002",
+          "kind": "changed",
+          "summary": "append x-stainless-helper across header merges instead of clobbering ([#105](https://github.com/anthropics/anthropic-sdk-python/issues/105)) ([922558e](https://github.com/anthropics/anthropic-sdk-python/commit/922558e2ce52e18863dab27bcc04067068827364))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.110.0.003",
+          "kind": "changed",
+          "summary": "**bedrock:** preserve stream event type ([#1682](https://github.com/anthropics/anthropic-sdk-python/issues/1682)) ([b27e343](https://github.com/anthropics/anthropic-sdk-python/commit/b27e3439699174dbc41e34e2d6ef5cb1e2930c18))",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.110.0.004",
+          "kind": "changed",
+          "summary": "**helpers:** single source of truth for x-stainless-helper key + closed value vocabulary ([#95](https://github.com/anthropics/anthropic-sdk-python/issues/95)) ([e6f7a56](https://github.com/anthropics/anthropic-sdk-python/commit/e6f7a56bb624f4c946cb15ba7973fd6fe052e10f))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.109.2",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.109.2",
+      "channel": "stable",
+      "published_at": "2026-06-15T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.804942Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "c40b027b489ab0cd9f3dc340a8f7fb4239d2390546e0ce0779efa9bc880d7535",
+      "title": "anthropic-python-sdk 0.109.2",
+      "notes_excerpt": "**api:** remove retired models from API and SDKs ([d4bcfcc](https://github.com/anthropics/anthropic-sdk-python/commit/d4bcfcc257bd0c97d5e75060bd19c97abddd9f49))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.109.2.001",
+          "kind": "changed",
+          "summary": "**api:** remove retired models from API and SDKs ([d4bcfcc](https://github.com/anthropics/anthropic-sdk-python/commit/d4bcfcc257bd0c97d5e75060bd19c97abddd9f49))",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.109.1",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.109.1",
+      "channel": "stable",
+      "published_at": "2026-06-09T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.804994Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "53f22c5dcbb11cda3841e237556948a740d7e4f8f0dcdfb210656a38aa4f2fab",
+      "title": "anthropic-python-sdk 0.109.1",
+      "notes_excerpt": "**api:** add `frontier_llm` refusal category ([d3a806b](https://github.com/anthropics/anthropic-sdk-python/commit/d3a806b454d8aaf5806db11c651deebe61836131))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.109.1.001",
+          "kind": "changed",
+          "summary": "**api:** add `frontier_llm` refusal category ([d3a806b](https://github.com/anthropics/anthropic-sdk-python/commit/d3a806b454d8aaf5806db11c651deebe61836131))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.109.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.109.0",
+      "channel": "stable",
+      "published_at": "2026-06-09T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.805044Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "5ff9d41188e7ee3f6dae5351eb74443d120d58a5e8e3a005250b389f58829ae6",
+      "title": "anthropic-python-sdk 0.109.0",
+      "notes_excerpt": "**api:** add support for Managed Agents deployments and environment variable credentials ([47633bf](https://github.com/anthropics/anthropic-sdk-python/commit/47633bff658d4aaced3cd920ef6782c48cf31a9a))",
+      "change_count": 1,
+      "flags": {
+        "security": true,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.109.0.001",
+          "kind": "changed",
+          "summary": "**api:** add support for Managed Agents deployments and environment variable credentials ([47633bf](https://github.com/anthropics/anthropic-sdk-python/commit/47633bff658d4aaced3cd920ef6782c48cf31a9a))",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.108.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.108.0",
+      "channel": "stable",
+      "published_at": "2026-06-09T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.805132Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "53fe3c5621423ef7723f7fa91474803b36020868ab8094f826b3d155f68258db",
+      "title": "anthropic-python-sdk 0.108.0",
+      "notes_excerpt": "**api:** add support for claude-mythos-5 and claude-fable-5, with support for server-side fallbacks on refusal ([6b76649](https://github.com/anthropics/anthropic-sdk-python/commit/6b76649f99bd782d2300f2a6aa3f4a3f040af324))",
+      "change_count": 2,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.108.0.001",
+          "kind": "changed",
+          "summary": "**api:** add support for claude-mythos-5 and claude-fable-5, with support for server-side fallbacks on refusal ([6b76649](https://github.com/anthropics/anthropic-sdk-python/commit/6b76649f99bd782d2300f2a6aa3f4a3f040af324))",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.108.0.002",
+          "kind": "changed",
+          "summary": "**client:** adds client-side fallbacks middleware for API providers that do not support server-side fallbacks ([6b76649](https://github.com/anthropics/anthropic-sdk-python/commit/6b76649f99bd782d2300f2a6aa3f4a3f040af324))",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.107.1",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.107.1",
+      "channel": "stable",
+      "published_at": "2026-06-07T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.805246Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "bca82658df7b7388ea9147cb663291241d5ccd63f5e8797d07497db47517f8aa",
+      "title": "anthropic-python-sdk 0.107.1",
+      "notes_excerpt": "**foundry:** send x-api-key header for API-key auth ([#62](https://github.com/anthropics/anthropic-sdk-python/issues/62)) ([1338141](https://github.com/anthropics/anthropic-sdk-python/commit/13381413d22ad14d85e66836c67cc8a13bd2b7bd)), closes [#1661](https://github.com/anthropics/anthropic-sdk-python/issues/1661)",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.107.1.001",
+          "kind": "changed",
+          "summary": "**foundry:** send x-api-key header for API-key auth ([#62](https://github.com/anthropics/anthropic-sdk-python/issues/62)) ([1338141](https://github.com/anthropics/anthropic-sdk-python/commit/13381413d22ad14d85e66836c67cc8a13bd2b7bd)), closes [#1661](https://github.com/anthropics/anthropic-sdk-python/issues/1661)",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.107.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.107.0",
+      "channel": "stable",
+      "published_at": "2026-06-06T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.805317Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "a916717a32de24eb679afbb403eebcc8ebd72752a4fea9680991983d2ef78d14",
+      "title": "anthropic-python-sdk 0.107.0",
+      "notes_excerpt": "**api:** small updates to Managed Agents types ([72923f9](https://github.com/anthropics/anthropic-sdk-python/commit/72923f986f808597f86482a7eae4fba9a791e6ae))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.107.0.001",
+          "kind": "changed",
+          "summary": "**api:** small updates to Managed Agents types ([72923f9](https://github.com/anthropics/anthropic-sdk-python/commit/72923f986f808597f86482a7eae4fba9a791e6ae))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.106.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.106.0",
+      "channel": "stable",
+      "published_at": "2026-06-05T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.805368Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "2e4f84af586c9dcf5dd9c195fc54062ec7529f9afdc5345abf41d9527a6a6c5e",
+      "title": "anthropic-python-sdk 0.106.0",
+      "notes_excerpt": "**api:** mark Claude Opus 4.1 as deprecated ([85068cc](https://github.com/anthropics/anthropic-sdk-python/commit/85068cc4cb42feecb80a378942cec71e1baa8dcf))",
+      "change_count": 7,
+      "flags": {
+        "security": true,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.106.0.001",
+          "kind": "changed",
+          "summary": "**api:** mark Claude Opus 4.1 as deprecated ([85068cc](https://github.com/anthropics/anthropic-sdk-python/commit/85068cc4cb42feecb80a378942cec71e1baa8dcf))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.106.0.002",
+          "kind": "changed",
+          "summary": "**client:** make Foundry client copy() and with_options() work ([94146ac](https://github.com/anthropics/anthropic-sdk-python/commit/94146acdc1c6f66f187d5a42e4afbb911e692fe8))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.106.0.003",
+          "kind": "changed",
+          "summary": "**transform schema:** preserve $defs when schema root is a $ref ([#1642](https://github.com/anthropics/anthropic-sdk-python/issues/1642)) ([fc58e06](https://github.com/anthropics/anthropic-sdk-python/commit/fc58e06b78407b447c50dfea109c6fb300f4b97d))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.106.0.004",
+          "kind": "changed",
+          "summary": "**internal:** fix artifact url ([a6ed0c4](https://github.com/anthropics/anthropic-sdk-python/commit/a6ed0c4124d29989a568a27293dadf66e7ebcd6f))",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.106.0.005",
+          "kind": "changed",
+          "summary": "**internal:** fix branch names ([3b03370](https://github.com/anthropics/anthropic-sdk-python/commit/3b0337074f0bbab47bf7f5a2b76b4d240cff719a))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.106.0.006",
+          "kind": "changed",
+          "summary": "**internal:** update private repo name ([7dbcb05](https://github.com/anthropics/anthropic-sdk-python/commit/7dbcb05706f1865afeee62fb06e400f5c4bf619e))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.106.0.007",
+          "kind": "changed",
+          "summary": "point security reports to Anthropic's HackerOne program ([#10](https://github.com/anthropics/anthropic-sdk-python/issues/10)) ([80f2c97](https://github.com/anthropics/anthropic-sdk-python/commit/80f2c97b8e9534f9879945de11c11aba00cf8704))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.105.2",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.105.2",
+      "channel": "stable",
+      "published_at": "2026-05-29T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.805706Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "bf15cbad288f1c7a85d441b83d6cd1011f857733f09b91e229415ecea36369a3",
+      "title": "anthropic-python-sdk 0.105.2",
+      "notes_excerpt": "No bullet items found.",
+      "change_count": 0,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.105.1",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.105.1",
+      "channel": "stable",
+      "published_at": "2026-05-29T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.805712Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "f61f003c47833b954040b98b1670b2d10f041f45fe778a2ad5ccaabec169cc93",
+      "title": "anthropic-python-sdk 0.105.1",
+      "notes_excerpt": "**internal:** use Trusted Publishing for PyPI releases ([1d04fc5](https://github.com/anthropics/anthropic-sdk-python/commit/1d04fc52d2dd1f88e22808de2c53b0d66913631f))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.105.1.001",
+          "kind": "changed",
+          "summary": "**internal:** use Trusted Publishing for PyPI releases ([1d04fc5](https://github.com/anthropics/anthropic-sdk-python/commit/1d04fc52d2dd1f88e22808de2c53b0d66913631f))",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.105.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.105.0",
+      "channel": "stable",
+      "published_at": "2026-05-28T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.805764Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "0cce166307205b1310259dca89fb2df0ced3155b298fc44ea304cd3172823cbf",
+      "title": "anthropic-python-sdk 0.105.0",
+      "notes_excerpt": "**api:** Add support for claude-opus-4-8, mid-conversation system blocks, and usage.output_tokens_details ([f18b014](https://github.com/anthropics/anthropic-sdk-python/commit/f18b01414b21b49943a6ba2cdaa30ff7dd6a3025))",
+      "change_count": 4,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.105.0.001",
+          "kind": "changed",
+          "summary": "**api:** Add support for claude-opus-4-8, mid-conversation system blocks, and usage.output_tokens_details ([f18b014](https://github.com/anthropics/anthropic-sdk-python/commit/f18b01414b21b49943a6ba2cdaa30ff7dd6a3025))",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.105.0.002",
+          "kind": "changed",
+          "summary": "support custom file size caps ([#1825](https://github.com/anthropics/anthropic-sdk-python/issues/1825)) ([7e5f944](https://github.com/anthropics/anthropic-sdk-python/commit/7e5f944ad85bd99526d9df30dc034f657472adaa))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.105.0.003",
+          "kind": "changed",
+          "summary": "**examples:** rename managed-agents private-sandbox-worker to self-hosted-sandbox-worker ([#1822](https://github.com/anthropics/anthropic-sdk-python/issues/1822)) ([750f956](https://github.com/anthropics/anthropic-sdk-python/commit/750f956a535b9e4772951d6bf1abd81203f27d4e))",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk",
+            "remote"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "runtime.self_hosted",
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.105.0.004",
+          "kind": "changed",
+          "summary": "replace literal newlines ([8f7f6c0](https://github.com/anthropics/anthropic-sdk-python/commit/8f7f6c0d1b5ffb9563affdcf3dd2410dc72ed1b4))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.104.1",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.104.1",
+      "channel": "stable",
+      "published_at": "2026-05-21T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.805977Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "611d06ddf68217b537549b81796c82498078a5bb8f878e099a7ce672b17c40c7",
+      "title": "anthropic-python-sdk 0.104.1",
+      "notes_excerpt": "**streaming:** carry encrypted_content through beta compaction accumulator ([#1821](https://github.com/anthropics/anthropic-sdk-python/issues/1821)) ([f7a720c](https://github.com/anthropics/anthropic-sdk-python/commit/f7a720c514cc5e428b310f46249ca1c807894c2e))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.104.1.001",
+          "kind": "changed",
+          "summary": "**streaming:** carry encrypted_content through beta compaction accumulator ([#1821](https://github.com/anthropics/anthropic-sdk-python/issues/1821)) ([f7a720c](https://github.com/anthropics/anthropic-sdk-python/commit/f7a720c514cc5e428b310f46249ca1c807894c2e))",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.104.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.104.0",
+      "channel": "stable",
+      "published_at": "2026-05-21T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.806041Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "2ca3299a522304a03dc985856ac45d165952a6cc018963a5c09bfbbbbb473656",
+      "title": "anthropic-python-sdk 0.104.0",
+      "notes_excerpt": "**api:** Add support for thinking-token-count beta for estimated tokens in thinking block deltas when streaming ([80d0fdf](https://github.com/anthropics/anthropic-sdk-python/commit/80d0fdf460d6cd4f190681fd2241baf8ed76cc5f))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.104.0.001",
+          "kind": "changed",
+          "summary": "**api:** Add support for thinking-token-count beta for estimated tokens in thinking block deltas when streaming ([80d0fdf](https://github.com/anthropics/anthropic-sdk-python/commit/80d0fdf460d6cd4f190681fd2241baf8ed76cc5f))",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.103.1",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.103.1",
+      "channel": "stable",
+      "published_at": "2026-05-19T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.806101Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "fb8c6fd288715665b363ffa4745a3888b9ebf69bc13303ccdfbb18603ef153d8",
+      "title": "anthropic-python-sdk 0.103.1",
+      "notes_excerpt": "**runner:** skip tool calls SessionToolRunner does not own ([#1817](https://github.com/anthropics/anthropic-sdk-python/issues/1817)) ([9425c6a](https://github.com/anthropics/anthropic-sdk-python/commit/9425c6a0c6ff5e1d459ac081914f3df496365884))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.103.1.001",
+          "kind": "changed",
+          "summary": "**runner:** skip tool calls SessionToolRunner does not own ([#1817](https://github.com/anthropics/anthropic-sdk-python/issues/1817)) ([9425c6a](https://github.com/anthropics/anthropic-sdk-python/commit/9425c6a0c6ff5e1d459ac081914f3df496365884))",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "runtime.self_hosted"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.103.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.103.0",
+      "channel": "stable",
+      "published_at": "2026-05-19T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.806161Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "cb8988b0472e01743912478d8ad8fb846b33ac310620d615824a194125bda741",
+      "title": "anthropic-python-sdk 0.103.0",
+      "notes_excerpt": "**client:** Add support for self-hosted sandboxes in CMA with sandbox helpers ([e5625b0](https://github.com/anthropics/anthropic-sdk-python/commit/e5625b0ae2a1e9d25847a53217c8fd70fa67c5ed))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.103.0.001",
+          "kind": "changed",
+          "summary": "**client:** Add support for self-hosted sandboxes in CMA with sandbox helpers ([e5625b0](https://github.com/anthropics/anthropic-sdk-python/commit/e5625b0ae2a1e9d25847a53217c8fd70fa67c5ed))",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk",
+            "remote"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "runtime.self_hosted",
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.102.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.102.0",
+      "channel": "stable",
+      "published_at": "2026-05-13T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.806217Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "0f0b721682eeda747023e69e7f3023a945fb81cb7ff474c6af5519a4cd93163b",
+      "title": "anthropic-python-sdk 0.102.0",
+      "notes_excerpt": "**api:** Add BetaManagedAgentsSearchResultBlock types ([3681f10](https://github.com/anthropics/anthropic-sdk-python/commit/3681f1042608b6be4e5a56e8b52e6a619b9210f4))",
+      "change_count": 4,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.102.0.001",
+          "kind": "changed",
+          "summary": "**api:** Add BetaManagedAgentsSearchResultBlock types ([3681f10](https://github.com/anthropics/anthropic-sdk-python/commit/3681f1042608b6be4e5a56e8b52e6a619b9210f4))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.102.0.002",
+          "kind": "changed",
+          "summary": "**api:** Add support for cache diagnostics beta ([db51c6c](https://github.com/anthropics/anthropic-sdk-python/commit/db51c6caabb1bede4c2d671a96e6ef88e90ffaba))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.102.0.003",
+          "kind": "changed",
+          "summary": "**internal/types:** support eagerly validating pydantic iterators ([68dabb0](https://github.com/anthropics/anthropic-sdk-python/commit/68dabb0e9b11ecd8745b231019e9bf788b72101a))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.102.0.004",
+          "kind": "changed",
+          "summary": "**api:** spec updates ([d579133](https://github.com/anthropics/anthropic-sdk-python/commit/d5791337776ba9d4876d3683e6ab9419365be9d3))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.101.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.101.0",
+      "channel": "stable",
+      "published_at": "2026-05-11T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.806403Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "b833d24d816902d285dae26d4c446f3c90c4a8353c2a02c7d6db0266c10ed24e",
+      "title": "anthropic-python-sdk 0.101.0",
+      "notes_excerpt": "**aws:** Add AWS client for Claude Platform on AWS ([1e70e3a](https://github.com/anthropics/anthropic-sdk-python/commit/1e70e3a21d57a96721685c1eca9cedd10cdd5b63))",
+      "change_count": 4,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.101.0.001",
+          "kind": "changed",
+          "summary": "**aws:** Add AWS client for Claude Platform on AWS ([1e70e3a](https://github.com/anthropics/anthropic-sdk-python/commit/1e70e3a21d57a96721685c1eca9cedd10cdd5b63))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.101.0.002",
+          "kind": "changed",
+          "summary": "**client:** add missing f-string prefix in file type error message ([06d109a](https://github.com/anthropics/anthropic-sdk-python/commit/06d109aaf36629ec15c8fb076c96aed722933600))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.101.0.003",
+          "kind": "changed",
+          "summary": "**examples:** bump tools_runner.py to claude-sonnet-4-5-20250929 ([#1473](https://github.com/anthropics/anthropic-sdk-python/issues/1473)) ([1aa8e41](https://github.com/anthropics/anthropic-sdk-python/commit/1aa8e410fd34d4c4971234a3ae7c7b11a5fadaf9))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "runtime.self_hosted"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.101.0.004",
+          "kind": "changed",
+          "summary": "**examples:** update shebang from poetry to uv ([#1497](https://github.com/anthropics/anthropic-sdk-python/issues/1497)) ([ace8f38](https://github.com/anthropics/anthropic-sdk-python/commit/ace8f38dccd587efc0528aba14ec09b50480b514))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.100.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.100.0",
+      "channel": "stable",
+      "published_at": "2026-05-06T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.806617Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "ab2406dd073d6b02f3a2d549d30371a154547b260de299c4520178ddf9aacb33",
+      "title": "anthropic-python-sdk 0.100.0",
+      "notes_excerpt": "**api:** add support for Managed Agents multiagents and outcomes, webhooks, vault validation ([3b3deee](https://github.com/anthropics/anthropic-sdk-python/commit/3b3deee9c479ce5b54411a8572b66c5a90f1d50f))",
+      "change_count": 2,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.100.0.001",
+          "kind": "changed",
+          "summary": "**api:** add support for Managed Agents multiagents and outcomes, webhooks, vault validation ([3b3deee](https://github.com/anthropics/anthropic-sdk-python/commit/3b3deee9c479ce5b54411a8572b66c5a90f1d50f))",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "web",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "extensions.hooks"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.100.0.002",
+          "kind": "changed",
+          "summary": "**api:** Adjust webhook configuration ([8c3339e](https://github.com/anthropics/anthropic-sdk-python/commit/8c3339e532458e93585f2faf4f284ccbb5829717))",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "web",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "extensions.hooks"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.99.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.99.0",
+      "channel": "stable",
+      "published_at": "2026-05-05T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.806720Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "31336a259b5ebc1d147e3e842c73cf1f43e7b12a5833b1d0d621e41c95425ac7",
+      "title": "anthropic-python-sdk 0.99.0",
+      "notes_excerpt": "**client:** allow targeting a workspace for OIDC federation token exchange ([4ba8067](https://github.com/anthropics/anthropic-sdk-python/commit/4ba8067daa634691ea8c8a3b970d42bdaf5f04eb))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.99.0.001",
+          "kind": "changed",
+          "summary": "**client:** allow targeting a workspace for OIDC federation token exchange ([4ba8067](https://github.com/anthropics/anthropic-sdk-python/commit/4ba8067daa634691ea8c8a3b970d42bdaf5f04eb))",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.98.1",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.98.1",
+      "channel": "stable",
+      "published_at": "2026-05-04T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.806775Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "58ed63b9e216b298c3d2d8293503990a791b04a386d465e7f92264af80ad553c",
+      "title": "anthropic-python-sdk 0.98.1",
+      "notes_excerpt": "fix typo in example ([#1754](https://github.com/anthropics/anthropic-sdk-python/issues/1754)) ([de8ba13](https://github.com/anthropics/anthropic-sdk-python/commit/de8ba13769837f92ff00be8a1b1e9ad0749eae2f))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.98.1.001",
+          "kind": "fixed",
+          "summary": "fix typo in example ([#1754](https://github.com/anthropics/anthropic-sdk-python/issues/1754)) ([de8ba13](https://github.com/anthropics/anthropic-sdk-python/commit/de8ba13769837f92ff00be8a1b1e9ad0749eae2f))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.anthropic-python-sdk.0.98.0",
+      "harness_id": "anthropic-python-sdk",
+      "version": "0.98.0",
+      "channel": "stable",
+      "published_at": "2026-05-04T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-09T01:08:31.806828Z",
+      "source_id": "src.anthropic-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/anthropic-sdk-python/CHANGELOG.md",
+      "raw_sha256": "51e7135d05e7067ac9153b5a4e7136f142bc1afc69cd54c05c18286148c1c6ae",
+      "title": "anthropic-python-sdk 0.98.0",
+      "notes_excerpt": "**api:** improve Managed Agents APIs ([7faf393](https://github.com/anthropics/anthropic-sdk-python/commit/7faf3939a803420e7efd85cc18b67b97b429c172))",
+      "change_count": 7,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.anthropic-python-sdk.0.98.0.001",
+          "kind": "changed",
+          "summary": "**api:** improve Managed Agents APIs ([7faf393](https://github.com/anthropics/anthropic-sdk-python/commit/7faf3939a803420e7efd85cc18b67b97b429c172))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.98.0.002",
+          "kind": "changed",
+          "summary": "**client:** add Workload Identity Federation, interactive OAuth, and auth profiles ([6458bcc](https://github.com/anthropics/anthropic-sdk-python/commit/6458bcc28e83adcd96cd084ed19ec113d5462c80))",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.98.0.003",
+          "kind": "changed",
+          "summary": "support setting headers via env ([52eb8cd](https://github.com/anthropics/anthropic-sdk-python/commit/52eb8cdd6e9a899519010d7e6ebc4a74a88f82cd))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.98.0.004",
+          "kind": "changed",
+          "summary": "**streaming:** propagate stop_details from message_delta onto accumulated Message ([#1725](https://github.com/anthropics/anthropic-sdk-python/issues/1725)) ([900dd9b](https://github.com/anthropics/anthropic-sdk-python/commit/900dd9b4376fd7a32d6e59d028b143558340d619))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.98.0.005",
+          "kind": "changed",
+          "summary": "use correct field name format for multipart file arrays ([8350bdc](https://github.com/anthropics/anthropic-sdk-python/commit/8350bdced9599d023565c0cca93ff2d05560f991))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.98.0.006",
+          "kind": "changed",
+          "summary": "**vertex:** async client missing us/eu multi-region base_url branches ([#1734](https://github.com/anthropics/anthropic-sdk-python/issues/1734)) ([3e78f71](https://github.com/anthropics/anthropic-sdk-python/commit/3e78f71c0ab3f3ff0e5402477cff06771c94864c))",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.anthropic-python-sdk.0.98.0.007",
+          "kind": "changed",
+          "summary": "**internal:** reformat pyproject.toml ([5a9d5fd](https://github.com/anthropics/anthropic-sdk-python/commit/5a9d5fd106c52643b87881d341b27dc7b12d5975))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "src.anthropic-python.changelog",
+      "name": "Anthropic Python SDK changelog",
+      "url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+      "harness_ids": [
+        "anthropic-python-sdk"
+      ],
+      "source_type": "markdown_changelog",
+      "purpose": "release_history",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "markdown_changelog",
+        "local_seed_path": "raw/anthropic-sdk-python/CHANGELOG.md"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    }
+  ]
+}

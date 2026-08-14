@@ -1,0 +1,268 @@
+[
+  {
+    "id": "interaction.terminal",
+    "name": "Interactive terminal/TUI",
+    "category": "interaction",
+    "definition": "Human-operated conversational terminal interface.",
+    "comparison_question": "Can a human run and steer the harness interactively from a terminal?"
+  },
+  {
+    "id": "interaction.ide",
+    "name": "IDE integration",
+    "category": "interaction",
+    "definition": "First-party or supported editor integration.",
+    "comparison_question": "Is the harness available beside the code in an IDE?"
+  },
+  {
+    "id": "interaction.desktop_web",
+    "name": "Desktop or web surface",
+    "category": "interaction",
+    "definition": "First-party GUI or browser surface sharing the agent backend or sessions.",
+    "comparison_question": "Can a human manage work through a GUI or browser?"
+  },
+  {
+    "id": "execution.file_edit",
+    "name": "Agent-native file editing",
+    "category": "execution",
+    "definition": "The in-harness model can inspect and mutate files through governed tools.",
+    "comparison_question": "Can the model directly edit repository files?"
+  },
+  {
+    "id": "execution.shell",
+    "name": "Agent-native shell execution",
+    "category": "execution",
+    "definition": "The in-harness model can invoke shell commands or equivalent execution tools.",
+    "comparison_question": "Can the model run commands?"
+  },
+  {
+    "id": "execution.headless",
+    "name": "Headless/non-interactive execution",
+    "category": "execution",
+    "definition": "A supported one-shot or scripted interface without an interactive TUI.",
+    "comparison_question": "Can an external agent or CI runner invoke the harness non-interactively?"
+  },
+  {
+    "id": "execution.structured_output",
+    "name": "Machine-readable output",
+    "category": "execution",
+    "definition": "JSON, JSONL, event streams, or schema-constrained result output.",
+    "comparison_question": "Can software reliably parse progress and final results?"
+  },
+  {
+    "id": "execution.sdk_embedding",
+    "name": "Embeddable SDK",
+    "category": "execution",
+    "definition": "Supported language SDK exposing the agent loop or harness runtime.",
+    "comparison_question": "Can an application embed/control the harness through a supported SDK?"
+  },
+  {
+    "id": "execution.rpc_server",
+    "name": "RPC/app-server protocol",
+    "category": "execution",
+    "definition": "Versioned machine protocol for controlling sessions, turns, and events.",
+    "comparison_question": "Can an orchestrator control the harness through RPC rather than terminal scraping?"
+  },
+  {
+    "id": "extensions.mcp_client",
+    "name": "MCP client",
+    "category": "extensions",
+    "definition": "Connects to Model Context Protocol servers for tools or context.",
+    "comparison_question": "Can the harness discover and invoke MCP tools?"
+  },
+  {
+    "id": "extensions.skills",
+    "name": "Agent Skills",
+    "category": "extensions",
+    "definition": "Reusable instruction/resource bundles discoverable or invokable by the model.",
+    "comparison_question": "Can reusable skills be installed and used by the agent?"
+  },
+  {
+    "id": "extensions.plugins",
+    "name": "Plugins/extensions",
+    "category": "extensions",
+    "definition": "Installable packages that can add tools, skills, hooks, connectors, or UI.",
+    "comparison_question": "Can functionality be packaged and distributed?"
+  },
+  {
+    "id": "extensions.hooks",
+    "name": "Lifecycle hooks",
+    "category": "extensions",
+    "definition": "User-defined code or policy at lifecycle events before/after tools, turns, or sessions.",
+    "comparison_question": "Can deterministic automation intercept the agent lifecycle?"
+  },
+  {
+    "id": "context.project_instructions",
+    "name": "Hierarchical project instructions",
+    "category": "context_memory",
+    "definition": "Repository- and directory-scoped instruction files loaded automatically.",
+    "comparison_question": "Can projects carry durable, scoped instructions?"
+  },
+  {
+    "id": "context.dynamic_injection",
+    "name": "Dynamic context injection",
+    "category": "context_memory",
+    "definition": "Context can be loaded at runtime by hooks, skills, tools, or routing logic.",
+    "comparison_question": "Can context be selected dynamically rather than always preloaded?"
+  },
+  {
+    "id": "context.persistent_memory",
+    "name": "Persistent memory",
+    "category": "context_memory",
+    "definition": "Cross-session memory or learned knowledge managed by the harness.",
+    "comparison_question": "Does the harness preserve and retrieve durable memory?"
+  },
+  {
+    "id": "sessions.resume_fork",
+    "name": "Resume, fork, and session lineage",
+    "category": "session_state",
+    "definition": "Sessions can be resumed, branched, named, or traced through lineage.",
+    "comparison_question": "Can work continue without rebuilding context?"
+  },
+  {
+    "id": "orchestration.subagents",
+    "name": "Subagents/delegation",
+    "category": "orchestration",
+    "definition": "A primary agent can delegate bounded work to child agents.",
+    "comparison_question": "Can the model create or direct subagents?"
+  },
+  {
+    "id": "orchestration.parallel_background",
+    "name": "Parallel/background agents",
+    "category": "orchestration",
+    "definition": "Multiple agent tasks can run concurrently or independently in the background.",
+    "comparison_question": "Can long-running work continue without blocking the main session?"
+  },
+  {
+    "id": "orchestration.cross_session_messaging",
+    "name": "Cross-session agent messaging",
+    "category": "orchestration",
+    "definition": "Running sessions can discover and send messages to one another.",
+    "comparison_question": "Can separate sessions communicate natively?"
+  },
+  {
+    "id": "orchestration.multi_agent_coordination",
+    "name": "First-class multi-agent coordination",
+    "category": "orchestration",
+    "definition": "Coordination primitives beyond simple one-off delegation, such as teams, supervisors, or mixtures.",
+    "comparison_question": "Does the harness provide explicit coordination semantics?"
+  },
+  {
+    "id": "runtime.remote_cloud",
+    "name": "Remote/cloud execution",
+    "category": "runtime",
+    "definition": "Tasks or sessions can run remotely and be observed or resumed locally.",
+    "comparison_question": "Can work execute away from the local terminal?"
+  },
+  {
+    "id": "runtime.self_hosted",
+    "name": "Self-hosted worker/runtime",
+    "category": "runtime",
+    "definition": "The user can supply machines or containers as governed execution workers.",
+    "comparison_question": "Can remote execution run on user-owned infrastructure?"
+  },
+  {
+    "id": "automation.ci",
+    "name": "CI/GitHub automation",
+    "category": "automation",
+    "definition": "Supported integration for CI jobs, pull requests, issues, or repository events.",
+    "comparison_question": "Can the harness run safely in CI?"
+  },
+  {
+    "id": "automation.schedules",
+    "name": "Scheduled tasks",
+    "category": "automation",
+    "definition": "The platform can create or run recurring agent tasks.",
+    "comparison_question": "Can agent work be scheduled without a human starting each run?"
+  },
+  {
+    "id": "security.sandbox",
+    "name": "Execution sandbox",
+    "category": "security_governance",
+    "definition": "OS/process/filesystem/network isolation for agent actions.",
+    "comparison_question": "Are tool actions isolated from the host?"
+  },
+  {
+    "id": "security.permissions",
+    "name": "Granular permissions and approvals",
+    "category": "security_governance",
+    "definition": "Fine-grained allow, deny, prompt, or policy controls for tools and commands.",
+    "comparison_question": "Can operators define what actions require approval?"
+  },
+  {
+    "id": "security.enterprise_policy",
+    "name": "Enterprise managed policy",
+    "category": "security_governance",
+    "definition": "Organization-admin controls, managed settings, identity, or policy enforcement.",
+    "comparison_question": "Can administrators centrally govern the harness?"
+  },
+  {
+    "id": "observability.usage_cost",
+    "name": "Usage and cost telemetry",
+    "category": "observability",
+    "definition": "Tokens, cache, spend, quotas, or cost signals exposed to humans or software.",
+    "comparison_question": "Can usage and spend be attributed?"
+  },
+  {
+    "id": "observability.tracing",
+    "name": "Agent tracing/event telemetry",
+    "category": "observability",
+    "definition": "Structured traces or events for turns, tools, agents, and outcomes.",
+    "comparison_question": "Can executions be observed beyond terminal text?"
+  },
+  {
+    "id": "tools.web_research",
+    "name": "Web search/research",
+    "category": "research_tools",
+    "definition": "First-party or supported web search, fetch, grounded research, and citations.",
+    "comparison_question": "Can the agent gather current web evidence?"
+  },
+  {
+    "id": "tools.browser_computer",
+    "name": "Browser/computer use",
+    "category": "research_tools",
+    "definition": "The agent can operate a browser or computer UI through supported tools.",
+    "comparison_question": "Can the agent act through graphical applications?"
+  },
+  {
+    "id": "interfaces.voice",
+    "name": "Voice interaction",
+    "category": "interfaces",
+    "definition": "Streaming speech input/output and conversational interruption support.",
+    "comparison_question": "Can a human operate the agent by voice?"
+  },
+  {
+    "id": "interfaces.artifacts",
+    "name": "Artifacts, diffs, and rich result views",
+    "category": "interfaces",
+    "definition": "Structured visual artifacts, diff inspection, or rich result viewers.",
+    "comparison_question": "Can users inspect results beyond plain text?"
+  },
+  {
+    "id": "models.provider_portability",
+    "name": "Model/provider portability",
+    "category": "models_providers",
+    "definition": "Multiple model providers can be selected without replacing the harness.",
+    "comparison_question": "Can the same harness operate across providers?"
+  },
+  {
+    "id": "models.reasoning_control",
+    "name": "Model and reasoning controls",
+    "category": "models_providers",
+    "definition": "Model selection, effort, context-window, or routing controls exposed explicitly.",
+    "comparison_question": "Can workflows pin and tune model behavior?"
+  },
+  {
+    "id": "evaluation.schema_enforcement",
+    "name": "Output schema enforcement",
+    "category": "evaluation",
+    "definition": "A JSON schema or equivalent can constrain the final output contract.",
+    "comparison_question": "Can downstream automation rely on a validated result shape?"
+  },
+  {
+    "id": "governance.human_approval_api",
+    "name": "Programmatic human approval",
+    "category": "security_governance",
+    "definition": "Approval decisions can be intercepted or supplied through a supported API/callback.",
+    "comparison_question": "Can an application mediate risky actions rather than relying on terminal prompts?"
+  }
+]

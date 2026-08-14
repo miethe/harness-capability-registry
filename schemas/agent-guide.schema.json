@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meatyos.dev/schemas/hcr/agent-guide.schema.json",
+  "title": "Agent-consumable harness capability guide",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "guide_type",
+    "harness",
+    "freshness",
+    "capabilities_by_actor",
+    "human_mediation_required",
+    "unverified_or_low_confidence",
+    "routing_hint"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "$ref": "common.schema.json#/$defs/timestamp"
+    },
+    "guide_type": {
+      "const": "agent_consumable_harness_capability_guide"
+    },
+    "harness": {
+      "type": "object"
+    },
+    "freshness": {
+      "type": "object"
+    },
+    "capabilities_by_actor": {
+      "type": "object"
+    },
+    "human_mediation_required": {
+      "type": "array"
+    },
+    "unverified_or_low_confidence": {
+      "type": "array"
+    },
+    "routing_hint": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

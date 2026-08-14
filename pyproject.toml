@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "harness-capability-registry"
+version = "0.1.0"
+description = "Evidence-backed release ledger and actor-aware capability registry for agentic harnesses"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [{name = "Nick Miethe"}]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "jsonschema>=4.23"]
+
+[project.scripts]
+hcr = "hcr.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["hcr*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

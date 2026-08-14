@@ -1,0 +1,1190 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-08T20:00:00Z",
+  "guide_type": "agent_consumable_harness_capability_guide",
+  "harness": {
+    "id": "goose",
+    "name": "goose",
+    "vendor": "Block",
+    "family": "general_agent_harness",
+    "lifecycle": "active",
+    "current_version": null,
+    "predecessor": null,
+    "successor": null
+  },
+  "freshness": {
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "latest_release_in_registry": null,
+    "latest_release_published_at": null,
+    "warning": "Treat unavailable or unknown actor access as unsupported until verified. UI-only capability is not agent-callable by implication."
+  },
+  "capabilities_by_actor": {
+    "human_operator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "goose provides a CLI agent interface.",
+        "surfaces": [
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose provides a CLI agent interface."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "interaction.desktop_web",
+        "name": "Desktop or web surface",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "goose provides an Electron desktop interface.",
+        "surfaces": [
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose provides an Electron desktop interface."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose can install, execute, edit, and test through agent tools.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose can install, execute, edit, and test through agent tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose can execute local commands.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose can execute local commands."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose server and CLI paths support external automation.",
+        "surfaces": [
+          "CLI",
+          "goosed server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose server and CLI paths support external automation."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.rpc_server",
+        "name": "RPC/app-server protocol",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The goosed server exposes agent functionality to clients.",
+        "surfaces": [
+          "goosed server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The goosed server exposes agent functionality to clients."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "goose is MCP-first and can use MCP extensions and apps.",
+        "surfaces": [
+          "MCP extensions",
+          "MCP apps"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose is MCP-first and can use MCP extensions and apps."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Recipes and reusable instructions package workflows for agents.",
+        "surfaces": [
+          "recipes"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Recipes and reusable instructions package workflows for agents."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "goose supports delegated/subagent workflows through recipes and summon/delegate primitives.",
+        "surfaces": [
+          "delegate",
+          "summon"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose supports delegated/subagent workflows through recipes and summon/delegate primitives."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.self_hosted",
+        "name": "Self-hosted worker/runtime",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "goose runs locally or on user-managed servers.",
+        "surfaces": [
+          "local",
+          "server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose runs locally or on user-managed servers."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "goose is designed to work with multiple LLM providers and local models.",
+        "surfaces": [
+          "multiple providers",
+          "local inference"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose is designed to work with multiple LLM providers and local models."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "administrator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "goose provides a CLI agent interface.",
+        "surfaces": [
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose provides a CLI agent interface."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "interaction.desktop_web",
+        "name": "Desktop or web surface",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "goose provides an Electron desktop interface.",
+        "surfaces": [
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose provides an Electron desktop interface."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose can install, execute, edit, and test through agent tools.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose can install, execute, edit, and test through agent tools."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose can execute local commands.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose can execute local commands."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose server and CLI paths support external automation.",
+        "surfaces": [
+          "CLI",
+          "goosed server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose server and CLI paths support external automation."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.rpc_server",
+        "name": "RPC/app-server protocol",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The goosed server exposes agent functionality to clients.",
+        "surfaces": [
+          "goosed server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The goosed server exposes agent functionality to clients."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "goose is MCP-first and can use MCP extensions and apps.",
+        "surfaces": [
+          "MCP extensions",
+          "MCP apps"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose is MCP-first and can use MCP extensions and apps."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Recipes and reusable instructions package workflows for agents.",
+        "surfaces": [
+          "recipes"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Recipes and reusable instructions package workflows for agents."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "goose supports delegated/subagent workflows through recipes and summon/delegate primitives.",
+        "surfaces": [
+          "delegate",
+          "summon"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose supports delegated/subagent workflows through recipes and summon/delegate primitives."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "runtime.self_hosted",
+        "name": "Self-hosted worker/runtime",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "goose runs locally or on user-managed servers.",
+        "surfaces": [
+          "local",
+          "server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose runs locally or on user-managed servers."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "goose is designed to work with multiple LLM providers and local models.",
+        "surfaces": [
+          "multiple providers",
+          "local inference"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose is designed to work with multiple LLM providers and local models."
+          }
+        ],
+        "access": "configurable"
+      }
+    ],
+    "in_harness_agent": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose can install, execute, edit, and test through agent tools.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose can install, execute, edit, and test through agent tools."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose can execute local commands.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose can execute local commands."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "goose is MCP-first and can use MCP extensions and apps.",
+        "surfaces": [
+          "MCP extensions",
+          "MCP apps"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose is MCP-first and can use MCP extensions and apps."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Recipes and reusable instructions package workflows for agents.",
+        "surfaces": [
+          "recipes"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Recipes and reusable instructions package workflows for agents."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "goose supports delegated/subagent workflows through recipes and summon/delegate primitives.",
+        "surfaces": [
+          "delegate",
+          "summon"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose supports delegated/subagent workflows through recipes and summon/delegate primitives."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "goose is designed to work with multiple LLM providers and local models.",
+        "surfaces": [
+          "multiple providers",
+          "local inference"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose is designed to work with multiple LLM providers and local models."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "external_orchestrator": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose can install, execute, edit, and test through agent tools.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose can install, execute, edit, and test through agent tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose can execute local commands.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose can execute local commands."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose server and CLI paths support external automation.",
+        "surfaces": [
+          "CLI",
+          "goosed server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose server and CLI paths support external automation."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.rpc_server",
+        "name": "RPC/app-server protocol",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The goosed server exposes agent functionality to clients.",
+        "surfaces": [
+          "goosed server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The goosed server exposes agent functionality to clients."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "goose is MCP-first and can use MCP extensions and apps.",
+        "surfaces": [
+          "MCP extensions",
+          "MCP apps"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose is MCP-first and can use MCP extensions and apps."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Recipes and reusable instructions package workflows for agents.",
+        "surfaces": [
+          "recipes"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Recipes and reusable instructions package workflows for agents."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "goose supports delegated/subagent workflows through recipes and summon/delegate primitives.",
+        "surfaces": [
+          "delegate",
+          "summon"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose supports delegated/subagent workflows through recipes and summon/delegate primitives."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.self_hosted",
+        "name": "Self-hosted worker/runtime",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "goose runs locally or on user-managed servers.",
+        "surfaces": [
+          "local",
+          "server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose runs locally or on user-managed servers."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "goose is designed to work with multiple LLM providers and local models.",
+        "surfaces": [
+          "multiple providers",
+          "local inference"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose is designed to work with multiple LLM providers and local models."
+          }
+        ],
+        "access": "configurable"
+      }
+    ],
+    "ci_runner": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose can install, execute, edit, and test through agent tools.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose can install, execute, edit, and test through agent tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose can execute local commands.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose can execute local commands."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "goose server and CLI paths support external automation.",
+        "surfaces": [
+          "CLI",
+          "goosed server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose server and CLI paths support external automation."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.rpc_server",
+        "name": "RPC/app-server protocol",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The goosed server exposes agent functionality to clients.",
+        "surfaces": [
+          "goosed server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The goosed server exposes agent functionality to clients."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "goose is MCP-first and can use MCP extensions and apps.",
+        "surfaces": [
+          "MCP extensions",
+          "MCP apps"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose is MCP-first and can use MCP extensions and apps."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Recipes and reusable instructions package workflows for agents.",
+        "surfaces": [
+          "recipes"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.docs",
+            "url": "https://block.github.io/goose/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Recipes and reusable instructions package workflows for agents."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "goose supports delegated/subagent workflows through recipes and summon/delegate primitives.",
+        "surfaces": [
+          "delegate",
+          "summon"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose supports delegated/subagent workflows through recipes and summon/delegate primitives."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.self_hosted",
+        "name": "Self-hosted worker/runtime",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "goose runs locally or on user-managed servers.",
+        "surfaces": [
+          "local",
+          "server"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose runs locally or on user-managed servers."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "goose is designed to work with multiple LLM providers and local models.",
+        "surfaces": [
+          "multiple providers",
+          "local inference"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.goose.repo",
+            "url": "https://github.com/block/goose",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "goose is designed to work with multiple LLM providers and local models."
+          }
+        ],
+        "access": "configurable"
+      }
+    ]
+  },
+  "human_mediation_required": [],
+  "unverified_or_low_confidence": [],
+  "routing_hint": {
+    "recommended_when": [
+      "Open-source extensible agent beyond coding",
+      "MCP-first integrations",
+      "Provider-neutral local operation"
+    ],
+    "avoid_when": [
+      "You require a canonical managed cloud execution plane"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "moderate",
+      "multi_agent": "moderate",
+      "structured_automation": "strong",
+      "provider_portability": "strong",
+      "enterprise_controls": "emerging"
+    }
+  }
+}

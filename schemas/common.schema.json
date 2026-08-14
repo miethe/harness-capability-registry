@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meatyos.dev/schemas/hcr/common.schema.json",
+  "title": "Harness Capability Registry common definitions",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "uri": {
+      "type": "string",
+      "format": "uri"
+    },
+    "timestamp": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "stringList": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "actorAccess": {
+      "type": "object",
+      "properties": {
+        "human_operator": {
+          "$ref": "#/$defs/access"
+        },
+        "in_harness_agent": {
+          "$ref": "#/$defs/access"
+        },
+        "external_orchestrator": {
+          "$ref": "#/$defs/access"
+        },
+        "ci_runner": {
+          "$ref": "#/$defs/access"
+        },
+        "administrator": {
+          "$ref": "#/$defs/access"
+        }
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/access"
+      }
+    },
+    "access": {
+      "type": "string",
+      "enum": [
+        "native",
+        "supported",
+        "configurable",
+        "experimental",
+        "mediated",
+        "unavailable",
+        "unknown",
+        "deprecated"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "verified_official",
+        "inferred_high",
+        "inferred_low",
+        "unknown"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "url",
+        "claim",
+        "verified_at"
+      ],
+      "properties": {
+        "source_id": {
+          "$ref": "#/$defs/id"
+        },
+        "url": {
+          "$ref": "#/$defs/uri"
+        },
+        "claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      },
+      "additionalProperties": false
+    },
+    "changeNormalization": {
+      "type": "object",
+      "required": [
+        "method",
+        "confidence",
+        "review_status"
+      ],
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "review_status": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "needs_review",
+            "approved",
+            "rejected"
+          ]
+        },
+        "reviewed_by": {
+          "type": "string"
+        },
+        "reviewed_at": {
+          "$ref": "#/$defs/timestamp"
+        }
+      },
+      "additionalProperties": true
+    },
+    "changeItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "summary",
+        "category",
+        "surfaces",
+        "actors",
+        "capability_refs",
+        "security_relevant",
+        "breaking_or_deprecated",
+        "normalization"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "added",
+            "changed",
+            "improved",
+            "fixed",
+            "deprecated",
+            "removed",
+            "security",
+            "unknown"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string"
+        },
+        "surfaces": {
+          "$ref": "#/$defs/stringList"
+        },
+        "actors": {
+          "$ref": "#/$defs/stringList"
+        },
+        "capability_refs": {
+          "$ref": "#/$defs/stringList"
+        },
+        "security_relevant": {
+          "type": "boolean"
+        },
+        "breaking_or_deprecated": {
+          "type": "boolean"
+        },
+        "normalization": {
+          "$ref": "#/$defs/changeNormalization"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

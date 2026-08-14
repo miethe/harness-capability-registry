@@ -1,0 +1,485 @@
+{
+  "harness": {
+    "id": "qwen-code",
+    "name": "Qwen Code",
+    "vendor": "Alibaba / Qwen",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "secondary",
+    "current_version": "0.21.8",
+    "version_as_of": "2026-08-08",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/QwenLM/qwen-code",
+    "docs_url": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
+    "surfaces": [
+      "terminal",
+      "desktop"
+    ],
+    "auth_modes": [
+      "Qwen",
+      "OpenAI-compatible",
+      "Anthropic",
+      "Gemini APIs"
+    ],
+    "source_ids": [
+      "src.qwen.releases",
+      "src.qwen.repo",
+      "src.qwen.docs"
+    ],
+    "recommended_when": [
+      "Open-source terminal agent with broad provider support",
+      "Qwen-native workflows"
+    ],
+    "avoid_when": [
+      "You need the deepest enterprise governance controls from the harness itself"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "moderate",
+      "multi_agent": "moderate",
+      "structured_automation": "moderate",
+      "provider_portability": "strong",
+      "enterprise_controls": "limited"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  "capabilities": [
+    {
+      "id": "impl.qwen-code.interaction.terminal",
+      "harness_id": "qwen-code",
+      "capability_id": "interaction.terminal",
+      "status": "stable",
+      "summary": "Qwen Code is an open-source terminal coding agent.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "unavailable",
+        "ci_runner": "unavailable",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "terminal"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "0.21.8",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.qwen.repo",
+          "url": "https://github.com/QwenLM/qwen-code",
+          "claim": "Qwen Code is an open-source terminal coding agent.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.qwen-code.interaction.desktop_web",
+      "harness_id": "qwen-code",
+      "capability_id": "interaction.desktop_web",
+      "status": "stable",
+      "summary": "Qwen Code provides an official desktop application.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "unavailable",
+        "ci_runner": "unavailable",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "desktop"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "0.21.8",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.qwen.repo",
+          "url": "https://github.com/QwenLM/qwen-code",
+          "claim": "Qwen Code provides an official desktop application.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.qwen-code.execution.file_edit",
+      "harness_id": "qwen-code",
+      "capability_id": "execution.file_edit",
+      "status": "stable",
+      "summary": "Qwen Code can inspect and edit repository files.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "terminal",
+        "desktop"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "0.21.8",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.qwen.repo",
+          "url": "https://github.com/QwenLM/qwen-code",
+          "claim": "Qwen Code can inspect and edit repository files.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.qwen-code.execution.shell",
+      "harness_id": "qwen-code",
+      "capability_id": "execution.shell",
+      "status": "stable",
+      "summary": "Qwen Code can run shell commands.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "terminal"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "0.21.8",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.qwen.repo",
+          "url": "https://github.com/QwenLM/qwen-code",
+          "claim": "Qwen Code can run shell commands.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.qwen-code.extensions.mcp_client",
+      "harness_id": "qwen-code",
+      "capability_id": "extensions.mcp_client",
+      "status": "stable",
+      "summary": "Qwen Code supports MCP-style external tools.",
+      "actor_access": {
+        "human_operator": "configurable",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "MCP"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "0.21.8",
+      "limitations": [],
+      "confidence": "inferred_high",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.qwen.docs",
+          "url": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
+          "claim": "Qwen Code supports MCP-style external tools.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.qwen-code.extensions.skills",
+      "harness_id": "qwen-code",
+      "capability_id": "extensions.skills",
+      "status": "stable",
+      "summary": "Qwen Code follows the modern coding-harness skill/instruction model.",
+      "actor_access": {
+        "human_operator": "configurable",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "skills"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "0.21.8",
+      "limitations": [],
+      "confidence": "inferred_high",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.qwen.docs",
+          "url": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
+          "claim": "Qwen Code follows the modern coding-harness skill/instruction model.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.qwen-code.sessions.resume_fork",
+      "harness_id": "qwen-code",
+      "capability_id": "sessions.resume_fork",
+      "status": "stable",
+      "summary": "Sessions persist across interactive use.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "mediated",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "terminal",
+        "desktop"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "0.21.8",
+      "limitations": [],
+      "confidence": "inferred_high",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.qwen.docs",
+          "url": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
+          "claim": "Sessions persist across interactive use.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.qwen-code.models.provider_portability",
+      "harness_id": "qwen-code",
+      "capability_id": "models.provider_portability",
+      "status": "stable",
+      "summary": "Qwen Code supports OpenAI, Anthropic, Gemini, and Qwen APIs.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "supported",
+        "external_orchestrator": "configurable",
+        "ci_runner": "configurable",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "multiple providers"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "0.21.8",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.qwen.repo",
+          "url": "https://github.com/QwenLM/qwen-code",
+          "claim": "Qwen Code supports OpenAI, Anthropic, Gemini, and Qwen APIs.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    }
+  ],
+  "releases": [
+    {
+      "id": "rel.qwen-code.0.21.8",
+      "harness_id": "qwen-code",
+      "version": "0.21.8",
+      "channel": "stable",
+      "published_at": "2026-08-08T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-08T20:00:00Z",
+      "source_id": "src.qwen.releases",
+      "source_url": "https://github.com/QwenLM/qwen-code/releases",
+      "raw_snapshot_path": null,
+      "raw_sha256": null,
+      "title": "Qwen Code 0.21.8",
+      "notes_excerpt": "Published Qwen Code 0.21.8 with the latest stable fixes and contributions.",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.qwen-code.0.21.8.001",
+          "kind": "changed",
+          "summary": "Published Qwen Code 0.21.8 with the latest stable fixes and contributions.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "human_curated_seed_v1",
+            "confidence": "verified_official",
+            "review_status": "approved"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "human_curated_seed",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.qwen-code.0.21.7",
+      "harness_id": "qwen-code",
+      "version": "0.21.7",
+      "channel": "stable",
+      "published_at": "2026-08-07T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-08T20:00:00Z",
+      "source_id": "src.qwen.releases",
+      "source_url": "https://github.com/QwenLM/qwen-code/releases",
+      "raw_snapshot_path": null,
+      "raw_sha256": null,
+      "title": "Qwen Code 0.21.7",
+      "notes_excerpt": "Published Qwen Code 0.21.7.",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.qwen-code.0.21.7.001",
+          "kind": "changed",
+          "summary": "Published Qwen Code 0.21.7.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "human_curated_seed_v1",
+            "confidence": "verified_official",
+            "review_status": "approved"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "human_curated_seed",
+        "immutable": false
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "src.qwen.releases",
+      "name": "Qwen Code GitHub releases",
+      "url": "https://github.com/QwenLM/qwen-code/releases",
+      "harness_ids": [
+        "qwen-code"
+      ],
+      "source_type": "github_releases",
+      "purpose": "release_history",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "github_releases",
+        "repo": "QwenLM/qwen-code"
+      },
+      "refresh": {
+        "cadence": "six_hourly",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    },
+    {
+      "id": "src.qwen.repo",
+      "name": "Qwen Code repository",
+      "url": "https://github.com/QwenLM/qwen-code",
+      "harness_ids": [
+        "qwen-code"
+      ],
+      "source_type": "repository",
+      "purpose": "capability_reference",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "manual_reference"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    },
+    {
+      "id": "src.qwen.docs",
+      "name": "Qwen Code documentation",
+      "url": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
+      "harness_ids": [
+        "qwen-code"
+      ],
+      "source_type": "documentation",
+      "purpose": "capability_reference",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "manual_reference"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    }
+  ]
+}

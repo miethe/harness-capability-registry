@@ -1,0 +1,2979 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-08T20:00:00Z",
+  "guide_type": "agent_consumable_harness_capability_guide",
+  "harness": {
+    "id": "antigravity-cli",
+    "name": "Antigravity CLI",
+    "vendor": "Google",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "current_version": "1.1.11",
+    "predecessor": "gemini-cli",
+    "successor": null
+  },
+  "freshness": {
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "latest_release_in_registry": "1.1.11",
+    "latest_release_published_at": null,
+    "warning": "Treat unavailable or unknown actor access as unsupported until verified. UI-only capability is not agent-callable by implication."
+  },
+  "capabilities_by_actor": {
+    "human_operator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Terminal-first interface to Antigravity agents with slash commands, Vim mode, and artifact views.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [
+          "agy"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Terminal-first interface to Antigravity agents with slash commands, Vim mode, and artifact views."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "interaction.desktop_web",
+        "name": "Desktop or web surface",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Antigravity CLI shares a backend with the Antigravity desktop command center.",
+        "surfaces": [
+          "desktop",
+          "projects"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity CLI shares a backend with the Antigravity desktop command center."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Antigravity agents understand codebases and edit files under permission controls.",
+        "surfaces": [
+          "terminal",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity agents understand codebases and edit files under permission controls."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Agents execute shell commands, and users can issue direct commands from the CLI.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agents execute shell commands, and users can issue direct commands from the CLI."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Print mode provides non-interactive execution and direct read-only slash-command queries.",
+        "surfaces": [
+          "CLI",
+          "print mode"
+        ],
+        "invocation": [
+          "agy -p"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Print mode provides non-interactive execution and direct read-only slash-command queries."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Print mode emits text, JSON, or typed NDJSON `stream-json`, including tool and subagent metadata.",
+        "surfaces": [
+          "JSON",
+          "stream-json"
+        ],
+        "invocation": [
+          "--output-format json",
+          "--output-format stream-json"
+        ],
+        "minimum_version": "1.1.8",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.8",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Print mode emits text, JSON, or typed NDJSON `stream-json`, including tool and subagent metadata."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The Antigravity SDK provides programmatic access to the same platform capabilities.",
+        "surfaces": [
+          "Antigravity SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Antigravity SDK provides programmatic access to the same platform capabilities."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Antigravity CLI supports MCP tools, progress reporting, OAuth, and admin controls.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity CLI supports MCP tools, progress reporting, OAuth, and admin controls."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills can be discovered and expanded in interactive and headless print modes.",
+        "surfaces": [
+          "skills",
+          "print mode"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.9",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.9",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills can be discovered and expanded in interactive and headless print modes."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Plugins package customizations and share enablement with Antigravity configuration.",
+        "surfaces": [
+          "plugins"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Plugins package customizations and share enablement with Antigravity configuration."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hooks run before/after invocations and at stop points with explicit ordering.",
+        "surfaces": [
+          "hooks.json"
+        ],
+        "invocation": [
+          "PostInvocation",
+          "Stop",
+          "PostToolUse"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hooks run before/after invocations and at stop points with explicit ordering."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Custom agents can be defined in Markdown with frontmatter controlling role, inheritance, and command policy.",
+        "surfaces": [
+          "agent.md"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.6",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.6",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Custom agents can be defined in Markdown with frontmatter controlling role, inheritance, and command policy."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Conversations are persistent, can be forked, and warn about concurrent access.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [
+          "/fork"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Conversations are persistent, can be forked, and warn about concurrent access."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Custom and dynamic subagents are first-class and expose child conversation metadata in structured output.",
+        "surfaces": [
+          "subagents",
+          "stream-json"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.6",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.6",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Custom and dynamic subagents are first-class and expose child conversation metadata in structured output."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Antigravity orchestrates multiple agents and background tasks without blocking the terminal.",
+        "surfaces": [
+          "background subagents",
+          "desktop command center"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.transition-blog",
+            "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity orchestrates multiple agents and background tasks without blocking the terminal."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "The Antigravity backend provides explicit multi-agent orchestration and coordinator/subagent state.",
+        "surfaces": [
+          "projects",
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Antigravity backend provides explicit multi-agent orchestration and coordinator/subagent state."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "CLI and desktop share a unified Antigravity backend for background and multi-workspace work.",
+        "surfaces": [
+          "Antigravity backend",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLI and desktop share a unified Antigravity backend for background and multi-workspace work."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Antigravity projects support scheduled messages/tasks.",
+        "surfaces": [
+          "scheduled messages"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity projects support scheduled messages/tasks."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Terminal execution uses filesystem/network sandboxing and records blocked network requests.",
+        "surfaces": [
+          "sandbox"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Terminal execution uses filesystem/network sandboxing and records blocked network requests."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Permission modes, allowlists, project/user settings, and strict review modes govern commands.",
+        "surfaces": [
+          "settings.json",
+          "allowlists"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Permission modes, allowlists, project/user settings, and strict review modes govern commands."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.usage_cost",
+        "name": "Usage and cost telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Structured output includes token/cache usage; read-only print commands expose usage, quota, credits, model, and effort without an agent turn.",
+        "surfaces": [
+          "JSON",
+          "stream-json",
+          "/usage",
+          "/quota"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Structured output includes token/cache usage; read-only print commands expose usage, quota, credits, model, and effort without an agent turn."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Typed step, tool, subagent, and terminal result events form a machine-consumable execution trace.",
+        "surfaces": [
+          "stream-json"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.8",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.8",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed step, tool, subagent, and terminal result events form a machine-consumable execution trace."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Antigravity supports research through tools and connected MCP knowledge sources.",
+        "surfaces": [
+          "web",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity supports research through tools and connected MCP knowledge sources."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Built-in Chrome DevTools MCP and Antigravity integrations support browser workflows.",
+        "surfaces": [
+          "Chrome DevTools MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in Chrome DevTools MCP and Antigravity integrations support browser workflows."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "interfaces.artifacts",
+        "name": "Artifacts, diffs, and rich result views",
+        "category": "interfaces",
+        "status": "stable",
+        "summary": "Artifact views, diffs, images, comments, and rich desktop panels support result review.",
+        "surfaces": [
+          "artifact viewer",
+          "diff viewer",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Artifact views, diffs, images, comments, and rich desktop panels support result review."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model and reasoning effort are selectable interactively and through headless flags.",
+        "surfaces": [
+          "/model",
+          "/effort",
+          "--model",
+          "--effort"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model and reasoning effort are selectable interactively and through headless flags."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "evaluation.schema_enforcement",
+        "name": "Output schema enforcement",
+        "category": "evaluation",
+        "status": "stable",
+        "summary": "`--json-schema` constrains the final structured result in JSON and stream-json modes.",
+        "surfaces": [
+          "print mode"
+        ],
+        "invocation": [
+          "--json-schema"
+        ],
+        "minimum_version": "1.1.8",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.8",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`--json-schema` constrains the final structured result in JSON and stream-json modes."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "administrator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Terminal-first interface to Antigravity agents with slash commands, Vim mode, and artifact views.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [
+          "agy"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Terminal-first interface to Antigravity agents with slash commands, Vim mode, and artifact views."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "interaction.desktop_web",
+        "name": "Desktop or web surface",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Antigravity CLI shares a backend with the Antigravity desktop command center.",
+        "surfaces": [
+          "desktop",
+          "projects"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity CLI shares a backend with the Antigravity desktop command center."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Antigravity agents understand codebases and edit files under permission controls.",
+        "surfaces": [
+          "terminal",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity agents understand codebases and edit files under permission controls."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Agents execute shell commands, and users can issue direct commands from the CLI.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agents execute shell commands, and users can issue direct commands from the CLI."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Print mode provides non-interactive execution and direct read-only slash-command queries.",
+        "surfaces": [
+          "CLI",
+          "print mode"
+        ],
+        "invocation": [
+          "agy -p"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Print mode provides non-interactive execution and direct read-only slash-command queries."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Print mode emits text, JSON, or typed NDJSON `stream-json`, including tool and subagent metadata.",
+        "surfaces": [
+          "JSON",
+          "stream-json"
+        ],
+        "invocation": [
+          "--output-format json",
+          "--output-format stream-json"
+        ],
+        "minimum_version": "1.1.8",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.8",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Print mode emits text, JSON, or typed NDJSON `stream-json`, including tool and subagent metadata."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The Antigravity SDK provides programmatic access to the same platform capabilities.",
+        "surfaces": [
+          "Antigravity SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Antigravity SDK provides programmatic access to the same platform capabilities."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Antigravity CLI supports MCP tools, progress reporting, OAuth, and admin controls.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity CLI supports MCP tools, progress reporting, OAuth, and admin controls."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills can be discovered and expanded in interactive and headless print modes.",
+        "surfaces": [
+          "skills",
+          "print mode"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.9",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.9",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills can be discovered and expanded in interactive and headless print modes."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Plugins package customizations and share enablement with Antigravity configuration.",
+        "surfaces": [
+          "plugins"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Plugins package customizations and share enablement with Antigravity configuration."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hooks run before/after invocations and at stop points with explicit ordering.",
+        "surfaces": [
+          "hooks.json"
+        ],
+        "invocation": [
+          "PostInvocation",
+          "Stop",
+          "PostToolUse"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hooks run before/after invocations and at stop points with explicit ordering."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Custom agents can be defined in Markdown with frontmatter controlling role, inheritance, and command policy.",
+        "surfaces": [
+          "agent.md"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.6",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.6",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Custom agents can be defined in Markdown with frontmatter controlling role, inheritance, and command policy."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Conversations are persistent, can be forked, and warn about concurrent access.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [
+          "/fork"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Conversations are persistent, can be forked, and warn about concurrent access."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Custom and dynamic subagents are first-class and expose child conversation metadata in structured output.",
+        "surfaces": [
+          "subagents",
+          "stream-json"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.6",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.6",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Custom and dynamic subagents are first-class and expose child conversation metadata in structured output."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Antigravity orchestrates multiple agents and background tasks without blocking the terminal.",
+        "surfaces": [
+          "background subagents",
+          "desktop command center"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.transition-blog",
+            "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity orchestrates multiple agents and background tasks without blocking the terminal."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "The Antigravity backend provides explicit multi-agent orchestration and coordinator/subagent state.",
+        "surfaces": [
+          "projects",
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Antigravity backend provides explicit multi-agent orchestration and coordinator/subagent state."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "CLI and desktop share a unified Antigravity backend for background and multi-workspace work.",
+        "surfaces": [
+          "Antigravity backend",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLI and desktop share a unified Antigravity backend for background and multi-workspace work."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Antigravity projects support scheduled messages/tasks.",
+        "surfaces": [
+          "scheduled messages"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity projects support scheduled messages/tasks."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Terminal execution uses filesystem/network sandboxing and records blocked network requests.",
+        "surfaces": [
+          "sandbox"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Terminal execution uses filesystem/network sandboxing and records blocked network requests."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Permission modes, allowlists, project/user settings, and strict review modes govern commands.",
+        "surfaces": [
+          "settings.json",
+          "allowlists"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Permission modes, allowlists, project/user settings, and strict review modes govern commands."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.enterprise_policy",
+        "name": "Enterprise managed policy",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Business sign-in, WIF, ADC, regional inference, and organization admin controls are supported.",
+        "surfaces": [
+          "Gemini Enterprise",
+          "Google Cloud",
+          "WIF"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.10",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.10",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Business sign-in, WIF, ADC, regional inference, and organization admin controls are supported."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.usage_cost",
+        "name": "Usage and cost telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Structured output includes token/cache usage; read-only print commands expose usage, quota, credits, model, and effort without an agent turn.",
+        "surfaces": [
+          "JSON",
+          "stream-json",
+          "/usage",
+          "/quota"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Structured output includes token/cache usage; read-only print commands expose usage, quota, credits, model, and effort without an agent turn."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Typed step, tool, subagent, and terminal result events form a machine-consumable execution trace.",
+        "surfaces": [
+          "stream-json"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.8",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.8",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed step, tool, subagent, and terminal result events form a machine-consumable execution trace."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Antigravity supports research through tools and connected MCP knowledge sources.",
+        "surfaces": [
+          "web",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity supports research through tools and connected MCP knowledge sources."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Built-in Chrome DevTools MCP and Antigravity integrations support browser workflows.",
+        "surfaces": [
+          "Chrome DevTools MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in Chrome DevTools MCP and Antigravity integrations support browser workflows."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "interfaces.artifacts",
+        "name": "Artifacts, diffs, and rich result views",
+        "category": "interfaces",
+        "status": "stable",
+        "summary": "Artifact views, diffs, images, comments, and rich desktop panels support result review.",
+        "surfaces": [
+          "artifact viewer",
+          "diff viewer",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Artifact views, diffs, images, comments, and rich desktop panels support result review."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model and reasoning effort are selectable interactively and through headless flags.",
+        "surfaces": [
+          "/model",
+          "/effort",
+          "--model",
+          "--effort"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model and reasoning effort are selectable interactively and through headless flags."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "evaluation.schema_enforcement",
+        "name": "Output schema enforcement",
+        "category": "evaluation",
+        "status": "stable",
+        "summary": "`--json-schema` constrains the final structured result in JSON and stream-json modes.",
+        "surfaces": [
+          "print mode"
+        ],
+        "invocation": [
+          "--json-schema"
+        ],
+        "minimum_version": "1.1.8",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.8",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`--json-schema` constrains the final structured result in JSON and stream-json modes."
+          }
+        ],
+        "access": "configurable"
+      }
+    ],
+    "in_harness_agent": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Antigravity agents understand codebases and edit files under permission controls.",
+        "surfaces": [
+          "terminal",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity agents understand codebases and edit files under permission controls."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Agents execute shell commands, and users can issue direct commands from the CLI.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agents execute shell commands, and users can issue direct commands from the CLI."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Antigravity CLI supports MCP tools, progress reporting, OAuth, and admin controls.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity CLI supports MCP tools, progress reporting, OAuth, and admin controls."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills can be discovered and expanded in interactive and headless print modes.",
+        "surfaces": [
+          "skills",
+          "print mode"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.9",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.9",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills can be discovered and expanded in interactive and headless print modes."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Plugins package customizations and share enablement with Antigravity configuration.",
+        "surfaces": [
+          "plugins"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Plugins package customizations and share enablement with Antigravity configuration."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Custom agents can be defined in Markdown with frontmatter controlling role, inheritance, and command policy.",
+        "surfaces": [
+          "agent.md"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.6",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.6",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Custom agents can be defined in Markdown with frontmatter controlling role, inheritance, and command policy."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Custom and dynamic subagents are first-class and expose child conversation metadata in structured output.",
+        "surfaces": [
+          "subagents",
+          "stream-json"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.6",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.6",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Custom and dynamic subagents are first-class and expose child conversation metadata in structured output."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Antigravity orchestrates multiple agents and background tasks without blocking the terminal.",
+        "surfaces": [
+          "background subagents",
+          "desktop command center"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.transition-blog",
+            "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity orchestrates multiple agents and background tasks without blocking the terminal."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "The Antigravity backend provides explicit multi-agent orchestration and coordinator/subagent state.",
+        "surfaces": [
+          "projects",
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Antigravity backend provides explicit multi-agent orchestration and coordinator/subagent state."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Antigravity projects support scheduled messages/tasks.",
+        "surfaces": [
+          "scheduled messages"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity projects support scheduled messages/tasks."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Antigravity supports research through tools and connected MCP knowledge sources.",
+        "surfaces": [
+          "web",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity supports research through tools and connected MCP knowledge sources."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Built-in Chrome DevTools MCP and Antigravity integrations support browser workflows.",
+        "surfaces": [
+          "Chrome DevTools MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in Chrome DevTools MCP and Antigravity integrations support browser workflows."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model and reasoning effort are selectable interactively and through headless flags.",
+        "surfaces": [
+          "/model",
+          "/effort",
+          "--model",
+          "--effort"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model and reasoning effort are selectable interactively and through headless flags."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "external_orchestrator": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Antigravity agents understand codebases and edit files under permission controls.",
+        "surfaces": [
+          "terminal",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity agents understand codebases and edit files under permission controls."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Agents execute shell commands, and users can issue direct commands from the CLI.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agents execute shell commands, and users can issue direct commands from the CLI."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Print mode provides non-interactive execution and direct read-only slash-command queries.",
+        "surfaces": [
+          "CLI",
+          "print mode"
+        ],
+        "invocation": [
+          "agy -p"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Print mode provides non-interactive execution and direct read-only slash-command queries."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Print mode emits text, JSON, or typed NDJSON `stream-json`, including tool and subagent metadata.",
+        "surfaces": [
+          "JSON",
+          "stream-json"
+        ],
+        "invocation": [
+          "--output-format json",
+          "--output-format stream-json"
+        ],
+        "minimum_version": "1.1.8",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.8",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Print mode emits text, JSON, or typed NDJSON `stream-json`, including tool and subagent metadata."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The Antigravity SDK provides programmatic access to the same platform capabilities.",
+        "surfaces": [
+          "Antigravity SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Antigravity SDK provides programmatic access to the same platform capabilities."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Antigravity CLI supports MCP tools, progress reporting, OAuth, and admin controls.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity CLI supports MCP tools, progress reporting, OAuth, and admin controls."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills can be discovered and expanded in interactive and headless print modes.",
+        "surfaces": [
+          "skills",
+          "print mode"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.9",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.9",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills can be discovered and expanded in interactive and headless print modes."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Plugins package customizations and share enablement with Antigravity configuration.",
+        "surfaces": [
+          "plugins"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Plugins package customizations and share enablement with Antigravity configuration."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hooks run before/after invocations and at stop points with explicit ordering.",
+        "surfaces": [
+          "hooks.json"
+        ],
+        "invocation": [
+          "PostInvocation",
+          "Stop",
+          "PostToolUse"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hooks run before/after invocations and at stop points with explicit ordering."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Custom agents can be defined in Markdown with frontmatter controlling role, inheritance, and command policy.",
+        "surfaces": [
+          "agent.md"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.6",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.6",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Custom agents can be defined in Markdown with frontmatter controlling role, inheritance, and command policy."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Conversations are persistent, can be forked, and warn about concurrent access.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [
+          "/fork"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Conversations are persistent, can be forked, and warn about concurrent access."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Custom and dynamic subagents are first-class and expose child conversation metadata in structured output.",
+        "surfaces": [
+          "subagents",
+          "stream-json"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.6",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.6",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Custom and dynamic subagents are first-class and expose child conversation metadata in structured output."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Antigravity orchestrates multiple agents and background tasks without blocking the terminal.",
+        "surfaces": [
+          "background subagents",
+          "desktop command center"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.transition-blog",
+            "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity orchestrates multiple agents and background tasks without blocking the terminal."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "The Antigravity backend provides explicit multi-agent orchestration and coordinator/subagent state.",
+        "surfaces": [
+          "projects",
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Antigravity backend provides explicit multi-agent orchestration and coordinator/subagent state."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "CLI and desktop share a unified Antigravity backend for background and multi-workspace work.",
+        "surfaces": [
+          "Antigravity backend",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLI and desktop share a unified Antigravity backend for background and multi-workspace work."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Antigravity projects support scheduled messages/tasks.",
+        "surfaces": [
+          "scheduled messages"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity projects support scheduled messages/tasks."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Terminal execution uses filesystem/network sandboxing and records blocked network requests.",
+        "surfaces": [
+          "sandbox"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Terminal execution uses filesystem/network sandboxing and records blocked network requests."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Permission modes, allowlists, project/user settings, and strict review modes govern commands.",
+        "surfaces": [
+          "settings.json",
+          "allowlists"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Permission modes, allowlists, project/user settings, and strict review modes govern commands."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "observability.usage_cost",
+        "name": "Usage and cost telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Structured output includes token/cache usage; read-only print commands expose usage, quota, credits, model, and effort without an agent turn.",
+        "surfaces": [
+          "JSON",
+          "stream-json",
+          "/usage",
+          "/quota"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Structured output includes token/cache usage; read-only print commands expose usage, quota, credits, model, and effort without an agent turn."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Typed step, tool, subagent, and terminal result events form a machine-consumable execution trace.",
+        "surfaces": [
+          "stream-json"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.8",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.8",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed step, tool, subagent, and terminal result events form a machine-consumable execution trace."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Antigravity supports research through tools and connected MCP knowledge sources.",
+        "surfaces": [
+          "web",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity supports research through tools and connected MCP knowledge sources."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Built-in Chrome DevTools MCP and Antigravity integrations support browser workflows.",
+        "surfaces": [
+          "Chrome DevTools MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in Chrome DevTools MCP and Antigravity integrations support browser workflows."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model and reasoning effort are selectable interactively and through headless flags.",
+        "surfaces": [
+          "/model",
+          "/effort",
+          "--model",
+          "--effort"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model and reasoning effort are selectable interactively and through headless flags."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "evaluation.schema_enforcement",
+        "name": "Output schema enforcement",
+        "category": "evaluation",
+        "status": "stable",
+        "summary": "`--json-schema` constrains the final structured result in JSON and stream-json modes.",
+        "surfaces": [
+          "print mode"
+        ],
+        "invocation": [
+          "--json-schema"
+        ],
+        "minimum_version": "1.1.8",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.8",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`--json-schema` constrains the final structured result in JSON and stream-json modes."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "ci_runner": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Antigravity agents understand codebases and edit files under permission controls.",
+        "surfaces": [
+          "terminal",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity agents understand codebases and edit files under permission controls."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Agents execute shell commands, and users can issue direct commands from the CLI.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agents execute shell commands, and users can issue direct commands from the CLI."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Print mode provides non-interactive execution and direct read-only slash-command queries.",
+        "surfaces": [
+          "CLI",
+          "print mode"
+        ],
+        "invocation": [
+          "agy -p"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Print mode provides non-interactive execution and direct read-only slash-command queries."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Print mode emits text, JSON, or typed NDJSON `stream-json`, including tool and subagent metadata.",
+        "surfaces": [
+          "JSON",
+          "stream-json"
+        ],
+        "invocation": [
+          "--output-format json",
+          "--output-format stream-json"
+        ],
+        "minimum_version": "1.1.8",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.8",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Print mode emits text, JSON, or typed NDJSON `stream-json`, including tool and subagent metadata."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "The Antigravity SDK provides programmatic access to the same platform capabilities.",
+        "surfaces": [
+          "Antigravity SDK"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Antigravity SDK provides programmatic access to the same platform capabilities."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Antigravity CLI supports MCP tools, progress reporting, OAuth, and admin controls.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity CLI supports MCP tools, progress reporting, OAuth, and admin controls."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills can be discovered and expanded in interactive and headless print modes.",
+        "surfaces": [
+          "skills",
+          "print mode"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.9",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.9",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills can be discovered and expanded in interactive and headless print modes."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Plugins package customizations and share enablement with Antigravity configuration.",
+        "surfaces": [
+          "plugins"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Plugins package customizations and share enablement with Antigravity configuration."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hooks run before/after invocations and at stop points with explicit ordering.",
+        "surfaces": [
+          "hooks.json"
+        ],
+        "invocation": [
+          "PostInvocation",
+          "Stop",
+          "PostToolUse"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hooks run before/after invocations and at stop points with explicit ordering."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "context.project_instructions",
+        "name": "Hierarchical project instructions",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Custom agents can be defined in Markdown with frontmatter controlling role, inheritance, and command policy.",
+        "surfaces": [
+          "agent.md"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.6",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.6",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Custom agents can be defined in Markdown with frontmatter controlling role, inheritance, and command policy."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Conversations are persistent, can be forked, and warn about concurrent access.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [
+          "/fork"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Conversations are persistent, can be forked, and warn about concurrent access."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Custom and dynamic subagents are first-class and expose child conversation metadata in structured output.",
+        "surfaces": [
+          "subagents",
+          "stream-json"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.6",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.6",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Custom and dynamic subagents are first-class and expose child conversation metadata in structured output."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Antigravity orchestrates multiple agents and background tasks without blocking the terminal.",
+        "surfaces": [
+          "background subagents",
+          "desktop command center"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.transition-blog",
+            "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity orchestrates multiple agents and background tasks without blocking the terminal."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "The Antigravity backend provides explicit multi-agent orchestration and coordinator/subagent state.",
+        "surfaces": [
+          "projects",
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The Antigravity backend provides explicit multi-agent orchestration and coordinator/subagent state."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "CLI and desktop share a unified Antigravity backend for background and multi-workspace work.",
+        "surfaces": [
+          "Antigravity backend",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "CLI and desktop share a unified Antigravity backend for background and multi-workspace work."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Antigravity projects support scheduled messages/tasks.",
+        "surfaces": [
+          "scheduled messages"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity projects support scheduled messages/tasks."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.sandbox",
+        "name": "Execution sandbox",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Terminal execution uses filesystem/network sandboxing and records blocked network requests.",
+        "surfaces": [
+          "sandbox"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Terminal execution uses filesystem/network sandboxing and records blocked network requests."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Permission modes, allowlists, project/user settings, and strict review modes govern commands.",
+        "surfaces": [
+          "settings.json",
+          "allowlists"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Permission modes, allowlists, project/user settings, and strict review modes govern commands."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "observability.usage_cost",
+        "name": "Usage and cost telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Structured output includes token/cache usage; read-only print commands expose usage, quota, credits, model, and effort without an agent turn.",
+        "surfaces": [
+          "JSON",
+          "stream-json",
+          "/usage",
+          "/quota"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Structured output includes token/cache usage; read-only print commands expose usage, quota, credits, model, and effort without an agent turn."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Typed step, tool, subagent, and terminal result events form a machine-consumable execution trace.",
+        "surfaces": [
+          "stream-json"
+        ],
+        "invocation": [],
+        "minimum_version": "1.1.8",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.8",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed step, tool, subagent, and terminal result events form a machine-consumable execution trace."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Antigravity supports research through tools and connected MCP knowledge sources.",
+        "surfaces": [
+          "web",
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.site",
+            "url": "https://antigravity.google/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Antigravity supports research through tools and connected MCP knowledge sources."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.browser_computer",
+        "name": "Browser/computer use",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Built-in Chrome DevTools MCP and Antigravity integrations support browser workflows.",
+        "surfaces": [
+          "Chrome DevTools MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in Chrome DevTools MCP and Antigravity integrations support browser workflows."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model and reasoning effort are selectable interactively and through headless flags.",
+        "surfaces": [
+          "/model",
+          "/effort",
+          "--model",
+          "--effort"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model and reasoning effort are selectable interactively and through headless flags."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "evaluation.schema_enforcement",
+        "name": "Output schema enforcement",
+        "category": "evaluation",
+        "status": "stable",
+        "summary": "`--json-schema` constrains the final structured result in JSON and stream-json modes.",
+        "surfaces": [
+          "print mode"
+        ],
+        "invocation": [
+          "--json-schema"
+        ],
+        "minimum_version": "1.1.8",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.antigravity.changelog",
+            "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+            "version": "1.1.8",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "`--json-schema` constrains the final structured result in JSON and stream-json modes."
+          }
+        ],
+        "access": "native"
+      }
+    ]
+  },
+  "human_mediation_required": [],
+  "unverified_or_low_confidence": [],
+  "routing_hint": {
+    "recommended_when": [
+      "Google Antigravity multi-agent backend",
+      "Background orchestration",
+      "Structured print-mode automation",
+      "Google enterprise identity"
+    ],
+    "avoid_when": [
+      "You need compatibility with Gemini CLI behavior without migration testing"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "strong",
+      "multi_agent": "strong",
+      "structured_automation": "strong",
+      "provider_portability": "limited",
+      "enterprise_controls": "strong"
+    }
+  }
+}

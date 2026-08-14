@@ -1,0 +1,1333 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-08T20:00:00Z",
+  "guide_type": "agent_consumable_harness_capability_guide",
+  "harness": {
+    "id": "gemini-cli",
+    "name": "Gemini CLI",
+    "vendor": "Google",
+    "family": "agentic_harness",
+    "lifecycle": "legacy",
+    "current_version": "0.56.0-nightly.20260808.gcf22ac7e8",
+    "predecessor": null,
+    "successor": "antigravity-cli"
+  },
+  "freshness": {
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "latest_release_in_registry": null,
+    "latest_release_published_at": null,
+    "warning": "Treat unavailable or unknown actor access as unsupported until verified. UI-only capability is not agent-callable by implication."
+  },
+  "capabilities_by_actor": {
+    "human_operator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Gemini CLI provides an interactive terminal agent.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.repo",
+            "url": "https://github.com/google-gemini/gemini-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI provides an interactive terminal agent."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI agents can inspect and modify repository files.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.repo",
+            "url": "https://github.com/google-gemini/gemini-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI agents can inspect and modify repository files."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI agents can run shell tools under configured policies.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.repo",
+            "url": "https://github.com/google-gemini/gemini-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI agents can run shell tools under configured policies."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI exposes headless mode for scripts and automation.",
+        "surfaces": [
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI exposes headless mode for scripts and automation."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Headless mode supports structured JSON output.",
+        "surfaces": [
+          "JSON"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless mode supports structured JSON output."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Gemini CLI supports MCP servers.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI supports MCP servers."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills were supported and ported to Antigravity CLI.",
+        "surfaces": [
+          "skills"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills were supported and ported to Antigravity CLI."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "deprecated",
+        "summary": "Gemini CLI extensions were supported and became Antigravity plugins in the successor product.",
+        "surfaces": [
+          "extensions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI extensions were supported and became Antigravity plugins in the successor product."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Gemini CLI supports lifecycle hooks.",
+        "surfaces": [
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI supports lifecycle hooks."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Subagents were supported and ported to Antigravity CLI.",
+        "surfaces": [
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Subagents were supported and ported to Antigravity CLI."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Gemini CLI provides approval and policy controls for tools.",
+        "surfaces": [
+          "CLI",
+          "settings"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI provides approval and policy controls for tools."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model selection and plan-mode workflows are configurable.",
+        "surfaces": [
+          "model config",
+          "plan mode"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model selection and plan-mode workflows are configurable."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "administrator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Gemini CLI provides an interactive terminal agent.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.repo",
+            "url": "https://github.com/google-gemini/gemini-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI provides an interactive terminal agent."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI agents can inspect and modify repository files.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.repo",
+            "url": "https://github.com/google-gemini/gemini-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI agents can inspect and modify repository files."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI agents can run shell tools under configured policies.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.repo",
+            "url": "https://github.com/google-gemini/gemini-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI agents can run shell tools under configured policies."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI exposes headless mode for scripts and automation.",
+        "surfaces": [
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI exposes headless mode for scripts and automation."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Headless mode supports structured JSON output.",
+        "surfaces": [
+          "JSON"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless mode supports structured JSON output."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Gemini CLI supports MCP servers.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI supports MCP servers."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills were supported and ported to Antigravity CLI.",
+        "surfaces": [
+          "skills"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills were supported and ported to Antigravity CLI."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "deprecated",
+        "summary": "Gemini CLI extensions were supported and became Antigravity plugins in the successor product.",
+        "surfaces": [
+          "extensions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI extensions were supported and became Antigravity plugins in the successor product."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Gemini CLI supports lifecycle hooks.",
+        "surfaces": [
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI supports lifecycle hooks."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Subagents were supported and ported to Antigravity CLI.",
+        "surfaces": [
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Subagents were supported and ported to Antigravity CLI."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Gemini CLI provides approval and policy controls for tools.",
+        "surfaces": [
+          "CLI",
+          "settings"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI provides approval and policy controls for tools."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model selection and plan-mode workflows are configurable.",
+        "surfaces": [
+          "model config",
+          "plan mode"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model selection and plan-mode workflows are configurable."
+          }
+        ],
+        "access": "configurable"
+      }
+    ],
+    "in_harness_agent": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI agents can inspect and modify repository files.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.repo",
+            "url": "https://github.com/google-gemini/gemini-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI agents can inspect and modify repository files."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI agents can run shell tools under configured policies.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.repo",
+            "url": "https://github.com/google-gemini/gemini-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI agents can run shell tools under configured policies."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Gemini CLI supports MCP servers.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI supports MCP servers."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills were supported and ported to Antigravity CLI.",
+        "surfaces": [
+          "skills"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills were supported and ported to Antigravity CLI."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "deprecated",
+        "summary": "Gemini CLI extensions were supported and became Antigravity plugins in the successor product.",
+        "surfaces": [
+          "extensions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI extensions were supported and became Antigravity plugins in the successor product."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Subagents were supported and ported to Antigravity CLI.",
+        "surfaces": [
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Subagents were supported and ported to Antigravity CLI."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model selection and plan-mode workflows are configurable.",
+        "surfaces": [
+          "model config",
+          "plan mode"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model selection and plan-mode workflows are configurable."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "external_orchestrator": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI agents can inspect and modify repository files.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.repo",
+            "url": "https://github.com/google-gemini/gemini-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI agents can inspect and modify repository files."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI agents can run shell tools under configured policies.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.repo",
+            "url": "https://github.com/google-gemini/gemini-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI agents can run shell tools under configured policies."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI exposes headless mode for scripts and automation.",
+        "surfaces": [
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI exposes headless mode for scripts and automation."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Headless mode supports structured JSON output.",
+        "surfaces": [
+          "JSON"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless mode supports structured JSON output."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Gemini CLI supports MCP servers.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI supports MCP servers."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills were supported and ported to Antigravity CLI.",
+        "surfaces": [
+          "skills"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills were supported and ported to Antigravity CLI."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "deprecated",
+        "summary": "Gemini CLI extensions were supported and became Antigravity plugins in the successor product.",
+        "surfaces": [
+          "extensions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI extensions were supported and became Antigravity plugins in the successor product."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Gemini CLI supports lifecycle hooks.",
+        "surfaces": [
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI supports lifecycle hooks."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Subagents were supported and ported to Antigravity CLI.",
+        "surfaces": [
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Subagents were supported and ported to Antigravity CLI."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Gemini CLI provides approval and policy controls for tools.",
+        "surfaces": [
+          "CLI",
+          "settings"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI provides approval and policy controls for tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model selection and plan-mode workflows are configurable.",
+        "surfaces": [
+          "model config",
+          "plan mode"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model selection and plan-mode workflows are configurable."
+          }
+        ],
+        "access": "configurable"
+      }
+    ],
+    "ci_runner": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI agents can inspect and modify repository files.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.repo",
+            "url": "https://github.com/google-gemini/gemini-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI agents can inspect and modify repository files."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI agents can run shell tools under configured policies.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.repo",
+            "url": "https://github.com/google-gemini/gemini-cli",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI agents can run shell tools under configured policies."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Gemini CLI exposes headless mode for scripts and automation.",
+        "surfaces": [
+          "CLI"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI exposes headless mode for scripts and automation."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Headless mode supports structured JSON output.",
+        "surfaces": [
+          "JSON"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Headless mode supports structured JSON output."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Gemini CLI supports MCP servers.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI supports MCP servers."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agent Skills were supported and ported to Antigravity CLI.",
+        "surfaces": [
+          "skills"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agent Skills were supported and ported to Antigravity CLI."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "deprecated",
+        "summary": "Gemini CLI extensions were supported and became Antigravity plugins in the successor product.",
+        "surfaces": [
+          "extensions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI extensions were supported and became Antigravity plugins in the successor product."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Gemini CLI supports lifecycle hooks.",
+        "surfaces": [
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI supports lifecycle hooks."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Subagents were supported and ported to Antigravity CLI.",
+        "surfaces": [
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.transition",
+            "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Subagents were supported and ported to Antigravity CLI."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Gemini CLI provides approval and policy controls for tools.",
+        "surfaces": [
+          "CLI",
+          "settings"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Gemini CLI provides approval and policy controls for tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.reasoning_control",
+        "name": "Model and reasoning controls",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Model selection and plan-mode workflows are configurable.",
+        "surfaces": [
+          "model config",
+          "plan mode"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.gemini.docs",
+            "url": "https://geminicli.com/docs/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Model selection and plan-mode workflows are configurable."
+          }
+        ],
+        "access": "configurable"
+      }
+    ]
+  },
+  "human_mediation_required": [],
+  "unverified_or_low_confidence": [],
+  "routing_hint": {
+    "recommended_when": [
+      "Historical compatibility analysis",
+      "Enterprise or API-key deployments that remain supported"
+    ],
+    "avoid_when": [
+      "New individual-user workflows; migrate to Antigravity CLI"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "limited",
+      "multi_agent": "moderate",
+      "structured_automation": "strong",
+      "provider_portability": "limited",
+      "enterprise_controls": "moderate"
+    }
+  }
+}

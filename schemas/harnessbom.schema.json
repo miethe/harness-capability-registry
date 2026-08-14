@@ -1,0 +1,520 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meatyos.dev/schemas/hcr/harnessbom.schema.json",
+  "title": "HarnessBOM materialized product view",
+  "type": "object",
+  "required": [
+    "harness",
+    "capabilities",
+    "releases",
+    "sources"
+  ],
+  "properties": {
+    "harness": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "vendor",
+        "family",
+        "lifecycle",
+        "maturity",
+        "tracking_priority",
+        "source_ids",
+        "surfaces",
+        "auth_modes",
+        "recommended_when",
+        "avoid_when",
+        "control_plane_dimensions"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "vendor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "family": {
+          "type": "string",
+          "enum": [
+            "agentic_harness",
+            "general_agent_harness",
+            "agent_sdk",
+            "provider_sdk"
+          ]
+        },
+        "lifecycle": {
+          "type": "string",
+          "enum": [
+            "active",
+            "maintenance",
+            "transitioning",
+            "legacy",
+            "archived",
+            "monitoring_only"
+          ]
+        },
+        "maturity": {
+          "type": "string"
+        },
+        "tracking_priority": {
+          "type": "string",
+          "enum": [
+            "core",
+            "secondary",
+            "watch"
+          ]
+        },
+        "current_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "version_as_of": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "last_verified_at": {
+          "$ref": "common.schema.json#/$defs/timestamp"
+        },
+        "predecessor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "successor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "repo_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "docs_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "surfaces": {
+          "$ref": "common.schema.json#/$defs/stringList"
+        },
+        "auth_modes": {
+          "$ref": "common.schema.json#/$defs/stringList"
+        },
+        "source_ids": {
+          "$ref": "common.schema.json#/$defs/stringList"
+        },
+        "recommended_when": {
+          "$ref": "common.schema.json#/$defs/stringList"
+        },
+        "avoid_when": {
+          "$ref": "common.schema.json#/$defs/stringList"
+        },
+        "control_plane_dimensions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "lifecycle_events": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "harness_id",
+          "capability_id",
+          "status",
+          "summary",
+          "actor_access",
+          "requires_human_mediation",
+          "surfaces",
+          "invocation",
+          "limitations",
+          "confidence",
+          "verified_at",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "harness_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "capability_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "status": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "actor_access": {
+            "$ref": "common.schema.json#/$defs/actorAccess"
+          },
+          "requires_human_mediation": {
+            "type": "boolean"
+          },
+          "surfaces": {
+            "$ref": "common.schema.json#/$defs/stringList"
+          },
+          "invocation": {
+            "$ref": "common.schema.json#/$defs/stringList"
+          },
+          "minimum_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "current_version_verified": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limitations": {
+            "$ref": "common.schema.json#/$defs/stringList"
+          },
+          "confidence": {
+            "$ref": "common.schema.json#/$defs/confidence"
+          },
+          "verified_at": {
+            "$ref": "common.schema.json#/$defs/timestamp"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/evidence"
+            },
+            "minItems": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "releases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "harness_id",
+          "version",
+          "channel",
+          "published_at",
+          "date_precision",
+          "retrieved_at",
+          "source_id",
+          "source_url",
+          "raw_snapshot_path",
+          "raw_sha256",
+          "title",
+          "notes_excerpt",
+          "change_count",
+          "flags",
+          "changes",
+          "provenance"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "harness_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "channel": {
+            "type": "string"
+          },
+          "published_at": {
+            "$ref": "common.schema.json#/$defs/timestamp"
+          },
+          "date_precision": {
+            "type": "string",
+            "enum": [
+              "second",
+              "day",
+              "month",
+              "unknown"
+            ]
+          },
+          "retrieved_at": {
+            "$ref": "common.schema.json#/$defs/timestamp"
+          },
+          "source_id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "source_url": {
+            "$ref": "common.schema.json#/$defs/uri"
+          },
+          "raw_snapshot_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "raw_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "title": {
+            "type": "string"
+          },
+          "notes_excerpt": {
+            "type": "string"
+          },
+          "change_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "flags": {
+            "type": "object",
+            "required": [
+              "security",
+              "breaking",
+              "deprecation"
+            ],
+            "properties": {
+              "security": {
+                "type": "boolean"
+              },
+              "breaking": {
+                "type": "boolean"
+              },
+              "deprecation": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/$defs/changeItem"
+            }
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "url": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uri"
+                },
+                "size": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "content_type": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "digest": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "authority",
+              "ingestion",
+              "immutable"
+            ],
+            "properties": {
+              "authority": {
+                "type": "string"
+              },
+              "ingestion": {
+                "type": "string"
+              },
+              "immutable": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "url",
+          "harness_ids",
+          "source_type",
+          "purpose",
+          "authority",
+          "official",
+          "enabled",
+          "collector",
+          "refresh"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "common.schema.json#/$defs/id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "$ref": "common.schema.json#/$defs/uri"
+          },
+          "harness_ids": {
+            "$ref": "common.schema.json#/$defs/stringList"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "release_history",
+              "capability_reference",
+              "lifecycle_reference",
+              "compatibility_reference",
+              "package_metadata",
+              "discovery_only"
+            ]
+          },
+          "authority": {
+            "type": "string",
+            "enum": [
+              "official_primary",
+              "official_secondary",
+              "package_registry",
+              "community_discovery"
+            ]
+          },
+          "official": {
+            "type": "boolean"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "collector": {
+            "type": "object",
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string"
+              },
+              "repo": {
+                "type": "string"
+              },
+              "local_seed_path": {
+                "type": "string"
+              },
+              "package": {
+                "type": "string"
+              },
+              "url": {
+                "$ref": "common.schema.json#/$defs/uri"
+              }
+            },
+            "additionalProperties": true
+          },
+          "refresh": {
+            "type": "object",
+            "required": [
+              "cadence",
+              "historical_backfill_days",
+              "staleness_sla_hours"
+            ],
+            "properties": {
+              "cadence": {
+                "type": "string"
+              },
+              "historical_backfill_days": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "staleness_sla_hours": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "additionalProperties": true
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1",
+  "registry_id": "hcr.agentic-harness-capabilities",
+  "name": "Harness Capability Registry",
+  "artifact_unit": "HarnessBOM",
+  "description": "Evidence-backed release ledger and actor-aware capability graph for agentic harnesses and SDKs.",
+  "created_at": "2026-08-08T20:00:00Z",
+  "updated_at": "2026-08-08T20:00:00Z",
+  "historical_window_target_days": 120,
+  "seed_scope": {
+    "core_harnesses": [
+      "claude-code",
+      "openai-codex",
+      "opencode",
+      "hermes-agent",
+      "antigravity-cli"
+    ],
+    "historical_or_secondary_harnesses": [
+      "gemini-cli",
+      "qwen-code",
+      "goose",
+      "github-copilot-cli",
+      "pi-agent"
+    ],
+    "agent_sdks": [
+      "claude-agent-sdk-python",
+      "claude-agent-sdk-typescript",
+      "codex-sdk-python",
+      "codex-sdk-typescript",
+      "openai-agents-sdk-python",
+      "openai-agents-sdk-js"
+    ],
+    "provider_sdks": [
+      "openai-python-sdk",
+      "openai-node-sdk",
+      "anthropic-python-sdk",
+      "anthropic-typescript-sdk"
+    ]
+  },
+  "quality_policy": {
+    "primary_evidence": "Official changelog, release feed, repository, or product documentation.",
+    "secondary_evidence": "Official cross-vendor compatibility matrices may support but not replace primary evidence.",
+    "unknown_rule": "Missing evidence is represented as unknown, never inferred as unavailable.",
+    "ui_rule": "Human UI availability never implies in-harness or external-agent reachability.",
+    "promotion_rule": "Heuristically extracted release changes remain candidates until reviewed or corroborated by official docs."
+  }
+}

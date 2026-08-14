@@ -1,0 +1,2261 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-08T20:00:00Z",
+  "guide_type": "agent_consumable_harness_capability_guide",
+  "harness": {
+    "id": "hermes-agent",
+    "name": "Hermes Agent",
+    "vendor": "Nous Research",
+    "family": "general_agent_harness",
+    "lifecycle": "active",
+    "current_version": "0.20.0",
+    "predecessor": null,
+    "successor": null
+  },
+  "freshness": {
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "latest_release_in_registry": "0.20.0",
+    "latest_release_published_at": "2026-08-03T00:00:00Z",
+    "warning": "Treat unavailable or unknown actor access as unsupported until verified. UI-only capability is not agent-callable by implication."
+  },
+  "capabilities_by_actor": {
+    "human_operator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Hermes provides a CLI/TUI with session resume, interruption, and command shortcuts.",
+        "surfaces": [
+          "CLI",
+          "TUI"
+        ],
+        "invocation": [
+          "hermes"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes provides a CLI/TUI with session resume, interruption, and command shortcuts."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "interaction.desktop_web",
+        "name": "Desktop or web surface",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Hermes 0.20 introduced desktop artifacts, a plugin SDK, and multi-window operation.",
+        "surfaces": [
+          "desktop",
+          "artifacts"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes 0.20 introduced desktop artifacts, a plugin SDK, and multi-window operation."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes agents can inspect and edit files through built-in and learned tools.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes agents can inspect and edit files through built-in and learned tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes can execute shell commands, including direct `!` command shortcuts in recent releases.",
+        "surfaces": [
+          "CLI"
+        ],
+        "invocation": [
+          "!<command>"
+        ],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can execute shell commands, including direct `!` command shortcuts in recent releases."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes can be invoked through CLI/gateway automation, but the seed does not yet verify a stable event protocol equivalent to Codex app-server.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can be invoked through CLI/gateway automation, but the seed does not yet verify a stable event protocol equivalent to Codex app-server."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes supports MCP servers and Docker-based MCP commands.",
+        "surfaces": [
+          "MCP",
+          "Docker"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports MCP servers and Docker-based MCP commands."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow.",
+        "surfaces": [
+          "skills catalog",
+          "/learn"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.skills",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces.",
+        "surfaces": [
+          "desktop plugin SDK"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "context.persistent_memory",
+        "name": "Persistent memory",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Persistent memory and conversation search are first-class parts of Hermes' self-improving agent model.",
+        "surfaces": [
+          "memory",
+          "conversation history"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.memory",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Persistent memory and conversation search are first-class parts of Hermes' self-improving agent model."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Hermes persists and resumes sessions across CLI and gateway surfaces.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes persists and resumes sessions across CLI and gateway surfaces."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Hermes can delegate work to specialized agents.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can delegate work to specialized agents."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Hermes supports background work and Mixture-of-Agents execution.",
+        "surfaces": [
+          "background tasks",
+          "Mixture-of-Agents"
+        ],
+        "invocation": [],
+        "minimum_version": "0.18.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.18.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports background work and Mixture-of-Agents execution."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting.",
+        "surfaces": [
+          "Mixture-of-Agents"
+        ],
+        "invocation": [],
+        "minimum_version": "0.18.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.18.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "Hermes gateways let users interact through messaging channels while work runs on another machine or cloud VM.",
+        "surfaces": [
+          "Telegram/gateway",
+          "cloud VM"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes gateways let users interact through messaging channels while work runs on another machine or cloud VM."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "runtime.self_hosted",
+        "name": "Self-hosted worker/runtime",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "Hermes can run on user-owned machines, VPSs, clusters, or serverless infrastructure.",
+        "surfaces": [
+          "local",
+          "VPS",
+          "cluster",
+          "serverless"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can run on user-owned machines, VPSs, clusters, or serverless infrastructure."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Hermes includes scheduled and gateway-driven automation paths.",
+        "surfaces": [
+          "gateway",
+          "scheduler"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes includes scheduled and gateway-driven automation paths."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Permission modes such as `/yolo` and gateway/tool configuration govern autonomy; use conservative defaults for unattended runs.",
+        "surfaces": [
+          "CLI permission modes"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "The security model needs deeper comparative review before enterprise promotion."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Permission modes such as `/yolo` and gateway/tool configuration govern autonomy; use conservative defaults for unattended runs."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Hermes 0.20 added grounded research and citation support.",
+        "surfaces": [
+          "research tools",
+          "citations"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes 0.20 added grounded research and citation support."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "interfaces.voice",
+        "name": "Voice interaction",
+        "category": "interfaces",
+        "status": "stable",
+        "summary": "Streaming voice supports barge-in and wake words.",
+        "surfaces": [
+          "voice"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.voice",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/voice-mode",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Streaming voice supports barge-in and wake words."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "interfaces.artifacts",
+        "name": "Artifacts, diffs, and rich result views",
+        "category": "interfaces",
+        "status": "stable",
+        "summary": "Desktop artifacts and multiple windows provide richer outputs than plain terminal text.",
+        "surfaces": [
+          "desktop artifacts"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Desktop artifacts and multiple windows provide richer outputs than plain terminal text."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Hermes supports multiple hosted and local model providers.",
+        "surfaces": [
+          "hosted APIs",
+          "local models"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports multiple hosted and local model providers."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "administrator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Hermes provides a CLI/TUI with session resume, interruption, and command shortcuts.",
+        "surfaces": [
+          "CLI",
+          "TUI"
+        ],
+        "invocation": [
+          "hermes"
+        ],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes provides a CLI/TUI with session resume, interruption, and command shortcuts."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "interaction.desktop_web",
+        "name": "Desktop or web surface",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Hermes 0.20 introduced desktop artifacts, a plugin SDK, and multi-window operation.",
+        "surfaces": [
+          "desktop",
+          "artifacts"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes 0.20 introduced desktop artifacts, a plugin SDK, and multi-window operation."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes agents can inspect and edit files through built-in and learned tools.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes agents can inspect and edit files through built-in and learned tools."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes can execute shell commands, including direct `!` command shortcuts in recent releases.",
+        "surfaces": [
+          "CLI"
+        ],
+        "invocation": [
+          "!<command>"
+        ],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can execute shell commands, including direct `!` command shortcuts in recent releases."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes can be invoked through CLI/gateway automation, but the seed does not yet verify a stable event protocol equivalent to Codex app-server.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can be invoked through CLI/gateway automation, but the seed does not yet verify a stable event protocol equivalent to Codex app-server."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes supports MCP servers and Docker-based MCP commands.",
+        "surfaces": [
+          "MCP",
+          "Docker"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports MCP servers and Docker-based MCP commands."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow.",
+        "surfaces": [
+          "skills catalog",
+          "/learn"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.skills",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces.",
+        "surfaces": [
+          "desktop plugin SDK"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "context.persistent_memory",
+        "name": "Persistent memory",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Persistent memory and conversation search are first-class parts of Hermes' self-improving agent model.",
+        "surfaces": [
+          "memory",
+          "conversation history"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.memory",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Persistent memory and conversation search are first-class parts of Hermes' self-improving agent model."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Hermes persists and resumes sessions across CLI and gateway surfaces.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes persists and resumes sessions across CLI and gateway surfaces."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Hermes can delegate work to specialized agents.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can delegate work to specialized agents."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Hermes supports background work and Mixture-of-Agents execution.",
+        "surfaces": [
+          "background tasks",
+          "Mixture-of-Agents"
+        ],
+        "invocation": [],
+        "minimum_version": "0.18.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.18.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports background work and Mixture-of-Agents execution."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting.",
+        "surfaces": [
+          "Mixture-of-Agents"
+        ],
+        "invocation": [],
+        "minimum_version": "0.18.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.18.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "Hermes gateways let users interact through messaging channels while work runs on another machine or cloud VM.",
+        "surfaces": [
+          "Telegram/gateway",
+          "cloud VM"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes gateways let users interact through messaging channels while work runs on another machine or cloud VM."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "runtime.self_hosted",
+        "name": "Self-hosted worker/runtime",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "Hermes can run on user-owned machines, VPSs, clusters, or serverless infrastructure.",
+        "surfaces": [
+          "local",
+          "VPS",
+          "cluster",
+          "serverless"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can run on user-owned machines, VPSs, clusters, or serverless infrastructure."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Hermes includes scheduled and gateway-driven automation paths.",
+        "surfaces": [
+          "gateway",
+          "scheduler"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes includes scheduled and gateway-driven automation paths."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Permission modes such as `/yolo` and gateway/tool configuration govern autonomy; use conservative defaults for unattended runs.",
+        "surfaces": [
+          "CLI permission modes"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "The security model needs deeper comparative review before enterprise promotion."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Permission modes such as `/yolo` and gateway/tool configuration govern autonomy; use conservative defaults for unattended runs."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Hermes 0.20 added grounded research and citation support.",
+        "surfaces": [
+          "research tools",
+          "citations"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes 0.20 added grounded research and citation support."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "interfaces.voice",
+        "name": "Voice interaction",
+        "category": "interfaces",
+        "status": "stable",
+        "summary": "Streaming voice supports barge-in and wake words.",
+        "surfaces": [
+          "voice"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.voice",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/voice-mode",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Streaming voice supports barge-in and wake words."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "interfaces.artifacts",
+        "name": "Artifacts, diffs, and rich result views",
+        "category": "interfaces",
+        "status": "stable",
+        "summary": "Desktop artifacts and multiple windows provide richer outputs than plain terminal text.",
+        "surfaces": [
+          "desktop artifacts"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Desktop artifacts and multiple windows provide richer outputs than plain terminal text."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Hermes supports multiple hosted and local model providers.",
+        "surfaces": [
+          "hosted APIs",
+          "local models"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports multiple hosted and local model providers."
+          }
+        ],
+        "access": "configurable"
+      }
+    ],
+    "in_harness_agent": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes agents can inspect and edit files through built-in and learned tools.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes agents can inspect and edit files through built-in and learned tools."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes can execute shell commands, including direct `!` command shortcuts in recent releases.",
+        "surfaces": [
+          "CLI"
+        ],
+        "invocation": [
+          "!<command>"
+        ],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can execute shell commands, including direct `!` command shortcuts in recent releases."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes supports MCP servers and Docker-based MCP commands.",
+        "surfaces": [
+          "MCP",
+          "Docker"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports MCP servers and Docker-based MCP commands."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow.",
+        "surfaces": [
+          "skills catalog",
+          "/learn"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.skills",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces.",
+        "surfaces": [
+          "desktop plugin SDK"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "context.persistent_memory",
+        "name": "Persistent memory",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Persistent memory and conversation search are first-class parts of Hermes' self-improving agent model.",
+        "surfaces": [
+          "memory",
+          "conversation history"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.memory",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Persistent memory and conversation search are first-class parts of Hermes' self-improving agent model."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Hermes can delegate work to specialized agents.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can delegate work to specialized agents."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Hermes supports background work and Mixture-of-Agents execution.",
+        "surfaces": [
+          "background tasks",
+          "Mixture-of-Agents"
+        ],
+        "invocation": [],
+        "minimum_version": "0.18.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.18.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports background work and Mixture-of-Agents execution."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting.",
+        "surfaces": [
+          "Mixture-of-Agents"
+        ],
+        "invocation": [],
+        "minimum_version": "0.18.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.18.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Hermes includes scheduled and gateway-driven automation paths.",
+        "surfaces": [
+          "gateway",
+          "scheduler"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes includes scheduled and gateway-driven automation paths."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Hermes 0.20 added grounded research and citation support.",
+        "surfaces": [
+          "research tools",
+          "citations"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes 0.20 added grounded research and citation support."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Hermes supports multiple hosted and local model providers.",
+        "surfaces": [
+          "hosted APIs",
+          "local models"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports multiple hosted and local model providers."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "external_orchestrator": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes agents can inspect and edit files through built-in and learned tools.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes agents can inspect and edit files through built-in and learned tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes can execute shell commands, including direct `!` command shortcuts in recent releases.",
+        "surfaces": [
+          "CLI"
+        ],
+        "invocation": [
+          "!<command>"
+        ],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can execute shell commands, including direct `!` command shortcuts in recent releases."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes can be invoked through CLI/gateway automation, but the seed does not yet verify a stable event protocol equivalent to Codex app-server.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can be invoked through CLI/gateway automation, but the seed does not yet verify a stable event protocol equivalent to Codex app-server."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes supports MCP servers and Docker-based MCP commands.",
+        "surfaces": [
+          "MCP",
+          "Docker"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports MCP servers and Docker-based MCP commands."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow.",
+        "surfaces": [
+          "skills catalog",
+          "/learn"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.skills",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces.",
+        "surfaces": [
+          "desktop plugin SDK"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "context.persistent_memory",
+        "name": "Persistent memory",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Persistent memory and conversation search are first-class parts of Hermes' self-improving agent model.",
+        "surfaces": [
+          "memory",
+          "conversation history"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.memory",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Persistent memory and conversation search are first-class parts of Hermes' self-improving agent model."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Hermes persists and resumes sessions across CLI and gateway surfaces.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes persists and resumes sessions across CLI and gateway surfaces."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Hermes can delegate work to specialized agents.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can delegate work to specialized agents."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Hermes supports background work and Mixture-of-Agents execution.",
+        "surfaces": [
+          "background tasks",
+          "Mixture-of-Agents"
+        ],
+        "invocation": [],
+        "minimum_version": "0.18.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.18.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports background work and Mixture-of-Agents execution."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting.",
+        "surfaces": [
+          "Mixture-of-Agents"
+        ],
+        "invocation": [],
+        "minimum_version": "0.18.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.18.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "Hermes gateways let users interact through messaging channels while work runs on another machine or cloud VM.",
+        "surfaces": [
+          "Telegram/gateway",
+          "cloud VM"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes gateways let users interact through messaging channels while work runs on another machine or cloud VM."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.self_hosted",
+        "name": "Self-hosted worker/runtime",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "Hermes can run on user-owned machines, VPSs, clusters, or serverless infrastructure.",
+        "surfaces": [
+          "local",
+          "VPS",
+          "cluster",
+          "serverless"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can run on user-owned machines, VPSs, clusters, or serverless infrastructure."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Hermes includes scheduled and gateway-driven automation paths.",
+        "surfaces": [
+          "gateway",
+          "scheduler"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes includes scheduled and gateway-driven automation paths."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Permission modes such as `/yolo` and gateway/tool configuration govern autonomy; use conservative defaults for unattended runs.",
+        "surfaces": [
+          "CLI permission modes"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "The security model needs deeper comparative review before enterprise promotion."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Permission modes such as `/yolo` and gateway/tool configuration govern autonomy; use conservative defaults for unattended runs."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Hermes 0.20 added grounded research and citation support.",
+        "surfaces": [
+          "research tools",
+          "citations"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes 0.20 added grounded research and citation support."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "interfaces.voice",
+        "name": "Voice interaction",
+        "category": "interfaces",
+        "status": "stable",
+        "summary": "Streaming voice supports barge-in and wake words.",
+        "surfaces": [
+          "voice"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.voice",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/voice-mode",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Streaming voice supports barge-in and wake words."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Hermes supports multiple hosted and local model providers.",
+        "surfaces": [
+          "hosted APIs",
+          "local models"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports multiple hosted and local model providers."
+          }
+        ],
+        "access": "configurable"
+      }
+    ],
+    "ci_runner": [
+      {
+        "capability_id": "execution.file_edit",
+        "name": "Agent-native file editing",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes agents can inspect and edit files through built-in and learned tools.",
+        "surfaces": [
+          "CLI",
+          "desktop"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes agents can inspect and edit files through built-in and learned tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.shell",
+        "name": "Agent-native shell execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes can execute shell commands, including direct `!` command shortcuts in recent releases.",
+        "surfaces": [
+          "CLI"
+        ],
+        "invocation": [
+          "!<command>"
+        ],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can execute shell commands, including direct `!` command shortcuts in recent releases."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.headless",
+        "name": "Headless/non-interactive execution",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Hermes can be invoked through CLI/gateway automation, but the seed does not yet verify a stable event protocol equivalent to Codex app-server.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can be invoked through CLI/gateway automation, but the seed does not yet verify a stable event protocol equivalent to Codex app-server."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes supports MCP servers and Docker-based MCP commands.",
+        "surfaces": [
+          "MCP",
+          "Docker"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports MCP servers and Docker-based MCP commands."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow.",
+        "surfaces": [
+          "skills catalog",
+          "/learn"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.skills",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces.",
+        "surfaces": [
+          "desktop plugin SDK"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "Hermes persists and resumes sessions across CLI and gateway surfaces.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes persists and resumes sessions across CLI and gateway surfaces."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Hermes can delegate work to specialized agents.",
+        "surfaces": [
+          "CLI",
+          "gateway"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can delegate work to specialized agents."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.parallel_background",
+        "name": "Parallel/background agents",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Hermes supports background work and Mixture-of-Agents execution.",
+        "surfaces": [
+          "background tasks",
+          "Mixture-of-Agents"
+        ],
+        "invocation": [],
+        "minimum_version": "0.18.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.18.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports background work and Mixture-of-Agents execution."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting.",
+        "surfaces": [
+          "Mixture-of-Agents"
+        ],
+        "invocation": [],
+        "minimum_version": "0.18.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.18.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.remote_cloud",
+        "name": "Remote/cloud execution",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "Hermes gateways let users interact through messaging channels while work runs on another machine or cloud VM.",
+        "surfaces": [
+          "Telegram/gateway",
+          "cloud VM"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes gateways let users interact through messaging channels while work runs on another machine or cloud VM."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "runtime.self_hosted",
+        "name": "Self-hosted worker/runtime",
+        "category": "runtime",
+        "status": "stable",
+        "summary": "Hermes can run on user-owned machines, VPSs, clusters, or serverless infrastructure.",
+        "surfaces": [
+          "local",
+          "VPS",
+          "cluster",
+          "serverless"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes can run on user-owned machines, VPSs, clusters, or serverless infrastructure."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "automation.schedules",
+        "name": "Scheduled tasks",
+        "category": "automation",
+        "status": "stable",
+        "summary": "Hermes includes scheduled and gateway-driven automation paths.",
+        "surfaces": [
+          "gateway",
+          "scheduler"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes includes scheduled and gateway-driven automation paths."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Permission modes such as `/yolo` and gateway/tool configuration govern autonomy; use conservative defaults for unattended runs.",
+        "surfaces": [
+          "CLI permission modes"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [
+          "The security model needs deeper comparative review before enterprise promotion."
+        ],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Permission modes such as `/yolo` and gateway/tool configuration govern autonomy; use conservative defaults for unattended runs."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.web_research",
+        "name": "Web search/research",
+        "category": "research_tools",
+        "status": "stable",
+        "summary": "Hermes 0.20 added grounded research and citation support.",
+        "surfaces": [
+          "research tools",
+          "citations"
+        ],
+        "invocation": [],
+        "minimum_version": "0.20.0",
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/releases",
+            "version": "0.20.0",
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes 0.20 added grounded research and citation support."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Hermes supports multiple hosted and local model providers.",
+        "surfaces": [
+          "hosted APIs",
+          "local models"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://github.com/NousResearch/hermes-agent",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Hermes supports multiple hosted and local model providers."
+          }
+        ],
+        "access": "configurable"
+      }
+    ]
+  },
+  "human_mediation_required": [],
+  "unverified_or_low_confidence": [],
+  "routing_hint": {
+    "recommended_when": [
+      "Persistent personal-agent memory",
+      "Self-improving skill creation",
+      "Voice and messaging gateways",
+      "Provider-neutral general agent workflows"
+    ],
+    "avoid_when": [
+      "You need conservative release management without pinning",
+      "You need an enterprise support contract from a major platform vendor"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "strong",
+      "multi_agent": "strong",
+      "structured_automation": "moderate",
+      "provider_portability": "strong",
+      "enterprise_controls": "emerging"
+    }
+  }
+}

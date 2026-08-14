@@ -1,0 +1,1017 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-08T20:00:00Z",
+  "guide_type": "agent_consumable_harness_capability_guide",
+  "harness": {
+    "id": "openai-agents-sdk-js",
+    "name": "OpenAI Agents SDK — JavaScript/TypeScript",
+    "vendor": "OpenAI",
+    "family": "agent_sdk",
+    "lifecycle": "active",
+    "current_version": "0.14.3",
+    "predecessor": null,
+    "successor": null
+  },
+  "freshness": {
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "latest_release_in_registry": "0.14.3",
+    "latest_release_published_at": "2026-08-06T00:00:00Z",
+    "warning": "Treat unavailable or unknown actor access as unsupported until verified. UI-only capability is not agent-callable by implication."
+  },
+  "capabilities_by_actor": {
+    "human_operator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "JavaScript/TypeScript framework for building agent applications.",
+        "surfaces": [
+          "JavaScript/TypeScript library"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "JavaScript/TypeScript framework for building agent applications."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Typed agent results and structured outputs support downstream automation.",
+        "surfaces": [
+          "typed results"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed agent results and structured outputs support downstream automation."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agents can connect to MCP servers and expose MCP-backed tools.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agents can connect to MCP servers and expose MCP-backed tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Handoffs and agents-as-tools compose multi-agent workflows.",
+        "surfaces": [
+          "handoffs",
+          "agents as tools"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Handoffs and agents-as-tools compose multi-agent workflows."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Supervisor/handoff patterns are first-class in the SDK.",
+        "surfaces": [
+          "handoffs",
+          "routing"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Supervisor/handoff patterns are first-class in the SDK."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "context.persistent_memory",
+        "name": "Persistent memory",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Sessions persist conversation state across agent runs.",
+        "surfaces": [
+          "sessions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Sessions persist conversation state across agent runs."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Guardrails and tool policies validate inputs, outputs, and actions.",
+        "surfaces": [
+          "guardrails"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Guardrails and tool policies validate inputs, outputs, and actions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Built-in tracing records agents, generations, tools, handoffs, and guardrails.",
+        "surfaces": [
+          "tracing"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in tracing records agents, generations, tools, handoffs, and guardrails."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "The SDK supports OpenAI APIs and provider-compatible model adapters.",
+        "surfaces": [
+          "model adapters"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The SDK supports OpenAI APIs and provider-compatible model adapters."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Tool approval/guardrail patterns can be implemented in application code.",
+        "surfaces": [
+          "callbacks",
+          "guardrails"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Tool approval/guardrail patterns can be implemented in application code."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "external_orchestrator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "JavaScript/TypeScript framework for building agent applications.",
+        "surfaces": [
+          "JavaScript/TypeScript library"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "JavaScript/TypeScript framework for building agent applications."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Typed agent results and structured outputs support downstream automation.",
+        "surfaces": [
+          "typed results"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed agent results and structured outputs support downstream automation."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agents can connect to MCP servers and expose MCP-backed tools.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agents can connect to MCP servers and expose MCP-backed tools."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Handoffs and agents-as-tools compose multi-agent workflows.",
+        "surfaces": [
+          "handoffs",
+          "agents as tools"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Handoffs and agents-as-tools compose multi-agent workflows."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Supervisor/handoff patterns are first-class in the SDK.",
+        "surfaces": [
+          "handoffs",
+          "routing"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Supervisor/handoff patterns are first-class in the SDK."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "context.persistent_memory",
+        "name": "Persistent memory",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Sessions persist conversation state across agent runs.",
+        "surfaces": [
+          "sessions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Sessions persist conversation state across agent runs."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Guardrails and tool policies validate inputs, outputs, and actions.",
+        "surfaces": [
+          "guardrails"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Guardrails and tool policies validate inputs, outputs, and actions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Built-in tracing records agents, generations, tools, handoffs, and guardrails.",
+        "surfaces": [
+          "tracing"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in tracing records agents, generations, tools, handoffs, and guardrails."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "The SDK supports OpenAI APIs and provider-compatible model adapters.",
+        "surfaces": [
+          "model adapters"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The SDK supports OpenAI APIs and provider-compatible model adapters."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Tool approval/guardrail patterns can be implemented in application code.",
+        "surfaces": [
+          "callbacks",
+          "guardrails"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Tool approval/guardrail patterns can be implemented in application code."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "ci_runner": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "JavaScript/TypeScript framework for building agent applications.",
+        "surfaces": [
+          "JavaScript/TypeScript library"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "JavaScript/TypeScript framework for building agent applications."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Typed agent results and structured outputs support downstream automation.",
+        "surfaces": [
+          "typed results"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed agent results and structured outputs support downstream automation."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agents can connect to MCP servers and expose MCP-backed tools.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agents can connect to MCP servers and expose MCP-backed tools."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Handoffs and agents-as-tools compose multi-agent workflows.",
+        "surfaces": [
+          "handoffs",
+          "agents as tools"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Handoffs and agents-as-tools compose multi-agent workflows."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Supervisor/handoff patterns are first-class in the SDK.",
+        "surfaces": [
+          "handoffs",
+          "routing"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Supervisor/handoff patterns are first-class in the SDK."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "context.persistent_memory",
+        "name": "Persistent memory",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Sessions persist conversation state across agent runs.",
+        "surfaces": [
+          "sessions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Sessions persist conversation state across agent runs."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Guardrails and tool policies validate inputs, outputs, and actions.",
+        "surfaces": [
+          "guardrails"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Guardrails and tool policies validate inputs, outputs, and actions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Built-in tracing records agents, generations, tools, handoffs, and guardrails.",
+        "surfaces": [
+          "tracing"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in tracing records agents, generations, tools, handoffs, and guardrails."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "The SDK supports OpenAI APIs and provider-compatible model adapters.",
+        "surfaces": [
+          "model adapters"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The SDK supports OpenAI APIs and provider-compatible model adapters."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Tool approval/guardrail patterns can be implemented in application code.",
+        "surfaces": [
+          "callbacks",
+          "guardrails"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Tool approval/guardrail patterns can be implemented in application code."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "administrator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "JavaScript/TypeScript framework for building agent applications.",
+        "surfaces": [
+          "JavaScript/TypeScript library"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "JavaScript/TypeScript framework for building agent applications."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Typed agent results and structured outputs support downstream automation.",
+        "surfaces": [
+          "typed results"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed agent results and structured outputs support downstream automation."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Agents can connect to MCP servers and expose MCP-backed tools.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Agents can connect to MCP servers and expose MCP-backed tools."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Handoffs and agents-as-tools compose multi-agent workflows.",
+        "surfaces": [
+          "handoffs",
+          "agents as tools"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Handoffs and agents-as-tools compose multi-agent workflows."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.multi_agent_coordination",
+        "name": "First-class multi-agent coordination",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "Supervisor/handoff patterns are first-class in the SDK.",
+        "surfaces": [
+          "handoffs",
+          "routing"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Supervisor/handoff patterns are first-class in the SDK."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "context.persistent_memory",
+        "name": "Persistent memory",
+        "category": "context_memory",
+        "status": "stable",
+        "summary": "Sessions persist conversation state across agent runs.",
+        "surfaces": [
+          "sessions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Sessions persist conversation state across agent runs."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Guardrails and tool policies validate inputs, outputs, and actions.",
+        "surfaces": [
+          "guardrails"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Guardrails and tool policies validate inputs, outputs, and actions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Built-in tracing records agents, generations, tools, handoffs, and guardrails.",
+        "surfaces": [
+          "tracing"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Built-in tracing records agents, generations, tools, handoffs, and guardrails."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "The SDK supports OpenAI APIs and provider-compatible model adapters.",
+        "surfaces": [
+          "model adapters"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "The SDK supports OpenAI APIs and provider-compatible model adapters."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Tool approval/guardrail patterns can be implemented in application code.",
+        "surfaces": [
+          "callbacks",
+          "guardrails"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Tool approval/guardrail patterns can be implemented in application code."
+          }
+        ],
+        "access": "configurable"
+      }
+    ]
+  },
+  "human_mediation_required": [],
+  "unverified_or_low_confidence": [],
+  "routing_hint": {
+    "recommended_when": [
+      "Building multi-agent JS/TS applications with tracing, guardrails, sessions, and handoffs"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "strong",
+      "provider_portability": "strong",
+      "enterprise_controls": "strong"
+    }
+  }
+}

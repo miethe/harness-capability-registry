@@ -1,0 +1,98 @@
+name: Update harness capability registry
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      historical_days:
+        description: Historical release window to refresh
+        required: false
+        default: "120"
+
+concurrency:
+  group: harness-capability-registry-update
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      HCR_DAYS: ${{ inputs.historical_days || '120' }}
+    steps:
+      - name: Check out canonical branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install registry tooling
+        run: python -m pip install -e '.[dev]'
+
+      - name: Refresh releases and documentation drift
+        run: python -m hcr update --since-days "$HCR_DAYS" --max-pages 20 --snapshot-docs | tee /tmp/hcr-update.log
+
+      - name: Run deterministic validation suite
+        run: |
+          python -m pytest
+          node --check app/app.js
+
+      - name: Summarize update
+        run: |
+          {
+            echo "## Harness Capability Registry"
+            echo
+            echo '```json'
+            cat /tmp/hcr-update.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Create or refresh update pull request
+        shell: bash
+        run: |
+          set -euo pipefail
+          BRANCH="automation/harness-capability-registry-update"
+          git config user.name "hcr-update-bot"
+          git config user.email "hcr-update-bot@users.noreply.github.com"
+
+          git add \
+            registry \
+            raw \
+            app/data \
+            generated/agent-guides \
+            generated/registry.bundle.json \
+            generated/Harness_Matrix_Standalone.html \
+            generated/reports/coverage.md \
+            generated/validation-report.json \
+            generated/source-drift-report.json
+
+          if git diff --cached --quiet; then
+            echo "No upstream capability or release changes detected."
+            exit 0
+          fi
+
+          git checkout -B "$BRANCH"
+          git commit -m "chore(hcr): refresh upstream harness intelligence"
+          git push --force origin "HEAD:$BRANCH"
+
+          if gh pr view "$BRANCH" >/dev/null 2>&1; then
+            gh pr edit "$BRANCH" \
+              --title "chore(hcr): refresh upstream harness intelligence" \
+              --body "Automated refresh of official release history, documentation drift, normalized guides, and web-app bundles. Validation passed before this pull request was updated."
+          else
+            gh pr create \
+              --base "${{ github.event.repository.default_branch }}" \
+              --head "$BRANCH" \
+              --title "chore(hcr): refresh upstream harness intelligence" \
+              --body "Automated refresh of official release history, documentation drift, normalized guides, and web-app bundles. Validation passed before this pull request was opened."
+          fi

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meatyos.dev/schemas/hcr/taxonomy.schema.json",
+  "title": "Canonical capability taxonomy",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "category",
+      "definition",
+      "comparison_question"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "name": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "definition": {
+        "type": "string"
+      },
+      "comparison_question": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "harness": {
+    "id": "pi-agent",
+    "name": "Pi Agent Harness",
+    "vendor": "Earendil Works",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "maturity": "experimental_to_stable",
+    "tracking_priority": "discovery",
+    "current_version": null,
+    "version_as_of": "2026-08-08",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/earendil-works/pi",
+    "docs_url": "https://github.com/earendil-works/pi",
+    "surfaces": [
+      "terminal",
+      "library/runtime"
+    ],
+    "auth_modes": [
+      "multiple provider APIs"
+    ],
+    "source_ids": [
+      "src.pi.repo",
+      "src.pi.releases",
+      "src.github-agentic-workflows.engine-matrix"
+    ],
+    "recommended_when": [
+      "Minimal self-extensible harness",
+      "Provider-neutral agent runtime experiments"
+    ],
+    "avoid_when": [
+      "You need a fully managed enterprise product"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "limited",
+      "multi_agent": "moderate",
+      "structured_automation": "moderate",
+      "provider_portability": "strong",
+      "enterprise_controls": "limited"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  "capabilities": [
+    {
+      "id": "impl.pi-agent.interaction.terminal",
+      "harness_id": "pi-agent",
+      "capability_id": "interaction.terminal",
+      "status": "stable",
+      "summary": "Pi includes an interactive coding-agent CLI.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "unavailable",
+        "ci_runner": "unavailable",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "terminal"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": null,
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.pi.repo",
+          "url": "https://github.com/earendil-works/pi",
+          "claim": "Pi includes an interactive coding-agent CLI.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.pi-agent.execution.sdk_embedding",
+      "harness_id": "pi-agent",
+      "capability_id": "execution.sdk_embedding",
+      "status": "stable",
+      "summary": "Pi includes an agent core runtime and unified LLM API packages.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "native",
+        "ci_runner": "native",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "TypeScript packages"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": null,
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.pi.repo",
+          "url": "https://github.com/earendil-works/pi",
+          "claim": "Pi includes an agent core runtime and unified LLM API packages.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.pi-agent.extensions.skills",
+      "harness_id": "pi-agent",
+      "capability_id": "extensions.skills",
+      "status": "stable",
+      "summary": "Pi skills are compatible with Claude Code and Codex-style skill bundles.",
+      "actor_access": {
+        "human_operator": "configurable",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "skills"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": null,
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.pi.repo",
+          "url": "https://github.com/earendil-works/pi",
+          "claim": "Pi skills are compatible with Claude Code and Codex-style skill bundles.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.pi-agent.extensions.plugins",
+      "harness_id": "pi-agent",
+      "capability_id": "extensions.plugins",
+      "status": "stable",
+      "summary": "Pi supports installable extensions.",
+      "actor_access": {
+        "human_operator": "configurable",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "npm extensions"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": null,
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.github-agentic-workflows.engine-matrix",
+          "url": "https://github.github.com/gh-aw/reference/engines/",
+          "claim": "Pi supports installable extensions.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.pi-agent.models.provider_portability",
+      "harness_id": "pi-agent",
+      "capability_id": "models.provider_portability",
+      "status": "stable",
+      "summary": "Pi includes a unified multi-provider LLM API.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "supported",
+        "external_orchestrator": "configurable",
+        "ci_runner": "configurable",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "multiple providers"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": null,
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.pi.repo",
+          "url": "https://github.com/earendil-works/pi",
+          "claim": "Pi includes a unified multi-provider LLM API.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    }
+  ],
+  "releases": [],
+  "sources": [
+    {
+      "id": "src.pi.repo",
+      "name": "Pi Agent Harness repository",
+      "url": "https://github.com/earendil-works/pi",
+      "harness_ids": [
+        "pi-agent"
+      ],
+      "source_type": "repository",
+      "purpose": "capability_reference",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "manual_reference"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    },
+    {
+      "id": "src.pi.releases",
+      "name": "Pi Agent Harness releases",
+      "url": "https://github.com/earendil-works/pi/releases",
+      "harness_ids": [
+        "pi-agent"
+      ],
+      "source_type": "github_releases",
+      "purpose": "release_history",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "github_releases",
+        "repo": "earendil-works/pi"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    },
+    {
+      "id": "src.github-agentic-workflows.engine-matrix",
+      "name": "GitHub Agentic Workflows engine comparison",
+      "url": "https://github.github.com/gh-aw/reference/engines/",
+      "harness_ids": [
+        "claude-code",
+        "openai-codex",
+        "gemini-cli",
+        "github-copilot-cli",
+        "pi-agent",
+        "opencode"
+      ],
+      "source_type": "official_secondary_matrix",
+      "purpose": "comparison_reference",
+      "authority": "official_secondary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "manual_reference"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": "Useful as a normalized secondary source for GitHub Actions compatibility, not as canonical product capability truth."
+    }
+  ]
+}

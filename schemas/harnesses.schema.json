@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meatyos.dev/schemas/hcr/harnesses.schema.json",
+  "title": "HCR harness/product tracks",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "vendor",
+      "family",
+      "lifecycle",
+      "maturity",
+      "tracking_priority",
+      "source_ids",
+      "surfaces",
+      "auth_modes",
+      "recommended_when",
+      "avoid_when",
+      "control_plane_dimensions"
+    ],
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/$defs/id"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "vendor": {
+        "type": "string",
+        "minLength": 1
+      },
+      "family": {
+        "type": "string",
+        "enum": [
+          "agentic_harness",
+          "general_agent_harness",
+          "agent_sdk",
+          "provider_sdk"
+        ]
+      },
+      "lifecycle": {
+        "type": "string",
+        "enum": [
+          "active",
+          "maintenance",
+          "transitioning",
+          "legacy",
+          "archived",
+          "monitoring_only"
+        ]
+      },
+      "maturity": {
+        "type": "string"
+      },
+      "tracking_priority": {
+        "type": "string",
+        "enum": [
+          "core",
+          "secondary",
+          "watch",
+          "historical",
+          "discovery",
+          "provider_sdk"
+        ]
+      },
+      "current_version": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "version_as_of": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date"
+      },
+      "last_verified_at": {
+        "$ref": "common.schema.json#/$defs/timestamp"
+      },
+      "predecessor": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "successor": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "repo_url": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "uri"
+      },
+      "docs_url": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "uri"
+      },
+      "surfaces": {
+        "$ref": "common.schema.json#/$defs/stringList"
+      },
+      "auth_modes": {
+        "$ref": "common.schema.json#/$defs/stringList"
+      },
+      "source_ids": {
+        "$ref": "common.schema.json#/$defs/stringList"
+      },
+      "recommended_when": {
+        "$ref": "common.schema.json#/$defs/stringList"
+      },
+      "avoid_when": {
+        "$ref": "common.schema.json#/$defs/stringList"
+      },
+      "control_plane_dimensions": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "lifecycle_events": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      },
+      "notes": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "additionalProperties": false
+  }
+}

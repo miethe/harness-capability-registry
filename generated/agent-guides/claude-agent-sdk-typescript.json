@@ -1,0 +1,917 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-08T20:00:00Z",
+  "guide_type": "agent_consumable_harness_capability_guide",
+  "harness": {
+    "id": "claude-agent-sdk-typescript",
+    "name": "Claude Agent SDK — TypeScript",
+    "vendor": "Anthropic",
+    "family": "agent_sdk",
+    "lifecycle": "active",
+    "current_version": "0.3.226",
+    "predecessor": null,
+    "successor": null
+  },
+  "freshness": {
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "latest_release_in_registry": "0.3.226",
+    "latest_release_published_at": null,
+    "warning": "Treat unavailable or unknown actor access as unsupported until verified. UI-only capability is not agent-callable by implication."
+  },
+  "capabilities_by_actor": {
+    "human_operator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "TypeScript API embeds the Claude Code agent loop, tools, and context management.",
+        "surfaces": [
+          "TypeScript library"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "TypeScript API embeds the Claude Code agent loop, tools, and context management."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Typed message streams expose assistant, tool, task, usage, and terminal-result events.",
+        "surfaces": [
+          "typed events"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed message streams expose assistant, tool, task, usage, and terminal-result events."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "SDK applications can configure MCP servers and SDK-defined MCP tools.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK applications can configure MCP servers and SDK-defined MCP tools."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Lifecycle hooks and permission callbacks are available to embedding applications.",
+        "surfaces": [
+          "callbacks",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Lifecycle hooks and permission callbacks are available to embedding applications."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "SDK applications can use Claude Code subagents and background tasks.",
+        "surfaces": [
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK applications can use Claude Code subagents and background tasks."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "SDK session IDs and stores support resume and session lifecycle management.",
+        "surfaces": [
+          "session store"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK session IDs and stores support resume and session lifecycle management."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Allowed tools, permission modes, and callbacks govern actions.",
+        "surfaces": [
+          "options",
+          "callbacks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Allowed tools, permission modes, and callbacks govern actions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Typed result and task events provide execution telemetry.",
+        "surfaces": [
+          "event stream"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed result and task events provide execution telemetry."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Embedding applications can implement human/tool approval callbacks.",
+        "surfaces": [
+          "permission callback"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Embedding applications can implement human/tool approval callbacks."
+          }
+        ],
+        "access": "supported"
+      }
+    ],
+    "external_orchestrator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "TypeScript API embeds the Claude Code agent loop, tools, and context management.",
+        "surfaces": [
+          "TypeScript library"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "TypeScript API embeds the Claude Code agent loop, tools, and context management."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Typed message streams expose assistant, tool, task, usage, and terminal-result events.",
+        "surfaces": [
+          "typed events"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed message streams expose assistant, tool, task, usage, and terminal-result events."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "SDK applications can configure MCP servers and SDK-defined MCP tools.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK applications can configure MCP servers and SDK-defined MCP tools."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Lifecycle hooks and permission callbacks are available to embedding applications.",
+        "surfaces": [
+          "callbacks",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Lifecycle hooks and permission callbacks are available to embedding applications."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "SDK applications can use Claude Code subagents and background tasks.",
+        "surfaces": [
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK applications can use Claude Code subagents and background tasks."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "SDK session IDs and stores support resume and session lifecycle management.",
+        "surfaces": [
+          "session store"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK session IDs and stores support resume and session lifecycle management."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Allowed tools, permission modes, and callbacks govern actions.",
+        "surfaces": [
+          "options",
+          "callbacks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Allowed tools, permission modes, and callbacks govern actions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Typed result and task events provide execution telemetry.",
+        "surfaces": [
+          "event stream"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed result and task events provide execution telemetry."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Embedding applications can implement human/tool approval callbacks.",
+        "surfaces": [
+          "permission callback"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Embedding applications can implement human/tool approval callbacks."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "ci_runner": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "TypeScript API embeds the Claude Code agent loop, tools, and context management.",
+        "surfaces": [
+          "TypeScript library"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "TypeScript API embeds the Claude Code agent loop, tools, and context management."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Typed message streams expose assistant, tool, task, usage, and terminal-result events.",
+        "surfaces": [
+          "typed events"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed message streams expose assistant, tool, task, usage, and terminal-result events."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "SDK applications can configure MCP servers and SDK-defined MCP tools.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK applications can configure MCP servers and SDK-defined MCP tools."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Lifecycle hooks and permission callbacks are available to embedding applications.",
+        "surfaces": [
+          "callbacks",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Lifecycle hooks and permission callbacks are available to embedding applications."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "SDK applications can use Claude Code subagents and background tasks.",
+        "surfaces": [
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK applications can use Claude Code subagents and background tasks."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "SDK session IDs and stores support resume and session lifecycle management.",
+        "surfaces": [
+          "session store"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK session IDs and stores support resume and session lifecycle management."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Allowed tools, permission modes, and callbacks govern actions.",
+        "surfaces": [
+          "options",
+          "callbacks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Allowed tools, permission modes, and callbacks govern actions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Typed result and task events provide execution telemetry.",
+        "surfaces": [
+          "event stream"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed result and task events provide execution telemetry."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Embedding applications can implement human/tool approval callbacks.",
+        "surfaces": [
+          "permission callback"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Embedding applications can implement human/tool approval callbacks."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "administrator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "TypeScript API embeds the Claude Code agent loop, tools, and context management.",
+        "surfaces": [
+          "TypeScript library"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "TypeScript API embeds the Claude Code agent loop, tools, and context management."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.structured_output",
+        "name": "Machine-readable output",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Typed message streams expose assistant, tool, task, usage, and terminal-result events.",
+        "surfaces": [
+          "typed events"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed message streams expose assistant, tool, task, usage, and terminal-result events."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.mcp_client",
+        "name": "MCP client",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "SDK applications can configure MCP servers and SDK-defined MCP tools.",
+        "surfaces": [
+          "MCP"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK applications can configure MCP servers and SDK-defined MCP tools."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.hooks",
+        "name": "Lifecycle hooks",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Lifecycle hooks and permission callbacks are available to embedding applications.",
+        "surfaces": [
+          "callbacks",
+          "hooks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Lifecycle hooks and permission callbacks are available to embedding applications."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "orchestration.subagents",
+        "name": "Subagents/delegation",
+        "category": "orchestration",
+        "status": "stable",
+        "summary": "SDK applications can use Claude Code subagents and background tasks.",
+        "surfaces": [
+          "subagents"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK applications can use Claude Code subagents and background tasks."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "sessions.resume_fork",
+        "name": "Resume, fork, and session lineage",
+        "category": "session_state",
+        "status": "stable",
+        "summary": "SDK session IDs and stores support resume and session lifecycle management.",
+        "surfaces": [
+          "session store"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "SDK session IDs and stores support resume and session lifecycle management."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "security.permissions",
+        "name": "Granular permissions and approvals",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Allowed tools, permission modes, and callbacks govern actions.",
+        "surfaces": [
+          "options",
+          "callbacks"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Allowed tools, permission modes, and callbacks govern actions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "observability.tracing",
+        "name": "Agent tracing/event telemetry",
+        "category": "observability",
+        "status": "stable",
+        "summary": "Typed result and task events provide execution telemetry.",
+        "surfaces": [
+          "event stream"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Typed result and task events provide execution telemetry."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "governance.human_approval_api",
+        "name": "Programmatic human approval",
+        "category": "security_governance",
+        "status": "stable",
+        "summary": "Embedding applications can implement human/tool approval callbacks.",
+        "surfaces": [
+          "permission callback"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.claude-code.docs.sdk",
+            "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Embedding applications can implement human/tool approval callbacks."
+          }
+        ],
+        "access": "configurable"
+      }
+    ]
+  },
+  "human_mediation_required": [],
+  "unverified_or_low_confidence": [],
+  "routing_hint": {
+    "recommended_when": [
+      "Embedding the Claude Code agent loop in TypeScript applications"
+    ],
+    "avoid_when": [],
+    "control_plane_dimensions": {
+      "structured_automation": "strong",
+      "multi_agent": "strong",
+      "provider_portability": "moderate",
+      "enterprise_controls": "strong"
+    }
+  }
+}

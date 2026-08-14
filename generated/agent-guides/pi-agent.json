@@ -1,0 +1,556 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-08-08T20:00:00Z",
+  "guide_type": "agent_consumable_harness_capability_guide",
+  "harness": {
+    "id": "pi-agent",
+    "name": "Pi Agent Harness",
+    "vendor": "Earendil Works",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "current_version": null,
+    "predecessor": null,
+    "successor": null
+  },
+  "freshness": {
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "latest_release_in_registry": null,
+    "latest_release_published_at": null,
+    "warning": "Treat unavailable or unknown actor access as unsupported until verified. UI-only capability is not agent-callable by implication."
+  },
+  "capabilities_by_actor": {
+    "human_operator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Pi includes an interactive coding-agent CLI.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi includes an interactive coding-agent CLI."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Pi includes an agent core runtime and unified LLM API packages.",
+        "surfaces": [
+          "TypeScript packages"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi includes an agent core runtime and unified LLM API packages."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Pi skills are compatible with Claude Code and Codex-style skill bundles.",
+        "surfaces": [
+          "skills"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi skills are compatible with Claude Code and Codex-style skill bundles."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Pi supports installable extensions.",
+        "surfaces": [
+          "npm extensions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi supports installable extensions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Pi includes a unified multi-provider LLM API.",
+        "surfaces": [
+          "multiple providers"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi includes a unified multi-provider LLM API."
+          }
+        ],
+        "access": "native"
+      }
+    ],
+    "administrator": [
+      {
+        "capability_id": "interaction.terminal",
+        "name": "Interactive terminal/TUI",
+        "category": "interaction",
+        "status": "stable",
+        "summary": "Pi includes an interactive coding-agent CLI.",
+        "surfaces": [
+          "terminal"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi includes an interactive coding-agent CLI."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Pi includes an agent core runtime and unified LLM API packages.",
+        "surfaces": [
+          "TypeScript packages"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi includes an agent core runtime and unified LLM API packages."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Pi skills are compatible with Claude Code and Codex-style skill bundles.",
+        "surfaces": [
+          "skills"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi skills are compatible with Claude Code and Codex-style skill bundles."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Pi supports installable extensions.",
+        "surfaces": [
+          "npm extensions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi supports installable extensions."
+          }
+        ],
+        "access": "configurable"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Pi includes a unified multi-provider LLM API.",
+        "surfaces": [
+          "multiple providers"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi includes a unified multi-provider LLM API."
+          }
+        ],
+        "access": "configurable"
+      }
+    ],
+    "external_orchestrator": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Pi includes an agent core runtime and unified LLM API packages.",
+        "surfaces": [
+          "TypeScript packages"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi includes an agent core runtime and unified LLM API packages."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Pi skills are compatible with Claude Code and Codex-style skill bundles.",
+        "surfaces": [
+          "skills"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi skills are compatible with Claude Code and Codex-style skill bundles."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Pi supports installable extensions.",
+        "surfaces": [
+          "npm extensions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi supports installable extensions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Pi includes a unified multi-provider LLM API.",
+        "surfaces": [
+          "multiple providers"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi includes a unified multi-provider LLM API."
+          }
+        ],
+        "access": "configurable"
+      }
+    ],
+    "ci_runner": [
+      {
+        "capability_id": "execution.sdk_embedding",
+        "name": "Embeddable SDK",
+        "category": "execution",
+        "status": "stable",
+        "summary": "Pi includes an agent core runtime and unified LLM API packages.",
+        "surfaces": [
+          "TypeScript packages"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi includes an agent core runtime and unified LLM API packages."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Pi skills are compatible with Claude Code and Codex-style skill bundles.",
+        "surfaces": [
+          "skills"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi skills are compatible with Claude Code and Codex-style skill bundles."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Pi supports installable extensions.",
+        "surfaces": [
+          "npm extensions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi supports installable extensions."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Pi includes a unified multi-provider LLM API.",
+        "surfaces": [
+          "multiple providers"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi includes a unified multi-provider LLM API."
+          }
+        ],
+        "access": "configurable"
+      }
+    ],
+    "in_harness_agent": [
+      {
+        "capability_id": "extensions.skills",
+        "name": "Agent Skills",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Pi skills are compatible with Claude Code and Codex-style skill bundles.",
+        "surfaces": [
+          "skills"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi skills are compatible with Claude Code and Codex-style skill bundles."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "extensions.plugins",
+        "name": "Plugins/extensions",
+        "category": "extensions",
+        "status": "stable",
+        "summary": "Pi supports installable extensions.",
+        "surfaces": [
+          "npm extensions"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.github-agentic-workflows.engine-matrix",
+            "url": "https://github.github.com/gh-aw/reference/engines/",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi supports installable extensions."
+          }
+        ],
+        "access": "native"
+      },
+      {
+        "capability_id": "models.provider_portability",
+        "name": "Model/provider portability",
+        "category": "models_providers",
+        "status": "stable",
+        "summary": "Pi includes a unified multi-provider LLM API.",
+        "surfaces": [
+          "multiple providers"
+        ],
+        "invocation": [],
+        "minimum_version": null,
+        "limitations": [],
+        "confidence": "verified_official",
+        "evidence": [
+          {
+            "source_id": "src.pi.repo",
+            "url": "https://github.com/earendil-works/pi",
+            "version": null,
+            "verified_at": "2026-08-08T20:00:00Z",
+            "claim": "Pi includes a unified multi-provider LLM API."
+          }
+        ],
+        "access": "supported"
+      }
+    ]
+  },
+  "human_mediation_required": [],
+  "unverified_or_low_confidence": [],
+  "routing_hint": {
+    "recommended_when": [
+      "Minimal self-extensible harness",
+      "Provider-neutral agent runtime experiments"
+    ],
+    "avoid_when": [
+      "You need a fully managed enterprise product"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "limited",
+      "multi_agent": "moderate",
+      "structured_automation": "moderate",
+      "provider_portability": "strong",
+      "enterprise_controls": "limited"
+    }
+  }
+}

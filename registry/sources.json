@@ -1,0 +1,1560 @@
+[
+  {
+    "id": "src.claude-code.changelog",
+    "name": "Claude Code raw changelog",
+    "url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+    "harness_ids": [
+      "claude-code"
+    ],
+    "source_type": "markdown_changelog",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "markdown_changelog",
+      "local_seed_path": "raw/claude-code/CHANGELOG.md",
+      "max_dateless_releases": 110
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.claude-code.releases",
+    "name": "Claude Code GitHub releases",
+    "url": "https://github.com/anthropics/claude-code/releases",
+    "harness_ids": [
+      "claude-code"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "anthropics/claude-code"
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": "Use GitHub release metadata to enrich dates and immutable tag references; reconcile against the raw changelog."
+  },
+  {
+    "id": "src.claude-code.docs.overview",
+    "name": "Claude Code overview",
+    "url": "https://docs.anthropic.com/en/docs/claude-code/overview",
+    "harness_ids": [
+      "claude-code"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.claude-code.docs.headless",
+    "name": "Claude Code programmatic/headless mode",
+    "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+    "harness_ids": [
+      "claude-code"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.claude-code.docs.skills",
+    "name": "Claude Code skills",
+    "url": "https://docs.anthropic.com/en/docs/claude-code/skills",
+    "harness_ids": [
+      "claude-code"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.claude-code.docs.hooks",
+    "name": "Claude Code hooks",
+    "url": "https://docs.anthropic.com/en/docs/claude-code/hooks-guide",
+    "harness_ids": [
+      "claude-code"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.claude-code.docs.settings",
+    "name": "Claude Code settings and plugins",
+    "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+    "harness_ids": [
+      "claude-code"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.claude-code.docs.sdk",
+    "name": "Claude Agent SDK overview",
+    "url": "https://docs.anthropic.com/en/docs/claude-code/sdk",
+    "harness_ids": [
+      "claude-code",
+      "claude-agent-sdk-python",
+      "claude-agent-sdk-typescript"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.claude-code.docs.cli",
+    "name": "Claude Code CLI reference",
+    "url": "https://docs.anthropic.com/en/docs/claude-code/cli-reference",
+    "harness_ids": [
+      "claude-code"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.releases",
+    "name": "OpenAI Codex GitHub releases",
+    "url": "https://github.com/openai/codex/releases",
+    "harness_ids": [
+      "openai-codex"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "openai/codex"
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.product-changelog",
+    "name": "ChatGPT and Codex product changelog",
+    "url": "https://developers.openai.com/codex/changelog",
+    "harness_ids": [
+      "openai-codex"
+    ],
+    "source_type": "product_changelog",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.docs.cli",
+    "name": "Codex CLI",
+    "url": "https://developers.openai.com/codex/cli",
+    "harness_ids": [
+      "openai-codex"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.docs.noninteractive",
+    "name": "Codex non-interactive mode",
+    "url": "https://developers.openai.com/codex/non-interactive-mode",
+    "harness_ids": [
+      "openai-codex"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.docs.commands",
+    "name": "Codex developer commands",
+    "url": "https://developers.openai.com/codex/developer-commands",
+    "harness_ids": [
+      "openai-codex"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.docs.app-server",
+    "name": "Codex app server",
+    "url": "https://developers.openai.com/codex/app-server",
+    "harness_ids": [
+      "openai-codex",
+      "codex-sdk-python"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.docs.sdk",
+    "name": "Codex SDK",
+    "url": "https://developers.openai.com/codex/codex-sdk",
+    "harness_ids": [
+      "openai-codex",
+      "codex-sdk-python",
+      "codex-sdk-typescript"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.docs.skills",
+    "name": "Codex skills and plugins",
+    "url": "https://developers.openai.com/codex/skills-and-plugins",
+    "harness_ids": [
+      "openai-codex"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.docs.agents-md",
+    "name": "Codex AGENTS.md instructions",
+    "url": "https://developers.openai.com/codex/agent-configuration/agents-md",
+    "harness_ids": [
+      "openai-codex"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.docs.mcp",
+    "name": "Codex MCP",
+    "url": "https://developers.openai.com/codex/mcp",
+    "harness_ids": [
+      "openai-codex"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.docs.subagents",
+    "name": "Codex subagents",
+    "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+    "harness_ids": [
+      "openai-codex"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.docs.security",
+    "name": "Codex approvals and security",
+    "url": "https://developers.openai.com/codex/agent-approvals-security",
+    "harness_ids": [
+      "openai-codex"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex.docs.github-action",
+    "name": "Codex GitHub Action",
+    "url": "https://developers.openai.com/codex/github-action",
+    "harness_ids": [
+      "openai-codex"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.opencode.releases",
+    "name": "OpenCode GitHub releases",
+    "url": "https://github.com/anomalyco/opencode/releases",
+    "harness_ids": [
+      "opencode"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "anomalyco/opencode"
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.opencode.docs.intro",
+    "name": "OpenCode documentation",
+    "url": "https://opencode.ai/docs/",
+    "harness_ids": [
+      "opencode"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.opencode.docs.skills",
+    "name": "OpenCode Agent Skills",
+    "url": "https://opencode.ai/docs/skills/",
+    "harness_ids": [
+      "opencode"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.opencode.docs.plugins",
+    "name": "OpenCode plugins",
+    "url": "https://opencode.ai/docs/plugins/",
+    "harness_ids": [
+      "opencode"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.opencode.docs.github",
+    "name": "OpenCode GitHub agent",
+    "url": "https://opencode.ai/docs/github/",
+    "harness_ids": [
+      "opencode"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.opencode.repo",
+    "name": "OpenCode repository",
+    "url": "https://github.com/anomalyco/opencode",
+    "harness_ids": [
+      "opencode"
+    ],
+    "source_type": "repository",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.hermes.releases",
+    "name": "Hermes Agent GitHub releases",
+    "url": "https://github.com/NousResearch/hermes-agent/releases",
+    "harness_ids": [
+      "hermes-agent"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "NousResearch/hermes-agent"
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.hermes.repo",
+    "name": "Hermes Agent repository",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "harness_ids": [
+      "hermes-agent"
+    ],
+    "source_type": "repository",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.hermes.docs",
+    "name": "Hermes Agent documentation",
+    "url": "https://hermes-agent.nousresearch.com/",
+    "harness_ids": [
+      "hermes-agent"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.hermes.docs.quickstart",
+    "name": "Hermes quickstart",
+    "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+    "harness_ids": [
+      "hermes-agent"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.hermes.docs.skills",
+    "name": "Hermes skills",
+    "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+    "harness_ids": [
+      "hermes-agent"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.hermes.docs.memory",
+    "name": "Hermes memory",
+    "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory",
+    "harness_ids": [
+      "hermes-agent"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.hermes.docs.voice",
+    "name": "Hermes voice",
+    "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/voice-mode",
+    "harness_ids": [
+      "hermes-agent"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.antigravity.changelog",
+    "name": "Antigravity CLI raw changelog",
+    "url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
+    "harness_ids": [
+      "antigravity-cli"
+    ],
+    "source_type": "markdown_changelog",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "markdown_changelog",
+      "local_seed_path": "raw/antigravity-cli/CHANGELOG.md",
+      "max_dateless_releases": 110
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.antigravity.releases",
+    "name": "Antigravity CLI GitHub releases",
+    "url": "https://github.com/google-antigravity/antigravity-cli/releases",
+    "harness_ids": [
+      "antigravity-cli"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "google-antigravity/antigravity-cli"
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.antigravity.repo",
+    "name": "Antigravity CLI repository",
+    "url": "https://github.com/google-antigravity/antigravity-cli",
+    "harness_ids": [
+      "antigravity-cli"
+    ],
+    "source_type": "repository",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.antigravity.site",
+    "name": "Google Antigravity",
+    "url": "https://antigravity.google/",
+    "harness_ids": [
+      "antigravity-cli"
+    ],
+    "source_type": "product_documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.antigravity.transition-blog",
+    "name": "Google transition from Gemini CLI to Antigravity CLI",
+    "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+    "harness_ids": [
+      "antigravity-cli",
+      "gemini-cli"
+    ],
+    "source_type": "official_announcement",
+    "purpose": "lifecycle_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "weekly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 168
+    },
+    "notes": null
+  },
+  {
+    "id": "src.gemini.releases",
+    "name": "Gemini CLI GitHub releases",
+    "url": "https://github.com/google-gemini/gemini-cli/releases",
+    "harness_ids": [
+      "gemini-cli"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "google-gemini/gemini-cli"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.gemini.repo",
+    "name": "Gemini CLI repository",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "harness_ids": [
+      "gemini-cli"
+    ],
+    "source_type": "repository",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.gemini.docs",
+    "name": "Gemini CLI documentation",
+    "url": "https://geminicli.com/docs/",
+    "harness_ids": [
+      "gemini-cli"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.gemini.transition",
+    "name": "Gemini CLI transition discussion",
+    "url": "https://github.com/google-gemini/gemini-cli/discussions/27274",
+    "harness_ids": [
+      "gemini-cli",
+      "antigravity-cli"
+    ],
+    "source_type": "official_announcement",
+    "purpose": "lifecycle_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "weekly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 168
+    },
+    "notes": null
+  },
+  {
+    "id": "src.qwen.releases",
+    "name": "Qwen Code GitHub releases",
+    "url": "https://github.com/QwenLM/qwen-code/releases",
+    "harness_ids": [
+      "qwen-code"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "QwenLM/qwen-code"
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.qwen.repo",
+    "name": "Qwen Code repository",
+    "url": "https://github.com/QwenLM/qwen-code",
+    "harness_ids": [
+      "qwen-code"
+    ],
+    "source_type": "repository",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.qwen.docs",
+    "name": "Qwen Code documentation",
+    "url": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
+    "harness_ids": [
+      "qwen-code"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.goose.releases",
+    "name": "goose GitHub releases",
+    "url": "https://github.com/block/goose/releases",
+    "harness_ids": [
+      "goose"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "block/goose"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.goose.repo",
+    "name": "goose repository",
+    "url": "https://github.com/block/goose",
+    "harness_ids": [
+      "goose"
+    ],
+    "source_type": "repository",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.goose.docs",
+    "name": "goose documentation",
+    "url": "https://block.github.io/goose/",
+    "harness_ids": [
+      "goose"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.copilot-cli.releases",
+    "name": "GitHub Copilot CLI releases",
+    "url": "https://github.com/github/copilot-cli/releases",
+    "harness_ids": [
+      "github-copilot-cli"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "github/copilot-cli"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.copilot-cli.docs",
+    "name": "GitHub Copilot CLI documentation",
+    "url": "https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli",
+    "harness_ids": [
+      "github-copilot-cli"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.pi.repo",
+    "name": "Pi Agent Harness repository",
+    "url": "https://github.com/earendil-works/pi",
+    "harness_ids": [
+      "pi-agent"
+    ],
+    "source_type": "repository",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.pi.releases",
+    "name": "Pi Agent Harness releases",
+    "url": "https://github.com/earendil-works/pi/releases",
+    "harness_ids": [
+      "pi-agent"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "earendil-works/pi"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.github-agentic-workflows.engine-matrix",
+    "name": "GitHub Agentic Workflows engine comparison",
+    "url": "https://github.github.com/gh-aw/reference/engines/",
+    "harness_ids": [
+      "claude-code",
+      "openai-codex",
+      "gemini-cli",
+      "github-copilot-cli",
+      "pi-agent",
+      "opencode"
+    ],
+    "source_type": "official_secondary_matrix",
+    "purpose": "comparison_reference",
+    "authority": "official_secondary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": "Useful as a normalized secondary source for GitHub Actions compatibility, not as canonical product capability truth."
+  },
+  {
+    "id": "src.claude-agent-sdk-python.changelog",
+    "name": "Claude Agent SDK Python changelog",
+    "url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
+    "harness_ids": [
+      "claude-agent-sdk-python"
+    ],
+    "source_type": "markdown_changelog",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "markdown_changelog",
+      "local_seed_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
+      "max_dateless_releases": 110
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.claude-agent-sdk-python.releases",
+    "name": "Claude Agent SDK Python releases",
+    "url": "https://github.com/anthropics/claude-agent-sdk-python/releases",
+    "harness_ids": [
+      "claude-agent-sdk-python"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "anthropics/claude-agent-sdk-python"
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.claude-agent-sdk-typescript.changelog",
+    "name": "Claude Agent SDK TypeScript changelog",
+    "url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-typescript/main/CHANGELOG.md",
+    "harness_ids": [
+      "claude-agent-sdk-typescript"
+    ],
+    "source_type": "markdown_changelog",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "markdown_changelog",
+      "local_seed_path": "raw/claude-agent-sdk-typescript/CHANGELOG.md",
+      "max_dateless_releases": 110
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.claude-agent-sdk-typescript.releases",
+    "name": "Claude Agent SDK TypeScript releases",
+    "url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases",
+    "harness_ids": [
+      "claude-agent-sdk-typescript"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "anthropics/claude-agent-sdk-typescript"
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex-sdk-python.releases",
+    "name": "Codex Python SDK releases",
+    "url": "https://pypi.org/project/openai-codex/",
+    "harness_ids": [
+      "codex-sdk-python"
+    ],
+    "source_type": "package_registry",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "pypi",
+      "package": "openai-codex"
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.codex-sdk-typescript.releases",
+    "name": "Codex TypeScript SDK releases",
+    "url": "https://www.npmjs.com/package/@openai/codex-sdk",
+    "harness_ids": [
+      "codex-sdk-typescript"
+    ],
+    "source_type": "package_registry",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "npm",
+      "package": "@openai/codex-sdk"
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.openai-agents-python.releases",
+    "name": "OpenAI Agents SDK Python releases",
+    "url": "https://github.com/openai/openai-agents-python/releases",
+    "harness_ids": [
+      "openai-agents-sdk-python"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "openai/openai-agents-python"
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.openai-agents-python.docs",
+    "name": "OpenAI Agents SDK Python docs",
+    "url": "https://openai.github.io/openai-agents-python/",
+    "harness_ids": [
+      "openai-agents-sdk-python"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.openai-agents-js.releases",
+    "name": "OpenAI Agents SDK JavaScript releases",
+    "url": "https://github.com/openai/openai-agents-js/releases",
+    "harness_ids": [
+      "openai-agents-sdk-js"
+    ],
+    "source_type": "github_releases",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "github_releases",
+      "repo": "openai/openai-agents-js"
+    },
+    "refresh": {
+      "cadence": "six_hourly",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.openai-agents-js.docs",
+    "name": "OpenAI Agents SDK JavaScript docs",
+    "url": "https://openai.github.io/openai-agents-js/",
+    "harness_ids": [
+      "openai-agents-sdk-js"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.openai-python.changelog",
+    "name": "OpenAI Python SDK changelog",
+    "url": "https://raw.githubusercontent.com/openai/openai-python/main/CHANGELOG.md",
+    "harness_ids": [
+      "openai-python-sdk"
+    ],
+    "source_type": "markdown_changelog",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "markdown_changelog",
+      "local_seed_path": "raw/openai-python/CHANGELOG.md"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.openai-node.changelog",
+    "name": "OpenAI Node SDK changelog",
+    "url": "https://raw.githubusercontent.com/openai/openai-node/master/CHANGELOG.md",
+    "harness_ids": [
+      "openai-node-sdk"
+    ],
+    "source_type": "markdown_changelog",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "markdown_changelog",
+      "local_seed_path": "raw/openai-node/CHANGELOG.md"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.anthropic-python.changelog",
+    "name": "Anthropic Python SDK changelog",
+    "url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-python/main/CHANGELOG.md",
+    "harness_ids": [
+      "anthropic-python-sdk"
+    ],
+    "source_type": "markdown_changelog",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "markdown_changelog",
+      "local_seed_path": "raw/anthropic-sdk-python/CHANGELOG.md"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  },
+  {
+    "id": "src.anthropic-typescript.changelog",
+    "name": "Anthropic TypeScript SDK changelog",
+    "url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/main/CHANGELOG.md",
+    "harness_ids": [
+      "anthropic-typescript-sdk"
+    ],
+    "source_type": "markdown_changelog",
+    "purpose": "release_history",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "markdown_changelog",
+      "local_seed_path": "raw/anthropic-sdk-typescript/CHANGELOG.md"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "historical_backfill_days": 120,
+      "staleness_sla_hours": 24
+    },
+    "notes": null
+  }
+]

@@ -1,0 +1,1025 @@
+{
+  "harness": {
+    "id": "opencode",
+    "name": "OpenCode",
+    "vendor": "Anomaly",
+    "family": "agentic_harness",
+    "lifecycle": "active",
+    "maturity": "stable",
+    "tracking_priority": "core",
+    "current_version": "1.18.15",
+    "version_as_of": "2026-08-07",
+    "last_verified_at": "2026-08-08T20:00:00Z",
+    "predecessor": null,
+    "successor": null,
+    "repo_url": "https://github.com/anomalyco/opencode",
+    "docs_url": "https://opencode.ai/docs/",
+    "surfaces": [
+      "terminal",
+      "desktop",
+      "IDE"
+    ],
+    "auth_modes": [
+      "provider API keys",
+      "GitHub Copilot account",
+      "ChatGPT subscription"
+    ],
+    "source_ids": [
+      "src.opencode.releases",
+      "src.opencode.docs.intro",
+      "src.opencode.docs.skills",
+      "src.opencode.docs.plugins",
+      "src.opencode.docs.github",
+      "src.opencode.repo",
+      "src.github-agentic-workflows.engine-matrix"
+    ],
+    "recommended_when": [
+      "Open-source and multi-provider operation",
+      "Parallel local sessions",
+      "LSP-aware coding",
+      "Portable Agent Skills"
+    ],
+    "avoid_when": [
+      "You need a mature enterprise policy plane supplied by the harness vendor"
+    ],
+    "control_plane_dimensions": {
+      "local_execution": "strong",
+      "remote_execution": "moderate",
+      "multi_agent": "moderate",
+      "structured_automation": "moderate",
+      "provider_portability": "strong",
+      "enterprise_controls": "limited"
+    },
+    "lifecycle_events": [],
+    "notes": null
+  },
+  "capabilities": [
+    {
+      "id": "impl.opencode.interaction.terminal",
+      "harness_id": "opencode",
+      "capability_id": "interaction.terminal",
+      "status": "stable",
+      "summary": "OpenCode provides an interactive terminal UI with build and plan agents.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "unavailable",
+        "ci_runner": "unavailable",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "terminal"
+      ],
+      "invocation": [
+        "opencode"
+      ],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.repo",
+          "url": "https://github.com/anomalyco/opencode",
+          "claim": "OpenCode provides an interactive terminal UI with build and plan agents.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.interaction.ide",
+      "harness_id": "opencode",
+      "capability_id": "interaction.ide",
+      "status": "stable",
+      "summary": "OpenCode is available through IDE integration.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "unavailable",
+        "ci_runner": "unavailable",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "IDE extension"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.docs.intro",
+          "url": "https://opencode.ai/docs/",
+          "claim": "OpenCode is available through IDE integration.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.interaction.desktop_web",
+      "harness_id": "opencode",
+      "capability_id": "interaction.desktop_web",
+      "status": "stable",
+      "summary": "OpenCode provides a desktop application and shareable session links.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "unavailable",
+        "ci_runner": "unavailable",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "desktop",
+        "shared web session"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.docs.intro",
+          "url": "https://opencode.ai/docs/",
+          "claim": "OpenCode provides a desktop application and shareable session links.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.execution.file_edit",
+      "harness_id": "opencode",
+      "capability_id": "execution.file_edit",
+      "status": "stable",
+      "summary": "The build agent can edit files while the plan agent is read-only by default.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "terminal",
+        "desktop",
+        "IDE"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.repo",
+          "url": "https://github.com/anomalyco/opencode",
+          "claim": "The build agent can edit files while the plan agent is read-only by default.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.execution.shell",
+      "harness_id": "opencode",
+      "capability_id": "execution.shell",
+      "status": "stable",
+      "summary": "Agents can run commands subject to permission configuration.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "terminal"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.repo",
+          "url": "https://github.com/anomalyco/opencode",
+          "claim": "Agents can run commands subject to permission configuration.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.execution.headless",
+      "harness_id": "opencode",
+      "capability_id": "execution.headless",
+      "status": "stable",
+      "summary": "OpenCode supports non-interactive run and GitHub automation modes.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "native",
+        "ci_runner": "native",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "CLI",
+        "GitHub Actions"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "inferred_high",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.docs.github",
+          "url": "https://opencode.ai/docs/github/",
+          "claim": "OpenCode supports non-interactive run and GitHub automation modes.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.execution.structured_output",
+      "harness_id": "opencode",
+      "capability_id": "execution.structured_output",
+      "status": "stable",
+      "summary": "Recent releases added JSON transcript export; automation should distinguish transcript export from a stable live event protocol.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "JSON transcript"
+      ],
+      "invocation": [],
+      "minimum_version": "1.18.15",
+      "current_version_verified": "1.18.15",
+      "limitations": [
+        "Seed evidence verifies transcript export, not full parity with Codex/Antigravity streaming event protocols."
+      ],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.releases",
+          "url": "https://github.com/anomalyco/opencode/releases",
+          "claim": "Recent releases added JSON transcript export; automation should distinguish transcript export from a stable live event protocol.",
+          "version": "1.18.15",
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.extensions.mcp_client",
+      "harness_id": "opencode",
+      "capability_id": "extensions.mcp_client",
+      "status": "stable",
+      "summary": "OpenCode connects to MCP servers and supports OAuth compatibility improvements.",
+      "actor_access": {
+        "human_operator": "configurable",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "terminal",
+        "desktop"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.releases",
+          "url": "https://github.com/anomalyco/opencode/releases",
+          "claim": "OpenCode connects to MCP servers and supports OAuth compatibility improvements.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.extensions.skills",
+      "harness_id": "opencode",
+      "capability_id": "extensions.skills",
+      "status": "stable",
+      "summary": "OpenCode discovers Agent Skills and exposes them to the model through a native skill tool.",
+      "actor_access": {
+        "human_operator": "configurable",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "SKILL.md",
+        "skill tool"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.docs.skills",
+          "url": "https://opencode.ai/docs/skills/",
+          "claim": "OpenCode discovers Agent Skills and exposes them to the model through a native skill tool.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.extensions.plugins",
+      "harness_id": "opencode",
+      "capability_id": "extensions.plugins",
+      "status": "stable",
+      "summary": "Plugins extend OpenCode with events, tools, authentication, and custom behavior.",
+      "actor_access": {
+        "human_operator": "configurable",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "plugins"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.docs.plugins",
+          "url": "https://opencode.ai/docs/plugins/",
+          "claim": "Plugins extend OpenCode with events, tools, authentication, and custom behavior.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.context.project_instructions",
+      "harness_id": "opencode",
+      "capability_id": "context.project_instructions",
+      "status": "stable",
+      "summary": "Repository instruction files and agent definitions shape project behavior.",
+      "actor_access": {
+        "human_operator": "configurable",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "AGENTS.md",
+        "agent config"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "inferred_high",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.repo",
+          "url": "https://github.com/anomalyco/opencode",
+          "claim": "Repository instruction files and agent definitions shape project behavior.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.sessions.resume_fork",
+      "harness_id": "opencode",
+      "capability_id": "sessions.resume_fork",
+      "status": "stable",
+      "summary": "OpenCode persists sessions and supports session navigation, sharing, undo, and reconnect flows.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "mediated",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "terminal",
+        "desktop",
+        "share links"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.docs.intro",
+          "url": "https://opencode.ai/docs/",
+          "claim": "OpenCode persists sessions and supports session navigation, sharing, undo, and reconnect flows.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.orchestration.parallel_background",
+      "harness_id": "opencode",
+      "capability_id": "orchestration.parallel_background",
+      "status": "stable",
+      "summary": "Multiple OpenCode sessions can run in parallel against a project.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "mediated",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "multi-session"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.docs.intro",
+          "url": "https://opencode.ai/docs/",
+          "claim": "Multiple OpenCode sessions can run in parallel against a project.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.automation.ci",
+      "harness_id": "opencode",
+      "capability_id": "automation.ci",
+      "status": "stable",
+      "summary": "The OpenCode GitHub agent handles issue and pull-request automation.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "native",
+        "ci_runner": "native",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "GitHub Actions",
+        "issues",
+        "pull requests"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.docs.github",
+          "url": "https://opencode.ai/docs/github/",
+          "claim": "The OpenCode GitHub agent handles issue and pull-request automation.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.security.permissions",
+      "harness_id": "opencode",
+      "capability_id": "security.permissions",
+      "status": "stable",
+      "summary": "Build and plan agents carry different default permissions, with configurable command and tool access.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "mediated",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "agent definitions",
+        "permission config"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.repo",
+          "url": "https://github.com/anomalyco/opencode",
+          "claim": "Build and plan agents carry different default permissions, with configurable command and tool access.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.tools.web_research",
+      "harness_id": "opencode",
+      "capability_id": "tools.web_research",
+      "status": "stable",
+      "summary": "Web access is available through providers, MCP, and plugins rather than one fixed research subsystem.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "MCP",
+        "plugins"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "inferred_high",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.docs.plugins",
+          "url": "https://opencode.ai/docs/plugins/",
+          "claim": "Web access is available through providers, MCP, and plugins rather than one fixed research subsystem.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.interfaces.artifacts",
+      "harness_id": "opencode",
+      "capability_id": "interfaces.artifacts",
+      "status": "stable",
+      "summary": "Desktop/TUI sessions expose diffs, undo, sharing, and transcript exports.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "unavailable",
+        "external_orchestrator": "unavailable",
+        "ci_runner": "unavailable",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "desktop",
+        "TUI",
+        "share links"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.docs.intro",
+          "url": "https://opencode.ai/docs/",
+          "claim": "Desktop/TUI sessions expose diffs, undo, sharing, and transcript exports.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.models.provider_portability",
+      "harness_id": "opencode",
+      "capability_id": "models.provider_portability",
+      "status": "stable",
+      "summary": "OpenCode is explicitly provider-neutral and supports multiple API providers and subscription-backed authentication paths.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "mediated",
+        "external_orchestrator": "configurable",
+        "ci_runner": "configurable",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "multiple providers"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.docs.intro",
+          "url": "https://opencode.ai/docs/",
+          "claim": "OpenCode is explicitly provider-neutral and supports multiple API providers and subscription-backed authentication paths.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "impl.opencode.models.reasoning_control",
+      "harness_id": "opencode",
+      "capability_id": "models.reasoning_control",
+      "status": "stable",
+      "summary": "Model/provider selection is configurable per session and agent.",
+      "actor_access": {
+        "human_operator": "native",
+        "in_harness_agent": "supported",
+        "external_orchestrator": "configurable",
+        "ci_runner": "configurable",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "provider config",
+        "model selector"
+      ],
+      "invocation": [],
+      "minimum_version": null,
+      "current_version_verified": "1.18.15",
+      "limitations": [],
+      "confidence": "verified_official",
+      "verified_at": "2026-08-08T20:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.opencode.docs.intro",
+          "url": "https://opencode.ai/docs/",
+          "claim": "Model/provider selection is configurable per session and agent.",
+          "version": null,
+          "verified_at": "2026-08-08T20:00:00Z"
+        }
+      ]
+    }
+  ],
+  "releases": [
+    {
+      "id": "rel.opencode.1.18.15",
+      "harness_id": "opencode",
+      "version": "1.18.15",
+      "channel": "stable",
+      "published_at": "2026-08-07T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-08T20:00:00Z",
+      "source_id": "src.opencode.releases",
+      "source_url": "https://github.com/anomalyco/opencode/releases",
+      "raw_snapshot_path": null,
+      "raw_sha256": null,
+      "title": "opencode 1.18.15",
+      "notes_excerpt": "Added JSON transcript export.",
+      "change_count": 3,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.opencode.1.18.15.001",
+          "kind": "added",
+          "summary": "Added JSON transcript export.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "human_curated_seed_v1",
+            "confidence": "verified_official",
+            "review_status": "approved"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.15.002",
+          "kind": "changed",
+          "summary": "Expanded locale support.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "human_curated_seed_v1",
+            "confidence": "verified_official",
+            "review_status": "approved"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.15.003",
+          "kind": "fixed",
+          "summary": "Fixed transcript chronology and ordering issues.",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "human_curated_seed_v1",
+            "confidence": "verified_official",
+            "review_status": "approved"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "human_curated_seed",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.opencode.1.18.8",
+      "harness_id": "opencode",
+      "version": "1.18.8",
+      "channel": "stable",
+      "published_at": "2026-07-28T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-08T20:00:00Z",
+      "source_id": "src.opencode.releases",
+      "source_url": "https://github.com/anomalyco/opencode/releases",
+      "raw_snapshot_path": null,
+      "raw_sha256": null,
+      "title": "opencode 1.18.8",
+      "notes_excerpt": "Improved MCP and OAuth compatibility.",
+      "change_count": 2,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.opencode.1.18.8.001",
+          "kind": "improved",
+          "summary": "Improved MCP and OAuth compatibility.",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "human_curated_seed_v1",
+            "confidence": "verified_official",
+            "review_status": "approved"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.8.002",
+          "kind": "improved",
+          "summary": "Improved session reconnect behavior.",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "human_curated_seed_v1",
+            "confidence": "verified_official",
+            "review_status": "approved"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "human_curated_seed",
+        "immutable": false
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "src.opencode.releases",
+      "name": "OpenCode GitHub releases",
+      "url": "https://github.com/anomalyco/opencode/releases",
+      "harness_ids": [
+        "opencode"
+      ],
+      "source_type": "github_releases",
+      "purpose": "release_history",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "github_releases",
+        "repo": "anomalyco/opencode"
+      },
+      "refresh": {
+        "cadence": "six_hourly",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    },
+    {
+      "id": "src.opencode.docs.intro",
+      "name": "OpenCode documentation",
+      "url": "https://opencode.ai/docs/",
+      "harness_ids": [
+        "opencode"
+      ],
+      "source_type": "documentation",
+      "purpose": "capability_reference",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "manual_reference"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    },
+    {
+      "id": "src.opencode.docs.skills",
+      "name": "OpenCode Agent Skills",
+      "url": "https://opencode.ai/docs/skills/",
+      "harness_ids": [
+        "opencode"
+      ],
+      "source_type": "documentation",
+      "purpose": "capability_reference",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "manual_reference"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    },
+    {
+      "id": "src.opencode.docs.plugins",
+      "name": "OpenCode plugins",
+      "url": "https://opencode.ai/docs/plugins/",
+      "harness_ids": [
+        "opencode"
+      ],
+      "source_type": "documentation",
+      "purpose": "capability_reference",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "manual_reference"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    },
+    {
+      "id": "src.opencode.docs.github",
+      "name": "OpenCode GitHub agent",
+      "url": "https://opencode.ai/docs/github/",
+      "harness_ids": [
+        "opencode"
+      ],
+      "source_type": "documentation",
+      "purpose": "capability_reference",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "manual_reference"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    },
+    {
+      "id": "src.opencode.repo",
+      "name": "OpenCode repository",
+      "url": "https://github.com/anomalyco/opencode",
+      "harness_ids": [
+        "opencode"
+      ],
+      "source_type": "repository",
+      "purpose": "capability_reference",
+      "authority": "official_primary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "manual_reference"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": null
+    },
+    {
+      "id": "src.github-agentic-workflows.engine-matrix",
+      "name": "GitHub Agentic Workflows engine comparison",
+      "url": "https://github.github.com/gh-aw/reference/engines/",
+      "harness_ids": [
+        "claude-code",
+        "openai-codex",
+        "gemini-cli",
+        "github-copilot-cli",
+        "pi-agent",
+        "opencode"
+      ],
+      "source_type": "official_secondary_matrix",
+      "purpose": "comparison_reference",
+      "authority": "official_secondary",
+      "official": true,
+      "enabled": true,
+      "collector": {
+        "kind": "manual_reference"
+      },
+      "refresh": {
+        "cadence": "daily",
+        "historical_backfill_days": 120,
+        "staleness_sla_hours": 24
+      },
+      "notes": "Useful as a normalized secondary source for GitHub Actions compatibility, not as canonical product capability truth."
+    }
+  ]
+}
