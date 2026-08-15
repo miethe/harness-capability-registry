@@ -1,0 +1,298 @@
+{
+  "info": {
+    "author": "OpenAI",
+    "author_email": null,
+    "bugtrack_url": null,
+    "classifiers": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "Topic :: Software Development :: Libraries :: Python Modules"
+    ],
+    "description": "# OpenAI Codex Python SDK\n\nBuild Python applications that start Codex threads, run turns, stream progress,\nand control workspace access.\n\n## Install\n\nInstall the SDK:\n\n```bash\npip install openai-codex\n```\n\n## Quickstart\n\nThe SDK reuses your existing Codex authentication when one is already\navailable:\n\n```python\nfrom openai_codex import Codex\n\nwith Codex() as codex:\n    thread = codex.thread_start()\n    result = thread.run(\"Explain this repository in three bullets.\")\n    print(result.final_response)\n```\n\n`thread.run(...)` returns a `TurnResult` containing the final response,\ncollected items, and token usage.\n\n## Authentication\n\nExisting Codex authentication is reused automatically. To start ChatGPT\nbrowser login explicitly:\n\n```python\nfrom openai_codex import Codex\n\nwith Codex() as codex:\n    login = codex.login_chatgpt()\n    print(login.auth_url)\n    print(login.wait().success)\n```\n\nFor device-code login:\n\n```python\nwith Codex() as codex:\n    login = codex.login_chatgpt_device_code()\n    print(login.verification_url, login.user_code)\n    login.wait()\n```\n\nFor API-key login:\n\n```python\nwith Codex() as codex:\n    codex.login_api_key(\"sk-...\")\n```\n\n## Built-In Help\n\nUse Python's standard `help(openai_codex)`, `help(Codex)`, or\n`python -m pydoc openai_codex` documentation tools.\n\n## Documentation\n\n- [Getting started](https://github.com/openai/codex/blob/main/sdk/python/docs/getting-started.md)\n- [API reference](https://github.com/openai/codex/blob/main/sdk/python/docs/api-reference.md)\n- [FAQ](https://github.com/openai/codex/blob/main/sdk/python/docs/faq.md)\n- [Examples](https://github.com/openai/codex/blob/main/sdk/python/examples/README.md)\n\nThe package is licensed under the\n[repository Apache License 2.0](https://github.com/openai/codex/blob/main/LICENSE).\n",
+    "description_content_type": "text/markdown",
+    "docs_url": null,
+    "download_url": null,
+    "downloads": {
+      "last_day": -1,
+      "last_month": -1,
+      "last_week": -1
+    },
+    "dynamic": null,
+    "home_page": null,
+    "keywords": "codex, sdk, llm, ai, agents",
+    "license": null,
+    "license_expression": "Apache-2.0",
+    "license_files": null,
+    "maintainer": null,
+    "maintainer_email": null,
+    "name": "openai-codex",
+    "package_url": "https://pypi.org/project/openai-codex/",
+    "platform": null,
+    "project_url": "https://pypi.org/project/openai-codex/",
+    "project_urls": {
+      "Documentation": "https://github.com/openai/codex/tree/main/sdk/python/docs",
+      "Homepage": "https://github.com/openai/codex",
+      "Issues": "https://github.com/openai/codex/issues",
+      "Repository": "https://github.com/openai/codex"
+    },
+    "provides_extra": null,
+    "release_url": "https://pypi.org/project/openai-codex/0.144.4/",
+    "requires_dist": [
+      "pydantic>=2.12",
+      "openai-codex-cli-bin==0.144.4"
+    ],
+    "requires_python": ">=3.10",
+    "summary": "Python SDK for Codex",
+    "version": "0.144.4",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "last_serial": 39114517,
+  "ownership": {
+    "organization": "openai",
+    "roles": []
+  },
+  "releases": {
+    "0.1.0b1": [
+      {
+        "comment_text": null,
+        "core-metadata": {
+          "sha256": "269a2047e2f90a720d6bcb1c425bbbaf6495adaab5734964b55d449e6c7b013d"
+        },
+        "digests": {
+          "blake2b_256": "6d27805bda8f9cb8e20e9c696c8618a40a8a5d04ccea65689ca184151f2aadd4",
+          "md5": "5d2c68029849d6c058f58ce6fa340907",
+          "sha256": "986b72fe816754f66374940ec7bce52bfbcac97d80dcc125db55cb47c201ab0a"
+        },
+        "downloads": -1,
+        "filename": "openai_codex-0.1.0b1-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "5d2c68029849d6c058f58ce6fa340907",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.10",
+        "size": 64546,
+        "upload_time": "2026-05-28T02:55:54",
+        "upload_time_iso_8601": "2026-05-28T02:55:54.497859Z",
+        "url": "https://files.pythonhosted.org/packages/6d/27/805bda8f9cb8e20e9c696c8618a40a8a5d04ccea65689ca184151f2aadd4/openai_codex-0.1.0b1-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": null,
+        "core-metadata": false,
+        "digests": {
+          "blake2b_256": "e865bcd5da57219d2ee72b44a36a765c450ead820b0df9667800149c05fdf309",
+          "md5": "cc6b1bcb15de17b053948e5f3a06cfb5",
+          "sha256": "1449d8fba01dc7c9cd74e8ece8f9379fa5bd698e7ff38f3427b67c61db60a744"
+        },
+        "downloads": -1,
+        "filename": "openai_codex-0.1.0b1.tar.gz",
+        "has_sig": false,
+        "md5_digest": "cc6b1bcb15de17b053948e5f3a06cfb5",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.10",
+        "size": 57935,
+        "upload_time": "2026-05-28T02:55:55",
+        "upload_time_iso_8601": "2026-05-28T02:55:55.844221Z",
+        "url": "https://files.pythonhosted.org/packages/e8/65/bcd5da57219d2ee72b44a36a765c450ead820b0df9667800149c05fdf309/openai_codex-0.1.0b1.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.1.0b2": [
+      {
+        "comment_text": null,
+        "core-metadata": {
+          "sha256": "f64384dbe827ec33f5137ae421f136a969ec59586b667f4b09cf2a54d4ad20ab"
+        },
+        "digests": {
+          "blake2b_256": "b63859e86bc20bdd4390faa979d2a0235d7be60ae895cd3ac6a92a49bfe080a7",
+          "md5": "45fc635ce8626bf0b4c25761455b1c29",
+          "sha256": "9edf0871e9e0d6e3951cd6c3b9b187641e6247d9413402dfc66ac3a5f6ba66ff"
+        },
+        "downloads": -1,
+        "filename": "openai_codex-0.1.0b2-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "45fc635ce8626bf0b4c25761455b1c29",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.10",
+        "size": 64285,
+        "upload_time": "2026-05-28T06:27:58",
+        "upload_time_iso_8601": "2026-05-28T06:27:58.949480Z",
+        "url": "https://files.pythonhosted.org/packages/b6/38/59e86bc20bdd4390faa979d2a0235d7be60ae895cd3ac6a92a49bfe080a7/openai_codex-0.1.0b2-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": null,
+        "core-metadata": false,
+        "digests": {
+          "blake2b_256": "6fb7216fa0e7725c33791fe97621c663a9ec0e6e98c2240bffae89661de55602",
+          "md5": "3c3ca91768ab627d9613a55c6ef4458e",
+          "sha256": "44dd51f004ce2ed51cf7b9f34e8b2e6a207ab06e8739b45d5a0cfe338e460587"
+        },
+        "downloads": -1,
+        "filename": "openai_codex-0.1.0b2.tar.gz",
+        "has_sig": false,
+        "md5_digest": "3c3ca91768ab627d9613a55c6ef4458e",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.10",
+        "size": 57665,
+        "upload_time": "2026-05-28T06:28:00",
+        "upload_time_iso_8601": "2026-05-28T06:28:00.461600Z",
+        "url": "https://files.pythonhosted.org/packages/6f/b7/216fa0e7725c33791fe97621c663a9ec0e6e98c2240bffae89661de55602/openai_codex-0.1.0b2.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.1.0b3": [
+      {
+        "comment_text": null,
+        "core-metadata": {
+          "sha256": "63c5032d3706a2e1b64751adaeb7a398e78827ba510114bfd36f7869f89ae029"
+        },
+        "digests": {
+          "blake2b_256": "d7eff77037d9ccde80a688a17a06aea5a56813ad9c365d49b3f1c7913422af8b",
+          "md5": "904f147d2a42d6e252bc4b408b2c2236",
+          "sha256": "8d1f9d346667aeecb435c6a45d0edb3f016187276ec452cf8094d813896276c4"
+        },
+        "downloads": -1,
+        "filename": "openai_codex-0.1.0b3-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "904f147d2a42d6e252bc4b408b2c2236",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.10",
+        "size": 65639,
+        "upload_time": "2026-06-03T19:17:33",
+        "upload_time_iso_8601": "2026-06-03T19:17:33.208322Z",
+        "url": "https://files.pythonhosted.org/packages/d7/ef/f77037d9ccde80a688a17a06aea5a56813ad9c365d49b3f1c7913422af8b/openai_codex-0.1.0b3-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": null,
+        "core-metadata": false,
+        "digests": {
+          "blake2b_256": "ae1c1e5e8b83ea72164d32b1f4e67fc703c8b83591f498a7aaf96f39d352b453",
+          "md5": "c39214d17a4be1e853746dd5abc46cc5",
+          "sha256": "b76b7afe97953ac65648e9b8ca116b5ff273de91086549bd7ec88037cdc16cab"
+        },
+        "downloads": -1,
+        "filename": "openai_codex-0.1.0b3.tar.gz",
+        "has_sig": false,
+        "md5_digest": "c39214d17a4be1e853746dd5abc46cc5",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.10",
+        "size": 58995,
+        "upload_time": "2026-06-03T19:17:34",
+        "upload_time_iso_8601": "2026-06-03T19:17:34.707446Z",
+        "url": "https://files.pythonhosted.org/packages/ae/1c/1e5e8b83ea72164d32b1f4e67fc703c8b83591f498a7aaf96f39d352b453/openai_codex-0.1.0b3.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "0.144.4": [
+      {
+        "comment_text": null,
+        "core-metadata": {
+          "sha256": "6b11a323ca2482aa103064303880a515512d29fd1ac17094546ffe4bab713494"
+        },
+        "digests": {
+          "blake2b_256": "17355d2a13e38d91278019f18757ac10426d2649b7ec6f031818c792f64559e9",
+          "md5": "ff73350aeb100fa0575f81306cf051e4",
+          "sha256": "de1513a6e94b9a8d7728a3b74298bc1469428ade10ba0ef2d5db47dd1cb606f5"
+        },
+        "downloads": -1,
+        "filename": "openai_codex-0.144.4-py3-none-any.whl",
+        "has_sig": false,
+        "md5_digest": "ff73350aeb100fa0575f81306cf051e4",
+        "packagetype": "bdist_wheel",
+        "python_version": "py3",
+        "requires_python": ">=3.10",
+        "size": 76244,
+        "upload_time": "2026-07-17T23:42:15",
+        "upload_time_iso_8601": "2026-07-17T23:42:15.658875Z",
+        "url": "https://files.pythonhosted.org/packages/17/35/5d2a13e38d91278019f18757ac10426d2649b7ec6f031818c792f64559e9/openai_codex-0.144.4-py3-none-any.whl",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      {
+        "comment_text": null,
+        "core-metadata": false,
+        "digests": {
+          "blake2b_256": "b97d4b999b0ddd05c22d83cc2e879c95e1e92e3b7808b58ac561c4ea91fca1c4",
+          "md5": "6a0ffaaa35a49f0e753a3bb841cc8f7f",
+          "sha256": "91c63a7cb213441569f130e593386b34657ab9e726ae88af255f0ecb8de08ea5"
+        },
+        "downloads": -1,
+        "filename": "openai_codex-0.144.4.tar.gz",
+        "has_sig": false,
+        "md5_digest": "6a0ffaaa35a49f0e753a3bb841cc8f7f",
+        "packagetype": "sdist",
+        "python_version": "source",
+        "requires_python": ">=3.10",
+        "size": 68324,
+        "upload_time": "2026-07-17T23:42:17",
+        "upload_time_iso_8601": "2026-07-17T23:42:17.013488Z",
+        "url": "https://files.pythonhosted.org/packages/b9/7d/4b999b0ddd05c22d83cc2e879c95e1e92e3b7808b58ac561c4ea91fca1c4/openai_codex-0.144.4.tar.gz",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ]
+  },
+  "urls": [
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "6b11a323ca2482aa103064303880a515512d29fd1ac17094546ffe4bab713494"
+      },
+      "digests": {
+        "blake2b_256": "17355d2a13e38d91278019f18757ac10426d2649b7ec6f031818c792f64559e9",
+        "md5": "ff73350aeb100fa0575f81306cf051e4",
+        "sha256": "de1513a6e94b9a8d7728a3b74298bc1469428ade10ba0ef2d5db47dd1cb606f5"
+      },
+      "downloads": -1,
+      "filename": "openai_codex-0.144.4-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "ff73350aeb100fa0575f81306cf051e4",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.10",
+      "size": 76244,
+      "upload_time": "2026-07-17T23:42:15",
+      "upload_time_iso_8601": "2026-07-17T23:42:15.658875Z",
+      "url": "https://files.pythonhosted.org/packages/17/35/5d2a13e38d91278019f18757ac10426d2649b7ec6f031818c792f64559e9/openai_codex-0.144.4-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": false,
+      "digests": {
+        "blake2b_256": "b97d4b999b0ddd05c22d83cc2e879c95e1e92e3b7808b58ac561c4ea91fca1c4",
+        "md5": "6a0ffaaa35a49f0e753a3bb841cc8f7f",
+        "sha256": "91c63a7cb213441569f130e593386b34657ab9e726ae88af255f0ecb8de08ea5"
+      },
+      "downloads": -1,
+      "filename": "openai_codex-0.144.4.tar.gz",
+      "has_sig": false,
+      "md5_digest": "6a0ffaaa35a49f0e753a3bb841cc8f7f",
+      "packagetype": "sdist",
+      "python_version": "source",
+      "requires_python": ">=3.10",
+      "size": 68324,
+      "upload_time": "2026-07-17T23:42:17",
+      "upload_time_iso_8601": "2026-07-17T23:42:17.013488Z",
+      "url": "https://files.pythonhosted.org/packages/b9/7d/4b999b0ddd05c22d83cc2e879c95e1e92e3b7808b58ac561c4ea91fca1c4/openai_codex-0.144.4.tar.gz",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ],
+  "vulnerabilities": []
+}

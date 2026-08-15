@@ -1,5 +1,354 @@
 [
   {
+    "id": "rel.anthropic-typescript-sdk.0.117.1",
+    "harness_id": "anthropic-typescript-sdk",
+    "version": "0.117.1",
+    "channel": "stable",
+    "published_at": "2026-08-13T00:00:00Z",
+    "date_precision": "day",
+    "retrieved_at": "2026-08-15T20:10:18.583627Z",
+    "source_id": "src.anthropic-typescript.changelog",
+    "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/main/CHANGELOG.md",
+    "raw_snapshot_path": "raw/anthropic-sdk-typescript/CHANGELOG.md",
+    "raw_sha256": "8fd23bfb55d91c088cc368ae7fc7779aab57c1d7e984e9995e411807557cb516",
+    "title": "anthropic-typescript-sdk 0.117.1",
+    "notes_excerpt": "**ci:** allow manually re-publishing a package to npm from the release workflow ([af60c1f](https://github.com/anthropics/anthropic-sdk-typescript/commit/af60c1f980557368fb10c3701d8dc8a1fa75d70e))",
+    "change_count": 2,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.1.001",
+        "kind": "changed",
+        "summary": "**ci:** allow manually re-publishing a package to npm from the release workflow ([af60c1f](https://github.com/anthropics/anthropic-sdk-typescript/commit/af60c1f980557368fb10c3701d8dc8a1fa75d70e))",
+        "category": "automation",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk",
+          "ci"
+        ],
+        "actors": [
+          "external_orchestrator",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.1.002",
+        "kind": "changed",
+        "summary": "**internal:** tag uploaded preview builds with the branch name ([#295](https://github.com/anthropics/anthropic-sdk-typescript/issues/295)) ([228f44e](https://github.com/anthropics/anthropic-sdk-typescript/commit/228f44ee4848e6a26be27d26093635e2dba783ea))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "markdown_changelog",
+      "immutable": false
+    }
+  },
+  {
+    "id": "rel.anthropic-typescript-sdk.0.117.0",
+    "harness_id": "anthropic-typescript-sdk",
+    "version": "0.117.0",
+    "channel": "stable",
+    "published_at": "2026-08-13T00:00:00Z",
+    "date_precision": "day",
+    "retrieved_at": "2026-08-15T20:10:18.584009Z",
+    "source_id": "src.anthropic-typescript.changelog",
+    "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/main/CHANGELOG.md",
+    "raw_snapshot_path": "raw/anthropic-sdk-typescript/CHANGELOG.md",
+    "raw_sha256": "f78e07d4a1e9b9685dae2691abf5a797cb4c8035f94899d73ea384fe672bb70c",
+    "title": "anthropic-typescript-sdk 0.117.0",
+    "notes_excerpt": "**api:** add output_behavior to dream creation (create a new memory store or update the input store in place) ([6a5bd0f](https://github.com/anthropics/anthropic-sdk-typescript/commit/6a5bd0f34d214759f97d485e46b09203fff3ea99))",
+    "change_count": 11,
+    "flags": {
+      "security": true,
+      "breaking": true,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.0.001",
+        "kind": "changed",
+        "summary": "**api:** add output_behavior to dream creation (create a new memory store or update the input store in place) ([6a5bd0f](https://github.com/anthropics/anthropic-sdk-typescript/commit/6a5bd0f34d214759f97d485e46b09203fff3ea99))",
+        "category": "context_memory",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [
+          "context.persistent_memory"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.0.002",
+        "kind": "changed",
+        "summary": "**build:** include dotfiles when flattening dist during git installs ([917dbbb](https://github.com/anthropics/anthropic-sdk-typescript/commit/917dbbb40070dbd1f861b16fcf297720d96f691b))",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.0.003",
+        "kind": "changed",
+        "summary": "**client:** add models ([a7bfbb1](https://github.com/anthropics/anthropic-sdk-typescript/commit/a7bfbb1b31e9d1dffe9a83b90ec1d0dabf5c36db))",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.0.004",
+        "kind": "changed",
+        "summary": "**messages:** honor per-request timeout in the non-streaming long-request check ([#272](https://github.com/anthropics/anthropic-sdk-typescript/issues/272)) ([0fdd8a8](https://github.com/anthropics/anthropic-sdk-typescript/commit/0fdd8a8feb5d16fbb943490a2b1e8ecf915596d6))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.0.005",
+        "kind": "changed",
+        "summary": "**streaming:** apply all message_delta fields when accumulating streamed messages ([#289](https://github.com/anthropics/anthropic-sdk-typescript/issues/289)) ([7b82659](https://github.com/anthropics/anthropic-sdk-typescript/commit/7b82659d70201ae3edab846f1693366db7e62ce3))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.0.006",
+        "kind": "changed",
+        "summary": "**tool-runner:** forward the response container id to the next request ([#271](https://github.com/anthropics/anthropic-sdk-typescript/issues/271)) ([5bdee4a](https://github.com/anthropics/anthropic-sdk-typescript/commit/5bdee4a8ddd83e2f1c71daa429345b3b0fea4602))",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "in_harness_agent",
+          "external_orchestrator"
+        ],
+        "capability_refs": [
+          "runtime.self_hosted"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.0.007",
+        "kind": "changed",
+        "summary": "**tools:** align path resolution, skill-archive members, and heartbeat bounds with the other SDKs ([#264](https://github.com/anthropics/anthropic-sdk-typescript/issues/264)) ([5fbc729](https://github.com/anthropics/anthropic-sdk-typescript/commit/5fbc729c82ec3967c9f76428d0f733b5fa61ddd5))",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "in_harness_agent",
+          "external_orchestrator"
+        ],
+        "capability_refs": [
+          "extensions.skills"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.0.008",
+        "kind": "changed",
+        "summary": "**ci:** run breaking-change detection as a ci.yml job on every push ([c34c1d5](https://github.com/anthropics/anthropic-sdk-typescript/commit/c34c1d53f3227b3978621590e67f5a33f5cad107))",
+        "category": "automation",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk",
+          "ci"
+        ],
+        "actors": [
+          "external_orchestrator",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.0.009",
+        "kind": "changed",
+        "summary": "**internal:** switch from yarn to pnpm ([f4eeea0](https://github.com/anthropics/anthropic-sdk-typescript/commit/f4eeea09648620d35517513814ffdc3bd3080801))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.0.010",
+        "kind": "changed",
+        "summary": "**tools:** escape backslashes in skill archive exclusion patterns ([#311](https://github.com/anthropics/anthropic-sdk-typescript/issues/311)) ([67ede1c](https://github.com/anthropics/anthropic-sdk-typescript/commit/67ede1c665883b7785af3240c749601d7ca19255))",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "in_harness_agent",
+          "external_orchestrator"
+        ],
+        "capability_refs": [
+          "extensions.skills"
+        ],
+        "security_relevant": true,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.117.0.011",
+        "kind": "changed",
+        "summary": "**api:** clarify that user profile name is optional for resold profiles ([1b6fed5](https://github.com/anthropics/anthropic-sdk-typescript/commit/1b6fed5868bd16dd92120440d373da22084be237))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "human_operator",
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "markdown_changelog",
+      "immutable": false
+    }
+  },
+  {
     "id": "rel.anthropic-typescript-sdk.0.116.0",
     "harness_id": "anthropic-typescript-sdk",
     "version": "0.116.0",
@@ -2952,6 +3301,367 @@
         ],
         "actors": [
           "human_operator",
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "markdown_changelog",
+      "immutable": false
+    }
+  },
+  {
+    "id": "rel.anthropic-typescript-sdk.0.92.0",
+    "harness_id": "anthropic-typescript-sdk",
+    "version": "0.92.0",
+    "channel": "stable",
+    "published_at": "2026-04-30T00:00:00Z",
+    "date_precision": "day",
+    "retrieved_at": "2026-08-15T20:10:18.594272Z",
+    "source_id": "src.anthropic-typescript.changelog",
+    "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/main/CHANGELOG.md",
+    "raw_snapshot_path": "raw/anthropic-sdk-typescript/CHANGELOG.md",
+    "raw_sha256": "19146ceb2707da73874320313772c0c12ae2d880306ece0d032b118b07530483",
+    "title": "anthropic-typescript-sdk 0.92.0",
+    "notes_excerpt": "**api:** improve Managed Agents APIs ([ca1bf4a](https://github.com/anthropics/anthropic-sdk-typescript/commit/ca1bf4a9b278fddc7f082b1c4f2b3a3e4e20298d))",
+    "change_count": 5,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.anthropic-typescript-sdk.0.92.0.001",
+        "kind": "changed",
+        "summary": "**api:** improve Managed Agents APIs ([ca1bf4a](https://github.com/anthropics/anthropic-sdk-typescript/commit/ca1bf4a9b278fddc7f082b1c4f2b3a3e4e20298d))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.92.0.002",
+        "kind": "changed",
+        "summary": "support setting headers via env ([32f67d4](https://github.com/anthropics/anthropic-sdk-typescript/commit/32f67d47952b12bb930c8bbfe87ab2ba2aee1882))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.92.0.003",
+        "kind": "changed",
+        "summary": "**bedrock:** throw APIError for error events delivered in chunk frames ([#1021](https://github.com/anthropics/anthropic-sdk-typescript/issues/1021)) ([3ae887b](https://github.com/anthropics/anthropic-sdk-typescript/commit/3ae887b89bde1721c75dc9c9812cb9ac191ffc92))",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.92.0.004",
+        "kind": "changed",
+        "summary": "**format:** run eslint and prettier separately ([7ce257c](https://github.com/anthropics/anthropic-sdk-typescript/commit/7ce257c1b1ad9ff4e1cee19e82851bcb65e0e044))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.92.0.005",
+        "kind": "changed",
+        "summary": "**internal:** codegen related update ([f08cc77](https://github.com/anthropics/anthropic-sdk-typescript/commit/f08cc771efd596026f4247ecff418e7ef6a3b38a))",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "markdown_changelog",
+      "immutable": false
+    }
+  },
+  {
+    "id": "rel.anthropic-typescript-sdk.0.91.1",
+    "harness_id": "anthropic-typescript-sdk",
+    "version": "0.91.1",
+    "channel": "stable",
+    "published_at": "2026-04-24T00:00:00Z",
+    "date_precision": "day",
+    "retrieved_at": "2026-08-15T20:10:18.594720Z",
+    "source_id": "src.anthropic-typescript.changelog",
+    "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/main/CHANGELOG.md",
+    "raw_snapshot_path": "raw/anthropic-sdk-typescript/CHANGELOG.md",
+    "raw_sha256": "d22f0c04d10c37e345d5cbf2021aeb86c6c9462253263f4ce6bfa1655d6582c7",
+    "title": "anthropic-typescript-sdk 0.91.1",
+    "notes_excerpt": "**memory:** use restrictive file mode for memory files ([#901](https://github.com/anthropics/anthropic-sdk-typescript/issues/901)) ([6db3b7e](https://github.com/anthropics/anthropic-sdk-typescript/commit/6db3b7e2218430971cbc137081b5a55ad593fca8))",
+    "change_count": 2,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.anthropic-typescript-sdk.0.91.1.001",
+        "kind": "changed",
+        "summary": "**memory:** use restrictive file mode for memory files ([#901](https://github.com/anthropics/anthropic-sdk-typescript/issues/901)) ([6db3b7e](https://github.com/anthropics/anthropic-sdk-typescript/commit/6db3b7e2218430971cbc137081b5a55ad593fca8))",
+        "category": "context_memory",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [
+          "context.persistent_memory"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.91.1.002",
+        "kind": "changed",
+        "summary": "**formatter:** run prettier and eslint separately ([974d22f](https://github.com/anthropics/anthropic-sdk-typescript/commit/974d22fcf607b942bff3376c699bc3f6cb3b3ae5))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "markdown_changelog",
+      "immutable": false
+    }
+  },
+  {
+    "id": "rel.anthropic-typescript-sdk.0.91.0",
+    "harness_id": "anthropic-typescript-sdk",
+    "version": "0.91.0",
+    "channel": "stable",
+    "published_at": "2026-04-23T00:00:00Z",
+    "date_precision": "day",
+    "retrieved_at": "2026-08-15T20:10:18.594925Z",
+    "source_id": "src.anthropic-typescript.changelog",
+    "source_url": "https://raw.githubusercontent.com/anthropics/anthropic-sdk-typescript/main/CHANGELOG.md",
+    "raw_snapshot_path": "raw/anthropic-sdk-typescript/CHANGELOG.md",
+    "raw_sha256": "5bb7e8a1ca84758dcb338b29e85900120b04ffecee7356cdda0e4a99b38753df",
+    "title": "anthropic-typescript-sdk 0.91.0",
+    "notes_excerpt": "**api:** CMA Memory public beta ([ddf732f](https://github.com/anthropics/anthropic-sdk-typescript/commit/ddf732f5f35c123f963fa270669e35707a2e3f7f))",
+    "change_count": 6,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.anthropic-typescript-sdk.0.91.0.001",
+        "kind": "changed",
+        "summary": "**api:** CMA Memory public beta ([ddf732f](https://github.com/anthropics/anthropic-sdk-typescript/commit/ddf732f5f35c123f963fa270669e35707a2e3f7f))",
+        "category": "context_memory",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [
+          "context.persistent_memory"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.91.0.002",
+        "kind": "changed",
+        "summary": "**bedrock:** use auth header for mantle client ([#866](https://github.com/anthropics/anthropic-sdk-typescript/issues/866)) ([aec801a](https://github.com/anthropics/anthropic-sdk-typescript/commit/aec801afc7d37d9e8ca1471748ca599b442cbce4))",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.91.0.003",
+        "kind": "changed",
+        "summary": "**api:** fix errors in api spec ([ae10768](https://github.com/anthropics/anthropic-sdk-typescript/commit/ae1076848587c6f994b45e3030269a635d38bc0b))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.91.0.004",
+        "kind": "changed",
+        "summary": "**api:** restore missing features ([1a5b47b](https://github.com/anthropics/anthropic-sdk-typescript/commit/1a5b47b6895ee2c47af8adea1f403b76dd3ca62f))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.91.0.005",
+        "kind": "changed",
+        "summary": "**internal:** more robust bootstrap script ([7716e19](https://github.com/anthropics/anthropic-sdk-typescript/commit/7716e19f7fceeb63bb20b9e4df904a021ae705dc))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.anthropic-typescript-sdk.0.91.0.006",
+        "kind": "changed",
+        "summary": "**tests:** bump steady to v0.22.1 ([219a971](https://github.com/anthropics/anthropic-sdk-typescript/commit/219a9717439a458189ac83633b2d5cd9f1ad7d25))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
           "external_orchestrator"
         ],
         "capability_refs": [],

@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: openai-codex
-generated_at: 2026-08-08T20:00:00Z
+generated_at: 2026-08-15T20:10:35.204766Z
 artifact_kind: harness_capability_guide
 ---
 

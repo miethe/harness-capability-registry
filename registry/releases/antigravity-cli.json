@@ -1,17 +1,1171 @@
 [
   {
+    "id": "rel.antigravity-cli.1.1.13",
+    "harness_id": "antigravity-cli",
+    "version": "1.1.13",
+    "channel": "stable",
+    "published_at": "2026-08-14T02:26:19Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.168626Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.13",
+    "raw_snapshot_path": null,
+    "raw_sha256": "8886e1e4d4896e1d2ab7723d7210682ec244ae02f14e4fcee3993e7f99b8ac67",
+    "title": "1.1.13",
+    "notes_excerpt": "Added support for `GEMINI_API_KEY`, so the CLI can run against the Gemini API directly without signing in. Set `modelProvider: \"gemini\"` in `settings.json`, export `GEMINI_API_KEY`, and point `GOOGLE_GEMINI_BASE_URL` at a custom endpoint if you need one. The banner and `/help` show `Gemini API key` as the credential, and `/logout` explains that it comes from the environment rather than appearing to end a session.",
+    "change_count": 21,
+    "flags": {
+      "security": true,
+      "breaking": true,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.antigravity-cli.1.1.13.001",
+        "kind": "added",
+        "summary": "Added support for `GEMINI_API_KEY`, so the CLI can run against the Gemini API directly without signing in. Set `modelProvider: \"gemini\"` in `settings.json`, export `GEMINI_API_KEY`, and point `GOOGLE_GEMINI_BASE_URL` at a custom endpoint if you need one. The banner and `/help` show `Gemini API key` as the credential, and `/logout` explains that it comes from the environment rather than appearing to end a session.",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator",
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": true,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.002",
+        "kind": "improved",
+        "summary": "Improved `/codesearch` resilience by falling back to a local search when the `ripgrep` binary cannot be executed, such as when an endpoint security agent blocks it.",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": true,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.003",
+        "kind": "improved",
+        "summary": "Improved artifact list scrolling by caching each file's preview line count, which previously re-read every listed file from disk on every keypress.",
+        "category": "interfaces",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "interfaces.artifacts"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.004",
+        "kind": "improved",
+        "summary": "Improved custom agent support by making `manage_task` available to declarative agents that have not opted out of fundamental components, so a custom agent can list and kill its own background tasks, and reworded its step lines to read `Killed task X` and `Checked task X`.",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.005",
+        "kind": "improved",
+        "summary": "Improved `search_web` steps by showing the query while the search is still running rather than only after it returns.",
+        "category": "interfaces",
+        "surfaces": [
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.006",
+        "kind": "improved",
+        "summary": "Improved the agent's behavior after backgrounding work by removing the anti-polling reminder text from the `manage_task` and `manage_inbox` tool results, which could itself nudge the model into a polling loop.",
+        "category": "models_providers",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.007",
+        "kind": "improved",
+        "summary": "Improved the `/resume` picker by relabeling its second tab, which previously carried a name that did not distinguish it from the first.",
+        "category": "context_memory",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.008",
+        "kind": "improved",
+        "summary": "Improved deleting a conversation from the `/resume` picker by moving the keybinding from `ctrl+delete` to `f4`, since macOS terminals disagree on how they report the delete key and the old binding silently did nothing there.",
+        "category": "session_state",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.009",
+        "kind": "improved",
+        "summary": "Improved the time to open a large conversation by loading step headers in batches and no longer reading each step's full payload just to read its type.",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.010",
+        "kind": "improved",
+        "summary": "Improved embedded ripgrep reliability and security by saving extracted binaries to the user cache directory instead of /tmp. Added content-addressed SHA-256 verification and atomic renaming to guarantee binary integrity and prevent concurrent execution races.",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": true,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.011",
+        "kind": "fixed",
+        "summary": "Fixed a distorted startup banner in Cloud Shell, where the web terminal mishandles the cursor-optimization escape sequences the renderer emits; a conservative rendering mode now turns on automatically there.",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive",
+          "web"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": true,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.012",
+        "kind": "fixed",
+        "summary": "Fixed the direct Gemini API route parking on the sign-in screen instead of booting straight into the main UI, and fixed model requests failing against a custom endpoint set through `GOOGLE_GEMINI_BASE_URL` by dropping a session field such an endpoint is not guaranteed to support.",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.013",
+        "kind": "fixed",
+        "summary": "Fixed conversations disappearing from the `/resume` picker after cycling to the second tab and back, which left it reporting `No conversations available`, and kept the `tab` hint in the shortcut bar even when a tab is empty.",
+        "category": "session_state",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.014",
+        "kind": "fixed",
+        "summary": "Fixed trajectory truncation destroying nearly all of a long conversation's history, by charging the size budget only against steps whose bytes can actually be reclaimed instead of against protected checkpoints and the unreclaimable residue of already-cleared steps.",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.015",
+        "kind": "fixed",
+        "summary": "Fixed unbounded growth of the on-disk conversation database in sessions woken by background tasks, subagents or agent messages, where each wake appended duplicate grants and settings to every persisted row.",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "orchestration.subagents"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.016",
+        "kind": "fixed",
+        "summary": "Fixed corruption of the saved transcript when a background message appended to it while context compaction was rewriting it, which left malformed JSON that no longer parsed.",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.017",
+        "kind": "fixed",
+        "summary": "Fixed a hung sandbox setup killing the rest of the conversation, where the step was never unregistered so every later message was silently swallowed and the session appeared dead until a restart.",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "security.sandbox"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.018",
+        "kind": "fixed",
+        "summary": "Fixed `define_subagent` using a model-supplied agent name directly as a directory name, so a name containing `..` could write its `agent.md` outside the conversation's artifact directory; names are now validated at both the tool and the handler.",
+        "category": "interfaces",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "orchestration.subagents",
+          "interfaces.artifacts"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.019",
+        "kind": "fixed",
+        "summary": "Fixed artifact list rendering, where previews produced garbled text and overflowed the panel on wide CJK or emoji characters, the cursor could point past the end of the list when entries disappeared, and the header and footer lines were left out of the scroll math so the list overflowed its viewport.",
+        "category": "interfaces",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "interfaces.artifacts"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.020",
+        "kind": "fixed",
+        "summary": "Fixed `Esc` in the artifact viewer showing a spurious submit confirmation for reviews that had completed in earlier turns, and fixed submitting re-reporting those same reviews.",
+        "category": "interfaces",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "interfaces.artifacts"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.13.021",
+        "kind": "fixed",
+        "summary": "Fixed `invoke_subagent`, `send_message`, `manage_subagents`, `define_subagent`, and `generate_image` rendering with no tool call line at all in collapsed and expanded tool groups, leaving a bare `(ctrl+o to expand)` hint with no tool name.",
+        "category": "orchestration",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "orchestration.subagents"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.13/agy_cli_linux_arm64.tar.gz",
+        "size": 51913658,
+        "content_type": "application/gzip",
+        "digest": "sha256:a9fdd2a386770c27dbf784436bd4de70d4d4901c832d5ec6abf27758d5c370f8"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.13/agy_cli_linux_x64.tar.gz",
+        "size": 55586032,
+        "content_type": "application/gzip",
+        "digest": "sha256:edc7c32b5ab4fc2e4da03381fee83ed566dea6b56b56f9329cd13cd77947a1d9"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.13/agy_cli_mac_arm64.tar.gz",
+        "size": 49170821,
+        "content_type": "application/gzip",
+        "digest": "sha256:f8c27b70708843eeb2c8f6efff0119a27041980e95cba6c49b86a0950ed19ba1"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.13/agy_cli_mac_x64.tar.gz",
+        "size": 53848131,
+        "content_type": "application/gzip",
+        "digest": "sha256:8eaf399051afbc67435220f7fbeddeaaa6f9d50a087a229e628a4b2510c05c69"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.13/agy_cli_windows_arm64.zip",
+        "size": 46740037,
+        "content_type": "application/zip",
+        "digest": "sha256:f9e173c4525178c0d0c4c1381e31debbaa7dc357bd92a97dbced53e74315fbe7"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.13/agy_cli_windows_x64.zip",
+        "size": 51248727,
+        "content_type": "application/zip",
+        "digest": "sha256:9e545832f77adccec08ad48a9db92b31e62c377aab57993946930e0d7d44cb01"
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 370311179,
+      "tag_commitish": "main"
+    }
+  },
+  {
+    "id": "rel.antigravity-cli.1.1.12",
+    "harness_id": "antigravity-cli",
+    "version": "1.1.12",
+    "channel": "stable",
+    "published_at": "2026-08-11T01:26:58Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.171429Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.12",
+    "raw_snapshot_path": null,
+    "raw_sha256": "d3454d51b977c60ba07c8d169e972c3e389d9df3c02375edd1f4604d6383d012",
+    "title": "1.1.12",
+    "notes_excerpt": "Added a heading outline to the artifact viewer, opened with `t`, so a long markdown document's structure is visible at a glance and you can jump straight to a section instead of scrolling.",
+    "change_count": 26,
+    "flags": {
+      "security": true,
+      "breaking": true,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.antigravity-cli.1.1.12.001",
+        "kind": "added",
+        "summary": "Added a heading outline to the artifact viewer, opened with `t`, so a long markdown document's structure is visible at a glance and you can jump straight to a section instead of scrolling.",
+        "category": "interfaces",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "interfaces.artifacts"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.002",
+        "kind": "added",
+        "summary": "Added non-interactive answers for more read-only slash commands in print mode, so `-p \"/permissions\"`, `/hooks`, `/help`, `/changelog` and `/config` each emit one tab-separated record per line — or a structured payload under `--output-format json` and `stream-json` — without starting an agent turn, spending quota or leaving a conversation behind, with `/help` listing exactly the commands print mode answers and `/changelog` printing the release notes.",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive",
+          "terminal_headless"
+        ],
+        "actors": [
+          "human_operator",
+          "external_orchestrator"
+        ],
+        "capability_refs": [
+          "execution.headless",
+          "execution.structured_output",
+          "extensions.hooks",
+          "security.permissions",
+          "observability.usage_cost"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.003",
+        "kind": "added",
+        "summary": "Added machine-readable output to the `models` and `agents` subcommands through an `--output-format` flag accepting `json` and `stream-json`, and moved their error messages and progress spinner off stdout so captured output contains only the list.",
+        "category": "execution",
+        "surfaces": [
+          "terminal_headless"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [
+          "execution.structured_output"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.004",
+        "kind": "added",
+        "summary": "Added a `disable-slash-command: true` flag for a skill's `SKILL.md` frontmatter, which hides that skill from the `/` menu and from `/name` resolution while leaving it discoverable and invocable by the model, so a large skill library no longer floods the command menu.",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "extensions.skills"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.005",
+        "kind": "added",
+        "summary": "Added rendering for alert callouts (`[!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, `[!CAUTION]`) and for carousel blocks in markdown artifacts, which previously showed as raw markup.",
+        "category": "interfaces",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "interfaces.artifacts"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.006",
+        "kind": "improved",
+        "summary": "Improved terminal hyperlink support, enabling clickable links over SSH and in hyperlink-capable `tmux`, keeping word-wrapped URLs clickable past their first line, linking URLs that the markdown renderer had left as plain text including ones inside code blocks, no longer highlighting unrelated links together on hover, and fixing horizontal scrolling and text selection on lines that contain a link.",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.007",
+        "kind": "improved",
+        "summary": "Improved tool call headers so every native and MCP tool call carries a short summary of what it is doing instead of a bare name or a raw argument blob, with the same summary naming background tasks and subagents in the activity list and the matching action phrase describing the request in permission prompts.",
+        "category": "orchestration",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client",
+          "orchestration.subagents",
+          "security.permissions"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.008",
+        "kind": "improved",
+        "summary": "Improved headroom for large toolsets by raising the per-session limit on tool declarations, so heavy MCP, plugin and skill setups stop being rejected for having too many tools.",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "extensions.skills",
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.009",
+        "kind": "improved",
+        "summary": "Improved sign-in with Application Default Credentials by resolving the quota project automatically, so service-account logins work without extra configuration.",
+        "category": "security_governance",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": true,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.010",
+        "kind": "improved",
+        "summary": "Improved repository detection so a Git repository nested inside a larger multi-repository checkout resolves to the intended root, with submodules and worktrees covered.",
+        "category": "interfaces",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.011",
+        "kind": "improved",
+        "summary": "Improved headless `-p` runs so the agent settles a choice itself where it would otherwise ask, instead of stalling on a question nobody is there to answer.",
+        "category": "execution",
+        "surfaces": [
+          "terminal_headless"
+        ],
+        "actors": [
+          "external_orchestrator",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "execution.headless"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.012",
+        "kind": "improved",
+        "summary": "Improved the `schedule` tool by dropping the redundant `Timer Cancelled` notification when a one-shot timer with an early-termination condition is cancelled, and by naming both the condition and the exact sender whose message satisfied it in the step result.",
+        "category": "automation",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "automation.schedules"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.013",
+        "kind": "improved",
+        "summary": "Improved file paths in tool step lines by collapsing your home directory to `~` instead of truncating the front of the path, so the interesting end of a long path stays on screen.",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.014",
+        "kind": "fixed",
+        "summary": "Fixed `--mode` being ignored in headless `-p` runs, where a valid value such as `accept-edits` or `plan` was never applied and an unrecognized value produced no warning at all.",
+        "category": "execution",
+        "surfaces": [
+          "terminal_headless"
+        ],
+        "actors": [
+          "external_orchestrator",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "execution.headless"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.015",
+        "kind": "fixed",
+        "summary": "Fixed startup diagnostics being swallowed into the log file instead of reaching the terminal, including crash notices, the `--conversation` not-found warning, the `--print` and `--prompt-interactive` conflict, conversation load errors, and the `--mode` and `--agent` warnings.",
+        "category": "session_state",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.016",
+        "kind": "fixed",
+        "summary": "Fixed a character disappearing from your submitted prompt where it wrapped at the terminal's right edge, caused by the echoed prompt being indented after it had already been wrapped to the full width.",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.017",
+        "kind": "fixed",
+        "summary": "Fixed file citations in a response losing their line numbers, so a cited range renders as `path:10-25` again instead of just the file name.",
+        "category": "automation",
+        "surfaces": [
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci",
+          "tools.web_research"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.018",
+        "kind": "fixed",
+        "summary": "Fixed a write-in answer in a multi-select question discarding the boxes you had already ticked, and fixed a stale write-in being submitted after you went back to a predefined option.",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.019",
+        "kind": "fixed",
+        "summary": "Fixed large background tasks crowding out the prompt by limiting each active item below the input box to a single line.",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.020",
+        "kind": "fixed",
+        "summary": "Fixed corruption of `config.json` by writing user config atomically, so a crash or a concurrent writer can no longer leave a truncated file that silently breaks settings persistence.",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.021",
+        "kind": "fixed",
+        "summary": "Fixed the CLI giving up on a slow OS keyring after one second and falling back to empty storage, which forced a re-login; it now waits five seconds, as every other keyring operation already did.",
+        "category": "observability",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.022",
+        "kind": "fixed",
+        "summary": "Fixed conversation preview titles derived from the first user message by cutting them at the first line and capping them at 500 characters, so a large pasted or scripted prompt no longer produces a multi-megabyte stored title.",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.023",
+        "kind": "fixed",
+        "summary": "Fixed a crash on Windows when resolving the conversation transcript path, by honoring the path's drive letter in the trajectory log artifact converter.",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "interfaces.artifacts"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.024",
+        "kind": "fixed",
+        "summary": "Fixed a subagent going silent on its parent when its own message failed to send, and fixed the parent being handed an empty notice when a subagent went idle without a final response.",
+        "category": "orchestration",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "orchestration.subagents"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.025",
+        "kind": "fixed",
+        "summary": "Fixed the `read_url_content` tool leaking a connection on every call, which could eventually exhaust the machine's available ports.",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.12.026",
+        "kind": "fixed",
+        "summary": "Fixed the status line reporting model quota that was always one fetch out of date, so it now matches the quota you actually have left.",
+        "category": "models_providers",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.12/agy_cli_linux_arm64.tar.gz",
+        "size": 51660119,
+        "content_type": "application/gzip",
+        "digest": "sha256:dbfcc9bb91716d68410d99027892d34cf412dae1d23b82e191549a8629ddab38"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.12/agy_cli_linux_x64.tar.gz",
+        "size": 55332777,
+        "content_type": "application/gzip",
+        "digest": "sha256:c778ae4fd11e5dc2dbddfd7108ee1974ae60fd531afb246be41c6e4bb49c81ca"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.12/agy_cli_mac_arm64.tar.gz",
+        "size": 48689274,
+        "content_type": "application/gzip",
+        "digest": "sha256:7b70bdf27727a68d58c1bebfd3fd2e87d1172dc32eab9827d52fd62ad64f286b"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.12/agy_cli_mac_x64.tar.gz",
+        "size": 53329096,
+        "content_type": "application/gzip",
+        "digest": "sha256:82f5ccc62ae77e202c33cd0347b564ffe645b7cdb2a35c45bb6eb34d516e8832"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.12/agy_cli_windows_arm64.zip",
+        "size": 46313685,
+        "content_type": "application/zip",
+        "digest": "sha256:50bce878fcf480b70c37797674c74bf443090419145760554056b42e956e718c"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.12/agy_cli_windows_x64.zip",
+        "size": 50794876,
+        "content_type": "application/zip",
+        "digest": "sha256:270d71910675d614499a0f7f165f275aff0a03c00b0f92cc9ed09f352c58de85"
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 368267156,
+      "tag_commitish": "main"
+    }
+  },
+  {
     "id": "rel.antigravity-cli.1.1.11",
     "harness_id": "antigravity-cli",
     "version": "1.1.11",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.593569Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "18133b6dccfcb15b3f870e244a5fba07e8d37e16e92ea7731fdba1ed699ce81e",
-    "title": "antigravity-cli 1.1.11",
+    "published_at": "2026-08-07T02:35:23Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.173295Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.11",
+    "raw_snapshot_path": null,
+    "raw_sha256": "f6ce391764680c81b5be43cf82555e90305d09c6213986739fc999cd767b8e4a",
+    "title": "1.1.11",
     "notes_excerpt": "Added a Vim editing mode, off by default and switched on from `/settings` under `Editor Mode`, bringing modal editing to the prompt with Normal, Insert, Visual and Visual Line modes, a mode badge in the status line and a Vim tab in `/help`, and covering the `h`/`j`/`k`/`l`, `w`/`b`/`e` and `W`/`B`/`E` motions, the `0`/`^`/`$`/`gg`/`G` boundaries, the `f`/`F`/`t`/`T` character searches with their `;` and `,` repeats, the `i`/`a`/`I`/`A` insert entries, the `d`/`c`/`y` operators alongside `x`, `D` and `C` filling the unnamed register for `p`, and the `iw`/`aw`/`iW`/`aW`/`ip`/`ap` text objects.",
     "change_count": 18,
     "flags": {
@@ -418,10 +1572,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.11/agy_cli_linux_arm64.tar.gz",
+        "size": 50825768,
+        "content_type": "application/gzip",
+        "digest": "sha256:f3a03713e3e3cc84477e115d3fd9de1c232386b09384ba8690df6fc0cb0abbf3"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.11/agy_cli_linux_x64.tar.gz",
+        "size": 54459006,
+        "content_type": "application/gzip",
+        "digest": "sha256:caef1dd4c99c57dee1d1dec2b6c67726df535ea49ec71eabadd36daff8223d19"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.11/agy_cli_mac_arm64.tar.gz",
+        "size": 47860779,
+        "content_type": "application/gzip",
+        "digest": "sha256:97cb909d30dbb2bf232d3d10e5dbc8bc008f0e7030400b515a182e490bdd6f08"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.11/agy_cli_mac_x64.tar.gz",
+        "size": 52455201,
+        "content_type": "application/gzip",
+        "digest": "sha256:a63a189a59a0bd1aeb70236aca0754278f418a4ae6d8ef99c8e3616bfa7a3e73"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.11/agy_cli_windows_arm64.zip",
+        "size": 45497570,
+        "content_type": "application/zip",
+        "digest": "sha256:3d1b97651de4cfc7a090d33b59d802b82b662d9dd0b7851ac98a3e97cc1d3c48"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.11/agy_cli_windows_x64.zip",
+        "size": 49933695,
+        "content_type": "application/zip",
+        "digest": "sha256:d03b782e4ec278fb7b8d2d12621f8cbd976ce96ff9bfcbd7bdaf2c15c9368709"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 366452479,
+      "tag_commitish": "main"
     }
   },
   {
@@ -429,14 +1629,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.1.10",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.594829Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "2a9c899b14f1aafaa9024b2efad06349f6f1ca1c2c66103e92079c8ca5962831",
-    "title": "antigravity-cli 1.1.10",
+    "published_at": "2026-08-03T15:45:42Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.174967Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.10",
+    "raw_snapshot_path": null,
+    "raw_sha256": "c7cd2f6d0e6412ddf7b4f165829fea9f18c193d3b4b8057b849361ac84ea30bb",
+    "title": "1.1.10",
     "notes_excerpt": "Added Business sign-in for Gemini Enterprise accounts, so you can authenticate with a Google Cloud project under Google Cloud terms, use a license seat allocated or auto-assigned from your organization's GE-Standard or GE-Plus subscription, run inference in a chosen region, and have your organization's administrator controls applied to various features.",
     "change_count": 18,
     "flags": {
@@ -836,10 +2036,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.10/agy_cli_linux_arm64.tar.gz",
+        "size": 49182187,
+        "content_type": "application/gzip",
+        "digest": "sha256:4308f85b1dd4f6b5654ea5f7a0962a482f33acf8169b2e6ac4aecdb209d13411"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.10/agy_cli_linux_x64.tar.gz",
+        "size": 52694362,
+        "content_type": "application/gzip",
+        "digest": "sha256:9e94cfffa869ee2bf9ab32e05eff3baa4661b66d5e00a2fd40a8c5dc6f9bd450"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.10/agy_cli_mac_arm64.tar.gz",
+        "size": 46319403,
+        "content_type": "application/gzip",
+        "digest": "sha256:0617d4aa7b0ea7ba1e24143b5178d28febaed8e5fd49b7e6e99765d4200d29ef"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.10/agy_cli_mac_x64.tar.gz",
+        "size": 50716673,
+        "content_type": "application/gzip",
+        "digest": "sha256:416ed1883c74072015cc8e5ec2768ac6ee4d2cd9e2f4ef68125e943e79794b5d"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.10/agy_cli_windows_arm64.zip",
+        "size": 43965239,
+        "content_type": "application/zip",
+        "digest": "sha256:e9b62e9a25ceb2e19aeb73bb9696ae438ef1b65b66b501ef44f42861b6558e70"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.10/agy_cli_windows_x64.zip",
+        "size": 48234084,
+        "content_type": "application/zip",
+        "digest": "sha256:80307eed9aeeb786131ca91dbb08b6ef9ffa913af710a693424cb3065163040f"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 364009461,
+      "tag_commitish": "main"
     }
   },
   {
@@ -847,14 +2093,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.1.9",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.595886Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "f42d87c9a73a2bb2272a37a948d914e2dd64cb7e043b9374ce734165d1c07f63",
-    "title": "antigravity-cli 1.1.9",
+    "published_at": "2026-07-31T05:12:14Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.175896Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.9",
+    "raw_snapshot_path": null,
+    "raw_sha256": "5e36f95ecc54abc976bc9e3d17e28be9262279dfdfb66c49c145285ab2f0ff93",
+    "title": "1.1.9",
     "notes_excerpt": "Added slash-command and skill expansion to print mode, so a headless run such as `-p \"/my-skill review this diff\"` now resolves and applies the skill instead of sending it as literal text, with `--disable-slash-commands` to opt out.",
     "change_count": 11,
     "flags": {
@@ -1113,10 +2359,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.9/agy_cli_linux_arm64.tar.gz",
+        "size": 48995565,
+        "content_type": "application/gzip",
+        "digest": "sha256:deeb815d07a656074482b2e428ffd9794a2fffbf5df2056e9bf75936b85ebb49"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.9/agy_cli_linux_x64.tar.gz",
+        "size": 52482856,
+        "content_type": "application/gzip",
+        "digest": "sha256:467809635ef00660497607111547e80a0a863c6e8fce43b507cd1ba6bf6ddd66"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.9/agy_cli_mac_arm64.tar.gz",
+        "size": 46131090,
+        "content_type": "application/gzip",
+        "digest": "sha256:bbc42c75f6e603fd35a70f353f2963e74bb4ea261f89e4256f5f60a78f95bb84"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.9/agy_cli_mac_x64.tar.gz",
+        "size": 50507284,
+        "content_type": "application/gzip",
+        "digest": "sha256:8daa903f5135072b3921dbac90f449cb8a778102b03853e8691146665cad06bd"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.9/agy_cli_windows_arm64.zip",
+        "size": 43800593,
+        "content_type": "application/zip",
+        "digest": "sha256:1fb7c6e13119405f0dd080453316b0bde3fe6992c7830274e15cc2fab6f66380"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.9/agy_cli_windows_x64.zip",
+        "size": 48047068,
+        "content_type": "application/zip",
+        "digest": "sha256:e9c152fbe2839211d712c31c0da54b27eb398550d20bf5ac6b8973b7846ab2c7"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 362860116,
+      "tag_commitish": "main"
     }
   },
   {
@@ -1124,14 +2416,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.1.8",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.596476Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "f9e5d73488e2b5db581c80f920edc0af4bd6593bc46aca677929361b24f04a8d",
-    "title": "antigravity-cli 1.1.8",
+    "published_at": "2026-07-28T00:59:10Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.176650Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.8",
+    "raw_snapshot_path": null,
+    "raw_sha256": "394b3355f730e66853716c9db4449597ea74045f6146ab924759f0de4ba56dc9",
+    "title": "1.1.8",
     "notes_excerpt": "Print mode (`-p` / `--print`) now supports structured, machine-readable output via the `--output-format` flag (`text` (default), `json`, or `stream-json`), so headless runs in CI, eval harnesses, and scripts can consume the CLI's output programmatically; these flags are now discoverable in `--help`.",
     "change_count": 7,
     "flags": {
@@ -1302,10 +2594,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.8/agy_cli_linux_arm64.tar.gz",
+        "size": 49147372,
+        "content_type": "application/gzip",
+        "digest": "sha256:e75cebb03fce0fcad7d3bb682eb84c356a3c50ff8fb3dc4a89d2051f34fca0ab"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.8/agy_cli_linux_x64.tar.gz",
+        "size": 52535983,
+        "content_type": "application/gzip",
+        "digest": "sha256:e92e6215532b3ce84455e341944067753ad90f6d24cebcec8002ce137e5162ce"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.8/agy_cli_mac_arm64.tar.gz",
+        "size": 46268913,
+        "content_type": "application/gzip",
+        "digest": "sha256:622d85db88bcfbf060aa4cbeaadcf2a287420f31236c1efb287409a949ccab25"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.8/agy_cli_mac_x64.tar.gz",
+        "size": 50542433,
+        "content_type": "application/gzip",
+        "digest": "sha256:76afe4622132596f68557ef4531ec2e2dcd40e8025f6fb4435a273ce2eec0027"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.8/agy_cli_windows_arm64.zip",
+        "size": 43925314,
+        "content_type": "application/zip",
+        "digest": "sha256:2e5c5a5b67b4d2a197bc9eb5608f61e6a2f7d602b1012beb7e6b3c158e2a909c"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.8/agy_cli_windows_x64.zip",
+        "size": 48081576,
+        "content_type": "application/zip",
+        "digest": "sha256:e234c850e3d835d278bb9b4aa202c34d53e399eeebc3d9d1a575576896cdecee"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 360773607,
+      "tag_commitish": "main"
     }
   },
   {
@@ -1313,14 +2651,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.1.7",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.596965Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "4410c8b0bf00949f520619d1935c281b5c41bff6111e4cffb255588153aab172",
-    "title": "antigravity-cli 1.1.7",
+    "published_at": "2026-07-26T00:43:16Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.177091Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.7",
+    "raw_snapshot_path": null,
+    "raw_sha256": "bf48718384e63fd536cb13ea10eb0e33257edb2399dfb897821d688bcfb491b1",
+    "title": "1.1.7",
     "notes_excerpt": "Improved permission prompts for compound shell commands so the full command is shown when any part of it needs approval.",
     "change_count": 6,
     "flags": {
@@ -1461,10 +2799,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.7/agy_cli_linux_arm64.tar.gz",
+        "size": 49049369,
+        "content_type": "application/gzip",
+        "digest": "sha256:0d6d488851745e80e69b8935d063e742945811b47111994b1a6dbd27df3010d5"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.7/agy_cli_linux_x64.tar.gz",
+        "size": 52427182,
+        "content_type": "application/gzip",
+        "digest": "sha256:946cd06258d0ede72d0311550c914315798821f6a397f53ac760919826a19af4"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.7/agy_cli_mac_arm64.tar.gz",
+        "size": 46174321,
+        "content_type": "application/gzip",
+        "digest": "sha256:1ed31957d30e2d9735b1ce545a1e9106233bf7ce07739ea1f883957f5d240bed"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.7/agy_cli_mac_x64.tar.gz",
+        "size": 50435519,
+        "content_type": "application/gzip",
+        "digest": "sha256:67924f137f1ab884415fa5ab45de592d1d037eacb45be90f67d0bc6dd181498d"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.7/agy_cli_windows_arm64.zip",
+        "size": 43825036,
+        "content_type": "application/zip",
+        "digest": "sha256:2cc250e9ad7468df63b27063fd1ff126ca4644e97d0e377eca1f0445966dd60e"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.7/agy_cli_windows_x64.zip",
+        "size": 47974201,
+        "content_type": "application/zip",
+        "digest": "sha256:492717bd2906a3a25c500a98a4c5adf2ade89cea17dd56070f380261603af0e0"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 359592978,
+      "tag_commitish": "main"
     }
   },
   {
@@ -1472,16 +2856,16 @@
     "harness_id": "antigravity-cli",
     "version": "1.1.6",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.597280Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "46484d474e089ab3a63f90b1fdfc061871b30062dae7010506b723ad12dfe41e",
-    "title": "antigravity-cli 1.1.6",
+    "published_at": "2026-07-24T03:02:18Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.178686Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.6",
+    "raw_snapshot_path": null,
+    "raw_sha256": "d1c3f9f766cdac47a378b7a43b68bd05142a0992242b92260243b98844ec747b",
+    "title": "1.1.6",
     "notes_excerpt": "Custom Agents (Markdown Format). Added support for defining custom agents using Markdown files (`agent.md`) with YAML frontmatter and H1-delimited system prompts. Markdown agents support `mainAgent`, `subagent`, `hidden`, `inheritMcp`, and `commandExecutionPolicy` frontmatter fields for fine-grained control over agent behavior. Dynamically defined subagents (via `define_subagent`) now also write Markdown format so they resolve correctly on external builds.",
-    "change_count": 18,
+    "change_count": 20,
     "flags": {
       "security": true,
       "breaking": true,
@@ -1577,6 +2961,29 @@
       {
         "id": "chg.antigravity-cli.1.1.6.005",
         "kind": "improved",
+        "summary": "Improved plugin skill discovery by aggregating skills from both `skills.json` and the `skills/` directory instead of using only one, matching user-customization behavior.",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "extensions.skills",
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.6.006",
+        "kind": "improved",
         "summary": "Improved support for markdown-based custom agents so custom agent management and selection behave more consistently.",
         "category": "other",
         "surfaces": [
@@ -1595,7 +3002,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.006",
+        "id": "chg.antigravity-cli.1.1.6.007",
         "kind": "improved",
         "summary": "Improved customization discovery by sorting rules and discovered paths deterministically, preventing unstable prompt ordering and needless prompt-cache misses.",
         "category": "other",
@@ -1615,7 +3022,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.007",
+        "id": "chg.antigravity-cli.1.1.6.008",
         "kind": "improved",
         "summary": "Improved overall reliability and stability across the CLI with additional hardening and fixes for intermittent failures in background tasks, print mode, and interactive flows.",
         "category": "execution",
@@ -1637,7 +3044,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.008",
+        "id": "chg.antigravity-cli.1.1.6.009",
         "kind": "fixed",
         "summary": "Fixed switching from a custom agent back to the default agent via `/agents`, which previously failed silently and left the conversation stuck on the custom agent's persona.",
         "category": "session_state",
@@ -1657,7 +3064,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.009",
+        "id": "chg.antigravity-cli.1.1.6.010",
         "kind": "fixed",
         "summary": "Fixed a crash when a command was blocked by sandbox permissions before its output was captured, and cleaned up the permission approval and denial messages.",
         "category": "security_governance",
@@ -1680,7 +3087,27 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.010",
+        "id": "chg.antigravity-cli.1.1.6.011",
+        "kind": "fixed",
+        "summary": "Fixed the CLI rewriting a hand-authored `sidecar.json` as unreadable compact JSON when creating or updating a sidecar.",
+        "category": "context_memory",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.antigravity-cli.1.1.6.012",
         "kind": "fixed",
         "summary": "Fixed the artifact viewer emitting garbage escape bytes when cycling to image mode on terminals that are detected but cannot actually render Kitty graphics, such as iTerm2.",
         "category": "interfaces",
@@ -1702,7 +3129,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.011",
+        "id": "chg.antigravity-cli.1.1.6.013",
         "kind": "fixed",
         "summary": "Fixed the first keystroke (such as `Esc`) being dropped when opening the first artifact view on some non-Kitty terminals.",
         "category": "interfaces",
@@ -1724,7 +3151,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.012",
+        "id": "chg.antigravity-cli.1.1.6.014",
         "kind": "fixed",
         "summary": "Fixed conversation jitter and a stranded input box during streaming so transient markdown reflow no longer shifts the pending line and input box upward.",
         "category": "session_state",
@@ -1744,7 +3171,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.013",
+        "id": "chg.antigravity-cli.1.1.6.015",
         "kind": "fixed",
         "summary": "Fixed print mode (`-p`) surfacing the real conversation-creation failure instead of a misleading \"no active conversation\" error.",
         "category": "execution",
@@ -1768,7 +3195,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.014",
+        "id": "chg.antigravity-cli.1.1.6.016",
         "kind": "fixed",
         "summary": "Fixed the message list dropping its header when rewinding or resetting conversation steps.",
         "category": "session_state",
@@ -1788,7 +3215,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.015",
+        "id": "chg.antigravity-cli.1.1.6.017",
         "kind": "fixed",
         "summary": "Fixed a background auto-updater double-spawn race where two processes could each spawn an updater within a single update window.",
         "category": "distribution_runtime",
@@ -1808,7 +3235,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.016",
+        "id": "chg.antigravity-cli.1.1.6.018",
         "kind": "fixed",
         "summary": "Fixed sandbox error reporting so blocked actions are recorded even when the network proxy is disabled.",
         "category": "security_governance",
@@ -1830,7 +3257,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.017",
+        "id": "chg.antigravity-cli.1.1.6.019",
         "kind": "fixed",
         "summary": "Fixed the screen going blank after the authentication page.",
         "category": "other",
@@ -1850,7 +3277,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.6.018",
+        "id": "chg.antigravity-cli.1.1.6.020",
         "kind": "fixed",
         "summary": "Fixed the `ctrl+b` shortcut being hardcoded to background shell commands even when none were running, so a remapped `ctrl+b` is now respected whenever there are no running shell commands in the conversation.",
         "category": "execution",
@@ -1870,10 +3297,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.6/agy_cli_linux_arm64.tar.gz",
+        "size": 48961847,
+        "content_type": "application/gzip",
+        "digest": "sha256:78040d87f4fef72bb785af68cf7d9d6c25024710ee58f8281f85c3f1e47b975a"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.6/agy_cli_linux_x64.tar.gz",
+        "size": 52340765,
+        "content_type": "application/gzip",
+        "digest": "sha256:2448b9bb1d3496063a6335d021dcab90c42d71fdaad6346ef8a395f0ca0fe9d0"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.6/agy_cli_mac_arm64.tar.gz",
+        "size": 46101621,
+        "content_type": "application/gzip",
+        "digest": "sha256:89b371597511dbd8399569ed85585ecd6769d7838d3e31c8cf97e231be570b9a"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.6/agy_cli_mac_x64.tar.gz",
+        "size": 50356509,
+        "content_type": "application/gzip",
+        "digest": "sha256:894e70ff5bbf5088ec97b7e7c9456132c6767acf92dc842b49c7cf55de3f3279"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.6/agy_cli_windows_arm64.zip",
+        "size": 43604183,
+        "content_type": "application/zip",
+        "digest": "sha256:d32e3938894f471262ec218c1e362168e0e6ad9c0f24895aef7ada7022b99445"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.6/agy_cli_windows_x64.zip",
+        "size": 47737744,
+        "content_type": "application/zip",
+        "digest": "sha256:97f779bb2fd25b22f4be4e6f2d4a9d2cfedf80f584695af4ec4ebd5657453642"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 359054742,
+      "tag_commitish": "main"
     }
   },
   {
@@ -1881,16 +3354,16 @@
     "harness_id": "antigravity-cli",
     "version": "1.1.5",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.598223Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "3289abbbe82717ce6317724208b2afecf5f17661d5810a81eec5c461620cb104",
-    "title": "antigravity-cli 1.1.5",
+    "published_at": "2026-07-21T02:33:39Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.179746Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.5",
+    "raw_snapshot_path": null,
+    "raw_sha256": "23d2c34305fadbaea409d6075a61846aa4899cfd315ab4f8b1a57812f3367ae4",
+    "title": "1.1.5",
     "notes_excerpt": "Added a `/effort` command to view and change the current model's reasoning effort, with a left/right timeline-gauge picker and a direct `/effort <level>` form so you can trade latency for depth on the fly.",
-    "change_count": 20,
+    "change_count": 13,
     "flags": {
       "security": false,
       "breaking": true,
@@ -2173,11 +3646,85 @@
           "confidence": "candidate",
           "review_status": "unreviewed"
         }
+      }
+    ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.5/agy_cli_linux_arm64.tar.gz",
+        "size": 48942715,
+        "content_type": "application/gzip",
+        "digest": "sha256:d61ace663d7efee9dfd8f4f881e6f1021eff904a0688a91cd4d84359ee76f044"
       },
       {
-        "id": "chg.antigravity-cli.1.1.5.014",
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.5/agy_cli_linux_x64.tar.gz",
+        "size": 52315784,
+        "content_type": "application/gzip",
+        "digest": "sha256:1d586501b8a13d146e8aa3c7f00634f50c6034e2c428ea7d013377d36315a69a"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.5/agy_cli_mac_arm64.tar.gz",
+        "size": 46035412,
+        "content_type": "application/gzip",
+        "digest": "sha256:04254cb335c4f056308e1a7f188365f58d5c688d5af162921eac4bdda736ba55"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.5/agy_cli_mac_x64.tar.gz",
+        "size": 50285408,
+        "content_type": "application/gzip",
+        "digest": "sha256:57727fcf8048860bbcfddbb404a2df9aa26557238c4e7d21feb7d646525f478b"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.5/agy_cli_windows_arm64.zip",
+        "size": 43589071,
+        "content_type": "application/zip",
+        "digest": "sha256:593600eac43071e02010f1ee002ea861df1c35c3a547b1f38c59714b79e53653"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.5/agy_cli_windows_x64.zip",
+        "size": 47706092,
+        "content_type": "application/zip",
+        "digest": "sha256:0e37447c3d63284d5404e7e6679e099b7e8a6bdd800a56cee70d0283398eebed"
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 357056869,
+      "tag_commitish": "main"
+    }
+  },
+  {
+    "id": "rel.antigravity-cli.1.1.4",
+    "harness_id": "antigravity-cli",
+    "version": "1.1.4",
+    "channel": "stable",
+    "published_at": "2026-07-18T00:48:48Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.180295Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.4",
+    "raw_snapshot_path": null,
+    "raw_sha256": "ea712777818ff85a07f6e7d5dec4b287fa7e426a0a692aa59b33c77a2c4235ff",
+    "title": "1.1.4",
+    "notes_excerpt": "Added support for stacking multiple leading slash commands in a single prompt, so a chain like /plan /grill-me <prompt> parses, activates, and renders every command in the order you typed them.",
+    "change_count": 7,
+    "flags": {
+      "security": false,
+      "breaking": true,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.antigravity-cli.1.1.4.001",
         "kind": "added",
-        "summary": "Added support for stacking multiple leading slash commands in a single prompt, so a chain like `/plan /grill-me <prompt>` parses, activates, and renders every command in the order you typed them.",
+        "summary": "Added support for stacking multiple leading slash commands in a single prompt, so a chain like /plan /grill-me <prompt> parses, activates, and renders every command in the order you typed them.",
         "category": "execution",
         "surfaces": [
           "terminal_interactive"
@@ -2195,9 +3742,9 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.5.015",
+        "id": "chg.antigravity-cli.1.1.4.002",
         "kind": "improved",
-        "summary": "Improved scrolling in the `/diff` viewer so paging through a diff no longer jitters or pushes the status line off the screen when lines wrap or comments expand.",
+        "summary": "Improved scrolling in the /diff viewer so paging through a diff no longer jitters or pushes the status line off the screen when lines wrap or comments expand.",
         "category": "interfaces",
         "surfaces": [
           "terminal_interactive"
@@ -2217,9 +3764,9 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.5.016",
+        "id": "chg.antigravity-cli.1.1.4.003",
         "kind": "fixed",
-        "summary": "Fixed custom agents that declare `subagent: false` still appearing in the available-subagents list and being invocable as subagents.",
+        "summary": "Fixed custom agents that declare subagent: false still appearing in the available-subagents list and being invocable as subagents.",
         "category": "orchestration",
         "surfaces": [
           "unspecified"
@@ -2239,9 +3786,9 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.5.017",
+        "id": "chg.antigravity-cli.1.1.4.004",
         "kind": "fixed",
-        "summary": "Fixed headless (`-p` / `--print`) runs so they now honor persisted `settings.json` policies, including `permissions`, file access, sandbox mode, auto-execution, and artifact review.",
+        "summary": "Fixed headless (-p / --print) runs so they now honor persisted settings.json policies, including permissions, file access, sandbox mode, auto-execution, and artifact review.",
         "category": "security_governance",
         "surfaces": [
           "terminal_interactive",
@@ -2268,9 +3815,9 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.5.018",
+        "id": "chg.antigravity-cli.1.1.4.005",
         "kind": "fixed",
-        "summary": "Fixed `/btw` side-questions leaking into the conversation list as duplicate entries that carried the parent conversation's title.",
+        "summary": "Fixed /btw side-questions leaking into the conversation list as duplicate entries that carried the parent conversation's title.",
         "category": "session_state",
         "surfaces": [
           "terminal_interactive",
@@ -2289,9 +3836,9 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.5.019",
+        "id": "chg.antigravity-cli.1.1.4.006",
         "kind": "fixed",
-        "summary": "Fixed the prompt to honor a custom Enter binding to `prompt.insert_newline`, so a remapped Enter inserts a newline instead of submitting.",
+        "summary": "Fixed the prompt to honor a custom Enter binding to prompt.insert_newline, so a remapped Enter inserts a newline instead of submitting.",
         "category": "other",
         "surfaces": [
           "unspecified"
@@ -2309,7 +3856,7 @@
         }
       },
       {
-        "id": "chg.antigravity-cli.1.1.5.020",
+        "id": "chg.antigravity-cli.1.1.4.007",
         "kind": "fixed",
         "summary": "Fixed eligibility error messages so the CLI shows the real reason again instead of defaulting to a generic \"unknown reason\".",
         "category": "other",
@@ -2329,10 +3876,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.4/agy_cli_linux_arm64.tar.gz",
+        "size": 48663240,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:333199327cc29e21cb8fcc4e19f7c02c462bf41dd876f1328d64e9922c631700"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.4/agy_cli_linux_x64.tar.gz",
+        "size": 52062055,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:aaab42e395cb4e3bfe5ae88994a340865d949f7a9e7f0604ffa2a3f1e8aadbfa"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.4/agy_cli_mac_arm64.tar.gz",
+        "size": 46664998,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:33ca693ecf8874dbb0b7746f588264e947b919c8f785130e60a7f261190d48dd"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.4/agy_cli_mac_x64.tar.gz",
+        "size": 50008500,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:9aa56bfeadc83f724acd9e21e5349a688e029cd14592363425e432c57b81eaed"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.4/agy_cli_windows_arm64.zip",
+        "size": 43306777,
+        "content_type": "application/zip",
+        "digest": "sha256:1ad3d4468e40ba6477d3b15e755c315fc5e097f77acf1dec83362efc907bbcb3"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.4/agy_cli_windows_x64.zip",
+        "size": 47426343,
+        "content_type": "application/zip",
+        "digest": "sha256:f2b069483c21fe570f20f3cd2f556b1eae0e671027679dbafdd65121b2ed7faf"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 355977697,
+      "tag_commitish": "main"
     }
   },
   {
@@ -2340,14 +3933,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.1.3",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.599247Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "42135b809cb6c817a542703d24d7524db4124768aa77779c34f9e36baba411fe",
-    "title": "antigravity-cli 1.1.3",
+    "published_at": "2026-07-16T01:01:57Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.181606Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.3",
+    "raw_snapshot_path": null,
+    "raw_sha256": "540bc6f2ac7617abd171d076fb02e694e32596d5bfe6b83fa7b31dfd12d33eef",
+    "title": "1.1.3",
     "notes_excerpt": "Added a `/codesearch` command (aliases `/cs` and `/search`) to interactively search code across your workspace, interpreting queries as regex by default with `-F`/`--literal` for exact matching and `f:`/`file:` globs to include or exclude paths.",
     "change_count": 16,
     "flags": {
@@ -2504,7 +4097,7 @@
       {
         "id": "chg.antigravity-cli.1.1.3.008",
         "kind": "fixed",
-        "summary": "Fixed code-block corruption where `$..$` math expansion desynced from the Markdown parser and mangled fenced shell snippets such as `git fetch \"$GIT_REMOTE\"` by detecting fenced code blocks line-by-line.",
+        "summary": "Fixed code-block corruption where `$...$` math expansion desynced from the Markdown parser and mangled fenced shell snippets such as `git fetch \"$GIT_REMOTE\"` by detecting fenced code blocks line-by-line.",
         "category": "execution",
         "surfaces": [
           "unspecified"
@@ -2699,10 +4292,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.3/agy_cli_linux_arm64.tar.gz",
+        "size": 48448951,
+        "content_type": "application/gzip",
+        "digest": "sha256:453f9c5530877ab6369e2536e576cfab2bbbcb45923a9bc776678142538e419d"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.3/agy_cli_linux_x64.tar.gz",
+        "size": 51816321,
+        "content_type": "application/gzip",
+        "digest": "sha256:7a7239a69b65d3cf3af7e75f27b2ff4e9cce696a7b9a9e5c37c695f1c74eec34"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.3/agy_cli_mac_arm64.tar.gz",
+        "size": 46518030,
+        "content_type": "application/gzip",
+        "digest": "sha256:51627eb3df9a3a9d878ac4edb87b3f4930002f5d9bba3542d56506b60ef212a4"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.3/agy_cli_mac_x64.tar.gz",
+        "size": 49844191,
+        "content_type": "application/gzip",
+        "digest": "sha256:c12607de7e333c54799b11ccf01b83701f33464b000799ba81662640304d349a"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.3/agy_cli_windows_arm64.zip",
+        "size": 43161887,
+        "content_type": "application/zip",
+        "digest": "sha256:8d1a4b735e7fee7fda54bbd4fc4ead646d3478b081432e40bd66fc176e0786ec"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.3/agy_cli_windows_x64.zip",
+        "size": 47255972,
+        "content_type": "application/zip",
+        "digest": "sha256:caf28ac4f81595b51620f47e0f481dee96e368d27f30c9241d69bd9a0062579a"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 354807249,
+      "tag_commitish": "main"
     }
   },
   {
@@ -2710,14 +4349,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.1.2",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.600130Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "e8e6c962d9c2df895808832a1932e17d2661f9d9d498d3fd4e05c115f178da10",
-    "title": "antigravity-cli 1.1.2",
+    "published_at": "2026-07-13T23:26:02Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.182436Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.2",
+    "raw_snapshot_path": null,
+    "raw_sha256": "7d8a738d2dcf36b9acd44f80908e8ecc6ae8ccc80c48a84a6e1ed9a823bf8e74",
+    "title": "1.1.2",
     "notes_excerpt": "Added an `f` (full diff) shortcut to the create-file tool review screen so new-file confirmations can open a full-screen diff view, matching the existing file-edit experience.",
     "change_count": 9,
     "flags": {
@@ -2925,10 +4564,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.2/agy_cli_linux_arm64.tar.gz",
+        "size": 43180130,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:59cf9ec0f5a694fd9cf612262d152857368fdc819db1192bd3fe1219ba26254f"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.2/agy_cli_linux_x64.tar.gz",
+        "size": 45837663,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:0754010347926daf00c96734cfcf59ee6043eab23efc35b99b2d62aad84dc6f0"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.2/agy_cli_mac_arm64.tar.gz",
+        "size": 39513603,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:50b760c50ff288342fd4bb8b1c21d5ac72da75dc47b6870b6fe645e9370c95ee"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.2/agy_cli_mac_x64.tar.gz",
+        "size": 42781397,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:99f7ab841f50ae5f988618378fb92ea773c2392d5618d9849d4edf49083a62c1"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.2/agy_cli_windows_arm64.zip",
+        "size": 38374780,
+        "content_type": "application/zip",
+        "digest": "sha256:0839b834f7874b24f027e2b2b0fca78445871f6fdb5ded8bfa8a73f4c046530b"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.2/agy_cli_windows_x64.zip",
+        "size": 42328691,
+        "content_type": "application/zip",
+        "digest": "sha256:f72e0b52ed582c4a44d6a88fb7d379902738fbaa6e8ecef2049e773eaf3e0796"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 353457897,
+      "tag_commitish": "main"
     }
   },
   {
@@ -2936,14 +4621,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.1.1",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.600677Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "ab7f501f135de88a35976308d55e64aa666250fbfab793fe91bb37b218a0c555",
-    "title": "antigravity-cli 1.1.1",
+    "published_at": "2026-07-10T03:40:13Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.183374Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.1",
+    "raw_snapshot_path": null,
+    "raw_sha256": "39e3fc8540fba9cea0b07ca9ab10308dbdb7d9e7b09a72e1d75a2a2cf020dc4d",
+    "title": "1.1.1",
     "notes_excerpt": "Added the `--agent` flag and `agent/agents` subcommand, allowing users to select a custom agent at launch and list available agents.",
     "change_count": 12,
     "flags": {
@@ -3212,10 +4897,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.1/agy_cli_linux_arm64.tar.gz",
+        "size": 43041475,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:3fc542686c5c82d7a01e3796a8bfcda5ed849c6e70f07d4d0c93e51368952784"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.1/agy_cli_linux_x64.tar.gz",
+        "size": 45692765,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:2ee167841cdc9a1d7dc5a624f1f15b84ee5dbb94b85af662a7299118cb4b1586"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.1/agy_cli_mac_arm64.tar.gz",
+        "size": 39388780,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:83333dd7131bebcce2dfa5f94722efce442d7b67e9ab9b240c91f100a26d4675"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.1/agy_cli_mac_x64.tar.gz",
+        "size": 42637282,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:f04855a9d14a9f29476b2343b5f827e897b187a7adce065201fef15c5d1a70bd"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.1/agy_cli_windows_arm64.zip",
+        "size": 38242165,
+        "content_type": "application/zip",
+        "digest": "sha256:2fc9aa0d2f184b4a63d4120c0cbf270e911c85317727857a4dbbce4ec5712e2c"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.1/agy_cli_windows_x64.zip",
+        "size": 42180210,
+        "content_type": "application/zip",
+        "digest": "sha256:d28facfa204f118827301be42eef38df5d40c23b50b2a27bc7f607c9e1b13968"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 351885150,
+      "tag_commitish": "main"
     }
   },
   {
@@ -3223,14 +4954,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.1.0",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.601285Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "0a2ef95e571786547a43956b3b6c9a102986940e79f0a3cf4257b27fe3238111",
-    "title": "antigravity-cli 1.1.0",
+    "published_at": "2026-07-08T03:25:54Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.184717Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.0",
+    "raw_snapshot_path": null,
+    "raw_sha256": "70cb44e393dbf16fb0c6f656387818a4cee2d3cce3d2fbe7cf4868e016557f02",
+    "title": "1.1.0",
     "notes_excerpt": "Agent execution mode cycling is now publicly available: `default` -> `accept-edits` -> `plan`)",
     "change_count": 14,
     "flags": {
@@ -3498,7 +5229,7 @@
       {
         "id": "chg.antigravity-cli.1.1.0.013",
         "kind": "fixed",
-        "summary": "Fixed statusline shortcut hints (`? for shortcuts`) and redundant escape hints (`Esc to cancel`) erroneously appearing inside full-screen overlay panels (such as `/changelog`, `/artifact`, and `/settings`) by correctly tracking overlay panel states.",
+        "summary": "Fixed statusline shortcut hints (`? for shortcuts`) and redundant escape hints (`Esc to cancel`) erroneously appearing inside full-screen overlay panels (such as `/changelog`, `/artifact`, `/bug`, and `/settings`) by correctly tracking overlay panel states.",
         "category": "interfaces",
         "surfaces": [
           "terminal_interactive",
@@ -3539,10 +5270,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.0/agy_cli_linux_arm64.tar.gz",
+        "size": 42975484,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:23550a5ae36916b2702c006a47c21aa86fbe3af1ac44f57b5dbd3f9dec5c7e7a"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.0/agy_cli_linux_x64.tar.gz",
+        "size": 45631390,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:7ee512440af5ed0c819065cd7cc14eec90699214df4be32280ac346f0100577e"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.0/agy_cli_mac_arm64.tar.gz",
+        "size": 39324908,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:0697f826ec64072bda426522cf239bb5400d730e9205cd3a1a83912e965b8d9c"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.0/agy_cli_mac_x64.tar.gz",
+        "size": 42572586,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:b17679e4044e8eb1c21c4f8ab5cf570dbf11079dc8df1c315b00c60de2489483"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.0/agy_cli_windows_arm64.zip",
+        "size": 38175492,
+        "content_type": "application/zip",
+        "digest": "sha256:8c459710ea53230d3d5730402f9ed89fdf9bd3e79d4901d2f119af5e9b753443"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.0/agy_cli_windows_x64.zip",
+        "size": 42117624,
+        "content_type": "application/zip",
+        "digest": "sha256:71dc604a25e85a4ae9686dcafa2ed0f973312817e336fa39c360d078788aa9b6"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 350661502,
+      "tag_commitish": "main"
     }
   },
   {
@@ -3550,14 +5327,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.16",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.602135Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "cc31bb8052703607132e870c71568e3cfbbbb073d92b17db2a72bb2ec4b9b4d0",
-    "title": "antigravity-cli 1.0.16",
+    "published_at": "2026-07-02T18:37:15Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.185208Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.16",
+    "raw_snapshot_path": null,
+    "raw_sha256": "566ed5b3aed764cccfb3d9118edd8dee02c9dbe9cd5db18b4a6b57558707f3ac",
+    "title": "1.0.16",
     "notes_excerpt": "Improved the `/tasks` detail panel to automatically scroll to the bottom as new background task logs stream in, and default to the latest output when opened while preserving scroll position if scrolled up manually.",
     "change_count": 6,
     "flags": {
@@ -3694,10 +5471,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.16/agy_cli_linux_arm64.tar.gz",
+        "size": 43058420,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:a66ae3e75e024c03aa79d6618ef8199a0a71ae0f43b9e5ee9e930a589ba0ca2f"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.16/agy_cli_linux_x64.tar.gz",
+        "size": 45770746,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:8ffc887002920b1b4ab42f6213f50a21aa7bb4ee14caa0ed563129a2ce39135d"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.16/agy_cli_mac_arm64.tar.gz",
+        "size": 39401568,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:70085c462422851ae18a23acfd9e6439c46b73dcc062ab67934f00d9c233ca0b"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.16/agy_cli_mac_x64.tar.gz",
+        "size": 42705725,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:93e8612d19a24748b20ede2397defefaed8a38393abc64696eb4848970062af6"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.16/agy_cli_windows_arm64.zip",
+        "size": 38251279,
+        "content_type": "application/zip",
+        "digest": "sha256:b73195896463769c4b45732f22a602edd9a0b726a13fab173117b686d25b388d"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.16/agy_cli_windows_x64.zip",
+        "size": 42247107,
+        "content_type": "application/zip",
+        "digest": "sha256:058ee6398a4aa41bc2b8017c255e559b7504f0085cf43676d4a592c467fb515f"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 348223196,
+      "tag_commitish": "main"
     }
   },
   {
@@ -3705,14 +5528,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.15",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.602447Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "16cf5ebd8ca4ca42ac05ff516b9908e9b66cbd7405b5386b5ba0e6493568fe83",
-    "title": "antigravity-cli 1.0.15",
+    "published_at": "2026-07-01T22:59:00Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.185937Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.15",
+    "raw_snapshot_path": null,
+    "raw_sha256": "35f8248592f46b994739db7bfa48d8de48bec0281c31457816b0a8c838df2214",
+    "title": "1.0.15",
     "notes_excerpt": "Introduced a new interactive status indicator below the input box that displays active subagents and background tasks in real-time, making it easy to monitor and navigate parallel workflows at a glance.",
     "change_count": 9,
     "flags": {
@@ -3921,10 +5744,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.15/agy_cli_linux_arm64.tar.gz",
+        "size": 43015958,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:2a816dcced6aefe8f9cc0281a3d9d00af87a8a6f39789f2030e32c92d3e864f6"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.15/agy_cli_linux_x64.tar.gz",
+        "size": 45709497,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:d125764f115fa53d77081ef1e2a6fa9b3a3fde8799a0d91d811a4bee4b2b2fb7"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.15/agy_cli_mac_arm64.tar.gz",
+        "size": 39354912,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:61b17465635de291036b50883f4b8c3dd4ac9af22969853019acff526274f567"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.15/agy_cli_mac_x64.tar.gz",
+        "size": 42662421,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:be3a397eb80c58b3190f4e3860613ba5cac558f763d64a052e46ddbe95a3a57f"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.15/agy_cli_windows_arm64.zip",
+        "size": 38205260,
+        "content_type": "application/zip",
+        "digest": "sha256:eb2f8324854ac142efef4a5b72756e8f0c3ccc42c802634c5c8023c52a765bcb"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.15/agy_cli_windows_x64.zip",
+        "size": 42199237,
+        "content_type": "application/zip",
+        "digest": "sha256:623c99fc72cc0d886172db1ea8368a4eb45713040573c2f2f9bf06587803ebef"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 347753138,
+      "tag_commitish": "main"
     }
   },
   {
@@ -3932,14 +5801,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.14",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.602924Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "02264da6e4d858563acda7dbb22e285fa2c72c130f5a698af799c9d5c0c5e9e2",
-    "title": "antigravity-cli 1.0.14",
+    "published_at": "2026-06-30T02:28:33Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.186417Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.14",
+    "raw_snapshot_path": null,
+    "raw_sha256": "95237f62643442ed350e97ad9bce73c92875ea4ce06a2cc65e436407c0f31922",
+    "title": "1.0.14",
     "notes_excerpt": "Allowed image pasting from the clipboard in local tmux sessions.",
     "change_count": 7,
     "flags": {
@@ -4098,10 +5967,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.14/agy_cli_linux_arm64.tar.gz",
+        "size": 42831480,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:992653b4de4fe667ee5bd66ca259edd6b88b308f20a31880a77002624204e277"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.14/agy_cli_linux_x64.tar.gz",
+        "size": 45538311,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:7170d598193ee0addcaba7d8c3a2c2e307ae8622dacf749831128bd1ad3ca458"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.14/agy_cli_mac_arm64.tar.gz",
+        "size": 39153814,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:44fb1db46b67d8566fdafe31ff44722c02ad1655d588cc18029ee349122bb3a3"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.14/agy_cli_mac_x64.tar.gz",
+        "size": 42451728,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:75a2840202f67a25396b5fb758ab77c212636a6a0e934a5b4175c49e79ae6df4"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.14/agy_cli_windows_arm64.zip",
+        "size": 38023269,
+        "content_type": "application/zip",
+        "digest": "sha256:53f3b2a00fe8453baa6e520417e333355c280bd76922a5ea016f9811ae62be16"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.14/agy_cli_windows_x64.zip",
+        "size": 42010322,
+        "content_type": "application/zip",
+        "digest": "sha256:9ff9c4b7db3b873c545964956369b06207decd7c81550eaad1c57c397c8ce397"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 346586203,
+      "tag_commitish": "main"
     }
   },
   {
@@ -4109,14 +6024,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.13",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.603229Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "248981ce666897ad9c5fd62764d49ea451d53cb5665894bb650a91f1a08f6772",
-    "title": "antigravity-cli 1.0.13",
+    "published_at": "2026-06-27T01:58:53Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.187067Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.13",
+    "raw_snapshot_path": null,
+    "raw_sha256": "d12f38b123eaad6fa4099c0b1db3cac7e08e301ff4ffcbd77c7d1c8761d0cfa2",
+    "title": "1.0.13",
     "notes_excerpt": "Fixed a bug where the CLI would temporarily render skill commands without their slash prefix during optimistic updates by deferring prefix stripping to the serialization boundary, ensuring the UI always displays exactly what the user typed.",
     "change_count": 7,
     "flags": {
@@ -4284,10 +6199,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.13/agy_cli_linux_arm64.tar.gz",
+        "size": 42803331,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:e2f062ff8a573d2da54c03c8f0b66e130a563a08c87b6db174953a9afdd21235"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.13/agy_cli_linux_x64.tar.gz",
+        "size": 45479963,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:6bf990458c114af3b3173dcbc1b0fb9ab93bea91c53b605fdd69aedd29a21cd9"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.13/agy_cli_mac_arm64.tar.gz",
+        "size": 39107048,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:c00b3aa10d4eee821f7ddaf3185942c88511ebbe425663692f7732d8dd1e83c2"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.13/agy_cli_mac_x64.tar.gz",
+        "size": 42395696,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:53e23ef3f54d0212df7fc73ea1eb99c34e4c97bffa1f886afe565fd142c9ab89"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.13/agy_cli_windows_arm64.zip",
+        "size": 37986730,
+        "content_type": "application/zip",
+        "digest": "sha256:e6a6fb4c9703cdd51c5d2c107b724e5bc5654a2850c8e1d737ee906ed5facdf8"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.13/agy_cli_windows_x64.zip",
+        "size": 41964840,
+        "content_type": "application/zip",
+        "digest": "sha256:ca397c0f07157b6f38a2e11a3c9e97ef56c24ec4238a0deef6a5dd390dee1836"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 345594988,
+      "tag_commitish": "main"
     }
   },
   {
@@ -4295,14 +6256,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.12",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.603648Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "b0c9a1d6838d4e539f00e283084dcc00fedd05f84415c07f741ac430bb15c705",
-    "title": "antigravity-cli 1.0.12",
+    "published_at": "2026-06-24T23:17:33Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.187861Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.12",
+    "raw_snapshot_path": null,
+    "raw_sha256": "8f0bea464be2ed4076dbae8ff632b0ba3460e06b3c6ba1a9289bb4e21a9d0bc4",
+    "title": "1.0.12",
     "notes_excerpt": "Added support for `--project` and `--new-project` launch flags to allow users to explicitly set or create projects, and updated the project resolution logic to default regardless of the active workspace.",
     "change_count": 9,
     "flags": {
@@ -4509,10 +6470,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.12/agy_cli_linux_arm64.tar.gz",
+        "size": 43007235,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:a0367e5875ac1b88a6c0b163c86ebd5d13c9bef907f4469a6516ff69021bf2d4"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.12/agy_cli_linux_x64.tar.gz",
+        "size": 45684268,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:7e3075df68ebad58aa1cf42231e9d8b83bf2895b5b058ab1736b0b6383c75008"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.12/agy_cli_mac_arm64.tar.gz",
+        "size": 39299994,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:53f7308a117f70fe7eeca4a69004e8239c8ea18c9d82e47966b290332b69b829"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.12/agy_cli_mac_x64.tar.gz",
+        "size": 42584062,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:03c6233261548872b176547e3a938f406282fbaf33ffcdefb63c35ca2246b7a8"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.12/agy_cli_windows_arm64.zip",
+        "size": 38262644,
+        "content_type": "application/zip",
+        "digest": "sha256:f2e307c40f2f49060fba9fd249ac5a36a10d38bdfaad9187e9899dd50ef4f36b"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.12/agy_cli_windows_x64.zip",
+        "size": 42247276,
+        "content_type": "application/zip",
+        "digest": "sha256:cee987083652c58c7e31d09f177692a52be313e1089b6b1d9144e68ef9e14c44"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 344407158,
+      "tag_commitish": "main"
     }
   },
   {
@@ -4520,14 +6527,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.11",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.604147Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "329ad9b82799f76231282d3ad0d7cfc2710ad4bf05a0ab908b90b849a5a9a68e",
-    "title": "antigravity-cli 1.0.11",
+    "published_at": "2026-06-24T05:30:00Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.189227Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.11",
+    "raw_snapshot_path": null,
+    "raw_sha256": "3c245bf59ecca66f75910361c34b16f246701c4783c8af6f24f45137a8f33c95",
+    "title": "1.0.11",
     "notes_excerpt": "Added `ctrl+c` as an exit and interrupt key: the first press cancels active agent operations (like streaming responses), and a double-press triggers the exit flow. Also added a dynamic exit hint in the status line.",
     "change_count": 16,
     "flags": {
@@ -4877,10 +6884,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.11/agy_cli_linux_arm64.tar.gz",
+        "size": 43030016,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:a36d87f3624be58a7d945c5cd62104206607adc3422f5bd68c986cacbd698ae7"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.11/agy_cli_linux_x64.tar.gz",
+        "size": 45714537,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:ee9ee33b3e0b80768ea5b18458ccde84a9d35f0b99083dcc2fef83d5a312c01a"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.11/agy_cli_mac_arm64.tar.gz",
+        "size": 39308305,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:04995f9ba3682c33a3dd55e7f7a821fb281d961c660eba79ee79233b9e99464b"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.11/agy_cli_mac_x64.tar.gz",
+        "size": 42611866,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:3911a48735a5f162c7dc851243e301aa3f41fbaf86099bca33d160bcdac243d0"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.11/agy_cli_windows_arm64.zip",
+        "size": 38289990,
+        "content_type": "application/zip",
+        "digest": "sha256:67397d56e1ece6e272b6b305326792c3b70aa96bcb2fa22a0f5babf8562ef350"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.11/agy_cli_windows_x64.zip",
+        "size": 42274936,
+        "content_type": "application/zip",
+        "digest": "sha256:e2771c34041fa1cf51af4a84d518cb82a53b978c8959bff6e69b41bad2690ad6"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 343894723,
+      "tag_commitish": "main"
     }
   },
   {
@@ -4888,14 +6941,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.10",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.605049Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "81955560f9e04eebebf7cccf87f73579efce727b1b3a7ee2079b2ec43b056d71",
-    "title": "antigravity-cli 1.0.10",
+    "published_at": "2026-06-19T04:36:23Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.190083Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.10",
+    "raw_snapshot_path": null,
+    "raw_sha256": "48848f426928e6456d96cfd30eb46d149bde4efa8f39bb05d4a96f353a6b9963",
+    "title": "1.0.10",
     "notes_excerpt": "Improved compatibility with a broader set of ARM64 devices (e.g. raspberry pi 4b).",
     "change_count": 13,
     "flags": {
@@ -5179,10 +7232,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.10/agy_cli_linux_arm64.tar.gz",
+        "size": 42931704,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:4674fabc3681221e54c90d15077c9a97a25ea71222001dabe44bf1576e888593"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.10/agy_cli_linux_x64.tar.gz",
+        "size": 45615827,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:6547cf9a37227f26004fa4b805418b1df96f54c57b9723ca7d10864d2610bb0f"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.10/agy_cli_mac_arm64.tar.gz",
+        "size": 39207086,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:c857b5fc7035460359e8e64aee40768e6f5228358b4271bc7ded06c3e6bcd260"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.10/agy_cli_mac_x64.tar.gz",
+        "size": 42510561,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:c80d8dc254c5276d8d068d587e34dbcf81042a8516094dadafe399b313ff6eb8"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.10/agy_cli_windows_arm64.zip",
+        "size": 38201268,
+        "content_type": "application/zip",
+        "digest": "sha256:94f2fc461a55e66af6326ccec880b112f3fe4e7111c0ec8fd4e3de1aae734bea"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.10/agy_cli_windows_x64.zip",
+        "size": 42174117,
+        "content_type": "application/zip",
+        "digest": "sha256:bf94e9cccac9c9c797cc03f04c5b209672f64dc79cbf070d28c84435bd8dbefe"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 341751201,
+      "tag_commitish": "main"
     }
   },
   {
@@ -5190,14 +7289,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.9",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.605609Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "e5a6dc83935cbdc65d17a04a2f0d05fbb8a25bbecc712bd2f2df77cc0e160808",
-    "title": "antigravity-cli 1.0.9",
+    "published_at": "2026-06-17T02:48:46Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.190830Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.9",
+    "raw_snapshot_path": null,
+    "raw_sha256": "aa22c72ab5469c2bac61a4bb5df700c916aa01eb7795be38355b83297fe212cc",
+    "title": "1.0.9",
     "notes_excerpt": "Added submodule support for plugins installation. External plugin installation now automatically resolves and initializes Git submodules.",
     "change_count": 9,
     "flags": {
@@ -5405,10 +7504,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.9/agy_cli_linux_arm64.tar.gz",
+        "size": 42820190,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:944d67056b7cc6e4411dca84d9f077b1e460c8cd2a4432d2cdf219421ff73e5a"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.9/agy_cli_linux_x64.tar.gz",
+        "size": 45500057,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:cd80f85f43b52b389d7b498d6784f8316d57a9cc62eae23d840c5de368f9c4d5"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.9/agy_cli_mac_arm64.tar.gz",
+        "size": 39066663,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:7e838169b26a400bb4f0cf56181a1967a33a41c90ac2b9de586d004539f4e602"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.9/agy_cli_mac_x64.tar.gz",
+        "size": 42355924,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:d665f3a4d3c3a57b8ca17742ab2126ffaadd21ac031d57da2fbbb4925cdd770d"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.9/agy_cli_windows_arm64.zip",
+        "size": 38079885,
+        "content_type": "application/zip",
+        "digest": "sha256:ee674ff12080bfe60dfcca45a5c630ba6a8bc37c51d3d003f55e46450aeb79f6"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.9/agy_cli_windows_x64.zip",
+        "size": 42045843,
+        "content_type": "application/zip",
+        "digest": "sha256:f417fe7d7a3261fb9fabfcdacbce40bb90b81faf1c43632df58420fbc0a100f5"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 340499709,
+      "tag_commitish": "main"
     }
   },
   {
@@ -5416,14 +7561,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.8",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.606088Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "89767e138c0370b4c625eeba838d771ff5ab9672327eab01d5d80c3d0137a9d8",
-    "title": "antigravity-cli 1.0.8",
+    "published_at": "2026-06-12T22:56:40Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.192116Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.8",
+    "raw_snapshot_path": null,
+    "raw_sha256": "6590a7df670f0321515ab591be59ecb34989188989a670c087fc18734070c339",
+    "title": "1.0.8",
     "notes_excerpt": "Added support for capturing slash command history, allowing users to use the up arrow to replay previously entered slash commands.",
     "change_count": 17,
     "flags": {
@@ -5802,10 +7947,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.8/agy_cli_linux_arm64.tar.gz",
+        "size": 42086775,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:cdbc51ffcd8a2b94991fd36c866fb0855cfaed1e2ef0ab1fcf3be7b64a3f9f71"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.8/agy_cli_linux_x64.tar.gz",
+        "size": 44682840,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:db8ca9d3c8cce0651e72b6fffa8374e2799c5554d94df2b1f9e42bb515745bff"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.8/agy_cli_mac_arm64.tar.gz",
+        "size": 38357742,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:1c234ee8d31645bf874db1b71d5e02421c6350661c8a0f408dab310501bc5b94"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.8/agy_cli_mac_x64.tar.gz",
+        "size": 41533035,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:54826c52358dc01406daf4ddb73bd620ae6b91e376bea5abc10b6e08b47f8cdf"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.8/agy_cli_windows_arm64.zip",
+        "size": 37379422,
+        "content_type": "application/zip",
+        "digest": "sha256:29f70dda537e1626060566ac48b654de3b91adcd085ac49350cfb813bfebe937"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.8/agy_cli_windows_x64.zip",
+        "size": 41251436,
+        "content_type": "application/zip",
+        "digest": "sha256:4c0fa511a986ac36675e259fd11f566b016cc092a0acefe6963c23f77d60564e"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 338837814,
+      "tag_commitish": "main"
     }
   },
   {
@@ -5813,14 +8004,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.7",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.606917Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "c976b46966011423fd699dbdb22a472f21f2f7acfdeae4f40f760d429dabd17d",
-    "title": "antigravity-cli 1.0.7",
+    "published_at": "2026-06-09T20:40:53Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.193187Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.7",
+    "raw_snapshot_path": null,
+    "raw_sha256": "6c140c8e105ed78fae1e2d0820a75c36de7ec47e269c3aa18a6ea39babdda510",
+    "title": "1.0.7",
     "notes_excerpt": "Added a configurable timeout for launching MCP servers, allowing users to specify a custom timeout or set it to `-1` to disable the timeout completely.",
     "change_count": 14,
     "flags": {
@@ -6127,10 +8318,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.7/agy_cli_linux_arm64.tar.gz",
+        "size": 41867429,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:400a48e67723e41f1ff2c84705fc8866c5822c4fab21d4b72fe7dbaf120b2114"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.7/agy_cli_linux_x64.tar.gz",
+        "size": 44472974,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:f5bb465edb938212eb0a185d68c420ff5b78f08c72de5a6d88dfefaf7af17074"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.7/agy_cli_mac_arm64.tar.gz",
+        "size": 38142103,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:e0dec63ee4bd0a6aa2a3521eb3e9fc90448c453991ce2300e0cff138bd1bf31a"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.7/agy_cli_mac_x64.tar.gz",
+        "size": 41310372,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:24865be9d7233156827a75c4973306846f02c0ea664aaca2aeb2dc22ef5decd7"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.7/agy_cli_windows_arm64.zip",
+        "size": 37159951,
+        "content_type": "application/zip",
+        "digest": "sha256:ea73fe3c73a7e43ee012b24bd9199fcd3d67a0c8eb5c8f127fb5aa91c6307ed9"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.7/agy_cli_windows_x64.zip",
+        "size": 41009054,
+        "content_type": "application/zip",
+        "digest": "sha256:018657f38e3be78c3494eef812ef0b99005092a661003b87b8a314f4cfb24aaa"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 336860539,
+      "tag_commitish": "main"
     }
   },
   {
@@ -6138,14 +8375,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.6",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.607628Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "e2579438828866d85d0b9f94aaf8421a501f9e5d558aca05a29450557e23f256",
-    "title": "antigravity-cli 1.0.6",
+    "published_at": "2026-06-06T00:43:00Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.193839Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.6",
+    "raw_snapshot_path": null,
+    "raw_sha256": "660d90874a3b386f018f5dcb5d6fb17bf4657e3cddcaa75e94bfaa6714bed3e9",
+    "title": "1.0.6",
     "notes_excerpt": "Added shell-style path auto-completion for `/open` and `/add-dir`.",
     "change_count": 8,
     "flags": {
@@ -6324,10 +8561,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.6/agy_cli_linux_arm64.tar.gz",
+        "size": 41758282,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:be6303d4b891a79457ca6ed169aff2efd3ceb694354634e85ef58c883bae6739"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.6/agy_cli_linux_x64.tar.gz",
+        "size": 44342993,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:3eae552781d3054b782142e3cfe7be73e3bd068c736a432ca6f1adaa40f19e07"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.6/agy_cli_mac_arm64.tar.gz",
+        "size": 38039083,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:75d23ad8451a6ab2fc49b7baa615bb532f157b4152d877ba76a2ee72a63ec7d0"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.6/agy_cli_mac_x64.tar.gz",
+        "size": 41196038,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:619817086950c0bd37f2fcb7796e82f90dc1fff920ef2f5fed4e11170c04ab3e"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.6/agy_cli_windows_arm64.zip",
+        "size": 37052862,
+        "content_type": "application/zip",
+        "digest": "sha256:f6b13c83812c04a8ecc795011f01345b15a9d99a79f1bf422ac49832c13ee04b"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.6/agy_cli_windows_x64.zip",
+        "size": 40897394,
+        "content_type": "application/zip",
+        "digest": "sha256:96bd5da4469d1a425bae1f112ae5915b6d7a731d08c38e8e30627c654ee7306b"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 335256748,
+      "tag_commitish": "main"
     }
   },
   {
@@ -6335,14 +8618,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.5",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.608029Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "dd7e2bb20a66f77d6dd4b3d46bd9823f65e58c42141cfa4594b49165cde60ae3",
-    "title": "antigravity-cli 1.0.5",
+    "published_at": "2026-06-03T21:37:06Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.194644Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.5",
+    "raw_snapshot_path": null,
+    "raw_sha256": "b87fa637d2a37cc1037e5c17fa4aa9ffcdfad62ed1ee68db0fa535b04f7eb7c0",
+    "title": "1.0.5",
     "notes_excerpt": "Added `--model` to set model when launching CLI. Also a new `models` subcommand to list available models.",
     "change_count": 10,
     "flags": {
@@ -6566,10 +8849,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.5/agy_cli_linux_arm64.tar.gz",
+        "size": 41597623,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:b7a371a126b8de02c3728fe736fbebc87272a5144c7647476572b507c3264eca"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.5/agy_cli_linux_x64.tar.gz",
+        "size": 44180479,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:2101c31fbc33189999f44c08abd2df4937d002e78fce5a92e71f0d0a248fdccc"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.5/agy_cli_mac_arm64.tar.gz",
+        "size": 37886631,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:47f70951b117d404ade49c3d5b09cad91455999d6e59fc2ee2e987aa92bc1285"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.5/agy_cli_mac_x64.tar.gz",
+        "size": 41025592,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:7214eabe5407005320e27826fa40f6f1b03a581dfc3157302480bc6247da7152"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.5/agy_cli_windows_arm64.zip",
+        "size": 36901889,
+        "content_type": "application/zip",
+        "digest": "sha256:fcdc339cb776e1459a8cc57a8a0b05285f246baba8355b46eb05ae702078df8c"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.5/agy_cli_windows_x64.zip",
+        "size": 40730057,
+        "content_type": "application/zip",
+        "digest": "sha256:3bb4d107494d66f86f298c8b5ebeaab296bf0fa26023686280b0a1ddb17fc700"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 334013553,
+      "tag_commitish": "main"
     }
   },
   {
@@ -6577,14 +8906,14 @@
     "harness_id": "antigravity-cli",
     "version": "1.0.4",
     "channel": "stable",
-    "published_at": null,
-    "date_precision": "unknown",
-    "retrieved_at": "2026-08-09T01:08:31.608551Z",
-    "source_id": "src.antigravity.changelog",
-    "source_url": "https://raw.githubusercontent.com/google-antigravity/antigravity-cli/main/CHANGELOG.md",
-    "raw_snapshot_path": "raw/antigravity-cli/CHANGELOG.md",
-    "raw_sha256": "4d8e15b1a538f12f9a15451e0c02bd406e44a556b5b01e7b7f7bce454c0b998a",
-    "title": "antigravity-cli 1.0.4",
+    "published_at": "2026-06-01T23:14:20Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-15T20:09:56.195652Z",
+    "source_id": "src.antigravity.releases",
+    "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.4",
+    "raw_snapshot_path": null,
+    "raw_sha256": "0761e59dac670f98d9bf6df7cf5571786102c49885a005a3a6eb4c2d4733be15",
+    "title": "1.0.4",
     "notes_excerpt": "Added SQLite (.db) conversation support and will be CLI’s conversation format. Fixed a bug when importing SQLite conversation from Antigravity 2.0 to CLI.",
     "change_count": 11,
     "flags": {
@@ -6616,7 +8945,7 @@
       {
         "id": "chg.antigravity-cli.1.0.4.002",
         "kind": "added",
-        "summary": "Added LaTeX math rendering, enabling the CLI to display beautiful mathematical formulas directly in the terminal viewport. Set `AGY_CLI_DISABLE_LATEX` environment variable to turn off LaTeX rendering globally if desired.",
+        "summary": "Added LaTeX math rendering, enabling the CLI to display beautiful mathematical formulas directly in the terminal viewport. Set AGY_CLI_DISABLE_LATEX environment variable to turn off LaTeX rendering globally if desired.",
         "category": "other",
         "surfaces": [
           "terminal_interactive"
@@ -6636,7 +8965,7 @@
       {
         "id": "chg.antigravity-cli.1.0.4.003",
         "kind": "changed",
-        "summary": "Decoupled project discovery from local `.antigravitycli` workspace directories. The CLI now stores workspace-to-project mappings in a centralized `~/.gemini/antigravity-cli/cache/projects.json` file, eliminating repository clutter and speeding up project discovery to a single-map lookup.",
+        "summary": "Decoupled project discovery from local .antigravitycli workspace directories. The CLI now stores workspace-to-project mappings in a centralized ~/.gemini/antigravity-cli/cache/projects.json file, eliminating repository clutter and speeding up project discovery to a single-map lookup.",
         "category": "other",
         "surfaces": [
           "terminal_interactive"
@@ -6696,7 +9025,7 @@
       {
         "id": "chg.antigravity-cli.1.0.4.006",
         "kind": "changed",
-        "summary": "Styled the separator space between the line number column and diff content to match the text blocks, ensuring background highlights stretch seamlessly across the viewport width in tool outputs and `/diff` details.",
+        "summary": "Styled the separator space between the line number column and diff content to match the text blocks, ensuring background highlights stretch seamlessly across the viewport width in tool outputs and /diff details.",
         "category": "interfaces",
         "surfaces": [
           "terminal_interactive"
@@ -6738,7 +9067,7 @@
       {
         "id": "chg.antigravity-cli.1.0.4.008",
         "kind": "changed",
-        "summary": "Aligned the interactive `/changelog` and `agy changelog` cache paths to both use `antigravity-cli`, and made the caching process synchronous to resolve a race condition where immediate process exit terminated the cache write.",
+        "summary": "Aligned the interactive /changelog and agy changelog cache paths to both use antigravity-cli, and made the caching process synchronous to resolve a race condition where immediate process exit terminated the cache write.",
         "category": "observability",
         "surfaces": [
           "terminal_interactive"
@@ -6821,10 +9150,56 @@
         }
       }
     ],
+    "assets": [
+      {
+        "name": "agy_cli_linux_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.4/agy_cli_linux_arm64.tar.gz",
+        "size": 49024689,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:f226b595a6c643e58b49cfefd5f9d70d9f395d64f0d102bf3379458e481c3b5e"
+      },
+      {
+        "name": "agy_cli_linux_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.4/agy_cli_linux_x64.tar.gz",
+        "size": 52279674,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:e63909ae717aceaa0a482de053c23836e77b5ae57b22ee6d445e9833f1e4a7bd"
+      },
+      {
+        "name": "agy_cli_mac_arm64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.4/agy_cli_mac_arm64.tar.gz",
+        "size": 42265771,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:7cfff69ed69e268af076faf857f10bb2879e3e0948270a49ca3d431fe746c1b3"
+      },
+      {
+        "name": "agy_cli_mac_x64.tar.gz",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.4/agy_cli_mac_x64.tar.gz",
+        "size": 45599601,
+        "content_type": "application/x-gzip",
+        "digest": "sha256:f1251c12138a5c5f04ef9fd1ae1443e445588b852c6e07a24704b7dafe69a62b"
+      },
+      {
+        "name": "agy_cli_windows_arm64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.4/agy_cli_windows_arm64.zip",
+        "size": 40865895,
+        "content_type": "application/zip",
+        "digest": "sha256:a954f9cee72b5e4c7bd639d3e08605fdea024f80bc56a6ec95e4480448a31521"
+      },
+      {
+        "name": "agy_cli_windows_x64.zip",
+        "url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.0.4/agy_cli_windows_x64.zip",
+        "size": 44958869,
+        "content_type": "application/zip",
+        "digest": "sha256:3b692d15e28c58ba4785adefcd3aa2a44863409ff3ac529cf3b62a252040de2f"
+      }
+    ],
     "provenance": {
       "authority": "official_primary",
-      "ingestion": "markdown_changelog",
-      "immutable": false
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 332818727,
+      "tag_commitish": "main"
     }
   },
   {
