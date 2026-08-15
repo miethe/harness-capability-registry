@@ -16,7 +16,7 @@ update:
 	python -m hcr update --since-days 120
 
 test:
-	python -m unittest discover -s tests -v
+	python -m pytest tests/ -v
 
 serve:
 	python -m hcr serve --bind 0.0.0.0 --port 8765
