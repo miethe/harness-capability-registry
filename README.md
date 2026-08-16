@@ -17,6 +17,12 @@ The materialized per-product artifact is a **HarnessBOM**. The included browser 
 
 ## Start here
 
+**Run `make generate` first in a fresh clone.** The large materialized bundles —
+`generated/registry.bundle.json`, `generated/Harness_Matrix_Standalone.html`, and
+`app/data/registry.bundle.{json,js}` — are deterministic build outputs and are deliberately
+untracked, so they do not exist until you build them. `registry/` is the canonical input and *is*
+tracked; regeneration from unchanged input is byte-identical.
+
 - Open `generated/Harness_Matrix_Standalone.html` for the complete browser UI with embedded data.
 - Read `docs/DELIVERY_GUIDE.md` for the artifact map and integration path.
 - Read `specs/00_Harness_Capability_Intelligence_Spec.md` for the canonical architecture.

@@ -22,3 +22,33 @@ venv/
 # SkillMeat machine-local state (absolute paths; ledger stays on disk, untracked)
 .claude/.skillmeat*
 .skillmeat/
+
+# ---------------------------------------------------------------------------
+# Unbounded derived data — deliberately NOT committed (node_01M03EVAX5A6G0RZCT4NXSKTRQ)
+#
+# The six-hourly collector produced a single 80.2MB blob
+# (raw/openai-codex/github-releases-*.json) against GitHub's 100MB hard limit,
+# plus ~183MB of regenerable bundles. Both classes grow every run, and every
+# byte committed to `main` is permanent. Two rules decide what stays:
+#
+#   1. Content-addressed upstream API caches are an audit trail nothing reads.
+#      `raw_snapshot_path` is None for every github/npm/pypi collector record
+#      (hcr/collectors/{github_releases,package_registries}.py), so untracking
+#      them loses no provenance the registry itself does not already carry via
+#      `raw_sha256` + `source_url`. They remain on disk after a collect.
+#   2. Bundles are deterministic outputs of `build_bundle()` — byte-identical on
+#      regeneration from unchanged input (hcr/generators/bundle.py). Rebuild with
+#      `make generate`; the test suite calls build_bundle() itself, so a clean
+#      clone still validates.
+#
+# NOT ignored, and do not add them: raw/*/CHANGELOG.md (referenced by
+# `raw_snapshot_path` for 208 releases) and raw/source-snapshots/ (the doc-drift
+# dedup in _snapshot_source() compares against the newest committed *.meta.json —
+# untracking it would make every source report `changed` on every CI run).
+raw/*/github-releases-*.json
+raw/*/npm-*.json
+raw/*/pypi-*.json
+app/data/registry.bundle.json
+app/data/registry.bundle.js
+generated/registry.bundle.json
+generated/Harness_Matrix_Standalone.html

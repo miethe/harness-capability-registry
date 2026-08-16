@@ -65,13 +65,19 @@ jobs:
           git config user.name "hcr-update-bot"
           git config user.email "hcr-update-bot@users.noreply.github.com"
 
+          # `app/data`, `generated/registry.bundle.json` and
+          # `generated/Harness_Matrix_Standalone.html` are gone from this list on
+          # purpose: every path under them is now ignored, and `git add` on a
+          # fully-ignored path exits non-zero, which under `set -e` would fail the
+          # job. They are regenerable via `make generate`
+          # (node_01M03EVAX5A6G0RZCT4NXSKTRQ). `raw` stays — it still carries the
+          # CHANGELOG snapshots and source-snapshots that are tracked; the
+          # content-addressed API caches inside it are ignored per-pattern, which
+          # `git add raw` skips silently rather than erroring on.
           git add \
             registry \
             raw \
-            app/data \
             generated/agent-guides \
-            generated/registry.bundle.json \
-            generated/Harness_Matrix_Standalone.html \
             generated/reports/coverage.md \
             generated/validation-report.json \
             generated/source-drift-report.json
@@ -85,7 +91,13 @@ jobs:
           git commit -m "chore(hcr): refresh upstream harness intelligence"
           git push --force origin "HEAD:$BRANCH"
 
-          if gh pr view "$BRANCH" >/dev/null 2>&1; then
+          # Must test for an OPEN pull request, not merely any pull request:
+          # `gh pr view <branch>` also resolves a MERGED or CLOSED PR for that
+          # branch, and `gh pr edit` on one fails — so the first run after a
+          # maintainer merges the standing automation PR would take the edit
+          # branch and die there. Ask the question the next step can actually act
+          # on.
+          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')" ]; then
             gh pr edit "$BRANCH" \
               --title "chore(hcr): refresh upstream harness intelligence" \
               --body "Automated refresh of official release history, documentation drift, normalized guides, and web-app bundles. Validation passed before this pull request was updated."
