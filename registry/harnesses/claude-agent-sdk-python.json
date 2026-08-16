@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "core",
-    "current_version": "0.2.134",
-    "version_as_of": "2026-08-08",
-    "last_verified_at": "2026-08-08T20:00:00Z",
+    "current_version": "0.2.139",
+    "version_as_of": "2026-08-14",
+    "last_verified_at": "2026-08-15T20:10:18.746297Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/anthropics/claude-agent-sdk-python",
@@ -344,18 +344,390 @@
   ],
   "releases": [
     {
+      "id": "rel.claude-agent-sdk-python.0.2.139",
+      "harness_id": "claude-agent-sdk-python",
+      "version": "0.2.139",
+      "channel": "stable",
+      "published_at": "2026-08-14T22:35:53Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.392990Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.139",
+      "raw_snapshot_path": null,
+      "raw_sha256": "366a5ef0b81944398d45962ed9caf9effc0850c4e0447fba5e7f2118bddc6c11",
+      "title": "v0.2.139",
+      "notes_excerpt": "Updated bundled Claude CLI to version 2.1.233",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.claude-agent-sdk-python.0.2.139.001",
+          "kind": "changed",
+          "summary": "Updated bundled Claude CLI to version 2.1.233",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "assets": [],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 370856137,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.claude-agent-sdk-python.0.2.138",
+      "harness_id": "claude-agent-sdk-python",
+      "version": "0.2.138",
+      "channel": "stable",
+      "published_at": "2026-08-13T23:44:38Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.393110Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.138",
+      "raw_snapshot_path": null,
+      "raw_sha256": "c0fadeafd05e321949b771b15e1d03fbd8b1bf97aea1a51f3c60c378ecd9a364",
+      "title": "v0.2.138",
+      "notes_excerpt": "Updated bundled Claude CLI to version 2.1.232",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.claude-agent-sdk-python.0.2.138.001",
+          "kind": "changed",
+          "summary": "Updated bundled Claude CLI to version 2.1.232",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "assets": [],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 370269697,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.claude-agent-sdk-python.0.2.137",
+      "harness_id": "claude-agent-sdk-python",
+      "version": "0.2.137",
+      "channel": "stable",
+      "published_at": "2026-08-12T21:11:13Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.394136Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.137",
+      "raw_snapshot_path": null,
+      "raw_sha256": "154b0538923813db6c8f89e1305686a19bd7208d06562eb28237863c333550ed",
+      "title": "v0.2.137",
+      "notes_excerpt": "**`ConversationResetMessage` for conversation reset events**: The SDK now surfaces the CLI's `conversation_reset` frame as a `ConversationResetMessage` dataclass, letting applications detect when a `/clear` or other transcript-discarding flow resets the conversation mid-session. Includes `new_conversation_id`, `uuid`, and `session_id` fields. This widens the `Message` union — code that exhaustively matches with `assert_never` will need updating (#1196)",
+      "change_count": 6,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.claude-agent-sdk-python.0.2.137.001",
+          "kind": "changed",
+          "summary": "**`ConversationResetMessage` for conversation reset events**: The SDK now surfaces the CLI's `conversation_reset` frame as a `ConversationResetMessage` dataclass, letting applications detect when a `/clear` or other transcript-discarding flow resets the conversation mid-session. Includes `new_conversation_id`, `uuid`, and `session_id` fields. This widens the `Message` union — code that exhaustively matches with `assert_never` will need updating (#1196)",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-python.0.2.137.002",
+          "kind": "changed",
+          "summary": "**Message origin on `UserMessage` and `ResultMessage`**: New `origin: MessageOrigin | None` field on `UserMessage` and `ResultMessage` surfaces why a turn was initiated — distinguishing application-submitted prompts (`\"human\"`) from background-task notifications, scheduled triggers, peer messages, and other session-injected turns. New exported types: `MessageOrigin`, `MessageOriginKind`, `TaskNotificationOriginSubkind` (#1199)",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "automation.schedules"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-python.0.2.137.003",
+          "kind": "changed",
+          "summary": "**`resume_session_at` / `resume_drops_turn` options for truncating resume**: `ClaudeAgentOptions` now supports `resume_session_at` (fork a session at an earlier transcript entry) and `resume_drops_turn` (validate that only entries from a specific turn are discarded). Enables safe rewind-to-before-last-prompt without silently dropping unobserved messages (#1198)",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork",
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-python.0.2.137.004",
+          "kind": "changed",
+          "summary": "**Seed `settings.json` into temp config dir on `SessionStore` resume**: Resuming from a `SessionStore` now copies `settings.json` and `cowork_settings.json` into the temporary config directory, preserving `apiKeyHelper` auth, user hooks, env vars, and permissions. Previously, hosts authenticating solely via `apiKeyHelper` would fail with \"Not logged in\" on resume (#1197)",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "extensions.hooks",
+            "sessions.resume_fork",
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-python.0.2.137.005",
+          "kind": "changed",
+          "summary": "**Improved error messages for failed resume**: When the CLI rejects a resume (e.g. nonexistent session or `resume_drops_turn` guard failure), pending control requests like `initialize()` now receive the actual error text instead of a generic \"Command failed with exit code 1\" (#1198)",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-python.0.2.137.006",
+          "kind": "changed",
+          "summary": "Updated bundled Claude CLI to version 2.1.229",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "assets": [],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 369531768,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.claude-agent-sdk-python.0.2.136",
+      "harness_id": "claude-agent-sdk-python",
+      "version": "0.2.136",
+      "channel": "stable",
+      "published_at": "2026-08-11T20:10:50Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.394234Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.136",
+      "raw_snapshot_path": null,
+      "raw_sha256": "25923662733c0283da04094e0ded3719dda08e055088b0de488377db57b8f2a2",
+      "title": "v0.2.136",
+      "notes_excerpt": "Updated bundled Claude CLI to version 2.1.228",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.claude-agent-sdk-python.0.2.136.001",
+          "kind": "changed",
+          "summary": "Updated bundled Claude CLI to version 2.1.228",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "assets": [],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 368828384,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.claude-agent-sdk-python.0.2.135",
+      "harness_id": "claude-agent-sdk-python",
+      "version": "0.2.135",
+      "channel": "stable",
+      "published_at": "2026-08-10T23:20:50Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.394316Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.135",
+      "raw_snapshot_path": null,
+      "raw_sha256": "a948e6ac850decc640434c92117ef805622fc67f14d9e31721b5a356d9ebd204",
+      "title": "v0.2.135",
+      "notes_excerpt": "Updated bundled Claude CLI to version 2.1.227",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.claude-agent-sdk-python.0.2.135.001",
+          "kind": "changed",
+          "summary": "Updated bundled Claude CLI to version 2.1.227",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "assets": [],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 368252085,
+        "tag_commitish": "main"
+      }
+    },
+    {
       "id": "rel.claude-agent-sdk-python.0.2.134",
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.134",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.611775Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "8d249fae6bf88917e84e5fbd8e9e4a5a575a0ac38a8568c1cbe338ff260cbcee",
-      "title": "claude-agent-sdk-python 0.2.134",
+      "published_at": "2026-08-08T03:01:11Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.394395Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.134",
+      "raw_snapshot_path": null,
+      "raw_sha256": "368dbac19e34948a43a0a0289d732c93936a1caf446c861e1767be85934a2102",
+      "title": "v0.2.134",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.226",
       "change_count": 1,
       "flags": {
@@ -385,10 +757,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 367093131,
+        "tag_commitish": "main"
       }
     },
     {
@@ -396,14 +771,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.133",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.611833Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "440337c358731c8b28b0e0819419175119084ab066ae7f6707f4b8a9cfd6be8d",
-      "title": "claude-agent-sdk-python 0.2.133",
+      "published_at": "2026-08-08T01:26:51Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.394476Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.133",
+      "raw_snapshot_path": null,
+      "raw_sha256": "e1d82ea9bf56d34990097eb33d5370a15322fd88c71ad4691a23605605d3a263",
+      "title": "v0.2.133",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.225",
       "change_count": 1,
       "flags": {
@@ -433,10 +808,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 367076785,
+        "tag_commitish": "main"
       }
     },
     {
@@ -444,14 +822,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.132",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.611870Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "0220a0c833af1fd3e438b847481c4f83ee01c08569cc452227a11c9d18d6a373",
-      "title": "claude-agent-sdk-python 0.2.132",
+      "published_at": "2026-08-07T04:15:34Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.394563Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.132",
+      "raw_snapshot_path": null,
+      "raw_sha256": "6f08554d17d04f60c13661353e8a5036c0bc23fcc28c8c67ece30af1d27519d8",
+      "title": "v0.2.132",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.224",
       "change_count": 1,
       "flags": {
@@ -481,10 +859,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 366515369,
+        "tag_commitish": "main"
       }
     },
     {
@@ -492,14 +873,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.131",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.611906Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "535dff486ffedceeb524722ecce4b09f156bb10f0d42881679c3bd4a8914f500",
-      "title": "claude-agent-sdk-python 0.2.131",
+      "published_at": "2026-08-06T01:06:06Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.394643Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.131",
+      "raw_snapshot_path": null,
+      "raw_sha256": "6d149dc649912238b56759f5142f02b0a373be9a63a39aa371bb15f999de24fa",
+      "title": "v0.2.131",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.223",
       "change_count": 1,
       "flags": {
@@ -529,10 +910,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 365913396,
+        "tag_commitish": "main"
       }
     },
     {
@@ -540,14 +924,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.130",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.611937Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "7af08714a42859a818ddf534b3f53e40d2bfa8877fade520d658deb311f6cc18",
-      "title": "claude-agent-sdk-python 0.2.130",
+      "published_at": "2026-08-04T22:53:52Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.394719Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.130",
+      "raw_snapshot_path": null,
+      "raw_sha256": "38fafb042a597f10c0b834833febbad56370ae25e41a8c65a4771463aebd64e0",
+      "title": "v0.2.130",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.222",
       "change_count": 1,
       "flags": {
@@ -577,10 +961,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 365198548,
+        "tag_commitish": "main"
       }
     },
     {
@@ -588,14 +975,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.129",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.611967Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "5dd447e0dbb84803e7b3d9490df0986a4c4140b4b19a64d91370e90366c594ea",
-      "title": "claude-agent-sdk-python 0.2.129",
+      "published_at": "2026-08-04T00:36:04Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.395146Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.129",
+      "raw_snapshot_path": null,
+      "raw_sha256": "76c3ea208b86ba0e85be9aecb8e4f471051c7878a9007844e650c7d301bf7cee",
+      "title": "v0.2.129",
       "notes_excerpt": "**Skill name validation in `ClaudeAgentOptions.skills`**: Skill names containing parentheses, commas, control characters, wildcards (`*`, `:*`), leading `/`, surrounding whitespace, or surrogate code points now raise `ValueError` at connect time. `skills=[\"plugin:*\"]` and `skills=[\"*\"]` should be replaced with `skills=\"all\"` or a `Skill(...)` rule in `allowed_tools`. Names with leading whitespace or `/` previously built rules that could never match (silently disabling the skill) and now raise explicitly (#1145)",
       "change_count": 3,
       "flags": {
@@ -674,10 +1061,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 364559553,
+        "tag_commitish": "main"
       }
     },
     {
@@ -685,14 +1075,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.128",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.612263Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "246f7c9c6dfd38cead74631e5cde66b18f688f67b692edeb7e64d5a6294f287b",
-      "title": "claude-agent-sdk-python 0.2.128",
+      "published_at": "2026-07-25T01:49:41Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.395229Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.128",
+      "raw_snapshot_path": null,
+      "raw_sha256": "25c9f2dc0a005b9cb63b92a252a13dfed279185189657a25d01e8c2c1e551fb8",
+      "title": "v0.2.128",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.220",
       "change_count": 1,
       "flags": {
@@ -722,10 +1112,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 359625761,
+        "tag_commitish": "main"
       }
     },
     {
@@ -733,14 +1126,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.127",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.612302Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "547c36a705d36d9acdae6afd5a98ba807e985cc014aa76c6e61e324c267b955b",
-      "title": "claude-agent-sdk-python 0.2.127",
+      "published_at": "2026-07-24T17:27:47Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.395492Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.127",
+      "raw_snapshot_path": null,
+      "raw_sha256": "b1f56a1b8dbb00730b28ee844dbe35a2458d47c3f3359ade4fc1357a586a2753",
+      "title": "v0.2.127",
       "notes_excerpt": "**Fixed premature stdin closure when background tasks are in flight**: `query()` no longer closes stdin on the first `result` frame when background tasks (e.g. `run_in_background: true` subagents) are still running. Previously, closing stdin too early caused SDK-MCP tool calls from background tasks to fail with `\"Stream closed\"` and silently bypassed PreToolUse hooks. Stdin now stays open until all in-flight tasks complete and the final result frame arrives (#1103)",
       "change_count": 2,
       "flags": {
@@ -795,10 +1188,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 359447650,
+        "tag_commitish": "main"
       }
     },
     {
@@ -806,14 +1202,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.126",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.612433Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "0f229da952e59fcd68ad0e796bc5b9c12e76c2aa40a49bd9ffdd4c052c122e1b",
-      "title": "claude-agent-sdk-python 0.2.126",
+      "published_at": "2026-07-22T21:41:57Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.395924Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.126",
+      "raw_snapshot_path": null,
+      "raw_sha256": "2ca62fd17fdebfdd8ad583b1205d00989da54ccd79c1399f6cadba215d36d650",
+      "title": "v0.2.126",
       "notes_excerpt": "**`terminal_reason` on ResultMessage**: `ResultMessage.terminal_reason` now surfaces why the query loop ended (`\"completed\"`, `\"max_turns\"`, `\"aborted_streaming\"`, `\"aborted_tools\"`, etc.). A value of `\"aborted_streaming\"` or `\"aborted_tools\"` means the turn was cancelled via `ClaudeSDKClient.interrupt()`. Mirrors the TypeScript SDK's `SDKResultMessage.terminal_reason` (#1142)",
       "change_count": 3,
       "flags": {
@@ -895,10 +1291,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 358341242,
+        "tag_commitish": "main"
       }
     },
     {
@@ -906,14 +1305,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.125",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.612629Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "c8b60532477ff16f66aed1c3235a4dee22aedef7a94e6f0fa4121986a465f465",
-      "title": "claude-agent-sdk-python 0.2.125",
+      "published_at": "2026-07-21T21:48:47Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.396014Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.125",
+      "raw_snapshot_path": null,
+      "raw_sha256": "02f762a37254e52c65333412de3da0851ab2d68135db97f11ddba9fb4be171fc",
+      "title": "v0.2.125",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.217",
       "change_count": 1,
       "flags": {
@@ -943,10 +1342,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 357659963,
+        "tag_commitish": "main"
       }
     },
     {
@@ -954,14 +1356,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.124",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.612663Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "aab27b671f971557beaf8d9b372dbdf33e13fbb04644bab8ee8deb68c3d766e5",
-      "title": "claude-agent-sdk-python 0.2.124",
+      "published_at": "2026-07-20T22:28:30Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.396486Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.124",
+      "raw_snapshot_path": null,
+      "raw_sha256": "8bc1bfd91dfebefe9cb5a4c8ba1db775023599b27bdc7347774c00e13054ac81",
+      "title": "v0.2.124",
       "notes_excerpt": "**Refused batch script CLI spawning on Windows**: Blocked spawning `.bat`/`.cmd` CLI scripts (including npm's `claude.cmd` shim) on Windows to prevent command injection via cmd.exe metacharacter re-parsing (BatBadBut / CVE-2024-27980 class). Windows users relying on the npm shim should switch to the native installer, an explicit `claude.exe` path, or a platform wheel that bundles the CLI (#1127)",
       "change_count": 4,
       "flags": {
@@ -1057,10 +1459,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 357022863,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1068,14 +1473,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.123",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.612914Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "683851b0d86685a1f495315a2c7c9722b11e76864ca9bb4bdb465794b9a35c3d",
-      "title": "claude-agent-sdk-python 0.2.123",
+      "published_at": "2026-07-19T03:08:55Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.396564Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.123",
+      "raw_snapshot_path": null,
+      "raw_sha256": "07731adde0f007cec59813b87abd9d75711cdbd126eb9b5ec7acedbf330c97ac",
+      "title": "v0.2.123",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.215",
       "change_count": 1,
       "flags": {
@@ -1105,10 +1510,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 356245896,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1116,14 +1524,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.122",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.612944Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "99c2244996dfd76acd00c77a1ce3fca448ea6c090c7b17e346052112cb3062b0",
-      "title": "claude-agent-sdk-python 0.2.122",
+      "published_at": "2026-07-18T01:33:32Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.396628Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.122",
+      "raw_snapshot_path": null,
+      "raw_sha256": "fa3a32c6da322d132f9667f14ca2da42b0a24b850efe9523ad5fb64f384e04ac",
+      "title": "v0.2.122",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.214",
       "change_count": 1,
       "flags": {
@@ -1153,10 +1561,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 355987787,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1164,14 +1575,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.121",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.612973Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "8e2ea5122ffbe0278da3608b1e459f05af14f1f113da438637576657d6701115",
-      "title": "claude-agent-sdk-python 0.2.121",
+      "published_at": "2026-07-17T00:39:25Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.397119Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.121",
+      "raw_snapshot_path": null,
+      "raw_sha256": "d27681a9b5b06014d68d07a715db8986717cebffeca354366594d8c9ed03861a",
+      "title": "v0.2.121",
       "notes_excerpt": "**Fixed argv flag injection via `resume` and `session_id` options**: `--resume` and `--session-id` are now passed as single `=`-joined argv tokens (e.g. `--resume=<value>`) so that a dash-prefixed value is never misinterpreted as an independent CLI flag (#1123)",
       "change_count": 5,
       "flags": {
@@ -1290,10 +1701,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 355416333,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1301,14 +1715,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.120",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.613267Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "e46ec1923de4cff4e84c36667bf0a15fa157ff66981102273663881d1a62dc5e",
-      "title": "claude-agent-sdk-python 0.2.120",
+      "published_at": "2026-07-15T23:19:53Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.397193Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.120",
+      "raw_snapshot_path": null,
+      "raw_sha256": "2bec945a76447488eaf31007e4e0efcf7d9c160037a84c70e8f6f575124ef06e",
+      "title": "v0.2.120",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.211",
       "change_count": 1,
       "flags": {
@@ -1338,10 +1752,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 354777405,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1349,14 +1766,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.119",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.613299Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "5ccf94ea40bfdcd2f795593ad7e407ca0f5afd658aeb56bd0d23c81569f20ab1",
-      "title": "claude-agent-sdk-python 0.2.119",
+      "published_at": "2026-07-14T23:58:49Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.397257Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.119",
+      "raw_snapshot_path": null,
+      "raw_sha256": "9bd54381c27e981831313cba20e34633bd0a59534ca7083979c1aee481a647b9",
+      "title": "v0.2.119",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.210",
       "change_count": 1,
       "flags": {
@@ -1386,10 +1803,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 354134206,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1397,14 +1817,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.118",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.613328Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "4fef79f377e08ee30623118ff5ce53e315505968f950f16e41c834ea905d2210",
-      "title": "claude-agent-sdk-python 0.2.118",
+      "published_at": "2026-07-14T06:49:43Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.397318Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.118",
+      "raw_snapshot_path": null,
+      "raw_sha256": "e9b06a5ca17b724764ac6f1af4536d353b9e4133e7a3f25289e1f095a900fb39",
+      "title": "v0.2.118",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.209",
       "change_count": 1,
       "flags": {
@@ -1434,10 +1854,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 353612645,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1445,14 +1868,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.117",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.613356Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "03dd93e7fd1b332940913a0a117e547061d5551d6dce14e5b56d427ac56a5bf1",
-      "title": "claude-agent-sdk-python 0.2.117",
+      "published_at": "2026-07-14T01:23:06Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.397494Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.117",
+      "raw_snapshot_path": null,
+      "raw_sha256": "e31b000670b3c9023d058ce92a87589491d0178daa19e3a23c16e492377cb75a",
+      "title": "v0.2.117",
       "notes_excerpt": "**Escaped untrusted fields in Slack issue notification workflow**: Fixed the Slack notification workflow to properly escape issue titles and usernames using `jq` instead of bash substitution, preventing malformed JSON payloads and mrkdwn injection from specially crafted issue titles (#1116)",
       "change_count": 2,
       "flags": {
@@ -1505,10 +1928,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 353519554,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1516,14 +1942,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.116",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.613461Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "b329fc76ef9ce1dea228842384b73848b36f88fa0e61fe025724e01710f63283",
-      "title": "claude-agent-sdk-python 0.2.116",
+      "published_at": "2026-07-11T01:05:55Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.397635Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.116",
+      "raw_snapshot_path": null,
+      "raw_sha256": "95b1c27271d168ed61bd4e90d38dff383197bad2cd5b82fe177e422b0984f695",
+      "title": "v0.2.116",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.207",
       "change_count": 2,
       "flags": {
@@ -1576,10 +2002,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 352391554,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1587,14 +2016,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.115",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.613540Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "f50b48974e2065bf404fc8e0e8d8882718b22b2f96778e031b88b3516e39b73a",
-      "title": "claude-agent-sdk-python 0.2.115",
+      "published_at": "2026-07-09T23:47:55Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.397701Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.115",
+      "raw_snapshot_path": null,
+      "raw_sha256": "510ef206efeb6c7bbc9fa1e3022e133e990ecefe72a5132533a756f8497906dd",
+      "title": "v0.2.115",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.206",
       "change_count": 1,
       "flags": {
@@ -1624,10 +2053,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 351831475,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1635,14 +2067,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.114",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.613576Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "75c80e5ff1475d2a00ad07f19a6f35a35acd0f7152037b96b7c315bdc2725429",
-      "title": "claude-agent-sdk-python 0.2.114",
+      "published_at": "2026-07-08T21:36:00Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.397764Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.114",
+      "raw_snapshot_path": null,
+      "raw_sha256": "fc67a7f1f3d9559f25fc10baefb88ce53ba4b24412f948cce508161cff807534",
+      "title": "v0.2.114",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.205",
       "change_count": 1,
       "flags": {
@@ -1672,10 +2104,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 351191913,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1683,14 +2118,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.113",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.613606Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "2c87159a503ec333326263191018a0cc50e0ee1ed0704772a44bc048fe522c25",
-      "title": "claude-agent-sdk-python 0.2.113",
+      "published_at": "2026-07-08T00:41:56Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.397825Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.113",
+      "raw_snapshot_path": null,
+      "raw_sha256": "15e39f056a7f8fae123c6fea74929f502eaa290a1eef27657106c13872a0df3e",
+      "title": "v0.2.113",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.204",
       "change_count": 1,
       "flags": {
@@ -1720,10 +2155,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 350640052,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1731,14 +2169,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.112",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.613635Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "ea29b6608baad8584eb78fc803870bc00c5078b928ed056acdaca9fdbddbab23",
-      "title": "claude-agent-sdk-python 0.2.112",
+      "published_at": "2026-07-07T21:19:35Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.397886Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.112",
+      "raw_snapshot_path": null,
+      "raw_sha256": "058d8afd140cbf9905d082f9088dee8fefe50571f4fb3f8bca4f6f7348d44e52",
+      "title": "v0.2.112",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.203",
       "change_count": 1,
       "flags": {
@@ -1768,10 +2206,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 350582313,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1779,14 +2220,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.111",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.613663Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "047205588d3ae06a043a7ea03094fe5fa2118df377448819fa3703aaa674497c",
-      "title": "claude-agent-sdk-python 0.2.111",
+      "published_at": "2026-07-06T23:05:51Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.398392Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.111",
+      "raw_snapshot_path": null,
+      "raw_sha256": "6b552273588150c2af6833e99a671144dfa8663ef97d7b558422c516f8143b6a",
+      "title": "v0.2.111",
       "notes_excerpt": "**Zombie CLI subprocess prevention**: Shielded subprocess cleanup from asyncio cancellation so `SIGTERM`/`SIGKILL` teardown always runs, preventing orphaned `claude` child processes when the parent task is cancelled (#1082)",
       "change_count": 6,
       "flags": {
@@ -1922,10 +2363,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 349932220,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1933,14 +2377,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.110",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614062Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "d00649940be5552f8ae2ff1d70732b91083611f5f90d424623a7b5fdd0a53c43",
-      "title": "claude-agent-sdk-python 0.2.110",
+      "published_at": "2026-06-24T22:12:43Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.398464Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.110",
+      "raw_snapshot_path": null,
+      "raw_sha256": "52f6a64bc77cc64ce63c0b93f9312051d35b858eeb9cbc38ff3beadc2b86eaf2",
+      "title": "v0.2.110",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.191",
       "change_count": 1,
       "flags": {
@@ -1970,10 +2414,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 344391287,
+        "tag_commitish": "main"
       }
     },
     {
@@ -1981,14 +2428,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.109",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614098Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "4dc3dd94a2a8ffc0c314067fa9a5f0d7ab3f752cba1bebfe27441d646fba271c",
-      "title": "claude-agent-sdk-python 0.2.109",
+      "published_at": "2026-06-24T16:11:45Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.398536Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.109",
+      "raw_snapshot_path": null,
+      "raw_sha256": "718a5c1c810d8ef26d393048e2e1c7fc264abf81bec306b16aa119388dcf7b18",
+      "title": "v0.2.109",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.190",
       "change_count": 1,
       "flags": {
@@ -2018,10 +2465,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 344227470,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2029,14 +2479,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.108",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614129Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "eeca6e3a5f898f12670077e2ee9d3999b9f2c07c5146cf979245d0d9b112df4e",
-      "title": "claude-agent-sdk-python 0.2.108",
+      "published_at": "2026-06-23T21:18:22Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.398603Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.108",
+      "raw_snapshot_path": null,
+      "raw_sha256": "769c7dcdf6d1b1163394a8d6a30f3e5a4e167f3cfe7ff0d52278acbba6166510",
+      "title": "v0.2.108",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.187",
       "change_count": 1,
       "flags": {
@@ -2066,10 +2516,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 343769132,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2077,14 +2530,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.107",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614158Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "deaad27a4eb6ab01c2045e6e6069949a0344a011635720ca9bba7bd5cfd91484",
-      "title": "claude-agent-sdk-python 0.2.107",
+      "published_at": "2026-06-22T20:52:07Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.398665Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.107",
+      "raw_snapshot_path": null,
+      "raw_sha256": "cd3cbe6e8703866f0b3845fdf81f27a2c829e7d9312d0b084b70071e5275a549",
+      "title": "v0.2.107",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.186",
       "change_count": 1,
       "flags": {
@@ -2114,10 +2567,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 343156735,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2125,14 +2581,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.106",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614186Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "8ad16a053b0ae6d906b7a42c114c1828a039f7d841b86d8becc4e43410f0351d",
-      "title": "claude-agent-sdk-python 0.2.106",
+      "published_at": "2026-06-20T21:12:37Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.398727Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.106",
+      "raw_snapshot_path": null,
+      "raw_sha256": "b3630842899cfb4f0cf611f58dc7ce76e3107dbfcd451544c6cf968dffe9ded9",
+      "title": "v0.2.106",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.185",
       "change_count": 1,
       "flags": {
@@ -2162,10 +2618,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 342403189,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2173,14 +2632,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.105",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614216Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "e9a94eeee2ce64837924d3a1243bfc602684c4163d43e14db3d14592c00f132d",
-      "title": "claude-agent-sdk-python 0.2.105",
+      "published_at": "2026-06-19T04:12:38Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.398787Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.105",
+      "raw_snapshot_path": null,
+      "raw_sha256": "7c82b44a31f7eec6aa3cace2d29ced63c5462cc8728b57d5c96509e6aa80219b",
+      "title": "v0.2.105",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.183",
       "change_count": 1,
       "flags": {
@@ -2210,10 +2669,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 341746728,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2221,14 +2683,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.104",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614246Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "ad1dc56e120a717ca5184488f5cf918844adb32e26a9033b5d725b341318fcbd",
-      "title": "claude-agent-sdk-python 0.2.104",
+      "published_at": "2026-06-17T22:22:51Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.398846Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.104",
+      "raw_snapshot_path": null,
+      "raw_sha256": "821b2b763a99dd75656c14418ab9b2a690783f86ec7d9d4b47f61ea4a33b0440",
+      "title": "v0.2.104",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.181",
       "change_count": 1,
       "flags": {
@@ -2258,10 +2720,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 341074420,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2269,14 +2734,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.103",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614274Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "0427b5de7327c77e98c1c4b50e64df2cf44906ef0eca52a1238de446fb8706d0",
-      "title": "claude-agent-sdk-python 0.2.103",
+      "published_at": "2026-06-16T20:36:30Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.398906Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.103",
+      "raw_snapshot_path": null,
+      "raw_sha256": "4545fe48e534ad8ab140fb6f66f3775d1e7ae9f5e09aaaaca229c806fe7e19c7",
+      "title": "v0.2.103",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.179",
       "change_count": 1,
       "flags": {
@@ -2306,10 +2771,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 340399499,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2317,14 +2785,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.102",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614301Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "3cca360d3d1202af20be948ebb128d17200e888b98f58268f51d9d705c03012b",
-      "title": "claude-agent-sdk-python 0.2.102",
+      "published_at": "2026-06-15T21:51:40Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.398965Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.102",
+      "raw_snapshot_path": null,
+      "raw_sha256": "0648c2bfbcf6daf6277f5df434b56a4686f983d5bc361f4a308fc1da97db7ae4",
+      "title": "v0.2.102",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.178",
       "change_count": 1,
       "flags": {
@@ -2354,10 +2822,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 339813768,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2365,14 +2836,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.101",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614329Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "1c8321001d37511c4bd203cadeb16d7973a54675eb5ef5730c55858ba07d7fef",
-      "title": "claude-agent-sdk-python 0.2.101",
+      "published_at": "2026-06-13T01:38:30Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.399173Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.101",
+      "raw_snapshot_path": null,
+      "raw_sha256": "61410ca2f31b86bb4e50c5d3ccbf8ad74e25336b0c918c9b93d59ca75aadc378",
+      "title": "v0.2.101",
       "notes_excerpt": "**Typed `task_updated` lifecycle events**: Exposed terminal `system/task_updated` events as typed `TaskUpdatedMessage` with `task_id`, `patch`, `status`, `session_id`, and `uuid` fields. Consumers tracking active background tasks no longer hang when a task finishes via a `task_updated` message without a corresponding `TaskNotificationMessage`. Added `TaskUpdatedStatus` type and `TERMINAL_TASK_STATUSES` frozenset for reliable active-task bookkeeping (#1016)",
       "change_count": 2,
       "flags": {
@@ -2422,10 +2893,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 338871444,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2433,14 +2907,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.100",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614460Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "c412634b3a914aac3dcc27b9b7b66b8f1ac85fb8de0339e9f0858f056b36d967",
-      "title": "claude-agent-sdk-python 0.2.100",
+      "published_at": "2026-06-12T22:08:17Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.399237Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.100",
+      "raw_snapshot_path": null,
+      "raw_sha256": "5e888a1b6a28c747213a2d0a7c47e82b2b3eec97086b4ad144e9aa09f110e418",
+      "title": "v0.2.100",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.176",
       "change_count": 1,
       "flags": {
@@ -2470,10 +2944,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 338827736,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2481,14 +2958,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.99",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614489Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "a1f62f50c1d754b57ae0e0235950eff60e91835f864dedaedab7562d6015b724",
-      "title": "claude-agent-sdk-python 0.2.99",
+      "published_at": "2026-06-12T04:36:28Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.399297Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.99",
+      "raw_snapshot_path": null,
+      "raw_sha256": "f547bc7e64d259e6d6c31ff580fcd28fda50cff1d835dbee618948c436c323ad",
+      "title": "v0.2.99",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.175",
       "change_count": 1,
       "flags": {
@@ -2518,10 +2995,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 338377002,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2529,14 +3009,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.98",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614518Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "68c9c4f5b01ff7c2062ae37177aa65b9eb141abe8607b621c0b752aa1298dabd",
-      "title": "claude-agent-sdk-python 0.2.98",
+      "published_at": "2026-06-12T01:30:12Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.399357Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.98",
+      "raw_snapshot_path": null,
+      "raw_sha256": "f07b577e3da6631183db2d6b6d01c6fb9ee1ddda45431b46768470e49a42397b",
+      "title": "v0.2.98",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.174",
       "change_count": 1,
       "flags": {
@@ -2566,10 +3046,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 338327185,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2577,14 +3060,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.97",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614548Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "156a572958303176c6eee0bce7bfd95de8bb8ef7754a5120c04fe57b85e87378",
-      "title": "claude-agent-sdk-python 0.2.97",
+      "published_at": "2026-06-11T05:56:56Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.399417Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.97",
+      "raw_snapshot_path": null,
+      "raw_sha256": "676238df64cf6bd21db6be7341474d2bec6e4e5677340bb04a3d731185623060",
+      "title": "v0.2.97",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.173",
       "change_count": 1,
       "flags": {
@@ -2614,10 +3097,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 337690638,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2625,14 +3111,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.96",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614576Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "f24b72194242e056a389b0125d4247365e594e8a165d31e268f52acb11c894ea",
-      "title": "claude-agent-sdk-python 0.2.96",
+      "published_at": "2026-06-10T21:15:12Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.399554Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.96",
+      "raw_snapshot_path": null,
+      "raw_sha256": "77f75ec7f4a6b6b627b29deb6fe12e57b59e45683c51e8270e58b50929e155c9",
+      "title": "v0.2.96",
       "notes_excerpt": "Pinned `mcp` dependency below 2.0.0 to prevent incompatible breaking changes (#1028)",
       "change_count": 2,
       "flags": {
@@ -2682,10 +3168,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 337529230,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2693,14 +3182,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.95",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614648Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "de39809e023b5e001cd2b1160468f099f657ad88c36aa9c940b3f2a2b4080cba",
-      "title": "claude-agent-sdk-python 0.2.95",
+      "published_at": "2026-06-09T17:40:09Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.399618Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.95",
+      "raw_snapshot_path": null,
+      "raw_sha256": "62313c0d5486ad045f9a41b12f966b204c737b6bc42f4799389719e327336fc2",
+      "title": "v0.2.95",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.170",
       "change_count": 1,
       "flags": {
@@ -2730,10 +3219,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 336767555,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2741,14 +3233,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.94",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614677Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "2614d4b77e03d5c6a09ceafffd69c6e8054648e2bcb673c560734bc7e136f319",
-      "title": "claude-agent-sdk-python 0.2.94",
+      "published_at": "2026-06-08T22:10:16Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.399678Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.94",
+      "raw_snapshot_path": null,
+      "raw_sha256": "fe3b4c0e8b6bcd471660b43951fdb4ce5b9a9930415dc49d8f4e982a27cfb51c",
+      "title": "v0.2.94",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.169",
       "change_count": 1,
       "flags": {
@@ -2778,10 +3270,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 336258571,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2789,14 +3284,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.93",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614705Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "abd9e9934b9c2298f50e4296cae5e969437fae52cfb3521edc7faad79d7e366e",
-      "title": "claude-agent-sdk-python 0.2.93",
+      "published_at": "2026-06-06T01:45:54Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.399737Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.93",
+      "raw_snapshot_path": null,
+      "raw_sha256": "f033043e2cc123eda83b87bac2f471dad06c07a3f91c731015494a9c45b8558a",
+      "title": "v0.2.93",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.167",
       "change_count": 1,
       "flags": {
@@ -2826,10 +3321,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 335268308,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2837,14 +3335,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.92",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614733Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "1affa94c8265f5e9a1c966df518cda223dd24e258029825eeb9ea2ecd6412c05",
-      "title": "claude-agent-sdk-python 0.2.92",
+      "published_at": "2026-06-06T01:08:50Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.399796Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.92",
+      "raw_snapshot_path": null,
+      "raw_sha256": "6282e840758b2d9f70cda41637afe239decb95dd39ea4cef1aeeba1b4dc34f79",
+      "title": "v0.2.92",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.166",
       "change_count": 1,
       "flags": {
@@ -2874,10 +3372,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 335261245,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2885,14 +3386,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.91",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614762Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "2a3ba9862430ddd3d65365bf4f77624498815c51c1eefd9ddd6c8aac1bf68a72",
-      "title": "claude-agent-sdk-python 0.2.91",
+      "published_at": "2026-06-05T05:58:12Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.399942Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.91",
+      "raw_snapshot_path": null,
+      "raw_sha256": "c041c98dd7b23c0c8139021c5da20a7318c9594a92aa623625a4b558c2626419",
+      "title": "v0.2.91",
       "notes_excerpt": "Switched test suite from `pytest-asyncio` to anyio's pytest plugin, running every async test under both asyncio and trio backends to catch backend-specific regressions in CI (#1021)",
       "change_count": 2,
       "flags": {
@@ -2945,10 +3446,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 334746521,
+        "tag_commitish": "main"
       }
     },
     {
@@ -2956,14 +3460,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.90",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614849Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "c55927ec7fea3a609688ffeb8733ab86c56121d92279ab503407167724a477a6",
-      "title": "claude-agent-sdk-python 0.2.90",
+      "published_at": "2026-06-04T22:06:46Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.400004Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.90",
+      "raw_snapshot_path": null,
+      "raw_sha256": "5d593e2ed1efcd28e3ca96900db423a1f2c502fa8e2e5f82cff9dfc8bb954391",
+      "title": "v0.2.90",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.163",
       "change_count": 1,
       "flags": {
@@ -2993,10 +3497,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 334639930,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3004,14 +3511,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.89",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614879Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "6aaa734df3ca0585c5c4941375e080ced940d8ca175d6593ac0997eba854fdc1",
-      "title": "claude-agent-sdk-python 0.2.89",
+      "published_at": "2026-06-03T21:44:57Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.400064Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.89",
+      "raw_snapshot_path": null,
+      "raw_sha256": "f94d5b1c6e4f80091fb56a2fefab06b69e24f8960509a7bd1704819d4ad7451e",
+      "title": "v0.2.89",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.162",
       "change_count": 1,
       "flags": {
@@ -3041,10 +3548,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 334016848,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3052,14 +3562,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.88",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.614908Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "03da7922f3b5b61116e4752ea75feb4200f10efe910f64348161b42f55a33cfb",
-      "title": "claude-agent-sdk-python 0.2.88",
+      "published_at": "2026-06-02T22:11:46Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.400335Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.88",
+      "raw_snapshot_path": null,
+      "raw_sha256": "6660a82f2ed96e87147b7576210bbd111d319152ef78ca90f104f3a40da02faf",
+      "title": "v0.2.88",
       "notes_excerpt": "**Trio compatibility for session stores**: Ported `session_store` code paths (`TranscriptMirrorBatcher`, `session_resume`, `sessions`) from raw `asyncio` primitives to `anyio`, fixing a crash (`TypeError: trio.run received unrecognized yield message`) when passing `session_store=` to `query()` or `ClaudeSDKClient` under trio (#990)",
       "change_count": 3,
       "flags": {
@@ -3139,10 +3649,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 333403315,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3150,14 +3663,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.87",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.615071Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "189067a3093ec5d4ca07d587d3916400c17d55a20feb92291e09c857625117c6",
-      "title": "claude-agent-sdk-python 0.2.87",
+      "published_at": "2026-05-23T04:20:30Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.400484Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.87",
+      "raw_snapshot_path": null,
+      "raw_sha256": "406ca2a7b50586c7c29cec3f1488d9de053415d0ac47232e8aa280ce13b9c873",
+      "title": "v0.2.87",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.150",
       "change_count": 2,
       "flags": {
@@ -3212,10 +3725,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 328223182,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3223,14 +3739,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.86",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.615151Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "61d34c5d37676f19fa93e6a53e1dc5bacec8a6f8374a47a0077bec615048e252",
-      "title": "claude-agent-sdk-python 0.2.86",
+      "published_at": "2026-05-22T22:26:08Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.400561Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.86",
+      "raw_snapshot_path": null,
+      "raw_sha256": "827ffb2f8a78e314a0ae9078ce875dfe4ae008e799e73a2701ce8f6877d530de",
+      "title": "v0.2.86",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.149",
       "change_count": 1,
       "flags": {
@@ -3260,10 +3776,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 328170062,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3271,14 +3790,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.85",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.615180Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "f046dad28e972eecc91ced109e408e5c152f42b3f3d364b6e3d459049329fe16",
-      "title": "claude-agent-sdk-python 0.2.85",
+      "published_at": "2026-05-22T01:33:24Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.400623Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.85",
+      "raw_snapshot_path": null,
+      "raw_sha256": "b83480f7f3698f3078fb3f7c133d6b626a872eb082f44a881fa4ca7d347f182b",
+      "title": "v0.2.85",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.148",
       "change_count": 1,
       "flags": {
@@ -3308,10 +3827,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 327495427,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3319,14 +3841,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.84",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.615209Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "15c4344666cf1e030f1c99ede1663fb78c6344c7f10536503ab0238d743c040a",
-      "title": "claude-agent-sdk-python 0.2.84",
+      "published_at": "2026-05-21T20:56:13Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.400684Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.84",
+      "raw_snapshot_path": null,
+      "raw_sha256": "382c6337c5b31d8fccafa0371dee1277272c334f4b655d1d3f374369a7fb1541",
+      "title": "v0.2.84",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.147",
       "change_count": 1,
       "flags": {
@@ -3356,10 +3878,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 327279923,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3367,14 +3892,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.83",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.615238Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "8ac3fc7ab2a19eec47bb7f55a360b33a72e26f28a9d9f8f9eb7f44a9674a8b8d",
-      "title": "claude-agent-sdk-python 0.2.83",
+      "published_at": "2026-05-21T02:08:22Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.400744Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.83",
+      "raw_snapshot_path": null,
+      "raw_sha256": "219cdafc43489616b227a5a32c514757c4e72bfe58b73fa1dfba010a4465c6c5",
+      "title": "v0.2.83",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.146",
       "change_count": 1,
       "flags": {
@@ -3404,10 +3929,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 326380852,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3415,24 +3943,74 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.2.82",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.615265Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "b0216bdaf448f8b00dc8263a8ed6b01f6a708d8ba296e16a28b331ca74fc0c5f",
-      "title": "claude-agent-sdk-python 0.2.82",
-      "notes_excerpt": "**`EffortLevel` type export**: Added a public `EffortLevel` type alias for Claude effort string levels (`\"low\"`, `\"medium\"`, `\"high\"`, `\"max\"`, `\"xhigh\"`) and exported it from the package root, making it available for downstream SDK wrappers and type annotations (#951)",
-      "change_count": 8,
+      "published_at": "2026-05-15T03:47:00Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.401708Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.82",
+      "raw_snapshot_path": null,
+      "raw_sha256": "0db68c860c13304379bd14e3821418c393e249f65daec3682bb2ee65b93b64b5",
+      "title": "v0.2.82",
+      "notes_excerpt": "**Breaking:** MCP servers now connect in the background by default; sessions start immediately and slow servers report `status: \"pending\"` in `init` until ready. Set `MCP_CONNECTION_NONBLOCKING=0` to restore the old behavior of waiting up to 5s before the first query, or mark a server `alwaysLoad: true` to require it in turn 1.",
+      "change_count": 10,
       "flags": {
         "security": true,
-        "breaking": false,
+        "breaking": true,
         "deprecation": false
       },
       "changes": [
         {
           "id": "chg.claude-agent-sdk-python.0.2.82.001",
+          "kind": "changed",
+          "summary": "**Breaking:** MCP servers now connect in the background by default; sessions start immediately and slow servers report `status: \"pending\"` in `init` until ready. Set `MCP_CONNECTION_NONBLOCKING=0` to restore the old behavior of waiting up to 5s before the first query, or mark a server `alwaysLoad: true` to require it in turn 1.",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-python.0.2.82.002",
+          "kind": "changed",
+          "summary": "**Breaking:** Headless and SDK sessions now use Task tools (`TaskCreate` / `TaskUpdate` / `TaskGet` / `TaskList`) instead of `TodoWrite`. Tool consumers should accumulate by task ID instead of replacing a snapshot list.",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "terminal_headless",
+            "sdk",
+            "ci"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "execution.headless",
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-python.0.2.82.003",
           "kind": "changed",
           "summary": "**`EffortLevel` type export**: Added a public `EffortLevel` type alias for Claude effort string levels (`\"low\"`, `\"medium\"`, `\"high\"`, `\"max\"`, `\"xhigh\"`) and exported it from the package root, making it available for downstream SDK wrappers and type annotations (#951)",
           "category": "other",
@@ -3452,7 +4030,7 @@
           }
         },
         {
-          "id": "chg.claude-agent-sdk-python.0.2.82.002",
+          "id": "chg.claude-agent-sdk-python.0.2.82.004",
           "kind": "changed",
           "summary": "**Stderr callback isolation**: Fixed an issue where a user-provided `stderr` callback that raises an exception would silently terminate the stderr reader loop, dropping all subsequent stderr lines for the rest of the session. Exceptions are now caught per-line so a failing callback does not prevent delivery of later lines (#932)",
           "category": "session_state",
@@ -3472,7 +4050,7 @@
           }
         },
         {
-          "id": "chg.claude-agent-sdk-python.0.2.82.003",
+          "id": "chg.claude-agent-sdk-python.0.2.82.005",
           "kind": "changed",
           "summary": "**CancelledError in eager-flush done callback**: Fixed noisy `Exception in callback` log messages on shutdown when pending eager-flush tasks were cancelled. The done callback now gracefully handles `CancelledError` instead of unconditionally calling `Task.exception()` (#931)",
           "category": "observability",
@@ -3492,7 +4070,7 @@
           }
         },
         {
-          "id": "chg.claude-agent-sdk-python.0.2.82.004",
+          "id": "chg.claude-agent-sdk-python.0.2.82.006",
           "kind": "changed",
           "summary": "**Tighter `permission_suggestions` type**: Replaced `list[Any] | None` with `list[dict[str, Any]] | None` on `SDKControlPermissionRequest.permission_suggestions`, enabling proper type-checking on consumers of that field (#955)",
           "category": "security_governance",
@@ -3514,7 +4092,7 @@
           }
         },
         {
-          "id": "chg.claude-agent-sdk-python.0.2.82.005",
+          "id": "chg.claude-agent-sdk-python.0.2.82.007",
           "kind": "changed",
           "summary": "Clarified that `hooks` dispatch for a given event is concurrent (all matchers fire in parallel), not sequential, preventing incorrect assumptions about ordering-dependent hooks like rate limiters gating subsequent hooks (#956)",
           "category": "extensions",
@@ -3536,7 +4114,7 @@
           }
         },
         {
-          "id": "chg.claude-agent-sdk-python.0.2.82.006",
+          "id": "chg.claude-agent-sdk-python.0.2.82.008",
           "kind": "changed",
           "summary": "Bumped `mcp` dependency lower bound to `>=1.23.0` to address GHSA-9h52-p55h-vw2f (CVE-2025-66416), which disables DNS rebinding protection by default in older versions (#927)",
           "category": "extensions",
@@ -3556,7 +4134,7 @@
           }
         },
         {
-          "id": "chg.claude-agent-sdk-python.0.2.82.007",
+          "id": "chg.claude-agent-sdk-python.0.2.82.009",
           "kind": "changed",
           "summary": "Stabilized eager-flush transcript mirror tests with deterministic wait helpers instead of fixed `asyncio.sleep(0)` yields (#933)",
           "category": "automation",
@@ -3578,7 +4156,7 @@
           }
         },
         {
-          "id": "chg.claude-agent-sdk-python.0.2.82.008",
+          "id": "chg.claude-agent-sdk-python.0.2.82.010",
           "kind": "changed",
           "summary": "Updated bundled Claude CLI to version 2.1.142",
           "category": "distribution_runtime",
@@ -3598,10 +4176,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 322989380,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3609,14 +4190,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.81",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.615769Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "af93c32423151eb1e280bed5b95ae7170ec812f6cc27f41cd4f7336990128bd7",
-      "title": "claude-agent-sdk-python 0.1.81",
+      "published_at": "2026-05-11T18:57:47Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.401785Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.81",
+      "raw_snapshot_path": null,
+      "raw_sha256": "105f471749562950f2fd1d19748e14eda602683d0b34c5a5303c34c13be8e2a3",
+      "title": "v0.1.81",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.139",
       "change_count": 1,
       "flags": {
@@ -3646,10 +4227,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 320722661,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3657,14 +4241,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.80",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.615802Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "6bc7bc0f6d7ef9312f9c24474d69607180ec3a7a71fbb191a4d7bd9166c22c4e",
-      "title": "claude-agent-sdk-python 0.1.80",
+      "published_at": "2026-05-09T06:45:53Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.401852Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.80",
+      "raw_snapshot_path": null,
+      "raw_sha256": "a42e2e818edc14524fa9e9d5ce9fc26ead591a3357ee19958b9f42d5e4c23665",
+      "title": "v0.1.80",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.138",
       "change_count": 1,
       "flags": {
@@ -3694,10 +4278,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 319867253,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3705,14 +4292,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.79",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.615830Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "ccafc20719fb49cf139a07cc5221d94d5fa19ef5a8e7601c7a05d6782c043243",
-      "title": "claude-agent-sdk-python 0.1.79",
+      "published_at": "2026-05-09T00:23:23Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.401916Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.79",
+      "raw_snapshot_path": null,
+      "raw_sha256": "5e3348f7253fc77d693deb0590c9a55820fd985203e363b8c6dae2fd99d9c013",
+      "title": "v0.1.79",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.137",
       "change_count": 1,
       "flags": {
@@ -3742,10 +4329,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 319792308,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3753,14 +4343,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.78",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.615858Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "dd0e02ac94b1e952b9ca1243cb4b3828a5c1bc2ff0bb3821d10acd12f5f03dc7",
-      "title": "claude-agent-sdk-python 0.1.78",
+      "published_at": "2026-05-08T18:53:36Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.401978Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.78",
+      "raw_snapshot_path": null,
+      "raw_sha256": "5f67993d98f4ec80dba050988e30ac1cad4355a0376ac5fab3c0385ddffb9dcd",
+      "title": "v0.1.78",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.136",
       "change_count": 1,
       "flags": {
@@ -3790,10 +4380,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 319683630,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3801,14 +4394,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.77",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.615886Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "b8283c891551599578816c90452d1f7503e5b3ec884134b80f0b92de05bfab38",
-      "title": "claude-agent-sdk-python 0.1.77",
+      "published_at": "2026-05-08T00:04:05Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.402236Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.77",
+      "raw_snapshot_path": null,
+      "raw_sha256": "b3b6a146a48b59bb63d27dafe7a531345f6f9564c262404bffb48df42ab438e7",
+      "title": "v0.1.77",
       "notes_excerpt": "**Actionable error messages after error results**: Replaced the generic `Command failed with exit code 1` exception raised after an error result with one carrying the result's actual error text (e.g. \"Reached maximum number of turns\"), matching the TypeScript SDK behavior (#918)",
       "change_count": 3,
       "flags": {
@@ -3883,10 +4476,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 319256047,
+        "tag_commitish": "main"
       }
     },
     {
@@ -3894,14 +4490,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.76",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.616045Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "1b8eb9d54f27a324bb11b73b62ccf2082a565ee995f7ab020746fdd5bfcd7f09",
-      "title": "claude-agent-sdk-python 0.1.76",
+      "published_at": "2026-05-06T22:23:02Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.402601Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.76",
+      "raw_snapshot_path": null,
+      "raw_sha256": "c51b1bd4523877e6b878e5aaf4db6c1f4bc1277149b8e0b58d4c2508210ed6c1",
+      "title": "v0.1.76",
       "notes_excerpt": "**API error status on result messages**: Added `api_error_status: int | None` to `ResultMessage`, surfacing the HTTP status code (e.g. 429, 500, 529) from failing API calls. This provides a safe-to-log field for classifying API failures when `is_error=True` (#923)",
       "change_count": 4,
       "flags": {
@@ -4000,10 +4596,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 318665904,
+        "tag_commitish": "main"
       }
     },
     {
@@ -4011,14 +4610,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.75",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.616268Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "78c1d8bb60992a29d1be51639e80e94d64fe0f1e08ccf30bc4113aecf9e667f1",
-      "title": "claude-agent-sdk-python 0.1.75",
+      "published_at": "2026-05-06T08:00:28Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.402671Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.75",
+      "raw_snapshot_path": null,
+      "raw_sha256": "39950542544c49c45edf261031febaa91e66b7f5313ec720da97368b0de9159d",
+      "title": "v0.1.75",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.131",
       "change_count": 1,
       "flags": {
@@ -4048,10 +4647,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 318258754,
+        "tag_commitish": "main"
       }
     },
     {
@@ -4059,14 +4661,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.74",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.616300Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "5fac3d2a5e14ca434820a7697f9a5775ab607f1b44cfdbfc4ec1e2ea41a2fcef",
-      "title": "claude-agent-sdk-python 0.1.74",
+      "published_at": "2026-05-06T01:53:13Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.403661Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.74",
+      "raw_snapshot_path": null,
+      "raw_sha256": "b7c64a3b5e042fcbd6273db177157d0f50aeb1363caa84fb95d59bb69d4a7c45",
+      "title": "v0.1.74",
       "notes_excerpt": "**Hook event streaming**: Added `include_hook_events` option to `ClaudeAgentOptions`. When set, hook events (PreToolUse, PostToolUse, Stop, etc.) are emitted by the CLI and yielded from the message stream as `HookEventMessage`, matching the TypeScript SDK's `includeHookEvents` (#917)",
       "change_count": 11,
       "flags": {
@@ -4330,10 +4932,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 318135532,
+        "tag_commitish": "main"
       }
     },
     {
@@ -4341,14 +4946,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.73",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.616928Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "0e931b1079195db10dd35fb72da954b35d9bf24ed20497b956680f221cd3ea36",
-      "title": "claude-agent-sdk-python 0.1.73",
+      "published_at": "2026-05-04T23:15:13Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.403868Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.73",
+      "raw_snapshot_path": null,
+      "raw_sha256": "721792da24c0b91e3ebdb10c07e48867adf2d2b611424680908e8122dc41b59a",
+      "title": "v0.1.73",
       "notes_excerpt": "**Eager session store flushing**: Added `session_store_flush` option to `ClaudeAgentOptions` (`\"batched\"` or `\"eager\"`). When set to `\"eager\"`, the transcript mirror delivers frames to `SessionStore.append()` in near-real-time instead of waiting for the end-of-turn flush, enabling live-tailing UIs, cross-process resume, and crash-durability use cases (#905)",
       "change_count": 2,
       "flags": {
@@ -4400,10 +5005,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 317515144,
+        "tag_commitish": "main"
       }
     },
     {
@@ -4411,14 +5019,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.72",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.617055Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "8342b2c4c6ab0fb5e20a8b0664282c97b34435a6750e83704af35f4557e0d3b0",
-      "title": "claude-agent-sdk-python 0.1.72",
+      "published_at": "2026-05-01T02:18:43Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.404789Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.72",
+      "raw_snapshot_path": null,
+      "raw_sha256": "e65b0ccb468c235fd40e1fe298be67dd9ed0beabd614c6c06bccc97b924e0f24",
+      "title": "v0.1.72",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.126",
       "change_count": 1,
       "flags": {
@@ -4448,10 +5056,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 316246546,
+        "tag_commitish": "main"
       }
     },
     {
@@ -4459,14 +5070,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.71",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.617087Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "2cedbabbb0f6d28d8b985a954493c8b3b7e4c0db312e868c41eacc2cef838bff",
-      "title": "claude-agent-sdk-python 0.1.71",
+      "published_at": "2026-04-29T03:41:37Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.405002Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.71",
+      "raw_snapshot_path": null,
+      "raw_sha256": "375b43bf55a23f0e1142d2f8110b29996b8364df3d0774be91bec61dafb7694c",
+      "title": "v0.1.71",
       "notes_excerpt": "**Domain allowlist fields for sandbox network config**: Added `allowedDomains`, `deniedDomains`, `allowManagedDomainsOnly`, and `allowMachLookup` fields to `SandboxNetworkConfig`, bringing parity with the TypeScript schema and enabling Python SDK users to configure network allowlists with proper type hints (#893)",
       "change_count": 2,
       "flags": {
@@ -4521,10 +5132,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 314988531,
+        "tag_commitish": "main"
       }
     },
     {
@@ -4532,14 +5146,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.70",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.617228Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "be095b537450a2486857de3a7b1bb74956f595d0868e05fb1f40805b089f0e1a",
-      "title": "claude-agent-sdk-python 0.1.70",
+      "published_at": "2026-04-28T22:18:48Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.405309Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.70",
+      "raw_snapshot_path": null,
+      "raw_sha256": "f0ad26f9d8c016f1821896867b6aad8a940c6ba6d5465167832c0ca28066e2c0",
+      "title": "v0.1.70",
       "notes_excerpt": "**In-process MCP tool results silently lost with older `mcp` versions**: Bumped the `mcp` dependency floor to `>=1.19.0`. Older versions mishandled `CallToolResult` returns from SDK MCP tool handlers, causing the model to receive a validation-error blob instead of the actual tool output (#891)",
       "change_count": 3,
       "flags": {
@@ -4612,10 +5226,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 314873023,
+        "tag_commitish": "main"
       }
     },
     {
@@ -4623,14 +5240,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.69",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.617417Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "852e14404f90e0dd0082cb49e77ab2fd67685b18449747eb0611b7b1f73c27da",
-      "title": "claude-agent-sdk-python 0.1.69",
+      "published_at": "2026-04-28T00:44:37Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.405455Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.69",
+      "raw_snapshot_path": null,
+      "raw_sha256": "8a275f42fd681f91ab35cdd30cee6a2861c11578858130be403b91f8ca129fe1",
+      "title": "v0.1.69",
       "notes_excerpt": "Added docstrings to `ClaudeAgentOptions` fields for improved IDE autocompletion and inline documentation (#873)",
       "change_count": 2,
       "flags": {
@@ -4680,10 +5297,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 314324164,
+        "tag_commitish": "main"
       }
     },
     {
@@ -4691,14 +5311,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.68",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.617494Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "47a3ebe36c88ccfa0bb03d622a31b50e51ffb85c35c469a2083b20965c59ca7c",
-      "title": "claude-agent-sdk-python 0.1.68",
+      "published_at": "2026-04-25T02:07:39Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.405533Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.68",
+      "raw_snapshot_path": null,
+      "raw_sha256": "41f4a2fe7b6f3d242eaa65a57fb7cbfdd116f965100823567a37e95529bba57f",
+      "title": "v0.1.68",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.119",
       "change_count": 1,
       "flags": {
@@ -4728,10 +5348,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 313501878,
+        "tag_commitish": "main"
       }
     },
     {
@@ -4739,14 +5362,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.67",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.617524Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "f692983b32a0fb7f14f47dafc9553e35cb05895d40e4273cae1c1d3a799382f3",
-      "title": "claude-agent-sdk-python 0.1.67",
+      "published_at": "2026-04-25T00:27:31Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.405788Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.67",
+      "raw_snapshot_path": null,
+      "raw_sha256": "bda280f15986a721135fba8fb74e4de8aa7731e86eb03f968454bb621a271c8c",
+      "title": "v0.1.67",
       "notes_excerpt": "**Trio compatibility restored**: Fixed `RuntimeError: no running event loop` when using `ClaudeSDKClient` or `query()` under trio, a regression introduced in v0.1.51. Uses sniffio-based dispatch to select the correct async primitive (`asyncio.Task` vs `trio.lowlevel.spawn_system_task`) at runtime while preserving the asyncio CPU-spin and cancel-scope fixes from #746 (#870)",
       "change_count": 3,
       "flags": {
@@ -4822,10 +5445,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 313484891,
+        "tag_commitish": "main"
       }
     },
     {
@@ -4833,14 +5459,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.66",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.617683Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "47a3ebe36c88ccfa0bb03d622a31b50e51ffb85c35c469a2083b20965c59ca7c",
-      "title": "claude-agent-sdk-python 0.1.66",
+      "published_at": "2026-04-23T23:36:33Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.405856Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.66",
+      "raw_snapshot_path": null,
+      "raw_sha256": "e04468f9f147f6d164d5ebb3a653c9e9a4ab266ff659be5a7775cb9a4a475439",
+      "title": "v0.1.66",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.119",
       "change_count": 1,
       "flags": {
@@ -4870,10 +5496,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 312985317,
+        "tag_commitish": "main"
       }
     },
     {
@@ -4881,14 +5510,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.65",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.617714Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "fe4bdcd389d281687fe9d822f0e3b91a5c61622160f192d81c80a1eb231d6ad1",
-      "title": "claude-agent-sdk-python 0.1.65",
+      "published_at": "2026-04-23T00:53:52Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.406668Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.65",
+      "raw_snapshot_path": null,
+      "raw_sha256": "b2fbaf47cdb7b2d71ca289d69df242facb27706b46c0baffb179e380b9b21e81",
+      "title": "v0.1.65",
       "notes_excerpt": "**Batch session summaries**: Added `SessionStore.list_session_summaries()` optional protocol method and `fold_session_summary()` helper for O(1)-per-session list views. Stores that maintain append-time summary sidecars can now serve `list_sessions_from_store()` without loading full transcripts, reducing round-trips from N to 1 for N sessions (#847)",
       "change_count": 9,
       "flags": {
@@ -5089,10 +5718,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 312502931,
+        "tag_commitish": "main"
       }
     },
     {
@@ -5100,14 +5732,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.64",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.618231Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "44429e8462e925e6d13c3fdbecf649dd095bf7384d6f3a4e1c0f877971bcf145",
-      "title": "claude-agent-sdk-python 0.1.64",
+      "published_at": "2026-04-20T22:31:17Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.407090Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.64",
+      "raw_snapshot_path": null,
+      "raw_sha256": "b8239197f0b22bfde6e4a74a6a7a06437556535e4f602eb0a4359f0d5be9721f",
+      "title": "v0.1.64",
       "notes_excerpt": "**SessionStore adapter**: Full SessionStore support at parity with the TypeScript SDK. Includes a `SessionStore` protocol with 5 methods (`append`, `load`, `list_sessions`, `delete`, `list_subkeys`), `InMemorySessionStore` reference implementation, transcript mirroring via `--session-mirror`, session resume from store, and 9 new async store-backed helper functions (`list_sessions_from_store`, `get_session_messages_from_store`, `fork_session_via_store`, etc.). Also adds a 13-contract conformance test harness at `claude_agent_sdk.testing.run_session_store_conformance` for third-party adapter authors (#837)",
       "change_count": 3,
       "flags": {
@@ -5184,10 +5816,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 311449044,
+        "tag_commitish": "main"
       }
     },
     {
@@ -5195,14 +5830,14 @@
       "harness_id": "claude-agent-sdk-python",
       "version": "0.1.63",
       "channel": "stable",
-      "published_at": null,
-      "date_precision": "unknown",
-      "retrieved_at": "2026-08-09T01:08:31.618505Z",
-      "source_id": "src.claude-agent-sdk-python.changelog",
-      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-python/main/CHANGELOG.md",
-      "raw_snapshot_path": "raw/claude-agent-sdk-python/CHANGELOG.md",
-      "raw_sha256": "accc6cf302f2cc82951fc42e4133e1ac5a31bd954eb2637be3de472b464a75e6",
-      "title": "claude-agent-sdk-python 0.1.63",
+      "published_at": "2026-04-18T01:49:57Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-15T20:10:14.407165Z",
+      "source_id": "src.claude-agent-sdk-python.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.1.63",
+      "raw_snapshot_path": null,
+      "raw_sha256": "bbe1af7a96d6f4c1264483efa2aebbb02e46f629be7cb86704e672af32855936",
+      "title": "v0.1.63",
       "notes_excerpt": "Updated bundled Claude CLI to version 2.1.114",
       "change_count": 1,
       "flags": {
@@ -5232,10 +5867,13 @@
           }
         }
       ],
+      "assets": [],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "markdown_changelog",
-        "immutable": false
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 310617694,
+        "tag_commitish": "main"
       }
     },
     {

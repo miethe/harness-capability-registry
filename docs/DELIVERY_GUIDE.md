@@ -2,6 +2,10 @@
 
 ## Recommended first openings
 
+> Two rows below point at untracked build outputs — `generated/Harness_Matrix_Standalone.html` and
+> `generated/registry.bundle.json`. Run `make generate` before opening either in a fresh clone; the
+> `registry/` rows are tracked and need no build step.
+
 | Need | Artifact |
 |---|---|
 | Browse and compare products | `generated/Harness_Matrix_Standalone.html` |
