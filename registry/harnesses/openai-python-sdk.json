@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "provider_sdk",
-    "current_version": "3.2.0",
-    "version_as_of": "2026-08-17",
-    "last_verified_at": "2026-08-18T18:57:45.521496Z",
+    "current_version": "3.3.1",
+    "version_as_of": "2026-08-19",
+    "last_verified_at": "2026-08-22T13:02:05.018986Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/openai/openai-python",
@@ -140,6 +140,301 @@
     }
   ],
   "releases": [
+    {
+      "id": "rel.openai-python-sdk.3.3.1",
+      "harness_id": "openai-python-sdk",
+      "version": "3.3.1",
+      "channel": "stable",
+      "published_at": "2026-08-19T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-22T13:02:03.574662Z",
+      "source_id": "src.openai-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/openai/openai-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/openai-python/CHANGELOG.md",
+      "raw_sha256": "bccb94a41be769382293efb39e5fe1083d8bfdf6490eab11ec7b3d758570e64d",
+      "title": "openai-python-sdk 3.3.1",
+      "notes_excerpt": "**deps:** update dependencies with published security fixes ([#3680](https://github.com/openai/openai-python/issues/3680)) ([53aa4fc](https://github.com/openai/openai-python/commit/53aa4fc68b65f42456cafaaa5ff4b0d317184752))",
+      "change_count": 7,
+      "flags": {
+        "security": true,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-python-sdk.3.3.1.001",
+          "kind": "changed",
+          "summary": "**deps:** update dependencies with published security fixes ([#3680](https://github.com/openai/openai-python/issues/3680)) ([53aa4fc](https://github.com/openai/openai-python/commit/53aa4fc68b65f42456cafaaa5ff4b0d317184752))",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-python-sdk.3.3.1.002",
+          "kind": "changed",
+          "summary": "**build:** migrate to uv ([#3653](https://github.com/openai/openai-python/issues/3653)) ([b37e85d](https://github.com/openai/openai-python/commit/b37e85d8fe9cd2b23862dbc62716d38e2cacaf92))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-python-sdk.3.3.1.003",
+          "kind": "changed",
+          "summary": "**deps:** remove jsonschema and unused fixture-validation dependencies ([0dfdfdd](https://github.com/openai/openai-python/commit/0dfdfdddfbeb591a1bb5b3b4aa62e4a9870fcaa6))",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-python-sdk.3.3.1.004",
+          "kind": "changed",
+          "summary": "lock the repository Pyright toolchain ([#3678](https://github.com/openai/openai-python/issues/3678)) ([3079be2](https://github.com/openai/openai-python/commit/3079be224c05479b6cf8aa329480c249f66f0599))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-python-sdk.3.3.1.005",
+          "kind": "changed",
+          "summary": "run the mock server from locked local tooling ([#3679](https://github.com/openai/openai-python/issues/3679)) ([370fcc6](https://github.com/openai/openai-python/commit/370fcc60ce9006db5a75dcd0333790dfe71a907c))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-python-sdk.3.3.1.006",
+          "kind": "changed",
+          "summary": "**deps:** use the standard library for platform detection ([d5b0065](https://github.com/openai/openai-python/commit/d5b00659d6659c5def665cb04e6563bdf683ea03))",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-python-sdk.3.3.1.007",
+          "kind": "changed",
+          "summary": "replace the external README metadata hook ([e673ca8](https://github.com/openai/openai-python/commit/e673ca8ff9e5c2292615976e99bf5731d47327e8))",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.hooks"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.openai-python-sdk.3.3.0",
+      "harness_id": "openai-python-sdk",
+      "version": "3.3.0",
+      "channel": "stable",
+      "published_at": "2026-08-18T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-08-22T13:02:03.575333Z",
+      "source_id": "src.openai-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/openai/openai-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/openai-python/CHANGELOG.md",
+      "raw_sha256": "7eb374da9174e28dbf0db0581da15294f2d55d43f6d8d0a2e104744eaaf3f9fa",
+      "title": "openai-python-sdk 3.3.0",
+      "notes_excerpt": "support named data-residency endpoints ([#3646](https://github.com/openai/openai-python/issues/3646)) ([11ee914](https://github.com/openai/openai-python/commit/11ee91475694d9cd77813763707fbadf68806d4f))",
+      "change_count": 4,
+      "flags": {
+        "security": true,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-python-sdk.3.3.0.001",
+          "kind": "changed",
+          "summary": "support named data-residency endpoints ([#3646](https://github.com/openai/openai-python/issues/3646)) ([11ee914](https://github.com/openai/openai-python/commit/11ee91475694d9cd77813763707fbadf68806d4f))",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-python-sdk.3.3.0.002",
+          "kind": "changed",
+          "summary": "require patched optional networking dependencies ([#3651](https://github.com/openai/openai-python/issues/3651)) ([40e56de](https://github.com/openai/openai-python/commit/40e56de55166a55be3572fdf9750145d4458e144))",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-python-sdk.3.3.0.003",
+          "kind": "removed",
+          "summary": "remove unused dependencies and pin build tooling ([#3650](https://github.com/openai/openai-python/issues/3650)) ([eee8e4a](https://github.com/openai/openai-python/commit/eee8e4a7d0e42bb0d6b9aa01c4dd8e04aaac3ff4))",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-python-sdk.3.3.0.004",
+          "kind": "changed",
+          "summary": "strengthen Python SDK security contribution guidance ([#3639](https://github.com/openai/openai-python/issues/3639)) ([6577709](https://github.com/openai/openai-python/commit/6577709190ae5e258d0270870f701432f67e6a3e))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "execution.sdk_embedding"
+          ],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
     {
       "id": "rel.openai-python-sdk.3.2.0",
       "harness_id": "openai-python-sdk",
