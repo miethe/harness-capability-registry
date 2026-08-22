@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: claude-agent-sdk-python
-generated_at: 2026-08-18T18:58:02.113278Z
+generated_at: 2026-08-22T13:02:17.406799Z
 artifact_kind: harness_capability_guide
 ---
 
@@ -9,8 +9,8 @@ artifact_kind: harness_capability_guide
 
 **Vendor:** Anthropic  
 **Lifecycle:** active  
-**Current version in registry:** 0.2.139  
-**Last verified:** 2026-08-15T20:10:18.746297Z
+**Current version in registry:** 0.2.143  
+**Last verified:** 2026-08-22T13:02:05.018986Z
 
 > UI availability does not imply that an in-harness model or an external orchestrator can invoke the capability. Use the actor-specific sections below.
 

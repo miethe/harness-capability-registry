@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: openai-node-sdk
-generated_at: 2026-08-18T18:58:02.113278Z
+generated_at: 2026-08-22T13:02:17.406799Z
 artifact_kind: harness_capability_guide
 ---
 
