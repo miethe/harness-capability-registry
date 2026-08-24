@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "core",
-    "current_version": "0.21.1",
-    "version_as_of": "2026-08-16",
-    "last_verified_at": "2026-08-18T18:57:45.521496Z",
+    "current_version": "0.22.0",
+    "version_as_of": "2026-08-19",
+    "last_verified_at": "2026-08-24T13:14:39.999942Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/openai/openai-agents-python",
@@ -374,6 +374,585 @@
     }
   ],
   "releases": [
+    {
+      "id": "rel.openai-agents-sdk-python.0.22.0",
+      "harness_id": "openai-agents-sdk-python",
+      "version": "0.22.0",
+      "channel": "stable",
+      "published_at": "2026-08-19T13:44:38Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-24T13:14:37.525872Z",
+      "source_id": "src.openai-agents-python.releases",
+      "source_url": "https://github.com/openai/openai-agents-python/releases/tag/v0.22.0",
+      "raw_snapshot_path": null,
+      "raw_sha256": "05c59cdbd7be76fae2b9cf23061eee13858d7005e934a3d59ba25ce473833f3e",
+      "title": "v0.22.0",
+      "notes_excerpt": "Redacts terminal function-tool output rejected by agent output guardrails from replayable and persisted SDK state.",
+      "change_count": 26,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.001",
+          "kind": "changed",
+          "summary": "Redacts terminal function-tool output rejected by agent output guardrails from replayable and persisted SDK state.",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.002",
+          "kind": "changed",
+          "summary": "Raises `ModelBehaviorError` for non-streaming Responses with terminal status `failed` or `incomplete`.",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.003",
+          "kind": "changed",
+          "summary": "Rejects conflicting provider options when `OpenAIProvider` receives an explicit client.",
+          "category": "interfaces",
+          "surfaces": [
+            "ide",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.004",
+          "kind": "changed",
+          "summary": "Isolates usage accounting between independent `RunState` checkpoints while preserving nested-agent aggregation.",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.005",
+          "kind": "changed",
+          "summary": "Expands agents registered through `handoff(agent)` in generated graphs.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.006",
+          "kind": "changed",
+          "summary": "Clarifies the existing shallow-copy behavior of `Agent.clone()` and `RealtimeAgent.clone()`.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.007",
+          "kind": "fixed",
+          "summary": "fix(core): redact blocked tool outputs from replay state by @seratch in https://github.com/openai/openai-agents-python/pull/4507",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.008",
+          "kind": "fixed",
+          "summary": "fix(core): reject ignored explicit-client options for OpenAIProvider by @sylvesterkaczmarek in https://github.com/openai/openai-agents-python/pull/4497",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.009",
+          "kind": "fixed",
+          "summary": "fix(core): preserve Griffe logger inheritance by @sylvesterkaczmarek in https://github.com/openai/openai-agents-python/pull/4494",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.010",
+          "kind": "fixed",
+          "summary": "fix(core): reject terminal failed/incomplete responses in non-streaming get_response by @weike-zhang in https://github.* * fix(core): isolate usage between RunState checkpoints by @chiruu12 in https://github.com/openai/openai-agents-python/pull/4479",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.011",
+          "kind": "fixed",
+          "summary": "fix(sandbox): enforce Windows mypy compatibility by @seratch in https://github.com/openai/openai-agents-python/pull/4499",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.012",
+          "kind": "fixed",
+          "summary": "fix(tracing): respect model-data logging redaction for record_model_error_on_span by @sylvesterkaczmarek in https://github.com/openai/openai-agents-python/pull/4496",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.013",
+          "kind": "fixed",
+          "summary": "fix(tracing): clean up processors after tracing is disabled by @sylvesterkaczmarek in https://github.com/openai/openai-agents-python/pull/4502",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.014",
+          "kind": "fixed",
+          "summary": "fix(visualization): expand handoff() targets in agent graphs by @hsusul in https://github.com/openai/openai-agents-python/pull/4517",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.015",
+          "kind": "changed",
+          "summary": "docs: document v0.21.1 runtime behavior by @seratch in https://github.com/openai/openai-agents-python/pull/4460",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.016",
+          "kind": "changed",
+          "summary": "docs: correct Agent.clone list attribute semantics by @thegoodengineer in https://github.com/openai/openai-agents-python/pull/4474",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.017",
+          "kind": "changed",
+          "summary": "docs: add testing resources to llms indexes by @teachershuang in https://github.com/openai/openai-agents-python/pull/4509",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.018",
+          "kind": "changed",
+          "summary": "ci: align Python version coverage by @seratch in https://github.com/openai/openai-agents-python/pull/4475",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.019",
+          "kind": "changed",
+          "summary": "test: use sys.executable instead of tee for the stdio placeholder command by @ErenAta16 in https://github.com/openai/openai-agents-python/pull/4478",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.020",
+          "kind": "fixed",
+          "summary": "fix: keep Codex verification for development sandboxed by @seratch in https://github.com/openai/openai-agents-python/pull/4508",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.021",
+          "kind": "changed",
+          "summary": "release: 0.22.0 by @seratch in https://github.com/openai/openai-agents-python/pull/4523",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.022",
+          "kind": "changed",
+          "summary": "@li2631026381-alt made their first contribution in https://github.com/openai/openai-agents-python/pull/4470",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.023",
+          "kind": "changed",
+          "summary": "@thegoodengineer made their first contribution in https://github.com/openai/openai-agents-python/pull/4474",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.024",
+          "kind": "changed",
+          "summary": "@teachershuang made their first contribution in https://github.com/openai/openai-agents-python/pull/4509",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.025",
+          "kind": "changed",
+          "summary": "@weike-zhang made their first contribution in https://github.com/openai/openai-agents-python/pull/4516",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-agents-sdk-python.0.22.0.026",
+          "kind": "changed",
+          "summary": "@chiruu12 made their first contribution in https://github.com/openai/openai-agents-python/pull/4479",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "assets": [],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 373086492,
+        "tag_commitish": "main"
+      }
+    },
     {
       "id": "rel.openai-agents-sdk-python.0.21.1",
       "harness_id": "openai-agents-sdk-python",
