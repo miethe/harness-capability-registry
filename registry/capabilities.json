@@ -32,7 +32,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.interaction.ide",
@@ -66,7 +68,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "not_applicable",
+    "invocation_na_reason": "Installed via IDE extension marketplace (VS Code/JetBrains), not invoked via a CLI token."
   },
   {
     "id": "impl.claude-code.interaction.desktop_web",
@@ -101,7 +105,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "not_applicable",
+    "invocation_na_reason": "Accessed via the desktop app / claude.ai/code web UI account surfaces, not a CLI invocation token."
   },
   {
     "id": "impl.claude-code.execution.file_edit",
@@ -122,7 +128,11 @@
       "IDE",
       "SDK"
     ],
-    "invocation": [],
+    "invocation": [
+      "Edit",
+      "Write",
+      "MultiEdit"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -136,7 +146,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.execution.shell",
@@ -172,7 +184,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.execution.headless",
@@ -209,7 +223,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.execution.structured_output",
@@ -247,7 +263,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.execution.sdk_embedding",
@@ -267,7 +285,10 @@
       "Python SDK",
       "TypeScript SDK"
     ],
-    "invocation": [],
+    "invocation": [
+      "claude-agent-sdk (Python package)",
+      "@anthropic-ai/claude-agent-sdk (npm package)"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -281,7 +302,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.extensions.mcp_client",
@@ -319,7 +342,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.extensions.skills",
@@ -356,7 +381,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.extensions.plugins",
@@ -393,7 +420,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.extensions.hooks",
@@ -433,7 +462,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.context.project_instructions",
@@ -454,7 +485,9 @@
       "user",
       "managed"
     ],
-    "invocation": [],
+    "invocation": [
+      "CLAUDE.md"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -468,7 +501,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.context.dynamic_injection",
@@ -489,7 +524,11 @@
       "hooks",
       "MCP"
     ],
-    "invocation": [],
+    "invocation": [
+      "Skill tool",
+      "hooks (PreToolUse/UserPromptSubmit)",
+      "MCP tools"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -503,7 +542,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.context.persistent_memory",
@@ -523,7 +564,10 @@
       "auto memory",
       "CLAUDE.md"
     ],
-    "invocation": [],
+    "invocation": [
+      "~/.claude/memory",
+      "MEMORY.md"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [
@@ -539,7 +583,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.sessions.resume_fork",
@@ -577,7 +623,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.orchestration.subagents",
@@ -598,7 +646,9 @@
       "skills",
       "SDK"
     ],
-    "invocation": [],
+    "invocation": [
+      "Agent tool"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -612,7 +662,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.orchestration.parallel_background",
@@ -632,7 +684,9 @@
       "terminal",
       "SDK"
     ],
-    "invocation": [],
+    "invocation": [
+      "run_in_background"
+    ],
     "minimum_version": "2.1.218",
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -646,7 +700,9 @@
         "version": "2.1.218",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.orchestration.cross_session_messaging",
@@ -683,7 +739,9 @@
         "version": "2.1.224",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.orchestration.multi_agent_coordination",
@@ -704,7 +762,10 @@
       "teams",
       "sessions"
     ],
-    "invocation": [],
+    "invocation": [
+      "SendMessage",
+      "ListAgents"
+    ],
     "minimum_version": "2.1.219",
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -718,7 +779,9 @@
         "version": "2.1.219",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.runtime.remote_cloud",
@@ -740,7 +803,9 @@
       "desktop",
       "mobile"
     ],
-    "invocation": [],
+    "invocation": [
+      "RemoteTrigger"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -754,7 +819,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.runtime.self_hosted",
@@ -789,7 +856,9 @@
         "version": "2.1.224",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.automation.ci",
@@ -809,7 +878,10 @@
       "CI",
       "shell pipelines"
     ],
-    "invocation": [],
+    "invocation": [
+      "-p",
+      "--print"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -823,7 +895,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.automation.schedules",
@@ -843,7 +917,11 @@
       "workflows",
       "scheduled tasks"
     ],
-    "invocation": [],
+    "invocation": [
+      "CronCreate",
+      "CronList",
+      "CronDelete"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [
@@ -859,7 +937,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.security.sandbox",
@@ -879,7 +959,9 @@
       "filesystem sandbox",
       "network sandbox"
     ],
-    "invocation": [],
+    "invocation": [
+      "dangerouslyDisableSandbox"
+    ],
     "minimum_version": "2.1.224",
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -893,7 +975,9 @@
         "version": "2.1.224",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.security.permissions",
@@ -914,7 +998,11 @@
       "settings",
       "hooks"
     ],
-    "invocation": [],
+    "invocation": [
+      "permissionMode",
+      "acceptEdits",
+      "bypassPermissions"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -928,7 +1016,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.security.enterprise_policy",
@@ -963,7 +1053,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.observability.usage_cost",
@@ -998,7 +1090,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.observability.tracing",
@@ -1019,7 +1113,11 @@
       "stream JSON",
       "hooks"
     ],
-    "invocation": [],
+    "invocation": [
+      "PreToolUse hook",
+      "PostToolUse hook",
+      "--output-format stream-json"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -1033,7 +1131,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.tools.web_research",
@@ -1071,7 +1171,9 @@
         "version": "2.1.218",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.tools.browser_computer",
@@ -1091,7 +1193,9 @@
       "Chrome",
       "MCP"
     ],
-    "invocation": [],
+    "invocation": [
+      "mcp__claude-in-chrome__*"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -1105,7 +1209,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.interfaces.artifacts",
@@ -1127,7 +1233,9 @@
       "desktop",
       "attachments"
     ],
-    "invocation": [],
+    "invocation": [
+      "Artifact tool"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -1141,7 +1249,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.models.provider_portability",
@@ -1179,7 +1289,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.models.reasoning_control",
@@ -1200,7 +1312,10 @@
       "settings",
       "SDK"
     ],
-    "invocation": [],
+    "invocation": [
+      "/model",
+      "--model"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -1214,7 +1329,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.evaluation.schema_enforcement",
@@ -1248,7 +1365,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.governance.human_approval_api",
@@ -1282,7 +1401,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.interaction.terminal",
@@ -1317,7 +1438,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.interaction.ide",
@@ -1350,7 +1473,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.interaction.desktop_web",
@@ -1384,7 +1509,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.execution.file_edit",
@@ -1419,7 +1546,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.execution.shell",
@@ -1453,7 +1582,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.execution.headless",
@@ -1489,7 +1620,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.execution.structured_output",
@@ -1525,7 +1658,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.execution.sdk_embedding",
@@ -1559,7 +1694,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.execution.rpc_server",
@@ -1595,7 +1732,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.extensions.mcp_client",
@@ -1630,7 +1769,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.extensions.skills",
@@ -1665,7 +1806,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.extensions.plugins",
@@ -1700,7 +1843,9 @@
         "version": "0.147.0",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.context.project_instructions",
@@ -1735,7 +1880,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.sessions.resume_fork",
@@ -1769,7 +1916,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.orchestration.subagents",
@@ -1804,7 +1953,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.orchestration.parallel_background",
@@ -1839,7 +1990,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.orchestration.multi_agent_coordination",
@@ -1874,7 +2027,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.runtime.remote_cloud",
@@ -1909,7 +2064,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.automation.ci",
@@ -1943,7 +2100,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.automation.schedules",
@@ -1980,7 +2139,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.security.sandbox",
@@ -2015,7 +2176,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.security.permissions",
@@ -2050,7 +2213,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.security.enterprise_policy",
@@ -2084,7 +2249,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.observability.usage_cost",
@@ -2119,7 +2286,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.observability.tracing",
@@ -2153,7 +2322,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.tools.web_research",
@@ -2187,7 +2358,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.tools.browser_computer",
@@ -2224,7 +2397,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.interfaces.artifacts",
@@ -2260,7 +2435,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.models.provider_portability",
@@ -2296,7 +2473,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.models.reasoning_control",
@@ -2331,7 +2510,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.governance.human_approval_api",
@@ -2365,7 +2546,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.interaction.terminal",
@@ -2400,7 +2583,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.interaction.ide",
@@ -2433,7 +2618,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.interaction.desktop_web",
@@ -2467,7 +2654,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.execution.file_edit",
@@ -2502,7 +2691,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.execution.shell",
@@ -2535,7 +2726,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.execution.headless",
@@ -2569,7 +2762,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.execution.structured_output",
@@ -2604,7 +2799,9 @@
         "version": "1.18.15",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.extensions.mcp_client",
@@ -2638,7 +2835,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.extensions.skills",
@@ -2672,7 +2871,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.extensions.plugins",
@@ -2705,7 +2906,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.context.project_instructions",
@@ -2739,7 +2942,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.sessions.resume_fork",
@@ -2774,7 +2979,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.orchestration.parallel_background",
@@ -2807,7 +3014,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.automation.ci",
@@ -2842,7 +3051,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.security.permissions",
@@ -2876,7 +3087,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.tools.web_research",
@@ -2910,7 +3123,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.interfaces.artifacts",
@@ -2945,7 +3160,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.models.provider_portability",
@@ -2978,7 +3195,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.opencode.models.reasoning_control",
@@ -3012,7 +3231,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.interaction.terminal",
@@ -3048,7 +3269,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.interaction.desktop_web",
@@ -3082,7 +3305,9 @@
         "version": "0.20.0",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.execution.file_edit",
@@ -3116,7 +3341,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.execution.shell",
@@ -3151,7 +3378,9 @@
         "version": "0.20.0",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.execution.headless",
@@ -3185,7 +3414,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.extensions.mcp_client",
@@ -3219,7 +3450,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.extensions.skills",
@@ -3253,7 +3486,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.extensions.plugins",
@@ -3286,7 +3521,9 @@
         "version": "0.20.0",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.context.persistent_memory",
@@ -3320,7 +3557,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.sessions.resume_fork",
@@ -3354,7 +3593,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.orchestration.subagents",
@@ -3388,7 +3629,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.orchestration.parallel_background",
@@ -3422,7 +3665,9 @@
         "version": "0.18.0",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.orchestration.multi_agent_coordination",
@@ -3455,7 +3700,9 @@
         "version": "0.18.0",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.runtime.remote_cloud",
@@ -3489,7 +3736,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.runtime.self_hosted",
@@ -3525,7 +3774,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.automation.schedules",
@@ -3559,7 +3810,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.security.permissions",
@@ -3594,7 +3847,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.tools.web_research",
@@ -3628,7 +3883,9 @@
         "version": "0.20.0",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.interfaces.voice",
@@ -3661,7 +3918,9 @@
         "version": "0.20.0",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.interfaces.artifacts",
@@ -3694,7 +3953,9 @@
         "version": "0.20.0",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.hermes-agent.models.provider_portability",
@@ -3728,7 +3989,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.interaction.terminal",
@@ -3763,7 +4026,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.interaction.desktop_web",
@@ -3797,7 +4062,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.execution.file_edit",
@@ -3831,7 +4098,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.execution.shell",
@@ -3864,7 +4133,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.execution.headless",
@@ -3900,7 +4171,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.execution.structured_output",
@@ -3937,7 +4210,9 @@
         "version": "1.1.8",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.execution.sdk_embedding",
@@ -3970,7 +4245,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.extensions.mcp_client",
@@ -4003,7 +4280,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.extensions.skills",
@@ -4037,7 +4316,9 @@
         "version": "1.1.9",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.extensions.plugins",
@@ -4070,7 +4351,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.extensions.hooks",
@@ -4107,7 +4390,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.context.project_instructions",
@@ -4140,7 +4425,9 @@
         "version": "1.1.6",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.sessions.resume_fork",
@@ -4176,7 +4463,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.orchestration.subagents",
@@ -4210,7 +4499,9 @@
         "version": "1.1.6",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.orchestration.parallel_background",
@@ -4244,7 +4535,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.orchestration.multi_agent_coordination",
@@ -4278,7 +4571,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.runtime.remote_cloud",
@@ -4312,7 +4607,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.automation.schedules",
@@ -4345,7 +4642,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.security.sandbox",
@@ -4378,7 +4677,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.security.permissions",
@@ -4412,7 +4713,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.security.enterprise_policy",
@@ -4447,7 +4750,9 @@
         "version": "1.1.10",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.observability.usage_cost",
@@ -4483,7 +4788,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.observability.tracing",
@@ -4516,7 +4823,9 @@
         "version": "1.1.8",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.tools.web_research",
@@ -4550,7 +4859,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.tools.browser_computer",
@@ -4583,7 +4894,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.interfaces.artifacts",
@@ -4618,7 +4931,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.models.reasoning_control",
@@ -4654,7 +4969,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.antigravity-cli.evaluation.schema_enforcement",
@@ -4689,7 +5006,9 @@
         "version": "1.1.8",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.interaction.terminal",
@@ -4722,7 +5041,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.execution.file_edit",
@@ -4755,7 +5076,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.execution.shell",
@@ -4788,7 +5111,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.execution.headless",
@@ -4821,7 +5146,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.execution.structured_output",
@@ -4854,7 +5181,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.extensions.mcp_client",
@@ -4887,7 +5216,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.extensions.skills",
@@ -4920,7 +5251,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.extensions.plugins",
@@ -4953,7 +5286,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.extensions.hooks",
@@ -4986,7 +5321,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.orchestration.subagents",
@@ -5019,7 +5356,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.security.permissions",
@@ -5053,7 +5392,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.models.reasoning_control",
@@ -5087,7 +5428,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.qwen-code.interaction.terminal",
@@ -5120,7 +5463,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.qwen-code.interaction.desktop_web",
@@ -5153,7 +5498,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.qwen-code.execution.file_edit",
@@ -5187,7 +5534,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.qwen-code.execution.shell",
@@ -5220,7 +5569,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.qwen-code.extensions.mcp_client",
@@ -5253,7 +5604,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.qwen-code.extensions.skills",
@@ -5286,7 +5639,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.qwen-code.sessions.resume_fork",
@@ -5320,7 +5675,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.qwen-code.models.provider_portability",
@@ -5353,7 +5710,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.goose.interaction.terminal",
@@ -5386,7 +5745,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.goose.interaction.desktop_web",
@@ -5419,7 +5780,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.goose.execution.file_edit",
@@ -5453,7 +5816,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.goose.execution.shell",
@@ -5487,7 +5852,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.goose.execution.headless",
@@ -5521,7 +5888,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.goose.execution.rpc_server",
@@ -5554,7 +5923,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.goose.extensions.mcp_client",
@@ -5588,7 +5959,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.goose.extensions.skills",
@@ -5621,7 +5994,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.goose.orchestration.subagents",
@@ -5655,7 +6030,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.goose.runtime.self_hosted",
@@ -5689,7 +6066,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.goose.models.provider_portability",
@@ -5723,7 +6102,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.github-copilot-cli.interaction.terminal",
@@ -5756,7 +6137,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.github-copilot-cli.execution.headless",
@@ -5789,7 +6172,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.github-copilot-cli.automation.ci",
@@ -5823,7 +6208,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.github-copilot-cli.security.enterprise_policy",
@@ -5856,7 +6243,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.pi-agent.interaction.terminal",
@@ -5889,7 +6278,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.pi-agent.execution.sdk_embedding",
@@ -5922,7 +6313,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.pi-agent.extensions.skills",
@@ -5955,7 +6348,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.pi-agent.extensions.plugins",
@@ -5988,7 +6383,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.pi-agent.models.provider_portability",
@@ -6021,7 +6418,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-python.execution.sdk_embedding",
@@ -6054,7 +6453,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-python.execution.structured_output",
@@ -6087,7 +6488,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-python.extensions.mcp_client",
@@ -6120,7 +6523,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-python.extensions.hooks",
@@ -6154,7 +6559,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-python.orchestration.subagents",
@@ -6187,7 +6594,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-python.sessions.resume_fork",
@@ -6220,7 +6629,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-python.security.permissions",
@@ -6254,7 +6665,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-python.observability.tracing",
@@ -6287,7 +6700,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-python.governance.human_approval_api",
@@ -6320,7 +6735,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-typescript.execution.sdk_embedding",
@@ -6353,7 +6770,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-typescript.execution.structured_output",
@@ -6386,7 +6805,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-typescript.extensions.mcp_client",
@@ -6419,7 +6840,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-typescript.extensions.hooks",
@@ -6453,7 +6876,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-typescript.orchestration.subagents",
@@ -6486,7 +6911,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-typescript.sessions.resume_fork",
@@ -6519,7 +6946,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-typescript.security.permissions",
@@ -6553,7 +6982,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-typescript.observability.tracing",
@@ -6586,7 +7017,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-agent-sdk-typescript.governance.human_approval_api",
@@ -6619,7 +7052,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.codex-sdk-python.execution.sdk_embedding",
@@ -6652,7 +7087,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.codex-sdk-python.execution.rpc_server",
@@ -6685,7 +7122,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.codex-sdk-python.execution.structured_output",
@@ -6719,7 +7158,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.codex-sdk-python.sessions.resume_fork",
@@ -6752,7 +7193,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.codex-sdk-python.security.sandbox",
@@ -6786,7 +7229,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.codex-sdk-python.governance.human_approval_api",
@@ -6819,7 +7264,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.codex-sdk-typescript.execution.sdk_embedding",
@@ -6853,7 +7300,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.codex-sdk-typescript.execution.structured_output",
@@ -6886,7 +7335,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.codex-sdk-typescript.sessions.resume_fork",
@@ -6919,7 +7370,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.codex-sdk-typescript.security.sandbox",
@@ -6954,7 +7407,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-python.execution.sdk_embedding",
@@ -6987,7 +7442,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-python.execution.structured_output",
@@ -7020,7 +7477,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-python.extensions.mcp_client",
@@ -7053,7 +7512,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-python.orchestration.subagents",
@@ -7087,7 +7548,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-python.orchestration.multi_agent_coordination",
@@ -7121,7 +7584,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-python.context.persistent_memory",
@@ -7154,7 +7619,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-python.security.permissions",
@@ -7187,7 +7654,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-python.observability.tracing",
@@ -7220,7 +7689,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-python.models.provider_portability",
@@ -7253,7 +7724,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-python.governance.human_approval_api",
@@ -7287,7 +7760,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-js.execution.sdk_embedding",
@@ -7320,7 +7795,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-js.execution.structured_output",
@@ -7353,7 +7830,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-js.extensions.mcp_client",
@@ -7386,7 +7865,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-js.orchestration.subagents",
@@ -7420,7 +7901,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-js.orchestration.multi_agent_coordination",
@@ -7454,7 +7937,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-js.context.persistent_memory",
@@ -7487,7 +7972,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-js.security.permissions",
@@ -7520,7 +8007,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-js.observability.tracing",
@@ -7553,7 +8042,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-js.models.provider_portability",
@@ -7586,7 +8077,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-agents-sdk-js.governance.human_approval_api",
@@ -7620,7 +8113,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-python-sdk.execution.sdk_embedding",
@@ -7653,7 +8148,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-python-sdk.execution.structured_output",
@@ -7687,7 +8184,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-python-sdk.models.reasoning_control",
@@ -7720,7 +8219,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-node-sdk.execution.sdk_embedding",
@@ -7753,7 +8254,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-node-sdk.execution.structured_output",
@@ -7787,7 +8290,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-node-sdk.models.reasoning_control",
@@ -7820,7 +8325,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.anthropic-python-sdk.execution.sdk_embedding",
@@ -7853,7 +8360,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.anthropic-python-sdk.execution.structured_output",
@@ -7887,7 +8396,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.anthropic-python-sdk.models.reasoning_control",
@@ -7920,7 +8431,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.anthropic-typescript-sdk.execution.sdk_embedding",
@@ -7953,7 +8466,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.anthropic-typescript-sdk.execution.structured_output",
@@ -7987,7 +8502,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.anthropic-typescript-sdk.models.reasoning_control",
@@ -8020,7 +8537,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.openai-codex.tools.image_generation",
@@ -8060,7 +8579,9 @@
         "version": "rust-v0.128.0",
         "verified_at": "2026-08-18T00:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.tools.image_generation",
@@ -8108,6 +8629,8 @@
         "version": null,
         "verified_at": "2026-08-25T00:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   }
 ]
