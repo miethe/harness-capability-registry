@@ -30,7 +30,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.execution.file_edit",
@@ -63,7 +65,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.execution.shell",
@@ -96,7 +100,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.execution.headless",
@@ -129,7 +135,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.execution.structured_output",
@@ -162,7 +170,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.extensions.mcp_client",
@@ -195,7 +205,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.extensions.skills",
@@ -228,7 +240,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.extensions.plugins",
@@ -261,7 +275,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.extensions.hooks",
@@ -294,7 +310,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.orchestration.subagents",
@@ -327,7 +345,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.security.permissions",
@@ -361,7 +381,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.gemini-cli.models.reasoning_control",
@@ -395,6 +417,58 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
+  },
+  {
+    "id": "impl.gemini-cli.tools.image_generation",
+    "harness_id": "gemini-cli",
+    "capability_id": "tools.image_generation",
+    "status": "experimental",
+    "summary": "gemini-cli has no built-in image-synthesis command out of the box; image generation is reached either by installing the community 'nanobanana' extension (extensions.plugins) or by routing a prompt to an image-capable model via -m (e.g. gemini-3.1-flash-image) — neither path is documented as a first-class gemini-cli feature.",
+    "actor_access": {
+      "human_operator": "experimental",
+      "in_harness_agent": "unknown",
+      "external_orchestrator": "experimental",
+      "ci_runner": "unknown",
+      "administrator": "configurable"
+    },
+    "requires_human_mediation": false,
+    "surfaces": [
+      "terminal",
+      "extensions.plugins"
+    ],
+    "invocation": [
+      "gemini extensions install https://github.com/gemini-cli-extensions/nanobanana  (then) /generate <prompt>",
+      "gemini -p \"<prompt>\" -m gemini-3.1-flash-image --yolo -o text  (undocumented, AOS-observed model-routing path)"
+    ],
+    "minimum_version": null,
+    "current_version_verified": "0.56.0-preview.1",
+    "limitations": [
+      "geminicli.com/docs documents no built-in image synthesis command; both invocation paths above are extension- or model-routing-based, not a native CLI feature.",
+      "Neither path was live-verified end-to-end (does it save an image file headlessly) in this session; this row is inferred from official model docs plus a community extension's README, not a confirmed local run.",
+      "The nanobanana extension is community-maintained (gemini-cli-extensions org), not published by Google."
+    ],
+    "confidence": "inferred_low",
+    "verified_at": "2026-08-25T00:00:00Z",
+    "evidence": [
+      {
+        "source_id": "src.gemini.image-gen-api-docs",
+        "url": "https://ai.google.dev/gemini-api/docs/image-generation",
+        "claim": "Documents the Nano Banana image-generation model family (gemini-3.1-flash-image, gemini-3-pro-image-preview) reachable through Gemini clients, including gemini-cli via -m model routing.",
+        "version": null,
+        "verified_at": "2026-08-25T00:00:00Z"
+      },
+      {
+        "source_id": "src.gemini.nanobanana-extension",
+        "url": "https://github.com/gemini-cli-extensions/nanobanana",
+        "claim": "Community gemini-cli extension adding /generate, /edit, /icon and related image commands backed by Nano Banana models, installed via `gemini extensions install`.",
+        "version": null,
+        "verified_at": "2026-08-25T00:00:00Z"
+      }
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   }
 ]

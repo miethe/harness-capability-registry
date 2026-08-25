@@ -32,7 +32,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.interaction.ide",
@@ -66,7 +68,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "not_applicable",
+    "invocation_na_reason": "Installed via IDE extension marketplace (VS Code/JetBrains), not invoked via a CLI token."
   },
   {
     "id": "impl.claude-code.interaction.desktop_web",
@@ -101,7 +105,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "not_applicable",
+    "invocation_na_reason": "Accessed via the desktop app / claude.ai/code web UI account surfaces, not a CLI invocation token."
   },
   {
     "id": "impl.claude-code.execution.file_edit",
@@ -122,7 +128,11 @@
       "IDE",
       "SDK"
     ],
-    "invocation": [],
+    "invocation": [
+      "Edit",
+      "Write",
+      "MultiEdit"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -136,7 +146,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.execution.shell",
@@ -172,7 +184,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.execution.headless",
@@ -209,7 +223,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.execution.structured_output",
@@ -247,7 +263,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.execution.sdk_embedding",
@@ -267,7 +285,10 @@
       "Python SDK",
       "TypeScript SDK"
     ],
-    "invocation": [],
+    "invocation": [
+      "claude-agent-sdk (Python package)",
+      "@anthropic-ai/claude-agent-sdk (npm package)"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -281,7 +302,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.extensions.mcp_client",
@@ -319,7 +342,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.extensions.skills",
@@ -356,7 +381,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.extensions.plugins",
@@ -393,7 +420,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.extensions.hooks",
@@ -433,7 +462,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.context.project_instructions",
@@ -454,7 +485,9 @@
       "user",
       "managed"
     ],
-    "invocation": [],
+    "invocation": [
+      "CLAUDE.md"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -468,7 +501,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.context.dynamic_injection",
@@ -489,7 +524,11 @@
       "hooks",
       "MCP"
     ],
-    "invocation": [],
+    "invocation": [
+      "Skill tool",
+      "hooks (PreToolUse/UserPromptSubmit)",
+      "MCP tools"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -503,7 +542,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.context.persistent_memory",
@@ -523,7 +564,10 @@
       "auto memory",
       "CLAUDE.md"
     ],
-    "invocation": [],
+    "invocation": [
+      "~/.claude/memory",
+      "MEMORY.md"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [
@@ -539,7 +583,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.sessions.resume_fork",
@@ -577,7 +623,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.orchestration.subagents",
@@ -598,7 +646,9 @@
       "skills",
       "SDK"
     ],
-    "invocation": [],
+    "invocation": [
+      "Agent tool"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -612,7 +662,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.orchestration.parallel_background",
@@ -632,7 +684,9 @@
       "terminal",
       "SDK"
     ],
-    "invocation": [],
+    "invocation": [
+      "run_in_background"
+    ],
     "minimum_version": "2.1.218",
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -646,7 +700,9 @@
         "version": "2.1.218",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.orchestration.cross_session_messaging",
@@ -683,7 +739,9 @@
         "version": "2.1.224",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.orchestration.multi_agent_coordination",
@@ -704,7 +762,10 @@
       "teams",
       "sessions"
     ],
-    "invocation": [],
+    "invocation": [
+      "SendMessage",
+      "ListAgents"
+    ],
     "minimum_version": "2.1.219",
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -718,7 +779,9 @@
         "version": "2.1.219",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.runtime.remote_cloud",
@@ -740,7 +803,9 @@
       "desktop",
       "mobile"
     ],
-    "invocation": [],
+    "invocation": [
+      "RemoteTrigger"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -754,7 +819,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.runtime.self_hosted",
@@ -789,7 +856,9 @@
         "version": "2.1.224",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.automation.ci",
@@ -809,7 +878,10 @@
       "CI",
       "shell pipelines"
     ],
-    "invocation": [],
+    "invocation": [
+      "-p",
+      "--print"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -823,7 +895,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.automation.schedules",
@@ -843,7 +917,11 @@
       "workflows",
       "scheduled tasks"
     ],
-    "invocation": [],
+    "invocation": [
+      "CronCreate",
+      "CronList",
+      "CronDelete"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [
@@ -859,7 +937,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.security.sandbox",
@@ -879,7 +959,9 @@
       "filesystem sandbox",
       "network sandbox"
     ],
-    "invocation": [],
+    "invocation": [
+      "dangerouslyDisableSandbox"
+    ],
     "minimum_version": "2.1.224",
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -893,7 +975,9 @@
         "version": "2.1.224",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.security.permissions",
@@ -914,7 +998,11 @@
       "settings",
       "hooks"
     ],
-    "invocation": [],
+    "invocation": [
+      "permissionMode",
+      "acceptEdits",
+      "bypassPermissions"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -928,7 +1016,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.security.enterprise_policy",
@@ -963,7 +1053,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.observability.usage_cost",
@@ -998,7 +1090,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.observability.tracing",
@@ -1019,7 +1113,11 @@
       "stream JSON",
       "hooks"
     ],
-    "invocation": [],
+    "invocation": [
+      "PreToolUse hook",
+      "PostToolUse hook",
+      "--output-format stream-json"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -1033,7 +1131,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.tools.web_research",
@@ -1071,7 +1171,9 @@
         "version": "2.1.218",
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.tools.browser_computer",
@@ -1091,7 +1193,9 @@
       "Chrome",
       "MCP"
     ],
-    "invocation": [],
+    "invocation": [
+      "mcp__claude-in-chrome__*"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -1105,7 +1209,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.interfaces.artifacts",
@@ -1127,7 +1233,9 @@
       "desktop",
       "attachments"
     ],
-    "invocation": [],
+    "invocation": [
+      "Artifact tool"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -1141,7 +1249,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.models.provider_portability",
@@ -1179,7 +1289,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.models.reasoning_control",
@@ -1200,7 +1312,10 @@
       "settings",
       "SDK"
     ],
-    "invocation": [],
+    "invocation": [
+      "/model",
+      "--model"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.1.226",
     "limitations": [],
@@ -1214,7 +1329,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "resolved",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.evaluation.schema_enforcement",
@@ -1248,7 +1365,9 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   },
   {
     "id": "impl.claude-code.governance.human_approval_api",
@@ -1282,6 +1401,8 @@
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
       }
-    ]
+    ],
+    "invocation_status": "unreviewed",
+    "invocation_na_reason": null
   }
 ]

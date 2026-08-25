@@ -17,7 +17,7 @@ from hcr.collectors.package_registries import (
 )
 from hcr.collectors.markdown_changelog import filter_release_window, parse_changelog_file
 from hcr.generators.bundle import build_bundle
-from hcr.generators.reports import generate_coverage_report
+from hcr.generators.reports import generate_coverage_report, generate_invocation_coverage_report
 from hcr.io import read_json, write_json, write_text
 from hcr.validators.core import validate_registry
 from hcr.versions import release_timeline_key, release_version_key
@@ -278,6 +278,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
     root = _root(args.root)
     bundle = build_bundle(root)
     generate_coverage_report(bundle, root / "generated" / "reports" / "coverage.md")
+    generate_invocation_coverage_report(bundle, root / "generated" / "reports" / "invocation-coverage.md")
     print(json.dumps(bundle["stats"], indent=2))
     return 0
 

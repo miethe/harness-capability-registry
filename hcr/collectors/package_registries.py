@@ -74,7 +74,6 @@ def _release(
                 },
             }
         ],
-        "assets": assets,
         "provenance": {
             "authority": "package_registry",
             "ingestion": f"{ecosystem.lower()}_registry_api",

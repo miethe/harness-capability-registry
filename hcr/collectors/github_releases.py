@@ -104,16 +104,6 @@ def _normalize_release(item: dict[str, Any], *, harness_id: str, source_id: str)
             "deprecation": any(change["kind"] == "deprecated" for change in changes),
         },
         "changes": changes,
-        "assets": [
-            {
-                "name": asset.get("name"),
-                "url": asset.get("browser_download_url"),
-                "size": asset.get("size"),
-                "content_type": asset.get("content_type"),
-                "digest": asset.get("digest"),
-            }
-            for asset in item.get("assets", [])
-        ],
         "provenance": {
             "authority": "official_primary",
             "ingestion": "github_releases_api",

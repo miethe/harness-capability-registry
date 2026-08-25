@@ -11,6 +11,7 @@ from hcr.io import read_json, write_json
 ALLOWED_ACCESS = {"native", "supported", "configurable", "experimental", "mediated", "unavailable", "unknown", "deprecated"}
 ALLOWED_CONFIDENCE = {"verified_official", "inferred_high", "inferred_low", "unknown"}
 ALLOWED_LIFECYCLE = {"active", "maintenance", "transitioning", "legacy", "archived", "monitoring_only"}
+ALLOWED_INVOCATION_STATUS = {"resolved", "not_applicable", "unreviewed"}
 
 
 def _duplicates(values: list[str]) -> list[str]:
@@ -119,6 +120,19 @@ def validate_registry(root: Path) -> dict[str, Any]:
         for evidence in capability.get("evidence", []):
             if evidence.get("source_id") not in source_ids:
                 errors.append(f"Capability {capability['id']} evidence references unknown source {evidence.get('source_id')}")
+        invocation = capability.get("invocation") or []
+        invocation_status = capability.get("invocation_status")
+        na_reason = capability.get("invocation_na_reason")
+        if invocation_status not in ALLOWED_INVOCATION_STATUS:
+            errors.append(f"Capability {capability['id']} has invalid invocation_status {invocation_status}")
+        elif invocation_status == "resolved" and not invocation:
+            errors.append(f"Capability {capability['id']} is invocation_status=resolved but invocation is empty")
+        elif invocation_status in ("not_applicable", "unreviewed") and invocation:
+            errors.append(f"Capability {capability['id']} is invocation_status={invocation_status} but invocation is non-empty")
+        if invocation_status == "not_applicable" and not na_reason:
+            errors.append(f"Capability {capability['id']} is invocation_status=not_applicable but invocation_na_reason is empty")
+        if invocation_status != "not_applicable" and na_reason:
+            errors.append(f"Capability {capability['id']} has invocation_na_reason set but invocation_status is {invocation_status}")
 
     for release in releases:
         if release.get("harness_id") not in harness_ids:

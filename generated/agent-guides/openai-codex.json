@@ -798,6 +798,37 @@
           }
         ],
         "access": "supported"
+      },
+      {
+        "capability_id": "tools.image_generation",
+        "name": "Image generation",
+        "category": "tools",
+        "status": "experimental",
+        "summary": "A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand.",
+        "surfaces": [
+          "terminal",
+          "codex exec"
+        ],
+        "invocation": [
+          "codex exec --sandbox workspace-write \"Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one.\""
+        ],
+        "minimum_version": null,
+        "limitations": [
+          "No documented CLI flag or subcommand triggers it; invocation is a natural-language prompt the model routes to the bundled imagegen skill.",
+          "The underlying image model was not named in the transcript that produced the live-verified output; gpt-image-2 is inferred from release notes, not confirmed.",
+          "Not documented in `codex --help`, any subcommand `--help`, or official OpenAI Codex docs; evidence is a live local run plus release-note corroboration, not vendor documentation."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.releases",
+            "url": "https://github.com/openai/codex/releases",
+            "version": "rust-v0.128.0",
+            "verified_at": "2026-08-18T00:00:00Z",
+            "claim": "Release notes reference an 'imagegen' bundled system skill updated for gpt-image-2 (rust-v0.124.0: 'Update imagegen system skill'; rust-v0.128.0: bundled OpenAI Docs skill updated for gpt-image-2), corroborating the feature-flagged image_generation capability observed live."
+          }
+        ],
+        "access": "supported"
       }
     ],
     "administrator": [
@@ -1604,6 +1635,37 @@
           }
         ],
         "access": "configurable"
+      },
+      {
+        "capability_id": "tools.image_generation",
+        "name": "Image generation",
+        "category": "tools",
+        "status": "experimental",
+        "summary": "A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand.",
+        "surfaces": [
+          "terminal",
+          "codex exec"
+        ],
+        "invocation": [
+          "codex exec --sandbox workspace-write \"Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one.\""
+        ],
+        "minimum_version": null,
+        "limitations": [
+          "No documented CLI flag or subcommand triggers it; invocation is a natural-language prompt the model routes to the bundled imagegen skill.",
+          "The underlying image model was not named in the transcript that produced the live-verified output; gpt-image-2 is inferred from release notes, not confirmed.",
+          "Not documented in `codex --help`, any subcommand `--help`, or official OpenAI Codex docs; evidence is a live local run plus release-note corroboration, not vendor documentation."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.releases",
+            "url": "https://github.com/openai/codex/releases",
+            "version": "rust-v0.128.0",
+            "verified_at": "2026-08-18T00:00:00Z",
+            "claim": "Release notes reference an 'imagegen' bundled system skill updated for gpt-image-2 (rust-v0.124.0: 'Update imagegen system skill'; rust-v0.128.0: bundled OpenAI Docs skill updated for gpt-image-2), corroborating the feature-flagged image_generation capability observed live."
+          }
+        ],
+        "access": "configurable"
       }
     ],
     "in_harness_agent": [
@@ -1918,6 +1980,37 @@
           }
         ],
         "access": "supported"
+      },
+      {
+        "capability_id": "tools.image_generation",
+        "name": "Image generation",
+        "category": "tools",
+        "status": "experimental",
+        "summary": "A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand.",
+        "surfaces": [
+          "terminal",
+          "codex exec"
+        ],
+        "invocation": [
+          "codex exec --sandbox workspace-write \"Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one.\""
+        ],
+        "minimum_version": null,
+        "limitations": [
+          "No documented CLI flag or subcommand triggers it; invocation is a natural-language prompt the model routes to the bundled imagegen skill.",
+          "The underlying image model was not named in the transcript that produced the live-verified output; gpt-image-2 is inferred from release notes, not confirmed.",
+          "Not documented in `codex --help`, any subcommand `--help`, or official OpenAI Codex docs; evidence is a live local run plus release-note corroboration, not vendor documentation."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.releases",
+            "url": "https://github.com/openai/codex/releases",
+            "version": "rust-v0.128.0",
+            "verified_at": "2026-08-18T00:00:00Z",
+            "claim": "Release notes reference an 'imagegen' bundled system skill updated for gpt-image-2 (rust-v0.124.0: 'Update imagegen system skill'; rust-v0.128.0: bundled OpenAI Docs skill updated for gpt-image-2), corroborating the feature-flagged image_generation capability observed live."
+          }
+        ],
+        "access": "native"
       }
     ],
     "external_orchestrator": [
@@ -2597,6 +2690,37 @@
           }
         ],
         "access": "native"
+      },
+      {
+        "capability_id": "tools.image_generation",
+        "name": "Image generation",
+        "category": "tools",
+        "status": "experimental",
+        "summary": "A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand.",
+        "surfaces": [
+          "terminal",
+          "codex exec"
+        ],
+        "invocation": [
+          "codex exec --sandbox workspace-write \"Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one.\""
+        ],
+        "minimum_version": null,
+        "limitations": [
+          "No documented CLI flag or subcommand triggers it; invocation is a natural-language prompt the model routes to the bundled imagegen skill.",
+          "The underlying image model was not named in the transcript that produced the live-verified output; gpt-image-2 is inferred from release notes, not confirmed.",
+          "Not documented in `codex --help`, any subcommand `--help`, or official OpenAI Codex docs; evidence is a live local run plus release-note corroboration, not vendor documentation."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.releases",
+            "url": "https://github.com/openai/codex/releases",
+            "version": "rust-v0.128.0",
+            "verified_at": "2026-08-18T00:00:00Z",
+            "claim": "Release notes reference an 'imagegen' bundled system skill updated for gpt-image-2 (rust-v0.124.0: 'Update imagegen system skill'; rust-v0.128.0: bundled OpenAI Docs skill updated for gpt-image-2), corroborating the feature-flagged image_generation capability observed live."
+          }
+        ],
+        "access": "supported"
       }
     ],
     "ci_runner": [
@@ -3273,6 +3397,37 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts."
+          }
+        ],
+        "access": "supported"
+      },
+      {
+        "capability_id": "tools.image_generation",
+        "name": "Image generation",
+        "category": "tools",
+        "status": "experimental",
+        "summary": "A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand.",
+        "surfaces": [
+          "terminal",
+          "codex exec"
+        ],
+        "invocation": [
+          "codex exec --sandbox workspace-write \"Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one.\""
+        ],
+        "minimum_version": null,
+        "limitations": [
+          "No documented CLI flag or subcommand triggers it; invocation is a natural-language prompt the model routes to the bundled imagegen skill.",
+          "The underlying image model was not named in the transcript that produced the live-verified output; gpt-image-2 is inferred from release notes, not confirmed.",
+          "Not documented in `codex --help`, any subcommand `--help`, or official OpenAI Codex docs; evidence is a live local run plus release-note corroboration, not vendor documentation."
+        ],
+        "confidence": "inferred_high",
+        "evidence": [
+          {
+            "source_id": "src.codex.releases",
+            "url": "https://github.com/openai/codex/releases",
+            "version": "rust-v0.128.0",
+            "verified_at": "2026-08-18T00:00:00Z",
+            "claim": "Release notes reference an 'imagegen' bundled system skill updated for gpt-image-2 (rust-v0.124.0: 'Update imagegen system skill'; rust-v0.128.0: bundled OpenAI Docs skill updated for gpt-image-2), corroborating the feature-flagged image_generation capability observed live."
           }
         ],
         "access": "supported"
