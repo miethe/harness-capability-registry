@@ -26,15 +26,35 @@ Ordered by nearness to value; each consumption seam is (or will be) an itt node.
 1. **Delegation-router / model-registry join (primary consumer).**
    `~/.claude/config/model-registry.yaml` holds model×provider routing; HCR holds
    harness×capability×actor evidence. The join answers "can this leg run on that harness at all,
-   and via which surface." First increment: `harness-routing-advisor` agent (already deployed)
-   reads `generated/agent-guides/<id>.json` on demand — no resolver change. Later increment:
+   and via which surface." ⚠️ **Superseded 2026-08-16 by agentic_meta_dev PR #360** (node_01M05TK7TV9J7G8A46QDYF3Z7K):
+   the "First increment" below described `harness-routing-advisor` (agent, model-call-per-lookup)
+   as the live path — it never became reachable outside HCR itself (node_01M05TD19Q2FYSJVRC1TD25WT3,
+   re-verified 2026-08-25: still not in `~/.claude/agents/`, still undeclared in any consuming
+   project's `.claude/aos-artifacts.yaml`), and PR #360 built the cheaper alternative this doc's
+   own §2 item 2 language already anticipated: a **committed, generated projection**
+   (`agentic_meta_dev/docs/agentic-operator/HARNESS-CAPABILITIES.md` + `.yaml`, produced by
+   `scripts/generate_harness_capabilities.py` reading HCR via a pinned git ref) that is a pure
+   file read — constraint 4, no agent dispatch, no model call on the lookup path. That is now the
+   live consumption path for the common case; the advisor agent stays undeployed by decision, not
+   by oversight. `scripts/check_harness_capability_staleness.py` gates projection freshness at
+   commit time (refreshed 2026-08-25: 0 commits behind `origin/main`, was 4 behind). Original text
+   preserved below for history:
+   ~~First increment: `harness-routing-advisor` agent (already deployed)
+   reads `generated/agent-guides/<id>.json` on demand — no resolver change.~~ Later increment:
    registry entries carry `harness_id` + minimum-version pins validated against HarnessBOMs.
    Constraint 4 holds: the read path is a file read, never a model call.
 2. **"What did we miss" feature harvesting (the `/advisor`-class discovery Nick named).**
    The release ledger for claude-code/codex/gemini-cli, diffed against what the AOS actually
    uses, yields a periodic "unused capability" report — the exact "we aren't utilizing new
    features" gap that motivated HCR. Runs as a report-only generator; findings file itt nodes
-   per `finding-capture.md`.
+   per `finding-capture.md`. **Live on both sides as of 2026-08-25** (node_01M05TBRKCN0Z9HG1S8M3ZN658):
+   consumer-side, `agentic_meta_dev/scripts/report_unused_capabilities.py` (predicate-based,
+   grep against the AOS's own code — 17/88 checked against the four allow-listed harnesses as of
+   this writing, never a silent clean bill); producer-side, `hcr generate` now also emits
+   `generated/reports/invocation-coverage.md` off each capability's own `invocation_status`
+   (46/237 resolved-or-n/a registry-wide; claude-code specifically at 31/36). The two are
+   deliberately not merged — one measures "does HCR know an invocation token", the other measures
+   "does the AOS actually use it" — but both share the same never-silent-truncation discipline.
 3. **Impact review on releases.** A release event touching a harness the AOS runs (Claude Code
    above all) triggers an impact-review node in the affected repo's tree (spec 04 §3, writebacks
    §11). Starts manual/curated — deliberately, because the SkillBOM/CCDash/environment mappings
