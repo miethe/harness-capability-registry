@@ -28,6 +28,7 @@ artifact_kind: harness_capability_guide
 - **Model and reasoning controls** (`native`): Model selection and plan-mode workflows are configurable. Invocation: `See evidence`.
 - **Subagents/delegation** (`supported`): Subagents were supported and ported to Antigravity CLI. Invocation: `See evidence`.
 - **Granular permissions and approvals** (`native`): Gemini CLI provides approval and policy controls for tools. Invocation: `See evidence`.
+- **Image generation** (`experimental`): gemini-cli has no built-in image-synthesis command out of the box; image generation is reached either by installing the community 'nanobanana' extension (extensions.plugins) or by routing a prompt to an image-capable model via -m (e.g. gemini-3.1-flash-image) — neither path is documented as a first-class gemini-cli feature. Invocation: `gemini extensions install https://github.com/gemini-cli-extensions/nanobanana  (then) /generate <prompt>, gemini -p "<prompt>" -m gemini-3.1-flash-image --yolo -o text  (undocumented, AOS-observed model-routing path)`.
 
 ## In-harness agent
 
@@ -52,6 +53,7 @@ artifact_kind: harness_capability_guide
 - **Model and reasoning controls** (`configurable`): Model selection and plan-mode workflows are configurable. Invocation: `See evidence`.
 - **Subagents/delegation** (`supported`): Subagents were supported and ported to Antigravity CLI. Invocation: `See evidence`.
 - **Granular permissions and approvals** (`supported`): Gemini CLI provides approval and policy controls for tools. Invocation: `See evidence`.
+- **Image generation** (`experimental`): gemini-cli has no built-in image-synthesis command out of the box; image generation is reached either by installing the community 'nanobanana' extension (extensions.plugins) or by routing a prompt to an image-capable model via -m (e.g. gemini-3.1-flash-image) — neither path is documented as a first-class gemini-cli feature. Invocation: `gemini extensions install https://github.com/gemini-cli-extensions/nanobanana  (then) /generate <prompt>, gemini -p "<prompt>" -m gemini-3.1-flash-image --yolo -o text  (undocumented, AOS-observed model-routing path)`.
 
 ## CI or scheduled automation
 
@@ -81,6 +83,7 @@ artifact_kind: harness_capability_guide
 - **Model and reasoning controls** (`configurable`): Model selection and plan-mode workflows are configurable. Invocation: `See evidence`.
 - **Subagents/delegation** (`configurable`): Subagents were supported and ported to Antigravity CLI. Invocation: `See evidence`.
 - **Granular permissions and approvals** (`configurable`): Gemini CLI provides approval and policy controls for tools. Invocation: `See evidence`.
+- **Image generation** (`configurable`): gemini-cli has no built-in image-synthesis command out of the box; image generation is reached either by installing the community 'nanobanana' extension (extensions.plugins) or by routing a prompt to an image-capable model via -m (e.g. gemini-3.1-flash-image) — neither path is documented as a first-class gemini-cli feature. Invocation: `gemini extensions install https://github.com/gemini-cli-extensions/nanobanana  (then) /generate <prompt>, gemini -p "<prompt>" -m gemini-3.1-flash-image --yolo -o text  (undocumented, AOS-observed model-routing path)`.
 
 ## Freshness rule
 

@@ -46,6 +46,7 @@ artifact_kind: harness_capability_guide
 - **Granular permissions and approvals** (`native`): Approval policies and permission profiles define when commands can run automatically. Invocation: `See evidence`.
 - **Programmatic human approval** (`supported`): App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts. Invocation: `See evidence`.
 - **Resume, fork, and session lineage** (`native`): Saved sessions can be resumed, forked, named, and deleted through stable CLI commands. Invocation: `See evidence`.
+- **Image generation** (`supported`): A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand. Invocation: `codex exec --sandbox workspace-write "Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one."`.
 
 ## In-harness agent
 
@@ -61,6 +62,7 @@ artifact_kind: harness_capability_guide
 - **Subagents/delegation** (`native`): Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection. Invocation: `See evidence`.
 - **Browser/computer use** (`native`): Codex models and connected tools can support browser/computer-use workflows depending on model and surface. Invocation: `See evidence`.
 - **Web search/research** (`native`): Codex supports opt-in web search and MCP-based external tools. Invocation: `See evidence`.
+- **Image generation** (`native`): A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand. Invocation: `codex exec --sandbox workspace-write "Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one."`.
 
 ## External agent/orchestrator
 
@@ -90,6 +92,7 @@ artifact_kind: harness_capability_guide
 - **Granular permissions and approvals** (`supported`): Approval policies and permission profiles define when commands can run automatically. Invocation: `See evidence`.
 - **Programmatic human approval** (`native`): App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts. Invocation: `See evidence`.
 - **Resume, fork, and session lineage** (`supported`): Saved sessions can be resumed, forked, named, and deleted through stable CLI commands. Invocation: `See evidence`.
+- **Image generation** (`supported`): A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand. Invocation: `codex exec --sandbox workspace-write "Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one."`.
 
 ## CI or scheduled automation
 
@@ -119,6 +122,7 @@ artifact_kind: harness_capability_guide
 - **Granular permissions and approvals** (`supported`): Approval policies and permission profiles define when commands can run automatically. Invocation: `See evidence`.
 - **Programmatic human approval** (`supported`): App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts. Invocation: `See evidence`.
 - **Resume, fork, and session lineage** (`supported`): Saved sessions can be resumed, forked, named, and deleted through stable CLI commands. Invocation: `See evidence`.
+- **Image generation** (`supported`): A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand. Invocation: `codex exec --sandbox workspace-write "Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one."`.
 
 ## Administrator
 
@@ -153,6 +157,7 @@ artifact_kind: harness_capability_guide
 - **Granular permissions and approvals** (`native`): Approval policies and permission profiles define when commands can run automatically. Invocation: `See evidence`.
 - **Programmatic human approval** (`configurable`): App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts. Invocation: `See evidence`.
 - **Resume, fork, and session lineage** (`configurable`): Saved sessions can be resumed, forked, named, and deleted through stable CLI commands. Invocation: `See evidence`.
+- **Image generation** (`configurable`): A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand. Invocation: `codex exec --sandbox workspace-write "Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one."`.
 
 ## Freshness rule
 

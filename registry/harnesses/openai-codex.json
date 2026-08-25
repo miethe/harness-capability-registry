@@ -1146,6 +1146,46 @@
           "verified_at": "2026-08-08T20:00:00Z"
         }
       ]
+    },
+    {
+      "id": "impl.openai-codex.tools.image_generation",
+      "harness_id": "openai-codex",
+      "capability_id": "tools.image_generation",
+      "status": "experimental",
+      "summary": "A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand.",
+      "actor_access": {
+        "human_operator": "supported",
+        "in_harness_agent": "native",
+        "external_orchestrator": "supported",
+        "ci_runner": "supported",
+        "administrator": "configurable"
+      },
+      "requires_human_mediation": false,
+      "surfaces": [
+        "terminal",
+        "codex exec"
+      ],
+      "invocation": [
+        "codex exec --sandbox workspace-write \"Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one.\""
+      ],
+      "minimum_version": null,
+      "current_version_verified": "0.148.0-alpha.9",
+      "limitations": [
+        "No documented CLI flag or subcommand triggers it; invocation is a natural-language prompt the model routes to the bundled imagegen skill.",
+        "The underlying image model was not named in the transcript that produced the live-verified output; gpt-image-2 is inferred from release notes, not confirmed.",
+        "Not documented in `codex --help`, any subcommand `--help`, or official OpenAI Codex docs; evidence is a live local run plus release-note corroboration, not vendor documentation."
+      ],
+      "confidence": "inferred_high",
+      "verified_at": "2026-08-18T00:00:00Z",
+      "evidence": [
+        {
+          "source_id": "src.codex.releases",
+          "url": "https://github.com/openai/codex/releases",
+          "claim": "Release notes reference an 'imagegen' bundled system skill updated for gpt-image-2 (rust-v0.124.0: 'Update imagegen system skill'; rust-v0.128.0: bundled OpenAI Docs skill updated for gpt-image-2), corroborating the feature-flagged image_generation capability observed live.",
+          "version": "rust-v0.128.0",
+          "verified_at": "2026-08-18T00:00:00Z"
+        }
+      ]
     }
   ],
   "releases": [

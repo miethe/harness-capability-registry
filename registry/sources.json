@@ -1556,5 +1556,50 @@
       "staleness_sla_hours": 24
     },
     "notes": null
+  },
+  {
+    "id": "src.gemini.image-gen-api-docs",
+    "name": "Gemini API image generation (Nano Banana) docs",
+    "url": "https://ai.google.dev/gemini-api/docs/image-generation",
+    "harness_ids": [
+      "gemini-cli"
+    ],
+    "source_type": "documentation",
+    "purpose": "capability_reference",
+    "authority": "official_primary",
+    "official": true,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference"
+    },
+    "refresh": {
+      "cadence": "monthly",
+      "historical_backfill_days": 0,
+      "staleness_sla_hours": 720
+    },
+    "notes": "Documents the Nano Banana image-generation model family (gemini-3.1-flash-image, gemini-3-pro-image-preview) that gemini-cli can route prompts to via -m; this is model/API evidence, not evidence of a first-class gemini-cli CLI feature."
+  },
+  {
+    "id": "src.gemini.nanobanana-extension",
+    "name": "gemini-cli-extensions/nanobanana (community extension)",
+    "url": "https://github.com/gemini-cli-extensions/nanobanana",
+    "harness_ids": [
+      "gemini-cli"
+    ],
+    "source_type": "repository",
+    "purpose": "capability_reference",
+    "authority": "community_discovery",
+    "official": false,
+    "enabled": true,
+    "collector": {
+      "kind": "manual_reference",
+      "repo": "gemini-cli-extensions/nanobanana"
+    },
+    "refresh": {
+      "cadence": "monthly",
+      "historical_backfill_days": 0,
+      "staleness_sla_hours": 720
+    },
+    "notes": "Community (not Google-official) gemini-cli extension, installed via `gemini extensions install`, adding /generate and related image commands backed by Nano Banana models. Confirms gemini-cli's extension mechanism (HCR: extensions.plugins) is the documented path to image generation, not a native out-of-box CLI capability \u2014 per geminicli.com/docs, which documents no built-in image synthesis command."
   }
 ]

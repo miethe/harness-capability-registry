@@ -4785,6 +4785,37 @@
             }
           ],
           "access": "supported"
+        },
+        {
+          "capability_id": "tools.image_generation",
+          "name": "Image generation",
+          "category": "tools",
+          "status": "experimental",
+          "summary": "A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand.",
+          "surfaces": [
+            "terminal",
+            "codex exec"
+          ],
+          "invocation": [
+            "codex exec --sandbox workspace-write \"Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one.\""
+          ],
+          "minimum_version": null,
+          "limitations": [
+            "No documented CLI flag or subcommand triggers it; invocation is a natural-language prompt the model routes to the bundled imagegen skill.",
+            "The underlying image model was not named in the transcript that produced the live-verified output; gpt-image-2 is inferred from release notes, not confirmed.",
+            "Not documented in `codex --help`, any subcommand `--help`, or official OpenAI Codex docs; evidence is a live local run plus release-note corroboration, not vendor documentation."
+          ],
+          "confidence": "inferred_high",
+          "evidence": [
+            {
+              "source_id": "src.codex.releases",
+              "url": "https://github.com/openai/codex/releases",
+              "version": "rust-v0.128.0",
+              "verified_at": "2026-08-18T00:00:00Z",
+              "claim": "Release notes reference an 'imagegen' bundled system skill updated for gpt-image-2 (rust-v0.124.0: 'Update imagegen system skill'; rust-v0.128.0: bundled OpenAI Docs skill updated for gpt-image-2), corroborating the feature-flagged image_generation capability observed live."
+            }
+          ],
+          "access": "supported"
         }
       ],
       "administrator": [
@@ -5591,6 +5622,37 @@
             }
           ],
           "access": "configurable"
+        },
+        {
+          "capability_id": "tools.image_generation",
+          "name": "Image generation",
+          "category": "tools",
+          "status": "experimental",
+          "summary": "A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand.",
+          "surfaces": [
+            "terminal",
+            "codex exec"
+          ],
+          "invocation": [
+            "codex exec --sandbox workspace-write \"Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one.\""
+          ],
+          "minimum_version": null,
+          "limitations": [
+            "No documented CLI flag or subcommand triggers it; invocation is a natural-language prompt the model routes to the bundled imagegen skill.",
+            "The underlying image model was not named in the transcript that produced the live-verified output; gpt-image-2 is inferred from release notes, not confirmed.",
+            "Not documented in `codex --help`, any subcommand `--help`, or official OpenAI Codex docs; evidence is a live local run plus release-note corroboration, not vendor documentation."
+          ],
+          "confidence": "inferred_high",
+          "evidence": [
+            {
+              "source_id": "src.codex.releases",
+              "url": "https://github.com/openai/codex/releases",
+              "version": "rust-v0.128.0",
+              "verified_at": "2026-08-18T00:00:00Z",
+              "claim": "Release notes reference an 'imagegen' bundled system skill updated for gpt-image-2 (rust-v0.124.0: 'Update imagegen system skill'; rust-v0.128.0: bundled OpenAI Docs skill updated for gpt-image-2), corroborating the feature-flagged image_generation capability observed live."
+            }
+          ],
+          "access": "configurable"
         }
       ],
       "in_harness_agent": [
@@ -5905,6 +5967,37 @@
             }
           ],
           "access": "supported"
+        },
+        {
+          "capability_id": "tools.image_generation",
+          "name": "Image generation",
+          "category": "tools",
+          "status": "experimental",
+          "summary": "A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand.",
+          "surfaces": [
+            "terminal",
+            "codex exec"
+          ],
+          "invocation": [
+            "codex exec --sandbox workspace-write \"Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one.\""
+          ],
+          "minimum_version": null,
+          "limitations": [
+            "No documented CLI flag or subcommand triggers it; invocation is a natural-language prompt the model routes to the bundled imagegen skill.",
+            "The underlying image model was not named in the transcript that produced the live-verified output; gpt-image-2 is inferred from release notes, not confirmed.",
+            "Not documented in `codex --help`, any subcommand `--help`, or official OpenAI Codex docs; evidence is a live local run plus release-note corroboration, not vendor documentation."
+          ],
+          "confidence": "inferred_high",
+          "evidence": [
+            {
+              "source_id": "src.codex.releases",
+              "url": "https://github.com/openai/codex/releases",
+              "version": "rust-v0.128.0",
+              "verified_at": "2026-08-18T00:00:00Z",
+              "claim": "Release notes reference an 'imagegen' bundled system skill updated for gpt-image-2 (rust-v0.124.0: 'Update imagegen system skill'; rust-v0.128.0: bundled OpenAI Docs skill updated for gpt-image-2), corroborating the feature-flagged image_generation capability observed live."
+            }
+          ],
+          "access": "native"
         }
       ],
       "external_orchestrator": [
@@ -6584,6 +6677,37 @@
             }
           ],
           "access": "native"
+        },
+        {
+          "capability_id": "tools.image_generation",
+          "name": "Image generation",
+          "category": "tools",
+          "status": "experimental",
+          "summary": "A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand.",
+          "surfaces": [
+            "terminal",
+            "codex exec"
+          ],
+          "invocation": [
+            "codex exec --sandbox workspace-write \"Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one.\""
+          ],
+          "minimum_version": null,
+          "limitations": [
+            "No documented CLI flag or subcommand triggers it; invocation is a natural-language prompt the model routes to the bundled imagegen skill.",
+            "The underlying image model was not named in the transcript that produced the live-verified output; gpt-image-2 is inferred from release notes, not confirmed.",
+            "Not documented in `codex --help`, any subcommand `--help`, or official OpenAI Codex docs; evidence is a live local run plus release-note corroboration, not vendor documentation."
+          ],
+          "confidence": "inferred_high",
+          "evidence": [
+            {
+              "source_id": "src.codex.releases",
+              "url": "https://github.com/openai/codex/releases",
+              "version": "rust-v0.128.0",
+              "verified_at": "2026-08-18T00:00:00Z",
+              "claim": "Release notes reference an 'imagegen' bundled system skill updated for gpt-image-2 (rust-v0.124.0: 'Update imagegen system skill'; rust-v0.128.0: bundled OpenAI Docs skill updated for gpt-image-2), corroborating the feature-flagged image_generation capability observed live."
+            }
+          ],
+          "access": "supported"
         }
       ],
       "ci_runner": [
@@ -7260,6 +7384,37 @@
               "version": null,
               "verified_at": "2026-08-08T20:00:00Z",
               "claim": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts."
+            }
+          ],
+          "access": "supported"
+        },
+        {
+          "capability_id": "tools.image_generation",
+          "name": "Image generation",
+          "category": "tools",
+          "status": "experimental",
+          "summary": "A bundled 'imagegen' system skill (feature flag image_generation: stable, true) generates an image from a natural-language prompt in headless `codex exec` sessions; not exposed as a documented CLI flag or subcommand.",
+          "surfaces": [
+            "terminal",
+            "codex exec"
+          ],
+          "invocation": [
+            "codex exec --sandbox workspace-write \"Generate a <image> and save it as <file>.png ... Use your image generation skill if you have one.\""
+          ],
+          "minimum_version": null,
+          "limitations": [
+            "No documented CLI flag or subcommand triggers it; invocation is a natural-language prompt the model routes to the bundled imagegen skill.",
+            "The underlying image model was not named in the transcript that produced the live-verified output; gpt-image-2 is inferred from release notes, not confirmed.",
+            "Not documented in `codex --help`, any subcommand `--help`, or official OpenAI Codex docs; evidence is a live local run plus release-note corroboration, not vendor documentation."
+          ],
+          "confidence": "inferred_high",
+          "evidence": [
+            {
+              "source_id": "src.codex.releases",
+              "url": "https://github.com/openai/codex/releases",
+              "version": "rust-v0.128.0",
+              "verified_at": "2026-08-18T00:00:00Z",
+              "claim": "Release notes reference an 'imagegen' bundled system skill updated for gpt-image-2 (rust-v0.124.0: 'Update imagegen system skill'; rust-v0.128.0: bundled OpenAI Docs skill updated for gpt-image-2), corroborating the feature-flagged image_generation capability observed live."
             }
           ],
           "access": "supported"
@@ -14794,6 +14949,45 @@
             }
           ],
           "access": "native"
+        },
+        {
+          "capability_id": "tools.image_generation",
+          "name": "Image generation",
+          "category": "tools",
+          "status": "experimental",
+          "summary": "gemini-cli has no built-in image-synthesis command out of the box; image generation is reached either by installing the community 'nanobanana' extension (extensions.plugins) or by routing a prompt to an image-capable model via -m (e.g. gemini-3.1-flash-image) — neither path is documented as a first-class gemini-cli feature.",
+          "surfaces": [
+            "terminal",
+            "extensions.plugins"
+          ],
+          "invocation": [
+            "gemini extensions install https://github.com/gemini-cli-extensions/nanobanana  (then) /generate <prompt>",
+            "gemini -p \"<prompt>\" -m gemini-3.1-flash-image --yolo -o text  (undocumented, AOS-observed model-routing path)"
+          ],
+          "minimum_version": null,
+          "limitations": [
+            "geminicli.com/docs documents no built-in image synthesis command; both invocation paths above are extension- or model-routing-based, not a native CLI feature.",
+            "Neither path was live-verified end-to-end (does it save an image file headlessly) in this session; this row is inferred from official model docs plus a community extension's README, not a confirmed local run.",
+            "The nanobanana extension is community-maintained (gemini-cli-extensions org), not published by Google."
+          ],
+          "confidence": "inferred_low",
+          "evidence": [
+            {
+              "source_id": "src.gemini.image-gen-api-docs",
+              "url": "https://ai.google.dev/gemini-api/docs/image-generation",
+              "version": null,
+              "verified_at": "2026-08-25T00:00:00Z",
+              "claim": "Documents the Nano Banana image-generation model family (gemini-3.1-flash-image, gemini-3-pro-image-preview) reachable through Gemini clients, including gemini-cli via -m model routing."
+            },
+            {
+              "source_id": "src.gemini.nanobanana-extension",
+              "url": "https://github.com/gemini-cli-extensions/nanobanana",
+              "version": null,
+              "verified_at": "2026-08-25T00:00:00Z",
+              "claim": "Community gemini-cli extension adding /generate, /edit, /icon and related image commands backed by Nano Banana models, installed via `gemini extensions install`."
+            }
+          ],
+          "access": "experimental"
         }
       ],
       "administrator": [
@@ -15083,6 +15277,45 @@
               "version": null,
               "verified_at": "2026-08-08T20:00:00Z",
               "claim": "Model selection and plan-mode workflows are configurable."
+            }
+          ],
+          "access": "configurable"
+        },
+        {
+          "capability_id": "tools.image_generation",
+          "name": "Image generation",
+          "category": "tools",
+          "status": "experimental",
+          "summary": "gemini-cli has no built-in image-synthesis command out of the box; image generation is reached either by installing the community 'nanobanana' extension (extensions.plugins) or by routing a prompt to an image-capable model via -m (e.g. gemini-3.1-flash-image) — neither path is documented as a first-class gemini-cli feature.",
+          "surfaces": [
+            "terminal",
+            "extensions.plugins"
+          ],
+          "invocation": [
+            "gemini extensions install https://github.com/gemini-cli-extensions/nanobanana  (then) /generate <prompt>",
+            "gemini -p \"<prompt>\" -m gemini-3.1-flash-image --yolo -o text  (undocumented, AOS-observed model-routing path)"
+          ],
+          "minimum_version": null,
+          "limitations": [
+            "geminicli.com/docs documents no built-in image synthesis command; both invocation paths above are extension- or model-routing-based, not a native CLI feature.",
+            "Neither path was live-verified end-to-end (does it save an image file headlessly) in this session; this row is inferred from official model docs plus a community extension's README, not a confirmed local run.",
+            "The nanobanana extension is community-maintained (gemini-cli-extensions org), not published by Google."
+          ],
+          "confidence": "inferred_low",
+          "evidence": [
+            {
+              "source_id": "src.gemini.image-gen-api-docs",
+              "url": "https://ai.google.dev/gemini-api/docs/image-generation",
+              "version": null,
+              "verified_at": "2026-08-25T00:00:00Z",
+              "claim": "Documents the Nano Banana image-generation model family (gemini-3.1-flash-image, gemini-3-pro-image-preview) reachable through Gemini clients, including gemini-cli via -m model routing."
+            },
+            {
+              "source_id": "src.gemini.nanobanana-extension",
+              "url": "https://github.com/gemini-cli-extensions/nanobanana",
+              "version": null,
+              "verified_at": "2026-08-25T00:00:00Z",
+              "claim": "Community gemini-cli extension adding /generate, /edit, /icon and related image commands backed by Nano Banana models, installed via `gemini extensions install`."
             }
           ],
           "access": "configurable"
@@ -15525,6 +15758,45 @@
             }
           ],
           "access": "configurable"
+        },
+        {
+          "capability_id": "tools.image_generation",
+          "name": "Image generation",
+          "category": "tools",
+          "status": "experimental",
+          "summary": "gemini-cli has no built-in image-synthesis command out of the box; image generation is reached either by installing the community 'nanobanana' extension (extensions.plugins) or by routing a prompt to an image-capable model via -m (e.g. gemini-3.1-flash-image) — neither path is documented as a first-class gemini-cli feature.",
+          "surfaces": [
+            "terminal",
+            "extensions.plugins"
+          ],
+          "invocation": [
+            "gemini extensions install https://github.com/gemini-cli-extensions/nanobanana  (then) /generate <prompt>",
+            "gemini -p \"<prompt>\" -m gemini-3.1-flash-image --yolo -o text  (undocumented, AOS-observed model-routing path)"
+          ],
+          "minimum_version": null,
+          "limitations": [
+            "geminicli.com/docs documents no built-in image synthesis command; both invocation paths above are extension- or model-routing-based, not a native CLI feature.",
+            "Neither path was live-verified end-to-end (does it save an image file headlessly) in this session; this row is inferred from official model docs plus a community extension's README, not a confirmed local run.",
+            "The nanobanana extension is community-maintained (gemini-cli-extensions org), not published by Google."
+          ],
+          "confidence": "inferred_low",
+          "evidence": [
+            {
+              "source_id": "src.gemini.image-gen-api-docs",
+              "url": "https://ai.google.dev/gemini-api/docs/image-generation",
+              "version": null,
+              "verified_at": "2026-08-25T00:00:00Z",
+              "claim": "Documents the Nano Banana image-generation model family (gemini-3.1-flash-image, gemini-3-pro-image-preview) reachable through Gemini clients, including gemini-cli via -m model routing."
+            },
+            {
+              "source_id": "src.gemini.nanobanana-extension",
+              "url": "https://github.com/gemini-cli-extensions/nanobanana",
+              "version": null,
+              "verified_at": "2026-08-25T00:00:00Z",
+              "claim": "Community gemini-cli extension adding /generate, /edit, /icon and related image commands backed by Nano Banana models, installed via `gemini extensions install`."
+            }
+          ],
+          "access": "experimental"
         }
       ],
       "ci_runner": [
@@ -15797,7 +16069,46 @@
       ]
     },
     "human_mediation_required": [],
-    "unverified_or_low_confidence": [],
+    "unverified_or_low_confidence": [
+      {
+        "capability_id": "tools.image_generation",
+        "name": "Image generation",
+        "category": "tools",
+        "status": "experimental",
+        "summary": "gemini-cli has no built-in image-synthesis command out of the box; image generation is reached either by installing the community 'nanobanana' extension (extensions.plugins) or by routing a prompt to an image-capable model via -m (e.g. gemini-3.1-flash-image) — neither path is documented as a first-class gemini-cli feature.",
+        "surfaces": [
+          "terminal",
+          "extensions.plugins"
+        ],
+        "invocation": [
+          "gemini extensions install https://github.com/gemini-cli-extensions/nanobanana  (then) /generate <prompt>",
+          "gemini -p \"<prompt>\" -m gemini-3.1-flash-image --yolo -o text  (undocumented, AOS-observed model-routing path)"
+        ],
+        "minimum_version": null,
+        "limitations": [
+          "geminicli.com/docs documents no built-in image synthesis command; both invocation paths above are extension- or model-routing-based, not a native CLI feature.",
+          "Neither path was live-verified end-to-end (does it save an image file headlessly) in this session; this row is inferred from official model docs plus a community extension's README, not a confirmed local run.",
+          "The nanobanana extension is community-maintained (gemini-cli-extensions org), not published by Google."
+        ],
+        "confidence": "inferred_low",
+        "evidence": [
+          {
+            "source_id": "src.gemini.image-gen-api-docs",
+            "url": "https://ai.google.dev/gemini-api/docs/image-generation",
+            "version": null,
+            "verified_at": "2026-08-25T00:00:00Z",
+            "claim": "Documents the Nano Banana image-generation model family (gemini-3.1-flash-image, gemini-3-pro-image-preview) reachable through Gemini clients, including gemini-cli via -m model routing."
+          },
+          {
+            "source_id": "src.gemini.nanobanana-extension",
+            "url": "https://github.com/gemini-cli-extensions/nanobanana",
+            "version": null,
+            "verified_at": "2026-08-25T00:00:00Z",
+            "claim": "Community gemini-cli extension adding /generate, /edit, /icon and related image commands backed by Nano Banana models, installed via `gemini extensions install`."
+          }
+        ]
+      }
+    ],
     "routing_hint": {
       "recommended_when": [
         "Historical compatibility analysis",
