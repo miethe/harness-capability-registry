@@ -29,7 +29,11 @@
         "surfaces": [
           "Python library"
         ],
-        "invocation": [],
+        "invocation": [
+          "pip install openai-codex",
+          "from openai_codex import Codex, AsyncCodex",
+          "Codex().thread_start(...)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -40,6 +44,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/sdk",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: pip install openai-codex, from openai_codex import Codex, AsyncCodex, Codex().thread_start(...)"
           }
         ],
         "access": "supported"
@@ -53,7 +64,13 @@
         "surfaces": [
           "JSON-RPC"
         ],
-        "invocation": [],
+        "invocation": [
+          "CodexClient.request(method, params)",
+          "thread_start",
+          "turn_start",
+          "thread_resume",
+          "thread_fork (Codex app-server JSON-RPC protocol)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -64,6 +81,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/client.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: CodexClient.request(method, params), thread_start, turn_start, thread_resume, thread_fork (Codex app-server JSON-RPC protocol)"
           }
         ],
         "access": "supported"
@@ -102,7 +126,10 @@
         "surfaces": [
           "threads"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex.thread_resume(thread_id)",
+          "codex.thread_fork(thread_id)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -113,6 +140,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "SDK clients control Codex threads and turns."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/client.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex.thread_resume(thread_id), codex.thread_fork(thread_id)"
           }
         ],
         "access": "supported"
@@ -127,7 +161,11 @@
           "Python API",
           "sandbox presets"
         ],
-        "invocation": [],
+        "invocation": [
+          "Sandbox.read_only",
+          "Sandbox.workspace_write",
+          "Sandbox.full_access (passed as sandbox= to thread_start/turn_start)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -138,6 +176,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/_sandbox.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Sandbox.read_only, Sandbox.workspace_write, Sandbox.full_access (passed as sandbox= to thread_start/turn_start)"
           }
         ],
         "access": "supported"
@@ -151,7 +196,10 @@
         "surfaces": [
           "JSON-RPC"
         ],
-        "invocation": [],
+        "invocation": [
+          "ApprovalMode.deny_all",
+          "ApprovalMode.auto_review (passed as approval_mode= to thread_start/turn_start)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -162,6 +210,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "SDK/app-server clients can participate in approval flows and return decisions through the machine protocol."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/_approval_mode.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ApprovalMode.deny_all, ApprovalMode.auto_review (passed as approval_mode= to thread_start/turn_start)"
           }
         ],
         "access": "supported"
@@ -177,7 +232,11 @@
         "surfaces": [
           "Python library"
         ],
-        "invocation": [],
+        "invocation": [
+          "pip install openai-codex",
+          "from openai_codex import Codex, AsyncCodex",
+          "Codex().thread_start(...)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -188,6 +247,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/sdk",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: pip install openai-codex, from openai_codex import Codex, AsyncCodex, Codex().thread_start(...)"
           }
         ],
         "access": "native"
@@ -201,7 +267,13 @@
         "surfaces": [
           "JSON-RPC"
         ],
-        "invocation": [],
+        "invocation": [
+          "CodexClient.request(method, params)",
+          "thread_start",
+          "turn_start",
+          "thread_resume",
+          "thread_fork (Codex app-server JSON-RPC protocol)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -212,6 +284,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/client.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: CodexClient.request(method, params), thread_start, turn_start, thread_resume, thread_fork (Codex app-server JSON-RPC protocol)"
           }
         ],
         "access": "native"
@@ -250,7 +329,10 @@
         "surfaces": [
           "threads"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex.thread_resume(thread_id)",
+          "codex.thread_fork(thread_id)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -261,6 +343,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "SDK clients control Codex threads and turns."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/client.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex.thread_resume(thread_id), codex.thread_fork(thread_id)"
           }
         ],
         "access": "native"
@@ -275,7 +364,11 @@
           "Python API",
           "sandbox presets"
         ],
-        "invocation": [],
+        "invocation": [
+          "Sandbox.read_only",
+          "Sandbox.workspace_write",
+          "Sandbox.full_access (passed as sandbox= to thread_start/turn_start)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -286,6 +379,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/_sandbox.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Sandbox.read_only, Sandbox.workspace_write, Sandbox.full_access (passed as sandbox= to thread_start/turn_start)"
           }
         ],
         "access": "native"
@@ -299,7 +399,10 @@
         "surfaces": [
           "JSON-RPC"
         ],
-        "invocation": [],
+        "invocation": [
+          "ApprovalMode.deny_all",
+          "ApprovalMode.auto_review (passed as approval_mode= to thread_start/turn_start)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -310,6 +413,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "SDK/app-server clients can participate in approval flows and return decisions through the machine protocol."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/_approval_mode.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ApprovalMode.deny_all, ApprovalMode.auto_review (passed as approval_mode= to thread_start/turn_start)"
           }
         ],
         "access": "native"
@@ -325,7 +435,11 @@
         "surfaces": [
           "Python library"
         ],
-        "invocation": [],
+        "invocation": [
+          "pip install openai-codex",
+          "from openai_codex import Codex, AsyncCodex",
+          "Codex().thread_start(...)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -336,6 +450,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/sdk",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: pip install openai-codex, from openai_codex import Codex, AsyncCodex, Codex().thread_start(...)"
           }
         ],
         "access": "native"
@@ -349,7 +470,13 @@
         "surfaces": [
           "JSON-RPC"
         ],
-        "invocation": [],
+        "invocation": [
+          "CodexClient.request(method, params)",
+          "thread_start",
+          "turn_start",
+          "thread_resume",
+          "thread_fork (Codex app-server JSON-RPC protocol)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -360,6 +487,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/client.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: CodexClient.request(method, params), thread_start, turn_start, thread_resume, thread_fork (Codex app-server JSON-RPC protocol)"
           }
         ],
         "access": "native"
@@ -398,7 +532,10 @@
         "surfaces": [
           "threads"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex.thread_resume(thread_id)",
+          "codex.thread_fork(thread_id)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -409,6 +546,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "SDK clients control Codex threads and turns."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/client.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex.thread_resume(thread_id), codex.thread_fork(thread_id)"
           }
         ],
         "access": "native"
@@ -423,7 +567,11 @@
           "Python API",
           "sandbox presets"
         ],
-        "invocation": [],
+        "invocation": [
+          "Sandbox.read_only",
+          "Sandbox.workspace_write",
+          "Sandbox.full_access (passed as sandbox= to thread_start/turn_start)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -434,6 +582,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/_sandbox.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Sandbox.read_only, Sandbox.workspace_write, Sandbox.full_access (passed as sandbox= to thread_start/turn_start)"
           }
         ],
         "access": "native"
@@ -447,7 +602,10 @@
         "surfaces": [
           "JSON-RPC"
         ],
-        "invocation": [],
+        "invocation": [
+          "ApprovalMode.deny_all",
+          "ApprovalMode.auto_review (passed as approval_mode= to thread_start/turn_start)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -458,6 +616,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "SDK/app-server clients can participate in approval flows and return decisions through the machine protocol."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/_approval_mode.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ApprovalMode.deny_all, ApprovalMode.auto_review (passed as approval_mode= to thread_start/turn_start)"
           }
         ],
         "access": "native"
@@ -473,7 +638,11 @@
         "surfaces": [
           "Python library"
         ],
-        "invocation": [],
+        "invocation": [
+          "pip install openai-codex",
+          "from openai_codex import Codex, AsyncCodex",
+          "Codex().thread_start(...)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -484,6 +653,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/sdk",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: pip install openai-codex, from openai_codex import Codex, AsyncCodex, Codex().thread_start(...)"
           }
         ],
         "access": "configurable"
@@ -497,7 +673,13 @@
         "surfaces": [
           "JSON-RPC"
         ],
-        "invocation": [],
+        "invocation": [
+          "CodexClient.request(method, params)",
+          "thread_start",
+          "turn_start",
+          "thread_resume",
+          "thread_fork (Codex app-server JSON-RPC protocol)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -508,6 +690,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/client.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: CodexClient.request(method, params), thread_start, turn_start, thread_resume, thread_fork (Codex app-server JSON-RPC protocol)"
           }
         ],
         "access": "configurable"
@@ -546,7 +735,10 @@
         "surfaces": [
           "threads"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex.thread_resume(thread_id)",
+          "codex.thread_fork(thread_id)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -557,6 +749,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "SDK clients control Codex threads and turns."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/client.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex.thread_resume(thread_id), codex.thread_fork(thread_id)"
           }
         ],
         "access": "configurable"
@@ -571,7 +770,11 @@
           "Python API",
           "sandbox presets"
         ],
-        "invocation": [],
+        "invocation": [
+          "Sandbox.read_only",
+          "Sandbox.workspace_write",
+          "Sandbox.full_access (passed as sandbox= to thread_start/turn_start)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -582,6 +785,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/_sandbox.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Sandbox.read_only, Sandbox.workspace_write, Sandbox.full_access (passed as sandbox= to thread_start/turn_start)"
           }
         ],
         "access": "configurable"
@@ -595,7 +805,10 @@
         "surfaces": [
           "JSON-RPC"
         ],
-        "invocation": [],
+        "invocation": [
+          "ApprovalMode.deny_all",
+          "ApprovalMode.auto_review (passed as approval_mode= to thread_start/turn_start)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -606,6 +819,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "SDK/app-server clients can participate in approval flows and return decisions through the machine protocol."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://github.com/openai/codex/blob/main/sdk/python/src/openai_codex/_approval_mode.py",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ApprovalMode.deny_all, ApprovalMode.auto_review (passed as approval_mode= to thread_start/turn_start)"
           }
         ],
         "access": "configurable"

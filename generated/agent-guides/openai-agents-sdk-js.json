@@ -29,7 +29,11 @@
         "surfaces": [
           "JavaScript/TypeScript library"
         ],
-        "invocation": [],
+        "invocation": [
+          "Agent",
+          "Runner",
+          "run()"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -40,6 +44,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "JavaScript/TypeScript framework for building agent applications."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Agent, Runner, run()"
           }
         ],
         "access": "supported"
@@ -53,7 +64,10 @@
         "surfaces": [
           "typed results"
         ],
-        "invocation": [],
+        "invocation": [
+          "outputType",
+          "AgentOutputType"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -64,6 +78,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Typed agent results and structured outputs support downstream automation."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/agents/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: outputType, AgentOutputType"
           }
         ],
         "access": "supported"
@@ -77,7 +98,12 @@
         "surfaces": [
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "MCPServerStdio",
+          "MCPServerSSE",
+          "MCPServerStreamableHttp",
+          "mcpServers"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -88,6 +114,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agents can connect to MCP servers and expose MCP-backed tools."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/mcp/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: MCPServerStdio, MCPServerSSE, MCPServerStreamableHttp, mcpServers"
           }
         ],
         "access": "supported"
@@ -102,7 +135,10 @@
           "handoffs",
           "agents as tools"
         ],
-        "invocation": [],
+        "invocation": [
+          "handoffs",
+          "Agent.asTool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -113,6 +149,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Handoffs and agents-as-tools compose multi-agent workflows."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: handoffs, Agent.asTool"
           }
         ],
         "access": "supported"
@@ -127,7 +170,10 @@
           "handoffs",
           "routing"
         ],
-        "invocation": [],
+        "invocation": [
+          "handoffs",
+          "Agent.asTool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -138,6 +184,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Supervisor/handoff patterns are first-class in the SDK."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: handoffs, Agent.asTool"
           }
         ],
         "access": "supported"
@@ -151,7 +204,10 @@
         "surfaces": [
           "sessions"
         ],
-        "invocation": [],
+        "invocation": [
+          "MemorySession",
+          "OpenAIConversationsSession"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -162,6 +218,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Sessions persist conversation state across agent runs."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/sessions/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: MemorySession, OpenAIConversationsSession"
           }
         ],
         "access": "supported"
@@ -175,7 +238,10 @@
         "surfaces": [
           "guardrails"
         ],
-        "invocation": [],
+        "invocation": [
+          "inputGuardrails",
+          "outputGuardrails"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -186,6 +252,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Guardrails and tool policies validate inputs, outputs, and actions."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: inputGuardrails, outputGuardrails"
           }
         ],
         "access": "supported"
@@ -199,7 +272,11 @@
         "surfaces": [
           "tracing"
         ],
-        "invocation": [],
+        "invocation": [
+          "Trace",
+          "Span",
+          "TraceProvider"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -210,6 +287,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Built-in tracing records agents, generations, tools, handoffs, and guardrails."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Trace, Span, TraceProvider"
           }
         ],
         "access": "supported"
@@ -223,7 +307,11 @@
         "surfaces": [
           "model adapters"
         ],
-        "invocation": [],
+        "invocation": [
+          "ModelProvider",
+          "setDefaultModelProvider",
+          "Agent.model"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -234,6 +322,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The SDK supports OpenAI APIs and provider-compatible model adapters."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/models/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ModelProvider, setDefaultModelProvider, Agent.model"
           }
         ],
         "access": "supported"
@@ -248,7 +343,11 @@
           "callbacks",
           "guardrails"
         ],
-        "invocation": [],
+        "invocation": [
+          "needsApproval",
+          "tool_approval_requested",
+          "interruptions"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -259,6 +358,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Tool approval/guardrail patterns can be implemented in application code."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/human-in-the-loop/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: needsApproval, tool_approval_requested, interruptions"
           }
         ],
         "access": "supported"
@@ -274,7 +380,11 @@
         "surfaces": [
           "JavaScript/TypeScript library"
         ],
-        "invocation": [],
+        "invocation": [
+          "Agent",
+          "Runner",
+          "run()"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -285,6 +395,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "JavaScript/TypeScript framework for building agent applications."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Agent, Runner, run()"
           }
         ],
         "access": "native"
@@ -298,7 +415,10 @@
         "surfaces": [
           "typed results"
         ],
-        "invocation": [],
+        "invocation": [
+          "outputType",
+          "AgentOutputType"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -309,6 +429,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Typed agent results and structured outputs support downstream automation."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/agents/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: outputType, AgentOutputType"
           }
         ],
         "access": "native"
@@ -322,7 +449,12 @@
         "surfaces": [
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "MCPServerStdio",
+          "MCPServerSSE",
+          "MCPServerStreamableHttp",
+          "mcpServers"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -333,6 +465,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agents can connect to MCP servers and expose MCP-backed tools."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/mcp/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: MCPServerStdio, MCPServerSSE, MCPServerStreamableHttp, mcpServers"
           }
         ],
         "access": "native"
@@ -347,7 +486,10 @@
           "handoffs",
           "agents as tools"
         ],
-        "invocation": [],
+        "invocation": [
+          "handoffs",
+          "Agent.asTool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -358,6 +500,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Handoffs and agents-as-tools compose multi-agent workflows."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: handoffs, Agent.asTool"
           }
         ],
         "access": "native"
@@ -372,7 +521,10 @@
           "handoffs",
           "routing"
         ],
-        "invocation": [],
+        "invocation": [
+          "handoffs",
+          "Agent.asTool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -383,6 +535,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Supervisor/handoff patterns are first-class in the SDK."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: handoffs, Agent.asTool"
           }
         ],
         "access": "native"
@@ -396,7 +555,10 @@
         "surfaces": [
           "sessions"
         ],
-        "invocation": [],
+        "invocation": [
+          "MemorySession",
+          "OpenAIConversationsSession"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -407,6 +569,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Sessions persist conversation state across agent runs."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/sessions/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: MemorySession, OpenAIConversationsSession"
           }
         ],
         "access": "native"
@@ -420,7 +589,10 @@
         "surfaces": [
           "guardrails"
         ],
-        "invocation": [],
+        "invocation": [
+          "inputGuardrails",
+          "outputGuardrails"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -431,6 +603,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Guardrails and tool policies validate inputs, outputs, and actions."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: inputGuardrails, outputGuardrails"
           }
         ],
         "access": "native"
@@ -444,7 +623,11 @@
         "surfaces": [
           "tracing"
         ],
-        "invocation": [],
+        "invocation": [
+          "Trace",
+          "Span",
+          "TraceProvider"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -455,6 +638,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Built-in tracing records agents, generations, tools, handoffs, and guardrails."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Trace, Span, TraceProvider"
           }
         ],
         "access": "native"
@@ -468,7 +658,11 @@
         "surfaces": [
           "model adapters"
         ],
-        "invocation": [],
+        "invocation": [
+          "ModelProvider",
+          "setDefaultModelProvider",
+          "Agent.model"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -479,6 +673,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The SDK supports OpenAI APIs and provider-compatible model adapters."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/models/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ModelProvider, setDefaultModelProvider, Agent.model"
           }
         ],
         "access": "native"
@@ -493,7 +694,11 @@
           "callbacks",
           "guardrails"
         ],
-        "invocation": [],
+        "invocation": [
+          "needsApproval",
+          "tool_approval_requested",
+          "interruptions"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -504,6 +709,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Tool approval/guardrail patterns can be implemented in application code."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/human-in-the-loop/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: needsApproval, tool_approval_requested, interruptions"
           }
         ],
         "access": "native"
@@ -519,7 +731,11 @@
         "surfaces": [
           "JavaScript/TypeScript library"
         ],
-        "invocation": [],
+        "invocation": [
+          "Agent",
+          "Runner",
+          "run()"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -530,6 +746,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "JavaScript/TypeScript framework for building agent applications."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Agent, Runner, run()"
           }
         ],
         "access": "native"
@@ -543,7 +766,10 @@
         "surfaces": [
           "typed results"
         ],
-        "invocation": [],
+        "invocation": [
+          "outputType",
+          "AgentOutputType"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -554,6 +780,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Typed agent results and structured outputs support downstream automation."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/agents/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: outputType, AgentOutputType"
           }
         ],
         "access": "native"
@@ -567,7 +800,12 @@
         "surfaces": [
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "MCPServerStdio",
+          "MCPServerSSE",
+          "MCPServerStreamableHttp",
+          "mcpServers"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -578,6 +816,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agents can connect to MCP servers and expose MCP-backed tools."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/mcp/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: MCPServerStdio, MCPServerSSE, MCPServerStreamableHttp, mcpServers"
           }
         ],
         "access": "native"
@@ -592,7 +837,10 @@
           "handoffs",
           "agents as tools"
         ],
-        "invocation": [],
+        "invocation": [
+          "handoffs",
+          "Agent.asTool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -603,6 +851,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Handoffs and agents-as-tools compose multi-agent workflows."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: handoffs, Agent.asTool"
           }
         ],
         "access": "native"
@@ -617,7 +872,10 @@
           "handoffs",
           "routing"
         ],
-        "invocation": [],
+        "invocation": [
+          "handoffs",
+          "Agent.asTool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -628,6 +886,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Supervisor/handoff patterns are first-class in the SDK."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: handoffs, Agent.asTool"
           }
         ],
         "access": "native"
@@ -641,7 +906,10 @@
         "surfaces": [
           "sessions"
         ],
-        "invocation": [],
+        "invocation": [
+          "MemorySession",
+          "OpenAIConversationsSession"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -652,6 +920,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Sessions persist conversation state across agent runs."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/sessions/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: MemorySession, OpenAIConversationsSession"
           }
         ],
         "access": "native"
@@ -665,7 +940,10 @@
         "surfaces": [
           "guardrails"
         ],
-        "invocation": [],
+        "invocation": [
+          "inputGuardrails",
+          "outputGuardrails"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -676,6 +954,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Guardrails and tool policies validate inputs, outputs, and actions."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: inputGuardrails, outputGuardrails"
           }
         ],
         "access": "native"
@@ -689,7 +974,11 @@
         "surfaces": [
           "tracing"
         ],
-        "invocation": [],
+        "invocation": [
+          "Trace",
+          "Span",
+          "TraceProvider"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -700,6 +989,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Built-in tracing records agents, generations, tools, handoffs, and guardrails."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Trace, Span, TraceProvider"
           }
         ],
         "access": "native"
@@ -713,7 +1009,11 @@
         "surfaces": [
           "model adapters"
         ],
-        "invocation": [],
+        "invocation": [
+          "ModelProvider",
+          "setDefaultModelProvider",
+          "Agent.model"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -724,6 +1024,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The SDK supports OpenAI APIs and provider-compatible model adapters."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/models/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ModelProvider, setDefaultModelProvider, Agent.model"
           }
         ],
         "access": "native"
@@ -738,7 +1045,11 @@
           "callbacks",
           "guardrails"
         ],
-        "invocation": [],
+        "invocation": [
+          "needsApproval",
+          "tool_approval_requested",
+          "interruptions"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -749,6 +1060,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Tool approval/guardrail patterns can be implemented in application code."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/human-in-the-loop/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: needsApproval, tool_approval_requested, interruptions"
           }
         ],
         "access": "native"
@@ -764,7 +1082,11 @@
         "surfaces": [
           "JavaScript/TypeScript library"
         ],
-        "invocation": [],
+        "invocation": [
+          "Agent",
+          "Runner",
+          "run()"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -775,6 +1097,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "JavaScript/TypeScript framework for building agent applications."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Agent, Runner, run()"
           }
         ],
         "access": "configurable"
@@ -788,7 +1117,10 @@
         "surfaces": [
           "typed results"
         ],
-        "invocation": [],
+        "invocation": [
+          "outputType",
+          "AgentOutputType"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -799,6 +1131,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Typed agent results and structured outputs support downstream automation."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/agents/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: outputType, AgentOutputType"
           }
         ],
         "access": "configurable"
@@ -812,7 +1151,12 @@
         "surfaces": [
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "MCPServerStdio",
+          "MCPServerSSE",
+          "MCPServerStreamableHttp",
+          "mcpServers"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -823,6 +1167,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agents can connect to MCP servers and expose MCP-backed tools."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/mcp/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: MCPServerStdio, MCPServerSSE, MCPServerStreamableHttp, mcpServers"
           }
         ],
         "access": "configurable"
@@ -837,7 +1188,10 @@
           "handoffs",
           "agents as tools"
         ],
-        "invocation": [],
+        "invocation": [
+          "handoffs",
+          "Agent.asTool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -848,6 +1202,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Handoffs and agents-as-tools compose multi-agent workflows."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: handoffs, Agent.asTool"
           }
         ],
         "access": "configurable"
@@ -862,7 +1223,10 @@
           "handoffs",
           "routing"
         ],
-        "invocation": [],
+        "invocation": [
+          "handoffs",
+          "Agent.asTool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -873,6 +1237,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Supervisor/handoff patterns are first-class in the SDK."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: handoffs, Agent.asTool"
           }
         ],
         "access": "configurable"
@@ -886,7 +1257,10 @@
         "surfaces": [
           "sessions"
         ],
-        "invocation": [],
+        "invocation": [
+          "MemorySession",
+          "OpenAIConversationsSession"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -897,6 +1271,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Sessions persist conversation state across agent runs."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/sessions/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: MemorySession, OpenAIConversationsSession"
           }
         ],
         "access": "configurable"
@@ -910,7 +1291,10 @@
         "surfaces": [
           "guardrails"
         ],
-        "invocation": [],
+        "invocation": [
+          "inputGuardrails",
+          "outputGuardrails"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -921,6 +1305,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Guardrails and tool policies validate inputs, outputs, and actions."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: inputGuardrails, outputGuardrails"
           }
         ],
         "access": "configurable"
@@ -934,7 +1325,11 @@
         "surfaces": [
           "tracing"
         ],
-        "invocation": [],
+        "invocation": [
+          "Trace",
+          "Span",
+          "TraceProvider"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -945,6 +1340,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Built-in tracing records agents, generations, tools, handoffs, and guardrails."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Trace, Span, TraceProvider"
           }
         ],
         "access": "configurable"
@@ -958,7 +1360,11 @@
         "surfaces": [
           "model adapters"
         ],
-        "invocation": [],
+        "invocation": [
+          "ModelProvider",
+          "setDefaultModelProvider",
+          "Agent.model"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -969,6 +1375,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The SDK supports OpenAI APIs and provider-compatible model adapters."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/models/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ModelProvider, setDefaultModelProvider, Agent.model"
           }
         ],
         "access": "configurable"
@@ -983,7 +1396,11 @@
           "callbacks",
           "guardrails"
         ],
-        "invocation": [],
+        "invocation": [
+          "needsApproval",
+          "tool_approval_requested",
+          "interruptions"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -994,6 +1411,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Tool approval/guardrail patterns can be implemented in application code."
+          },
+          {
+            "source_id": "src.openai-agents-js.docs",
+            "url": "https://openai.github.io/openai-agents-js/guides/human-in-the-loop/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: needsApproval, tool_approval_requested, interruptions"
           }
         ],
         "access": "configurable"

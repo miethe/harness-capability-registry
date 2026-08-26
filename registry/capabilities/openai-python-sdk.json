@@ -16,7 +16,10 @@
     "surfaces": [
       "Python library"
     ],
-    "invocation": [],
+    "invocation": [
+      "pip install openai",
+      "from openai import OpenAI; client = OpenAI()"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.53.0",
     "limitations": [],
@@ -29,9 +32,16 @@
         "claim": "Typed Python access to the OpenAI API.",
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
+      },
+      {
+        "source_id": "src.openai-python.changelog",
+        "url": "https://developers.openai.com/api/docs/guides/reasoning",
+        "claim": "Invocation verified: pip install openai, from openai import OpenAI; client = OpenAI()",
+        "version": null,
+        "verified_at": "2026-08-26T00:00:00Z"
       }
     ],
-    "invocation_status": "unreviewed",
+    "invocation_status": "resolved",
     "invocation_na_reason": null
   },
   {
@@ -52,7 +62,10 @@
       "streaming",
       "typed API objects"
     ],
-    "invocation": [],
+    "invocation": [
+      "client.responses.create(text={'format': {'type': 'json_schema', 'strict': True, 'schema': ...}})",
+      "client.responses.parse(text_format=<pydantic model>)"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.53.0",
     "limitations": [],
@@ -65,9 +78,16 @@
         "claim": "Streaming and typed response objects support machine-readable application logic.",
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
+      },
+      {
+        "source_id": "src.openai-python.changelog",
+        "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+        "claim": "Invocation verified: client.responses.create(text={'format': {'type': 'json_schema', 'strict': True, 'schema': ...}}), client.responses.parse(text_format=<pydantic model>)",
+        "version": null,
+        "verified_at": "2026-08-26T00:00:00Z"
       }
     ],
-    "invocation_status": "unreviewed",
+    "invocation_status": "resolved",
     "invocation_na_reason": null
   },
   {
@@ -87,7 +107,10 @@
     "surfaces": [
       "API parameters"
     ],
-    "invocation": [],
+    "invocation": [
+      "model=\"gpt-5...\"",
+      "reasoning={\"effort\": \"high\"}"
+    ],
     "minimum_version": null,
     "current_version_verified": "2.53.0",
     "limitations": [],
@@ -100,9 +123,16 @@
         "claim": "Model and API feature parameters are exposed as generated typed interfaces.",
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
+      },
+      {
+        "source_id": "src.openai-python.changelog",
+        "url": "https://developers.openai.com/api/docs/guides/reasoning",
+        "claim": "Invocation verified: model=\"gpt-5...\", reasoning={\"effort\": \"high\"}",
+        "version": null,
+        "verified_at": "2026-08-26T00:00:00Z"
       }
     ],
-    "invocation_status": "unreviewed",
+    "invocation_status": "resolved",
     "invocation_na_reason": null
   }
 ]

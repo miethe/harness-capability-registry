@@ -57,7 +57,10 @@
           "desktop",
           "artifacts"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes desktop",
+          "hermes dashboard"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -68,6 +71,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes 0.20 introduced desktop artifacts, a plugin SDK, and multi-window operation."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/desktop.md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes desktop, hermes dashboard"
           }
         ],
         "access": "native"
@@ -82,7 +92,12 @@
           "CLI",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "write_file",
+          "patch",
+          "read_file",
+          "search_files"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -93,6 +108,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes agents can inspect and edit files through built-in and learned tools."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/tools",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: write_file, patch, read_file, search_files"
           }
         ],
         "access": "supported"
@@ -133,7 +155,11 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes -z \"<prompt>\"",
+          "hermes chat -q \"<query>\" --quiet",
+          "hermes serve"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -144,6 +170,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can be invoked through CLI/gateway automation, but the seed does not yet verify a stable event protocol equivalent to Codex app-server."
+          },
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/cli-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes -z \"<prompt>\", hermes chat -q \"<query>\" --quiet, hermes serve"
           }
         ],
         "access": "supported"
@@ -158,7 +191,11 @@
           "MCP",
           "Docker"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes mcp add <name> --command <cmd> --args <args>",
+          "hermes mcp install <name>",
+          "hermes mcp catalog"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -169,6 +206,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports MCP servers and Docker-based MCP commands."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/mcp-config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes mcp add <name> --command <cmd> --args <args>, hermes mcp install <name>, hermes mcp catalog"
           }
         ],
         "access": "configurable"
@@ -183,7 +227,11 @@
           "skills catalog",
           "/learn"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes skills install <name>",
+          "/<skill-name>",
+          "/learn"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -194,6 +242,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow."
+          },
+          {
+            "source_id": "src.hermes.docs.skills",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes skills install <name>, /<skill-name>, /learn"
           }
         ],
         "access": "configurable"
@@ -207,7 +262,9 @@
         "surfaces": [
           "desktop plugin SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "$HERMES_HOME/desktop-plugins/<id>/plugin.js"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -218,6 +275,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/desktop.md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: $HERMES_HOME/desktop-plugins/<id>/plugin.js"
           }
         ],
         "access": "configurable"
@@ -232,7 +296,11 @@
           "memory",
           "conversation history"
         ],
-        "invocation": [],
+        "invocation": [
+          "memory tool (add/replace/remove)",
+          "~/.hermes/memories/MEMORY.md",
+          "config.yaml memory.memory_enabled"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -243,6 +311,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Persistent memory and conversation search are first-class parts of Hermes' self-improving agent model."
+          },
+          {
+            "source_id": "src.hermes.docs.memory",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: memory tool (add/replace/remove), ~/.hermes/memories/MEMORY.md, config.yaml memory.memory_enabled"
           }
         ],
         "access": "configurable"
@@ -257,7 +332,12 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes --resume <session> / -r",
+          "hermes --continue [name] / -c",
+          "/branch",
+          "/fork"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -268,6 +348,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes persists and resumes sessions across CLI and gateway surfaces."
+          },
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/cli-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes --resume <session> / -r, hermes --continue [name] / -c, /branch, /fork"
           }
         ],
         "access": "native"
@@ -282,7 +369,9 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "delegate_task(goal, context, role=\"leaf\"|\"orchestrator\", ...)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -293,6 +382,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can delegate work to specialized agents."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: delegate_task(goal, context, role=\"leaf\"|\"orchestrator\", ...)"
           }
         ],
         "access": "supported"
@@ -307,7 +403,10 @@
           "background tasks",
           "Mixture-of-Agents"
         ],
-        "invocation": [],
+        "invocation": [
+          "delegate_task(tasks=[...])",
+          "delegation.max_concurrent_children config key / DELEGATION_MAX_CONCURRENT_CHILDREN env var"
+        ],
         "minimum_version": "0.18.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -318,6 +417,13 @@
             "version": "0.18.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports background work and Mixture-of-Agents execution."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: delegate_task(tasks=[...]), delegation.max_concurrent_children config key / DELEGATION_MAX_CONCURRENT_CHILDREN env var"
           }
         ],
         "access": "supported"
@@ -331,7 +437,9 @@
         "surfaces": [
           "Mixture-of-Agents"
         ],
-        "invocation": [],
+        "invocation": [
+          "moa virtual model provider (config.yaml moa presets, select via hermes model)"
+        ],
         "minimum_version": "0.18.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -342,6 +450,13 @@
             "version": "0.18.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/mixture-of-agents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: moa virtual model provider (config.yaml moa presets, select via hermes model)"
           }
         ],
         "access": "supported"
@@ -356,7 +471,10 @@
           "Telegram/gateway",
           "cloud VM"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes config set terminal.backend modal|daytona|vercel_sandbox",
+          "hermes gateway"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -367,6 +485,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes gateways let users interact through messaging channels while work runs on another machine or cloud VM."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/configuration",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes config set terminal.backend modal|daytona|vercel_sandbox, hermes gateway"
           }
         ],
         "access": "native"
@@ -383,7 +508,9 @@
           "cluster",
           "serverless"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes config set terminal.backend docker|ssh|singularity"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -394,6 +521,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can run on user-owned machines, VPSs, clusters, or serverless infrastructure."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/configuration",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes config set terminal.backend docker|ssh|singularity"
           }
         ],
         "access": "configurable"
@@ -408,7 +542,11 @@
           "gateway",
           "scheduler"
         ],
-        "invocation": [],
+        "invocation": [
+          "cronjob tool (create/list/update/pause/resume/run/remove)",
+          "/cron add \"<cron-expr>\" \"<prompt>\"",
+          "hermes cron list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -419,6 +557,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes includes scheduled and gateway-driven automation paths."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/cron",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: cronjob tool (create/list/update/pause/resume/run/remove), /cron add \"<cron-expr>\" \"<prompt>\", hermes cron list"
           }
         ],
         "access": "configurable"
@@ -432,7 +577,12 @@
         "surfaces": [
           "CLI permission modes"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes --yolo",
+          "/yolo",
+          "approvals.mode in config.yaml (smart|manual|off)",
+          "approvals.deny glob rules"
+        ],
         "minimum_version": null,
         "limitations": [
           "The security model needs deeper comparative review before enterprise promotion."
@@ -445,6 +595,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Permission modes such as `/yolo` and gateway/tool configuration govern autonomy; use conservative defaults for unattended runs."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes --yolo, /yolo, approvals.mode in config.yaml (smart|manual|off), approvals.deny glob rules"
           }
         ],
         "access": "native"
@@ -459,7 +616,11 @@
           "research tools",
           "citations"
         ],
-        "invocation": [],
+        "invocation": [
+          "web_search tool",
+          "web_extract tool",
+          "grounded-citations skill"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -470,6 +631,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes 0.20 added grounded research and citation support."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/research/research-grounded-citations",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: web_search tool, web_extract tool, grounded-citations skill"
           }
         ],
         "access": "supported"
@@ -483,7 +651,10 @@
         "surfaces": [
           "voice"
         ],
-        "invocation": [],
+        "invocation": [
+          "/voice on|off|tts|status",
+          "Ctrl+B (voice.record_key in config.yaml)"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -494,6 +665,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Streaming voice supports barge-in and wake words."
+          },
+          {
+            "source_id": "src.hermes.docs.voice",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/voice-mode",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /voice on|off|tts|status, Ctrl+B (voice.record_key in config.yaml)"
           }
         ],
         "access": "native"
@@ -507,7 +685,10 @@
         "surfaces": [
           "desktop artifacts"
         ],
-        "invocation": [],
+        "invocation": [
+          "Artifacts pane in hermes desktop",
+          "/diff"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -518,6 +699,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Desktop artifacts and multiple windows provide richer outputs than plain terminal text."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/desktop.md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Artifacts pane in hermes desktop, /diff"
           }
         ],
         "access": "native"
@@ -532,7 +720,10 @@
           "hosted APIs",
           "local models"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes model",
+          "hermes config set model <provider>/<model>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -543,6 +734,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports multiple hosted and local model providers."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes model, hermes config set model <provider>/<model>"
           }
         ],
         "access": "native"
@@ -586,7 +784,10 @@
           "desktop",
           "artifacts"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes desktop",
+          "hermes dashboard"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -597,6 +798,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes 0.20 introduced desktop artifacts, a plugin SDK, and multi-window operation."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/desktop.md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes desktop, hermes dashboard"
           }
         ],
         "access": "configurable"
@@ -611,7 +819,12 @@
           "CLI",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "write_file",
+          "patch",
+          "read_file",
+          "search_files"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -622,6 +835,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes agents can inspect and edit files through built-in and learned tools."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/tools",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: write_file, patch, read_file, search_files"
           }
         ],
         "access": "configurable"
@@ -662,7 +882,11 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes -z \"<prompt>\"",
+          "hermes chat -q \"<query>\" --quiet",
+          "hermes serve"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -673,6 +897,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can be invoked through CLI/gateway automation, but the seed does not yet verify a stable event protocol equivalent to Codex app-server."
+          },
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/cli-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes -z \"<prompt>\", hermes chat -q \"<query>\" --quiet, hermes serve"
           }
         ],
         "access": "configurable"
@@ -687,7 +918,11 @@
           "MCP",
           "Docker"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes mcp add <name> --command <cmd> --args <args>",
+          "hermes mcp install <name>",
+          "hermes mcp catalog"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -698,6 +933,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports MCP servers and Docker-based MCP commands."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/mcp-config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes mcp add <name> --command <cmd> --args <args>, hermes mcp install <name>, hermes mcp catalog"
           }
         ],
         "access": "configurable"
@@ -712,7 +954,11 @@
           "skills catalog",
           "/learn"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes skills install <name>",
+          "/<skill-name>",
+          "/learn"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -723,6 +969,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow."
+          },
+          {
+            "source_id": "src.hermes.docs.skills",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes skills install <name>, /<skill-name>, /learn"
           }
         ],
         "access": "configurable"
@@ -736,7 +989,9 @@
         "surfaces": [
           "desktop plugin SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "$HERMES_HOME/desktop-plugins/<id>/plugin.js"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -747,6 +1002,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/desktop.md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: $HERMES_HOME/desktop-plugins/<id>/plugin.js"
           }
         ],
         "access": "configurable"
@@ -761,7 +1023,11 @@
           "memory",
           "conversation history"
         ],
-        "invocation": [],
+        "invocation": [
+          "memory tool (add/replace/remove)",
+          "~/.hermes/memories/MEMORY.md",
+          "config.yaml memory.memory_enabled"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -772,6 +1038,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Persistent memory and conversation search are first-class parts of Hermes' self-improving agent model."
+          },
+          {
+            "source_id": "src.hermes.docs.memory",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: memory tool (add/replace/remove), ~/.hermes/memories/MEMORY.md, config.yaml memory.memory_enabled"
           }
         ],
         "access": "configurable"
@@ -786,7 +1059,12 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes --resume <session> / -r",
+          "hermes --continue [name] / -c",
+          "/branch",
+          "/fork"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -797,6 +1075,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes persists and resumes sessions across CLI and gateway surfaces."
+          },
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/cli-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes --resume <session> / -r, hermes --continue [name] / -c, /branch, /fork"
           }
         ],
         "access": "configurable"
@@ -811,7 +1096,9 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "delegate_task(goal, context, role=\"leaf\"|\"orchestrator\", ...)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -822,6 +1109,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can delegate work to specialized agents."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: delegate_task(goal, context, role=\"leaf\"|\"orchestrator\", ...)"
           }
         ],
         "access": "configurable"
@@ -836,7 +1130,10 @@
           "background tasks",
           "Mixture-of-Agents"
         ],
-        "invocation": [],
+        "invocation": [
+          "delegate_task(tasks=[...])",
+          "delegation.max_concurrent_children config key / DELEGATION_MAX_CONCURRENT_CHILDREN env var"
+        ],
         "minimum_version": "0.18.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -847,6 +1144,13 @@
             "version": "0.18.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports background work and Mixture-of-Agents execution."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: delegate_task(tasks=[...]), delegation.max_concurrent_children config key / DELEGATION_MAX_CONCURRENT_CHILDREN env var"
           }
         ],
         "access": "configurable"
@@ -860,7 +1164,9 @@
         "surfaces": [
           "Mixture-of-Agents"
         ],
-        "invocation": [],
+        "invocation": [
+          "moa virtual model provider (config.yaml moa presets, select via hermes model)"
+        ],
         "minimum_version": "0.18.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -871,6 +1177,13 @@
             "version": "0.18.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/mixture-of-agents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: moa virtual model provider (config.yaml moa presets, select via hermes model)"
           }
         ],
         "access": "configurable"
@@ -885,7 +1198,10 @@
           "Telegram/gateway",
           "cloud VM"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes config set terminal.backend modal|daytona|vercel_sandbox",
+          "hermes gateway"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -896,6 +1212,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes gateways let users interact through messaging channels while work runs on another machine or cloud VM."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/configuration",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes config set terminal.backend modal|daytona|vercel_sandbox, hermes gateway"
           }
         ],
         "access": "configurable"
@@ -912,7 +1235,9 @@
           "cluster",
           "serverless"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes config set terminal.backend docker|ssh|singularity"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -923,6 +1248,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can run on user-owned machines, VPSs, clusters, or serverless infrastructure."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/configuration",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes config set terminal.backend docker|ssh|singularity"
           }
         ],
         "access": "native"
@@ -937,7 +1269,11 @@
           "gateway",
           "scheduler"
         ],
-        "invocation": [],
+        "invocation": [
+          "cronjob tool (create/list/update/pause/resume/run/remove)",
+          "/cron add \"<cron-expr>\" \"<prompt>\"",
+          "hermes cron list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -948,6 +1284,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes includes scheduled and gateway-driven automation paths."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/cron",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: cronjob tool (create/list/update/pause/resume/run/remove), /cron add \"<cron-expr>\" \"<prompt>\", hermes cron list"
           }
         ],
         "access": "configurable"
@@ -961,7 +1304,12 @@
         "surfaces": [
           "CLI permission modes"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes --yolo",
+          "/yolo",
+          "approvals.mode in config.yaml (smart|manual|off)",
+          "approvals.deny glob rules"
+        ],
         "minimum_version": null,
         "limitations": [
           "The security model needs deeper comparative review before enterprise promotion."
@@ -974,6 +1322,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Permission modes such as `/yolo` and gateway/tool configuration govern autonomy; use conservative defaults for unattended runs."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes --yolo, /yolo, approvals.mode in config.yaml (smart|manual|off), approvals.deny glob rules"
           }
         ],
         "access": "configurable"
@@ -988,7 +1343,11 @@
           "research tools",
           "citations"
         ],
-        "invocation": [],
+        "invocation": [
+          "web_search tool",
+          "web_extract tool",
+          "grounded-citations skill"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -999,6 +1358,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes 0.20 added grounded research and citation support."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/research/research-grounded-citations",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: web_search tool, web_extract tool, grounded-citations skill"
           }
         ],
         "access": "configurable"
@@ -1012,7 +1378,10 @@
         "surfaces": [
           "voice"
         ],
-        "invocation": [],
+        "invocation": [
+          "/voice on|off|tts|status",
+          "Ctrl+B (voice.record_key in config.yaml)"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1023,6 +1392,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Streaming voice supports barge-in and wake words."
+          },
+          {
+            "source_id": "src.hermes.docs.voice",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/voice-mode",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /voice on|off|tts|status, Ctrl+B (voice.record_key in config.yaml)"
           }
         ],
         "access": "configurable"
@@ -1036,7 +1412,10 @@
         "surfaces": [
           "desktop artifacts"
         ],
-        "invocation": [],
+        "invocation": [
+          "Artifacts pane in hermes desktop",
+          "/diff"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1047,6 +1426,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Desktop artifacts and multiple windows provide richer outputs than plain terminal text."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/desktop.md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Artifacts pane in hermes desktop, /diff"
           }
         ],
         "access": "configurable"
@@ -1061,7 +1447,10 @@
           "hosted APIs",
           "local models"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes model",
+          "hermes config set model <provider>/<model>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1072,6 +1461,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports multiple hosted and local model providers."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes model, hermes config set model <provider>/<model>"
           }
         ],
         "access": "configurable"
@@ -1088,7 +1484,12 @@
           "CLI",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "write_file",
+          "patch",
+          "read_file",
+          "search_files"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1099,6 +1500,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes agents can inspect and edit files through built-in and learned tools."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/tools",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: write_file, patch, read_file, search_files"
           }
         ],
         "access": "native"
@@ -1139,7 +1547,11 @@
           "MCP",
           "Docker"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes mcp add <name> --command <cmd> --args <args>",
+          "hermes mcp install <name>",
+          "hermes mcp catalog"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1150,6 +1562,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports MCP servers and Docker-based MCP commands."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/mcp-config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes mcp add <name> --command <cmd> --args <args>, hermes mcp install <name>, hermes mcp catalog"
           }
         ],
         "access": "native"
@@ -1164,7 +1583,11 @@
           "skills catalog",
           "/learn"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes skills install <name>",
+          "/<skill-name>",
+          "/learn"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1175,6 +1598,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow."
+          },
+          {
+            "source_id": "src.hermes.docs.skills",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes skills install <name>, /<skill-name>, /learn"
           }
         ],
         "access": "native"
@@ -1188,7 +1618,9 @@
         "surfaces": [
           "desktop plugin SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "$HERMES_HOME/desktop-plugins/<id>/plugin.js"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1199,6 +1631,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/desktop.md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: $HERMES_HOME/desktop-plugins/<id>/plugin.js"
           }
         ],
         "access": "native"
@@ -1213,7 +1652,11 @@
           "memory",
           "conversation history"
         ],
-        "invocation": [],
+        "invocation": [
+          "memory tool (add/replace/remove)",
+          "~/.hermes/memories/MEMORY.md",
+          "config.yaml memory.memory_enabled"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1224,6 +1667,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Persistent memory and conversation search are first-class parts of Hermes' self-improving agent model."
+          },
+          {
+            "source_id": "src.hermes.docs.memory",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: memory tool (add/replace/remove), ~/.hermes/memories/MEMORY.md, config.yaml memory.memory_enabled"
           }
         ],
         "access": "native"
@@ -1238,7 +1688,9 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "delegate_task(goal, context, role=\"leaf\"|\"orchestrator\", ...)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1249,6 +1701,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can delegate work to specialized agents."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: delegate_task(goal, context, role=\"leaf\"|\"orchestrator\", ...)"
           }
         ],
         "access": "native"
@@ -1263,7 +1722,10 @@
           "background tasks",
           "Mixture-of-Agents"
         ],
-        "invocation": [],
+        "invocation": [
+          "delegate_task(tasks=[...])",
+          "delegation.max_concurrent_children config key / DELEGATION_MAX_CONCURRENT_CHILDREN env var"
+        ],
         "minimum_version": "0.18.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1274,6 +1736,13 @@
             "version": "0.18.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports background work and Mixture-of-Agents execution."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: delegate_task(tasks=[...]), delegation.max_concurrent_children config key / DELEGATION_MAX_CONCURRENT_CHILDREN env var"
           }
         ],
         "access": "native"
@@ -1287,7 +1756,9 @@
         "surfaces": [
           "Mixture-of-Agents"
         ],
-        "invocation": [],
+        "invocation": [
+          "moa virtual model provider (config.yaml moa presets, select via hermes model)"
+        ],
         "minimum_version": "0.18.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1298,6 +1769,13 @@
             "version": "0.18.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/mixture-of-agents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: moa virtual model provider (config.yaml moa presets, select via hermes model)"
           }
         ],
         "access": "native"
@@ -1312,7 +1790,11 @@
           "gateway",
           "scheduler"
         ],
-        "invocation": [],
+        "invocation": [
+          "cronjob tool (create/list/update/pause/resume/run/remove)",
+          "/cron add \"<cron-expr>\" \"<prompt>\"",
+          "hermes cron list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -1323,6 +1805,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes includes scheduled and gateway-driven automation paths."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/cron",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: cronjob tool (create/list/update/pause/resume/run/remove), /cron add \"<cron-expr>\" \"<prompt>\", hermes cron list"
           }
         ],
         "access": "supported"
@@ -1337,7 +1826,11 @@
           "research tools",
           "citations"
         ],
-        "invocation": [],
+        "invocation": [
+          "web_search tool",
+          "web_extract tool",
+          "grounded-citations skill"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1348,6 +1841,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes 0.20 added grounded research and citation support."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/research/research-grounded-citations",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: web_search tool, web_extract tool, grounded-citations skill"
           }
         ],
         "access": "native"
@@ -1362,7 +1862,10 @@
           "hosted APIs",
           "local models"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes model",
+          "hermes config set model <provider>/<model>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1373,6 +1876,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports multiple hosted and local model providers."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes model, hermes config set model <provider>/<model>"
           }
         ],
         "access": "supported"
@@ -1389,7 +1899,12 @@
           "CLI",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "write_file",
+          "patch",
+          "read_file",
+          "search_files"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1400,6 +1915,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes agents can inspect and edit files through built-in and learned tools."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/tools",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: write_file, patch, read_file, search_files"
           }
         ],
         "access": "supported"
@@ -1440,7 +1962,11 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes -z \"<prompt>\"",
+          "hermes chat -q \"<query>\" --quiet",
+          "hermes serve"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -1451,6 +1977,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can be invoked through CLI/gateway automation, but the seed does not yet verify a stable event protocol equivalent to Codex app-server."
+          },
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/cli-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes -z \"<prompt>\", hermes chat -q \"<query>\" --quiet, hermes serve"
           }
         ],
         "access": "native"
@@ -1465,7 +1998,11 @@
           "MCP",
           "Docker"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes mcp add <name> --command <cmd> --args <args>",
+          "hermes mcp install <name>",
+          "hermes mcp catalog"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1476,6 +2013,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports MCP servers and Docker-based MCP commands."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/mcp-config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes mcp add <name> --command <cmd> --args <args>, hermes mcp install <name>, hermes mcp catalog"
           }
         ],
         "access": "supported"
@@ -1490,7 +2034,11 @@
           "skills catalog",
           "/learn"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes skills install <name>",
+          "/<skill-name>",
+          "/learn"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1501,6 +2049,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow."
+          },
+          {
+            "source_id": "src.hermes.docs.skills",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes skills install <name>, /<skill-name>, /learn"
           }
         ],
         "access": "supported"
@@ -1514,7 +2069,9 @@
         "surfaces": [
           "desktop plugin SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "$HERMES_HOME/desktop-plugins/<id>/plugin.js"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1525,6 +2082,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/desktop.md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: $HERMES_HOME/desktop-plugins/<id>/plugin.js"
           }
         ],
         "access": "supported"
@@ -1539,7 +2103,11 @@
           "memory",
           "conversation history"
         ],
-        "invocation": [],
+        "invocation": [
+          "memory tool (add/replace/remove)",
+          "~/.hermes/memories/MEMORY.md",
+          "config.yaml memory.memory_enabled"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1550,6 +2118,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Persistent memory and conversation search are first-class parts of Hermes' self-improving agent model."
+          },
+          {
+            "source_id": "src.hermes.docs.memory",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: memory tool (add/replace/remove), ~/.hermes/memories/MEMORY.md, config.yaml memory.memory_enabled"
           }
         ],
         "access": "supported"
@@ -1564,7 +2139,12 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes --resume <session> / -r",
+          "hermes --continue [name] / -c",
+          "/branch",
+          "/fork"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1575,6 +2155,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes persists and resumes sessions across CLI and gateway surfaces."
+          },
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/cli-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes --resume <session> / -r, hermes --continue [name] / -c, /branch, /fork"
           }
         ],
         "access": "supported"
@@ -1589,7 +2176,9 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "delegate_task(goal, context, role=\"leaf\"|\"orchestrator\", ...)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1600,6 +2189,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can delegate work to specialized agents."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: delegate_task(goal, context, role=\"leaf\"|\"orchestrator\", ...)"
           }
         ],
         "access": "supported"
@@ -1614,7 +2210,10 @@
           "background tasks",
           "Mixture-of-Agents"
         ],
-        "invocation": [],
+        "invocation": [
+          "delegate_task(tasks=[...])",
+          "delegation.max_concurrent_children config key / DELEGATION_MAX_CONCURRENT_CHILDREN env var"
+        ],
         "minimum_version": "0.18.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1625,6 +2224,13 @@
             "version": "0.18.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports background work and Mixture-of-Agents execution."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: delegate_task(tasks=[...]), delegation.max_concurrent_children config key / DELEGATION_MAX_CONCURRENT_CHILDREN env var"
           }
         ],
         "access": "supported"
@@ -1638,7 +2244,9 @@
         "surfaces": [
           "Mixture-of-Agents"
         ],
-        "invocation": [],
+        "invocation": [
+          "moa virtual model provider (config.yaml moa presets, select via hermes model)"
+        ],
         "minimum_version": "0.18.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1649,6 +2257,13 @@
             "version": "0.18.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/mixture-of-agents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: moa virtual model provider (config.yaml moa presets, select via hermes model)"
           }
         ],
         "access": "supported"
@@ -1663,7 +2278,10 @@
           "Telegram/gateway",
           "cloud VM"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes config set terminal.backend modal|daytona|vercel_sandbox",
+          "hermes gateway"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1674,6 +2292,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes gateways let users interact through messaging channels while work runs on another machine or cloud VM."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/configuration",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes config set terminal.backend modal|daytona|vercel_sandbox, hermes gateway"
           }
         ],
         "access": "supported"
@@ -1690,7 +2315,9 @@
           "cluster",
           "serverless"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes config set terminal.backend docker|ssh|singularity"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1701,6 +2328,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can run on user-owned machines, VPSs, clusters, or serverless infrastructure."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/configuration",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes config set terminal.backend docker|ssh|singularity"
           }
         ],
         "access": "supported"
@@ -1715,7 +2349,11 @@
           "gateway",
           "scheduler"
         ],
-        "invocation": [],
+        "invocation": [
+          "cronjob tool (create/list/update/pause/resume/run/remove)",
+          "/cron add \"<cron-expr>\" \"<prompt>\"",
+          "hermes cron list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -1726,6 +2364,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes includes scheduled and gateway-driven automation paths."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/cron",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: cronjob tool (create/list/update/pause/resume/run/remove), /cron add \"<cron-expr>\" \"<prompt>\", hermes cron list"
           }
         ],
         "access": "supported"
@@ -1739,7 +2384,12 @@
         "surfaces": [
           "CLI permission modes"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes --yolo",
+          "/yolo",
+          "approvals.mode in config.yaml (smart|manual|off)",
+          "approvals.deny glob rules"
+        ],
         "minimum_version": null,
         "limitations": [
           "The security model needs deeper comparative review before enterprise promotion."
@@ -1752,6 +2402,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Permission modes such as `/yolo` and gateway/tool configuration govern autonomy; use conservative defaults for unattended runs."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes --yolo, /yolo, approvals.mode in config.yaml (smart|manual|off), approvals.deny glob rules"
           }
         ],
         "access": "supported"
@@ -1766,7 +2423,11 @@
           "research tools",
           "citations"
         ],
-        "invocation": [],
+        "invocation": [
+          "web_search tool",
+          "web_extract tool",
+          "grounded-citations skill"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1777,6 +2438,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes 0.20 added grounded research and citation support."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/research/research-grounded-citations",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: web_search tool, web_extract tool, grounded-citations skill"
           }
         ],
         "access": "supported"
@@ -1790,7 +2458,10 @@
         "surfaces": [
           "voice"
         ],
-        "invocation": [],
+        "invocation": [
+          "/voice on|off|tts|status",
+          "Ctrl+B (voice.record_key in config.yaml)"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1801,6 +2472,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Streaming voice supports barge-in and wake words."
+          },
+          {
+            "source_id": "src.hermes.docs.voice",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/voice-mode",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /voice on|off|tts|status, Ctrl+B (voice.record_key in config.yaml)"
           }
         ],
         "access": "supported"
@@ -1815,7 +2493,10 @@
           "hosted APIs",
           "local models"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes model",
+          "hermes config set model <provider>/<model>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1826,6 +2507,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports multiple hosted and local model providers."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes model, hermes config set model <provider>/<model>"
           }
         ],
         "access": "configurable"
@@ -1842,7 +2530,12 @@
           "CLI",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "write_file",
+          "patch",
+          "read_file",
+          "search_files"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1853,6 +2546,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes agents can inspect and edit files through built-in and learned tools."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/tools",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: write_file, patch, read_file, search_files"
           }
         ],
         "access": "supported"
@@ -1893,7 +2593,11 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes -z \"<prompt>\"",
+          "hermes chat -q \"<query>\" --quiet",
+          "hermes serve"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -1904,6 +2608,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can be invoked through CLI/gateway automation, but the seed does not yet verify a stable event protocol equivalent to Codex app-server."
+          },
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/cli-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes -z \"<prompt>\", hermes chat -q \"<query>\" --quiet, hermes serve"
           }
         ],
         "access": "native"
@@ -1918,7 +2629,11 @@
           "MCP",
           "Docker"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes mcp add <name> --command <cmd> --args <args>",
+          "hermes mcp install <name>",
+          "hermes mcp catalog"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1929,6 +2644,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports MCP servers and Docker-based MCP commands."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/mcp-config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes mcp add <name> --command <cmd> --args <args>, hermes mcp install <name>, hermes mcp catalog"
           }
         ],
         "access": "supported"
@@ -1943,7 +2665,11 @@
           "skills catalog",
           "/learn"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes skills install <name>",
+          "/<skill-name>",
+          "/learn"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1954,6 +2680,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes discovers skills progressively and can create or improve them through its learning loop and `/learn` workflow."
+          },
+          {
+            "source_id": "src.hermes.docs.skills",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes skills install <name>, /<skill-name>, /learn"
           }
         ],
         "access": "supported"
@@ -1967,7 +2700,9 @@
         "surfaces": [
           "desktop plugin SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "$HERMES_HOME/desktop-plugins/<id>/plugin.js"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1978,6 +2713,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes 0.20 added a desktop plugin SDK and extensibility surfaces."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/desktop.md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: $HERMES_HOME/desktop-plugins/<id>/plugin.js"
           }
         ],
         "access": "supported"
@@ -1992,7 +2734,12 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes --resume <session> / -r",
+          "hermes --continue [name] / -c",
+          "/branch",
+          "/fork"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2003,6 +2750,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes persists and resumes sessions across CLI and gateway surfaces."
+          },
+          {
+            "source_id": "src.hermes.docs.quickstart",
+            "url": "https://hermes-agent.nousresearch.com/docs/reference/cli-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes --resume <session> / -r, hermes --continue [name] / -c, /branch, /fork"
           }
         ],
         "access": "supported"
@@ -2017,7 +2771,9 @@
           "CLI",
           "gateway"
         ],
-        "invocation": [],
+        "invocation": [
+          "delegate_task(goal, context, role=\"leaf\"|\"orchestrator\", ...)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2028,6 +2784,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can delegate work to specialized agents."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: delegate_task(goal, context, role=\"leaf\"|\"orchestrator\", ...)"
           }
         ],
         "access": "supported"
@@ -2042,7 +2805,10 @@
           "background tasks",
           "Mixture-of-Agents"
         ],
-        "invocation": [],
+        "invocation": [
+          "delegate_task(tasks=[...])",
+          "delegation.max_concurrent_children config key / DELEGATION_MAX_CONCURRENT_CHILDREN env var"
+        ],
         "minimum_version": "0.18.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -2053,6 +2819,13 @@
             "version": "0.18.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports background work and Mixture-of-Agents execution."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: delegate_task(tasks=[...]), delegation.max_concurrent_children config key / DELEGATION_MAX_CONCURRENT_CHILDREN env var"
           }
         ],
         "access": "supported"
@@ -2066,7 +2839,9 @@
         "surfaces": [
           "Mixture-of-Agents"
         ],
-        "invocation": [],
+        "invocation": [
+          "moa virtual model provider (config.yaml moa presets, select via hermes model)"
+        ],
         "minimum_version": "0.18.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -2077,6 +2852,13 @@
             "version": "0.18.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Mixture-of-Agents is a first-class coordination mode rather than only ad hoc subagent prompting."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/mixture-of-agents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: moa virtual model provider (config.yaml moa presets, select via hermes model)"
           }
         ],
         "access": "supported"
@@ -2091,7 +2873,10 @@
           "Telegram/gateway",
           "cloud VM"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes config set terminal.backend modal|daytona|vercel_sandbox",
+          "hermes gateway"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2102,6 +2887,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes gateways let users interact through messaging channels while work runs on another machine or cloud VM."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/configuration",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes config set terminal.backend modal|daytona|vercel_sandbox, hermes gateway"
           }
         ],
         "access": "supported"
@@ -2118,7 +2910,9 @@
           "cluster",
           "serverless"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes config set terminal.backend docker|ssh|singularity"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2129,6 +2923,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes can run on user-owned machines, VPSs, clusters, or serverless infrastructure."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/configuration",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes config set terminal.backend docker|ssh|singularity"
           }
         ],
         "access": "supported"
@@ -2143,7 +2944,11 @@
           "gateway",
           "scheduler"
         ],
-        "invocation": [],
+        "invocation": [
+          "cronjob tool (create/list/update/pause/resume/run/remove)",
+          "/cron add \"<cron-expr>\" \"<prompt>\"",
+          "hermes cron list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -2154,6 +2959,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes includes scheduled and gateway-driven automation paths."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/cron",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: cronjob tool (create/list/update/pause/resume/run/remove), /cron add \"<cron-expr>\" \"<prompt>\", hermes cron list"
           }
         ],
         "access": "native"
@@ -2167,7 +2979,12 @@
         "surfaces": [
           "CLI permission modes"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes --yolo",
+          "/yolo",
+          "approvals.mode in config.yaml (smart|manual|off)",
+          "approvals.deny glob rules"
+        ],
         "minimum_version": null,
         "limitations": [
           "The security model needs deeper comparative review before enterprise promotion."
@@ -2180,6 +2997,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Permission modes such as `/yolo` and gateway/tool configuration govern autonomy; use conservative defaults for unattended runs."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes --yolo, /yolo, approvals.mode in config.yaml (smart|manual|off), approvals.deny glob rules"
           }
         ],
         "access": "supported"
@@ -2194,7 +3018,11 @@
           "research tools",
           "citations"
         ],
-        "invocation": [],
+        "invocation": [
+          "web_search tool",
+          "web_extract tool",
+          "grounded-citations skill"
+        ],
         "minimum_version": "0.20.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -2205,6 +3033,13 @@
             "version": "0.20.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes 0.20 added grounded research and citation support."
+          },
+          {
+            "source_id": "src.hermes.releases",
+            "url": "https://hermes-agent.nousresearch.com/docs/user-guide/skills/bundled/research/research-grounded-citations",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: web_search tool, web_extract tool, grounded-citations skill"
           }
         ],
         "access": "supported"
@@ -2219,7 +3054,10 @@
           "hosted APIs",
           "local models"
         ],
-        "invocation": [],
+        "invocation": [
+          "hermes model",
+          "hermes config set model <provider>/<model>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2230,6 +3068,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Hermes supports multiple hosted and local model providers."
+          },
+          {
+            "source_id": "src.hermes.repo",
+            "url": "https://hermes-agent.nousresearch.com/docs/getting-started/quickstart",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: hermes model, hermes config set model <provider>/<model>"
           }
         ],
         "access": "configurable"

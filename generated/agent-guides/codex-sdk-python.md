@@ -16,12 +16,12 @@ artifact_kind: harness_capability_guide
 
 ## Human operator
 
-- **Embeddable SDK** (`supported`): Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime. Invocation: `See evidence`.
+- **Embeddable SDK** (`supported`): Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime. Invocation: `pip install openai-codex, from openai_codex import Codex, AsyncCodex, Codex().thread_start(...)`.
 - **Machine-readable output** (`supported`): Typed notifications and generated schemas expose machine-readable turn events. Invocation: `See evidence`.
-- **RPC/app-server protocol** (`supported`): The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas. Invocation: `See evidence`.
-- **Execution sandbox** (`supported`): Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write. Invocation: `See evidence`.
-- **Programmatic human approval** (`supported`): SDK/app-server clients can participate in approval flows and return decisions through the machine protocol. Invocation: `See evidence`.
-- **Resume, fork, and session lineage** (`supported`): SDK clients control Codex threads and turns. Invocation: `See evidence`.
+- **RPC/app-server protocol** (`supported`): The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas. Invocation: `CodexClient.request(method, params), thread_start, turn_start, thread_resume, thread_fork (Codex app-server JSON-RPC protocol)`.
+- **Execution sandbox** (`supported`): Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write. Invocation: `Sandbox.read_only, Sandbox.workspace_write, Sandbox.full_access (passed as sandbox= to thread_start/turn_start)`.
+- **Programmatic human approval** (`supported`): SDK/app-server clients can participate in approval flows and return decisions through the machine protocol. Invocation: `ApprovalMode.deny_all, ApprovalMode.auto_review (passed as approval_mode= to thread_start/turn_start)`.
+- **Resume, fork, and session lineage** (`supported`): SDK clients control Codex threads and turns. Invocation: `codex.thread_resume(thread_id), codex.thread_fork(thread_id)`.
 
 ## In-harness agent
 
@@ -29,30 +29,30 @@ No positively verified capabilities in the current seed.
 
 ## External agent/orchestrator
 
-- **Embeddable SDK** (`native`): Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime. Invocation: `See evidence`.
+- **Embeddable SDK** (`native`): Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime. Invocation: `pip install openai-codex, from openai_codex import Codex, AsyncCodex, Codex().thread_start(...)`.
 - **Machine-readable output** (`native`): Typed notifications and generated schemas expose machine-readable turn events. Invocation: `See evidence`.
-- **RPC/app-server protocol** (`native`): The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas. Invocation: `See evidence`.
-- **Execution sandbox** (`native`): Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write. Invocation: `See evidence`.
-- **Programmatic human approval** (`native`): SDK/app-server clients can participate in approval flows and return decisions through the machine protocol. Invocation: `See evidence`.
-- **Resume, fork, and session lineage** (`native`): SDK clients control Codex threads and turns. Invocation: `See evidence`.
+- **RPC/app-server protocol** (`native`): The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas. Invocation: `CodexClient.request(method, params), thread_start, turn_start, thread_resume, thread_fork (Codex app-server JSON-RPC protocol)`.
+- **Execution sandbox** (`native`): Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write. Invocation: `Sandbox.read_only, Sandbox.workspace_write, Sandbox.full_access (passed as sandbox= to thread_start/turn_start)`.
+- **Programmatic human approval** (`native`): SDK/app-server clients can participate in approval flows and return decisions through the machine protocol. Invocation: `ApprovalMode.deny_all, ApprovalMode.auto_review (passed as approval_mode= to thread_start/turn_start)`.
+- **Resume, fork, and session lineage** (`native`): SDK clients control Codex threads and turns. Invocation: `codex.thread_resume(thread_id), codex.thread_fork(thread_id)`.
 
 ## CI or scheduled automation
 
-- **Embeddable SDK** (`native`): Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime. Invocation: `See evidence`.
+- **Embeddable SDK** (`native`): Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime. Invocation: `pip install openai-codex, from openai_codex import Codex, AsyncCodex, Codex().thread_start(...)`.
 - **Machine-readable output** (`native`): Typed notifications and generated schemas expose machine-readable turn events. Invocation: `See evidence`.
-- **RPC/app-server protocol** (`native`): The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas. Invocation: `See evidence`.
-- **Execution sandbox** (`native`): Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write. Invocation: `See evidence`.
-- **Programmatic human approval** (`native`): SDK/app-server clients can participate in approval flows and return decisions through the machine protocol. Invocation: `See evidence`.
-- **Resume, fork, and session lineage** (`native`): SDK clients control Codex threads and turns. Invocation: `See evidence`.
+- **RPC/app-server protocol** (`native`): The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas. Invocation: `CodexClient.request(method, params), thread_start, turn_start, thread_resume, thread_fork (Codex app-server JSON-RPC protocol)`.
+- **Execution sandbox** (`native`): Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write. Invocation: `Sandbox.read_only, Sandbox.workspace_write, Sandbox.full_access (passed as sandbox= to thread_start/turn_start)`.
+- **Programmatic human approval** (`native`): SDK/app-server clients can participate in approval flows and return decisions through the machine protocol. Invocation: `ApprovalMode.deny_all, ApprovalMode.auto_review (passed as approval_mode= to thread_start/turn_start)`.
+- **Resume, fork, and session lineage** (`native`): SDK clients control Codex threads and turns. Invocation: `codex.thread_resume(thread_id), codex.thread_fork(thread_id)`.
 
 ## Administrator
 
-- **Embeddable SDK** (`configurable`): Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime. Invocation: `See evidence`.
+- **Embeddable SDK** (`configurable`): Python SDK controls the local Codex app-server over JSON-RPC and bundles a pinned runtime. Invocation: `pip install openai-codex, from openai_codex import Codex, AsyncCodex, Codex().thread_start(...)`.
 - **Machine-readable output** (`configurable`): Typed notifications and generated schemas expose machine-readable turn events. Invocation: `See evidence`.
-- **RPC/app-server protocol** (`configurable`): The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas. Invocation: `See evidence`.
-- **Execution sandbox** (`configurable`): Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write. Invocation: `See evidence`.
-- **Programmatic human approval** (`configurable`): SDK/app-server clients can participate in approval flows and return decisions through the machine protocol. Invocation: `See evidence`.
-- **Resume, fork, and session lineage** (`configurable`): SDK clients control Codex threads and turns. Invocation: `See evidence`.
+- **RPC/app-server protocol** (`configurable`): The SDK consumes Codex app-server JSON-RPC methods and version-specific schemas. Invocation: `CodexClient.request(method, params), thread_start, turn_start, thread_resume, thread_fork (Codex app-server JSON-RPC protocol)`.
+- **Execution sandbox** (`configurable`): Python SDK thread and turn calls expose Codex sandbox presets such as read-only and workspace-write. Invocation: `Sandbox.read_only, Sandbox.workspace_write, Sandbox.full_access (passed as sandbox= to thread_start/turn_start)`.
+- **Programmatic human approval** (`configurable`): SDK/app-server clients can participate in approval flows and return decisions through the machine protocol. Invocation: `ApprovalMode.deny_all, ApprovalMode.auto_review (passed as approval_mode= to thread_start/turn_start)`.
+- **Resume, fork, and session lineage** (`configurable`): SDK clients control Codex threads and turns. Invocation: `codex.thread_resume(thread_id), codex.thread_fork(thread_id)`.
 
 ## Freshness rule
 

@@ -16,64 +16,64 @@ artifact_kind: harness_capability_guide
 
 ## Human operator
 
-- **Agent-native file editing** (`supported`): goose can install, execute, edit, and test through agent tools. Invocation: `See evidence`.
-- **Agent-native shell execution** (`supported`): goose can execute local commands. Invocation: `See evidence`.
-- **Headless/non-interactive execution** (`supported`): goose server and CLI paths support external automation. Invocation: `See evidence`.
-- **RPC/app-server protocol** (`supported`): The goosed server exposes agent functionality to clients. Invocation: `See evidence`.
-- **Agent Skills** (`configurable`): Recipes and reusable instructions package workflows for agents. Invocation: `See evidence`.
-- **MCP client** (`configurable`): goose is MCP-first and can use MCP extensions and apps. Invocation: `See evidence`.
-- **Desktop or web surface** (`native`): goose provides an Electron desktop interface. Invocation: `See evidence`.
-- **Interactive terminal/TUI** (`native`): goose provides a CLI agent interface. Invocation: `See evidence`.
-- **Model/provider portability** (`native`): goose is designed to work with multiple LLM providers and local models. Invocation: `See evidence`.
-- **Subagents/delegation** (`supported`): goose supports delegated/subagent workflows through recipes and summon/delegate primitives. Invocation: `See evidence`.
-- **Self-hosted worker/runtime** (`configurable`): goose runs locally or on user-managed servers. Invocation: `See evidence`.
+- **Agent-native file editing** (`supported`): goose can install, execute, edit, and test through agent tools. Invocation: `write, edit, tree (developer extension tools)`.
+- **Agent-native shell execution** (`supported`): goose can execute local commands. Invocation: `shell (developer extension tool)`.
+- **Headless/non-interactive execution** (`supported`): goose server and CLI paths support external automation. Invocation: `goose run -i <FILE>, goose run -t "<TEXT>", goose run --no-session, goose run --quiet`.
+- **RPC/app-server protocol** (`supported`): The goosed server exposes agent functionality to clients. Invocation: `goose acp, goose serve --host <HOST> --port <PORT>`.
+- **Agent Skills** (`configurable`): Recipes and reusable instructions package workflows for agents. Invocation: `goose skills list, /skills (interactive slash command)`.
+- **MCP client** (`configurable`): goose is MCP-first and can use MCP extensions and apps. Invocation: `goose configure (Configure Providers/Extensions), goose session --with-extension <command>, goose session --with-streamable-http-extension <url>`.
+- **Desktop or web surface** (`native`): goose provides an Electron desktop interface. Invocation: `Goose Desktop (Electron app, downloadable per-OS installer)`.
+- **Interactive terminal/TUI** (`native`): goose provides a CLI agent interface. Invocation: `goose session, goose`.
+- **Model/provider portability** (`native`): goose is designed to work with multiple LLM providers and local models. Invocation: `goose configure (Configure Providers), GOOSE_MODEL env var / config.yaml, goose run --model <MODEL> --provider <PROVIDER>`.
+- **Subagents/delegation** (`supported`): goose supports delegated/subagent workflows through recipes and summon/delegate primitives. Invocation: `natural-language delegation request (e.g. "run these in parallel using subagents"), GOOSE_SUBAGENT_MAX_TURNS env var`.
+- **Self-hosted worker/runtime** (`configurable`): goose runs locally or on user-managed servers. Invocation: `goose session --container <id>, goose serve (self-hosted ACP server)`.
 
 ## In-harness agent
 
-- **Agent-native file editing** (`native`): goose can install, execute, edit, and test through agent tools. Invocation: `See evidence`.
-- **Agent-native shell execution** (`native`): goose can execute local commands. Invocation: `See evidence`.
-- **Agent Skills** (`native`): Recipes and reusable instructions package workflows for agents. Invocation: `See evidence`.
-- **MCP client** (`native`): goose is MCP-first and can use MCP extensions and apps. Invocation: `See evidence`.
-- **Model/provider portability** (`supported`): goose is designed to work with multiple LLM providers and local models. Invocation: `See evidence`.
-- **Subagents/delegation** (`native`): goose supports delegated/subagent workflows through recipes and summon/delegate primitives. Invocation: `See evidence`.
+- **Agent-native file editing** (`native`): goose can install, execute, edit, and test through agent tools. Invocation: `write, edit, tree (developer extension tools)`.
+- **Agent-native shell execution** (`native`): goose can execute local commands. Invocation: `shell (developer extension tool)`.
+- **Agent Skills** (`native`): Recipes and reusable instructions package workflows for agents. Invocation: `goose skills list, /skills (interactive slash command)`.
+- **MCP client** (`native`): goose is MCP-first and can use MCP extensions and apps. Invocation: `goose configure (Configure Providers/Extensions), goose session --with-extension <command>, goose session --with-streamable-http-extension <url>`.
+- **Model/provider portability** (`supported`): goose is designed to work with multiple LLM providers and local models. Invocation: `goose configure (Configure Providers), GOOSE_MODEL env var / config.yaml, goose run --model <MODEL> --provider <PROVIDER>`.
+- **Subagents/delegation** (`native`): goose supports delegated/subagent workflows through recipes and summon/delegate primitives. Invocation: `natural-language delegation request (e.g. "run these in parallel using subagents"), GOOSE_SUBAGENT_MAX_TURNS env var`.
 
 ## External agent/orchestrator
 
-- **Agent-native file editing** (`supported`): goose can install, execute, edit, and test through agent tools. Invocation: `See evidence`.
-- **Agent-native shell execution** (`supported`): goose can execute local commands. Invocation: `See evidence`.
-- **Headless/non-interactive execution** (`native`): goose server and CLI paths support external automation. Invocation: `See evidence`.
-- **RPC/app-server protocol** (`native`): The goosed server exposes agent functionality to clients. Invocation: `See evidence`.
-- **Agent Skills** (`supported`): Recipes and reusable instructions package workflows for agents. Invocation: `See evidence`.
-- **MCP client** (`supported`): goose is MCP-first and can use MCP extensions and apps. Invocation: `See evidence`.
-- **Model/provider portability** (`configurable`): goose is designed to work with multiple LLM providers and local models. Invocation: `See evidence`.
-- **Subagents/delegation** (`supported`): goose supports delegated/subagent workflows through recipes and summon/delegate primitives. Invocation: `See evidence`.
-- **Self-hosted worker/runtime** (`supported`): goose runs locally or on user-managed servers. Invocation: `See evidence`.
+- **Agent-native file editing** (`supported`): goose can install, execute, edit, and test through agent tools. Invocation: `write, edit, tree (developer extension tools)`.
+- **Agent-native shell execution** (`supported`): goose can execute local commands. Invocation: `shell (developer extension tool)`.
+- **Headless/non-interactive execution** (`native`): goose server and CLI paths support external automation. Invocation: `goose run -i <FILE>, goose run -t "<TEXT>", goose run --no-session, goose run --quiet`.
+- **RPC/app-server protocol** (`native`): The goosed server exposes agent functionality to clients. Invocation: `goose acp, goose serve --host <HOST> --port <PORT>`.
+- **Agent Skills** (`supported`): Recipes and reusable instructions package workflows for agents. Invocation: `goose skills list, /skills (interactive slash command)`.
+- **MCP client** (`supported`): goose is MCP-first and can use MCP extensions and apps. Invocation: `goose configure (Configure Providers/Extensions), goose session --with-extension <command>, goose session --with-streamable-http-extension <url>`.
+- **Model/provider portability** (`configurable`): goose is designed to work with multiple LLM providers and local models. Invocation: `goose configure (Configure Providers), GOOSE_MODEL env var / config.yaml, goose run --model <MODEL> --provider <PROVIDER>`.
+- **Subagents/delegation** (`supported`): goose supports delegated/subagent workflows through recipes and summon/delegate primitives. Invocation: `natural-language delegation request (e.g. "run these in parallel using subagents"), GOOSE_SUBAGENT_MAX_TURNS env var`.
+- **Self-hosted worker/runtime** (`supported`): goose runs locally or on user-managed servers. Invocation: `goose session --container <id>, goose serve (self-hosted ACP server)`.
 
 ## CI or scheduled automation
 
-- **Agent-native file editing** (`supported`): goose can install, execute, edit, and test through agent tools. Invocation: `See evidence`.
-- **Agent-native shell execution** (`supported`): goose can execute local commands. Invocation: `See evidence`.
-- **Headless/non-interactive execution** (`native`): goose server and CLI paths support external automation. Invocation: `See evidence`.
-- **RPC/app-server protocol** (`native`): The goosed server exposes agent functionality to clients. Invocation: `See evidence`.
-- **Agent Skills** (`supported`): Recipes and reusable instructions package workflows for agents. Invocation: `See evidence`.
-- **MCP client** (`supported`): goose is MCP-first and can use MCP extensions and apps. Invocation: `See evidence`.
-- **Model/provider portability** (`configurable`): goose is designed to work with multiple LLM providers and local models. Invocation: `See evidence`.
-- **Subagents/delegation** (`supported`): goose supports delegated/subagent workflows through recipes and summon/delegate primitives. Invocation: `See evidence`.
-- **Self-hosted worker/runtime** (`supported`): goose runs locally or on user-managed servers. Invocation: `See evidence`.
+- **Agent-native file editing** (`supported`): goose can install, execute, edit, and test through agent tools. Invocation: `write, edit, tree (developer extension tools)`.
+- **Agent-native shell execution** (`supported`): goose can execute local commands. Invocation: `shell (developer extension tool)`.
+- **Headless/non-interactive execution** (`native`): goose server and CLI paths support external automation. Invocation: `goose run -i <FILE>, goose run -t "<TEXT>", goose run --no-session, goose run --quiet`.
+- **RPC/app-server protocol** (`native`): The goosed server exposes agent functionality to clients. Invocation: `goose acp, goose serve --host <HOST> --port <PORT>`.
+- **Agent Skills** (`supported`): Recipes and reusable instructions package workflows for agents. Invocation: `goose skills list, /skills (interactive slash command)`.
+- **MCP client** (`supported`): goose is MCP-first and can use MCP extensions and apps. Invocation: `goose configure (Configure Providers/Extensions), goose session --with-extension <command>, goose session --with-streamable-http-extension <url>`.
+- **Model/provider portability** (`configurable`): goose is designed to work with multiple LLM providers and local models. Invocation: `goose configure (Configure Providers), GOOSE_MODEL env var / config.yaml, goose run --model <MODEL> --provider <PROVIDER>`.
+- **Subagents/delegation** (`supported`): goose supports delegated/subagent workflows through recipes and summon/delegate primitives. Invocation: `natural-language delegation request (e.g. "run these in parallel using subagents"), GOOSE_SUBAGENT_MAX_TURNS env var`.
+- **Self-hosted worker/runtime** (`supported`): goose runs locally or on user-managed servers. Invocation: `goose session --container <id>, goose serve (self-hosted ACP server)`.
 
 ## Administrator
 
-- **Agent-native file editing** (`configurable`): goose can install, execute, edit, and test through agent tools. Invocation: `See evidence`.
-- **Agent-native shell execution** (`configurable`): goose can execute local commands. Invocation: `See evidence`.
-- **Headless/non-interactive execution** (`configurable`): goose server and CLI paths support external automation. Invocation: `See evidence`.
-- **RPC/app-server protocol** (`configurable`): The goosed server exposes agent functionality to clients. Invocation: `See evidence`.
-- **Agent Skills** (`configurable`): Recipes and reusable instructions package workflows for agents. Invocation: `See evidence`.
-- **MCP client** (`configurable`): goose is MCP-first and can use MCP extensions and apps. Invocation: `See evidence`.
-- **Desktop or web surface** (`configurable`): goose provides an Electron desktop interface. Invocation: `See evidence`.
-- **Interactive terminal/TUI** (`configurable`): goose provides a CLI agent interface. Invocation: `See evidence`.
-- **Model/provider portability** (`configurable`): goose is designed to work with multiple LLM providers and local models. Invocation: `See evidence`.
-- **Subagents/delegation** (`configurable`): goose supports delegated/subagent workflows through recipes and summon/delegate primitives. Invocation: `See evidence`.
-- **Self-hosted worker/runtime** (`native`): goose runs locally or on user-managed servers. Invocation: `See evidence`.
+- **Agent-native file editing** (`configurable`): goose can install, execute, edit, and test through agent tools. Invocation: `write, edit, tree (developer extension tools)`.
+- **Agent-native shell execution** (`configurable`): goose can execute local commands. Invocation: `shell (developer extension tool)`.
+- **Headless/non-interactive execution** (`configurable`): goose server and CLI paths support external automation. Invocation: `goose run -i <FILE>, goose run -t "<TEXT>", goose run --no-session, goose run --quiet`.
+- **RPC/app-server protocol** (`configurable`): The goosed server exposes agent functionality to clients. Invocation: `goose acp, goose serve --host <HOST> --port <PORT>`.
+- **Agent Skills** (`configurable`): Recipes and reusable instructions package workflows for agents. Invocation: `goose skills list, /skills (interactive slash command)`.
+- **MCP client** (`configurable`): goose is MCP-first and can use MCP extensions and apps. Invocation: `goose configure (Configure Providers/Extensions), goose session --with-extension <command>, goose session --with-streamable-http-extension <url>`.
+- **Desktop or web surface** (`configurable`): goose provides an Electron desktop interface. Invocation: `Goose Desktop (Electron app, downloadable per-OS installer)`.
+- **Interactive terminal/TUI** (`configurable`): goose provides a CLI agent interface. Invocation: `goose session, goose`.
+- **Model/provider portability** (`configurable`): goose is designed to work with multiple LLM providers and local models. Invocation: `goose configure (Configure Providers), GOOSE_MODEL env var / config.yaml, goose run --model <MODEL> --provider <PROVIDER>`.
+- **Subagents/delegation** (`configurable`): goose supports delegated/subagent workflows through recipes and summon/delegate primitives. Invocation: `natural-language delegation request (e.g. "run these in parallel using subagents"), GOOSE_SUBAGENT_MAX_TURNS env var`.
+- **Self-hosted worker/runtime** (`native`): goose runs locally or on user-managed servers. Invocation: `goose session --container <id>, goose serve (self-hosted ACP server)`.
 
 ## Freshness rule
 

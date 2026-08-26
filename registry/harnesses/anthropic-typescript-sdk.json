@@ -56,7 +56,10 @@
       "surfaces": [
         "JavaScript/TypeScript library"
       ],
-      "invocation": [],
+      "invocation": [
+        "npm install @anthropic-ai/sdk",
+        "import Anthropic from '@anthropic-ai/sdk'; const client = new Anthropic();"
+      ],
       "minimum_version": null,
       "current_version_verified": "0.115.0",
       "limitations": [],
@@ -69,9 +72,16 @@
           "claim": "Typed JavaScript/TypeScript access to the Anthropic API.",
           "version": null,
           "verified_at": "2026-08-08T20:00:00Z"
+        },
+        {
+          "source_id": "src.anthropic-typescript.changelog",
+          "url": "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/typescript",
+          "claim": "Invocation verified: npm install @anthropic-ai/sdk, import Anthropic from '@anthropic-ai/sdk'; const client = new Anthropic();",
+          "version": null,
+          "verified_at": "2026-08-26T00:00:00Z"
         }
       ],
-      "invocation_status": "unreviewed",
+      "invocation_status": "resolved",
       "invocation_na_reason": null
     },
     {
@@ -92,7 +102,11 @@
         "streaming",
         "typed API objects"
       ],
-      "invocation": [],
+      "invocation": [
+        "client.messages.create({tools: [...], tool_choice: ...})",
+        "strict: true (tool definition)",
+        "client.messages.create({stream: true})"
+      ],
       "minimum_version": null,
       "current_version_verified": "0.115.0",
       "limitations": [],
@@ -105,9 +119,16 @@
           "claim": "Streaming and typed response objects support machine-readable application logic.",
           "version": null,
           "verified_at": "2026-08-08T20:00:00Z"
+        },
+        {
+          "source_id": "src.anthropic-typescript.changelog",
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+          "claim": "Invocation verified: client.messages.create({tools: [...], tool_choice: ...}), strict: true (tool definition), client.messages.create({stream: true})",
+          "version": null,
+          "verified_at": "2026-08-26T00:00:00Z"
         }
       ],
-      "invocation_status": "unreviewed",
+      "invocation_status": "resolved",
       "invocation_na_reason": null
     },
     {
@@ -127,7 +148,11 @@
       "surfaces": [
         "API parameters"
       ],
-      "invocation": [],
+      "invocation": [
+        "model: \"claude-...\"",
+        "thinking: {type: \"enabled\", budget_tokens: N}",
+        "thinking: {type: \"adaptive\"}, output_config: {effort: \"high\"}"
+      ],
       "minimum_version": null,
       "current_version_verified": "0.115.0",
       "limitations": [],
@@ -140,9 +165,16 @@
           "claim": "Model and API feature parameters are exposed as generated typed interfaces.",
           "version": null,
           "verified_at": "2026-08-08T20:00:00Z"
+        },
+        {
+          "source_id": "src.anthropic-typescript.changelog",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/extended-thinking",
+          "claim": "Invocation verified: model: \"claude-...\", thinking: {type: \"enabled\", budget_tokens: N}, thinking: {type: \"adaptive\"}, output_config: {effort: \"high\"}",
+          "version": null,
+          "verified_at": "2026-08-26T00:00:00Z"
         }
       ],
-      "invocation_status": "unreviewed",
+      "invocation_status": "resolved",
       "invocation_na_reason": null
     }
   ],
