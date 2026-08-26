@@ -16,10 +16,10 @@ artifact_kind: harness_capability_guide
 
 ## Human operator
 
-- **Embeddable SDK** (`supported`): The server-side TypeScript SDK starts, continues, and resumes local Codex threads. Invocation: `See evidence`.
-- **Machine-readable output** (`supported`): The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress. Invocation: `See evidence`.
-- **Execution sandbox** (`supported`): Thread options inherit Codex sandbox and approval controls available through the underlying CLI. Invocation: `See evidence`.
-- **Resume, fork, and session lineage** (`supported`): Applications can continue the same thread or resume a prior thread by ID. Invocation: `See evidence`.
+- **Embeddable SDK** (`supported`): The server-side TypeScript SDK starts, continues, and resumes local Codex threads. Invocation: `npm install @openai/codex-sdk, import { Codex } from "@openai/codex-sdk", new Codex(), codex.startThread()`.
+- **Machine-readable output** (`supported`): The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress. Invocation: `thread.run(input, { outputSchema }), thread.runStreamed(input, { outputSchema })`.
+- **Execution sandbox** (`supported`): Thread options inherit Codex sandbox and approval controls available through the underlying CLI. Invocation: `codex.startThread({ sandboxMode: "read-only" | "workspace-write" | "danger-full-access" })`.
+- **Resume, fork, and session lineage** (`supported`): Applications can continue the same thread or resume a prior thread by ID. Invocation: `codex.resumeThread(threadId, options)`.
 
 ## In-harness agent
 
@@ -27,24 +27,24 @@ No positively verified capabilities in the current seed.
 
 ## External agent/orchestrator
 
-- **Embeddable SDK** (`native`): The server-side TypeScript SDK starts, continues, and resumes local Codex threads. Invocation: `See evidence`.
-- **Machine-readable output** (`native`): The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress. Invocation: `See evidence`.
-- **Execution sandbox** (`native`): Thread options inherit Codex sandbox and approval controls available through the underlying CLI. Invocation: `See evidence`.
-- **Resume, fork, and session lineage** (`native`): Applications can continue the same thread or resume a prior thread by ID. Invocation: `See evidence`.
+- **Embeddable SDK** (`native`): The server-side TypeScript SDK starts, continues, and resumes local Codex threads. Invocation: `npm install @openai/codex-sdk, import { Codex } from "@openai/codex-sdk", new Codex(), codex.startThread()`.
+- **Machine-readable output** (`native`): The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress. Invocation: `thread.run(input, { outputSchema }), thread.runStreamed(input, { outputSchema })`.
+- **Execution sandbox** (`native`): Thread options inherit Codex sandbox and approval controls available through the underlying CLI. Invocation: `codex.startThread({ sandboxMode: "read-only" | "workspace-write" | "danger-full-access" })`.
+- **Resume, fork, and session lineage** (`native`): Applications can continue the same thread or resume a prior thread by ID. Invocation: `codex.resumeThread(threadId, options)`.
 
 ## CI or scheduled automation
 
-- **Embeddable SDK** (`native`): The server-side TypeScript SDK starts, continues, and resumes local Codex threads. Invocation: `See evidence`.
-- **Machine-readable output** (`native`): The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress. Invocation: `See evidence`.
-- **Execution sandbox** (`native`): Thread options inherit Codex sandbox and approval controls available through the underlying CLI. Invocation: `See evidence`.
-- **Resume, fork, and session lineage** (`native`): Applications can continue the same thread or resume a prior thread by ID. Invocation: `See evidence`.
+- **Embeddable SDK** (`native`): The server-side TypeScript SDK starts, continues, and resumes local Codex threads. Invocation: `npm install @openai/codex-sdk, import { Codex } from "@openai/codex-sdk", new Codex(), codex.startThread()`.
+- **Machine-readable output** (`native`): The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress. Invocation: `thread.run(input, { outputSchema }), thread.runStreamed(input, { outputSchema })`.
+- **Execution sandbox** (`native`): Thread options inherit Codex sandbox and approval controls available through the underlying CLI. Invocation: `codex.startThread({ sandboxMode: "read-only" | "workspace-write" | "danger-full-access" })`.
+- **Resume, fork, and session lineage** (`native`): Applications can continue the same thread or resume a prior thread by ID. Invocation: `codex.resumeThread(threadId, options)`.
 
 ## Administrator
 
-- **Embeddable SDK** (`configurable`): The server-side TypeScript SDK starts, continues, and resumes local Codex threads. Invocation: `See evidence`.
-- **Machine-readable output** (`configurable`): The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress. Invocation: `See evidence`.
-- **Execution sandbox** (`configurable`): Thread options inherit Codex sandbox and approval controls available through the underlying CLI. Invocation: `See evidence`.
-- **Resume, fork, and session lineage** (`configurable`): Applications can continue the same thread or resume a prior thread by ID. Invocation: `See evidence`.
+- **Embeddable SDK** (`configurable`): The server-side TypeScript SDK starts, continues, and resumes local Codex threads. Invocation: `npm install @openai/codex-sdk, import { Codex } from "@openai/codex-sdk", new Codex(), codex.startThread()`.
+- **Machine-readable output** (`configurable`): The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress. Invocation: `thread.run(input, { outputSchema }), thread.runStreamed(input, { outputSchema })`.
+- **Execution sandbox** (`configurable`): Thread options inherit Codex sandbox and approval controls available through the underlying CLI. Invocation: `codex.startThread({ sandboxMode: "read-only" | "workspace-write" | "danger-full-access" })`.
+- **Resume, fork, and session lineage** (`configurable`): Applications can continue the same thread or resume a prior thread by ID. Invocation: `codex.resumeThread(threadId, options)`.
 
 ## Freshness rule
 

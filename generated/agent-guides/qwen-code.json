@@ -29,7 +29,9 @@
         "surfaces": [
           "terminal"
         ],
-        "invocation": [],
+        "invocation": [
+          "qwen"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -40,6 +42,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code is an open-source terminal coding agent."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://github.com/QwenLM/qwen-code",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: qwen"
           }
         ],
         "access": "native"
@@ -53,7 +62,9 @@
         "surfaces": [
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "Qwen Code Desktop (official macOS/Windows/Linux app)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -64,6 +75,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code provides an official desktop application."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/blog/updates/weekly-update-2026-08-06/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Qwen Code Desktop (official macOS/Windows/Linux app)"
           }
         ],
         "access": "native"
@@ -78,7 +96,10 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "edit",
+          "write_file"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -89,6 +110,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code can inspect and edit repository files."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/tools/introduction/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: edit, write_file"
           }
         ],
         "access": "supported"
@@ -102,7 +130,9 @@
         "surfaces": [
           "terminal"
         ],
-        "invocation": [],
+        "invocation": [
+          "run_shell_command"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -113,6 +143,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code can run shell commands."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/tools/shell/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: run_shell_command"
           }
         ],
         "access": "supported"
@@ -126,7 +163,11 @@
         "surfaces": [
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "qwen mcp add <name> <commandOrUrl>",
+          "/mcp",
+          "mcpServers (in ~/.qwen/settings.json or .qwen/settings.json)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -137,6 +178,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code supports MCP-style external tools."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/mcp/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: qwen mcp add <name> <commandOrUrl>, /mcp, mcpServers (in ~/.qwen/settings.json or .qwen/settings.json)"
           }
         ],
         "access": "configurable"
@@ -150,7 +198,11 @@
         "surfaces": [
           "skills"
         ],
-        "invocation": [],
+        "invocation": [
+          "/skills",
+          "/learn <source>",
+          "SKILL.md (in ~/.qwen/skills/<name>/ or .qwen/skills/<name>/)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -161,6 +213,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code follows the modern coding-harness skill/instruction model."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /skills, /learn <source>, SKILL.md (in ~/.qwen/skills/<name>/ or .qwen/skills/<name>/)"
           }
         ],
         "access": "configurable"
@@ -175,7 +234,11 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "qwen --resume <sessionId>",
+          "qwen --continue",
+          "--checkpointing"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -186,6 +249,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Sessions persist across interactive use."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/headless/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: qwen --resume <sessionId>, qwen --continue, --checkpointing"
           }
         ],
         "access": "native"
@@ -199,7 +269,12 @@
         "surfaces": [
           "multiple providers"
         ],
-        "invocation": [],
+        "invocation": [
+          "OPENAI_API_KEY",
+          "ANTHROPIC_API_KEY",
+          "GEMINI_API_KEY",
+          "modelProviders (in settings.json)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -210,6 +285,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code supports OpenAI, Anthropic, Gemini, and Qwen APIs."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/model-providers/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, modelProviders (in settings.json)"
           }
         ],
         "access": "native"
@@ -225,7 +307,9 @@
         "surfaces": [
           "terminal"
         ],
-        "invocation": [],
+        "invocation": [
+          "qwen"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -236,6 +320,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code is an open-source terminal coding agent."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://github.com/QwenLM/qwen-code",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: qwen"
           }
         ],
         "access": "configurable"
@@ -249,7 +340,9 @@
         "surfaces": [
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "Qwen Code Desktop (official macOS/Windows/Linux app)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -260,6 +353,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code provides an official desktop application."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/blog/updates/weekly-update-2026-08-06/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Qwen Code Desktop (official macOS/Windows/Linux app)"
           }
         ],
         "access": "configurable"
@@ -274,7 +374,10 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "edit",
+          "write_file"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -285,6 +388,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code can inspect and edit repository files."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/tools/introduction/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: edit, write_file"
           }
         ],
         "access": "configurable"
@@ -298,7 +408,9 @@
         "surfaces": [
           "terminal"
         ],
-        "invocation": [],
+        "invocation": [
+          "run_shell_command"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -309,6 +421,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code can run shell commands."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/tools/shell/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: run_shell_command"
           }
         ],
         "access": "configurable"
@@ -322,7 +441,11 @@
         "surfaces": [
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "qwen mcp add <name> <commandOrUrl>",
+          "/mcp",
+          "mcpServers (in ~/.qwen/settings.json or .qwen/settings.json)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -333,6 +456,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code supports MCP-style external tools."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/mcp/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: qwen mcp add <name> <commandOrUrl>, /mcp, mcpServers (in ~/.qwen/settings.json or .qwen/settings.json)"
           }
         ],
         "access": "configurable"
@@ -346,7 +476,11 @@
         "surfaces": [
           "skills"
         ],
-        "invocation": [],
+        "invocation": [
+          "/skills",
+          "/learn <source>",
+          "SKILL.md (in ~/.qwen/skills/<name>/ or .qwen/skills/<name>/)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -357,6 +491,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code follows the modern coding-harness skill/instruction model."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /skills, /learn <source>, SKILL.md (in ~/.qwen/skills/<name>/ or .qwen/skills/<name>/)"
           }
         ],
         "access": "configurable"
@@ -371,7 +512,11 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "qwen --resume <sessionId>",
+          "qwen --continue",
+          "--checkpointing"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -382,6 +527,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Sessions persist across interactive use."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/headless/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: qwen --resume <sessionId>, qwen --continue, --checkpointing"
           }
         ],
         "access": "configurable"
@@ -395,7 +547,12 @@
         "surfaces": [
           "multiple providers"
         ],
-        "invocation": [],
+        "invocation": [
+          "OPENAI_API_KEY",
+          "ANTHROPIC_API_KEY",
+          "GEMINI_API_KEY",
+          "modelProviders (in settings.json)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -406,6 +563,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code supports OpenAI, Anthropic, Gemini, and Qwen APIs."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/model-providers/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, modelProviders (in settings.json)"
           }
         ],
         "access": "configurable"
@@ -422,7 +586,10 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "edit",
+          "write_file"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -433,6 +600,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code can inspect and edit repository files."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/tools/introduction/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: edit, write_file"
           }
         ],
         "access": "native"
@@ -446,7 +620,9 @@
         "surfaces": [
           "terminal"
         ],
-        "invocation": [],
+        "invocation": [
+          "run_shell_command"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -457,6 +633,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code can run shell commands."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/tools/shell/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: run_shell_command"
           }
         ],
         "access": "native"
@@ -470,7 +653,11 @@
         "surfaces": [
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "qwen mcp add <name> <commandOrUrl>",
+          "/mcp",
+          "mcpServers (in ~/.qwen/settings.json or .qwen/settings.json)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -481,6 +668,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code supports MCP-style external tools."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/mcp/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: qwen mcp add <name> <commandOrUrl>, /mcp, mcpServers (in ~/.qwen/settings.json or .qwen/settings.json)"
           }
         ],
         "access": "native"
@@ -494,7 +688,11 @@
         "surfaces": [
           "skills"
         ],
-        "invocation": [],
+        "invocation": [
+          "/skills",
+          "/learn <source>",
+          "SKILL.md (in ~/.qwen/skills/<name>/ or .qwen/skills/<name>/)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -505,6 +703,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code follows the modern coding-harness skill/instruction model."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /skills, /learn <source>, SKILL.md (in ~/.qwen/skills/<name>/ or .qwen/skills/<name>/)"
           }
         ],
         "access": "native"
@@ -518,7 +723,12 @@
         "surfaces": [
           "multiple providers"
         ],
-        "invocation": [],
+        "invocation": [
+          "OPENAI_API_KEY",
+          "ANTHROPIC_API_KEY",
+          "GEMINI_API_KEY",
+          "modelProviders (in settings.json)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -529,6 +739,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code supports OpenAI, Anthropic, Gemini, and Qwen APIs."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/model-providers/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, modelProviders (in settings.json)"
           }
         ],
         "access": "supported"
@@ -545,7 +762,10 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "edit",
+          "write_file"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -556,6 +776,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code can inspect and edit repository files."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/tools/introduction/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: edit, write_file"
           }
         ],
         "access": "supported"
@@ -569,7 +796,9 @@
         "surfaces": [
           "terminal"
         ],
-        "invocation": [],
+        "invocation": [
+          "run_shell_command"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -580,6 +809,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code can run shell commands."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/tools/shell/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: run_shell_command"
           }
         ],
         "access": "supported"
@@ -593,7 +829,11 @@
         "surfaces": [
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "qwen mcp add <name> <commandOrUrl>",
+          "/mcp",
+          "mcpServers (in ~/.qwen/settings.json or .qwen/settings.json)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -604,6 +844,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code supports MCP-style external tools."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/mcp/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: qwen mcp add <name> <commandOrUrl>, /mcp, mcpServers (in ~/.qwen/settings.json or .qwen/settings.json)"
           }
         ],
         "access": "supported"
@@ -617,7 +864,11 @@
         "surfaces": [
           "skills"
         ],
-        "invocation": [],
+        "invocation": [
+          "/skills",
+          "/learn <source>",
+          "SKILL.md (in ~/.qwen/skills/<name>/ or .qwen/skills/<name>/)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -628,6 +879,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code follows the modern coding-harness skill/instruction model."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /skills, /learn <source>, SKILL.md (in ~/.qwen/skills/<name>/ or .qwen/skills/<name>/)"
           }
         ],
         "access": "supported"
@@ -642,7 +900,11 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "qwen --resume <sessionId>",
+          "qwen --continue",
+          "--checkpointing"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -653,6 +915,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Sessions persist across interactive use."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/headless/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: qwen --resume <sessionId>, qwen --continue, --checkpointing"
           }
         ],
         "access": "supported"
@@ -666,7 +935,12 @@
         "surfaces": [
           "multiple providers"
         ],
-        "invocation": [],
+        "invocation": [
+          "OPENAI_API_KEY",
+          "ANTHROPIC_API_KEY",
+          "GEMINI_API_KEY",
+          "modelProviders (in settings.json)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -677,6 +951,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code supports OpenAI, Anthropic, Gemini, and Qwen APIs."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/model-providers/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, modelProviders (in settings.json)"
           }
         ],
         "access": "configurable"
@@ -693,7 +974,10 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "edit",
+          "write_file"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -704,6 +988,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code can inspect and edit repository files."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/tools/introduction/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: edit, write_file"
           }
         ],
         "access": "supported"
@@ -717,7 +1008,9 @@
         "surfaces": [
           "terminal"
         ],
-        "invocation": [],
+        "invocation": [
+          "run_shell_command"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -728,6 +1021,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code can run shell commands."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/developers/tools/shell/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: run_shell_command"
           }
         ],
         "access": "supported"
@@ -741,7 +1041,11 @@
         "surfaces": [
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "qwen mcp add <name> <commandOrUrl>",
+          "/mcp",
+          "mcpServers (in ~/.qwen/settings.json or .qwen/settings.json)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -752,6 +1056,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code supports MCP-style external tools."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/mcp/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: qwen mcp add <name> <commandOrUrl>, /mcp, mcpServers (in ~/.qwen/settings.json or .qwen/settings.json)"
           }
         ],
         "access": "supported"
@@ -765,7 +1076,11 @@
         "surfaces": [
           "skills"
         ],
-        "invocation": [],
+        "invocation": [
+          "/skills",
+          "/learn <source>",
+          "SKILL.md (in ~/.qwen/skills/<name>/ or .qwen/skills/<name>/)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -776,6 +1091,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code follows the modern coding-harness skill/instruction model."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /skills, /learn <source>, SKILL.md (in ~/.qwen/skills/<name>/ or .qwen/skills/<name>/)"
           }
         ],
         "access": "supported"
@@ -790,7 +1112,11 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "qwen --resume <sessionId>",
+          "qwen --continue",
+          "--checkpointing"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -801,6 +1127,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Sessions persist across interactive use."
+          },
+          {
+            "source_id": "src.qwen.docs",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/features/headless/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: qwen --resume <sessionId>, qwen --continue, --checkpointing"
           }
         ],
         "access": "supported"
@@ -814,7 +1147,12 @@
         "surfaces": [
           "multiple providers"
         ],
-        "invocation": [],
+        "invocation": [
+          "OPENAI_API_KEY",
+          "ANTHROPIC_API_KEY",
+          "GEMINI_API_KEY",
+          "modelProviders (in settings.json)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -825,6 +1163,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Qwen Code supports OpenAI, Anthropic, Gemini, and Qwen APIs."
+          },
+          {
+            "source_id": "src.qwen.repo",
+            "url": "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/model-providers/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, modelProviders (in settings.json)"
           }
         ],
         "access": "configurable"

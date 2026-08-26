@@ -55,7 +55,9 @@
         "surfaces": [
           "IDE extension"
         ],
-        "invocation": [],
+        "invocation": [
+          "OpenCode VS Code extension (run `opencode` in the integrated terminal to auto-install, or install \"OpenCode\" from the Extension Marketplace)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -66,6 +68,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode is available through IDE integration."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/ide/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: OpenCode VS Code extension (run `opencode` in the integrated terminal to auto-install, or install \"OpenCode\" from the Extension Marketplace)"
           }
         ],
         "access": "native"
@@ -80,7 +89,11 @@
           "desktop",
           "shared web session"
         ],
-        "invocation": [],
+        "invocation": [
+          "OpenCode Desktop app",
+          "opencode web",
+          "/share (generates opncd.ai/s/<share-id> link)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -91,6 +104,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode provides a desktop application and shareable session links."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/share/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: OpenCode Desktop app, opencode web, /share (generates opncd.ai/s/<share-id> link)"
           }
         ],
         "access": "native"
@@ -106,7 +126,11 @@
           "desktop",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "edit tool",
+          "write tool",
+          "apply_patch tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -117,6 +141,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The build agent can edit files while the plan agent is read-only by default."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: edit tool, write tool, apply_patch tool"
           }
         ],
         "access": "supported"
@@ -130,7 +161,9 @@
         "surfaces": [
           "terminal"
         ],
-        "invocation": [],
+        "invocation": [
+          "bash tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -141,6 +174,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agents can run commands subject to permission configuration."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: bash tool"
           }
         ],
         "access": "supported"
@@ -155,7 +195,10 @@
           "CLI",
           "GitHub Actions"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode run \"<prompt>\"",
+          "opencode serve"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -166,6 +209,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode supports non-interactive run and GitHub automation modes."
+          },
+          {
+            "source_id": "src.opencode.docs.github",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode run \"<prompt>\", opencode serve"
           }
         ],
         "access": "supported"
@@ -179,7 +229,10 @@
         "surfaces": [
           "JSON transcript"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode run --format json",
+          "opencode session export --format json"
+        ],
         "minimum_version": "1.18.15",
         "limitations": [
           "Seed evidence verifies transcript export, not full parity with Codex/Antigravity streaming event protocols."
@@ -192,6 +245,13 @@
             "version": "1.18.15",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Recent releases added JSON transcript export; automation should distinguish transcript export from a stable live event protocol."
+          },
+          {
+            "source_id": "src.opencode.releases",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode run --format json, opencode session export --format json"
           }
         ],
         "access": "supported"
@@ -206,7 +266,11 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"mcp\" field in opencode.json (type: local/remote)",
+          "opencode mcp auth <server-name>",
+          "opencode mcp list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -217,6 +281,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode connects to MCP servers and supports OAuth compatibility improvements."
+          },
+          {
+            "source_id": "src.opencode.releases",
+            "url": "https://opencode.ai/docs/mcp-servers/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"mcp\" field in opencode.json (type: local/remote), opencode mcp auth <server-name>, opencode mcp list"
           }
         ],
         "access": "configurable"
@@ -231,7 +302,11 @@
           "SKILL.md",
           "skill tool"
         ],
-        "invocation": [],
+        "invocation": [
+          ".opencode/skills/<name>/SKILL.md",
+          "~/.config/opencode/skills/<name>/SKILL.md",
+          "skill tool (e.g. skill({ name: \"git-release\" }))"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -242,6 +317,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode discovers Agent Skills and exposes them to the model through a native skill tool."
+          },
+          {
+            "source_id": "src.opencode.docs.skills",
+            "url": "https://opencode.ai/docs/skills/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: .opencode/skills/<name>/SKILL.md, ~/.config/opencode/skills/<name>/SKILL.md, skill tool (e.g. skill({ name: \"git-release\" }))"
           }
         ],
         "access": "configurable"
@@ -255,7 +337,11 @@
         "surfaces": [
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          ".opencode/plugins/ (local files)",
+          "~/.config/opencode/plugins/",
+          "\"plugin\" field in opencode.json (npm packages)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -266,6 +352,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Plugins extend OpenCode with events, tools, authentication, and custom behavior."
+          },
+          {
+            "source_id": "src.opencode.docs.plugins",
+            "url": "https://opencode.ai/docs/plugins/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: .opencode/plugins/ (local files), ~/.config/opencode/plugins/, \"plugin\" field in opencode.json (npm packages)"
           }
         ],
         "access": "configurable"
@@ -280,7 +373,11 @@
           "AGENTS.md",
           "agent config"
         ],
-        "invocation": [],
+        "invocation": [
+          "AGENTS.md (project root, walked upward)",
+          "~/.config/opencode/AGENTS.md (global)",
+          "\"instructions\" field in opencode.json"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -291,6 +388,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Repository instruction files and agent definitions shape project behavior."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/rules/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: AGENTS.md (project root, walked upward), ~/.config/opencode/AGENTS.md (global), \"instructions\" field in opencode.json"
           }
         ],
         "access": "configurable"
@@ -306,7 +410,11 @@
           "desktop",
           "share links"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode run --continue / -c",
+          "opencode run --session <id> / -s",
+          "opencode run --fork"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -317,6 +425,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode persists sessions and supports session navigation, sharing, undo, and reconnect flows."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode run --continue / -c, opencode run --session <id> / -s, opencode run --fork"
           }
         ],
         "access": "native"
@@ -330,7 +445,10 @@
         "surfaces": [
           "multi-session"
         ],
-        "invocation": [],
+        "invocation": [
+          "task tool (invoking a subagent, e.g. the \"general\" agent)",
+          "\"permission.task\" field in opencode.json"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -341,6 +459,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Multiple OpenCode sessions can run in parallel against a project."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/agents/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: task tool (invoking a subagent, e.g. the \"general\" agent), \"permission.task\" field in opencode.json"
           }
         ],
         "access": "native"
@@ -356,7 +481,11 @@
           "issues",
           "pull requests"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode github install",
+          "/opencode or /oc PR/issue comment trigger",
+          ".github/workflows/opencode.yml"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -367,6 +496,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The OpenCode GitHub agent handles issue and pull-request automation."
+          },
+          {
+            "source_id": "src.opencode.docs.github",
+            "url": "https://opencode.ai/docs/github/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode github install, /opencode or /oc PR/issue comment trigger, .github/workflows/opencode.yml"
           }
         ],
         "access": "supported"
@@ -381,7 +517,9 @@
           "agent definitions",
           "permission config"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"permission\" field in opencode.json (allow/ask/deny per tool, e.g. permission.bash, permission.edit)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -392,6 +530,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Build and plan agents carry different default permissions, with configurable command and tool access."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/permissions/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"permission\" field in opencode.json (allow/ask/deny per tool, e.g. permission.bash, permission.edit)"
           }
         ],
         "access": "native"
@@ -406,7 +551,10 @@
           "MCP",
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          "websearch tool",
+          "webfetch tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -417,6 +565,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Web access is available through providers, MCP, and plugins rather than one fixed research subsystem."
+          },
+          {
+            "source_id": "src.opencode.docs.plugins",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: websearch tool, webfetch tool"
           }
         ],
         "access": "supported"
@@ -432,7 +587,11 @@
           "TUI",
           "share links"
         ],
-        "invocation": [],
+        "invocation": [
+          "TUI diff viewer (\"diff_style\" in tui.json)",
+          "/undo and /redo commands",
+          "/details command (tool execution details)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -443,6 +602,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Desktop/TUI sessions expose diffs, undo, sharing, and transcript exports."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/tui/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: TUI diff viewer (\"diff_style\" in tui.json), /undo and /redo commands, /details command (tool execution details)"
           }
         ],
         "access": "native"
@@ -456,7 +622,10 @@
         "surfaces": [
           "multiple providers"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"provider\" field in opencode.json",
+          "opencode run --model / -m <provider_id>/<model_id>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -467,6 +636,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode is explicitly provider-neutral and supports multiple API providers and subscription-backed authentication paths."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"provider\" field in opencode.json, opencode run --model / -m <provider_id>/<model_id>"
           }
         ],
         "access": "native"
@@ -481,7 +657,10 @@
           "provider config",
           "model selector"
         ],
-        "invocation": [],
+        "invocation": [
+          "provider.<name>.models.<model>.options.reasoningEffort (opencode.json)",
+          "opencode run -m provider_id/model_id:variant_name"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -492,6 +671,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Model/provider selection is configurable per session and agent."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/models/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: provider.<name>.models.<model>.options.reasoningEffort (opencode.json), opencode run -m provider_id/model_id:variant_name"
           }
         ],
         "access": "native"
@@ -533,7 +719,9 @@
         "surfaces": [
           "IDE extension"
         ],
-        "invocation": [],
+        "invocation": [
+          "OpenCode VS Code extension (run `opencode` in the integrated terminal to auto-install, or install \"OpenCode\" from the Extension Marketplace)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -544,6 +732,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode is available through IDE integration."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/ide/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: OpenCode VS Code extension (run `opencode` in the integrated terminal to auto-install, or install \"OpenCode\" from the Extension Marketplace)"
           }
         ],
         "access": "configurable"
@@ -558,7 +753,11 @@
           "desktop",
           "shared web session"
         ],
-        "invocation": [],
+        "invocation": [
+          "OpenCode Desktop app",
+          "opencode web",
+          "/share (generates opncd.ai/s/<share-id> link)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -569,6 +768,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode provides a desktop application and shareable session links."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/share/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: OpenCode Desktop app, opencode web, /share (generates opncd.ai/s/<share-id> link)"
           }
         ],
         "access": "configurable"
@@ -584,7 +790,11 @@
           "desktop",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "edit tool",
+          "write tool",
+          "apply_patch tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -595,6 +805,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The build agent can edit files while the plan agent is read-only by default."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: edit tool, write tool, apply_patch tool"
           }
         ],
         "access": "configurable"
@@ -608,7 +825,9 @@
         "surfaces": [
           "terminal"
         ],
-        "invocation": [],
+        "invocation": [
+          "bash tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -619,6 +838,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agents can run commands subject to permission configuration."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: bash tool"
           }
         ],
         "access": "configurable"
@@ -633,7 +859,10 @@
           "CLI",
           "GitHub Actions"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode run \"<prompt>\"",
+          "opencode serve"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -644,6 +873,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode supports non-interactive run and GitHub automation modes."
+          },
+          {
+            "source_id": "src.opencode.docs.github",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode run \"<prompt>\", opencode serve"
           }
         ],
         "access": "configurable"
@@ -657,7 +893,10 @@
         "surfaces": [
           "JSON transcript"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode run --format json",
+          "opencode session export --format json"
+        ],
         "minimum_version": "1.18.15",
         "limitations": [
           "Seed evidence verifies transcript export, not full parity with Codex/Antigravity streaming event protocols."
@@ -670,6 +909,13 @@
             "version": "1.18.15",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Recent releases added JSON transcript export; automation should distinguish transcript export from a stable live event protocol."
+          },
+          {
+            "source_id": "src.opencode.releases",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode run --format json, opencode session export --format json"
           }
         ],
         "access": "configurable"
@@ -684,7 +930,11 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"mcp\" field in opencode.json (type: local/remote)",
+          "opencode mcp auth <server-name>",
+          "opencode mcp list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -695,6 +945,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode connects to MCP servers and supports OAuth compatibility improvements."
+          },
+          {
+            "source_id": "src.opencode.releases",
+            "url": "https://opencode.ai/docs/mcp-servers/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"mcp\" field in opencode.json (type: local/remote), opencode mcp auth <server-name>, opencode mcp list"
           }
         ],
         "access": "configurable"
@@ -709,7 +966,11 @@
           "SKILL.md",
           "skill tool"
         ],
-        "invocation": [],
+        "invocation": [
+          ".opencode/skills/<name>/SKILL.md",
+          "~/.config/opencode/skills/<name>/SKILL.md",
+          "skill tool (e.g. skill({ name: \"git-release\" }))"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -720,6 +981,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode discovers Agent Skills and exposes them to the model through a native skill tool."
+          },
+          {
+            "source_id": "src.opencode.docs.skills",
+            "url": "https://opencode.ai/docs/skills/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: .opencode/skills/<name>/SKILL.md, ~/.config/opencode/skills/<name>/SKILL.md, skill tool (e.g. skill({ name: \"git-release\" }))"
           }
         ],
         "access": "configurable"
@@ -733,7 +1001,11 @@
         "surfaces": [
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          ".opencode/plugins/ (local files)",
+          "~/.config/opencode/plugins/",
+          "\"plugin\" field in opencode.json (npm packages)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -744,6 +1016,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Plugins extend OpenCode with events, tools, authentication, and custom behavior."
+          },
+          {
+            "source_id": "src.opencode.docs.plugins",
+            "url": "https://opencode.ai/docs/plugins/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: .opencode/plugins/ (local files), ~/.config/opencode/plugins/, \"plugin\" field in opencode.json (npm packages)"
           }
         ],
         "access": "configurable"
@@ -758,7 +1037,11 @@
           "AGENTS.md",
           "agent config"
         ],
-        "invocation": [],
+        "invocation": [
+          "AGENTS.md (project root, walked upward)",
+          "~/.config/opencode/AGENTS.md (global)",
+          "\"instructions\" field in opencode.json"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -769,6 +1052,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Repository instruction files and agent definitions shape project behavior."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/rules/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: AGENTS.md (project root, walked upward), ~/.config/opencode/AGENTS.md (global), \"instructions\" field in opencode.json"
           }
         ],
         "access": "configurable"
@@ -784,7 +1074,11 @@
           "desktop",
           "share links"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode run --continue / -c",
+          "opencode run --session <id> / -s",
+          "opencode run --fork"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -795,6 +1089,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode persists sessions and supports session navigation, sharing, undo, and reconnect flows."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode run --continue / -c, opencode run --session <id> / -s, opencode run --fork"
           }
         ],
         "access": "configurable"
@@ -808,7 +1109,10 @@
         "surfaces": [
           "multi-session"
         ],
-        "invocation": [],
+        "invocation": [
+          "task tool (invoking a subagent, e.g. the \"general\" agent)",
+          "\"permission.task\" field in opencode.json"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -819,6 +1123,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Multiple OpenCode sessions can run in parallel against a project."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/agents/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: task tool (invoking a subagent, e.g. the \"general\" agent), \"permission.task\" field in opencode.json"
           }
         ],
         "access": "configurable"
@@ -834,7 +1145,11 @@
           "issues",
           "pull requests"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode github install",
+          "/opencode or /oc PR/issue comment trigger",
+          ".github/workflows/opencode.yml"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -845,6 +1160,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The OpenCode GitHub agent handles issue and pull-request automation."
+          },
+          {
+            "source_id": "src.opencode.docs.github",
+            "url": "https://opencode.ai/docs/github/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode github install, /opencode or /oc PR/issue comment trigger, .github/workflows/opencode.yml"
           }
         ],
         "access": "configurable"
@@ -859,7 +1181,9 @@
           "agent definitions",
           "permission config"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"permission\" field in opencode.json (allow/ask/deny per tool, e.g. permission.bash, permission.edit)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -870,6 +1194,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Build and plan agents carry different default permissions, with configurable command and tool access."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/permissions/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"permission\" field in opencode.json (allow/ask/deny per tool, e.g. permission.bash, permission.edit)"
           }
         ],
         "access": "configurable"
@@ -884,7 +1215,10 @@
           "MCP",
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          "websearch tool",
+          "webfetch tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -895,6 +1229,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Web access is available through providers, MCP, and plugins rather than one fixed research subsystem."
+          },
+          {
+            "source_id": "src.opencode.docs.plugins",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: websearch tool, webfetch tool"
           }
         ],
         "access": "configurable"
@@ -910,7 +1251,11 @@
           "TUI",
           "share links"
         ],
-        "invocation": [],
+        "invocation": [
+          "TUI diff viewer (\"diff_style\" in tui.json)",
+          "/undo and /redo commands",
+          "/details command (tool execution details)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -921,6 +1266,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Desktop/TUI sessions expose diffs, undo, sharing, and transcript exports."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/tui/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: TUI diff viewer (\"diff_style\" in tui.json), /undo and /redo commands, /details command (tool execution details)"
           }
         ],
         "access": "configurable"
@@ -934,7 +1286,10 @@
         "surfaces": [
           "multiple providers"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"provider\" field in opencode.json",
+          "opencode run --model / -m <provider_id>/<model_id>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -945,6 +1300,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode is explicitly provider-neutral and supports multiple API providers and subscription-backed authentication paths."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"provider\" field in opencode.json, opencode run --model / -m <provider_id>/<model_id>"
           }
         ],
         "access": "configurable"
@@ -959,7 +1321,10 @@
           "provider config",
           "model selector"
         ],
-        "invocation": [],
+        "invocation": [
+          "provider.<name>.models.<model>.options.reasoningEffort (opencode.json)",
+          "opencode run -m provider_id/model_id:variant_name"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -970,6 +1335,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Model/provider selection is configurable per session and agent."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/models/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: provider.<name>.models.<model>.options.reasoningEffort (opencode.json), opencode run -m provider_id/model_id:variant_name"
           }
         ],
         "access": "configurable"
@@ -987,7 +1359,11 @@
           "desktop",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "edit tool",
+          "write tool",
+          "apply_patch tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -998,6 +1374,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The build agent can edit files while the plan agent is read-only by default."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: edit tool, write tool, apply_patch tool"
           }
         ],
         "access": "native"
@@ -1011,7 +1394,9 @@
         "surfaces": [
           "terminal"
         ],
-        "invocation": [],
+        "invocation": [
+          "bash tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1022,6 +1407,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agents can run commands subject to permission configuration."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: bash tool"
           }
         ],
         "access": "native"
@@ -1036,7 +1428,11 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"mcp\" field in opencode.json (type: local/remote)",
+          "opencode mcp auth <server-name>",
+          "opencode mcp list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1047,6 +1443,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode connects to MCP servers and supports OAuth compatibility improvements."
+          },
+          {
+            "source_id": "src.opencode.releases",
+            "url": "https://opencode.ai/docs/mcp-servers/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"mcp\" field in opencode.json (type: local/remote), opencode mcp auth <server-name>, opencode mcp list"
           }
         ],
         "access": "native"
@@ -1061,7 +1464,11 @@
           "SKILL.md",
           "skill tool"
         ],
-        "invocation": [],
+        "invocation": [
+          ".opencode/skills/<name>/SKILL.md",
+          "~/.config/opencode/skills/<name>/SKILL.md",
+          "skill tool (e.g. skill({ name: \"git-release\" }))"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1072,6 +1479,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode discovers Agent Skills and exposes them to the model through a native skill tool."
+          },
+          {
+            "source_id": "src.opencode.docs.skills",
+            "url": "https://opencode.ai/docs/skills/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: .opencode/skills/<name>/SKILL.md, ~/.config/opencode/skills/<name>/SKILL.md, skill tool (e.g. skill({ name: \"git-release\" }))"
           }
         ],
         "access": "native"
@@ -1085,7 +1499,11 @@
         "surfaces": [
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          ".opencode/plugins/ (local files)",
+          "~/.config/opencode/plugins/",
+          "\"plugin\" field in opencode.json (npm packages)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1096,6 +1514,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Plugins extend OpenCode with events, tools, authentication, and custom behavior."
+          },
+          {
+            "source_id": "src.opencode.docs.plugins",
+            "url": "https://opencode.ai/docs/plugins/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: .opencode/plugins/ (local files), ~/.config/opencode/plugins/, \"plugin\" field in opencode.json (npm packages)"
           }
         ],
         "access": "native"
@@ -1110,7 +1535,11 @@
           "AGENTS.md",
           "agent config"
         ],
-        "invocation": [],
+        "invocation": [
+          "AGENTS.md (project root, walked upward)",
+          "~/.config/opencode/AGENTS.md (global)",
+          "\"instructions\" field in opencode.json"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -1121,6 +1550,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Repository instruction files and agent definitions shape project behavior."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/rules/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: AGENTS.md (project root, walked upward), ~/.config/opencode/AGENTS.md (global), \"instructions\" field in opencode.json"
           }
         ],
         "access": "native"
@@ -1135,7 +1571,10 @@
           "MCP",
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          "websearch tool",
+          "webfetch tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -1146,6 +1585,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Web access is available through providers, MCP, and plugins rather than one fixed research subsystem."
+          },
+          {
+            "source_id": "src.opencode.docs.plugins",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: websearch tool, webfetch tool"
           }
         ],
         "access": "native"
@@ -1160,7 +1606,10 @@
           "provider config",
           "model selector"
         ],
-        "invocation": [],
+        "invocation": [
+          "provider.<name>.models.<model>.options.reasoningEffort (opencode.json)",
+          "opencode run -m provider_id/model_id:variant_name"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1171,6 +1620,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Model/provider selection is configurable per session and agent."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/models/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: provider.<name>.models.<model>.options.reasoningEffort (opencode.json), opencode run -m provider_id/model_id:variant_name"
           }
         ],
         "access": "supported"
@@ -1188,7 +1644,11 @@
           "desktop",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "edit tool",
+          "write tool",
+          "apply_patch tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1199,6 +1659,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The build agent can edit files while the plan agent is read-only by default."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: edit tool, write tool, apply_patch tool"
           }
         ],
         "access": "supported"
@@ -1212,7 +1679,9 @@
         "surfaces": [
           "terminal"
         ],
-        "invocation": [],
+        "invocation": [
+          "bash tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1223,6 +1692,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agents can run commands subject to permission configuration."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: bash tool"
           }
         ],
         "access": "supported"
@@ -1237,7 +1713,10 @@
           "CLI",
           "GitHub Actions"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode run \"<prompt>\"",
+          "opencode serve"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -1248,6 +1727,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode supports non-interactive run and GitHub automation modes."
+          },
+          {
+            "source_id": "src.opencode.docs.github",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode run \"<prompt>\", opencode serve"
           }
         ],
         "access": "native"
@@ -1261,7 +1747,10 @@
         "surfaces": [
           "JSON transcript"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode run --format json",
+          "opencode session export --format json"
+        ],
         "minimum_version": "1.18.15",
         "limitations": [
           "Seed evidence verifies transcript export, not full parity with Codex/Antigravity streaming event protocols."
@@ -1274,6 +1763,13 @@
             "version": "1.18.15",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Recent releases added JSON transcript export; automation should distinguish transcript export from a stable live event protocol."
+          },
+          {
+            "source_id": "src.opencode.releases",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode run --format json, opencode session export --format json"
           }
         ],
         "access": "supported"
@@ -1288,7 +1784,11 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"mcp\" field in opencode.json (type: local/remote)",
+          "opencode mcp auth <server-name>",
+          "opencode mcp list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1299,6 +1799,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode connects to MCP servers and supports OAuth compatibility improvements."
+          },
+          {
+            "source_id": "src.opencode.releases",
+            "url": "https://opencode.ai/docs/mcp-servers/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"mcp\" field in opencode.json (type: local/remote), opencode mcp auth <server-name>, opencode mcp list"
           }
         ],
         "access": "supported"
@@ -1313,7 +1820,11 @@
           "SKILL.md",
           "skill tool"
         ],
-        "invocation": [],
+        "invocation": [
+          ".opencode/skills/<name>/SKILL.md",
+          "~/.config/opencode/skills/<name>/SKILL.md",
+          "skill tool (e.g. skill({ name: \"git-release\" }))"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1324,6 +1835,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode discovers Agent Skills and exposes them to the model through a native skill tool."
+          },
+          {
+            "source_id": "src.opencode.docs.skills",
+            "url": "https://opencode.ai/docs/skills/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: .opencode/skills/<name>/SKILL.md, ~/.config/opencode/skills/<name>/SKILL.md, skill tool (e.g. skill({ name: \"git-release\" }))"
           }
         ],
         "access": "supported"
@@ -1337,7 +1855,11 @@
         "surfaces": [
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          ".opencode/plugins/ (local files)",
+          "~/.config/opencode/plugins/",
+          "\"plugin\" field in opencode.json (npm packages)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1348,6 +1870,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Plugins extend OpenCode with events, tools, authentication, and custom behavior."
+          },
+          {
+            "source_id": "src.opencode.docs.plugins",
+            "url": "https://opencode.ai/docs/plugins/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: .opencode/plugins/ (local files), ~/.config/opencode/plugins/, \"plugin\" field in opencode.json (npm packages)"
           }
         ],
         "access": "supported"
@@ -1362,7 +1891,11 @@
           "AGENTS.md",
           "agent config"
         ],
-        "invocation": [],
+        "invocation": [
+          "AGENTS.md (project root, walked upward)",
+          "~/.config/opencode/AGENTS.md (global)",
+          "\"instructions\" field in opencode.json"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -1373,6 +1906,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Repository instruction files and agent definitions shape project behavior."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/rules/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: AGENTS.md (project root, walked upward), ~/.config/opencode/AGENTS.md (global), \"instructions\" field in opencode.json"
           }
         ],
         "access": "supported"
@@ -1388,7 +1928,11 @@
           "desktop",
           "share links"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode run --continue / -c",
+          "opencode run --session <id> / -s",
+          "opencode run --fork"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1399,6 +1943,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode persists sessions and supports session navigation, sharing, undo, and reconnect flows."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode run --continue / -c, opencode run --session <id> / -s, opencode run --fork"
           }
         ],
         "access": "supported"
@@ -1412,7 +1963,10 @@
         "surfaces": [
           "multi-session"
         ],
-        "invocation": [],
+        "invocation": [
+          "task tool (invoking a subagent, e.g. the \"general\" agent)",
+          "\"permission.task\" field in opencode.json"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1423,6 +1977,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Multiple OpenCode sessions can run in parallel against a project."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/agents/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: task tool (invoking a subagent, e.g. the \"general\" agent), \"permission.task\" field in opencode.json"
           }
         ],
         "access": "supported"
@@ -1438,7 +1999,11 @@
           "issues",
           "pull requests"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode github install",
+          "/opencode or /oc PR/issue comment trigger",
+          ".github/workflows/opencode.yml"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1449,6 +2014,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The OpenCode GitHub agent handles issue and pull-request automation."
+          },
+          {
+            "source_id": "src.opencode.docs.github",
+            "url": "https://opencode.ai/docs/github/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode github install, /opencode or /oc PR/issue comment trigger, .github/workflows/opencode.yml"
           }
         ],
         "access": "native"
@@ -1463,7 +2035,9 @@
           "agent definitions",
           "permission config"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"permission\" field in opencode.json (allow/ask/deny per tool, e.g. permission.bash, permission.edit)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1474,6 +2048,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Build and plan agents carry different default permissions, with configurable command and tool access."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/permissions/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"permission\" field in opencode.json (allow/ask/deny per tool, e.g. permission.bash, permission.edit)"
           }
         ],
         "access": "supported"
@@ -1488,7 +2069,10 @@
           "MCP",
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          "websearch tool",
+          "webfetch tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -1499,6 +2083,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Web access is available through providers, MCP, and plugins rather than one fixed research subsystem."
+          },
+          {
+            "source_id": "src.opencode.docs.plugins",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: websearch tool, webfetch tool"
           }
         ],
         "access": "supported"
@@ -1512,7 +2103,10 @@
         "surfaces": [
           "multiple providers"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"provider\" field in opencode.json",
+          "opencode run --model / -m <provider_id>/<model_id>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1523,6 +2117,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode is explicitly provider-neutral and supports multiple API providers and subscription-backed authentication paths."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"provider\" field in opencode.json, opencode run --model / -m <provider_id>/<model_id>"
           }
         ],
         "access": "configurable"
@@ -1537,7 +2138,10 @@
           "provider config",
           "model selector"
         ],
-        "invocation": [],
+        "invocation": [
+          "provider.<name>.models.<model>.options.reasoningEffort (opencode.json)",
+          "opencode run -m provider_id/model_id:variant_name"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1548,6 +2152,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Model/provider selection is configurable per session and agent."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/models/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: provider.<name>.models.<model>.options.reasoningEffort (opencode.json), opencode run -m provider_id/model_id:variant_name"
           }
         ],
         "access": "configurable"
@@ -1565,7 +2176,11 @@
           "desktop",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "edit tool",
+          "write tool",
+          "apply_patch tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1576,6 +2191,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The build agent can edit files while the plan agent is read-only by default."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: edit tool, write tool, apply_patch tool"
           }
         ],
         "access": "supported"
@@ -1589,7 +2211,9 @@
         "surfaces": [
           "terminal"
         ],
-        "invocation": [],
+        "invocation": [
+          "bash tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1600,6 +2224,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agents can run commands subject to permission configuration."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: bash tool"
           }
         ],
         "access": "supported"
@@ -1614,7 +2245,10 @@
           "CLI",
           "GitHub Actions"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode run \"<prompt>\"",
+          "opencode serve"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -1625,6 +2259,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode supports non-interactive run and GitHub automation modes."
+          },
+          {
+            "source_id": "src.opencode.docs.github",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode run \"<prompt>\", opencode serve"
           }
         ],
         "access": "native"
@@ -1638,7 +2279,10 @@
         "surfaces": [
           "JSON transcript"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode run --format json",
+          "opencode session export --format json"
+        ],
         "minimum_version": "1.18.15",
         "limitations": [
           "Seed evidence verifies transcript export, not full parity with Codex/Antigravity streaming event protocols."
@@ -1651,6 +2295,13 @@
             "version": "1.18.15",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Recent releases added JSON transcript export; automation should distinguish transcript export from a stable live event protocol."
+          },
+          {
+            "source_id": "src.opencode.releases",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode run --format json, opencode session export --format json"
           }
         ],
         "access": "supported"
@@ -1665,7 +2316,11 @@
           "terminal",
           "desktop"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"mcp\" field in opencode.json (type: local/remote)",
+          "opencode mcp auth <server-name>",
+          "opencode mcp list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1676,6 +2331,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode connects to MCP servers and supports OAuth compatibility improvements."
+          },
+          {
+            "source_id": "src.opencode.releases",
+            "url": "https://opencode.ai/docs/mcp-servers/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"mcp\" field in opencode.json (type: local/remote), opencode mcp auth <server-name>, opencode mcp list"
           }
         ],
         "access": "supported"
@@ -1690,7 +2352,11 @@
           "SKILL.md",
           "skill tool"
         ],
-        "invocation": [],
+        "invocation": [
+          ".opencode/skills/<name>/SKILL.md",
+          "~/.config/opencode/skills/<name>/SKILL.md",
+          "skill tool (e.g. skill({ name: \"git-release\" }))"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1701,6 +2367,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode discovers Agent Skills and exposes them to the model through a native skill tool."
+          },
+          {
+            "source_id": "src.opencode.docs.skills",
+            "url": "https://opencode.ai/docs/skills/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: .opencode/skills/<name>/SKILL.md, ~/.config/opencode/skills/<name>/SKILL.md, skill tool (e.g. skill({ name: \"git-release\" }))"
           }
         ],
         "access": "supported"
@@ -1714,7 +2387,11 @@
         "surfaces": [
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          ".opencode/plugins/ (local files)",
+          "~/.config/opencode/plugins/",
+          "\"plugin\" field in opencode.json (npm packages)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1725,6 +2402,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Plugins extend OpenCode with events, tools, authentication, and custom behavior."
+          },
+          {
+            "source_id": "src.opencode.docs.plugins",
+            "url": "https://opencode.ai/docs/plugins/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: .opencode/plugins/ (local files), ~/.config/opencode/plugins/, \"plugin\" field in opencode.json (npm packages)"
           }
         ],
         "access": "supported"
@@ -1739,7 +2423,11 @@
           "AGENTS.md",
           "agent config"
         ],
-        "invocation": [],
+        "invocation": [
+          "AGENTS.md (project root, walked upward)",
+          "~/.config/opencode/AGENTS.md (global)",
+          "\"instructions\" field in opencode.json"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -1750,6 +2438,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Repository instruction files and agent definitions shape project behavior."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/rules/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: AGENTS.md (project root, walked upward), ~/.config/opencode/AGENTS.md (global), \"instructions\" field in opencode.json"
           }
         ],
         "access": "supported"
@@ -1765,7 +2460,11 @@
           "desktop",
           "share links"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode run --continue / -c",
+          "opencode run --session <id> / -s",
+          "opencode run --fork"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1776,6 +2475,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode persists sessions and supports session navigation, sharing, undo, and reconnect flows."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode run --continue / -c, opencode run --session <id> / -s, opencode run --fork"
           }
         ],
         "access": "supported"
@@ -1789,7 +2495,10 @@
         "surfaces": [
           "multi-session"
         ],
-        "invocation": [],
+        "invocation": [
+          "task tool (invoking a subagent, e.g. the \"general\" agent)",
+          "\"permission.task\" field in opencode.json"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1800,6 +2509,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Multiple OpenCode sessions can run in parallel against a project."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/agents/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: task tool (invoking a subagent, e.g. the \"general\" agent), \"permission.task\" field in opencode.json"
           }
         ],
         "access": "supported"
@@ -1815,7 +2531,11 @@
           "issues",
           "pull requests"
         ],
-        "invocation": [],
+        "invocation": [
+          "opencode github install",
+          "/opencode or /oc PR/issue comment trigger",
+          ".github/workflows/opencode.yml"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1826,6 +2546,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The OpenCode GitHub agent handles issue and pull-request automation."
+          },
+          {
+            "source_id": "src.opencode.docs.github",
+            "url": "https://opencode.ai/docs/github/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: opencode github install, /opencode or /oc PR/issue comment trigger, .github/workflows/opencode.yml"
           }
         ],
         "access": "native"
@@ -1840,7 +2567,9 @@
           "agent definitions",
           "permission config"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"permission\" field in opencode.json (allow/ask/deny per tool, e.g. permission.bash, permission.edit)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1851,6 +2580,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Build and plan agents carry different default permissions, with configurable command and tool access."
+          },
+          {
+            "source_id": "src.opencode.repo",
+            "url": "https://opencode.ai/docs/permissions/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"permission\" field in opencode.json (allow/ask/deny per tool, e.g. permission.bash, permission.edit)"
           }
         ],
         "access": "supported"
@@ -1865,7 +2601,10 @@
           "MCP",
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          "websearch tool",
+          "webfetch tool"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "inferred_high",
@@ -1876,6 +2615,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Web access is available through providers, MCP, and plugins rather than one fixed research subsystem."
+          },
+          {
+            "source_id": "src.opencode.docs.plugins",
+            "url": "https://opencode.ai/docs/tools/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: websearch tool, webfetch tool"
           }
         ],
         "access": "supported"
@@ -1889,7 +2635,10 @@
         "surfaces": [
           "multiple providers"
         ],
-        "invocation": [],
+        "invocation": [
+          "\"provider\" field in opencode.json",
+          "opencode run --model / -m <provider_id>/<model_id>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1900,6 +2649,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "OpenCode is explicitly provider-neutral and supports multiple API providers and subscription-backed authentication paths."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/cli/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: \"provider\" field in opencode.json, opencode run --model / -m <provider_id>/<model_id>"
           }
         ],
         "access": "configurable"
@@ -1914,7 +2670,10 @@
           "provider config",
           "model selector"
         ],
-        "invocation": [],
+        "invocation": [
+          "provider.<name>.models.<model>.options.reasoningEffort (opencode.json)",
+          "opencode run -m provider_id/model_id:variant_name"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1925,6 +2684,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Model/provider selection is configurable per session and agent."
+          },
+          {
+            "source_id": "src.opencode.docs.intro",
+            "url": "https://opencode.ai/docs/models/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: provider.<name>.models.<model>.options.reasoningEffort (opencode.json), opencode run -m provider_id/model_id:variant_name"
           }
         ],
         "access": "configurable"

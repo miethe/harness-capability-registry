@@ -54,7 +54,10 @@
       "surfaces": [
         "JavaScript/TypeScript library"
       ],
-      "invocation": [],
+      "invocation": [
+        "npm install openai",
+        "import OpenAI from 'openai'; const client = new OpenAI();"
+      ],
       "minimum_version": null,
       "current_version_verified": null,
       "limitations": [],
@@ -67,9 +70,16 @@
           "claim": "Typed JavaScript/TypeScript access to the OpenAI API.",
           "version": null,
           "verified_at": "2026-08-08T20:00:00Z"
+        },
+        {
+          "source_id": "src.openai-node.changelog",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "claim": "Invocation verified: npm install openai, import OpenAI from 'openai'; const client = new OpenAI();",
+          "version": null,
+          "verified_at": "2026-08-26T00:00:00Z"
         }
       ],
-      "invocation_status": "unreviewed",
+      "invocation_status": "resolved",
       "invocation_na_reason": null
     },
     {
@@ -90,7 +100,10 @@
         "streaming",
         "typed API objects"
       ],
-      "invocation": [],
+      "invocation": [
+        "client.responses.create({text: {format: {type: 'json_schema', strict: true, schema: ...}}})",
+        "client.responses.parse() with zodTextFormat()"
+      ],
       "minimum_version": null,
       "current_version_verified": null,
       "limitations": [],
@@ -103,9 +116,16 @@
           "claim": "Streaming and typed response objects support machine-readable application logic.",
           "version": null,
           "verified_at": "2026-08-08T20:00:00Z"
+        },
+        {
+          "source_id": "src.openai-node.changelog",
+          "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+          "claim": "Invocation verified: client.responses.create({text: {format: {type: 'json_schema', strict: true, schema: ...}}}), client.responses.parse() with zodTextFormat()",
+          "version": null,
+          "verified_at": "2026-08-26T00:00:00Z"
         }
       ],
-      "invocation_status": "unreviewed",
+      "invocation_status": "resolved",
       "invocation_na_reason": null
     },
     {
@@ -125,7 +145,10 @@
       "surfaces": [
         "API parameters"
       ],
-      "invocation": [],
+      "invocation": [
+        "model: 'gpt-5...'",
+        "reasoning: {effort: 'high'}"
+      ],
       "minimum_version": null,
       "current_version_verified": null,
       "limitations": [],
@@ -138,9 +161,16 @@
           "claim": "Model and API feature parameters are exposed as generated typed interfaces.",
           "version": null,
           "verified_at": "2026-08-08T20:00:00Z"
+        },
+        {
+          "source_id": "src.openai-node.changelog",
+          "url": "https://developers.openai.com/api/docs/guides/reasoning",
+          "claim": "Invocation verified: model: 'gpt-5...', reasoning: {effort: 'high'}",
+          "version": null,
+          "verified_at": "2026-08-26T00:00:00Z"
         }
       ],
-      "invocation_status": "unreviewed",
+      "invocation_status": "resolved",
       "invocation_na_reason": null
     }
   ],

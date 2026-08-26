@@ -17,7 +17,12 @@
       "TypeScript library",
       "Node.js 18+"
     ],
-    "invocation": [],
+    "invocation": [
+      "npm install @openai/codex-sdk",
+      "import { Codex } from \"@openai/codex-sdk\"",
+      "new Codex()",
+      "codex.startThread()"
+    ],
     "minimum_version": null,
     "current_version_verified": "0.146.0",
     "limitations": [],
@@ -30,9 +35,16 @@
         "claim": "The server-side TypeScript SDK starts, continues, and resumes local Codex threads.",
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
+      },
+      {
+        "source_id": "src.codex.docs.sdk",
+        "url": "https://github.com/openai/codex/blob/main/sdk/typescript/README.md",
+        "claim": "Invocation verified: npm install @openai/codex-sdk, import { Codex } from \"@openai/codex-sdk\", new Codex(), codex.startThread()",
+        "version": null,
+        "verified_at": "2026-08-26T00:00:00Z"
       }
     ],
-    "invocation_status": "unreviewed",
+    "invocation_status": "resolved",
     "invocation_na_reason": null
   },
   {
@@ -52,7 +64,10 @@
     "surfaces": [
       "JSONL event stream"
     ],
-    "invocation": [],
+    "invocation": [
+      "thread.run(input, { outputSchema })",
+      "thread.runStreamed(input, { outputSchema })"
+    ],
     "minimum_version": null,
     "current_version_verified": "0.146.0",
     "limitations": [],
@@ -65,9 +80,16 @@
         "claim": "The TypeScript SDK exchanges JSONL events with the bundled/local Codex CLI for machine-readable progress.",
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
+      },
+      {
+        "source_id": "src.codex.docs.sdk",
+        "url": "https://github.com/openai/codex/blob/main/sdk/typescript/src/thread.ts",
+        "claim": "Invocation verified: thread.run(input, { outputSchema }), thread.runStreamed(input, { outputSchema })",
+        "version": null,
+        "verified_at": "2026-08-26T00:00:00Z"
       }
     ],
-    "invocation_status": "unreviewed",
+    "invocation_status": "resolved",
     "invocation_na_reason": null
   },
   {
@@ -87,7 +109,9 @@
     "surfaces": [
       "threads"
     ],
-    "invocation": [],
+    "invocation": [
+      "codex.resumeThread(threadId, options)"
+    ],
     "minimum_version": null,
     "current_version_verified": "0.146.0",
     "limitations": [],
@@ -100,9 +124,16 @@
         "claim": "Applications can continue the same thread or resume a prior thread by ID.",
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
+      },
+      {
+        "source_id": "src.codex.docs.sdk",
+        "url": "https://github.com/openai/codex/blob/main/sdk/typescript/src/codex.ts",
+        "claim": "Invocation verified: codex.resumeThread(threadId, options)",
+        "version": null,
+        "verified_at": "2026-08-26T00:00:00Z"
       }
     ],
-    "invocation_status": "unreviewed",
+    "invocation_status": "resolved",
     "invocation_na_reason": null
   },
   {
@@ -122,7 +153,9 @@
     "surfaces": [
       "thread options"
     ],
-    "invocation": [],
+    "invocation": [
+      "codex.startThread({ sandboxMode: \"read-only\" | \"workspace-write\" | \"danger-full-access\" })"
+    ],
     "minimum_version": null,
     "current_version_verified": "0.146.0",
     "limitations": [
@@ -137,9 +170,16 @@
         "claim": "Thread options inherit Codex sandbox and approval controls available through the underlying CLI.",
         "version": null,
         "verified_at": "2026-08-08T20:00:00Z"
+      },
+      {
+        "source_id": "src.codex.docs.sdk",
+        "url": "https://github.com/openai/codex/blob/main/sdk/typescript/src/thread.ts",
+        "claim": "Invocation verified: codex.startThread({ sandboxMode: \"read-only\" | \"workspace-write\" | \"danger-full-access\" })",
+        "version": null,
+        "verified_at": "2026-08-26T00:00:00Z"
       }
     ],
-    "invocation_status": "unreviewed",
+    "invocation_status": "resolved",
     "invocation_na_reason": null
   }
 ]

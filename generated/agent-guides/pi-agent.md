@@ -16,39 +16,39 @@ artifact_kind: harness_capability_guide
 
 ## Human operator
 
-- **Embeddable SDK** (`supported`): Pi includes an agent core runtime and unified LLM API packages. Invocation: `See evidence`.
-- **Agent Skills** (`configurable`): Pi skills are compatible with Claude Code and Codex-style skill bundles. Invocation: `See evidence`.
-- **Plugins/extensions** (`configurable`): Pi supports installable extensions. Invocation: `See evidence`.
-- **Interactive terminal/TUI** (`native`): Pi includes an interactive coding-agent CLI. Invocation: `See evidence`.
-- **Model/provider portability** (`native`): Pi includes a unified multi-provider LLM API. Invocation: `See evidence`.
+- **Embeddable SDK** (`supported`): Pi includes an agent core runtime and unified LLM API packages. Invocation: `createAgentSession() from @earendil-works/pi-coding-agent (npm)`.
+- **Agent Skills** (`configurable`): Pi skills are compatible with Claude Code and Codex-style skill bundles. Invocation: `--skill <path> flag, ~/.pi/agent/skills/ directory, .pi/skills/ directory, skills array in settings.json`.
+- **Plugins/extensions** (`configurable`): Pi supports installable extensions. Invocation: `pi install npm:<pkg>, pi install git:<repo>, pi install <path>`.
+- **Interactive terminal/TUI** (`native`): Pi includes an interactive coding-agent CLI. Invocation: `pi`.
+- **Model/provider portability** (`native`): Pi includes a unified multi-provider LLM API. Invocation: `/login command, provider API-key env vars (e.g. ANTHROPIC_API_KEY, OPENAI_API_KEY)`.
 
 ## In-harness agent
 
-- **Agent Skills** (`native`): Pi skills are compatible with Claude Code and Codex-style skill bundles. Invocation: `See evidence`.
-- **Plugins/extensions** (`native`): Pi supports installable extensions. Invocation: `See evidence`.
-- **Model/provider portability** (`supported`): Pi includes a unified multi-provider LLM API. Invocation: `See evidence`.
+- **Agent Skills** (`native`): Pi skills are compatible with Claude Code and Codex-style skill bundles. Invocation: `--skill <path> flag, ~/.pi/agent/skills/ directory, .pi/skills/ directory, skills array in settings.json`.
+- **Plugins/extensions** (`native`): Pi supports installable extensions. Invocation: `pi install npm:<pkg>, pi install git:<repo>, pi install <path>`.
+- **Model/provider portability** (`supported`): Pi includes a unified multi-provider LLM API. Invocation: `/login command, provider API-key env vars (e.g. ANTHROPIC_API_KEY, OPENAI_API_KEY)`.
 
 ## External agent/orchestrator
 
-- **Embeddable SDK** (`native`): Pi includes an agent core runtime and unified LLM API packages. Invocation: `See evidence`.
-- **Agent Skills** (`supported`): Pi skills are compatible with Claude Code and Codex-style skill bundles. Invocation: `See evidence`.
-- **Plugins/extensions** (`supported`): Pi supports installable extensions. Invocation: `See evidence`.
-- **Model/provider portability** (`configurable`): Pi includes a unified multi-provider LLM API. Invocation: `See evidence`.
+- **Embeddable SDK** (`native`): Pi includes an agent core runtime and unified LLM API packages. Invocation: `createAgentSession() from @earendil-works/pi-coding-agent (npm)`.
+- **Agent Skills** (`supported`): Pi skills are compatible with Claude Code and Codex-style skill bundles. Invocation: `--skill <path> flag, ~/.pi/agent/skills/ directory, .pi/skills/ directory, skills array in settings.json`.
+- **Plugins/extensions** (`supported`): Pi supports installable extensions. Invocation: `pi install npm:<pkg>, pi install git:<repo>, pi install <path>`.
+- **Model/provider portability** (`configurable`): Pi includes a unified multi-provider LLM API. Invocation: `/login command, provider API-key env vars (e.g. ANTHROPIC_API_KEY, OPENAI_API_KEY)`.
 
 ## CI or scheduled automation
 
-- **Embeddable SDK** (`native`): Pi includes an agent core runtime and unified LLM API packages. Invocation: `See evidence`.
-- **Agent Skills** (`supported`): Pi skills are compatible with Claude Code and Codex-style skill bundles. Invocation: `See evidence`.
-- **Plugins/extensions** (`supported`): Pi supports installable extensions. Invocation: `See evidence`.
-- **Model/provider portability** (`configurable`): Pi includes a unified multi-provider LLM API. Invocation: `See evidence`.
+- **Embeddable SDK** (`native`): Pi includes an agent core runtime and unified LLM API packages. Invocation: `createAgentSession() from @earendil-works/pi-coding-agent (npm)`.
+- **Agent Skills** (`supported`): Pi skills are compatible with Claude Code and Codex-style skill bundles. Invocation: `--skill <path> flag, ~/.pi/agent/skills/ directory, .pi/skills/ directory, skills array in settings.json`.
+- **Plugins/extensions** (`supported`): Pi supports installable extensions. Invocation: `pi install npm:<pkg>, pi install git:<repo>, pi install <path>`.
+- **Model/provider portability** (`configurable`): Pi includes a unified multi-provider LLM API. Invocation: `/login command, provider API-key env vars (e.g. ANTHROPIC_API_KEY, OPENAI_API_KEY)`.
 
 ## Administrator
 
-- **Embeddable SDK** (`configurable`): Pi includes an agent core runtime and unified LLM API packages. Invocation: `See evidence`.
-- **Agent Skills** (`configurable`): Pi skills are compatible with Claude Code and Codex-style skill bundles. Invocation: `See evidence`.
-- **Plugins/extensions** (`configurable`): Pi supports installable extensions. Invocation: `See evidence`.
-- **Interactive terminal/TUI** (`configurable`): Pi includes an interactive coding-agent CLI. Invocation: `See evidence`.
-- **Model/provider portability** (`configurable`): Pi includes a unified multi-provider LLM API. Invocation: `See evidence`.
+- **Embeddable SDK** (`configurable`): Pi includes an agent core runtime and unified LLM API packages. Invocation: `createAgentSession() from @earendil-works/pi-coding-agent (npm)`.
+- **Agent Skills** (`configurable`): Pi skills are compatible with Claude Code and Codex-style skill bundles. Invocation: `--skill <path> flag, ~/.pi/agent/skills/ directory, .pi/skills/ directory, skills array in settings.json`.
+- **Plugins/extensions** (`configurable`): Pi supports installable extensions. Invocation: `pi install npm:<pkg>, pi install git:<repo>, pi install <path>`.
+- **Interactive terminal/TUI** (`configurable`): Pi includes an interactive coding-agent CLI. Invocation: `pi`.
+- **Model/provider portability** (`configurable`): Pi includes a unified multi-provider LLM API. Invocation: `/login command, provider API-key env vars (e.g. ANTHROPIC_API_KEY, OPENAI_API_KEY)`.
 
 ## Freshness rule
 

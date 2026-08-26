@@ -21,7 +21,7 @@ artifact_kind: harness_capability_guide
 - **Dynamic context injection** (`configurable`): Skills, hooks, and MCP tools can inject context only when relevant. Invocation: `Skill tool, hooks (PreToolUse/UserPromptSubmit), MCP tools`.
 - **Hierarchical project instructions** (`configurable`): CLAUDE.md and scoped configuration provide durable project instructions. Invocation: `CLAUDE.md`.
 - **Persistent memory** (`configurable`): Auto memory and project memory preserve selected knowledge across sessions. Invocation: `~/.claude/memory, MEMORY.md`.
-- **Output schema enforcement** (`supported`): Headless and SDK flows can request structured output contracts for downstream automation. Invocation: `See evidence`.
+- **Output schema enforcement** (`supported`): Headless and SDK flows can request structured output contracts for downstream automation. Invocation: `--output-format json, --json-schema`.
 - **Agent-native file editing** (`supported`): Claude can read and edit repository files through native tools. Invocation: `Edit, Write, MultiEdit`.
 - **Agent-native shell execution** (`supported`): Claude can run shell commands with configurable permission modes and sandbox controls. Invocation: `Bash tool`.
 - **Embeddable SDK** (`supported`): The Claude Agent SDK exposes the same agent loop, tools, and context management as Claude Code in Python and TypeScript. Invocation: `claude-agent-sdk (Python package), @anthropic-ai/claude-agent-sdk (npm package)`.
@@ -36,9 +36,9 @@ artifact_kind: harness_capability_guide
 - **Interactive terminal/TUI** (`native`): Interactive terminal agent with slash commands, session controls, and tool approvals. Invocation: `claude`.
 - **Artifacts, diffs, and rich result views** (`native`): IDE, desktop, web, attachments, diffs, and review flows provide rich result inspection beyond terminal text. Invocation: `Artifact tool`.
 - **Model and reasoning controls** (`native`): Model selection, fast mode, context-window enforcement, and subagent model selection are configurable. Invocation: `/model, --model`.
-- **Model/provider portability** (`configurable`): Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric. Invocation: `See evidence`.
+- **Model/provider portability** (`configurable`): Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric. Invocation: `--model, CLAUDE_CODE_USE_BEDROCK, CLAUDE_CODE_USE_VERTEX`.
 - **Agent tracing/event telemetry** (`supported`): Headless/SDK event streams and hook events provide structured execution telemetry. Invocation: `PreToolUse hook, PostToolUse hook, --output-format stream-json`.
-- **Usage and cost telemetry** (`native`): Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths. Invocation: `See evidence`.
+- **Usage and cost telemetry** (`native`): Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths. Invocation: `/usage, --output-format json`.
 - **Cross-session agent messaging** (`supported`): Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines. Invocation: `ListAgents, SendMessage`.
 - **First-class multi-agent coordination** (`supported`): Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives. Invocation: `SendMessage, ListAgents`.
 - **Parallel/background agents** (`supported`): Subagents and forked skills can run in the background with concurrency and spawn-depth controls. Invocation: `run_in_background`.
@@ -49,7 +49,7 @@ artifact_kind: harness_capability_guide
 - **Self-hosted worker/runtime** (`configurable`): `claude self-hosted-runner` registers user-owned machines or containers as execution environments for web/mobile/desktop sessions. Invocation: `claude self-hosted-runner`.
 - **Execution sandbox** (`configurable`): Filesystem and network sandbox controls constrain tool execution, including credential masking and TLS termination options. Invocation: `dangerouslyDisableSandbox`.
 - **Granular permissions and approvals** (`native`): Permission modes, allow/deny rules, workspace trust, and approval hooks govern agent actions. Invocation: `permissionMode, acceptEdits, bypassPermissions`.
-- **Programmatic human approval** (`supported`): SDK permission callbacks and hooks let an embedding application mediate tool use programmatically. Invocation: `See evidence`.
+- **Programmatic human approval** (`supported`): SDK permission callbacks and hooks let an embedding application mediate tool use programmatically. Invocation: `canUseTool, PreToolUse`.
 - **Resume, fork, and session lineage** (`native`): Sessions can be resumed, continued, renamed, forked, and moved between local/cloud contexts. Invocation: `--resume, --continue, /resume`.
 
 ## In-harness agent
@@ -77,7 +77,7 @@ artifact_kind: harness_capability_guide
 - **Dynamic context injection** (`supported`): Skills, hooks, and MCP tools can inject context only when relevant. Invocation: `Skill tool, hooks (PreToolUse/UserPromptSubmit), MCP tools`.
 - **Hierarchical project instructions** (`supported`): CLAUDE.md and scoped configuration provide durable project instructions. Invocation: `CLAUDE.md`.
 - **Persistent memory** (`supported`): Auto memory and project memory preserve selected knowledge across sessions. Invocation: `~/.claude/memory, MEMORY.md`.
-- **Output schema enforcement** (`native`): Headless and SDK flows can request structured output contracts for downstream automation. Invocation: `See evidence`.
+- **Output schema enforcement** (`native`): Headless and SDK flows can request structured output contracts for downstream automation. Invocation: `--output-format json, --json-schema`.
 - **Agent-native file editing** (`supported`): Claude can read and edit repository files through native tools. Invocation: `Edit, Write, MultiEdit`.
 - **Agent-native shell execution** (`supported`): Claude can run shell commands with configurable permission modes and sandbox controls. Invocation: `Bash tool`.
 - **Embeddable SDK** (`native`): The Claude Agent SDK exposes the same agent loop, tools, and context management as Claude Code in Python and TypeScript. Invocation: `claude-agent-sdk (Python package), @anthropic-ai/claude-agent-sdk (npm package)`.
@@ -88,9 +88,9 @@ artifact_kind: harness_capability_guide
 - **MCP client** (`supported`): Claude Code connects to local and remote MCP servers and supports OAuth-backed tools. Invocation: `.mcp.json, plugin MCP servers`.
 - **Plugins/extensions** (`supported`): Plugins distribute skills, agents, hooks, and MCP servers through project/user configuration and marketplaces. Invocation: `plugin install, settings.json`.
 - **Model and reasoning controls** (`configurable`): Model selection, fast mode, context-window enforcement, and subagent model selection are configurable. Invocation: `/model, --model`.
-- **Model/provider portability** (`configurable`): Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric. Invocation: `See evidence`.
+- **Model/provider portability** (`configurable`): Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric. Invocation: `--model, CLAUDE_CODE_USE_BEDROCK, CLAUDE_CODE_USE_VERTEX`.
 - **Agent tracing/event telemetry** (`native`): Headless/SDK event streams and hook events provide structured execution telemetry. Invocation: `PreToolUse hook, PostToolUse hook, --output-format stream-json`.
-- **Usage and cost telemetry** (`supported`): Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths. Invocation: `See evidence`.
+- **Usage and cost telemetry** (`supported`): Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths. Invocation: `/usage, --output-format json`.
 - **Cross-session agent messaging** (`supported`): Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines. Invocation: `ListAgents, SendMessage`.
 - **First-class multi-agent coordination** (`supported`): Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives. Invocation: `SendMessage, ListAgents`.
 - **Parallel/background agents** (`supported`): Subagents and forked skills can run in the background with concurrency and spawn-depth controls. Invocation: `run_in_background`.
@@ -101,7 +101,7 @@ artifact_kind: harness_capability_guide
 - **Self-hosted worker/runtime** (`supported`): `claude self-hosted-runner` registers user-owned machines or containers as execution environments for web/mobile/desktop sessions. Invocation: `claude self-hosted-runner`.
 - **Execution sandbox** (`supported`): Filesystem and network sandbox controls constrain tool execution, including credential masking and TLS termination options. Invocation: `dangerouslyDisableSandbox`.
 - **Granular permissions and approvals** (`supported`): Permission modes, allow/deny rules, workspace trust, and approval hooks govern agent actions. Invocation: `permissionMode, acceptEdits, bypassPermissions`.
-- **Programmatic human approval** (`native`): SDK permission callbacks and hooks let an embedding application mediate tool use programmatically. Invocation: `See evidence`.
+- **Programmatic human approval** (`native`): SDK permission callbacks and hooks let an embedding application mediate tool use programmatically. Invocation: `canUseTool, PreToolUse`.
 - **Resume, fork, and session lineage** (`supported`): Sessions can be resumed, continued, renamed, forked, and moved between local/cloud contexts. Invocation: `--resume, --continue, /resume`.
 
 ## CI or scheduled automation
@@ -110,7 +110,7 @@ artifact_kind: harness_capability_guide
 - **Scheduled tasks** (`native`): Workflow and scheduled-task primitives are present, but coverage is less mature than headless execution. Invocation: `CronCreate, CronList, CronDelete`.
 - **Dynamic context injection** (`supported`): Skills, hooks, and MCP tools can inject context only when relevant. Invocation: `Skill tool, hooks (PreToolUse/UserPromptSubmit), MCP tools`.
 - **Hierarchical project instructions** (`supported`): CLAUDE.md and scoped configuration provide durable project instructions. Invocation: `CLAUDE.md`.
-- **Output schema enforcement** (`native`): Headless and SDK flows can request structured output contracts for downstream automation. Invocation: `See evidence`.
+- **Output schema enforcement** (`native`): Headless and SDK flows can request structured output contracts for downstream automation. Invocation: `--output-format json, --json-schema`.
 - **Agent-native file editing** (`supported`): Claude can read and edit repository files through native tools. Invocation: `Edit, Write, MultiEdit`.
 - **Agent-native shell execution** (`supported`): Claude can run shell commands with configurable permission modes and sandbox controls. Invocation: `Bash tool`.
 - **Embeddable SDK** (`native`): The Claude Agent SDK exposes the same agent loop, tools, and context management as Claude Code in Python and TypeScript. Invocation: `claude-agent-sdk (Python package), @anthropic-ai/claude-agent-sdk (npm package)`.
@@ -121,9 +121,9 @@ artifact_kind: harness_capability_guide
 - **MCP client** (`supported`): Claude Code connects to local and remote MCP servers and supports OAuth-backed tools. Invocation: `.mcp.json, plugin MCP servers`.
 - **Plugins/extensions** (`supported`): Plugins distribute skills, agents, hooks, and MCP servers through project/user configuration and marketplaces. Invocation: `plugin install, settings.json`.
 - **Model and reasoning controls** (`configurable`): Model selection, fast mode, context-window enforcement, and subagent model selection are configurable. Invocation: `/model, --model`.
-- **Model/provider portability** (`configurable`): Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric. Invocation: `See evidence`.
+- **Model/provider portability** (`configurable`): Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric. Invocation: `--model, CLAUDE_CODE_USE_BEDROCK, CLAUDE_CODE_USE_VERTEX`.
 - **Agent tracing/event telemetry** (`native`): Headless/SDK event streams and hook events provide structured execution telemetry. Invocation: `PreToolUse hook, PostToolUse hook, --output-format stream-json`.
-- **Usage and cost telemetry** (`supported`): Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths. Invocation: `See evidence`.
+- **Usage and cost telemetry** (`supported`): Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths. Invocation: `/usage, --output-format json`.
 - **Cross-session agent messaging** (`supported`): Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines. Invocation: `ListAgents, SendMessage`.
 - **First-class multi-agent coordination** (`supported`): Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives. Invocation: `SendMessage, ListAgents`.
 - **Parallel/background agents** (`supported`): Subagents and forked skills can run in the background with concurrency and spawn-depth controls. Invocation: `run_in_background`.
@@ -134,7 +134,7 @@ artifact_kind: harness_capability_guide
 - **Self-hosted worker/runtime** (`supported`): `claude self-hosted-runner` registers user-owned machines or containers as execution environments for web/mobile/desktop sessions. Invocation: `claude self-hosted-runner`.
 - **Execution sandbox** (`supported`): Filesystem and network sandbox controls constrain tool execution, including credential masking and TLS termination options. Invocation: `dangerouslyDisableSandbox`.
 - **Granular permissions and approvals** (`supported`): Permission modes, allow/deny rules, workspace trust, and approval hooks govern agent actions. Invocation: `permissionMode, acceptEdits, bypassPermissions`.
-- **Programmatic human approval** (`supported`): SDK permission callbacks and hooks let an embedding application mediate tool use programmatically. Invocation: `See evidence`.
+- **Programmatic human approval** (`supported`): SDK permission callbacks and hooks let an embedding application mediate tool use programmatically. Invocation: `canUseTool, PreToolUse`.
 - **Resume, fork, and session lineage** (`supported`): Sessions can be resumed, continued, renamed, forked, and moved between local/cloud contexts. Invocation: `--resume, --continue, /resume`.
 
 ## Administrator
@@ -144,7 +144,7 @@ artifact_kind: harness_capability_guide
 - **Dynamic context injection** (`configurable`): Skills, hooks, and MCP tools can inject context only when relevant. Invocation: `Skill tool, hooks (PreToolUse/UserPromptSubmit), MCP tools`.
 - **Hierarchical project instructions** (`configurable`): CLAUDE.md and scoped configuration provide durable project instructions. Invocation: `CLAUDE.md`.
 - **Persistent memory** (`configurable`): Auto memory and project memory preserve selected knowledge across sessions. Invocation: `~/.claude/memory, MEMORY.md`.
-- **Output schema enforcement** (`configurable`): Headless and SDK flows can request structured output contracts for downstream automation. Invocation: `See evidence`.
+- **Output schema enforcement** (`configurable`): Headless and SDK flows can request structured output contracts for downstream automation. Invocation: `--output-format json, --json-schema`.
 - **Agent-native file editing** (`configurable`): Claude can read and edit repository files through native tools. Invocation: `Edit, Write, MultiEdit`.
 - **Agent-native shell execution** (`configurable`): Claude can run shell commands with configurable permission modes and sandbox controls. Invocation: `Bash tool`.
 - **Embeddable SDK** (`configurable`): The Claude Agent SDK exposes the same agent loop, tools, and context management as Claude Code in Python and TypeScript. Invocation: `claude-agent-sdk (Python package), @anthropic-ai/claude-agent-sdk (npm package)`.
@@ -159,9 +159,9 @@ artifact_kind: harness_capability_guide
 - **Interactive terminal/TUI** (`configurable`): Interactive terminal agent with slash commands, session controls, and tool approvals. Invocation: `claude`.
 - **Artifacts, diffs, and rich result views** (`configurable`): IDE, desktop, web, attachments, diffs, and review flows provide rich result inspection beyond terminal text. Invocation: `Artifact tool`.
 - **Model and reasoning controls** (`native`): Model selection, fast mode, context-window enforcement, and subagent model selection are configurable. Invocation: `/model, --model`.
-- **Model/provider portability** (`native`): Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric. Invocation: `See evidence`.
+- **Model/provider portability** (`native`): Claude Code supports Anthropic-hosted Claude plus Bedrock, Vertex AI, and enterprise gateways, but remains Claude-model-centric. Invocation: `--model, CLAUDE_CODE_USE_BEDROCK, CLAUDE_CODE_USE_VERTEX`.
 - **Agent tracing/event telemetry** (`configurable`): Headless/SDK event streams and hook events provide structured execution telemetry. Invocation: `PreToolUse hook, PostToolUse hook, --output-format stream-json`.
-- **Usage and cost telemetry** (`native`): Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths. Invocation: `See evidence`.
+- **Usage and cost telemetry** (`native`): Usage, token, budget, spend-limit, and model-usage signals are exposed in CLI/SDK paths. Invocation: `/usage, --output-format json`.
 - **Cross-session agent messaging** (`configurable`): Running sessions can discover one another with ListAgents and exchange messages with SendMessage across machines. Invocation: `ListAgents, SendMessage`.
 - **First-class multi-agent coordination** (`configurable`): Agent teams, nested subagents, and cross-session messaging provide explicit coordination primitives. Invocation: `SendMessage, ListAgents`.
 - **Parallel/background agents** (`configurable`): Subagents and forked skills can run in the background with concurrency and spawn-depth controls. Invocation: `run_in_background`.
@@ -170,10 +170,10 @@ artifact_kind: harness_capability_guide
 - **Web search/research** (`configurable`): Built-in deep research is manually invoked; web access can also be supplied through MCP and browser tools. Invocation: `/deep-research`.
 - **Remote/cloud execution** (`configurable`): Remote Control and cloud sessions let work continue across terminal, web, desktop, and mobile surfaces. Invocation: `RemoteTrigger`.
 - **Self-hosted worker/runtime** (`native`): `claude self-hosted-runner` registers user-owned machines or containers as execution environments for web/mobile/desktop sessions. Invocation: `claude self-hosted-runner`.
-- **Enterprise managed policy** (`native`): Managed settings and organization policies govern marketplaces, permissions, telemetry, and environment behavior. Invocation: `See evidence`.
+- **Enterprise managed policy** (`native`): Managed settings and organization policies govern marketplaces, permissions, telemetry, and environment behavior. Invocation: `managed-settings.json, /status`.
 - **Execution sandbox** (`native`): Filesystem and network sandbox controls constrain tool execution, including credential masking and TLS termination options. Invocation: `dangerouslyDisableSandbox`.
 - **Granular permissions and approvals** (`native`): Permission modes, allow/deny rules, workspace trust, and approval hooks govern agent actions. Invocation: `permissionMode, acceptEdits, bypassPermissions`.
-- **Programmatic human approval** (`configurable`): SDK permission callbacks and hooks let an embedding application mediate tool use programmatically. Invocation: `See evidence`.
+- **Programmatic human approval** (`configurable`): SDK permission callbacks and hooks let an embedding application mediate tool use programmatically. Invocation: `canUseTool, PreToolUse`.
 - **Resume, fork, and session lineage** (`configurable`): Sessions can be resumed, continued, renamed, forked, and moved between local/cloud contexts. Invocation: `--resume, --continue, /resume`.
 
 ## Freshness rule

@@ -16,9 +16,10 @@ artifact_kind: harness_capability_guide
 
 ## Human operator
 
-- **CI/GitHub automation** (`supported`): GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls. Invocation: `See evidence`.
-- **Headless/non-interactive execution** (`supported`): Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution. Invocation: `See evidence`.
-- **Interactive terminal/TUI** (`native`): GitHub Copilot CLI provides an interactive terminal agent. Invocation: `See evidence`.
+- **CI/GitHub automation** (`supported`): GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls. Invocation: `engine: copilot, engine:
+  id: copilot`.
+- **Headless/non-interactive execution** (`supported`): Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution. Invocation: `copilot -p "<prompt>", copilot --prompt "<prompt>", --allow-all-tools, --allow-tool='<tool>'`.
+- **Interactive terminal/TUI** (`native`): GitHub Copilot CLI provides an interactive terminal agent. Invocation: `copilot`.
 
 ## In-harness agent
 
@@ -26,20 +27,23 @@ No positively verified capabilities in the current seed.
 
 ## External agent/orchestrator
 
-- **CI/GitHub automation** (`native`): GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls. Invocation: `See evidence`.
-- **Headless/non-interactive execution** (`native`): Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution. Invocation: `See evidence`.
+- **CI/GitHub automation** (`native`): GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls. Invocation: `engine: copilot, engine:
+  id: copilot`.
+- **Headless/non-interactive execution** (`native`): Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution. Invocation: `copilot -p "<prompt>", copilot --prompt "<prompt>", --allow-all-tools, --allow-tool='<tool>'`.
 
 ## CI or scheduled automation
 
-- **CI/GitHub automation** (`native`): GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls. Invocation: `See evidence`.
-- **Headless/non-interactive execution** (`native`): Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution. Invocation: `See evidence`.
+- **CI/GitHub automation** (`native`): GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls. Invocation: `engine: copilot, engine:
+  id: copilot`.
+- **Headless/non-interactive execution** (`native`): Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution. Invocation: `copilot -p "<prompt>", copilot --prompt "<prompt>", --allow-all-tools, --allow-tool='<tool>'`.
 
 ## Administrator
 
-- **CI/GitHub automation** (`configurable`): GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls. Invocation: `See evidence`.
-- **Headless/non-interactive execution** (`configurable`): Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution. Invocation: `See evidence`.
-- **Interactive terminal/TUI** (`configurable`): GitHub Copilot CLI provides an interactive terminal agent. Invocation: `See evidence`.
-- **Enterprise managed policy** (`native`): GitHub organization controls and workflow permissions govern Copilot use. Invocation: `See evidence`.
+- **CI/GitHub automation** (`configurable`): GitHub Agentic Workflows provides first-class Copilot engine support with custom agents and continuation controls. Invocation: `engine: copilot, engine:
+  id: copilot`.
+- **Headless/non-interactive execution** (`configurable`): Copilot CLI is the default engine in GitHub Agentic Workflows and supports unattended workflow execution. Invocation: `copilot -p "<prompt>", copilot --prompt "<prompt>", --allow-all-tools, --allow-tool='<tool>'`.
+- **Interactive terminal/TUI** (`configurable`): GitHub Copilot CLI provides an interactive terminal agent. Invocation: `copilot`.
+- **Enterprise managed policy** (`native`): GitHub organization controls and workflow permissions govern Copilot use. Invocation: `Copilot CLI policy (Enterprise/Organization settings → Copilot → Policies → Clients → Copilot CLI: Enabled everywhere / Disabled everywhere / Let organizations decide)`.
 
 ## Freshness rule
 

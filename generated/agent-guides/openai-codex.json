@@ -55,7 +55,9 @@
         "surfaces": [
           "IDE extension"
         ],
-        "invocation": [],
+        "invocation": [
+          "VS Code extension ID `openai.chatgpt` (marketplace: \"Codex – OpenAI's coding agent\")"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -66,6 +68,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex is available through an IDE extension sharing core sessions and agent capabilities."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://marketplace.visualstudio.com/items?itemName=openai.chatgpt",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: VS Code extension ID `openai.chatgpt` (marketplace: \"Codex – OpenAI's coding agent\")"
           }
         ],
         "access": "native"
@@ -80,7 +89,10 @@
           "desktop",
           "web/cloud"
         ],
-        "invocation": [],
+        "invocation": [
+          "ChatGPT desktop app",
+          "codex cloud (chatgpt.com/codex)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -91,6 +103,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex spans the ChatGPT desktop app and Codex cloud/web surfaces."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ChatGPT desktop app, codex cloud (chatgpt.com/codex)"
           }
         ],
         "access": "native"
@@ -106,7 +125,10 @@
           "IDE",
           "cloud"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox workspace-write",
+          "sandbox_mode = \"workspace-write\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -117,6 +139,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex can inspect and edit repository files under sandbox and approval policies."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox workspace-write, sandbox_mode = \"workspace-write\" (config.toml)"
           }
         ],
         "access": "supported"
@@ -131,7 +160,10 @@
           "CLI",
           "cloud"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox {read-only,workspace-write,danger-full-access}",
+          "--ask-for-approval {untrusted,on-request,never}"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -142,6 +174,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex runs commands within configurable sandbox and approval modes."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox {read-only,workspace-write,danger-full-access}, --ask-for-approval {untrusted,on-request,never}"
           }
         ],
         "access": "supported"
@@ -210,7 +249,10 @@
           "Python SDK",
           "TypeScript SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "npm install @openai/codex-sdk",
+          "pip install openai-codex"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -221,6 +263,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Official Python and TypeScript Codex SDKs embed local Codex threads for applications and CI."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: npm install @openai/codex-sdk, pip install openai-codex"
           }
         ],
         "access": "supported"
@@ -263,7 +312,10 @@
           "desktop",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex mcp add <server-name> -- <stdio server-command>",
+          "codex mcp list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -274,6 +326,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Local Codex clients connect to local or remote MCP servers and share configuration."
+          },
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex mcp add <server-name> -- <stdio server-command>, codex mcp list"
           }
         ],
         "access": "configurable"
@@ -289,7 +348,9 @@
           "desktop",
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          "$skill-name (mention syntax in Codex, vs @skill-name in ChatGPT)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -300,6 +361,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions."
+          },
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: $skill-name (mention syntax in Codex, vs @skill-name in ChatGPT)"
           }
         ],
         "access": "configurable"
@@ -315,7 +383,9 @@
           "desktop",
           "plugin directory"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex /plugins (interactive plugin browser: search/install/uninstall marketplace entries)"
+        ],
         "minimum_version": "0.147.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -326,6 +396,13 @@
             "version": "0.147.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces."
+          },
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/plugins",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex /plugins (interactive plugin browser: search/install/uninstall marketplace entries)"
           }
         ],
         "access": "configurable"
@@ -341,7 +418,11 @@
           "repository",
           "directory"
         ],
-        "invocation": [],
+        "invocation": [
+          "AGENTS.md",
+          "AGENTS.override.md",
+          "project_doc_fallback_filenames (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -352,6 +433,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes."
+          },
+          {
+            "source_id": "src.codex.docs.agents-md",
+            "url": "https://developers.openai.com/codex/agent-configuration/agents-md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: AGENTS.md, AGENTS.override.md, project_doc_fallback_filenames (config.toml)"
           }
         ],
         "access": "configurable"
@@ -366,7 +454,11 @@
           "CLI",
           "app-server"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex resume [SESSION_ID | --last]",
+          "codex fork [SESSION_ID | --last]",
+          "codex archive/unarchive/delete <SESSION>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -377,6 +469,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Saved sessions can be resumed, forked, named, and deleted through stable CLI commands."
+          },
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex resume [SESSION_ID | --last], codex fork [SESSION_ID | --last], codex archive/unarchive/delete <SESSION>"
           }
         ],
         "access": "native"
@@ -392,7 +491,10 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "~/.codex/agents/*.toml or .codex/agents/*.toml agent definitions",
+          "[agents] section in config.toml"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -403,6 +505,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ~/.codex/agents/*.toml or .codex/agents/*.toml agent definitions, [agents] section in config.toml"
           }
         ],
         "access": "supported"
@@ -418,7 +527,10 @@
           "app",
           "CLI"
         ],
-        "invocation": [],
+        "invocation": [
+          "max_concurrent_threads_per_session (config.toml [agents] section)",
+          "/agent (switch between active threads)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -429,6 +541,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex cloud and local subagent surfaces support parallel/background work."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: max_concurrent_threads_per_session (config.toml [agents] section), /agent (switch between active threads)"
           }
         ],
         "access": "native"
@@ -444,7 +563,9 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "[agents] config.toml section (enabled, default_subagent_model, default_subagent_reasoning_effort)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -455,6 +576,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The main thread can coordinate multiple subagent threads and collect their results."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: [agents] config.toml section (enabled, default_subagent_model, default_subagent_reasoning_effort)"
           }
         ],
         "access": "supported"
@@ -470,7 +598,9 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex cloud"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -481,6 +611,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "CLI and IDE can hand work to Codex cloud and later inspect or apply results locally."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex cloud"
           }
         ],
         "access": "native"
@@ -495,7 +632,10 @@
           "GitHub Actions",
           "CI"
         ],
-        "invocation": [],
+        "invocation": [
+          "openai/codex-action@v1 (GitHub Action)",
+          "codex exec (used in CI)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -506,6 +646,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The official Codex GitHub Action runs `codex exec` in CI to apply patches or post reviews."
+          },
+          {
+            "source_id": "src.codex.docs.github-action",
+            "url": "https://developers.openai.com/codex/github-action",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: openai/codex-action@v1 (GitHub Action), codex exec (used in CI)"
           }
         ],
         "access": "supported"
@@ -521,7 +668,9 @@
           "cloud",
           "CI"
         ],
-        "invocation": [],
+        "invocation": [
+          "Scheduled tasks created from a ChatGPT/Codex chat (Scheduled section, RFC 5545 RRULE recurrence) — not available in Codex CLI"
+        ],
         "minimum_version": null,
         "limitations": [
           "Verify workspace/surface availability before relying on it."
@@ -534,6 +683,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Scheduled tasks are supported through Codex/ChatGPT workflow surfaces; exact availability depends on surface and workspace."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/app/automations",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Scheduled tasks created from a ChatGPT/Codex chat (Scheduled section, RFC 5545 RRULE recurrence) — not available in Codex CLI"
           }
         ],
         "access": "configurable"
@@ -549,7 +705,11 @@
           "Linux",
           "Windows"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox {read-only,workspace-write,danger-full-access}",
+          "sandbox_mode (config.toml)",
+          "[sandbox_workspace_write] network_access"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -560,6 +720,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex provides platform-specific sandbox commands and read-only/workspace-write modes."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox {read-only,workspace-write,danger-full-access}, sandbox_mode (config.toml), [sandbox_workspace_write] network_access"
           }
         ],
         "access": "configurable"
@@ -575,7 +742,11 @@
           "config.toml",
           "requirements.toml"
         ],
-        "invocation": [],
+        "invocation": [
+          "--ask-for-approval {untrusted,on-request,never}",
+          "approval_policy (config.toml)",
+          "/permissions"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -586,6 +757,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Approval policies and permission profiles define when commands can run automatically."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --ask-for-approval {untrusted,on-request,never}, approval_policy (config.toml), /permissions"
           }
         ],
         "access": "native"
@@ -601,7 +779,10 @@
           "JSONL",
           "workspace"
         ],
-        "invocation": [],
+        "invocation": [
+          "/status",
+          "/usage"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -612,6 +793,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Structured outputs and product surfaces expose usage, limits, and model information for attribution."
+          },
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /status, /usage"
           }
         ],
         "access": "native"
@@ -626,7 +814,9 @@
           "JSON-RPC",
           "JSONL"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex app-server (JSON-RPC 2.0 events: item/started, item/completed, item/commandExecution/requestApproval)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -637,6 +827,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "App-server notifications and JSONL execution events expose turn and tool lifecycle data."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex app-server (JSON-RPC 2.0 events: item/started, item/completed, item/commandExecution/requestApproval)"
           }
         ],
         "access": "supported"
@@ -651,7 +848,10 @@
           "web search",
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "--search",
+          "web_search = \"cached\"|\"live\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -662,6 +862,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex supports opt-in web search and MCP-based external tools."
+          },
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --search, web_search = \"cached\"|\"live\" (config.toml)"
           }
         ],
         "access": "supported"
@@ -677,7 +884,9 @@
           "web",
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "WebMCP site tools in the ChatGPT desktop app's built-in browser (GPT-5.6 Sol or Terra)"
+        ],
         "minimum_version": null,
         "limitations": [
           "Capability depends on the selected model and enabled tools."
@@ -690,6 +899,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://learn.chatgpt.com/docs/webmcp",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: WebMCP site tools in the ChatGPT desktop app's built-in browser (GPT-5.6 Sol or Terra)"
           }
         ],
         "access": "supported"
@@ -706,7 +922,9 @@
           "cloud",
           "CLI"
         ],
-        "invocation": [],
+        "invocation": [
+          "/review"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -717,6 +935,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The app, IDE, CLI, and cloud surfaces expose diffs, conversation sections, and task results for review."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /review"
           }
         ],
         "access": "native"
@@ -731,7 +956,9 @@
           "OpenAI",
           "Bedrock-backed paths"
         ],
-        "invocation": [],
+        "invocation": [
+          "[model_providers.<id>] section in config.toml (base_url, env_key, wire_api)"
+        ],
         "minimum_version": null,
         "limitations": [
           "Treat as limited rather than provider-neutral."
@@ -744,6 +971,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex is primarily an OpenAI-model harness; custom API targets do not imply arbitrary provider compatibility."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: [model_providers.<id>] section in config.toml (base_url, env_key, wire_api)"
           }
         ],
         "access": "configurable"
@@ -759,7 +993,11 @@
           "--model",
           "config.toml"
         ],
-        "invocation": [],
+        "invocation": [
+          "--model / -m",
+          "/model",
+          "model_reasoning_effort = \"minimal\"|\"low\"|\"medium\"|\"high\"|\"xhigh\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -770,6 +1008,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --model / -m, /model, model_reasoning_effort = \"minimal\"|\"low\"|\"medium\"|\"high\"|\"xhigh\" (config.toml)"
           }
         ],
         "access": "native"
@@ -784,7 +1029,9 @@
           "JSON-RPC",
           "SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex app-server JSON-RPC requests: item/commandExecution/requestApproval, item/fileChange/requestApproval, item/permissions/requestApproval"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -795,6 +1042,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex app-server JSON-RPC requests: item/commandExecution/requestApproval, item/fileChange/requestApproval, item/permissions/requestApproval"
           }
         ],
         "access": "supported"
@@ -867,7 +1121,9 @@
         "surfaces": [
           "IDE extension"
         ],
-        "invocation": [],
+        "invocation": [
+          "VS Code extension ID `openai.chatgpt` (marketplace: \"Codex – OpenAI's coding agent\")"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -878,6 +1134,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex is available through an IDE extension sharing core sessions and agent capabilities."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://marketplace.visualstudio.com/items?itemName=openai.chatgpt",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: VS Code extension ID `openai.chatgpt` (marketplace: \"Codex – OpenAI's coding agent\")"
           }
         ],
         "access": "configurable"
@@ -892,7 +1155,10 @@
           "desktop",
           "web/cloud"
         ],
-        "invocation": [],
+        "invocation": [
+          "ChatGPT desktop app",
+          "codex cloud (chatgpt.com/codex)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -903,6 +1169,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex spans the ChatGPT desktop app and Codex cloud/web surfaces."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ChatGPT desktop app, codex cloud (chatgpt.com/codex)"
           }
         ],
         "access": "configurable"
@@ -918,7 +1191,10 @@
           "IDE",
           "cloud"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox workspace-write",
+          "sandbox_mode = \"workspace-write\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -929,6 +1205,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex can inspect and edit repository files under sandbox and approval policies."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox workspace-write, sandbox_mode = \"workspace-write\" (config.toml)"
           }
         ],
         "access": "configurable"
@@ -943,7 +1226,10 @@
           "CLI",
           "cloud"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox {read-only,workspace-write,danger-full-access}",
+          "--ask-for-approval {untrusted,on-request,never}"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -954,6 +1240,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex runs commands within configurable sandbox and approval modes."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox {read-only,workspace-write,danger-full-access}, --ask-for-approval {untrusted,on-request,never}"
           }
         ],
         "access": "configurable"
@@ -1022,7 +1315,10 @@
           "Python SDK",
           "TypeScript SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "npm install @openai/codex-sdk",
+          "pip install openai-codex"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1033,6 +1329,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Official Python and TypeScript Codex SDKs embed local Codex threads for applications and CI."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: npm install @openai/codex-sdk, pip install openai-codex"
           }
         ],
         "access": "configurable"
@@ -1075,7 +1378,10 @@
           "desktop",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex mcp add <server-name> -- <stdio server-command>",
+          "codex mcp list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1086,6 +1392,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Local Codex clients connect to local or remote MCP servers and share configuration."
+          },
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex mcp add <server-name> -- <stdio server-command>, codex mcp list"
           }
         ],
         "access": "configurable"
@@ -1101,7 +1414,9 @@
           "desktop",
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          "$skill-name (mention syntax in Codex, vs @skill-name in ChatGPT)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1112,6 +1427,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions."
+          },
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: $skill-name (mention syntax in Codex, vs @skill-name in ChatGPT)"
           }
         ],
         "access": "configurable"
@@ -1127,7 +1449,9 @@
           "desktop",
           "plugin directory"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex /plugins (interactive plugin browser: search/install/uninstall marketplace entries)"
+        ],
         "minimum_version": "0.147.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1138,6 +1462,13 @@
             "version": "0.147.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces."
+          },
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/plugins",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex /plugins (interactive plugin browser: search/install/uninstall marketplace entries)"
           }
         ],
         "access": "configurable"
@@ -1153,7 +1484,11 @@
           "repository",
           "directory"
         ],
-        "invocation": [],
+        "invocation": [
+          "AGENTS.md",
+          "AGENTS.override.md",
+          "project_doc_fallback_filenames (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1164,6 +1499,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes."
+          },
+          {
+            "source_id": "src.codex.docs.agents-md",
+            "url": "https://developers.openai.com/codex/agent-configuration/agents-md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: AGENTS.md, AGENTS.override.md, project_doc_fallback_filenames (config.toml)"
           }
         ],
         "access": "configurable"
@@ -1178,7 +1520,11 @@
           "CLI",
           "app-server"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex resume [SESSION_ID | --last]",
+          "codex fork [SESSION_ID | --last]",
+          "codex archive/unarchive/delete <SESSION>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1189,6 +1535,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Saved sessions can be resumed, forked, named, and deleted through stable CLI commands."
+          },
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex resume [SESSION_ID | --last], codex fork [SESSION_ID | --last], codex archive/unarchive/delete <SESSION>"
           }
         ],
         "access": "configurable"
@@ -1204,7 +1557,10 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "~/.codex/agents/*.toml or .codex/agents/*.toml agent definitions",
+          "[agents] section in config.toml"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1215,6 +1571,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ~/.codex/agents/*.toml or .codex/agents/*.toml agent definitions, [agents] section in config.toml"
           }
         ],
         "access": "configurable"
@@ -1230,7 +1593,10 @@
           "app",
           "CLI"
         ],
-        "invocation": [],
+        "invocation": [
+          "max_concurrent_threads_per_session (config.toml [agents] section)",
+          "/agent (switch between active threads)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1241,6 +1607,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex cloud and local subagent surfaces support parallel/background work."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: max_concurrent_threads_per_session (config.toml [agents] section), /agent (switch between active threads)"
           }
         ],
         "access": "configurable"
@@ -1256,7 +1629,9 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "[agents] config.toml section (enabled, default_subagent_model, default_subagent_reasoning_effort)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1267,6 +1642,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The main thread can coordinate multiple subagent threads and collect their results."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: [agents] config.toml section (enabled, default_subagent_model, default_subagent_reasoning_effort)"
           }
         ],
         "access": "configurable"
@@ -1282,7 +1664,9 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex cloud"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1293,6 +1677,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "CLI and IDE can hand work to Codex cloud and later inspect or apply results locally."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex cloud"
           }
         ],
         "access": "configurable"
@@ -1307,7 +1698,10 @@
           "GitHub Actions",
           "CI"
         ],
-        "invocation": [],
+        "invocation": [
+          "openai/codex-action@v1 (GitHub Action)",
+          "codex exec (used in CI)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1318,6 +1712,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The official Codex GitHub Action runs `codex exec` in CI to apply patches or post reviews."
+          },
+          {
+            "source_id": "src.codex.docs.github-action",
+            "url": "https://developers.openai.com/codex/github-action",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: openai/codex-action@v1 (GitHub Action), codex exec (used in CI)"
           }
         ],
         "access": "configurable"
@@ -1333,7 +1734,9 @@
           "cloud",
           "CI"
         ],
-        "invocation": [],
+        "invocation": [
+          "Scheduled tasks created from a ChatGPT/Codex chat (Scheduled section, RFC 5545 RRULE recurrence) — not available in Codex CLI"
+        ],
         "minimum_version": null,
         "limitations": [
           "Verify workspace/surface availability before relying on it."
@@ -1346,6 +1749,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Scheduled tasks are supported through Codex/ChatGPT workflow surfaces; exact availability depends on surface and workspace."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/app/automations",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Scheduled tasks created from a ChatGPT/Codex chat (Scheduled section, RFC 5545 RRULE recurrence) — not available in Codex CLI"
           }
         ],
         "access": "configurable"
@@ -1361,7 +1771,11 @@
           "Linux",
           "Windows"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox {read-only,workspace-write,danger-full-access}",
+          "sandbox_mode (config.toml)",
+          "[sandbox_workspace_write] network_access"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1372,6 +1786,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex provides platform-specific sandbox commands and read-only/workspace-write modes."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox {read-only,workspace-write,danger-full-access}, sandbox_mode (config.toml), [sandbox_workspace_write] network_access"
           }
         ],
         "access": "native"
@@ -1387,7 +1808,11 @@
           "config.toml",
           "requirements.toml"
         ],
-        "invocation": [],
+        "invocation": [
+          "--ask-for-approval {untrusted,on-request,never}",
+          "approval_policy (config.toml)",
+          "/permissions"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1398,6 +1823,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Approval policies and permission profiles define when commands can run automatically."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --ask-for-approval {untrusted,on-request,never}, approval_policy (config.toml), /permissions"
           }
         ],
         "access": "native"
@@ -1412,7 +1844,9 @@
           "managed ChatGPT workspace",
           "API organization"
         ],
-        "invocation": [],
+        "invocation": [
+          "requirements.toml admin-enforced managed policy (deployed from the Codex Policies page)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1423,6 +1857,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Managed workspace roles, permissions, retention, residency, and authentication policies apply to Codex surfaces."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/enterprise/",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: requirements.toml admin-enforced managed policy (deployed from the Codex Policies page)"
           }
         ],
         "access": "native"
@@ -1438,7 +1879,10 @@
           "JSONL",
           "workspace"
         ],
-        "invocation": [],
+        "invocation": [
+          "/status",
+          "/usage"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1449,6 +1893,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Structured outputs and product surfaces expose usage, limits, and model information for attribution."
+          },
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /status, /usage"
           }
         ],
         "access": "native"
@@ -1463,7 +1914,9 @@
           "JSON-RPC",
           "JSONL"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex app-server (JSON-RPC 2.0 events: item/started, item/completed, item/commandExecution/requestApproval)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1474,6 +1927,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "App-server notifications and JSONL execution events expose turn and tool lifecycle data."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex app-server (JSON-RPC 2.0 events: item/started, item/completed, item/commandExecution/requestApproval)"
           }
         ],
         "access": "configurable"
@@ -1488,7 +1948,10 @@
           "web search",
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "--search",
+          "web_search = \"cached\"|\"live\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1499,6 +1962,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex supports opt-in web search and MCP-based external tools."
+          },
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --search, web_search = \"cached\"|\"live\" (config.toml)"
           }
         ],
         "access": "configurable"
@@ -1514,7 +1984,9 @@
           "web",
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "WebMCP site tools in the ChatGPT desktop app's built-in browser (GPT-5.6 Sol or Terra)"
+        ],
         "minimum_version": null,
         "limitations": [
           "Capability depends on the selected model and enabled tools."
@@ -1527,6 +1999,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://learn.chatgpt.com/docs/webmcp",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: WebMCP site tools in the ChatGPT desktop app's built-in browser (GPT-5.6 Sol or Terra)"
           }
         ],
         "access": "configurable"
@@ -1543,7 +2022,9 @@
           "cloud",
           "CLI"
         ],
-        "invocation": [],
+        "invocation": [
+          "/review"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1554,6 +2035,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The app, IDE, CLI, and cloud surfaces expose diffs, conversation sections, and task results for review."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /review"
           }
         ],
         "access": "configurable"
@@ -1568,7 +2056,9 @@
           "OpenAI",
           "Bedrock-backed paths"
         ],
-        "invocation": [],
+        "invocation": [
+          "[model_providers.<id>] section in config.toml (base_url, env_key, wire_api)"
+        ],
         "minimum_version": null,
         "limitations": [
           "Treat as limited rather than provider-neutral."
@@ -1581,6 +2071,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex is primarily an OpenAI-model harness; custom API targets do not imply arbitrary provider compatibility."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: [model_providers.<id>] section in config.toml (base_url, env_key, wire_api)"
           }
         ],
         "access": "configurable"
@@ -1596,7 +2093,11 @@
           "--model",
           "config.toml"
         ],
-        "invocation": [],
+        "invocation": [
+          "--model / -m",
+          "/model",
+          "model_reasoning_effort = \"minimal\"|\"low\"|\"medium\"|\"high\"|\"xhigh\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1607,6 +2108,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --model / -m, /model, model_reasoning_effort = \"minimal\"|\"low\"|\"medium\"|\"high\"|\"xhigh\" (config.toml)"
           }
         ],
         "access": "native"
@@ -1621,7 +2129,9 @@
           "JSON-RPC",
           "SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex app-server JSON-RPC requests: item/commandExecution/requestApproval, item/fileChange/requestApproval, item/permissions/requestApproval"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1632,6 +2142,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex app-server JSON-RPC requests: item/commandExecution/requestApproval, item/fileChange/requestApproval, item/permissions/requestApproval"
           }
         ],
         "access": "configurable"
@@ -1680,7 +2197,10 @@
           "IDE",
           "cloud"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox workspace-write",
+          "sandbox_mode = \"workspace-write\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1691,6 +2211,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex can inspect and edit repository files under sandbox and approval policies."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox workspace-write, sandbox_mode = \"workspace-write\" (config.toml)"
           }
         ],
         "access": "native"
@@ -1705,7 +2232,10 @@
           "CLI",
           "cloud"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox {read-only,workspace-write,danger-full-access}",
+          "--ask-for-approval {untrusted,on-request,never}"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1716,6 +2246,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex runs commands within configurable sandbox and approval modes."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox {read-only,workspace-write,danger-full-access}, --ask-for-approval {untrusted,on-request,never}"
           }
         ],
         "access": "native"
@@ -1731,7 +2268,10 @@
           "desktop",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex mcp add <server-name> -- <stdio server-command>",
+          "codex mcp list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1742,6 +2282,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Local Codex clients connect to local or remote MCP servers and share configuration."
+          },
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex mcp add <server-name> -- <stdio server-command>, codex mcp list"
           }
         ],
         "access": "native"
@@ -1757,7 +2304,9 @@
           "desktop",
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          "$skill-name (mention syntax in Codex, vs @skill-name in ChatGPT)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1768,6 +2317,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions."
+          },
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: $skill-name (mention syntax in Codex, vs @skill-name in ChatGPT)"
           }
         ],
         "access": "native"
@@ -1783,7 +2339,9 @@
           "desktop",
           "plugin directory"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex /plugins (interactive plugin browser: search/install/uninstall marketplace entries)"
+        ],
         "minimum_version": "0.147.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -1794,6 +2352,13 @@
             "version": "0.147.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces."
+          },
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/plugins",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex /plugins (interactive plugin browser: search/install/uninstall marketplace entries)"
           }
         ],
         "access": "native"
@@ -1809,7 +2374,11 @@
           "repository",
           "directory"
         ],
-        "invocation": [],
+        "invocation": [
+          "AGENTS.md",
+          "AGENTS.override.md",
+          "project_doc_fallback_filenames (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1820,6 +2389,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes."
+          },
+          {
+            "source_id": "src.codex.docs.agents-md",
+            "url": "https://developers.openai.com/codex/agent-configuration/agents-md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: AGENTS.md, AGENTS.override.md, project_doc_fallback_filenames (config.toml)"
           }
         ],
         "access": "native"
@@ -1835,7 +2411,10 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "~/.codex/agents/*.toml or .codex/agents/*.toml agent definitions",
+          "[agents] section in config.toml"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1846,6 +2425,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ~/.codex/agents/*.toml or .codex/agents/*.toml agent definitions, [agents] section in config.toml"
           }
         ],
         "access": "native"
@@ -1861,7 +2447,10 @@
           "app",
           "CLI"
         ],
-        "invocation": [],
+        "invocation": [
+          "max_concurrent_threads_per_session (config.toml [agents] section)",
+          "/agent (switch between active threads)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1872,6 +2461,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex cloud and local subagent surfaces support parallel/background work."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: max_concurrent_threads_per_session (config.toml [agents] section), /agent (switch between active threads)"
           }
         ],
         "access": "native"
@@ -1887,7 +2483,9 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "[agents] config.toml section (enabled, default_subagent_model, default_subagent_reasoning_effort)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1898,6 +2496,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The main thread can coordinate multiple subagent threads and collect their results."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: [agents] config.toml section (enabled, default_subagent_model, default_subagent_reasoning_effort)"
           }
         ],
         "access": "native"
@@ -1912,7 +2517,10 @@
           "web search",
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "--search",
+          "web_search = \"cached\"|\"live\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1923,6 +2531,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex supports opt-in web search and MCP-based external tools."
+          },
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --search, web_search = \"cached\"|\"live\" (config.toml)"
           }
         ],
         "access": "native"
@@ -1938,7 +2553,9 @@
           "web",
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "WebMCP site tools in the ChatGPT desktop app's built-in browser (GPT-5.6 Sol or Terra)"
+        ],
         "minimum_version": null,
         "limitations": [
           "Capability depends on the selected model and enabled tools."
@@ -1951,6 +2568,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://learn.chatgpt.com/docs/webmcp",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: WebMCP site tools in the ChatGPT desktop app's built-in browser (GPT-5.6 Sol or Terra)"
           }
         ],
         "access": "native"
@@ -1966,7 +2590,11 @@
           "--model",
           "config.toml"
         ],
-        "invocation": [],
+        "invocation": [
+          "--model / -m",
+          "/model",
+          "model_reasoning_effort = \"minimal\"|\"low\"|\"medium\"|\"high\"|\"xhigh\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -1977,6 +2605,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --model / -m, /model, model_reasoning_effort = \"minimal\"|\"low\"|\"medium\"|\"high\"|\"xhigh\" (config.toml)"
           }
         ],
         "access": "supported"
@@ -2025,7 +2660,10 @@
           "IDE",
           "cloud"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox workspace-write",
+          "sandbox_mode = \"workspace-write\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2036,6 +2674,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex can inspect and edit repository files under sandbox and approval policies."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox workspace-write, sandbox_mode = \"workspace-write\" (config.toml)"
           }
         ],
         "access": "supported"
@@ -2050,7 +2695,10 @@
           "CLI",
           "cloud"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox {read-only,workspace-write,danger-full-access}",
+          "--ask-for-approval {untrusted,on-request,never}"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2061,6 +2709,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex runs commands within configurable sandbox and approval modes."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox {read-only,workspace-write,danger-full-access}, --ask-for-approval {untrusted,on-request,never}"
           }
         ],
         "access": "supported"
@@ -2129,7 +2784,10 @@
           "Python SDK",
           "TypeScript SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "npm install @openai/codex-sdk",
+          "pip install openai-codex"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2140,6 +2798,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Official Python and TypeScript Codex SDKs embed local Codex threads for applications and CI."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: npm install @openai/codex-sdk, pip install openai-codex"
           }
         ],
         "access": "native"
@@ -2182,7 +2847,10 @@
           "desktop",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex mcp add <server-name> -- <stdio server-command>",
+          "codex mcp list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2193,6 +2861,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Local Codex clients connect to local or remote MCP servers and share configuration."
+          },
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex mcp add <server-name> -- <stdio server-command>, codex mcp list"
           }
         ],
         "access": "supported"
@@ -2208,7 +2883,9 @@
           "desktop",
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          "$skill-name (mention syntax in Codex, vs @skill-name in ChatGPT)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2219,6 +2896,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions."
+          },
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: $skill-name (mention syntax in Codex, vs @skill-name in ChatGPT)"
           }
         ],
         "access": "supported"
@@ -2234,7 +2918,9 @@
           "desktop",
           "plugin directory"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex /plugins (interactive plugin browser: search/install/uninstall marketplace entries)"
+        ],
         "minimum_version": "0.147.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -2245,6 +2931,13 @@
             "version": "0.147.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces."
+          },
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/plugins",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex /plugins (interactive plugin browser: search/install/uninstall marketplace entries)"
           }
         ],
         "access": "supported"
@@ -2260,7 +2953,11 @@
           "repository",
           "directory"
         ],
-        "invocation": [],
+        "invocation": [
+          "AGENTS.md",
+          "AGENTS.override.md",
+          "project_doc_fallback_filenames (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2271,6 +2968,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes."
+          },
+          {
+            "source_id": "src.codex.docs.agents-md",
+            "url": "https://developers.openai.com/codex/agent-configuration/agents-md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: AGENTS.md, AGENTS.override.md, project_doc_fallback_filenames (config.toml)"
           }
         ],
         "access": "supported"
@@ -2285,7 +2989,11 @@
           "CLI",
           "app-server"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex resume [SESSION_ID | --last]",
+          "codex fork [SESSION_ID | --last]",
+          "codex archive/unarchive/delete <SESSION>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2296,6 +3004,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Saved sessions can be resumed, forked, named, and deleted through stable CLI commands."
+          },
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex resume [SESSION_ID | --last], codex fork [SESSION_ID | --last], codex archive/unarchive/delete <SESSION>"
           }
         ],
         "access": "supported"
@@ -2311,7 +3026,10 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "~/.codex/agents/*.toml or .codex/agents/*.toml agent definitions",
+          "[agents] section in config.toml"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2322,6 +3040,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ~/.codex/agents/*.toml or .codex/agents/*.toml agent definitions, [agents] section in config.toml"
           }
         ],
         "access": "supported"
@@ -2337,7 +3062,10 @@
           "app",
           "CLI"
         ],
-        "invocation": [],
+        "invocation": [
+          "max_concurrent_threads_per_session (config.toml [agents] section)",
+          "/agent (switch between active threads)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2348,6 +3076,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex cloud and local subagent surfaces support parallel/background work."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: max_concurrent_threads_per_session (config.toml [agents] section), /agent (switch between active threads)"
           }
         ],
         "access": "supported"
@@ -2363,7 +3098,9 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "[agents] config.toml section (enabled, default_subagent_model, default_subagent_reasoning_effort)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2374,6 +3111,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The main thread can coordinate multiple subagent threads and collect their results."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: [agents] config.toml section (enabled, default_subagent_model, default_subagent_reasoning_effort)"
           }
         ],
         "access": "supported"
@@ -2389,7 +3133,9 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex cloud"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2400,6 +3146,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "CLI and IDE can hand work to Codex cloud and later inspect or apply results locally."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex cloud"
           }
         ],
         "access": "supported"
@@ -2414,7 +3167,10 @@
           "GitHub Actions",
           "CI"
         ],
-        "invocation": [],
+        "invocation": [
+          "openai/codex-action@v1 (GitHub Action)",
+          "codex exec (used in CI)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2425,6 +3181,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The official Codex GitHub Action runs `codex exec` in CI to apply patches or post reviews."
+          },
+          {
+            "source_id": "src.codex.docs.github-action",
+            "url": "https://developers.openai.com/codex/github-action",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: openai/codex-action@v1 (GitHub Action), codex exec (used in CI)"
           }
         ],
         "access": "native"
@@ -2440,7 +3203,9 @@
           "cloud",
           "CI"
         ],
-        "invocation": [],
+        "invocation": [
+          "Scheduled tasks created from a ChatGPT/Codex chat (Scheduled section, RFC 5545 RRULE recurrence) — not available in Codex CLI"
+        ],
         "minimum_version": null,
         "limitations": [
           "Verify workspace/surface availability before relying on it."
@@ -2453,6 +3218,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Scheduled tasks are supported through Codex/ChatGPT workflow surfaces; exact availability depends on surface and workspace."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/app/automations",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Scheduled tasks created from a ChatGPT/Codex chat (Scheduled section, RFC 5545 RRULE recurrence) — not available in Codex CLI"
           }
         ],
         "access": "supported"
@@ -2468,7 +3240,11 @@
           "Linux",
           "Windows"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox {read-only,workspace-write,danger-full-access}",
+          "sandbox_mode (config.toml)",
+          "[sandbox_workspace_write] network_access"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2479,6 +3255,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex provides platform-specific sandbox commands and read-only/workspace-write modes."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox {read-only,workspace-write,danger-full-access}, sandbox_mode (config.toml), [sandbox_workspace_write] network_access"
           }
         ],
         "access": "supported"
@@ -2494,7 +3277,11 @@
           "config.toml",
           "requirements.toml"
         ],
-        "invocation": [],
+        "invocation": [
+          "--ask-for-approval {untrusted,on-request,never}",
+          "approval_policy (config.toml)",
+          "/permissions"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2505,6 +3292,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Approval policies and permission profiles define when commands can run automatically."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --ask-for-approval {untrusted,on-request,never}, approval_policy (config.toml), /permissions"
           }
         ],
         "access": "supported"
@@ -2520,7 +3314,10 @@
           "JSONL",
           "workspace"
         ],
-        "invocation": [],
+        "invocation": [
+          "/status",
+          "/usage"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2531,6 +3328,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Structured outputs and product surfaces expose usage, limits, and model information for attribution."
+          },
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /status, /usage"
           }
         ],
         "access": "supported"
@@ -2545,7 +3349,9 @@
           "JSON-RPC",
           "JSONL"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex app-server (JSON-RPC 2.0 events: item/started, item/completed, item/commandExecution/requestApproval)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2556,6 +3362,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "App-server notifications and JSONL execution events expose turn and tool lifecycle data."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex app-server (JSON-RPC 2.0 events: item/started, item/completed, item/commandExecution/requestApproval)"
           }
         ],
         "access": "native"
@@ -2570,7 +3383,10 @@
           "web search",
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "--search",
+          "web_search = \"cached\"|\"live\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2581,6 +3397,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex supports opt-in web search and MCP-based external tools."
+          },
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --search, web_search = \"cached\"|\"live\" (config.toml)"
           }
         ],
         "access": "supported"
@@ -2596,7 +3419,9 @@
           "web",
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "WebMCP site tools in the ChatGPT desktop app's built-in browser (GPT-5.6 Sol or Terra)"
+        ],
         "minimum_version": null,
         "limitations": [
           "Capability depends on the selected model and enabled tools."
@@ -2609,6 +3434,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://learn.chatgpt.com/docs/webmcp",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: WebMCP site tools in the ChatGPT desktop app's built-in browser (GPT-5.6 Sol or Terra)"
           }
         ],
         "access": "supported"
@@ -2623,7 +3455,9 @@
           "OpenAI",
           "Bedrock-backed paths"
         ],
-        "invocation": [],
+        "invocation": [
+          "[model_providers.<id>] section in config.toml (base_url, env_key, wire_api)"
+        ],
         "minimum_version": null,
         "limitations": [
           "Treat as limited rather than provider-neutral."
@@ -2636,6 +3470,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex is primarily an OpenAI-model harness; custom API targets do not imply arbitrary provider compatibility."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: [model_providers.<id>] section in config.toml (base_url, env_key, wire_api)"
           }
         ],
         "access": "configurable"
@@ -2651,7 +3492,11 @@
           "--model",
           "config.toml"
         ],
-        "invocation": [],
+        "invocation": [
+          "--model / -m",
+          "/model",
+          "model_reasoning_effort = \"minimal\"|\"low\"|\"medium\"|\"high\"|\"xhigh\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2662,6 +3507,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --model / -m, /model, model_reasoning_effort = \"minimal\"|\"low\"|\"medium\"|\"high\"|\"xhigh\" (config.toml)"
           }
         ],
         "access": "configurable"
@@ -2676,7 +3528,9 @@
           "JSON-RPC",
           "SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex app-server JSON-RPC requests: item/commandExecution/requestApproval, item/fileChange/requestApproval, item/permissions/requestApproval"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2687,6 +3541,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex app-server JSON-RPC requests: item/commandExecution/requestApproval, item/fileChange/requestApproval, item/permissions/requestApproval"
           }
         ],
         "access": "native"
@@ -2735,7 +3596,10 @@
           "IDE",
           "cloud"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox workspace-write",
+          "sandbox_mode = \"workspace-write\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2746,6 +3610,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex can inspect and edit repository files under sandbox and approval policies."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox workspace-write, sandbox_mode = \"workspace-write\" (config.toml)"
           }
         ],
         "access": "supported"
@@ -2760,7 +3631,10 @@
           "CLI",
           "cloud"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox {read-only,workspace-write,danger-full-access}",
+          "--ask-for-approval {untrusted,on-request,never}"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2771,6 +3645,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex runs commands within configurable sandbox and approval modes."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox {read-only,workspace-write,danger-full-access}, --ask-for-approval {untrusted,on-request,never}"
           }
         ],
         "access": "supported"
@@ -2839,7 +3720,10 @@
           "Python SDK",
           "TypeScript SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "npm install @openai/codex-sdk",
+          "pip install openai-codex"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2850,6 +3734,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Official Python and TypeScript Codex SDKs embed local Codex threads for applications and CI."
+          },
+          {
+            "source_id": "src.codex.docs.sdk",
+            "url": "https://developers.openai.com/codex/codex-sdk",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: npm install @openai/codex-sdk, pip install openai-codex"
           }
         ],
         "access": "native"
@@ -2892,7 +3783,10 @@
           "desktop",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex mcp add <server-name> -- <stdio server-command>",
+          "codex mcp list"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2903,6 +3797,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Local Codex clients connect to local or remote MCP servers and share configuration."
+          },
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/mcp",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex mcp add <server-name> -- <stdio server-command>, codex mcp list"
           }
         ],
         "access": "supported"
@@ -2918,7 +3819,9 @@
           "desktop",
           "plugins"
         ],
-        "invocation": [],
+        "invocation": [
+          "$skill-name (mention syntax in Codex, vs @skill-name in ChatGPT)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2929,6 +3832,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Agent Skills package instructions and resources; Codex can select them or invoke them through `$` mentions."
+          },
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/skills-and-plugins",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: $skill-name (mention syntax in Codex, vs @skill-name in ChatGPT)"
           }
         ],
         "access": "supported"
@@ -2944,7 +3854,9 @@
           "desktop",
           "plugin directory"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex /plugins (interactive plugin browser: search/install/uninstall marketplace entries)"
+        ],
         "minimum_version": "0.147.0",
         "limitations": [],
         "confidence": "verified_official",
@@ -2955,6 +3867,13 @@
             "version": "0.147.0",
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Portable plugins can bundle skills and MCP-backed connectors across ChatGPT and Codex surfaces."
+          },
+          {
+            "source_id": "src.codex.docs.skills",
+            "url": "https://developers.openai.com/codex/plugins",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex /plugins (interactive plugin browser: search/install/uninstall marketplace entries)"
           }
         ],
         "access": "supported"
@@ -2970,7 +3889,11 @@
           "repository",
           "directory"
         ],
-        "invocation": [],
+        "invocation": [
+          "AGENTS.md",
+          "AGENTS.override.md",
+          "project_doc_fallback_filenames (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -2981,6 +3904,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex discovers layered AGENTS.md and AGENTS.override.md instructions from global and project scopes."
+          },
+          {
+            "source_id": "src.codex.docs.agents-md",
+            "url": "https://developers.openai.com/codex/agent-configuration/agents-md",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: AGENTS.md, AGENTS.override.md, project_doc_fallback_filenames (config.toml)"
           }
         ],
         "access": "supported"
@@ -2995,7 +3925,11 @@
           "CLI",
           "app-server"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex resume [SESSION_ID | --last]",
+          "codex fork [SESSION_ID | --last]",
+          "codex archive/unarchive/delete <SESSION>"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3006,6 +3940,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Saved sessions can be resumed, forked, named, and deleted through stable CLI commands."
+          },
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex resume [SESSION_ID | --last], codex fork [SESSION_ID | --last], codex archive/unarchive/delete <SESSION>"
           }
         ],
         "access": "supported"
@@ -3021,7 +3962,10 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "~/.codex/agents/*.toml or .codex/agents/*.toml agent definitions",
+          "[agents] section in config.toml"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3032,6 +3976,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex can delegate work to subagents from app, CLI, and IDE sessions and exposes child threads for inspection."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: ~/.codex/agents/*.toml or .codex/agents/*.toml agent definitions, [agents] section in config.toml"
           }
         ],
         "access": "supported"
@@ -3047,7 +3998,10 @@
           "app",
           "CLI"
         ],
-        "invocation": [],
+        "invocation": [
+          "max_concurrent_threads_per_session (config.toml [agents] section)",
+          "/agent (switch between active threads)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3058,6 +4012,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex cloud and local subagent surfaces support parallel/background work."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: max_concurrent_threads_per_session (config.toml [agents] section), /agent (switch between active threads)"
           }
         ],
         "access": "supported"
@@ -3073,7 +4034,9 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "[agents] config.toml section (enabled, default_subagent_model, default_subagent_reasoning_effort)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3084,6 +4047,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The main thread can coordinate multiple subagent threads and collect their results."
+          },
+          {
+            "source_id": "src.codex.docs.subagents",
+            "url": "https://developers.openai.com/codex/agent-configuration/subagents",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: [agents] config.toml section (enabled, default_subagent_model, default_subagent_reasoning_effort)"
           }
         ],
         "access": "supported"
@@ -3099,7 +4069,9 @@
           "CLI",
           "IDE"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex cloud"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3110,6 +4082,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "CLI and IDE can hand work to Codex cloud and later inspect or apply results locally."
+          },
+          {
+            "source_id": "src.codex.docs.cli",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex cloud"
           }
         ],
         "access": "supported"
@@ -3124,7 +4103,10 @@
           "GitHub Actions",
           "CI"
         ],
-        "invocation": [],
+        "invocation": [
+          "openai/codex-action@v1 (GitHub Action)",
+          "codex exec (used in CI)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3135,6 +4117,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "The official Codex GitHub Action runs `codex exec` in CI to apply patches or post reviews."
+          },
+          {
+            "source_id": "src.codex.docs.github-action",
+            "url": "https://developers.openai.com/codex/github-action",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: openai/codex-action@v1 (GitHub Action), codex exec (used in CI)"
           }
         ],
         "access": "native"
@@ -3150,7 +4139,9 @@
           "cloud",
           "CI"
         ],
-        "invocation": [],
+        "invocation": [
+          "Scheduled tasks created from a ChatGPT/Codex chat (Scheduled section, RFC 5545 RRULE recurrence) — not available in Codex CLI"
+        ],
         "minimum_version": null,
         "limitations": [
           "Verify workspace/surface availability before relying on it."
@@ -3163,6 +4154,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Scheduled tasks are supported through Codex/ChatGPT workflow surfaces; exact availability depends on surface and workspace."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/app/automations",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: Scheduled tasks created from a ChatGPT/Codex chat (Scheduled section, RFC 5545 RRULE recurrence) — not available in Codex CLI"
           }
         ],
         "access": "native"
@@ -3178,7 +4176,11 @@
           "Linux",
           "Windows"
         ],
-        "invocation": [],
+        "invocation": [
+          "--sandbox {read-only,workspace-write,danger-full-access}",
+          "sandbox_mode (config.toml)",
+          "[sandbox_workspace_write] network_access"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3189,6 +4191,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex provides platform-specific sandbox commands and read-only/workspace-write modes."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --sandbox {read-only,workspace-write,danger-full-access}, sandbox_mode (config.toml), [sandbox_workspace_write] network_access"
           }
         ],
         "access": "supported"
@@ -3204,7 +4213,11 @@
           "config.toml",
           "requirements.toml"
         ],
-        "invocation": [],
+        "invocation": [
+          "--ask-for-approval {untrusted,on-request,never}",
+          "approval_policy (config.toml)",
+          "/permissions"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3215,6 +4228,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Approval policies and permission profiles define when commands can run automatically."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/agent-approvals-security",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --ask-for-approval {untrusted,on-request,never}, approval_policy (config.toml), /permissions"
           }
         ],
         "access": "supported"
@@ -3230,7 +4250,10 @@
           "JSONL",
           "workspace"
         ],
-        "invocation": [],
+        "invocation": [
+          "/status",
+          "/usage"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3241,6 +4264,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Structured outputs and product surfaces expose usage, limits, and model information for attribution."
+          },
+          {
+            "source_id": "src.codex.docs.commands",
+            "url": "https://developers.openai.com/codex/developer-commands",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: /status, /usage"
           }
         ],
         "access": "supported"
@@ -3255,7 +4285,9 @@
           "JSON-RPC",
           "JSONL"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex app-server (JSON-RPC 2.0 events: item/started, item/completed, item/commandExecution/requestApproval)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3266,6 +4298,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "App-server notifications and JSONL execution events expose turn and tool lifecycle data."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex app-server (JSON-RPC 2.0 events: item/started, item/completed, item/commandExecution/requestApproval)"
           }
         ],
         "access": "native"
@@ -3280,7 +4319,10 @@
           "web search",
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "--search",
+          "web_search = \"cached\"|\"live\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3291,6 +4333,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex supports opt-in web search and MCP-based external tools."
+          },
+          {
+            "source_id": "src.codex.docs.mcp",
+            "url": "https://developers.openai.com/codex/cli",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --search, web_search = \"cached\"|\"live\" (config.toml)"
           }
         ],
         "access": "supported"
@@ -3306,7 +4355,9 @@
           "web",
           "MCP"
         ],
-        "invocation": [],
+        "invocation": [
+          "WebMCP site tools in the ChatGPT desktop app's built-in browser (GPT-5.6 Sol or Terra)"
+        ],
         "minimum_version": null,
         "limitations": [
           "Capability depends on the selected model and enabled tools."
@@ -3319,6 +4370,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex models and connected tools can support browser/computer-use workflows depending on model and surface."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://learn.chatgpt.com/docs/webmcp",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: WebMCP site tools in the ChatGPT desktop app's built-in browser (GPT-5.6 Sol or Terra)"
           }
         ],
         "access": "supported"
@@ -3333,7 +4391,9 @@
           "OpenAI",
           "Bedrock-backed paths"
         ],
-        "invocation": [],
+        "invocation": [
+          "[model_providers.<id>] section in config.toml (base_url, env_key, wire_api)"
+        ],
         "minimum_version": null,
         "limitations": [
           "Treat as limited rather than provider-neutral."
@@ -3346,6 +4406,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Codex is primarily an OpenAI-model harness; custom API targets do not imply arbitrary provider compatibility."
+          },
+          {
+            "source_id": "src.codex.docs.security",
+            "url": "https://developers.openai.com/codex/config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: [model_providers.<id>] section in config.toml (base_url, env_key, wire_api)"
           }
         ],
         "access": "configurable"
@@ -3361,7 +4428,11 @@
           "--model",
           "config.toml"
         ],
-        "invocation": [],
+        "invocation": [
+          "--model / -m",
+          "/model",
+          "model_reasoning_effort = \"minimal\"|\"low\"|\"medium\"|\"high\"|\"xhigh\" (config.toml)"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3372,6 +4443,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "Model and reasoning effort can be selected through CLI, IDE, app, and configuration."
+          },
+          {
+            "source_id": "src.codex.product-changelog",
+            "url": "https://developers.openai.com/codex/config-reference",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: --model / -m, /model, model_reasoning_effort = \"minimal\"|\"low\"|\"medium\"|\"high\"|\"xhigh\" (config.toml)"
           }
         ],
         "access": "configurable"
@@ -3386,7 +4464,9 @@
           "JSON-RPC",
           "SDK"
         ],
-        "invocation": [],
+        "invocation": [
+          "codex app-server JSON-RPC requests: item/commandExecution/requestApproval, item/fileChange/requestApproval, item/permissions/requestApproval"
+        ],
         "minimum_version": null,
         "limitations": [],
         "confidence": "verified_official",
@@ -3397,6 +4477,13 @@
             "version": null,
             "verified_at": "2026-08-08T20:00:00Z",
             "claim": "App-server and SDK clients can mediate approvals through machine interfaces rather than terminal-only prompts."
+          },
+          {
+            "source_id": "src.codex.docs.app-server",
+            "url": "https://developers.openai.com/codex/app-server",
+            "version": null,
+            "verified_at": "2026-08-26T00:00:00Z",
+            "claim": "Invocation verified: codex app-server JSON-RPC requests: item/commandExecution/requestApproval, item/fileChange/requestApproval, item/permissions/requestApproval"
           }
         ],
         "access": "supported"

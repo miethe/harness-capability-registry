@@ -16,9 +16,9 @@ artifact_kind: harness_capability_guide
 
 ## Human operator
 
-- **Embeddable SDK** (`supported`): Typed JavaScript/TypeScript access to the Anthropic API. Invocation: `See evidence`.
-- **Machine-readable output** (`supported`): Streaming and typed response objects support machine-readable application logic. Invocation: `See evidence`.
-- **Model and reasoning controls** (`supported`): Model and API feature parameters are exposed as generated typed interfaces. Invocation: `See evidence`.
+- **Embeddable SDK** (`supported`): Typed JavaScript/TypeScript access to the Anthropic API. Invocation: `npm install @anthropic-ai/sdk, import Anthropic from '@anthropic-ai/sdk'; const client = new Anthropic();`.
+- **Machine-readable output** (`supported`): Streaming and typed response objects support machine-readable application logic. Invocation: `client.messages.create({tools: [...], tool_choice: ...}), strict: true (tool definition), client.messages.create({stream: true})`.
+- **Model and reasoning controls** (`supported`): Model and API feature parameters are exposed as generated typed interfaces. Invocation: `model: "claude-...", thinking: {type: "enabled", budget_tokens: N}, thinking: {type: "adaptive"}, output_config: {effort: "high"}`.
 
 ## In-harness agent
 
@@ -26,21 +26,21 @@ No positively verified capabilities in the current seed.
 
 ## External agent/orchestrator
 
-- **Embeddable SDK** (`native`): Typed JavaScript/TypeScript access to the Anthropic API. Invocation: `See evidence`.
-- **Machine-readable output** (`native`): Streaming and typed response objects support machine-readable application logic. Invocation: `See evidence`.
-- **Model and reasoning controls** (`native`): Model and API feature parameters are exposed as generated typed interfaces. Invocation: `See evidence`.
+- **Embeddable SDK** (`native`): Typed JavaScript/TypeScript access to the Anthropic API. Invocation: `npm install @anthropic-ai/sdk, import Anthropic from '@anthropic-ai/sdk'; const client = new Anthropic();`.
+- **Machine-readable output** (`native`): Streaming and typed response objects support machine-readable application logic. Invocation: `client.messages.create({tools: [...], tool_choice: ...}), strict: true (tool definition), client.messages.create({stream: true})`.
+- **Model and reasoning controls** (`native`): Model and API feature parameters are exposed as generated typed interfaces. Invocation: `model: "claude-...", thinking: {type: "enabled", budget_tokens: N}, thinking: {type: "adaptive"}, output_config: {effort: "high"}`.
 
 ## CI or scheduled automation
 
-- **Embeddable SDK** (`native`): Typed JavaScript/TypeScript access to the Anthropic API. Invocation: `See evidence`.
-- **Machine-readable output** (`native`): Streaming and typed response objects support machine-readable application logic. Invocation: `See evidence`.
-- **Model and reasoning controls** (`native`): Model and API feature parameters are exposed as generated typed interfaces. Invocation: `See evidence`.
+- **Embeddable SDK** (`native`): Typed JavaScript/TypeScript access to the Anthropic API. Invocation: `npm install @anthropic-ai/sdk, import Anthropic from '@anthropic-ai/sdk'; const client = new Anthropic();`.
+- **Machine-readable output** (`native`): Streaming and typed response objects support machine-readable application logic. Invocation: `client.messages.create({tools: [...], tool_choice: ...}), strict: true (tool definition), client.messages.create({stream: true})`.
+- **Model and reasoning controls** (`native`): Model and API feature parameters are exposed as generated typed interfaces. Invocation: `model: "claude-...", thinking: {type: "enabled", budget_tokens: N}, thinking: {type: "adaptive"}, output_config: {effort: "high"}`.
 
 ## Administrator
 
-- **Embeddable SDK** (`configurable`): Typed JavaScript/TypeScript access to the Anthropic API. Invocation: `See evidence`.
-- **Machine-readable output** (`configurable`): Streaming and typed response objects support machine-readable application logic. Invocation: `See evidence`.
-- **Model and reasoning controls** (`configurable`): Model and API feature parameters are exposed as generated typed interfaces. Invocation: `See evidence`.
+- **Embeddable SDK** (`configurable`): Typed JavaScript/TypeScript access to the Anthropic API. Invocation: `npm install @anthropic-ai/sdk, import Anthropic from '@anthropic-ai/sdk'; const client = new Anthropic();`.
+- **Machine-readable output** (`configurable`): Streaming and typed response objects support machine-readable application logic. Invocation: `client.messages.create({tools: [...], tool_choice: ...}), strict: true (tool definition), client.messages.create({stream: true})`.
+- **Model and reasoning controls** (`configurable`): Model and API feature parameters are exposed as generated typed interfaces. Invocation: `model: "claude-...", thinking: {type: "enabled", budget_tokens: N}, thinking: {type: "adaptive"}, output_config: {effort: "high"}`.
 
 ## Freshness rule
 

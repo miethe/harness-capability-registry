@@ -16,15 +16,15 @@ artifact_kind: harness_capability_guide
 
 ## Human operator
 
-- **Embeddable SDK** (`supported`): Python API embeds the Claude Code agent loop, tools, and context management. Invocation: `See evidence`.
-- **Machine-readable output** (`supported`): Typed message streams expose assistant, tool, task, usage, and terminal-result events. Invocation: `See evidence`.
-- **Lifecycle hooks** (`supported`): Lifecycle hooks and permission callbacks are available to embedding applications. Invocation: `See evidence`.
-- **MCP client** (`supported`): SDK applications can configure MCP servers and SDK-defined MCP tools. Invocation: `See evidence`.
-- **Agent tracing/event telemetry** (`supported`): Typed result and task events provide execution telemetry. Invocation: `See evidence`.
-- **Subagents/delegation** (`supported`): SDK applications can use Claude Code subagents and background tasks. Invocation: `See evidence`.
-- **Granular permissions and approvals** (`supported`): Allowed tools, permission modes, and callbacks govern actions. Invocation: `See evidence`.
-- **Programmatic human approval** (`supported`): Embedding applications can implement human/tool approval callbacks. Invocation: `See evidence`.
-- **Resume, fork, and session lineage** (`supported`): SDK session IDs and stores support resume and session lifecycle management. Invocation: `See evidence`.
+- **Embeddable SDK** (`supported`): Python API embeds the Claude Code agent loop, tools, and context management. Invocation: `query(), ClaudeSDKClient`.
+- **Machine-readable output** (`supported`): Typed message streams expose assistant, tool, task, usage, and terminal-result events. Invocation: `ClaudeAgentOptions(output_format={"type": "json_schema", "schema": ...})`.
+- **Lifecycle hooks** (`supported`): Lifecycle hooks and permission callbacks are available to embedding applications. Invocation: `ClaudeAgentOptions(hooks=...), HookMatcher`.
+- **MCP client** (`supported`): SDK applications can configure MCP servers and SDK-defined MCP tools. Invocation: `ClaudeAgentOptions(mcp_servers=...), create_sdk_mcp_server()`.
+- **Agent tracing/event telemetry** (`supported`): Typed result and task events provide execution telemetry. Invocation: `CLAUDE_CODE_ENABLE_TELEMETRY=1 (via ClaudeAgentOptions.env), OTEL_TRACES_EXPORTER`.
+- **Subagents/delegation** (`supported`): SDK applications can use Claude Code subagents and background tasks. Invocation: `ClaudeAgentOptions(agents={...: AgentDefinition(...)})`.
+- **Granular permissions and approvals** (`supported`): Allowed tools, permission modes, and callbacks govern actions. Invocation: `ClaudeAgentOptions(permission_mode=...), ClaudeAgentOptions(can_use_tool=...)`.
+- **Programmatic human approval** (`supported`): Embedding applications can implement human/tool approval callbacks. Invocation: `ClaudeAgentOptions(can_use_tool=...), PermissionResultAllow/PermissionResultDeny`.
+- **Resume, fork, and session lineage** (`supported`): SDK session IDs and stores support resume and session lifecycle management. Invocation: `ClaudeAgentOptions(resume=...), ClaudeAgentOptions(fork_session=True)`.
 
 ## In-harness agent
 
@@ -32,39 +32,39 @@ No positively verified capabilities in the current seed.
 
 ## External agent/orchestrator
 
-- **Embeddable SDK** (`native`): Python API embeds the Claude Code agent loop, tools, and context management. Invocation: `See evidence`.
-- **Machine-readable output** (`native`): Typed message streams expose assistant, tool, task, usage, and terminal-result events. Invocation: `See evidence`.
-- **Lifecycle hooks** (`native`): Lifecycle hooks and permission callbacks are available to embedding applications. Invocation: `See evidence`.
-- **MCP client** (`native`): SDK applications can configure MCP servers and SDK-defined MCP tools. Invocation: `See evidence`.
-- **Agent tracing/event telemetry** (`native`): Typed result and task events provide execution telemetry. Invocation: `See evidence`.
-- **Subagents/delegation** (`native`): SDK applications can use Claude Code subagents and background tasks. Invocation: `See evidence`.
-- **Granular permissions and approvals** (`native`): Allowed tools, permission modes, and callbacks govern actions. Invocation: `See evidence`.
-- **Programmatic human approval** (`native`): Embedding applications can implement human/tool approval callbacks. Invocation: `See evidence`.
-- **Resume, fork, and session lineage** (`native`): SDK session IDs and stores support resume and session lifecycle management. Invocation: `See evidence`.
+- **Embeddable SDK** (`native`): Python API embeds the Claude Code agent loop, tools, and context management. Invocation: `query(), ClaudeSDKClient`.
+- **Machine-readable output** (`native`): Typed message streams expose assistant, tool, task, usage, and terminal-result events. Invocation: `ClaudeAgentOptions(output_format={"type": "json_schema", "schema": ...})`.
+- **Lifecycle hooks** (`native`): Lifecycle hooks and permission callbacks are available to embedding applications. Invocation: `ClaudeAgentOptions(hooks=...), HookMatcher`.
+- **MCP client** (`native`): SDK applications can configure MCP servers and SDK-defined MCP tools. Invocation: `ClaudeAgentOptions(mcp_servers=...), create_sdk_mcp_server()`.
+- **Agent tracing/event telemetry** (`native`): Typed result and task events provide execution telemetry. Invocation: `CLAUDE_CODE_ENABLE_TELEMETRY=1 (via ClaudeAgentOptions.env), OTEL_TRACES_EXPORTER`.
+- **Subagents/delegation** (`native`): SDK applications can use Claude Code subagents and background tasks. Invocation: `ClaudeAgentOptions(agents={...: AgentDefinition(...)})`.
+- **Granular permissions and approvals** (`native`): Allowed tools, permission modes, and callbacks govern actions. Invocation: `ClaudeAgentOptions(permission_mode=...), ClaudeAgentOptions(can_use_tool=...)`.
+- **Programmatic human approval** (`native`): Embedding applications can implement human/tool approval callbacks. Invocation: `ClaudeAgentOptions(can_use_tool=...), PermissionResultAllow/PermissionResultDeny`.
+- **Resume, fork, and session lineage** (`native`): SDK session IDs and stores support resume and session lifecycle management. Invocation: `ClaudeAgentOptions(resume=...), ClaudeAgentOptions(fork_session=True)`.
 
 ## CI or scheduled automation
 
-- **Embeddable SDK** (`native`): Python API embeds the Claude Code agent loop, tools, and context management. Invocation: `See evidence`.
-- **Machine-readable output** (`native`): Typed message streams expose assistant, tool, task, usage, and terminal-result events. Invocation: `See evidence`.
-- **Lifecycle hooks** (`native`): Lifecycle hooks and permission callbacks are available to embedding applications. Invocation: `See evidence`.
-- **MCP client** (`native`): SDK applications can configure MCP servers and SDK-defined MCP tools. Invocation: `See evidence`.
-- **Agent tracing/event telemetry** (`native`): Typed result and task events provide execution telemetry. Invocation: `See evidence`.
-- **Subagents/delegation** (`native`): SDK applications can use Claude Code subagents and background tasks. Invocation: `See evidence`.
-- **Granular permissions and approvals** (`native`): Allowed tools, permission modes, and callbacks govern actions. Invocation: `See evidence`.
-- **Programmatic human approval** (`native`): Embedding applications can implement human/tool approval callbacks. Invocation: `See evidence`.
-- **Resume, fork, and session lineage** (`native`): SDK session IDs and stores support resume and session lifecycle management. Invocation: `See evidence`.
+- **Embeddable SDK** (`native`): Python API embeds the Claude Code agent loop, tools, and context management. Invocation: `query(), ClaudeSDKClient`.
+- **Machine-readable output** (`native`): Typed message streams expose assistant, tool, task, usage, and terminal-result events. Invocation: `ClaudeAgentOptions(output_format={"type": "json_schema", "schema": ...})`.
+- **Lifecycle hooks** (`native`): Lifecycle hooks and permission callbacks are available to embedding applications. Invocation: `ClaudeAgentOptions(hooks=...), HookMatcher`.
+- **MCP client** (`native`): SDK applications can configure MCP servers and SDK-defined MCP tools. Invocation: `ClaudeAgentOptions(mcp_servers=...), create_sdk_mcp_server()`.
+- **Agent tracing/event telemetry** (`native`): Typed result and task events provide execution telemetry. Invocation: `CLAUDE_CODE_ENABLE_TELEMETRY=1 (via ClaudeAgentOptions.env), OTEL_TRACES_EXPORTER`.
+- **Subagents/delegation** (`native`): SDK applications can use Claude Code subagents and background tasks. Invocation: `ClaudeAgentOptions(agents={...: AgentDefinition(...)})`.
+- **Granular permissions and approvals** (`native`): Allowed tools, permission modes, and callbacks govern actions. Invocation: `ClaudeAgentOptions(permission_mode=...), ClaudeAgentOptions(can_use_tool=...)`.
+- **Programmatic human approval** (`native`): Embedding applications can implement human/tool approval callbacks. Invocation: `ClaudeAgentOptions(can_use_tool=...), PermissionResultAllow/PermissionResultDeny`.
+- **Resume, fork, and session lineage** (`native`): SDK session IDs and stores support resume and session lifecycle management. Invocation: `ClaudeAgentOptions(resume=...), ClaudeAgentOptions(fork_session=True)`.
 
 ## Administrator
 
-- **Embeddable SDK** (`configurable`): Python API embeds the Claude Code agent loop, tools, and context management. Invocation: `See evidence`.
-- **Machine-readable output** (`configurable`): Typed message streams expose assistant, tool, task, usage, and terminal-result events. Invocation: `See evidence`.
-- **Lifecycle hooks** (`configurable`): Lifecycle hooks and permission callbacks are available to embedding applications. Invocation: `See evidence`.
-- **MCP client** (`configurable`): SDK applications can configure MCP servers and SDK-defined MCP tools. Invocation: `See evidence`.
-- **Agent tracing/event telemetry** (`configurable`): Typed result and task events provide execution telemetry. Invocation: `See evidence`.
-- **Subagents/delegation** (`configurable`): SDK applications can use Claude Code subagents and background tasks. Invocation: `See evidence`.
-- **Granular permissions and approvals** (`configurable`): Allowed tools, permission modes, and callbacks govern actions. Invocation: `See evidence`.
-- **Programmatic human approval** (`configurable`): Embedding applications can implement human/tool approval callbacks. Invocation: `See evidence`.
-- **Resume, fork, and session lineage** (`configurable`): SDK session IDs and stores support resume and session lifecycle management. Invocation: `See evidence`.
+- **Embeddable SDK** (`configurable`): Python API embeds the Claude Code agent loop, tools, and context management. Invocation: `query(), ClaudeSDKClient`.
+- **Machine-readable output** (`configurable`): Typed message streams expose assistant, tool, task, usage, and terminal-result events. Invocation: `ClaudeAgentOptions(output_format={"type": "json_schema", "schema": ...})`.
+- **Lifecycle hooks** (`configurable`): Lifecycle hooks and permission callbacks are available to embedding applications. Invocation: `ClaudeAgentOptions(hooks=...), HookMatcher`.
+- **MCP client** (`configurable`): SDK applications can configure MCP servers and SDK-defined MCP tools. Invocation: `ClaudeAgentOptions(mcp_servers=...), create_sdk_mcp_server()`.
+- **Agent tracing/event telemetry** (`configurable`): Typed result and task events provide execution telemetry. Invocation: `CLAUDE_CODE_ENABLE_TELEMETRY=1 (via ClaudeAgentOptions.env), OTEL_TRACES_EXPORTER`.
+- **Subagents/delegation** (`configurable`): SDK applications can use Claude Code subagents and background tasks. Invocation: `ClaudeAgentOptions(agents={...: AgentDefinition(...)})`.
+- **Granular permissions and approvals** (`configurable`): Allowed tools, permission modes, and callbacks govern actions. Invocation: `ClaudeAgentOptions(permission_mode=...), ClaudeAgentOptions(can_use_tool=...)`.
+- **Programmatic human approval** (`configurable`): Embedding applications can implement human/tool approval callbacks. Invocation: `ClaudeAgentOptions(can_use_tool=...), PermissionResultAllow/PermissionResultDeny`.
+- **Resume, fork, and session lineage** (`configurable`): SDK session IDs and stores support resume and session lifecycle management. Invocation: `ClaudeAgentOptions(resume=...), ClaudeAgentOptions(fork_session=True)`.
 
 ## Freshness rule
 
