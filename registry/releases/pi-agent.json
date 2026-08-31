@@ -1,5 +1,646 @@
 [
   {
+    "id": "rel.pi-agent.0.84.4",
+    "harness_id": "pi-agent",
+    "version": "0.84.4",
+    "channel": "stable",
+    "published_at": "2026-08-28T22:08:23Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-08-30T21:06:48.249057Z",
+    "source_id": "src.pi.releases",
+    "source_url": "https://github.com/earendil-works/pi/releases/tag/v0.84.4",
+    "raw_snapshot_path": null,
+    "raw_sha256": "ae0c6e3a2210810c244291c8ed44cd4a183eb7e737373076f1d0323488906c57",
+    "title": "v0.84.4",
+    "notes_excerpt": "**Terminal capability overrides** — Override detected terminal hyperlink, image, and truecolor support. See [Capability Overrides](https://github.com/earendil-works/pi/blob/v0.84.4/packages/coding-agent/docs/terminal-setup.md#capability-overrides).",
+    "change_count": 29,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.pi-agent.0.84.4.001",
+        "kind": "changed",
+        "summary": "**Terminal capability overrides** — Override detected terminal hyperlink, image, and truecolor support. See [Capability Overrides](https://github.com/earendil-works/pi/blob/v0.84.4/packages/coding-agent/docs/terminal-setup.md#capability-overrides).",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.002",
+        "kind": "changed",
+        "summary": "**Extension UI prompt events** — Integrations can distinguish active agent work from time spent waiting for `ctx.ui` prompts. See [Extension UI prompt events](https://github.com/earendil-works/pi/blob/v0.84.4/packages/coding-agent/docs/extensions.md#ui_prompt_start--ui_prompt_end).",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.003",
+        "kind": "changed",
+        "summary": "**RPC queue clearing** — Retrieve and clear queued steering and follow-up messages with `clear_queue`. See [RPC `clear_queue`](https://github.com/earendil-works/pi/blob/v0.84.4/packages/coding-agent/docs/rpc.md#clear_queue).",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.004",
+        "kind": "changed",
+        "summary": "**Fullscreen selection copy controls** — Disable automatic selection copying in fullscreen mode and use Ctrl+X to copy the active selection. See [UI & Display](https://github.com/earendil-works/pi/blob/v0.84.4/packages/coding-agent/docs/settings.md#ui--display).",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.005",
+        "kind": "changed",
+        "summary": "**DeepSeek V4 Flash Vision (experimental)** — Use the vision-capable model through the built-in DeepSeek provider. See [API Keys](https://github.com/earendil-works/pi/blob/v0.84.4/packages/coding-agent/docs/providers.md#api-keys).",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator",
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.006",
+        "kind": "added",
+        "summary": "Added `ui_prompt_start` and `ui_prompt_end` extension events so host integrations can distinguish active agent work from waiting on user-facing `ctx.ui` prompts ([#8355](https://github.com/earendil-works/pi/pull/8355) by [@cristinaponcela](https://github.com/cristinaponcela)).",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive",
+          "ci"
+        ],
+        "actors": [
+          "human_operator",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "extensions.plugins",
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.007",
+        "kind": "added",
+        "summary": "Added `detectSupportedImageMimeTypeFromFile()` to the public library exports ([#8600](https://github.com/earendil-works/pi/pull/8600) by [@xl0](https://github.com/xl0)).",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.008",
+        "kind": "added",
+        "summary": "Added inherited experimental vision-capable `deepseek-v4-flash-vision-exp` model support.",
+        "category": "models_providers",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.009",
+        "kind": "added",
+        "summary": "Added transcript usage notices for compaction and branch summaries when cache miss notices are enabled.",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "observability.usage_cost"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.010",
+        "kind": "added",
+        "summary": "Added RPC `clear_queue` to retrieve and remove queued steering and follow-up messages ([#8432](https://github.com/earendil-works/pi/issues/8432)).",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.011",
+        "kind": "added",
+        "summary": "Added environment variables and advanced settings for overriding auto-detected terminal hyperlink, image, and truecolor capabilities ([#8665](https://github.com/earendil-works/pi/issues/8665)).",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.012",
+        "kind": "added",
+        "summary": "Added `fullscreenCopyOnSelect` to disable automatic fullscreen selection copy; when disabled, `Ctrl+X` copies the active text selection before falling back to the last assistant message, while `/tree` still copies the selected message ([#7720](https://github.com/earendil-works/pi/issues/7720)).",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.013",
+        "kind": "fixed",
+        "summary": "Fixed toggling thinking visibility clearing partial output from running Bash tools ([#8611](https://github.com/earendil-works/pi/issues/8611)).",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.014",
+        "kind": "fixed",
+        "summary": "Fixed Windows shell aborts crashing Pi when `taskkill.exe` is unavailable on `PATH` ([#6596](https://github.com/earendil-works/pi/issues/6596)).",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.015",
+        "kind": "fixed",
+        "summary": "Fixed resumed sessions corrupting the next appended entry when their JSONL file lacks a trailing newline ([#8345](https://github.com/earendil-works/pi/issues/8345)).",
+        "category": "session_state",
+        "surfaces": [
+          "terminal_interactive",
+          "terminal_headless"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "execution.structured_output",
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.016",
+        "kind": "fixed",
+        "summary": "Fixed extension messages sent with `triggerTurn: false` while the agent is running being inserted between a tool call and its result, which made providers that validate message order reject the replayed history. They are now appended once the turn's tool results are in ([#8537](https://github.com/earendil-works/pi/issues/8537)).",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.017",
+        "kind": "fixed",
+        "summary": "Fixed compaction and branch summaries forcing `toolChoice: \"none\"` ([#8649](https://github.com/earendil-works/pi/issues/8649), [#8638](https://github.com/earendil-works/pi/issues/8638)).",
+        "category": "context_memory",
+        "surfaces": [
+          "terminal_interactive",
+          "ci"
+        ],
+        "actors": [
+          "in_harness_agent",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.018",
+        "kind": "fixed",
+        "summary": "Fixed large tool results crossing the auto-compaction threshold being sent to the provider before compaction. Pi now compacts between tool execution and the next assistant response in the same run, and restores interactive progress when that run resumes ([#6879](https://github.com/earendil-works/pi/issues/6879)).",
+        "category": "context_memory",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.019",
+        "kind": "fixed",
+        "summary": "Fixed Google Vertex requests failing with `HttpsProxyAgent is not a constructor` when the bundled Node.js runtime uses an HTTP(S) proxy ([#8610](https://github.com/earendil-works/pi/issues/8610)).",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.020",
+        "kind": "fixed",
+        "summary": "Fixed saving a default model from a non-empty model scope so it remains available in that scope.",
+        "category": "models_providers",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.021",
+        "kind": "fixed",
+        "summary": "Fixed inherited `@` file autocomplete ranking to prefer direct and shallower matches over similarly ranked nested paths ([#8669](https://github.com/earendil-works/pi/pull/8669)).",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.022",
+        "kind": "fixed",
+        "summary": "Fixed inherited OpenAI-compatible streams serializing thinking signatures repeatedly during streaming ([#8671](https://github.com/earendil-works/pi/pull/8671)).",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.023",
+        "kind": "fixed",
+        "summary": "Fixed inherited main-screen rendering crashing when image-heavy output exceeded V8's string length limit ([#8028](https://github.com/earendil-works/pi/issues/8028)).",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.024",
+        "kind": "fixed",
+        "summary": "Fixed inherited fullscreen double-click word selection splitting paths and kebab-case tokens on `/` and `-` ([#8676](https://github.com/earendil-works/pi/pull/8676)).",
+        "category": "observability",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.025",
+        "kind": "fixed",
+        "summary": "Fixed inherited Cloudflare AI Gateway catalogs omitting supported `workers-ai/*` passthrough models.",
+        "category": "observability",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.026",
+        "kind": "fixed",
+        "summary": "Fixed inherited OpenAI-compatible reasoning replay to merge consecutive streamed text and summary `reasoning_details` deltas.",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.027",
+        "kind": "fixed",
+        "summary": "Fixed inherited OpenRouter reasoning controls so reasoning-mandatory models do not receive `effort: \"none\"` ([#8614](https://github.com/earendil-works/pi/pull/8614) by [@davidbrai](https://github.com/davidbrai)).",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.028",
+        "kind": "fixed",
+        "summary": "Fixed inherited OpenAI-compatible Chat Completions ignoring an explicitly requested `toolChoice` when no tools are defined.",
+        "category": "automation",
+        "surfaces": [
+          "ci"
+        ],
+        "actors": [
+          "in_harness_agent",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.0.84.4.029",
+        "kind": "fixed",
+        "summary": "Fixed inherited fragmented Mistral tool calls splitting when continuation chunks omit the tool-call ID ([#8387](https://github.com/earendil-works/pi/issues/8387)).",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 378785136,
+      "tag_commitish": "main"
+    }
+  },
+  {
     "id": "rel.pi-agent.0.84.3",
     "harness_id": "pi-agent",
     "version": "0.84.3",

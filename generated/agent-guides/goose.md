@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: goose
-generated_at: 2026-08-24T13:14:55.511915Z
+generated_at: 2026-08-30T21:07:07.656998Z
 artifact_kind: harness_capability_guide
 ---
 

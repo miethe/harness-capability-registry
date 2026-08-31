@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "core",
-    "current_version": "1.18.21",
-    "version_as_of": "2026-08-21",
-    "last_verified_at": "2026-08-24T13:14:39.999942Z",
+    "current_version": "1.18.25",
+    "version_as_of": "2026-08-28",
+    "last_verified_at": "2026-08-30T21:06:52.344015Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/anomalyco/opencode",
@@ -927,6 +927,636 @@
     }
   ],
   "releases": [
+    {
+      "id": "rel.opencode.1.18.25",
+      "harness_id": "opencode",
+      "version": "1.18.25",
+      "channel": "stable",
+      "published_at": "2026-08-28T05:58:20Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-30T21:06:36.540252Z",
+      "source_id": "src.opencode.releases",
+      "source_url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.25",
+      "raw_snapshot_path": null,
+      "raw_sha256": "45fc145e15df01e48c8414c13bc968af3dbfc967a1f504b819fd1cd05257e190",
+      "title": "v1.18.25",
+      "notes_excerpt": "Fixed Azure authentication so Azure CLI sign-in works without requiring Bun.",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.opencode.1.18.25.001",
+          "kind": "fixed",
+          "summary": "Fixed Azure authentication so Azure CLI sign-in works without requiring Bun.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 378279694,
+        "tag_commitish": "733562e92a96255fb123aae92f267e4534a635fb"
+      }
+    },
+    {
+      "id": "rel.opencode.1.18.24",
+      "harness_id": "opencode",
+      "version": "1.18.24",
+      "channel": "stable",
+      "published_at": "2026-08-28T04:10:14Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-30T21:06:36.540774Z",
+      "source_id": "src.opencode.releases",
+      "source_url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.24",
+      "raw_snapshot_path": null,
+      "raw_sha256": "401b7be1649556f775a254f2707fc3fee34ef3fea280c16d793d6c8ec89e153e",
+      "title": "v1.18.24",
+      "notes_excerpt": "Bedrock reasoning responses no longer get cached into unreplayable empty messages.",
+      "change_count": 10,
+      "flags": {
+        "security": false,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.opencode.1.18.24.001",
+          "kind": "changed",
+          "summary": "Bedrock reasoning responses no longer get cached into unreplayable empty messages.",
+          "category": "models_providers",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.24.002",
+          "kind": "changed",
+          "summary": "Azure providers can now sign in with Microsoft Entra ID through the Azure CLI instead of requiring an API key.",
+          "category": "models_providers",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.24.003",
+          "kind": "changed",
+          "summary": "V1 now reads supported V2 config fields so newer config files keep working in more mixed setups.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.24.004",
+          "kind": "changed",
+          "summary": "Archived sessions disappear from the Home list immediately. (@NathanTCode)",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.24.005",
+          "kind": "changed",
+          "summary": "@NathanTCode:",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.24.006",
+          "kind": "fixed",
+          "summary": "fix(app): drop archived sessions from home list right away (#44905)",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.24.007",
+          "kind": "changed",
+          "summary": "@OpeOginni:",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.24.008",
+          "kind": "fixed",
+          "summary": "fix(ui): restore focus in stacked dialogs (#44928)",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.24.009",
+          "kind": "changed",
+          "summary": "@dondetir:",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.24.010",
+          "kind": "changed",
+          "summary": "docs: mention Exa and Parallel as web search backends (#38395)",
+          "category": "interfaces",
+          "surfaces": [
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "tools.web_research"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 378250041,
+        "tag_commitish": "15537a41d2a0514f7040e1c4128b7846cdc19ce0"
+      }
+    },
+    {
+      "id": "rel.opencode.1.18.23",
+      "harness_id": "opencode",
+      "version": "1.18.23",
+      "channel": "stable",
+      "published_at": "2026-08-25T06:30:49Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-30T21:06:36.541145Z",
+      "source_id": "src.opencode.releases",
+      "source_url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.23",
+      "raw_snapshot_path": null,
+      "raw_sha256": "f4c9800667db3b37f177bea62d5d0217ca0aa3ec530be2172d6d8a531f55f837",
+      "title": "v1.18.23",
+      "notes_excerpt": "Fixed Cloudflare AI Gateway routing for third-party providers so non-Workers models work through the gateway's REST API. (@superhighfives)",
+      "change_count": 7,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.opencode.1.18.23.001",
+          "kind": "fixed",
+          "summary": "Fixed Cloudflare AI Gateway routing for third-party providers so non-Workers models work through the gateway's REST API. (@superhighfives)",
+          "category": "models_providers",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.23.002",
+          "kind": "fixed",
+          "summary": "Fixed Anthropic models through Cloudflare AI Gateway by converting dotted model IDs like `claude-haiku-4.5` to the dashed slug Anthropic expects. (@superhighfives)",
+          "category": "models_providers",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.23.003",
+          "kind": "fixed",
+          "summary": "Fixed parent session IDs being sent in request headers for session-aware providers.",
+          "category": "session_state",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.23.004",
+          "kind": "fixed",
+          "summary": "Fixed GitHub auth for immutable OIDC subject tokens.",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.23.005",
+          "kind": "changed",
+          "summary": "@superhighfives:",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.23.006",
+          "kind": "fixed",
+          "summary": "fix(provider): send Anthropic's dashed native slug through the AI Gateway (#44281)",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.23.007",
+          "kind": "fixed",
+          "summary": "fix(provider): route non-native Cloudflare AI Gateway providers via the REST API (#44828)",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 376179421,
+        "tag_commitish": "31c409a86510e80fd6f798da165c50a6a40fccba"
+      }
+    },
+    {
+      "id": "rel.opencode.1.18.22",
+      "harness_id": "opencode",
+      "version": "1.18.22",
+      "channel": "stable",
+      "published_at": "2026-08-24T14:37:19Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-08-30T21:06:36.541492Z",
+      "source_id": "src.opencode.releases",
+      "source_url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.22",
+      "raw_snapshot_path": null,
+      "raw_sha256": "0ca486908e3b425994d761afe0e4ade19de92f8c236e7a8f094fb14bc870ab50",
+      "title": "v1.18.22",
+      "notes_excerpt": "Removed outdated OpenCode Go first-month discount messaging and pricing.",
+      "change_count": 7,
+      "flags": {
+        "security": true,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.opencode.1.18.22.001",
+          "kind": "removed",
+          "summary": "Removed outdated OpenCode Go first-month discount messaging and pricing.",
+          "category": "automation",
+          "surfaces": [
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.22.002",
+          "kind": "fixed",
+          "summary": "Fixed OpenCode device login links when servers return relative verification URLs or use a base path.",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.22.003",
+          "kind": "fixed",
+          "summary": "Fixed `textVerbosity` being sent to OpenAI-compatible providers that do not support it. (@joelstucki-taulia)",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.22.004",
+          "kind": "changed",
+          "summary": "Updated the Amazon Bedrock provider for compatibility fixes.",
+          "category": "models_providers",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.22.005",
+          "kind": "changed",
+          "summary": "Keep model provider headers visible while scrolling the model picker.",
+          "category": "models_providers",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.22.006",
+          "kind": "changed",
+          "summary": "@joelstucki-taulia:",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.opencode.1.18.22.007",
+          "kind": "fixed",
+          "summary": "fix(provider): guard textVerbosity injection for @ai-sdk/openai-compatible providers (#43915)",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 375714651,
+        "tag_commitish": "2a6be0a03b93a6734070e10a6c3b56863475f214"
+      }
+    },
     {
       "id": "rel.opencode.1.18.21",
       "harness_id": "opencode",
