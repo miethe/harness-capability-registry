@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: hermes-agent
-generated_at: 2026-08-30T21:07:07.656998Z
+generated_at: 2026-09-03T11:16:21.860159Z
 artifact_kind: harness_capability_guide
 ---
 
@@ -9,8 +9,8 @@ artifact_kind: harness_capability_guide
 
 **Vendor:** Nous Research  
 **Lifecycle:** active  
-**Current version in registry:** 2026.8.27  
-**Last verified:** 2026-08-30T21:06:52.344015Z
+**Current version in registry:** 2026.8.31  
+**Last verified:** 2026-09-03T11:16:00.695788Z
 
 > UI availability does not imply that an in-harness model or an external orchestrator can invoke the capability. Use the actor-specific sections below.
 

@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: gemini-cli
-generated_at: 2026-08-30T21:07:07.656998Z
+generated_at: 2026-09-03T11:16:21.860159Z
 artifact_kind: harness_capability_guide
 ---
 
@@ -9,8 +9,8 @@ artifact_kind: harness_capability_guide
 
 **Vendor:** Google  
 **Lifecycle:** legacy  
-**Current version in registry:** 0.59.0-nightly.20260830.g0bd1d4397  
-**Last verified:** 2026-08-30T21:06:52.344015Z
+**Current version in registry:** 0.59.0-preview.0  
+**Last verified:** 2026-09-03T11:16:00.695788Z
 
 > UI availability does not imply that an in-harness model or an external orchestrator can invoke the capability. Use the actor-specific sections below.
 

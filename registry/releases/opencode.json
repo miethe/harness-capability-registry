@@ -1,5 +1,509 @@
 [
   {
+    "id": "rel.opencode.1.18.27",
+    "harness_id": "opencode",
+    "version": "1.18.27",
+    "channel": "stable",
+    "published_at": "2026-09-02T21:41:01Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-09-03T11:15:33.856419Z",
+    "source_id": "src.opencode.releases",
+    "source_url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.27",
+    "raw_snapshot_path": null,
+    "raw_sha256": "ebb26aac82947931f42f156e792cf987ccce7229574dcb45ef28daa05bedbed3",
+    "title": "v1.18.27",
+    "notes_excerpt": "Default provider header timeouts to five minutes so slow model startups fail less often.",
+    "change_count": 9,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.opencode.1.18.27.001",
+        "kind": "changed",
+        "summary": "Default provider header timeouts to five minutes so slow model startups fail less often.",
+        "category": "models_providers",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.27.002",
+        "kind": "changed",
+        "summary": "Default streamed chunk timeouts to five minutes, with `false` supported to disable them.",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.27.003",
+        "kind": "changed",
+        "summary": "Let Anthropic `thinking.blockBinding` opt out via config when you need to keep the provider default. (@dkindlund)",
+        "category": "interfaces",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.27.004",
+        "kind": "changed",
+        "summary": "Limit Anthropic thinking block binding to Claude 5.1+ models so older deployments do not reject requests.",
+        "category": "models_providers",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.27.005",
+        "kind": "changed",
+        "summary": "Avoid unhandled errors when canceling timed-out SSE reads. (@AlexanderWillner)",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.27.006",
+        "kind": "changed",
+        "summary": "@AlexanderWillner:",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.27.007",
+        "kind": "fixed",
+        "summary": "fix(provider): handle SSE reader cancel rejections (#44944)",
+        "category": "interfaces",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.27.008",
+        "kind": "changed",
+        "summary": "@dkindlund:",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.27.009",
+        "kind": "fixed",
+        "summary": "fix(opencode): let config opt out of Anthropic thinking blockBinding (#46820)",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 381579653,
+      "tag_commitish": "b04697366f05419e9bd7a92f841813dd976161c9"
+    }
+  },
+  {
+    "id": "rel.opencode.1.18.26",
+    "harness_id": "opencode",
+    "version": "1.18.26",
+    "channel": "stable",
+    "published_at": "2026-09-01T21:52:15Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-09-03T11:15:33.857246Z",
+    "source_id": "src.opencode.releases",
+    "source_url": "https://github.com/anomalyco/opencode/releases/tag/v1.18.26",
+    "raw_snapshot_path": null,
+    "raw_sha256": "e4c0c2da49ccb08b0f14ee04ef142c0404704e568279aba6d50c52bd78009b54",
+    "title": "v1.18.26",
+    "notes_excerpt": "Claude 5 sessions now tolerate stale thinking blocks instead of failing after prompt or tool changes.",
+    "change_count": 13,
+    "flags": {
+      "security": false,
+      "breaking": true,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.opencode.1.18.26.001",
+        "kind": "changed",
+        "summary": "Claude 5 sessions now tolerate stale thinking blocks instead of failing after prompt or tool changes.",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.26.002",
+        "kind": "changed",
+        "summary": "Bedrock GPT-5.6 models now accept `none` reasoning effort.",
+        "category": "models_providers",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.26.003",
+        "kind": "changed",
+        "summary": "Bedrock reasoning and replay handling is more reliable. (@pengzh1)",
+        "category": "models_providers",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.26.004",
+        "kind": "changed",
+        "summary": "Tool call timing now stays accurate when tools update their metadata while still running. (@bartlettroscoe)",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.26.005",
+        "kind": "changed",
+        "summary": "`apply_patch` no longer emits an empty move path in permission metadata. (@altendky)",
+        "category": "security_governance",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "security.permissions"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.26.006",
+        "kind": "changed",
+        "summary": "Azure CLI sign-in now asks for the resource name directly instead of querying Azure management APIs.",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.26.007",
+        "kind": "changed",
+        "summary": "Session renames now save reliably from the title editor and tab context menu.",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.26.008",
+        "kind": "changed",
+        "summary": "@altendky:",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.26.009",
+        "kind": "fixed",
+        "summary": "fix(opencode): omit empty apply patch move path (#45329)",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.26.010",
+        "kind": "changed",
+        "summary": "@pengzh1:",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.26.011",
+        "kind": "fixed",
+        "summary": "fix(core): bump @ai-sdk/amazon-bedrock to 4.0.166 for reasoning and replay fixes (#45520)",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.26.012",
+        "kind": "changed",
+        "summary": "@bartlettroscoe:",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.opencode.1.18.26.013",
+        "kind": "fixed",
+        "summary": "fix(core): Fix for incorrect time.start reset in tool call logging (#32574) (#32596)",
+        "category": "observability",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 380823834,
+      "tag_commitish": "8100c68b507b53aac6b891edbc3040a6011d8969"
+    }
+  },
+  {
     "id": "rel.opencode.1.18.25",
     "harness_id": "opencode",
     "version": "1.18.25",
