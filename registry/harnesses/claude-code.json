@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "core",
-    "current_version": "2.1.259",
-    "version_as_of": "2026-09-02",
-    "last_verified_at": "2026-09-03T11:16:00.695788Z",
+    "current_version": "2.1.263",
+    "version_as_of": "2026-09-06",
+    "last_verified_at": "2026-09-07T04:42:52.719081Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/anthropics/claude-code",
@@ -1523,13 +1523,3017 @@
   ],
   "releases": [
     {
+      "id": "rel.claude-code.2.1.263",
+      "harness_id": "claude-code",
+      "version": "2.1.263",
+      "channel": "stable",
+      "published_at": "2026-09-06T02:54:20Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-07T04:41:55.047120Z",
+      "source_id": "src.claude-code.releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.263",
+      "raw_snapshot_path": null,
+      "raw_sha256": "dd490d3f4e93c8165c0322324024d1202fe097b1be5a232b6035fd40bfee97cc",
+      "title": "v2.1.263",
+      "notes_excerpt": "Bug fixes and reliability improvements",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.claude-code.2.1.263.001",
+          "kind": "changed",
+          "summary": "Bug fixes and reliability improvements",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 383433044,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.claude-code.2.1.261",
+      "harness_id": "claude-code",
+      "version": "2.1.261",
+      "channel": "stable",
+      "published_at": "2026-09-04T19:58:10Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-07T04:41:55.052387Z",
+      "source_id": "src.claude-code.releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.261",
+      "raw_snapshot_path": null,
+      "raw_sha256": "2cbd5ee8fbdc6cf3e1213741359194abc6417675717ea7ee323d1f346f6a802a",
+      "title": "v2.1.261",
+      "notes_excerpt": "Added an \"Organization policy\" line to `/status` and `claude doctor` that says why your organization's policy could not be loaded, such as a proxy not passing the endpoint through",
+      "change_count": 67,
+      "flags": {
+        "security": true,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.claude-code.2.1.261.001",
+          "kind": "added",
+          "summary": "Added an \"Organization policy\" line to `/status` and `claude doctor` that says why your organization's policy could not be loaded, such as a proxy not passing the endpoint through",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "administrator"
+          ],
+          "capability_refs": [
+            "security.enterprise_policy"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.002",
+          "kind": "added",
+          "summary": "Added `bashOutputMaxChars` and `taskOutputMaxChars` settings to raise how much command and background-task output Claude receives inline before it is saved to a file, up to 128K characters",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.003",
+          "kind": "added",
+          "summary": "Added `--append-subagent-system-prompt-file` to read the subagent system prompt from a file, for prompts too large to pass on the command line",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.004",
+          "kind": "added",
+          "summary": "Added `/skill-doctor` to show which loaded skills go unused and what they cost in context, so you can prune them",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.skills",
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.005",
+          "kind": "fixed",
+          "summary": "Fixed typed or pasted characters occasionally landing out of order or being dropped during fast input or key repeat",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.006",
+          "kind": "fixed",
+          "summary": "Fixed `/add-dir <subdirectory>` printing a false \"couldn't be resolved\" error when the working directory is on a `/net` automount",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.007",
+          "kind": "fixed",
+          "summary": "Fixed the Bedrock setup wizard hanging when AWS or an AWS credential helper never responds (it now times out with a clear error), and its model checks failing behind a TLS-inspecting proxy",
+          "category": "models_providers",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.008",
+          "kind": "fixed",
+          "summary": "Fixed cloud sessions discarding a plugin synced from claude.ai when managed settings force-enable it in `enabledPlugins`, then falling back to a marketplace clone that could fail",
+          "category": "extensions",
+          "surfaces": [
+            "remote"
+          ],
+          "actors": [
+            "administrator"
+          ],
+          "capability_refs": [
+            "extensions.plugins",
+            "runtime.remote_cloud",
+            "security.enterprise_policy"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.009",
+          "kind": "fixed",
+          "summary": "Fixed being unable to delete the character immediately before an inline `[Image #N]` chip in the prompt input",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.010",
+          "kind": "fixed",
+          "summary": "Fixed resuming a session losing hook output and other context around parallel tool calls, which changed the resumed request",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.hooks",
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.011",
+          "kind": "fixed",
+          "summary": "Fixed Remote Control showing a stale permission mode when a phone, browser, or claude.ai app attaches to a terminal session or after the mode changes in the terminal",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "web",
+            "remote"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud",
+            "security.permissions",
+            "tools.browser_computer"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.012",
+          "kind": "fixed",
+          "summary": "Fixed Remote Control sessions showing as still working (stuck spinner and Stop button) after stopping a turn from a connected phone or browser, or after a local slash command like `/clear`",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "web",
+            "remote"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud",
+            "tools.browser_computer"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.013",
+          "kind": "fixed",
+          "summary": "Fixed SDK and cloud sessions ignoring a Stop or interrupt sent just after the first prompt, before the turn had started; the turn now stops instead of running to completion",
+          "category": "session_state",
+          "surfaces": [
+            "sdk",
+            "remote"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.014",
+          "kind": "fixed",
+          "summary": "Fixed Remote Control uploading a session pulled with `/teleport` into the connected session, which appeared appended to the original on phone and web",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "web",
+            "remote"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.015",
+          "kind": "fixed",
+          "summary": "Fixed Remote Control's inbound event stream failing behind TLS-inspecting corporate proxies on native Windows",
+          "category": "session_state",
+          "surfaces": [
+            "remote"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.016",
+          "kind": "fixed",
+          "summary": "Fixed Remote Control sessions showing the default effort level on claude.ai when the effort comes from settings",
+          "category": "session_state",
+          "surfaces": [
+            "remote"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.017",
+          "kind": "fixed",
+          "summary": "Fixed `gcpAuthRefresh` opening a browser at startup when the Google credential check was slow, even though the credential was still valid",
+          "category": "security_governance",
+          "surfaces": [
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "tools.browser_computer"
+          ],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.018",
+          "kind": "fixed",
+          "summary": "Fixed claude.ai connectors staying absent for the whole session when the startup connector fetch timed out — the CLI now retries in the background",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.019",
+          "kind": "fixed",
+          "summary": "Fixed sustained high CPU usage when a background agent could not be resumed and its wake-up was retried in a tight loop",
+          "category": "orchestration",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "orchestration.parallel_background",
+            "sessions.resume_fork",
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.020",
+          "kind": "fixed",
+          "summary": "Fixed feature flags gated to a newer version occasionally applying to an older Claude Code version running on the same machine",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.021",
+          "kind": "fixed",
+          "summary": "Fixed `/usage` and the VS Code usage panel dropping a model-specific weekly limit row when the usage endpoint is rate limited or when opened right after startup",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci",
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.022",
+          "kind": "fixed",
+          "summary": "Fixed `claude -p --resume <file>` adopting a malformed session ID recorded in the transcript; it now resumes under a fresh session ID instead",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "execution.headless",
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.023",
+          "kind": "fixed",
+          "summary": "Fixed the terminal progress indicator (iTerm2, Ghostty, ConEmu) showing the session as finished while a background workflow or agent was still running",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.024",
+          "kind": "fixed",
+          "summary": "Fixed a rare layout glitch where a box could render with the wrong height after its container switched between row and column direction",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.025",
+          "kind": "fixed",
+          "summary": "Fixed Claude apps gateway client IP when a trusted proxy appends a port to `X-Forwarded-For`; with an access list set, an unreadable entry now gets 403",
+          "category": "security_governance",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.026",
+          "kind": "fixed",
+          "summary": "Fixed Claude apps gateway telling Claude Desktop to export OpenTelemetry as JSON even when the terminal CLI uses protobuf, so protobuf-only collectors rejected Desktop's data",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive",
+            "desktop"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.027",
+          "kind": "fixed",
+          "summary": "Fixed Desktop and web showing a session as busy while it only watches an artifact for updates",
+          "category": "interfaces",
+          "surfaces": [
+            "desktop",
+            "web"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.028",
+          "kind": "fixed",
+          "summary": "Fixed Claude in Chrome `file_upload` failing with \"paths: expected array, received undefined\" in local Cowork sessions run from the Claude Desktop app",
+          "category": "session_state",
+          "surfaces": [
+            "desktop"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "tools.browser_computer"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.029",
+          "kind": "fixed",
+          "summary": "Fixed `SendMessage` to an offline Remote Control session on another machine reading as delivered; the result now says delivery is queued until that machine reconnects",
+          "category": "session_state",
+          "surfaces": [
+            "remote"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "orchestration.cross_session_messaging",
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.030",
+          "kind": "fixed",
+          "summary": "Fixed plugin install hints from CLIs run in background Bash commands: they are now detected, and the raw `<claude-code-hint>` tag no longer leaks into the conversation",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.031",
+          "kind": "fixed",
+          "summary": "Fixed in-process agent-team teammates re-sending their first-turn tool and skill announcements on the second turn, which changed the request prefix and missed the prompt cache",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.032",
+          "kind": "improved",
+          "summary": "Improved the `/model` picker and the VS Code model pill to show a model's name instead of its raw Bedrock, Vertex AI, or LLM gateway ID when Claude Code recognizes it",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.033",
+          "kind": "improved",
+          "summary": "Improved startup on Google Vertex AI when `GOOGLE_APPLICATION_CREDENTIALS` is set: API client creation no longer re-runs Google Cloud project discovery or spawns extra `gcloud` processes",
+          "category": "security_governance",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.034",
+          "kind": "improved",
+          "summary": "Improved streaming performance: already-rendered blocks are no longer re-checked by layout on each update",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.035",
+          "kind": "improved",
+          "summary": "Improved the dangerous-`rm` safety prompt to also catch `rm -rf` on positional parameters and inside double-quoted `sh -c` scripts",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.036",
+          "kind": "improved",
+          "summary": "Improved handling when the API sends no response headers: the retry now waits up to `API_TIMEOUT_MS` (10 minutes by default) instead of another 3 minutes, and the messages say what to change",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.037",
+          "kind": "changed",
+          "summary": "Changed a Claude apps gateway 403 on the managed settings load (at startup or after `/login`) to say Claude Code may not be enabled for the organization, instead of advising a new sign-in",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "administrator"
+          ],
+          "capability_refs": [
+            "security.enterprise_policy"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.038",
+          "kind": "changed",
+          "summary": "Changed machines whose managed settings pin `forceLoginMethod: \"gateway\"` to ignore a leftover API key or claude.ai login and ask for `/login`; Bedrock, Vertex AI, and Foundry sessions are unaffected",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "external_orchestrator",
+            "administrator"
+          ],
+          "capability_refs": [
+            "security.enterprise_policy"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.039",
+          "kind": "changed",
+          "summary": "Changed auto mode to treat a link that packs content into a public diagram renderer's URL as an upload to that site: no longer auto-approved unless you asked for it",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.040",
+          "kind": "changed",
+          "summary": "Changed the prompt's word-editing keys to match Bash: Ctrl+W deletes back to whitespace, Alt+F and Alt+D stop at word end, punctuation separates words; `keybindingFlavor` no longer has any effect",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.041",
+          "kind": "changed",
+          "summary": "Changed `/context` token counting to use a local estimate when the token-counting API is unavailable, instead of extra small-model requests",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.042",
+          "kind": "changed",
+          "summary": "[VSCode] Added a \"Build a custom style\" walkthrough to the Output styles menu that writes a custom output style file and lists it right away",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.043",
+          "kind": "changed",
+          "summary": "[VSCode] Added an Add server form and a Remove action to the MCP servers dialog, so MCP servers can be added and removed without leaving the IDE",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.044",
+          "kind": "changed",
+          "summary": "[VSCode] Added a hollow ring in the session list for sessions open in a terminal, another VS Code window, or Claude Desktop, so they no longer look closed",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "desktop"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.045",
+          "kind": "changed",
+          "summary": "[VSCode] Added a fold button to permission and question prompts so the conversation behind them can be read without dismissing them; the space beside the prompt now scrolls the conversation",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.046",
+          "kind": "changed",
+          "summary": "[VSCode] Added \"Archive session\" to the session list's right-click menu and gave Unarchive its own icon",
+          "category": "session_state",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.047",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed a session teleported from Claude Code on the web treating a question that was cut off when the cloud session shut down as declined",
+          "category": "session_state",
+          "surfaces": [
+            "ide",
+            "web",
+            "remote"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.048",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the session tab's Rename box opening empty for a tab restored with the window; it now starts with the current name",
+          "category": "session_state",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.049",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed collapsed sections in the session list panel briefly showing expanded each time the panel loaded",
+          "category": "session_state",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.050",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed Focus view showing a tool call as still running after Claude had moved on, such as while a question waited for your answer",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.051",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the session list's active-row highlight going stale when an unfocused Claude tab's session ID is corrected",
+          "category": "session_state",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.052",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed Cmd/Ctrl+Shift+T reopen and deep-link opens placing the Claude tab outside the Claude editor group when a Claude tab has focus",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.053",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the session tab's \"Add to group\" putting a session opened from Claude Code on the Web in two groups; it now moves the entry the session list shows",
+          "category": "interfaces",
+          "surfaces": [
+            "ide",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.054",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the model picker showing models an organization has since disabled until the window was reloaded twice",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator",
+            "administrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.055",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed a tab opened from the session list jumping back to that session, and a tab opened from a Web session restarting its teleport or staying empty, after VS Code reloads the tab's view",
+          "category": "session_state",
+          "surfaces": [
+            "ide",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.056",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed `/btw` side-question history from earlier sessions being overwritten when a question is asked right after a window reload or while a settings file has errors",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.057",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the pending question card not reappearing after the Claude panel reloads when signed in with a Claude.ai or Console account",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.058",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed claude.ai-only features staying visible in a window's other Claude panels after one panel picked up a third-party provider from a settings file",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.059",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the sign-in screen appearing despite the Disable Login Prompt setting when Claude Code reports no login or a request fails for lack of one",
+          "category": "observability",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.060",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the next queued permission prompt keeping text typed on the previous prompt and accepting an immediate second click",
+          "category": "security_governance",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.061",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed install-plugin links opening the Claude sidebar without the install dialog in a window where only the session list had been shown",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.062",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the sidebar usage meter staying empty on a new window until the Account & usage dialog was opened, and a 0% usage limit being left out of the meter",
+          "category": "observability",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.063",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed \"Start new session in this group\" losing the group after New conversation, and a missing unread dot for a session that finished before the sidebar's unread list loaded",
+          "category": "session_state",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.064",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the editor tab badge showing unread during a running turn or missing on a tab opened from the session list, and \"Add Session Tab to Group\" doing nothing for an archived session",
+          "category": "session_state",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.065",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed \"Enable Remote Control for all sessions\" so flipping it also applies right away to sessions open in other VS Code windows",
+          "category": "session_state",
+          "surfaces": [
+            "ide",
+            "remote"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.066",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the session list's Open filter for sessions continued from claude.ai whose tab was still recorded under the web session, and labeled the filter menu's sections for screen readers",
+          "category": "interfaces",
+          "surfaces": [
+            "ide",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.261.067",
+          "kind": "changed",
+          "summary": "[VSCode] Changed the model picker to one flat list of every model, with rows kept for older model spellings listed last",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 382913543,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.claude-code.2.1.260",
+      "harness_id": "claude-code",
+      "version": "2.1.260",
+      "channel": "stable",
+      "published_at": "2026-09-03T23:48:12Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-07T04:41:55.057627Z",
+      "source_id": "src.claude-code.releases",
+      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.260",
+      "raw_snapshot_path": null,
+      "raw_sha256": "47e0c2f1a88ebb69155a4b575c09dee4c83bee646f9a7816cc8e044adcc03508",
+      "title": "v2.1.260",
+      "notes_excerpt": "Added a diff panel that opens beside the conversation in fullscreen mode and shows your uncommitted changes as Claude edits; toggle it with `/diff`",
+      "change_count": 66,
+      "flags": {
+        "security": true,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.claude-code.2.1.260.001",
+          "kind": "added",
+          "summary": "Added a diff panel that opens beside the conversation in fullscreen mode and shows your uncommitted changes as Claude edits; toggle it with `/diff`",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.002",
+          "kind": "added",
+          "summary": "Added a likely cause for prompt-cache misses (e.g. tool definitions or system prompt changed, idle past the TTL) to `/cost` and the status line's `prompt_cache` field",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.003",
+          "kind": "added",
+          "summary": "Added `/reload-plugins` to headless sessions, so it appears in the Claude Code Desktop and SDK command lists",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "terminal_headless",
+            "desktop",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "execution.headless",
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.004",
+          "kind": "added",
+          "summary": "Added a text form of `/advisor` (`/advisor`, `/advisor <model>`, `/advisor off`) for the desktop app, Remote Control, and other headless (`-p`/Agent SDK) sessions",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "terminal_headless",
+            "desktop",
+            "sdk",
+            "remote"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "execution.headless",
+            "execution.sdk_embedding",
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.005",
+          "kind": "added",
+          "summary": "Added `oidc.scope_on_refresh` to the Claude apps gateway for IdPs that return an id_token on refresh only when asked for `openid` again",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.006",
+          "kind": "added",
+          "summary": "Added Claude apps gateway support for newer Claude Desktop keys in `desktop` policy blocks, including `userPluginMarketplacesEnabled` and `userPluginUploadsEnabled`",
+          "category": "extensions",
+          "surfaces": [
+            "desktop"
+          ],
+          "actors": [
+            "human_operator",
+            "administrator"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.007",
+          "kind": "fixed",
+          "summary": "Fixed `Edit`/`Write`/`Read` permission rules whose path contains parentheses being dropped as invalid or ignored by the Bash sandbox, which left \"read-only\" folders writable",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox",
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.008",
+          "kind": "fixed",
+          "summary": "Fixed one file permission rule with an uncompilable pattern (e.g. an unclosed `[`) making every file edit fail with `Invalid regular expression`; such a deny rule now guards the literal path it spells",
+          "category": "security_governance",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.009",
+          "kind": "fixed",
+          "summary": "Fixed Bash permission checks auto-approving zsh commands that hide a command substitution in a REPORTTIME, REPORTMEMORY or DIRSTACKSIZE assignment; these now prompt for approval",
+          "category": "execution",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "context.persistent_memory",
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.010",
+          "kind": "fixed",
+          "summary": "Fixed Bedrock model discovery, token counting and AWS SSO/STS credential calls failing with \"unable to get local issuer certificate\" when the corporate root CA is only in the OS certificate store",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.011",
+          "kind": "fixed",
+          "summary": "Fixed `permissions.blockReadsOutsideWorkingDirectories` on macOS hiding the user's git config from sandboxed git and hiding a worktree-isolated sub-agent's own checkout",
+          "category": "security_governance",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "security.sandbox",
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.012",
+          "kind": "fixed",
+          "summary": "Fixed managed settings not loading for claude.ai Enterprise/Team users who also had a leftover API key from an earlier `/login`",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator",
+            "administrator"
+          ],
+          "capability_refs": [
+            "security.enterprise_policy"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.013",
+          "kind": "fixed",
+          "summary": "Fixed `/status` listing a signed-in claude.ai account and a configured API key as if both were in effect; the credential not in use is now marked",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.014",
+          "kind": "fixed",
+          "summary": "Fixed managed `skillOverrides` entries keyed on a bundled skill's alias (e.g. `checkup` for `/doctor`) not applying, and `Skill(name)` deny rules not covering a nested skill listed as `<dir>:name`",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.015",
+          "kind": "fixed",
+          "summary": "Fixed `model: fable` agents ignoring the `[1m]` tag on an `ANTHROPIC_DEFAULT_FABLE_MODEL` pin and silently running with a 200K context window",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.016",
+          "kind": "fixed",
+          "summary": "Fixed the `/model` picker not showing Fable 5.1 for organizations that can use it, which was only accepted when typed as `/model claude-fable-5-1`",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator",
+            "administrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.017",
+          "kind": "fixed",
+          "summary": "Fixed prompt caching on Claude Fable 5.1 not covering the context attached after tool results, so it was re-sent as uncached input on every tool-call turn",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.018",
+          "kind": "fixed",
+          "summary": "Fixed model switching staying blocked for the rest of the session after a plugin hook load failure; each switch now re-checks and the refusal names the cause",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins",
+            "extensions.hooks"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.019",
+          "kind": "fixed",
+          "summary": "Fixed model switching being blocked for the session when an organization-managed plugin's marketplace could not be loaded",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "administrator"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.020",
+          "kind": "fixed",
+          "summary": "Fixed SDK-provided MCP servers (e.g. Desktop connectors) sometimes missing from the first turn and only appearing on the next one",
+          "category": "extensions",
+          "surfaces": [
+            "ide",
+            "desktop",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.021",
+          "kind": "fixed",
+          "summary": "Fixed Claude in Chrome tools failing with \"Not connected\" mid-task in cloud-hosted claude.ai sessions when a connector was added or removed",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "tools.browser_computer"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.022",
+          "kind": "fixed",
+          "summary": "Fixed flags, joined emoji and accented letters splitting across wrapped lines, and stale text staying on screen when a flag or joined emoji falls in the terminal's last two columns (now shown as `…`)",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.023",
+          "kind": "fixed",
+          "summary": "Fixed Remote Control accepting a model pick that is not a valid model name; it is now refused with an error instead of failing on the next message",
+          "category": "session_state",
+          "surfaces": [
+            "remote"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.024",
+          "kind": "fixed",
+          "summary": "Fixed `/rewind` and `--rewind-files` reporting success when checkpoint backup files were missing and nothing was actually restored",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.025",
+          "kind": "fixed",
+          "summary": "Fixed `/rewind` leaving stale file-read tracking from the rewound-away turns, which caused \"File unchanged since last read\" stubs and full-file re-injection after external edits",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.026",
+          "kind": "fixed",
+          "summary": "Fixed `-p --resume`/`--continue` (as used by the desktop app) failing on every retry once a session's worktree directory lost its git metadata; it now fails once, then resumes without the worktree",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "desktop"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.027",
+          "kind": "fixed",
+          "summary": "Fixed a subagent that resumed another agent via SendMessage never being woken by that agent's completion (the notification went to the main conversation instead)",
+          "category": "orchestration",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents",
+            "orchestration.cross_session_messaging",
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.028",
+          "kind": "fixed",
+          "summary": "Fixed agent teams: an in-process teammate's transcript losing messages, or going blank, during long API retry waits (e.g. under `CLAUDE_CODE_RETRY_WATCHDOG`) as retry notices evicted real messages",
+          "category": "orchestration",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "orchestration.parallel_background"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.029",
+          "kind": "fixed",
+          "summary": "Fixed a session that moved to the background appearing twice in ListAgents (once as a phantom \"interactive\" twin with the same name) and receiving SendMessage deliveries in the viewer",
+          "category": "orchestration",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "orchestration.cross_session_messaging",
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.030",
+          "kind": "fixed",
+          "summary": "Fixed intermittent \"task output swap refused\" errors when many sessions share a project directory",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.031",
+          "kind": "fixed",
+          "summary": "Fixed Ctrl+Z in fullscreen leaving the shell on the alternate screen, drawn over the paused interface",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.032",
+          "kind": "fixed",
+          "summary": "Fixed Workflow tool subagents being restarted as stalled while a long context compaction was still in progress",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.033",
+          "kind": "fixed",
+          "summary": "Fixed plugins from a URL marketplace failing to install with \"marketplace entry path does not stay inside the marketplace directory\" when a host app (e.g. Claude Desktop) stores it as a directory",
+          "category": "extensions",
+          "surfaces": [
+            "ide",
+            "desktop"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.034",
+          "kind": "fixed",
+          "summary": "Fixed an extra browser tab opening when an artifact is published in a session you're driving from claude.ai, the desktop app, or mobile (Remote Control)",
+          "category": "interfaces",
+          "surfaces": [
+            "desktop",
+            "web",
+            "mobile",
+            "remote"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud",
+            "tools.browser_computer",
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.035",
+          "kind": "fixed",
+          "summary": "Fixed the Artifact tool's first call failing with an \"Invalid tool parameters\" validation error in some Cowork sessions",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.036",
+          "kind": "fixed",
+          "summary": "Fixed IDE line selections being dropped when running a skill or slash command (the \"N lines selected\" context now reaches Claude)",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.037",
+          "kind": "fixed",
+          "summary": "Fixed repository detection for GitLab projects in nested subgroups (e.g. `gitlab.com/group/subgroup/project`)",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.038",
+          "kind": "fixed",
+          "summary": "Fixed `owner/repo#123` issue references in rendered output linking to github.com when working in a GitLab repository; they now link to the gitlab.com issue",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.039",
+          "kind": "changed",
+          "summary": "Glob/Grep: Fixed the search path being probed on disk before the permission check; a missing path is now reported after permission is decided, as Read does",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "security.permissions",
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.040",
+          "kind": "changed",
+          "summary": "Reverted the 2.1.259 change applying `Read()` deny rules to Bash arguments; it denied `npm run build` under a `Read(./**/build/**)` rule in every mode and made `cd … && grep` prompt even in auto mode",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.041",
+          "kind": "improved",
+          "summary": "Improved structured output: Workflow `agent({schema})` rejects a JSON Schema that can never be satisfied up front, and retry-cap errors now include the last validation failure",
+          "category": "automation",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "execution.structured_output"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.042",
+          "kind": "improved",
+          "summary": "Improved deleting a background session whose worktree has unpushed commits: the message now names the branch and commit count, and deleting again discards the worktree",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.043",
+          "kind": "improved",
+          "summary": "Improved the Claude apps gateway's refresh-failure log to name the step that failed",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.044",
+          "kind": "improved",
+          "summary": "Improved idle CPU usage of non-interactive (`-p` / SDK) sessions",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "terminal_headless",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "execution.headless",
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.045",
+          "kind": "improved",
+          "summary": "Improved the Claude apps gateway on Amazon Bedrock: input tokens for an aborted request are now counted with AWS's free CountTokens API (grant `bedrock:CountTokens`) instead of a one-token request",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.046",
+          "kind": "improved",
+          "summary": "Improved the settings error for rules such as `Edit(C:\\dir\\(name)\\**)`, where `\\(` is read as an escaped parenthesis rather than a path separator, to suggest an unambiguous spelling",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.047",
+          "kind": "improved",
+          "summary": "Improved auto-compact for 1M-context models: Opus and Fable sessions now compact shortly before the 1M-token limit, and recovery compaction on very large contexts no longer times out at 10 minutes",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.048",
+          "kind": "improved",
+          "summary": "Improved `/ultrareview` and `claude ultrareview` to wait up to 45 minutes (previously 30) for long-running cloud reviews",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.049",
+          "kind": "improved",
+          "summary": "Improved `/effort` on Claude Fable 5.1 so changing effort mid-session no longer invalidates the prompt cache",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.050",
+          "kind": "changed",
+          "summary": "Updated the bundled `claude-api` skill so its Go, Java, and C# samples use current-generation model IDs, and clarified that cheaper worker or sub-agent models should be current-generation too",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.051",
+          "kind": "changed",
+          "summary": "Changed `ctrl+l` / `cmd+k` in fullscreen mode to clear the transcript view like a terminal `clear`; scroll up to see earlier messages",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.052",
+          "kind": "changed",
+          "summary": "Changed permission rules with text after the closing parenthesis (e.g. `Bash(ls) x`), which never matched anything, to be reported as invalid settings instead of being silently ignored",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.053",
+          "kind": "changed",
+          "summary": "Changed server-managed settings so a managed CLAUDE.md (`claudeMd`) no longer triggers the security approval dialog; hooks, shell-command, sandbox, and unsafe `env` settings still require approval",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "administrator"
+          ],
+          "capability_refs": [
+            "extensions.hooks",
+            "context.project_instructions",
+            "security.sandbox",
+            "security.permissions",
+            "security.enterprise_policy"
+          ],
+          "security_relevant": true,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.054",
+          "kind": "changed",
+          "summary": "Changed Claude in Chrome to follow your organization's Claude in Chrome admin setting; when an admin turns it off, `--chrome`, `/chrome` and the browser tools are unavailable",
+          "category": "research_tools",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "administrator"
+          ],
+          "capability_refs": [
+            "tools.browser_computer"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.055",
+          "kind": "changed",
+          "summary": "Changed Claude apps gateway to send `orgPluginSettings` in the list form read by Claude Desktop 1.15200.0 and later; older desktops ignore it",
+          "category": "extensions",
+          "surfaces": [
+            "desktop"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.056",
+          "kind": "changed",
+          "summary": "Changed Claude apps gateway to also refuse to start, naming the field, when a `desktop` policy misspells a field in a nested object of a `managedMcpServers` or `orgPluginSettings` entry",
+          "category": "extensions",
+          "surfaces": [
+            "desktop"
+          ],
+          "actors": [
+            "human_operator",
+            "administrator"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.057",
+          "kind": "changed",
+          "summary": "Changed commands typed at the `!` bash-mode prompt to run outside the sandbox even when strict sandbox mode (`sandbox.allowUnsandboxedCommands: false`) is on, like typing into your own terminal",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.058",
+          "kind": "changed",
+          "summary": "Changed self-hosted runner `--kill-session-after-min` to release a session that is only waiting on its user (paused, resumable on the next message) instead of killing it and reporting a failure",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "remote"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "runtime.self_hosted"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.059",
+          "kind": "removed",
+          "summary": "Removed the one-hour time limit on background commands started by subagents; they now run until they exit or are stopped, matching the main session",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.060",
+          "kind": "changed",
+          "summary": "[VSCode] Added the selected effort level to the footer model pill, fixed a stale effort level after switching models, and returned the footer pills to their earlier compact size",
+          "category": "context_memory",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.061",
+          "kind": "changed",
+          "summary": "[VSCode] Added Open and Closed to the session list's status filter menu",
+          "category": "session_state",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.062",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the welcome screen disappearing in a new session when Remote Control turns on automatically",
+          "category": "session_state",
+          "surfaces": [
+            "ide",
+            "remote"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.063",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the session history picker loading a session a second time when it is already open in another tab; it now switches to that tab",
+          "category": "session_state",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.064",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed the session tab's Rename command silently doing nothing while the tab's view was reloading; it now always applies",
+          "category": "execution",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.065",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed a half-finished message, an empty tool card or an extra \"Thought for\" line staying on screen after Claude Code retried a dropped response",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-code.2.1.260.066",
+          "kind": "changed",
+          "summary": "[VSCode] Fixed \"Enable Remote Control for all sessions\" not applying to a session tab that was still starting when the toggle was flipped",
+          "category": "session_state",
+          "surfaces": [
+            "ide",
+            "remote"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 382367470,
+        "tag_commitish": "main"
+      }
+    },
+    {
       "id": "rel.claude-code.2.1.259",
       "harness_id": "claude-code",
       "version": "2.1.259",
       "channel": "stable",
       "published_at": "2026-09-02T22:33:51Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.431314Z",
+      "retrieved_at": "2026-09-07T04:41:55.060617Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.259",
       "raw_snapshot_path": null,
@@ -2368,7 +5372,7 @@
       "channel": "stable",
       "published_at": "2026-09-01T22:33:20Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.431523Z",
+      "retrieved_at": "2026-09-07T04:41:55.060799Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.258",
       "raw_snapshot_path": null,
@@ -2441,7 +5445,7 @@
       "channel": "stable",
       "published_at": "2026-09-01T17:53:52Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.439919Z",
+      "retrieved_at": "2026-09-07T04:41:55.069025Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.257",
       "raw_snapshot_path": null,
@@ -4686,7 +7690,7 @@
       "channel": "stable",
       "published_at": "2026-08-31T19:46:55Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.440267Z",
+      "retrieved_at": "2026-09-07T04:41:55.069382Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.252",
       "raw_snapshot_path": null,
@@ -4800,7 +7804,7 @@
       "channel": "stable",
       "published_at": "2026-08-28T18:19:32Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.445998Z",
+      "retrieved_at": "2026-09-07T04:41:55.074916Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.251",
       "raw_snapshot_path": null,
@@ -6379,7 +9383,7 @@
       "channel": "stable",
       "published_at": "2026-08-28T00:49:16Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.446093Z",
+      "retrieved_at": "2026-09-07T04:41:55.075018Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.250",
       "raw_snapshot_path": null,
@@ -6429,7 +9433,7 @@
       "channel": "stable",
       "published_at": "2026-08-27T22:12:20Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.450081Z",
+      "retrieved_at": "2026-09-07T04:41:55.078938Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.248",
       "raw_snapshot_path": null,
@@ -7518,7 +10522,7 @@
       "channel": "stable",
       "published_at": "2026-08-26T23:06:39Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.452854Z",
+      "retrieved_at": "2026-09-07T04:41:55.081663Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.247",
       "raw_snapshot_path": null,
@@ -8264,7 +11268,7 @@
       "channel": "stable",
       "published_at": "2026-08-25T22:31:52Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.457580Z",
+      "retrieved_at": "2026-09-07T04:41:55.086331Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.246",
       "raw_snapshot_path": null,
@@ -9619,7 +12623,7 @@
       "channel": "stable",
       "published_at": "2026-08-25T05:13:24Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.457709Z",
+      "retrieved_at": "2026-09-07T04:41:55.086449Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.245",
       "raw_snapshot_path": null,
@@ -9669,7 +12673,7 @@
       "channel": "stable",
       "published_at": "2026-08-23T00:52:16Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.457780Z",
+      "retrieved_at": "2026-09-07T04:41:55.086524Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.241",
       "raw_snapshot_path": null,
@@ -9719,7 +12723,7 @@
       "channel": "stable",
       "published_at": "2026-08-22T14:45:30Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.457832Z",
+      "retrieved_at": "2026-09-07T04:41:55.086586Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.240",
       "raw_snapshot_path": null,
@@ -9769,7 +12773,7 @@
       "channel": "stable",
       "published_at": "2026-08-21T19:54:23Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.462389Z",
+      "retrieved_at": "2026-09-07T04:41:55.091079Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.239",
       "raw_snapshot_path": null,
@@ -11069,7 +14073,7 @@
       "channel": "stable",
       "published_at": "2026-08-20T20:33:51Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.465477Z",
+      "retrieved_at": "2026-09-07T04:41:55.094067Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.238",
       "raw_snapshot_path": null,
@@ -11960,7 +14964,7 @@
       "channel": "stable",
       "published_at": "2026-08-20T00:54:41Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.465671Z",
+      "retrieved_at": "2026-09-07T04:41:55.094261Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237",
       "raw_snapshot_path": null,
@@ -12033,7 +15037,7 @@
       "channel": "stable",
       "published_at": "2026-08-19T20:02:05Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.468351Z",
+      "retrieved_at": "2026-09-07T04:41:55.096823Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.236",
       "raw_snapshot_path": null,
@@ -12756,7 +15760,7 @@
       "channel": "stable",
       "published_at": "2026-08-18T20:38:54Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.469880Z",
+      "retrieved_at": "2026-09-07T04:41:55.098297Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.235",
       "raw_snapshot_path": null,
@@ -13186,7 +16190,7 @@
       "channel": "stable",
       "published_at": "2026-08-17T20:20:58Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.474037Z",
+      "retrieved_at": "2026-09-07T04:41:55.102319Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234",
       "raw_snapshot_path": null,
@@ -14304,7 +17308,7 @@
       "channel": "stable",
       "published_at": "2026-08-14T22:20:57Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.475669Z",
+      "retrieved_at": "2026-09-07T04:41:55.103893Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
       "raw_snapshot_path": null,
@@ -14766,7 +17770,7 @@
       "channel": "stable",
       "published_at": "2026-08-13T23:29:59Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.479572Z",
+      "retrieved_at": "2026-09-07T04:41:55.107689Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.232",
       "raw_snapshot_path": null,
@@ -15865,7 +18869,7 @@
       "channel": "stable",
       "published_at": "2026-08-13T08:38:50Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.479690Z",
+      "retrieved_at": "2026-09-07T04:41:55.107798Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.231",
       "raw_snapshot_path": null,
@@ -15917,7 +18921,7 @@
       "channel": "stable",
       "published_at": "2026-08-12T20:56:22Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.482148Z",
+      "retrieved_at": "2026-09-07T04:41:55.110247Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.229",
       "raw_snapshot_path": null,
@@ -16632,7 +19636,7 @@
       "channel": "stable",
       "published_at": "2026-08-11T19:50:59Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.483568Z",
+      "retrieved_at": "2026-09-07T04:41:55.111642Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.228",
       "raw_snapshot_path": null,
@@ -17048,7 +20052,7 @@
       "channel": "stable",
       "published_at": "2026-08-10T22:56:53Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.484019Z",
+      "retrieved_at": "2026-09-07T04:41:55.112033Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.227",
       "raw_snapshot_path": null,
@@ -17182,7 +20186,7 @@
       "channel": "stable",
       "published_at": "2026-08-08T02:48:05Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.484088Z",
+      "retrieved_at": "2026-09-07T04:41:55.112106Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.226",
       "raw_snapshot_path": null,
@@ -17232,7 +20236,7 @@
       "channel": "stable",
       "published_at": "2026-08-08T01:09:26Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.485206Z",
+      "retrieved_at": "2026-09-07T04:41:55.113186Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.225",
       "raw_snapshot_path": null,
@@ -17572,7 +20576,7 @@
       "channel": "stable",
       "published_at": "2026-08-07T04:00:59Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.487676Z",
+      "retrieved_at": "2026-09-07T04:41:55.115630Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.224",
       "raw_snapshot_path": null,
@@ -18295,7 +21299,7 @@
       "channel": "stable",
       "published_at": "2026-08-06T00:52:37Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.489077Z",
+      "retrieved_at": "2026-09-07T04:41:55.117081Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.223",
       "raw_snapshot_path": null,
@@ -18735,7 +21739,7 @@
       "channel": "stable",
       "published_at": "2026-08-04T22:39:55Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.490786Z",
+      "retrieved_at": "2026-09-07T04:41:55.118764Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.222",
       "raw_snapshot_path": null,
@@ -19216,7 +22220,7 @@
       "channel": "stable",
       "published_at": "2026-08-04T00:14:23Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.493698Z",
+      "retrieved_at": "2026-09-07T04:41:55.121790Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.221",
       "raw_snapshot_path": null,
@@ -20095,7 +23099,7 @@
       "channel": "stable",
       "published_at": "2026-07-25T01:35:55Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.493779Z",
+      "retrieved_at": "2026-09-07T04:41:55.121879Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.220",
       "raw_snapshot_path": null,
@@ -20145,7 +23149,7 @@
       "channel": "stable",
       "published_at": "2026-07-24T17:14:23Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.495715Z",
+      "retrieved_at": "2026-09-07T04:41:55.123909Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.219",
       "raw_snapshot_path": null,
@@ -20759,7 +23763,7 @@
       "channel": "stable",
       "published_at": "2026-07-22T21:24:56Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.498425Z",
+      "retrieved_at": "2026-09-07T04:41:55.126728Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.218",
       "raw_snapshot_path": null,
@@ -21583,7 +24587,7 @@
       "channel": "stable",
       "published_at": "2026-07-21T21:35:10Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.500085Z",
+      "retrieved_at": "2026-09-07T04:41:55.128390Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.217",
       "raw_snapshot_path": null,
@@ -22042,7 +25046,7 @@
       "channel": "stable",
       "published_at": "2026-07-20T22:14:00Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.502949Z",
+      "retrieved_at": "2026-09-07T04:41:55.131334Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.216",
       "raw_snapshot_path": null,
@@ -22924,7 +25928,7 @@
       "channel": "stable",
       "published_at": "2026-07-19T02:56:01Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.503060Z",
+      "retrieved_at": "2026-09-07T04:41:55.131444Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.215",
       "raw_snapshot_path": null,
@@ -22976,7 +25980,7 @@
       "channel": "stable",
       "published_at": "2026-07-18T01:20:30Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.506768Z",
+      "retrieved_at": "2026-09-07T04:41:55.135623Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.214",
       "raw_snapshot_path": null,
@@ -24005,7 +27009,7 @@
       "channel": "stable",
       "published_at": "2026-07-17T00:26:27Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.510516Z",
+      "retrieved_at": "2026-09-07T04:41:55.139282Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.212",
       "raw_snapshot_path": null,
@@ -25068,7 +28072,7 @@
       "channel": "stable",
       "published_at": "2026-07-15T23:02:35Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.513256Z",
+      "retrieved_at": "2026-09-07T04:41:55.141976Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.211",
       "raw_snapshot_path": null,
@@ -25904,7 +28908,7 @@
       "channel": "stable",
       "published_at": "2026-07-14T23:45:25Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.515867Z",
+      "retrieved_at": "2026-09-07T04:41:55.144546Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.210",
       "raw_snapshot_path": null,
@@ -26635,7 +29639,7 @@
       "channel": "stable",
       "published_at": "2026-07-14T06:36:28Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.515975Z",
+      "retrieved_at": "2026-09-07T04:41:55.144651Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.209",
       "raw_snapshot_path": null,
@@ -26685,7 +29689,7 @@
       "channel": "stable",
       "published_at": "2026-07-14T01:10:42Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.519708Z",
+      "retrieved_at": "2026-09-07T04:41:55.148313Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.208",
       "raw_snapshot_path": null,
@@ -27686,7 +30690,7 @@
       "channel": "stable",
       "published_at": "2026-07-11T00:52:10Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.521577Z",
+      "retrieved_at": "2026-09-07T04:41:55.150135Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.207",
       "raw_snapshot_path": null,
@@ -28229,7 +31233,7 @@
       "channel": "stable",
       "published_at": "2026-07-10T01:45:26Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.523505Z",
+      "retrieved_at": "2026-09-07T04:41:55.152052Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.206",
       "raw_snapshot_path": null,
@@ -28824,7 +31828,7 @@
       "channel": "stable",
       "published_at": "2026-07-08T21:22:06Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.526277Z",
+      "retrieved_at": "2026-09-07T04:41:55.153747Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.205",
       "raw_snapshot_path": null,
@@ -29342,7 +32346,7 @@
       "channel": "stable",
       "published_at": "2026-07-08T00:27:50Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.526398Z",
+      "retrieved_at": "2026-09-07T04:41:55.153852Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.204",
       "raw_snapshot_path": null,
@@ -29396,7 +32400,7 @@
       "channel": "stable",
       "published_at": "2026-07-07T21:06:12Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.529021Z",
+      "retrieved_at": "2026-09-07T04:41:55.156561Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.203",
       "raw_snapshot_path": null,
@@ -30202,7 +33206,7 @@
       "channel": "stable",
       "published_at": "2026-07-06T22:51:16Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.530449Z",
+      "retrieved_at": "2026-09-07T04:41:55.158015Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.202",
       "raw_snapshot_path": null,
@@ -30621,7 +33625,7 @@
       "channel": "stable",
       "published_at": "2026-07-03T23:50:35Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.530543Z",
+      "retrieved_at": "2026-09-07T04:41:55.158110Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.201",
       "raw_snapshot_path": null,
@@ -30671,7 +33675,7 @@
       "channel": "stable",
       "published_at": "2026-07-03T16:52:33Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.531763Z",
+      "retrieved_at": "2026-09-07T04:41:55.159329Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.200",
       "raw_snapshot_path": null,
@@ -31058,7 +34062,7 @@
       "channel": "stable",
       "published_at": "2026-07-02T23:35:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.533712Z",
+      "retrieved_at": "2026-09-07T04:41:55.161275Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.199",
       "raw_snapshot_path": null,
@@ -31603,7 +34607,7 @@
       "channel": "stable",
       "published_at": "2026-07-01T20:45:36Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.536230Z",
+      "retrieved_at": "2026-09-07T04:41:55.163726Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.198",
       "raw_snapshot_path": null,
@@ -32329,7 +35333,7 @@
       "channel": "stable",
       "published_at": "2026-06-30T17:56:37Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.536368Z",
+      "retrieved_at": "2026-09-07T04:41:55.163852Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.197",
       "raw_snapshot_path": null,
@@ -32382,7 +35386,7 @@
       "channel": "stable",
       "published_at": "2026-06-29T23:27:32Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.538674Z",
+      "retrieved_at": "2026-09-07T04:41:55.166062Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.196",
       "raw_snapshot_path": null,
@@ -32992,7 +35996,7 @@
       "channel": "stable",
       "published_at": "2026-06-26T21:29:42Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.539564Z",
+      "retrieved_at": "2026-09-07T04:41:55.166965Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.195",
       "raw_snapshot_path": null,
@@ -33284,7 +36288,7 @@
       "channel": "stable",
       "published_at": "2026-06-25T21:45:57Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.540699Z",
+      "retrieved_at": "2026-09-07T04:41:55.168118Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.193",
       "raw_snapshot_path": null,
@@ -33631,7 +36635,7 @@
       "channel": "stable",
       "published_at": "2026-06-24T21:58:12Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.542093Z",
+      "retrieved_at": "2026-09-07T04:41:55.169581Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.191",
       "raw_snapshot_path": null,
@@ -34091,7 +37095,7 @@
       "channel": "stable",
       "published_at": "2026-06-24T15:53:56Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.542188Z",
+      "retrieved_at": "2026-09-07T04:41:55.169665Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.190",
       "raw_snapshot_path": null,
@@ -34141,7 +37145,7 @@
       "channel": "stable",
       "published_at": "2026-06-23T21:03:48Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.543761Z",
+      "retrieved_at": "2026-09-07T04:41:55.171375Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.187",
       "raw_snapshot_path": null,
@@ -34619,7 +37623,7 @@
       "channel": "stable",
       "published_at": "2026-06-22T20:37:34Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.546026Z",
+      "retrieved_at": "2026-09-07T04:41:55.174063Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.186",
       "raw_snapshot_path": null,
@@ -35350,7 +38354,7 @@
       "channel": "stable",
       "published_at": "2026-06-20T20:59:19Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.546163Z",
+      "retrieved_at": "2026-09-07T04:41:55.174230Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.185",
       "raw_snapshot_path": null,
@@ -35400,7 +38404,7 @@
       "channel": "stable",
       "published_at": "2026-06-19T01:20:50Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.547543Z",
+      "retrieved_at": "2026-09-07T04:41:55.175571Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.183",
       "raw_snapshot_path": null,
@@ -35800,7 +38804,7 @@
       "channel": "stable",
       "published_at": "2026-06-17T22:07:41Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.550338Z",
+      "retrieved_at": "2026-09-07T04:41:55.178327Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.181",
       "raw_snapshot_path": null,
@@ -36637,7 +39641,7 @@
       "channel": "stable",
       "published_at": "2026-06-16T20:22:14Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.550999Z",
+      "retrieved_at": "2026-09-07T04:41:55.178962Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.179",
       "raw_snapshot_path": null,
@@ -36856,7 +39860,7 @@
       "channel": "stable",
       "published_at": "2026-06-15T21:35:55Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.552819Z",
+      "retrieved_at": "2026-09-07T04:41:55.180668Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.178",
       "raw_snapshot_path": null,
@@ -37390,7 +40394,7 @@
       "channel": "stable",
       "published_at": "2026-06-12T21:53:27Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.554446Z",
+      "retrieved_at": "2026-09-07T04:41:55.182260Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.176",
       "raw_snapshot_path": null,
@@ -37889,7 +40893,7 @@
       "channel": "stable",
       "published_at": "2026-06-12T04:23:51Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.554634Z",
+      "retrieved_at": "2026-09-07T04:41:55.182426Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.175",
       "raw_snapshot_path": null,
@@ -37943,7 +40947,7 @@
       "channel": "stable",
       "published_at": "2026-06-12T01:16:36Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.555641Z",
+      "retrieved_at": "2026-09-07T04:41:55.183400Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.174",
       "raw_snapshot_path": null,
@@ -38253,7 +41257,7 @@
       "channel": "stable",
       "published_at": "2026-06-11T05:41:54Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.555866Z",
+      "retrieved_at": "2026-09-07T04:41:55.183585Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.173",
       "raw_snapshot_path": null,
@@ -38326,7 +41330,7 @@
       "channel": "stable",
       "published_at": "2026-06-10T20:44:15Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.558197Z",
+      "retrieved_at": "2026-09-07T04:41:55.185830Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.172",
       "raw_snapshot_path": null,
@@ -38999,7 +42003,7 @@
       "channel": "stable",
       "published_at": "2026-06-09T17:23:09Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.558450Z",
+      "retrieved_at": "2026-09-07T04:41:55.186068Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.170",
       "raw_snapshot_path": null,
@@ -39074,7 +42078,7 @@
       "channel": "stable",
       "published_at": "2026-06-08T21:57:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.560751Z",
+      "retrieved_at": "2026-09-07T04:41:55.188290Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.169",
       "raw_snapshot_path": null,
@@ -39745,7 +42749,7 @@
       "channel": "stable",
       "published_at": "2026-06-06T23:41:53Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.560831Z",
+      "retrieved_at": "2026-09-07T04:41:55.188378Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.168",
       "raw_snapshot_path": null,
@@ -39795,7 +42799,7 @@
       "channel": "stable",
       "published_at": "2026-06-06T01:33:35Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.560886Z",
+      "retrieved_at": "2026-09-07T04:41:55.188442Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.167",
       "raw_snapshot_path": null,
@@ -39845,7 +42849,7 @@
       "channel": "stable",
       "published_at": "2026-06-06T00:55:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.562508Z",
+      "retrieved_at": "2026-09-07T04:41:55.190001Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.166",
       "raw_snapshot_path": null,
@@ -40317,7 +43321,7 @@
       "channel": "stable",
       "published_at": "2026-06-05T05:45:06Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.562589Z",
+      "retrieved_at": "2026-09-07T04:41:55.190082Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.165",
       "raw_snapshot_path": null,
@@ -40367,7 +43371,7 @@
       "channel": "stable",
       "published_at": "2026-06-04T21:52:51Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.564311Z",
+      "retrieved_at": "2026-09-07T04:41:55.191735Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.163",
       "raw_snapshot_path": null,
@@ -40871,7 +43875,7 @@
       "channel": "stable",
       "published_at": "2026-06-03T21:31:35Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.566624Z",
+      "retrieved_at": "2026-09-07T04:41:55.193914Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.162",
       "raw_snapshot_path": null,
@@ -41498,7 +44502,7 @@
       "channel": "stable",
       "published_at": "2026-06-02T21:58:22Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.568331Z",
+      "retrieved_at": "2026-09-07T04:41:55.195550Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.161",
       "raw_snapshot_path": null,
@@ -41996,7 +45000,7 @@
       "channel": "stable",
       "published_at": "2026-06-02T02:10:25Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.570432Z",
+      "retrieved_at": "2026-09-07T04:41:55.197543Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.160",
       "raw_snapshot_path": null,
@@ -42583,7 +45587,7 @@
       "channel": "stable",
       "published_at": "2026-05-31T19:42:49Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.570521Z",
+      "retrieved_at": "2026-09-07T04:41:55.197636Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.159",
       "raw_snapshot_path": null,
@@ -42636,7 +45640,7 @@
       "channel": "stable",
       "published_at": "2026-05-30T02:42:16Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.570618Z",
+      "retrieved_at": "2026-09-07T04:41:55.197725Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.158",
       "raw_snapshot_path": null,
@@ -42686,7 +45690,7 @@
       "channel": "stable",
       "published_at": "2026-05-29T20:20:38Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.573013Z",
+      "retrieved_at": "2026-09-07T04:41:55.200137Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.157",
       "raw_snapshot_path": null,
@@ -43413,7 +46417,7 @@
       "channel": "stable",
       "published_at": "2026-05-29T01:42:23Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.573107Z",
+      "retrieved_at": "2026-09-07T04:41:55.200279Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.156",
       "raw_snapshot_path": null,
@@ -43463,7 +46467,7 @@
       "channel": "stable",
       "published_at": "2026-05-28T18:00:55Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.576569Z",
+      "retrieved_at": "2026-09-07T04:41:55.203593Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.154",
       "raw_snapshot_path": null,
@@ -44425,7 +47429,7 @@
       "channel": "stable",
       "published_at": "2026-05-28T00:52:08Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.579228Z",
+      "retrieved_at": "2026-09-07T04:41:55.206173Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.153",
       "raw_snapshot_path": null,
@@ -45224,7 +48228,7 @@
       "channel": "stable",
       "published_at": "2026-05-27T01:30:59Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.581807Z",
+      "retrieved_at": "2026-09-07T04:41:55.208650Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.152",
       "raw_snapshot_path": null,
@@ -45971,7 +48975,7 @@
       "channel": "stable",
       "published_at": "2026-05-23T04:03:51Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.581897Z",
+      "retrieved_at": "2026-09-07T04:41:55.208741Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.150",
       "raw_snapshot_path": null,
@@ -46024,7 +49028,7 @@
       "channel": "stable",
       "published_at": "2026-05-22T22:09:29Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.583809Z",
+      "retrieved_at": "2026-09-07T04:41:55.210660Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.149",
       "raw_snapshot_path": null,
@@ -46600,7 +49604,7 @@
       "channel": "stable",
       "published_at": "2026-05-22T01:16:52Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.583911Z",
+      "retrieved_at": "2026-09-07T04:41:55.210763Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.148",
       "raw_snapshot_path": null,
@@ -46651,7 +49655,7 @@
       "channel": "stable",
       "published_at": "2026-05-21T20:39:22Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.586342Z",
+      "retrieved_at": "2026-09-07T04:41:55.213154Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.147",
       "raw_snapshot_path": null,
@@ -47760,7 +50764,7 @@
       "channel": "stable",
       "published_at": "2026-05-19T21:31:07Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.589044Z",
+      "retrieved_at": "2026-09-07T04:41:55.215783Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.145",
       "raw_snapshot_path": null,
@@ -48220,7 +51224,7 @@
       "channel": "stable",
       "published_at": "2026-05-19T00:48:51Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.593023Z",
+      "retrieved_at": "2026-09-07T04:41:55.219684Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.144",
       "raw_snapshot_path": null,
@@ -49308,7 +52312,7 @@
       "channel": "stable",
       "published_at": "2026-05-15T22:28:22Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.595628Z",
+      "retrieved_at": "2026-09-07T04:41:55.222198Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.143",
       "raw_snapshot_path": null,
@@ -50033,7 +53037,7 @@
       "channel": "stable",
       "published_at": "2026-05-14T22:55:10Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.597437Z",
+      "retrieved_at": "2026-09-07T04:41:55.223983Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.142",
       "raw_snapshot_path": null,
@@ -50584,7 +53588,7 @@
       "channel": "stable",
       "published_at": "2026-05-13T23:19:16Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.602097Z",
+      "retrieved_at": "2026-09-07T04:41:56.480524Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.141",
       "raw_snapshot_path": null,
@@ -51910,7 +54914,7 @@
       "channel": "stable",
       "published_at": "2026-05-12T21:09:45Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.603110Z",
+      "retrieved_at": "2026-09-07T04:41:56.481527Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.140",
       "raw_snapshot_path": null,
@@ -52215,7 +55219,7 @@
       "channel": "stable",
       "published_at": "2026-05-11T18:43:42Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:00.606750Z",
+      "retrieved_at": "2026-09-07T04:41:56.485115Z",
       "source_id": "src.claude-code.releases",
       "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.139",
       "raw_snapshot_path": null,
@@ -53300,12 +56304,12 @@
       "channel": "stable",
       "published_at": "2026-05-09T06:33:25Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:01.879982Z",
-      "source_id": "src.claude-code.releases",
-      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.138",
-      "raw_snapshot_path": null,
-      "raw_sha256": "5eb3c61896c0b4fdff025e90b25f53b77711022a8ab76c4c8a279f6f1f37ff3d",
-      "title": "v2.1.138",
+      "retrieved_at": "2026-09-07T04:41:53.398138Z",
+      "source_id": "src.claude-code.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/claude-code/CHANGELOG.md",
+      "raw_sha256": "88991ea72a4c409373f59a55284ca1b1cdb46a1562d83f8fde0765c01c776161",
+      "title": "claude-code 2.1.138",
       "notes_excerpt": "Internal fixes",
       "change_count": 1,
       "flags": {
@@ -53337,10 +56341,8 @@
       ],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "github_releases_api",
-        "immutable": true,
-        "github_release_id": 319856024,
-        "tag_commitish": "main"
+        "ingestion": "markdown_changelog",
+        "immutable": false
       }
     },
     {
@@ -53350,12 +56352,12 @@
       "channel": "stable",
       "published_at": "2026-05-09T00:11:04Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:01.880097Z",
-      "source_id": "src.claude-code.releases",
-      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.137",
-      "raw_snapshot_path": null,
-      "raw_sha256": "39c49d6a8e36dd4a77bef7cb3b0a0fa502c55ff41d4495b169751a873741028b",
-      "title": "v2.1.137",
+      "retrieved_at": "2026-09-07T04:41:53.398219Z",
+      "source_id": "src.claude-code.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/claude-code/CHANGELOG.md",
+      "raw_sha256": "f3926a93cbb0e8431324765ac47af00b23334c08e0dc1f35ef1a919a42e47319",
+      "title": "claude-code 2.1.137",
       "notes_excerpt": "[VSCode] Fixed extension failing to activate on Windows",
       "change_count": 1,
       "flags": {
@@ -53389,10 +56391,8 @@
       ],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "github_releases_api",
-        "immutable": true,
-        "github_release_id": 319788705,
-        "tag_commitish": "main"
+        "ingestion": "markdown_changelog",
+        "immutable": false
       }
     },
     {
@@ -53402,12 +56402,12 @@
       "channel": "stable",
       "published_at": "2026-05-08T18:39:08Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:01.883649Z",
-      "source_id": "src.claude-code.releases",
-      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.136",
-      "raw_snapshot_path": null,
-      "raw_sha256": "a7c2c4dc82d17576f460e60b8e8ec0ecb6ea3dc3fe078571da370e83e2180c5c",
-      "title": "v2.1.136",
+      "retrieved_at": "2026-09-07T04:41:53.398293Z",
+      "source_id": "src.claude-code.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/claude-code/CHANGELOG.md",
+      "raw_sha256": "9bc865c539ffc83b80b2054b5cda518f460ee2619c09900a354590e1b7449634",
+      "title": "claude-code 2.1.136",
       "notes_excerpt": "Added `CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL` to re-enable the session quality survey for enterprises capturing responses through OpenTelemetry",
       "change_count": 52,
       "flags": {
@@ -54510,10 +57510,8 @@
       ],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "github_releases_api",
-        "immutable": true,
-        "github_release_id": 319609716,
-        "tag_commitish": "main"
+        "ingestion": "markdown_changelog",
+        "immutable": false
       }
     },
     {
@@ -54523,12 +57521,12 @@
       "channel": "stable",
       "published_at": "2026-05-07T23:49:04Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:01.885065Z",
-      "source_id": "src.claude-code.releases",
-      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.133",
-      "raw_snapshot_path": null,
-      "raw_sha256": "d2f2195145803400ce0d7830931a43bd94e9329fa870b847820a0cbb8243583a",
-      "title": "v2.1.133",
+      "retrieved_at": "2026-09-07T04:41:53.401755Z",
+      "source_id": "src.claude-code.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/claude-code/CHANGELOG.md",
+      "raw_sha256": "7cec25aee229f5584450292409e5675216688a9ace54986ae85b3d3e4dfa401a",
+      "title": "claude-code 2.1.133",
       "notes_excerpt": "Added `worktree.baseRef` setting (`fresh` | `head`) to choose whether `--worktree`, `EnterWorktree`, and agent-isolation worktrees branch from `origin/<default>` or local `HEAD`. **Note:** the default `fresh` changes `EnterWorktree`'s base back to `origin/<default>` (it has been local `HEAD` since 2.1.128) — set `worktree.baseRef: \"head\"` to keep unpushed commits in new worktrees",
       "change_count": 17,
       "flags": {
@@ -54907,10 +57905,8 @@
       ],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "github_releases_api",
-        "immutable": true,
-        "github_release_id": 319164825,
-        "tag_commitish": "main"
+        "ingestion": "markdown_changelog",
+        "immutable": false
       }
     },
     {
@@ -54920,12 +57916,12 @@
       "channel": "stable",
       "published_at": "2026-05-06T22:08:13Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:01.887231Z",
-      "source_id": "src.claude-code.releases",
-      "source_url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.132",
-      "raw_snapshot_path": null,
-      "raw_sha256": "dc98be22389bdedcec924806fc82e52f16952dc97df21700c810bcb73305ede5",
-      "title": "v2.1.132",
+      "retrieved_at": "2026-09-07T04:41:53.403085Z",
+      "source_id": "src.claude-code.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/claude-code/CHANGELOG.md",
+      "raw_sha256": "4357853e9760d6a490fb9955e4d6c7fbef29312ad6fc25fc59d5047aec9c5fb1",
+      "title": "claude-code 2.1.132",
       "notes_excerpt": "Added `CLAUDE_CODE_SESSION_ID` environment variable to the Bash tool subprocess environment, matching the `session_id` passed to hooks",
       "change_count": 28,
       "flags": {
@@ -55529,10 +58525,8 @@
       ],
       "provenance": {
         "authority": "official_primary",
-        "ingestion": "github_releases_api",
-        "immutable": true,
-        "github_release_id": 318578987,
-        "tag_commitish": "main"
+        "ingestion": "markdown_changelog",
+        "immutable": false
       }
     },
     {

@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: anthropic-python-sdk
-generated_at: 2026-09-03T11:16:21.860159Z
+generated_at: 2026-09-07T04:43:09.252238Z
 artifact_kind: harness_capability_guide
 ---
 
@@ -9,8 +9,8 @@ artifact_kind: harness_capability_guide
 
 **Vendor:** Anthropic  
 **Lifecycle:** active  
-**Current version in registry:** 1.3.0  
-**Last verified:** 2026-09-03T11:16:00.695788Z
+**Current version in registry:** 1.4.0  
+**Last verified:** 2026-09-07T04:42:52.719081Z
 
 > UI availability does not imply that an in-harness model or an external orchestrator can invoke the capability. Use the actor-specific sections below.
 
