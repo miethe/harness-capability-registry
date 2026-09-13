@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "rapidly_evolving",
     "tracking_priority": "core",
-    "current_version": "2026.8.31",
-    "version_as_of": "2026-08-31",
-    "last_verified_at": "2026-09-03T11:16:00.695788Z",
+    "current_version": "2026.9.11",
+    "version_as_of": "2026-09-11",
+    "last_verified_at": "2026-09-13T04:48:51.844552Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/NousResearch/hermes-agent",
@@ -1014,6 +1014,598 @@
     }
   ],
   "releases": [
+    {
+      "id": "rel.hermes-agent.2026.9.11",
+      "harness_id": "hermes-agent",
+      "version": "2026.9.11",
+      "channel": "stable",
+      "published_at": "2026-09-11T19:20:31Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-13T04:48:36.314268Z",
+      "source_id": "src.hermes.releases",
+      "source_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.11",
+      "raw_snapshot_path": null,
+      "raw_sha256": "ce932327a55ca6bfea220e39f3db29a7f519376dc4f77780956dcc69d02f17df",
+      "title": "Hermes Agent v0.21.2 (v2026.9.11)",
+      "notes_excerpt": "**No more second writers.** Profile gateways wrote hosted-room state into the *root* `state.db` every 5 seconds; the dashboard opened a writable handle on startup; cron's lifecycle guard did a raw `open()` on a live database (which cancels the gateway's POSIX locks — the classic \"how to corrupt SQLite\" recipe); `doctor --fix` would checkpoint under a live holder. All four are gone: hosted rooms live in `shared-state.db`, the dashboard opens read-only first, the guard goes through the tracked connection registry, and `doctor --fix` refuses a checkpoint it can't prove is safe. (#108076 — salvage #103489 @RikETS, #102682 @JoaoMarcos44, #108012 @Halldrix, #105428 @TaoMasterCoder)",
+      "change_count": 22,
+      "flags": {
+        "security": true,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.hermes-agent.2026.9.11.001",
+          "kind": "changed",
+          "summary": "**No more second writers.** Profile gateways wrote hosted-room state into the *root* `state.db` every 5 seconds; the dashboard opened a writable handle on startup; cron's lifecycle guard did a raw `open()` on a live database (which cancels the gateway's POSIX locks — the classic \"how to corrupt SQLite\" recipe); `doctor --fix` would checkpoint under a live holder. All four are gone: hosted rooms live in `shared-state.db`, the dashboard opens read-only first, the guard goes through the tracked connection registry, and `doctor --fix` refuses a checkpoint it can't prove is safe. (#108076 — salvage #103489 @RikETS, #102682 @JoaoMarcos44, #108012 @Halldrix, #105428 @TaoMasterCoder)",
+          "category": "automation",
+          "surfaces": [
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci",
+            "automation.schedules"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.002",
+          "kind": "changed",
+          "summary": "**Healthy WAL databases stop wedging.** OpenZFS `(deleted)` dentries and a `close()` racing an `append_message` both produced a sticky `DeletedWalGenerationError` on a perfectly good store; the read pool was handed out under an unconfirmed journal mode; a transient `disk I/O error` on WSL2 killed `get_session` on the first attempt; and a \"state.db locked\" banner was broadcast after the lock had already cleared. (#108082 — salvage #107411 @chelsealong, #105578 @ca-shrimp, #105711 @gaoanze888, #106958 @nikkoxgonzales; co-authored @QDung210, @fangliquanflq, @Sahilvishnaliya)",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.003",
+          "kind": "changed",
+          "summary": "**FTS damage no longer kills your turn.** An error scoped to the full-text-search index was classified as whole-file corruption and fail-closed the conversation. It's now `fts_index`: search degrades, the index rebuilds later, the transcript store is untouched. Same PR: doctor names structural damage honestly instead of \"FTS write corruption\", the FTS write probe catches the stale-index shape that passed every check while every write failed, `.recover` output no longer fails startup on orphan FTS5 shadow tables, header-zeroed databases recover instead of being refused, and the dashboard analytics poller returns a 503 instead of 520K tracebacks a day. (#108130 — salvage #97843 @SulthanZahran1 + #97841 @Finn763, #88604 #56824 #103657 @liuhao1024, #106890 @nftpoetrist, #103321 @jangomango76, #91413 @leegunwoo98, #102808 @TaoMasterCoder)",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.004",
+          "kind": "changed",
+          "summary": "**One corrupt row no longer kills `sessions list`, export, or insights.** A TEXT timestamp or a `1e30` epoch used to crash the whole listing; malformed marker JSON crashed `json_extract`; more than 999 ids crashed bulk delete/prune. One `coerce_epoch()` helper on every reader (bad rows render `?` with a WARNING naming the session), a `json_valid` guard, IN-list chunking, and batched export hydration. (#108086 — salvage #106071 @Xipong, #101726 @efe-arv, #94701 @liuhao1024, #102679 @mssteuer, #100658 @Mi55ed)",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.005",
+          "kind": "changed",
+          "summary": "**Sessions never bind to or read another profile's database.** The Desktop launch backend could pin itself to the wrong profile's `state.db` under a HERMES_HOME override race; `session_search` by bare ID silently scanned every profile and returned someone else's transcript; recovery guidance pointed at the wrong file; profile delete kept a handle open (WinError 32). (#108074 — salvage #102534 @HexLab98, #106975 @Sora-bluesky)",
+          "category": "interfaces",
+          "surfaces": [
+            "ide",
+            "desktop"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.006",
+          "kind": "changed",
+          "summary": "**Opening state.db no longer takes the write lock when nothing needs writing.** A one-shot `hermes` process opening the store behind a busy gateway stalled 4–20 s and then failed with \"database is locked\". Now 0.01 s. (#108067 — salvage #106751 @kshitijk4poor, #101881 @jonpol01)",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.007",
+          "kind": "changed",
+          "summary": "A bare `display:` key in config.yaml no longer crashes every gateway turn (#106305); a queued-lane final refused by the platform is recorded and redelivered (#106316); a stalled WebSocket send no longer blocks every later event (#106581); the first turn no longer waits on the Python toolchain probe (#106556).",
+          "category": "interfaces",
+          "surfaces": [
+            "web"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.008",
+          "kind": "changed",
+          "summary": "Telegram bots must @mention when `bots_require_mention` is on, breaking bot-to-bot loops (#106534); Matrix renders LaTeX (#106515); Signal renders markdown tables (#106538); WhatsApp replies to view-once messages keep their quote (#106541); media-only replies report SUCCESS everywhere (#106557).",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.009",
+          "kind": "changed",
+          "summary": "`/model` and auxiliary auto never bill a provider you didn't select (#107366); never auto-switch to a provider you have no credentials for (#107281); Bedrock Claude/Converse/Mantle models survive `/model`, fallback and restore (#107621, #107658); Bedrock Guardrails enforced (#107815).",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.010",
+          "kind": "changed",
+          "summary": "Codex: patch-budget image 400 shrinks and retries (#106525); unentitled primary + fallback no longer oscillate (#106549); Azure Foundry replayed-reasoning rejection classified and pruned (#106718 @erosika). MCP OAuth refresh no longer erases the refresh token (#106185). Anthropic clients send exactly one credential (#107978).",
+          "category": "security_governance",
+          "surfaces": [
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client",
+            "automation.ci"
+          ],
+          "security_relevant": true,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.011",
+          "kind": "changed",
+          "summary": "DeepSeek V4.1 Flash on Nous Portal and OpenRouter pickers (#107489); GPT Image 2.5 via OpenAI and FAL (#105988); Opus 5 / Fable 5.1 on the native Anthropic picker (#106636 @xxxigm).",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.012",
+          "kind": "changed",
+          "summary": "One blocked periodic callback no longer stalls lease refresh (#106308); a mid-turn `/steer` is persisted as its own user row (#106317, #106344); local-inference memory-ceiling rejections back off instead of compressing history (#106307); context-overflow after partial streaming ends the turn (#106567); length continuation stops when the prompt filled the window (#106571); compression no longer times out silently on aux retries (#106866); `model_thresholds` keys can be provider-scoped (#108061).",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "context.persistent_memory"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.013",
+          "kind": "changed",
+          "summary": "Surface switch (Desktop↔TUI) no longer rebuilds the system prompt and busts the prompt cache (#105844); CLI keeps the `api_content` sidecar so the cache survives an early persist (#105842).",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "desktop"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.014",
+          "kind": "changed",
+          "summary": "`hermes -z --resume` continues the session (#106313); Shift+letter and Cmd+Shift+Z work on extended-key terminals (#90674 @francip, #105493); `browser_exec` timeout kills the whole process tree (#106589); update checks poll the GitHub API once a day instead of git-fetching every 30 min (#107648); `hermes update` names the real cause and can't hang on a stalled fetch (#108053).",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "web",
+            "ci"
+          ],
+          "actors": [
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork",
+            "automation.ci",
+            "tools.browser_computer"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.015",
+          "kind": "changed",
+          "summary": "Desktop: UI language survives the update relaunch (#106476), expired OAuth grants get a one-click re-sign-in (#106965), HUD mode shows the transcript again and always gives the window back (#107491, #107423), the backend exits when its Desktop parent dies (#107977), Windows updates stop reporting false failures (#106175, #107183), WSLg renders on the Windows GPU (#106528), Telegram quick setup with QR ported from the dashboard (#107242), and ~60 more Desktop fixes largely from @OutThisLife and @kshitijk4poor.",
+          "category": "security_governance",
+          "surfaces": [
+            "desktop"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.016",
+          "kind": "changed",
+          "summary": "An off-tick \"run now\" no longer cancels the next scheduled run (#106306); a killed manual run no longer blocks the next one for 5 minutes (#106733); a one-shot changed to recurring keeps firing (#106532); unpinned jobs run on their creation-snapshot model (#106499); `--clone-all` no longer copies cron jobs (#106478); `kanban promote` refuses undone parents (#106550); `kanban_request_review` rejects unknown reviewer profiles (#106547).",
+          "category": "automation",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "automation.schedules",
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.017",
+          "kind": "changed",
+          "summary": "A stdio MCP server dying mid-call no longer replays the tool call (#106546); a skills-only background review can no longer delete memory entries (#106310); mem0 memory no longer drops long turns (#106542); `tool_search` returns nothing rather than five tools sharing one word (#106676); remote NOPASSWD sudo no longer prompts (#107939); RSS and Reddit reading no longer activate by default (#105873).",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client",
+            "extensions.skills",
+            "context.persistent_memory"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.018",
+          "kind": "changed",
+          "summary": "`config.yaml` backups live in one bounded `backups/config/` dir (#106388); `hermes backup` keeps the newest 3 zips (#106455); `hermes setup --reset` backs up the real config (#106453); `debug share` retention shrunk to 1 day on the dpaste fallback (#106531).",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.019",
+          "kind": "changed",
+          "summary": "Existing install: `hermes update`",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.020",
+          "kind": "changed",
+          "summary": "Fresh install: `curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash`",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.021",
+          "kind": "changed",
+          "summary": "Managed deployments should update through their deployment tooling using the new tag.",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.11.022",
+          "kind": "changed",
+          "summary": "If your `state.db` was already damaged by 0.21.0/0.21.1: run `hermes doctor` first; it now names structural vs index damage correctly and points at `hermes sessions recover --inspect-only` (profile-pinned) when a rebuild isn't enough.",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 387280867,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.hermes-agent.2026.9.7",
+      "harness_id": "hermes-agent",
+      "version": "2026.9.7",
+      "channel": "stable",
+      "published_at": "2026-09-07T22:17:01Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-13T04:48:36.314529Z",
+      "source_id": "src.hermes.releases",
+      "source_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.7",
+      "raw_snapshot_path": null,
+      "raw_sha256": "79d9499cf995a98e1779e8820d823083564879bec1f8833b270c28f575e84792",
+      "title": "Hermes Agent v0.21.1 (v2026.9.7)",
+      "notes_excerpt": "Existing install: `hermes update`",
+      "change_count": 3,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.hermes-agent.2026.9.7.001",
+          "kind": "changed",
+          "summary": "Existing install: `hermes update`",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.7.002",
+          "kind": "changed",
+          "summary": "Fresh install: `curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash`",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.hermes-agent.2026.9.7.003",
+          "kind": "changed",
+          "summary": "Managed deployments should update through their deployment tooling using the new tag.",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 384339710,
+        "tag_commitish": "main"
+      }
+    },
     {
       "id": "rel.hermes-agent.2026.8.31",
       "harness_id": "hermes-agent",

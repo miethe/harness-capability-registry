@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "core",
-    "current_version": "1.1.25",
-    "version_as_of": "2026-09-03",
-    "last_verified_at": "2026-09-03T11:16:00.695788Z",
+    "current_version": "1.2.2",
+    "version_as_of": "2026-09-12",
+    "last_verified_at": "2026-09-13T04:48:51.844552Z",
     "predecessor": "gemini-cli",
     "successor": null,
     "repo_url": "https://github.com/google-antigravity/antigravity-cli",
@@ -1294,13 +1294,1651 @@
   ],
   "releases": [
     {
+      "id": "rel.antigravity-cli.1.2.2",
+      "harness_id": "antigravity-cli",
+      "version": "1.2.2",
+      "channel": "stable",
+      "published_at": "2026-09-12T03:51:08Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-13T04:48:36.990626Z",
+      "source_id": "src.antigravity.releases",
+      "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.2",
+      "raw_snapshot_path": null,
+      "raw_sha256": "c882f5b19f2343a12f09fb52bbd22e8b41b6e84bf91491788a2362f6ee5df4c3",
+      "title": "1.2.2",
+      "notes_excerpt": "Improved the startup warning for deprecated `unsandboxed` permission rules across CLI, shared, and project configuration files to list each affected file path, up to five offending rules, and step-by-step instructions for migrating them to `command` rules.",
+      "change_count": 9,
+      "flags": {
+        "security": false,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.antigravity-cli.1.2.2.001",
+          "kind": "improved",
+          "summary": "Improved the startup warning for deprecated `unsandboxed` permission rules across CLI, shared, and project configuration files to list each affected file path, up to five offending rules, and step-by-step instructions for migrating them to `command` rules.",
+          "category": "security_governance",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox",
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.2.002",
+          "kind": "improved",
+          "summary": "Improved `/resume` startup responsiveness when opening a large conversation history with a cold or stale summary cache.",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.2.003",
+          "kind": "fixed",
+          "summary": "Fixed MCP servers bundled inside plugins colliding with each other or with user-configured servers in `mcp_config.json` when they shared the same server name by automatically namespacing plugin MCP servers as `<plugin>_<server>`.",
+          "category": "extensions",
+          "surfaces": [
+            "ide",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client",
+            "extensions.plugins",
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.2.004",
+          "kind": "fixed",
+          "summary": "Fixed a memory leak where opening or scanning conversations left background step-cache eviction goroutines running for the rest of the session, significantly reducing memory usage after opening `/resume` or switching conversations.",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "context.persistent_memory",
+            "sessions.resume_fork",
+            "automation.ci",
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.2.005",
+          "kind": "fixed",
+          "summary": "Fixed `view_file` attempting to parse non-UTF-8 binary files as text or loading files larger than 100 MB into the model context; unsupported binary formats and oversized files are now rejected with a clear error before overflowing the context window.",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.2.006",
+          "kind": "fixed",
+          "summary": "Fixed Gemini API (`GEMINI_API_KEY`) sessions dropping model thinking blocks from prior turns on subsequent user messages and failing to propagate thought signatures on text and thought parts.",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.2.007",
+          "kind": "fixed",
+          "summary": "Fixed artifact review failing to trigger when a directory name above `.gemini/` matched a skipped path component such as `scratch`, prevented conversation forks and snapshot reverts from copying internal `.system_generated/subagents` and `.system_generated/worktrees` directories, and cleaned up subagent metadata records when deleting a conversation.",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents",
+            "sessions.resume_fork",
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.2.008",
+          "kind": "fixed",
+          "summary": "Fixed deleted conversations being recreated as empty, schema-less SQLite database files when background queries reconnected after deletion.",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.2.009",
+          "kind": "fixed",
+          "summary": "Fixed conversations launched without a workspace folder inheriting workspace paths and customizations from other open sessions.",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 387445796,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.antigravity-cli.1.2.1",
+      "harness_id": "antigravity-cli",
+      "version": "1.2.1",
+      "channel": "stable",
+      "published_at": "2026-09-11T06:46:48Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-13T04:48:36.991462Z",
+      "source_id": "src.antigravity.releases",
+      "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.1",
+      "raw_snapshot_path": null,
+      "raw_sha256": "866c6ed3cf3bfaa1e87bf0f7665808b4e162159078f53754c366755fb553e952",
+      "title": "1.2.1",
+      "notes_excerpt": "Added support for `excludeDefaultComponents: true` in custom agent Markdown frontmatter, allowing custom agents to opt out of default prompt sections and built-in tools while preserving post-invocation hooks.",
+      "change_count": 9,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.antigravity-cli.1.2.1.001",
+          "kind": "added",
+          "summary": "Added support for `excludeDefaultComponents: true` in custom agent Markdown frontmatter, allowing custom agents to opt out of default prompt sections and built-in tools while preserving post-invocation hooks.",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.hooks"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.1.002",
+          "kind": "improved",
+          "summary": "Improved model API error resilience and diagnostics: transient `genai.APIError` failures (`502`, `503`, `504`, per-minute `429` rate limits, and mid-stream interruptions) automatically retry in-process with exponential backoff while preserving completed tool call outputs, and unrecovered `503` and `429` responses surface clear user-facing error messages.",
+          "category": "models_providers",
+          "surfaces": [
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent",
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.1.003",
+          "kind": "improved",
+          "summary": "Improved MCP and provider tool schema validation to preserve open object schemas (such as `{\"type\": \"object\"}` or explicit `additionalProperties: true`) instead of rejecting undeclared arguments on schemas that allow them.",
+          "category": "extensions",
+          "surfaces": [
+            "ide",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.1.004",
+          "kind": "improved",
+          "summary": "Improved per-turn responsiveness and reduced memory usage when opening large conversations.",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "context.persistent_memory",
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.1.005",
+          "kind": "fixed",
+          "summary": "Fixed `--continue` starting a brand-new conversation when launched from a subdirectory, after a crash, or while another session is open in the same workspace; it now falls back to the most recent non-empty conversation in the current workspace or its parent/child directories.",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.1.006",
+          "kind": "fixed",
+          "summary": "Fixed full-screen blank flashes in inline mode when content first pushes to scrollback, at the end of a turn, or when clearing the screen with `Ctrl+L`.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.1.007",
+          "kind": "fixed",
+          "summary": "Fixed remote companion UIs connected to an interactive CLI session via Remote Control displaying an unauthenticated sign-in screen instead of the active session's signed-in state.",
+          "category": "session_state",
+          "surfaces": [
+            "remote"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.1.008",
+          "kind": "fixed",
+          "summary": "Fixed the status line reporting the terminal sandbox as disabled when the session was launched with the `--sandbox` command-line flag.",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.1.009",
+          "kind": "fixed",
+          "summary": "Fixed image zoom keys (`Ctrl+=` and `Ctrl+-`) and the footer zoom hint appearing in the artifact viewer when a Mermaid diagram is rendered in ASCII mode instead of as a Kitty image.",
+          "category": "interfaces",
+          "surfaces": [
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci",
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 386833647,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.antigravity-cli.1.2.0",
+      "harness_id": "antigravity-cli",
+      "version": "1.2.0",
+      "channel": "stable",
+      "published_at": "2026-09-10T01:43:29Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-13T04:48:36.992584Z",
+      "source_id": "src.antigravity.releases",
+      "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.0",
+      "raw_snapshot_path": null,
+      "raw_sha256": "f550b5a6e28f9d2230433cbcaee4144209625093a21f9ce2c146756bd658f756",
+      "title": "1.2.0",
+      "notes_excerpt": "Added the `remote-control start`, `remote-control status`, and `remote-control stop` subcommands to run the CLI as a background service registered with your operating system's service manager so your machine stays reachable across logouts and reboots; `remote-control start --name <label>` sets a custom machine label in the Remote Control instance list, and `--session` scopes the service to your active login session.",
+      "change_count": 10,
+      "flags": {
+        "security": false,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.antigravity-cli.1.2.0.001",
+          "kind": "added",
+          "summary": "Added the `remote-control start`, `remote-control status`, and `remote-control stop` subcommands to run the CLI as a background service registered with your operating system's service manager so your machine stays reachable across logouts and reboots; `remote-control start --name <label>` sets a custom machine label in the Remote Control instance list, and `--session` scopes the service to your active login session.",
+          "category": "session_state",
+          "surfaces": [
+            "remote"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.0.002",
+          "kind": "improved",
+          "summary": "Improved half-page scrolling across all scrollable views — including altscreen mode, the diff viewer, and read-only detail panels where `ctrl+d` no longer triggers the exit prompt — and set `shift+up` and `shift+down` as customizable default keybindings for half-page navigation (`navigation.half_page_up` and `navigation.half_page_down`).",
+          "category": "interfaces",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.0.003",
+          "kind": "fixed",
+          "summary": "Fixed prompts or model responses blocked by content safety filters failing with a spurious \"no candidate found\" error, ending silently with an empty turn, or repeatedly retrying the rejected input; the CLI now surfaces a clear content-filter stop reason.",
+          "category": "models_providers",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.0.004",
+          "kind": "fixed",
+          "summary": "Fixed temporary working files written to the agent `scratch/` directory triggering recursive filesystem watchers and appearing as noisy entries in the artifact review panel and checkpoints.",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.0.005",
+          "kind": "fixed",
+          "summary": "Fixed MCP servers bundled inside globally installed plugins failing to initialize at CLI startup or failing to update their running status when plugins are enabled or disabled.",
+          "category": "extensions",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client",
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.0.006",
+          "kind": "fixed",
+          "summary": "Fixed third-party MCP server tools failing schema validation when their input schemas omit `additionalProperties`.",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.0.007",
+          "kind": "fixed",
+          "summary": "Fixed unnecessary filesystem customization discovery walks running on every user message even when no slash command is invoked, reducing latency before the agent begins responding.",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.0.008",
+          "kind": "fixed",
+          "summary": "Fixed every log line in `cli.log` and background daemon subcommand output being prefixed with a spurious `ERROR: logging before google.Init` message.",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.0.009",
+          "kind": "fixed",
+          "summary": "Fixed the macOS `remote-control` background service terminating shortly after startup when launched by the system service manager, `remote-control start` and `remote-control stop` leaving legacy installer-script background services running, and the Remote Control setting being unavailable when your access comes from a paid Google Cloud project.",
+          "category": "session_state",
+          "surfaces": [
+            "remote"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.0.010",
+          "kind": "fixed",
+          "summary": "Fixed older conversations failing to load with an `unknown step type` error when resumed.",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 385950232,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.antigravity-cli.1.1.28",
+      "harness_id": "antigravity-cli",
+      "version": "1.1.28",
+      "channel": "stable",
+      "published_at": "2026-09-09T00:43:52Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-13T04:48:36.994149Z",
+      "source_id": "src.antigravity.releases",
+      "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.28",
+      "raw_snapshot_path": null,
+      "raw_sha256": "c0e3d9d61921180d5987464d7f65559167e00700defed8922f277292875f5209",
+      "title": "1.1.28",
+      "notes_excerpt": "Improved resilience to transient model API errors: the agent now retries errors such as `503 Unavailable` for much longer with exponential backoff, so a brief service hiccup no longer aborts your session.",
+      "change_count": 16,
+      "flags": {
+        "security": true,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.antigravity-cli.1.1.28.001",
+          "kind": "improved",
+          "summary": "Improved resilience to transient model API errors: the agent now retries errors such as `503 Unavailable` for much longer with exponential backoff, so a brief service hiccup no longer aborts your session.",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.002",
+          "kind": "improved",
+          "summary": "Improved sign-in and startup speed by reading your signed-in identity from the stored credential instead of making a network request on every launch and after browser consent; a failed identity lookup no longer prevents sign-in from completing, and the displayed plan tier no longer briefly disappears during startup.",
+          "category": "security_governance",
+          "surfaces": [
+            "ide",
+            "web"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "tools.browser_computer"
+          ],
+          "security_relevant": true,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.003",
+          "kind": "improved",
+          "summary": "Improved headless (`-p`) runs to exit promptly once the final answer is delivered: the CLI waits for running background tasks and scheduled timers to finish, bound by `--print-timeout`, and leaves daemon background tasks such as dev servers running instead of terminating them.",
+          "category": "execution",
+          "surfaces": [
+            "terminal_headless"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "execution.headless",
+            "automation.schedules"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.004",
+          "kind": "improved",
+          "summary": "Improved failure reporting in headless (`-p`) runs: fatal errors now appear on stderr with a stable `error:` marker, a note is printed when the response may be truncated, and runs that previously ended silently with no output now explain why.",
+          "category": "execution",
+          "surfaces": [
+            "terminal_headless"
+          ],
+          "actors": [
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "execution.headless"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.005",
+          "kind": "improved",
+          "summary": "Improved headless (`-p`) turnaround by cutting up to 200 ms of idle latency per turn and skipping the model call that generated a conversation title no one would see.",
+          "category": "execution",
+          "surfaces": [
+            "terminal_headless"
+          ],
+          "actors": [
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "execution.headless"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.006",
+          "kind": "improved",
+          "summary": "Improved tool approval prompts to say exactly what you are approving — for example `Run this command?`, `Allow access to this URL?`, or `Allow calling this tool?` — with the command-editing shortcut offered only when a command is being approved, and a `Reason:` line explaining why approval is being requested when it is not obvious, such as a hook flagging the action or a file belonging to a different project.",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.hooks",
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.007",
+          "kind": "improved",
+          "summary": "Improved model selection auditability: the CLI log now records whenever a model name you specify resolves to a different model, such as alias resolution, `--effort` variant selection, or replacement of a deprecated saved model.",
+          "category": "observability",
+          "surfaces": [
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.008",
+          "kind": "changed",
+          "summary": "Changed what happens when `--print-timeout` expires mid-turn: the CLI now returns the partial output it has and exits successfully with a warning on stderr, instead of failing with a timeout error; interrupts such as Ctrl+C still exit non-zero.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.009",
+          "kind": "changed",
+          "summary": "Changed the default permission for fetching URLs from always allowed to asking first, so the agent now requests approval before reading a URL unless you have granted access.",
+          "category": "security_governance",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.010",
+          "kind": "fixed",
+          "summary": "Fixed plugin reinstalls keeping files that had been deleted from the source: installing a plugin now replaces its managed directory exactly, installing a plugin from its own installed directory is refused instead of corrupting it, and uninstalling a plugin no longer leaves its enabled/disabled entry behind in `config.json`.",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.011",
+          "kind": "fixed",
+          "summary": "Fixed MCP servers defined by plugins resolving relative or unset working directories against the wrong location; they now resolve against the plugin's own directory so plugin-bundled scripts run correctly.",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client",
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.012",
+          "kind": "fixed",
+          "summary": "Fixed a startup race where subagents could fail to find tools from MCP servers that were still initializing.",
+          "category": "orchestration",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client",
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.013",
+          "kind": "fixed",
+          "summary": "Fixed subagents sometimes appearing stuck in a running state after they had finished — especially in very large conversations — which also left queued when-idle messages undelivered until restart.",
+          "category": "orchestration",
+          "surfaces": [
+            "ci"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "orchestration.subagents",
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.014",
+          "kind": "fixed",
+          "summary": "Fixed a memory leak where every finished terminal command kept internal state alive for the rest of the session; long sessions that run many commands now use significantly less memory.",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "context.persistent_memory"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.015",
+          "kind": "fixed",
+          "summary": "Fixed headless (`-p`) runs stalling forever on implementation-plan approval that no one could give; non-interactive runs now proceed through plan review automatically.",
+          "category": "execution",
+          "surfaces": [
+            "terminal_headless"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "execution.headless",
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.28.016",
+          "kind": "fixed",
+          "summary": "Fixed sign-in failing with a project access error after switching from a business account with a selected project to a personal account; stale business project and license details are now fully cleared on personal sign-in.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 385149340,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.antigravity-cli.1.1.27",
+      "harness_id": "antigravity-cli",
+      "version": "1.1.27",
+      "channel": "stable",
+      "published_at": "2026-09-05T04:23:25Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-13T04:48:36.995314Z",
+      "source_id": "src.antigravity.releases",
+      "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.27",
+      "raw_snapshot_path": null,
+      "raw_sha256": "4a076c0632441f44d5ee1e27cd72f87ead1794cfef468b6a1428cf40d98d8034",
+      "title": "1.1.27",
+      "notes_excerpt": "Added `/model <name> <prompt>`, which runs a single prompt on another model and then returns the session to the model it was using, so you can consult a different model mid-conversation without disturbing your saved default.",
+      "change_count": 13,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.antigravity-cli.1.1.27.001",
+          "kind": "added",
+          "summary": "Added `/model <name> <prompt>`, which runs a single prompt on another model and then returns the session to the model it was using, so you can consult a different model mid-conversation without disturbing your saved default.",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.27.002",
+          "kind": "added",
+          "summary": "Added a `conversation_title` field to the JSON payload passed to custom status line and window title scripts, so they can show the active conversation's name and pick up renames immediately.",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.27.003",
+          "kind": "added",
+          "summary": "Added an `agents` list to custom agent Markdown frontmatter, letting an agent declare the subagents it depends on using the same workspace-relative, absolute, and agent-relative path rules as `skills`.",
+          "category": "orchestration",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.skills",
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.27.004",
+          "kind": "improved",
+          "summary": "Improved `/model` to show a `[model]` argument hint as you type, so the command's arguments are discoverable without opening help.",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.27.005",
+          "kind": "improved",
+          "summary": "Improved the `/settings` panel so each Verbosity option explains itself as you highlight it, describing whether tool calls, commands, and thoughts are shown in full or collapsed into a token metrics table.",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.27.006",
+          "kind": "improved",
+          "summary": "Improved the sign-in and Google Cloud setup screens to use the CLI's standard styled key hints, which follow your color scheme and keybindings and drop the navigation hint when only one option is available.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.27.007",
+          "kind": "changed",
+          "summary": "Changed `/model <name>` to report `Model already set to <name>` when the session is already using that model, instead of reporting a switch that did not happen.",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.27.008",
+          "kind": "fixed",
+          "summary": "Fixed tool calls to MCP servers accepting arguments the server's own schema never declared, so an invented parameter is now rejected and corrected instead of being silently dropped.",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.27.009",
+          "kind": "fixed",
+          "summary": "Fixed headless runs with `-p` silently skipping tool actions they were not permitted to take, which now end with a notice naming the refused actions and report them as `denied_actions` in the JSON output.",
+          "category": "execution",
+          "surfaces": [
+            "terminal_headless"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "execution.headless"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.27.010",
+          "kind": "fixed",
+          "summary": "Fixed `?` in Vim Normal mode opening the shortcuts panel while the prompt already contained text, so character-search and replace operators such as `f?`, `t?`, and `df?` work; `?` still opens shortcuts on an empty prompt.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.27.011",
+          "kind": "fixed",
+          "summary": "Fixed `/model` with no argument doing nothing when run before the session had finished starting up, so it now opens the model picker.",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.27.012",
+          "kind": "fixed",
+          "summary": "Fixed print mode (`-p`) exiting before the session finished shutting down, which could drop the run's trailing conversation history before it reached disk.",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_headless"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "execution.headless",
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.27.013",
+          "kind": "fixed",
+          "summary": "Fixed a redundant approval prompt when the agent reads or writes another conversation's artifact files after you have already allowed access to files outside your workspace.",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "security.permissions",
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 383132125,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.antigravity-cli.1.1.26",
+      "harness_id": "antigravity-cli",
+      "version": "1.1.26",
+      "channel": "stable",
+      "published_at": "2026-09-04T03:28:48Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-13T04:48:36.995956Z",
+      "source_id": "src.antigravity.releases",
+      "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.26",
+      "raw_snapshot_path": null,
+      "raw_sha256": "ae36aea33db8d43c8530bf8a8488dc380498bc0e0913d063c3ad0a4ee48447d5",
+      "title": "1.1.26",
+      "notes_excerpt": "Added half-page scrolling with `Ctrl+D` and `Ctrl+U` to the artifact viewer.",
+      "change_count": 9,
+      "flags": {
+        "security": true,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.antigravity-cli.1.1.26.001",
+          "kind": "added",
+          "summary": "Added half-page scrolling with `Ctrl+D` and `Ctrl+U` to the artifact viewer.",
+          "category": "interfaces",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.26.002",
+          "kind": "added",
+          "summary": "Added the `pickerGrouping` setting to `/config` and `settings.json` to configure the default conversation list view in `/resume` (flat or grouped by workspace).",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.26.003",
+          "kind": "improved",
+          "summary": "Improved terminal ASCII diagram rendering for Mermaid flowcharts in the artifact viewer and conversation.",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci",
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.26.004",
+          "kind": "improved",
+          "summary": "Improved `/logout` execution time by short-circuiting token removal directly to file storage when keyring storage is bypassed or unreachable.",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.26.005",
+          "kind": "changed",
+          "summary": "Changed unselected model families in the interactive `/model` picker to default to medium reasoning effort instead of low.",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.26.006",
+          "kind": "fixed",
+          "summary": "Fixed subagent tasks unexpectedly prompting for tool approval in always-proceed mode while viewing the subagent details panel.",
+          "category": "orchestration",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents",
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.26.007",
+          "kind": "fixed",
+          "summary": "Fixed orphaned Git worktrees accumulating on disk under `.system_generated/worktrees` when killing subagents or deleting conversations.",
+          "category": "orchestration",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.26.008",
+          "kind": "fixed",
+          "summary": "Fixed SQLite database WAL checkpointing on CLI exit so trailing session metadata updates are flushed to disk before shutdown.",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.1.26.009",
+          "kind": "fixed",
+          "summary": "Fixed customization discovery logging spurious errors when accessing temporary directories or paths outside the active workspace.",
+          "category": "observability",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 382459764,
+        "tag_commitish": "main"
+      }
+    },
+    {
       "id": "rel.antigravity-cli.1.1.25",
       "harness_id": "antigravity-cli",
       "version": "1.1.25",
       "channel": "stable",
       "published_at": "2026-09-03T02:30:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.551048Z",
+      "retrieved_at": "2026-09-13T04:48:36.996676Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.25",
       "raw_snapshot_path": null,
@@ -1547,7 +3185,7 @@
       "channel": "stable",
       "published_at": "2026-09-02T02:38:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.551672Z",
+      "retrieved_at": "2026-09-13T04:48:36.997236Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.24",
       "raw_snapshot_path": null,
@@ -1729,7 +3367,7 @@
       "channel": "stable",
       "published_at": "2026-09-01T04:47:50Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.552667Z",
+      "retrieved_at": "2026-09-13T04:48:36.998174Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.23",
       "raw_snapshot_path": null,
@@ -2033,7 +3671,7 @@
       "channel": "stable",
       "published_at": "2026-08-27T04:03:21Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.553634Z",
+      "retrieved_at": "2026-09-13T04:48:36.999077Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.22",
       "raw_snapshot_path": null,
@@ -2300,7 +3938,7 @@
       "channel": "stable",
       "published_at": "2026-08-26T02:21:06Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.554774Z",
+      "retrieved_at": "2026-09-13T04:48:37.000019Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.21",
       "raw_snapshot_path": null,
@@ -2574,7 +4212,7 @@
       "channel": "stable",
       "published_at": "2026-08-25T02:58:27Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.555683Z",
+      "retrieved_at": "2026-09-13T04:48:37.000871Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.20",
       "raw_snapshot_path": null,
@@ -2802,7 +4440,7 @@
       "channel": "stable",
       "published_at": "2026-08-22T23:30:26Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.555941Z",
+      "retrieved_at": "2026-09-13T04:48:37.001142Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.19",
       "raw_snapshot_path": null,
@@ -2893,7 +4531,7 @@
       "channel": "stable",
       "published_at": "2026-08-22T01:46:57Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.556982Z",
+      "retrieved_at": "2026-09-13T04:48:37.002145Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.18",
       "raw_snapshot_path": null,
@@ -3172,7 +4810,7 @@
       "channel": "stable",
       "published_at": "2026-08-20T22:13:58Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.557281Z",
+      "retrieved_at": "2026-09-13T04:48:37.002436Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.17",
       "raw_snapshot_path": null,
@@ -3289,7 +4927,7 @@
       "channel": "stable",
       "published_at": "2026-08-20T04:14:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.558952Z",
+      "retrieved_at": "2026-09-13T04:48:37.004801Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.16",
       "raw_snapshot_path": null,
@@ -3697,7 +5335,7 @@
       "channel": "stable",
       "published_at": "2026-08-19T04:11:33Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.560076Z",
+      "retrieved_at": "2026-09-13T04:48:37.005852Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.15",
       "raw_snapshot_path": null,
@@ -4032,7 +5670,7 @@
       "channel": "stable",
       "published_at": "2026-08-18T04:10:43Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.561251Z",
+      "retrieved_at": "2026-09-13T04:48:37.006952Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.14",
       "raw_snapshot_path": null,
@@ -4364,7 +6002,7 @@
       "channel": "stable",
       "published_at": "2026-08-14T02:26:19Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.563267Z",
+      "retrieved_at": "2026-09-13T04:48:37.008828Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.13",
       "raw_snapshot_path": null,
@@ -4839,7 +6477,7 @@
       "channel": "stable",
       "published_at": "2026-08-11T01:26:58Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.565710Z",
+      "retrieved_at": "2026-09-13T04:48:37.011146Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.12",
       "raw_snapshot_path": null,
@@ -5430,7 +7068,7 @@
       "channel": "stable",
       "published_at": "2026-08-07T02:35:23Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.567537Z",
+      "retrieved_at": "2026-09-13T04:48:37.012935Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.11",
       "raw_snapshot_path": null,
@@ -5857,7 +7495,7 @@
       "channel": "stable",
       "published_at": "2026-08-03T15:45:42Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.569101Z",
+      "retrieved_at": "2026-09-13T04:48:37.014475Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.10",
       "raw_snapshot_path": null,
@@ -6277,7 +7915,7 @@
       "channel": "stable",
       "published_at": "2026-07-31T05:12:14Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.570002Z",
+      "retrieved_at": "2026-09-13T04:48:37.015410Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.9",
       "raw_snapshot_path": null,
@@ -6556,7 +8194,7 @@
       "channel": "stable",
       "published_at": "2026-07-28T00:59:10Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.570753Z",
+      "retrieved_at": "2026-09-13T04:48:37.016146Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.8",
       "raw_snapshot_path": null,
@@ -6747,7 +8385,7 @@
       "channel": "stable",
       "published_at": "2026-07-26T00:43:16Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.571185Z",
+      "retrieved_at": "2026-09-13T04:48:37.016579Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.7",
       "raw_snapshot_path": null,
@@ -6908,7 +8546,7 @@
       "channel": "stable",
       "published_at": "2026-07-24T03:02:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.572791Z",
+      "retrieved_at": "2026-09-13T04:48:37.018138Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.6",
       "raw_snapshot_path": null,
@@ -7362,7 +9000,7 @@
       "channel": "stable",
       "published_at": "2026-07-21T02:33:39Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.573894Z",
+      "retrieved_at": "2026-09-13T04:48:37.019176Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.5",
       "raw_snapshot_path": null,
@@ -7853,7 +9491,7 @@
       "channel": "stable",
       "published_at": "2026-07-16T01:01:57Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.575827Z",
+      "retrieved_at": "2026-09-13T04:48:37.020983Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.3",
       "raw_snapshot_path": null,
@@ -8225,7 +9863,7 @@
       "channel": "stable",
       "published_at": "2026-07-13T23:26:02Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.576701Z",
+      "retrieved_at": "2026-09-13T04:48:37.021798Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.2",
       "raw_snapshot_path": null,
@@ -8453,7 +10091,7 @@
       "channel": "stable",
       "published_at": "2026-07-10T03:40:13Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.578353Z",
+      "retrieved_at": "2026-09-13T04:48:37.022720Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.1",
       "raw_snapshot_path": null,
@@ -8742,7 +10380,7 @@
       "channel": "stable",
       "published_at": "2026-07-08T03:25:54Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.579767Z",
+      "retrieved_at": "2026-09-13T04:48:37.023994Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.0",
       "raw_snapshot_path": null,
@@ -9071,7 +10709,7 @@
       "channel": "stable",
       "published_at": "2026-07-02T18:37:15Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.580278Z",
+      "retrieved_at": "2026-09-13T04:48:37.024492Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.16",
       "raw_snapshot_path": null,
@@ -9228,7 +10866,7 @@
       "channel": "stable",
       "published_at": "2026-07-01T22:59:00Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.581033Z",
+      "retrieved_at": "2026-09-13T04:48:37.025216Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.15",
       "raw_snapshot_path": null,
@@ -9457,7 +11095,7 @@
       "channel": "stable",
       "published_at": "2026-06-30T02:28:33Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.581518Z",
+      "retrieved_at": "2026-09-13T04:48:37.025691Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.14",
       "raw_snapshot_path": null,
@@ -9636,7 +11274,7 @@
       "channel": "stable",
       "published_at": "2026-06-27T01:58:53Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.582158Z",
+      "retrieved_at": "2026-09-13T04:48:37.026326Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.13",
       "raw_snapshot_path": null,
@@ -9824,7 +11462,7 @@
       "channel": "stable",
       "published_at": "2026-06-24T23:17:33Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.582961Z",
+      "retrieved_at": "2026-09-13T04:48:37.027077Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.12",
       "raw_snapshot_path": null,
@@ -10051,7 +11689,7 @@
       "channel": "stable",
       "published_at": "2026-06-24T05:30:00Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.584381Z",
+      "retrieved_at": "2026-09-13T04:48:37.028407Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.11",
       "raw_snapshot_path": null,
@@ -10421,7 +12059,7 @@
       "channel": "stable",
       "published_at": "2026-06-19T04:36:23Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.585254Z",
+      "retrieved_at": "2026-09-13T04:48:37.029258Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.10",
       "raw_snapshot_path": null,
@@ -10725,7 +12363,7 @@
       "channel": "stable",
       "published_at": "2026-06-17T02:48:46Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.586036Z",
+      "retrieved_at": "2026-09-13T04:48:37.029976Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.9",
       "raw_snapshot_path": null,
@@ -10953,7 +12591,7 @@
       "channel": "stable",
       "published_at": "2026-06-12T22:56:40Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.587347Z",
+      "retrieved_at": "2026-09-13T04:48:37.031248Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.8",
       "raw_snapshot_path": null,
@@ -11352,7 +12990,7 @@
       "channel": "stable",
       "published_at": "2026-06-09T20:40:53Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.588410Z",
+      "retrieved_at": "2026-09-13T04:48:37.032294Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.7",
       "raw_snapshot_path": null,
@@ -11679,7 +13317,7 @@
       "channel": "stable",
       "published_at": "2026-06-06T00:43:00Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.589069Z",
+      "retrieved_at": "2026-09-13T04:48:37.032893Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.6",
       "raw_snapshot_path": null,
@@ -11878,7 +13516,7 @@
       "channel": "stable",
       "published_at": "2026-06-03T21:37:06Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.589889Z",
+      "retrieved_at": "2026-09-13T04:48:37.033684Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.5",
       "raw_snapshot_path": null,
@@ -12122,7 +13760,7 @@
       "channel": "stable",
       "published_at": "2026-06-01T23:14:20Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-03T11:15:36.590898Z",
+      "retrieved_at": "2026-09-13T04:48:37.034693Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.4",
       "raw_snapshot_path": null,
