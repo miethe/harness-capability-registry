@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: openai-agents-sdk-js
-generated_at: 2026-09-03T11:16:21.860159Z
+generated_at: 2026-09-18T16:25:37.417010Z
 artifact_kind: harness_capability_guide
 ---
 
@@ -9,8 +9,8 @@ artifact_kind: harness_capability_guide
 
 **Vendor:** OpenAI  
 **Lifecycle:** active  
-**Current version in registry:** 0.17.0  
-**Last verified:** 2026-08-24T13:14:39.999942Z
+**Current version in registry:** 0.18.0  
+**Last verified:** 2026-09-18T16:25:24.486185Z
 
 > UI availability does not imply that an in-harness model or an external orchestrator can invoke the capability. Use the actor-specific sections below.
 
