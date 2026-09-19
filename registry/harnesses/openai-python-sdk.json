@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "provider_sdk",
-    "current_version": "3.16.0",
+    "current_version": "3.16.2",
     "version_as_of": "2026-09-18",
-    "last_verified_at": "2026-09-18T16:25:24.486185Z",
+    "last_verified_at": "2026-09-19T20:41:34.952888Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/openai/openai-python",
@@ -176,6 +176,104 @@
     }
   ],
   "releases": [
+    {
+      "id": "rel.openai-python-sdk.3.16.2",
+      "harness_id": "openai-python-sdk",
+      "version": "3.16.2",
+      "channel": "stable",
+      "published_at": "2026-09-18T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-09-19T20:41:33.326280Z",
+      "source_id": "src.openai-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/openai/openai-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/openai-python/CHANGELOG.md",
+      "raw_sha256": "37e564927b25531ccb085049557d61fdb9af4a086dfcf077c0d54b6eb9ed54b8",
+      "title": "openai-python-sdk 3.16.2",
+      "notes_excerpt": "**parsing:** drop TextFormatT parameterization in parse_response to fix memory leak ([#3084](https://github.com/openai/openai-python/issues/3084)) ([#3088](https://github.com/openai/openai-python/issues/3088)) ([009b7f6](https://github.com/openai/openai-python/commit/009b7f6ae6493e1abfa7583449595f144c8beb5a))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-python-sdk.3.16.2.001",
+          "kind": "changed",
+          "summary": "**parsing:** drop TextFormatT parameterization in parse_response to fix memory leak ([#3084](https://github.com/openai/openai-python/issues/3084)) ([#3088](https://github.com/openai/openai-python/issues/3088)) ([009b7f6](https://github.com/openai/openai-python/commit/009b7f6ae6493e1abfa7583449595f144c8beb5a))",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "context.persistent_memory"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
+    {
+      "id": "rel.openai-python-sdk.3.16.1",
+      "harness_id": "openai-python-sdk",
+      "version": "3.16.1",
+      "channel": "stable",
+      "published_at": "2026-09-18T00:00:00Z",
+      "date_precision": "day",
+      "retrieved_at": "2026-09-19T20:41:33.326465Z",
+      "source_id": "src.openai-python.changelog",
+      "source_url": "https://raw.githubusercontent.com/openai/openai-python/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/openai-python/CHANGELOG.md",
+      "raw_sha256": "5dc6e6c54a3edbe4a1003d1063878b30ab69303285d74d4e92e4d9704ff0c79a",
+      "title": "openai-python-sdk 3.16.1",
+      "notes_excerpt": "**api:** avoid loading unrelated API resources on first use ([#3898](https://github.com/openai/openai-python/issues/3898)) ([68e4317](https://github.com/openai/openai-python/commit/68e4317aa3df4b6e7a5ea3f75833bdd7d76e447d))",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-python-sdk.3.16.1.001",
+          "kind": "changed",
+          "summary": "**api:** avoid loading unrelated API resources on first use ([#3898](https://github.com/openai/openai-python/issues/3898)) ([68e4317](https://github.com/openai/openai-python/commit/68e4317aa3df4b6e7a5ea3f75833bdd7d76e447d))",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
+      }
+    },
     {
       "id": "rel.openai-python-sdk.3.16.0",
       "harness_id": "openai-python-sdk",
