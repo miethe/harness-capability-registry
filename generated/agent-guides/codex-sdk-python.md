@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: codex-sdk-python
-generated_at: 2026-09-18T16:25:37.417010Z
+generated_at: 2026-09-19T20:41:47.683681Z
 artifact_kind: harness_capability_guide
 ---
 
