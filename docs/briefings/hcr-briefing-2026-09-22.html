@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HCR Briefing</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #555;
+    --border: #ddd;
+    --accent: #2563eb;
+    --accent-light: #eff6ff;
+    --warn-bg: #fef9c3;
+    --warn-border: #ca8a04;
+    --code-bg: #f4f4f5;
+    --table-head: #f1f5f9;
+    --tag-bg: #e0e7ff;
+    --tag-fg: #3730a3;
+    --green: #15803d;
+    --red: #b91c1c;
+    --yellow: #92400e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1117;
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #374151;
+      --accent: #60a5fa;
+      --accent-light: #1e3a5f;
+      --warn-bg: #422006;
+      --warn-border: #d97706;
+      --code-bg: #1f2937;
+      --table-head: #1f2937;
+      --tag-bg: #1e1b4b;
+      --tag-fg: #a5b4fc;
+      --green: #4ade80;
+      --red: #f87171;
+      --yellow: #fbbf24;
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { font-size: 16px; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  h1 { font-size: 2rem; font-weight: 700; margin: 0 0 0.25rem; }
+  h2 { font-size: 1.5rem; font-weight: 600; margin: 2.5rem 0 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.4rem; }
+  h3 { font-size: 1.15rem; font-weight: 600; margin: 1.8rem 0 0.6rem; color: var(--accent); }
+  h4 { font-size: 1rem; font-weight: 600; margin: 1.2rem 0 0.4rem; }
+  p { margin: 0.7rem 0; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 1rem; }
+  .meta span { margin-right: 1rem; }
+  .divider { border: none; border-top: 2px solid var(--border); margin: 2rem 0; }
+  /* Warning banner */
+  .banner {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-left: 4px solid var(--warn-border);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+  .banner strong { color: var(--yellow); }
+  /* Stat row */
+  .stat-row { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0 1.5rem; }
+  .stat-card {
+    background: var(--accent-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    min-width: 140px;
+    text-align: center;
+  }
+  .stat-card .num { font-size: 2rem; font-weight: 700; color: var(--accent); line-height: 1; }
+  .stat-card .label { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  /* Tables */
+  .tbl-wrap { overflow-x: auto; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+  th { background: var(--table-head); text-align: left; padding: 0.5rem 0.75rem; border-bottom: 2px solid var(--border); white-space: nowrap; }
+  td { padding: 0.4rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  /* Badges */
+  .badge {
+    display: inline-block;
+    padding: 0.1em 0.55em;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge-native { background: #dcfce7; color: #15803d; }
+  .badge-supported { background: #dbeafe; color: #1d4ed8; }
+  .badge-configurable { background: #fef9c3; color: #92400e; }
+  .badge-unavailable { background: #fee2e2; color: #b91c1c; }
+  .badge-unknown { background: var(--code-bg); color: var(--muted); }
+  .badge-experimental { background: #fce7f3; color: #9d174d; }
+  .badge-verified { background: #dcfce7; color: #15803d; }
+  .badge-inferred-high { background: #dbeafe; color: #1d4ed8; }
+  .badge-inferred-low { background: #fef9c3; color: #92400e; }
+  @media (prefers-color-scheme: dark) {
+    .badge-native { background: #14532d; color: #86efac; }
+    .badge-supported { background: #1e3a5f; color: #93c5fd; }
+    .badge-configurable { background: #422006; color: #fcd34d; }
+    .badge-unavailable { background: #450a0a; color: #fca5a5; }
+    .badge-unknown { background: #1f2937; color: #9ca3af; }
+    .badge-experimental { background: #500724; color: #f9a8d4; }
+    .badge-verified { background: #14532d; color: #86efac; }
+    .badge-inferred-high { background: #1e3a5f; color: #93c5fd; }
+    .badge-inferred-low { background: #422006; color: #fcd34d; }
+  }
+  /* Code */
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+  code {
+    background: var(--code-bg);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+    font-size: 0.88em;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  }
+  pre code { background: none; padding: 0; font-size: inherit; }
+  /* Lists */
+  ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; padding: 0; }
+  li { margin: 0.25rem 0; }
+  /* Tag chips */
+  .chip {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-fg);
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 0.1em 0.5em;
+    margin: 0.1em;
+  }
+  /* Section nav */
+  .toc {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+  .toc h4 { margin: 0 0 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+  .toc ol { margin: 0; padding-left: 1.2rem; }
+  .toc li { margin: 0.2rem 0; }
+  /* Vocab grid */
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+  .vocab-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.875rem;
+  }
+  .vocab-card .vc-title { font-weight: 600; margin-bottom: 0.2rem; }
+  .vocab-card .vc-desc { color: var(--muted); font-size: 0.82rem; }
+  /* Q list */
+  .q-list { counter-reset: qc; margin: 0; padding: 0; list-style: none; }
+  .q-list li { counter-increment: qc; padding: 0.6rem 0.75rem 0.6rem 2.5rem; border-bottom: 1px solid var(--border); position: relative; font-size: 0.93rem; }
+  .q-list li:last-child { border-bottom: none; }
+  .q-list li::before {
+    content: counter(qc);
+    position: absolute; left: 0.5rem; top: 0.6rem;
+    font-size: 0.75rem; font-weight: 700;
+    background: var(--accent); color: #fff;
+    width: 1.4em; height: 1.4em;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    line-height: 1;
+  }
+  .q-list li strong { display: block; margin-bottom: 0.1rem; }
+  /* Dims grid */
+  .dim-grid { display: grid; grid-template-columns: 200px 1fr; gap: 0; }
+  .dim-grid .dg-label { font-weight: 600; font-size: 0.85rem; padding: 0.45rem 0.75rem; border-bottom: 1px solid var(--border); background: var(--table-head); }
+  .dim-grid .dg-val { font-size: 0.85rem; padding: 0.45rem 0.75rem; border-bottom: 1px solid var(--border); }
+  .dim-grid .dg-label:last-of-type, .dim-grid .dg-val:last-child { border-bottom: none; }
+  /* Pipeline steps */
+  .steps { list-style: none; margin: 0; padding: 0; }
+  .steps li {
+    padding: 0.5rem 0.75rem 0.5rem 2.8rem;
+    border-left: 2px solid var(--accent);
+    margin-left: 1rem;
+    position: relative;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+  .steps li::before {
+    content: attr(data-n);
+    position: absolute; left: -1rem;
+    background: var(--accent); color: #fff;
+    width: 2rem; height: 2rem;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.82rem;
+    top: 0.3rem;
+  }
+  @media (max-width: 600px) {
+    .stat-row { gap: 0.6rem; }
+    .stat-card { min-width: 100px; padding: 0.6rem 0.8rem; }
+    .stat-card .num { font-size: 1.6rem; }
+    .dim-grid { grid-template-columns: 1fr; }
+    .dim-grid .dg-label { border-bottom: none; padding-bottom: 0; background: none; font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1>HCR Briefing</h1>
+  <div class="meta">
+    <span>📅 2026-09-22</span>
+    <span>🔗 <a href="https://github.com/miethe/harness-capability-registry">miethe/harness-capability-registry</a></span>
+    <span>🎯 Context for rich viewer ideation</span>
+  </div>
+
+  <div class="toc">
+    <h4>Contents</h4>
+    <ol>
+      <li><a href="#what">What HCR Is and Why It Exists</a></li>
+      <li><a href="#how">How It Works Today</a></li>
+      <li><a href="#state">Measured Current State</a></li>
+      <li><a href="#data">Data: Schema, Entities, Vocabulary</a></li>
+      <li><a href="#readers">Who Reads HCR Today</a></li>
+      <li><a href="#ideation">Viewer Ideation Seed</a></li>
+      <li><a href="#appendix">Appendix: Repo Structure</a></li>
+    </ol>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ───────────────────────────────────────────── 1. WHAT -->
+  <h2 id="what">1. What HCR Is and Why It Exists</h2>
+  <p>
+    The <strong>Harness Capability Registry (HCR)</strong> is an evidence-backed release ledger
+    and actor-aware capability graph for AI coding harnesses and SDKs. It answers one question
+    that any automated routing system needs to answer without guessing:
+    <em>"which tool can do X, for which actor (human, agent, CI runner…), on which version,
+    with what evidence?"</em>
+  </p>
+  <p>
+    Without it, an orchestration system must either hard-code capability assumptions in prose or
+    re-derive them at runtime from memory — both of which drift silently the moment a product
+    ships a breaking change. HCR replaces that guesswork with structured, versioned,
+    evidence-linked claims.
+  </p>
+  <p>
+    It tracks <strong>20 products</strong> — five core agentic harnesses, five secondary/historical
+    harnesses, six agent SDKs, and four provider SDKs — and keeps two synchronized views of each:
+    an <strong>immutable release-event ledger</strong> (what changed in each version) and a
+    <strong>current capability graph</strong> (what each product can do right now, for each actor
+    type, with citations).
+  </p>
+
+  <hr class="divider">
+
+  <!-- ───────────────────────────────────────────── 2. HOW -->
+  <h2 id="how">2. How HCR Works Today</h2>
+
+  <h3>Sources</h3>
+  <p>
+    HCR ingests <strong>71 official sources</strong> declared in <code>registry/sources.json</code>.
+    For each tracked harness these typically include the product changelog, GitHub release feed, and
+    key documentation pages (overview, headless/non-interactive execution, SDK references, CLI
+    references, hooks/settings docs). A single harness like Claude Code has ten source records; a
+    narrower SDK may have two. Source IDs follow the pattern
+    <code>src.&lt;harness-id&gt;.&lt;artifact&gt;</code>
+    (e.g. <code>src.claude-code.docs.headless</code>).
+  </p>
+  <p>
+    Raw collected responses land in <code>raw/</code> as content-addressed snapshots.
+    This separation makes the downstream pipeline deterministic: <code>hcr generate</code> produces
+    byte-identical output from unchanged inputs with no network access required.
+  </p>
+
+  <h3>Refresh Pipeline — <code>update-registry.yml</code></h3>
+  <p>
+    The GitHub Actions workflow fires on a <strong>cron schedule every 6 hours at minute :17</strong>
+    (<code>17 */6 * * *</code>) and on manual dispatch. One job on <code>ubuntu-latest</code>:
+  </p>
+  <ol class="steps">
+    <li data-n="1"><strong>Check out</strong> the repo at full depth.</li>
+    <li data-n="2"><strong>Install tooling</strong> (<code>python -m pip install -e '.[dev]'</code>).</li>
+    <li data-n="3">
+      <strong>Run <code>hcr update</code></strong> —
+      <code>python -m hcr update --since-days 120 --max-pages 20 --snapshot-docs</code> — which
+      collects new releases from all 71 sources, snapshots product documentation pages for drift
+      detection, runs the heuristic normalizer to extract capability <em>candidates</em> from new
+      release notes, updates <code>registry/releases.json</code> and regenerates
+      <code>generated/agent-guides/</code>, the coverage report, validation and drift reports.
+    </li>
+    <li data-n="4"><strong>Run the test suite</strong> (<code>python -m pytest</code> + <code>node --check app/app.js</code>).</li>
+    <li data-n="5">
+      <strong>Stage curated paths only:</strong> <code>registry/</code>, <code>raw/</code>,
+      <code>generated/agent-guides/</code>, coverage and validation reports.
+      Large app bundles are untracked build artifacts, regenerated locally via <code>make generate</code>.
+    </li>
+    <li data-n="6">
+      <strong>Open or refresh a single rolling PR</strong> targeting <code>main</code> on branch
+      <code>automation/harness-capability-registry-update</code>. The step checks for an existing
+      open PR and edits it rather than creating a duplicate.
+    </li>
+  </ol>
+
+  <h3>Generated Outputs</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Path</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>generated/agent-guides/&lt;id&gt;.json</code></td><td>Compact, agent-consumable routing guide per harness (capabilities keyed by actor)</td></tr>
+        <tr><td><code>generated/agent-guides/&lt;id&gt;.md</code></td><td>Human-readable version of the same guide</td></tr>
+        <tr><td><code>generated/reports/coverage.md</code></td><td>Per-harness counts: verified capabilities, candidates, unknowns, releases</td></tr>
+        <tr><td><code>generated/reports/invocation-coverage.md</code></td><td>Which capabilities have resolved invocation tokens</td></tr>
+        <tr><td><code>generated/validation-report.json</code></td><td>JSON Schema and cross-reference validation results</td></tr>
+        <tr><td><code>generated/source-drift-report.json</code></td><td>Doc page drift detected in the latest snapshot run</td></tr>
+        <tr><td><code>registry/harnesses/&lt;id&gt;.json</code></td><td>Full HarnessBOM per product (richer than the agent guide)</td></tr>
+        <tr><td><code>generated/Harness_Matrix_Standalone.html</code></td><td>Browser UI with embedded data — local build artifact only, not committed</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Downstream Projection (Orchestration side)</h3>
+  <p>
+    A generator script in the Agentic OS repo reads HCR's agent-guide JSON files
+    <strong>via a pinned git ref</strong> (<code>git show origin/main:&lt;path&gt;</code>) —
+    never from a local working tree — and projects them into:
+  </p>
+  <ul>
+    <li><strong><code>docs/agentic-operator/harness-capabilities.yaml</code></strong> — YAML projection of all actor-capability-access triples, with full provenance (which HCR commit it was generated from).</li>
+    <li><strong><code>docs/agentic-operator/HARNESS-CAPABILITIES.md</code></strong> — human-readable version.</li>
+  </ul>
+  <p>
+    A <strong>staleness gate</strong> enforces the projection does not go stale: it compares the
+    projection's <em>recorded HCR commit</em> against real <code>origin/main</code> today and fails
+    if lag exceeds <strong>10 commits</strong> or <strong>14 days</strong>. It checks the
+    <em>instance</em> (what the projection actually read), not the <em>mechanism</em> (whether the
+    generator ran recently).
+  </p>
+  <p>
+    A <strong>pre-commit hook</strong> enforces that any commit touching live markdown capability
+    claims or the projection YAML must regenerate and re-validate before landing.
+  </p>
+
+  <hr class="divider">
+
+  <!-- ───────────────────────────────────────────── 3. STATE -->
+  <h2 id="state">3. Measured Current State</h2>
+
+  <div class="banner">
+    <strong>⚠ "Ran ≠ Delivered"</strong> — The refresh pipeline runs successfully (last 20 cron
+    runs all show <em>completed / success</em>, last at <strong>2026-09-22T16:57:12Z</strong>).
+    But PR #10 has been <strong>open and unmerged since 2026-09-18</strong> — approximately 4 days.
+    The cron updates the rolling branch on each run; data only lands on <code>main</code> when
+    a human merges. <code>main</code> is at commit <code>88455c7</code> from 2026-09-18.
+    The downstream projection was last generated on <strong>2026-09-20</strong> from that same
+    stale ref. The CI is healthy; the gap is a <strong>merge cadence gap</strong>.
+  </div>
+
+  <hr class="divider">
+
+  <!-- ───────────────────────────────────────────── 4. DATA -->
+  <h2 id="data">4. Data: Schema, Entities, Vocabulary</h2>
+
+  <h3>Entity Counts</h3>
+  <div class="stat-row">
+    <div class="stat-card"><div class="num">20</div><div class="label">Harnesses</div></div>
+    <div class="stat-card"><div class="num">39</div><div class="label">Taxonomy nodes</div></div>
+    <div class="stat-card"><div class="num">237</div><div class="label">Capability impls</div></div>
+    <div class="stat-card"><div class="num">2,435</div><div class="label">Release events</div></div>
+    <div class="stat-card"><div class="num">71</div><div class="label">Sources</div></div>
+    <div class="stat-card"><div class="num">15</div><div class="label">Taxonomy categories</div></div>
+  </div>
+
+  <h3>Harness Record (key fields)</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Field</th><th>Type</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>string</td><td>Stable slug, e.g. <code>claude-code</code></td></tr>
+        <tr><td><code>name</code></td><td>string</td><td>Display name</td></tr>
+        <tr><td><code>vendor</code></td><td>string</td><td>Product vendor</td></tr>
+        <tr><td><code>family</code></td><td>enum</td><td><code>agentic_harness</code> / <code>general_agent_harness</code> / <code>agent_sdk</code> / <code>provider_sdk</code></td></tr>
+        <tr><td><code>lifecycle</code></td><td>enum</td><td><code>active</code> / <code>maintenance</code> / <code>transitioning</code> / <code>legacy</code> / <code>archived</code> / <code>monitoring_only</code></td></tr>
+        <tr><td><code>maturity</code></td><td>string</td><td>e.g. <code>stable</code>, <code>beta</code></td></tr>
+        <tr><td><code>tracking_priority</code></td><td>enum</td><td><code>core</code> / <code>secondary</code> / <code>watch</code> / <code>historical</code> / <code>discovery</code> / <code>provider_sdk</code></td></tr>
+        <tr><td><code>current_version</code></td><td>string|null</td><td>Latest known version, e.g. <code>2.1.276</code></td></tr>
+        <tr><td><code>version_as_of</code></td><td>date</td><td>When <code>current_version</code> was recorded</td></tr>
+        <tr><td><code>last_verified_at</code></td><td>timestamp</td><td>Last time any capability was verified</td></tr>
+        <tr><td><code>predecessor</code> / <code>successor</code></td><td>string|null</td><td>Product lineage (e.g. Gemini CLI → Antigravity CLI)</td></tr>
+        <tr><td><code>surfaces</code></td><td>string[]</td><td>Where reachable: <code>terminal</code>, <code>IDE</code>, <code>web</code>, <code>SDK</code>, etc.</td></tr>
+        <tr><td><code>auth_modes</code></td><td>string[]</td><td>Auth mechanisms</td></tr>
+        <tr><td><code>control_plane_dimensions</code></td><td>object</td><td>Scored on: <code>local_execution</code>, <code>remote_execution</code>, <code>multi_agent</code>, <code>structured_automation</code>, <code>provider_portability</code>, <code>enterprise_controls</code> — each <code>strong</code> / <code>moderate</code> / <code>limited</code></td></tr>
+        <tr><td><code>recommended_when</code> / <code>avoid_when</code></td><td>string[]</td><td>Routing guidance bullets</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Capability Implementation Record (key fields)</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Field</th><th>Type</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>string</td><td><code>impl.&lt;harness-id&gt;.&lt;capability-id&gt;</code></td></tr>
+        <tr><td><code>harness_id</code></td><td>string</td><td>Links to a harness</td></tr>
+        <tr><td><code>capability_id</code></td><td>string</td><td>Links to a taxonomy node</td></tr>
+        <tr><td><code>status</code></td><td>string</td><td><code>stable</code> / <code>experimental</code> / <code>candidate</code> / <code>deprecated</code></td></tr>
+        <tr><td><code>summary</code></td><td>string</td><td>One-line description</td></tr>
+        <tr><td><code>actor_access</code></td><td>object</td><td>Per-actor access level (see vocabulary below)</td></tr>
+        <tr><td><code>requires_human_mediation</code></td><td>boolean</td><td>True if a human must be in the loop</td></tr>
+        <tr><td><code>surfaces</code></td><td>string[]</td><td>Surfaces where available</td></tr>
+        <tr><td><code>invocation</code></td><td>string[]</td><td>Command/token/flag, e.g. <code>claude -p</code>, <code>PreToolUse</code></td></tr>
+        <tr><td><code>minimum_version</code></td><td>string|null</td><td>Earliest version where available</td></tr>
+        <tr><td><code>current_version_verified</code></td><td>string|null</td><td>Version where last confirmed</td></tr>
+        <tr><td><code>confidence</code></td><td>enum</td><td><code>verified_official</code> / <code>inferred_high</code> / <code>inferred_low</code> / <code>unknown</code></td></tr>
+        <tr><td><code>verified_at</code></td><td>timestamp</td><td>When evidence was last checked</td></tr>
+        <tr><td><code>evidence</code></td><td>array</td><td>Source citations: <code>source_id</code>, <code>url</code>, <code>claim</code>, <code>version</code>, <code>verified_at</code></td></tr>
+        <tr><td><code>invocation_status</code></td><td>enum</td><td><code>resolved</code> / <code>not_applicable</code> / <code>unreviewed</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Actor-Access Vocabulary</h3>
+  <p><strong>5 actors:</strong></p>
+  <div class="vocab-grid">
+    <div class="vocab-card"><div class="vc-title">human_operator</div><div class="vc-desc">A person running the harness interactively</div></div>
+    <div class="vocab-card"><div class="vc-title">in_harness_agent</div><div class="vc-desc">An agent running inside the harness (e.g. a spawned subagent)</div></div>
+    <div class="vocab-card"><div class="vc-title">external_orchestrator</div><div class="vc-desc">An agent or script calling the harness from outside (via CLI flags or SDK)</div></div>
+    <div class="vocab-card"><div class="vc-title">ci_runner</div><div class="vc-desc">An automated pipeline</div></div>
+    <div class="vocab-card"><div class="vc-title">administrator</div><div class="vc-desc">A person or script configuring, installing, or managing policy</div></div>
+  </div>
+  <p><strong>8 access values</strong> (roughly best→worst for automation):</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Value</th><th>Badge</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>native</code></td><td><span class="badge badge-native">native</span></td><td>Built-in, first-class, no extra steps</td></tr>
+        <tr><td><code>supported</code></td><td><span class="badge badge-supported">supported</span></td><td>Documented and works as designed</td></tr>
+        <tr><td><code>configurable</code></td><td><span class="badge badge-configurable">configurable</span></td><td>Works with explicit configuration</td></tr>
+        <tr><td><code>experimental</code></td><td><span class="badge badge-experimental">experimental</span></td><td>Early / may change or break</td></tr>
+        <tr><td><code>mediated</code></td><td><span class="badge badge-unknown">mediated</span></td><td>Requires a proxy, wrapper, or approval step</td></tr>
+        <tr><td><code>unavailable</code></td><td><span class="badge badge-unavailable">unavailable</span></td><td>Explicitly not supported</td></tr>
+        <tr><td><code>unknown</code></td><td><span class="badge badge-unknown">unknown</span></td><td>No evidence found — does <strong>not</strong> mean unavailable</td></tr>
+        <tr><td><code>deprecated</code></td><td><span class="badge badge-unavailable">deprecated</span></td><td>Was supported, being removed</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>4 confidence levels:</strong>
+    <span class="badge badge-verified">verified_official</span> from official changelog/docs ·
+    <span class="badge badge-inferred-high">inferred_high</span> strong heuristic ·
+    <span class="badge badge-inferred-low">inferred_low</span> weak heuristic ·
+    <span class="badge badge-unknown">unknown</span> no evidence
+  </p>
+
+  <h3>Capability Taxonomy (15 categories, 39 nodes)</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Category</th><th>Example capabilities</th></tr></thead>
+      <tbody>
+        <tr><td><code>interaction</code></td><td>terminal/TUI, IDE integration, desktop/web surface</td></tr>
+        <tr><td><code>execution</code></td><td>file editing, shell execution, headless, structured output, SDK embedding, RPC/app-server</td></tr>
+        <tr><td><code>extensions</code></td><td>MCP client, skills, plugins, lifecycle hooks</td></tr>
+        <tr><td><code>context_memory</code></td><td>project instructions, persistent memory, knowledge tools</td></tr>
+        <tr><td><code>session_state</code></td><td>resume, fork, session lineage</td></tr>
+        <tr><td><code>orchestration</code></td><td>subagents/delegation, multi-agent coordination, parallel/background agents, cross-session messaging</td></tr>
+        <tr><td><code>runtime</code></td><td>self-hosted worker, remote/cloud execution</td></tr>
+        <tr><td><code>automation</code></td><td>CI/GitHub Action integration, app-server/embedding</td></tr>
+        <tr><td><code>security_governance</code></td><td>execution sandbox, granular permissions, enterprise policy, approval controls</td></tr>
+        <tr><td><code>observability</code></td><td>tracing/event telemetry, usage/cost telemetry</td></tr>
+        <tr><td><code>research_tools</code></td><td>web search/research, browser/computer use</td></tr>
+        <tr><td><code>interfaces</code></td><td>rich result views, image/media generation</td></tr>
+        <tr><td><code>models_providers</code></td><td>model/provider portability, model/reasoning controls</td></tr>
+        <tr><td><code>evaluation</code></td><td>evals framework</td></tr>
+        <tr><td><code>tools</code></td><td>image generation</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Release Event Record (key fields)</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Field</th><th>Type</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>string</td><td>Stable dedup key</td></tr>
+        <tr><td><code>harness_id</code></td><td>string</td><td>Product this release belongs to</td></tr>
+        <tr><td><code>version</code></td><td>string</td><td>Version string</td></tr>
+        <tr><td><code>channel</code></td><td>string</td><td>Release channel</td></tr>
+        <tr><td><code>published_at</code></td><td>timestamp</td><td>Upstream release date</td></tr>
+        <tr><td><code>change_count</code></td><td>integer</td><td>Number of normalized change items</td></tr>
+        <tr><td><code>flags</code></td><td>object</td><td>Boolean: <code>security</code>, <code>breaking</code>, <code>deprecation</code></td></tr>
+        <tr><td><code>changes</code></td><td>array</td><td>Normalized items: <code>kind</code> (added/changed/improved/fixed/deprecated/removed/security/unknown), <code>summary</code>, <code>capability_refs</code>, <code>actors</code>, <code>security_relevant</code>, <code>breaking_or_deprecated</code></td></tr>
+        <tr><td><code>provenance.immutable</code></td><td>boolean</td><td>Whether the source is considered immutable</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Complete Example Capability Record</h3>
+  <pre><code>{
+  "id": "impl.claude-code.execution.headless",
+  "harness_id": "claude-code",
+  "capability_id": "execution.headless",
+  "status": "stable",
+  "summary": "`claude -p` provides supported non-interactive execution for scripts and CI;
+              `--bare` disables ambient project customization for reproducibility.",
+  "actor_access": {
+    "human_operator":       "supported",
+    "in_harness_agent":     "unavailable",
+    "external_orchestrator":"native",
+    "ci_runner":            "native",
+    "administrator":        "configurable"
+  },
+  "requires_human_mediation": false,
+  "surfaces": ["CLI", "stdin/stdout"],
+  "invocation": ["claude -p", "claude -p --bare"],
+  "minimum_version": null,
+  "current_version_verified": "2.1.226",
+  "limitations": [],
+  "confidence": "verified_official",
+  "verified_at": "2026-08-08T20:00:00Z",
+  "evidence": [
+    {
+      "source_id": "src.claude-code.docs.headless",
+      "url": "https://docs.anthropic.com/en/docs/claude-code/headless",
+      "claim": "`claude -p` provides supported non-interactive execution...",
+      "version": null,
+      "verified_at": "2026-08-08T20:00:00Z"
+    }
+  ],
+  "invocation_status": "resolved",
+  "invocation_na_reason": null
+}</code></pre>
+
+  <hr class="divider">
+
+  <!-- ───────────────────────────────────────────── 5. READERS -->
+  <h2 id="readers">5. Who Reads HCR Today</h2>
+
+  <h3>Automated Readers</h3>
+
+  <h4>1. Delegation Router (Agentic OS control plane)</h4>
+  <p><strong>Question:</strong> "For this task's actor type and capability requirements, which harness has native/supported access? Which one to prefer when multiple qualify?"</p>
+  <p><strong>Input:</strong> <code>generated/agent-guides/&lt;id&gt;.json</code> — <code>capabilities_by_actor.&lt;actor&gt;</code> filtered by <code>access</code> level, combined with <code>routing_hint.recommended_when</code> and <code>control_plane_dimensions</code>.</p>
+
+  <h4>2. Lane Guard (pre-commit hook + CI in the orchestration repo)</h4>
+  <p><strong>Question:</strong> "Does the harness I'm routing this dispatch to actually support headless execution and structured output for an external orchestrator?"</p>
+  <p><strong>Input:</strong> <code>docs/agentic-operator/harness-capabilities.yaml</code> (the projection), cross-checked against <code>[HCR:&lt;capability_id&gt;]</code> tags in orchestration docs.</p>
+
+  <h4>3. Staleness Gate</h4>
+  <p><strong>Question:</strong> "Is the projection fresh enough to trust? How many commits behind HCR <code>origin/main</code> is it? How old in wall-clock days?"</p>
+  <p><strong>Input:</strong> The <code>provenance</code> block in <code>harness-capabilities.yaml</code> vs. actual HCR repo state. Thresholds: 10 commits or 14 days.</p>
+
+  <h4>4. Unused-Capability Reporter</h4>
+  <p><strong>Question:</strong> "Which capabilities are in the projection but not yet referenced in any orchestration file?"</p>
+  <p><strong>Input:</strong> <code>harness-capabilities.yaml</code> + hand-authored usage predicates + grep over git-tracked files.</p>
+
+  <h4>5. HCR Curator Agents</h4>
+  <p><strong>Questions:</strong> "Is this heuristic candidate plausible? Did this release touch a breaking change? Has this product announced a successor?"</p>
+  <p><strong>Input:</strong> <code>registry/releases.json</code> (unreviewed items), <code>registry/capabilities.json</code> (candidates), <code>registry/harnesses.json</code> (lifecycle/lineage).</p>
+
+  <h3>Human Readers</h3>
+  <ul>
+    <li><code>generated/agent-guides/&lt;id&gt;.md</code> — comparing harnesses for a specific use case.</li>
+    <li><code>docs/agentic-operator/HARNESS-CAPABILITIES.md</code> — spot-checking routing decisions.</li>
+    <li><code>generated/reports/coverage.md</code> — checking which harnesses have thin evidence coverage.</li>
+    <li><strong>Harness Matrix</strong> (local build) — full cross-harness comparison table in a browser.</li>
+  </ul>
+
+  <hr class="divider">
+
+  <!-- ───────────────────────────────────────────── 6. IDEATION -->
+  <h2 id="ideation">6. Viewer Ideation Seed</h2>
+
+  <h3>Questions a human should answer at a glance</h3>
+  <ol class="q-list">
+    <li><strong>"Which harnesses support capability X for actor Y?"</strong> e.g. "Which have <code>native</code> headless execution for <code>external_orchestrator</code>?" Filter by capability_id + actor + access level.</li>
+    <li><strong>"What changed this week?"</strong> New releases, <code>added</code>/<code>changed</code> items, <code>security</code>/<code>breaking</code> flags — across all 20 harnesses.</li>
+    <li><strong>"Which harnesses are stale?"</strong> <code>last_verified_at</code> older than N days, or <code>version_as_of</code> falling behind known releases.</li>
+    <li><strong>"What's the delta between harness A and harness B?"</strong> Side-by-side capability comparison for a specific actor, with access-level differences highlighted.</li>
+    <li><strong>"Which capabilities still have low or unknown confidence?"</strong> <code>inferred_low</code> or <code>unknown</code> entries as a curation backlog.</li>
+    <li><strong>"What requires human mediation?"</strong> <code>requires_human_mediation: true</code> entries, filterable by harness and actor.</li>
+    <li><strong>"What's experimental or deprecated right now?"</strong> Early-warning view for unstable or retiring capabilities.</li>
+    <li><strong>"What are the security and breaking changes in the last 30 days?"</strong> Release events with <code>flags.security</code> or <code>flags.breaking</code>, with summaries.</li>
+    <li><strong>"Which capabilities in the projection are unused?"</strong> Unused-capability report result as a visual backlog.</li>
+    <li><strong>"What can harness A do that harness B can't?"</strong> Unique capabilities or <code>native</code> access where peers are only <code>configurable</code> or <code>unavailable</code>.</li>
+    <li><strong>"For a task needing capabilities X, Y, Z — which harness fits?"</strong> Requirement-matching: enter a capability set + actor, get ranked harness matches.</li>
+    <li><strong>"How stale is my projection vs. HCR?"</strong> Commits and days of drift, last regeneration timestamp, which harnesses changed since last merge.</li>
+  </ol>
+
+  <h3>Dimensions Available for Views</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Dimension</th><th>Values / Notes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Harness</strong></td><td>20 products; filter by family, vendor, lifecycle, maturity, tracking priority</td></tr>
+        <tr><td><strong>Capability</strong></td><td>39 taxonomy nodes; filter by category (15 categories)</td></tr>
+        <tr><td><strong>Actor</strong></td><td>5 types: human_operator, in_harness_agent, external_orchestrator, ci_runner, administrator</td></tr>
+        <tr><td><strong>Access level</strong></td><td>8 values: native › supported › configurable › experimental › mediated › unavailable › unknown › deprecated</td></tr>
+        <tr><td><strong>Confidence</strong></td><td>4 levels: verified_official › inferred_high › inferred_low › unknown</td></tr>
+        <tr><td><strong>Version</strong></td><td>minimum_version, current_version_verified, version_as_of, current_version</td></tr>
+        <tr><td><strong>Freshness</strong></td><td>verified_at, last_verified_at, latest_release_published_at, days since last verification</td></tr>
+        <tr><td><strong>Human mediation</strong></td><td>Boolean — automation-safe vs. human-in-the-loop</td></tr>
+        <tr><td><strong>Status</strong></td><td>stable / experimental / candidate / deprecated</td></tr>
+        <tr><td><strong>Change kind</strong></td><td>added / changed / improved / fixed / deprecated / removed / security / unknown</td></tr>
+        <tr><td><strong>Release flags</strong></td><td>security, breaking, deprecation — Boolean per release event</td></tr>
+        <tr><td><strong>Evidence quality</strong></td><td>Official-source evidence present/absent; invocation_status resolved vs. unreviewed</td></tr>
+        <tr><td><strong>Control plane dims</strong></td><td>strong/moderate/limited on: local_execution, remote_execution, multi_agent, structured_automation, provider_portability, enterprise_controls</td></tr>
+        <tr><td><strong>Projection staleness</strong></td><td>Commits behind HCR main, wall-clock age, last-generated timestamp (cross-repo derived)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ───────────────────────────────────────────── APPENDIX -->
+  <h2 id="appendix">Appendix: Repo Structure</h2>
+  <pre><code>miethe/harness-capability-registry/
+├── registry/
+│   ├── sources.json           71 official sources
+│   ├── harnesses.json         20 harness records
+│   ├── taxonomy.json          39 capability taxonomy nodes
+│   ├── capabilities.json      237 capability implementations
+│   ├── releases.json          2,435 release events
+│   └── harnesses/&lt;id&gt;.json    Full HarnessBOM per product
+├── schemas/                   JSON Schema 2020-12 (validates every registry file)
+├── generated/
+│   ├── agent-guides/&lt;id&gt;.json  Agent-consumable routing guide per harness
+│   ├── agent-guides/&lt;id&gt;.md    Human-readable guide
+│   └── reports/               Coverage, validation, drift reports
+├── raw/                       Content-addressed upstream snapshots
+├── hcr/                       Python package: collection, generation, validation
+├── .github/workflows/
+│   └── update-registry.yml    6-hourly cron refresh + rolling PR
+└── specs/                     Architecture and integration specs</code></pre>
+
+  <h3>Data Quality Policy</h3>
+  <ul>
+    <li>Official changelogs, release feeds, and documentation are primary evidence; cross-vendor matrices can corroborate but never replace them.</li>
+    <li><code>unknown</code> means evidence is missing — it never implies <code>unavailable</code>.</li>
+    <li>A UI-only capability is never assumed agent-callable.</li>
+    <li>A source failure never silently converts an existing capability to <code>unavailable</code>.</li>
+    <li>Capability promotion from heuristic candidate to curated claim requires human review.</li>
+  </ul>
+
+</div>
+</body>
+</html>
