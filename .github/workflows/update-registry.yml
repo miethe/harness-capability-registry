@@ -108,3 +108,23 @@ jobs:
               --title "chore(hcr): refresh upstream harness intelligence" \
               --body "Automated refresh of official release history, documentation drift, normalized guides, and web-app bundles. Validation passed before this pull request was opened."
           fi
+
+          PR_NUMBER="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
+          DEFAULT_BRANCH="${{ github.event.repository.default_branch }}"
+          mapfile -t CHANGED_PATHS < <(git diff --name-only "origin/${DEFAULT_BRANCH}...HEAD")
+          if [ "${#CHANGED_PATHS[@]}" -eq 0 ]; then
+            echo "Auto-merge not requested: the update branch has no diff from ${DEFAULT_BRANCH}."
+            exit 0
+          fi
+
+          # Data-only is an explicit allowlist matching the git-add list above: registry/,
+          # raw/, generated/agent-guides/, generated/reports/coverage.md,
+          # generated/validation-report.json, and generated/source-drift-report.json.
+          # Anything else (including code, schema, or workflow changes) remains human-merged.
+          if ! printf '%s\n' "${CHANGED_PATHS[@]}" | python scripts/classify_update_paths.py; then
+            echo "Auto-merge not requested for PR #${PR_NUMBER}: non-data path changed; human review required."
+            exit 0
+          fi
+
+          echo "Requesting squash auto-merge for data-only PR #${PR_NUMBER}."
+          gh pr merge "$PR_NUMBER" --auto --squash
