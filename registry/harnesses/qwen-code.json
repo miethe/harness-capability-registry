@@ -415,6 +415,1549 @@
   ],
   "releases": [
     {
+      "id": "rel.qwen-code.cua-driver-rs-v0.20.11",
+      "harness_id": "qwen-code",
+      "version": "cua-driver-rs-v0.20.11",
+      "channel": "prerelease",
+      "published_at": "2026-09-23T09:59:26Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-23T11:37:35.110362Z",
+      "source_id": "src.qwen.releases",
+      "source_url": "https://github.com/QwenLM/qwen-code/releases/tag/cua-driver-rs-v0.20.11",
+      "raw_snapshot_path": null,
+      "raw_sha256": "72438f8de5dc40af0fe160c88035e683a179e13e60cfd4f306c48855f9b0bd7f",
+      "title": "cua-driver-rs v0.20.11",
+      "notes_excerpt": "**macOS**: codesigned + notarized universal binary + `QwenCuaDriver.app`",
+      "change_count": 73,
+      "flags": {
+        "security": true,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.001",
+          "kind": "changed",
+          "summary": "**macOS**: codesigned + notarized universal binary + `QwenCuaDriver.app`",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.002",
+          "kind": "changed",
+          "summary": "**Linux**: unsigned (x86_64 + arm64, glibc 2.31 floor)",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.003",
+          "kind": "changed",
+          "summary": "**Windows**: unsigned UIAccess worker + native SDK payload (x86_64 + arm64); deployments must sign and trust the worker on the target machine before UIAccess activation",
+          "category": "security_governance",
+          "surfaces": [
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.004",
+          "kind": "changed",
+          "summary": "**Node.js**: the same workflow publishes `@qwen-code/cua-sdk` after a clean install against these release assets and publishes the independently versioned `@qwen-code/node-repl-mcp` package after its MCP protocol smoke tests",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.005",
+          "kind": "fixed",
+          "summary": "fix(review): keep unplanned chunks out of coverage, and read the denominator from the plan by @wenshao in https://github.com/QwenLM/qwen-code/pull/12370",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.006",
+          "kind": "changed",
+          "summary": "feat(review): record what a plan was computed from, and report drift by @wenshao in https://github.com/QwenLM/qwen-code/pull/12369",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.007",
+          "kind": "fixed",
+          "summary": "fix(core): accept nullable pagination when reading notebooks by @DragonnZhang in https://github.com/QwenLM/qwen-code/pull/12421",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.008",
+          "kind": "fixed",
+          "summary": "fix(cli): clean up stale session debug logs by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12374",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.009",
+          "kind": "changed",
+          "summary": "feat(java): Add managed tool execution state by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12391",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.010",
+          "kind": "fixed",
+          "summary": "fix(web-shell): isolate npm pack diagnostics from verifier output by @dvd233 in https://github.com/QwenLM/qwen-code/pull/12367",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.011",
+          "kind": "changed",
+          "summary": "feat(serve): support SSH workspaces without a remote daemon by @wenshao in https://github.com/QwenLM/qwen-code/pull/12255",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.012",
+          "kind": "changed",
+          "summary": "feat(web-shell): enable expiring QR pairing on non-loopback listeners by @wenshao in https://github.com/QwenLM/qwen-code/pull/12322",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.013",
+          "kind": "fixed",
+          "summary": "fix(live): spend JPEG quality, not pixels, when a shared screen will not fit by @qqqys in https://github.com/QwenLM/qwen-code/pull/12397",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.014",
+          "kind": "fixed",
+          "summary": "fix(web-shell): expose markdown message completion state by @callmeYe in https://github.com/QwenLM/qwen-code/pull/12431",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.015",
+          "kind": "fixed",
+          "summary": "fix(web-shell): verify wildcard export targets against the packed file list by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12364",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.016",
+          "kind": "fixed",
+          "summary": "fix(web-shell): recover queued prompt binding after refresh failure by @elizabethbrunette21 in https://github.com/QwenLM/qwen-code/pull/12279",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.017",
+          "kind": "fixed",
+          "summary": "fix(desktop): restore window zoom in the Tauri shell by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12410",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "desktop"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.018",
+          "kind": "changed",
+          "summary": "test(scripts): warm the pinned corepack pnpm cache before workers fork (#12436) by @qwen-code-dev-bot in https://github.com/QwenLM/qwen-code/pull/12446",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.019",
+          "kind": "changed",
+          "summary": "feat(mobile): add encrypted, isolated connection profiles (Phase 2) by @jabrailkhalil in https://github.com/QwenLM/qwen-code/pull/12121",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "mobile"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.020",
+          "kind": "fixed",
+          "summary": "fix(web-shell): preserve reference tags across reloads by @ytahdn in https://github.com/QwenLM/qwen-code/pull/12404",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.021",
+          "kind": "changed",
+          "summary": "feat(java): Add runtime broker service core by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12438",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.022",
+          "kind": "fixed",
+          "summary": "fix(web-shell): browse remote workspace folders without page refresh by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12412",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.023",
+          "kind": "fixed",
+          "summary": "fix(cli): close the remaining OpenTUI parity gaps against ink by @chiga0 in https://github.com/QwenLM/qwen-code/pull/12309",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.024",
+          "kind": "fixed",
+          "summary": "fix(core): warn when tools.eager entries match no discovered tool by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12451",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.025",
+          "kind": "changed",
+          "summary": "chore(cli): bump the OpenTUI renderer to 0.5.10 by @chiga0 in https://github.com/QwenLM/qwen-code/pull/12321",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.026",
+          "kind": "fixed",
+          "summary": "fix(web-shell): open a Live session on a daemon serving one project by @qqqys in https://github.com/QwenLM/qwen-code/pull/12441",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.027",
+          "kind": "changed",
+          "summary": "feat(cli): Add managed runtime attestation contract by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12447",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.028",
+          "kind": "fixed",
+          "summary": "fix(web-shell): show edit diffs before approval by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12443",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.029",
+          "kind": "changed",
+          "summary": "feat(serve): Add opt-in fixed ACP child heap enforcement by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12353",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.030",
+          "kind": "changed",
+          "summary": "feat(cli): Move bwrap sandboxing to tool execution by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12267",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.031",
+          "kind": "changed",
+          "summary": "feat(serve): add --token-qr escape hatch and address-only QR fallback by @wenshao in https://github.com/QwenLM/qwen-code/pull/12266",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.032",
+          "kind": "changed",
+          "summary": "chore(sdk-java): bump fastjson2 to 2.0.65 by @wenshao in https://github.com/QwenLM/qwen-code/pull/12465",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.033",
+          "kind": "changed",
+          "summary": "docs: update README hero image by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12474",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.034",
+          "kind": "changed",
+          "summary": "feat(java): Persist managed tool executions with JDBC by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12445",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.035",
+          "kind": "fixed",
+          "summary": "fix(core,docs): correct what the deferred-tool bridge made stale or untested by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12355",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.036",
+          "kind": "changed",
+          "summary": "docs(plans): record why CI test time is bound by module import, not scheduling by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/10909",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.037",
+          "kind": "changed",
+          "summary": "perf(core): move the Agent tool's prompt-writing guidance into a bundled skill by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12323",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.038",
+          "kind": "fixed",
+          "summary": "fix(vscode-ide-companion): regenerate NOTICES.txt after release dependency reorder (#12479) by @qwen-code-dev-bot in https://github.com/QwenLM/qwen-code/pull/12483",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.039",
+          "kind": "changed",
+          "summary": "chore(vscode-ide-companion): regenerate NOTICES.txt after dependency reorder (#12481) by @qwen-code-dev-bot in https://github.com/QwenLM/qwen-code/pull/12485",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.040",
+          "kind": "fixed",
+          "summary": "fix(java): Fence stale tool dispatch owners by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12477",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.041",
+          "kind": "fixed",
+          "summary": "fix(java): Make JDBC lease clocks timezone and storage safe by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12478",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.042",
+          "kind": "fixed",
+          "summary": "fix(cli): hide external editor option when the configured editor is unavailable by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12498",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.043",
+          "kind": "fixed",
+          "summary": "fix(review): Move trusted state outside workspaces by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12491",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.044",
+          "kind": "changed",
+          "summary": "docs(verify-pr): add persisted-state, steady-state and skip-coverage rules by @wenshao in https://github.com/QwenLM/qwen-code/pull/12456",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.045",
+          "kind": "changed",
+          "summary": "feat(channels): decouple group-member access from senderPolicy by @qwen-code-dev-bot in https://github.com/QwenLM/qwen-code/pull/12475",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "administrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.046",
+          "kind": "fixed",
+          "summary": "fix(cli): report clipboard unavailability on Linux instead of failing silently by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12489",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.047",
+          "kind": "fixed",
+          "summary": "fix(release): keep manifest layout when bumping versions by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12487",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.048",
+          "kind": "fixed",
+          "summary": "fix(chrome-extension): make the store release fail where it can be read by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/12392",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins",
+            "tools.browser_computer"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.049",
+          "kind": "changed",
+          "summary": "docs(browser-use): point users at the Chrome Web Store listing by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/12510",
+          "category": "research_tools",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "tools.browser_computer"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.050",
+          "kind": "fixed",
+          "summary": "fix(cli): report clipboard unavailability when the native module throws by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12508",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.051",
+          "kind": "changed",
+          "summary": "feat(cli): Add managed runtime attestation worker by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12506",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.052",
+          "kind": "fixed",
+          "summary": "fix(web-shell): keep mobile composer controls reachable above a soft keyboard by @wenshao in https://github.com/QwenLM/qwen-code/pull/12462",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "web",
+            "mobile"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.053",
+          "kind": "fixed",
+          "summary": "fix(web-shell): open an ordinary task from New task in a Live chat by @qqqys in https://github.com/QwenLM/qwen-code/pull/12516",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.054",
+          "kind": "fixed",
+          "summary": "fix(channels): one operator rule for shared sessions, with an explicit operators list by @qqqys in https://github.com/QwenLM/qwen-code/pull/12515",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.055",
+          "kind": "changed",
+          "summary": "feat(serve): restore serve.channels once for a workspace registered after boot by @qqqys in https://github.com/QwenLM/qwen-code/pull/12396",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.056",
+          "kind": "changed",
+          "summary": "feat(core): record when each tool call started by @qqqys in https://github.com/QwenLM/qwen-code/pull/12517",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.057",
+          "kind": "changed",
+          "summary": "docs(design): add Chinese translation of the memory pressure monitor design by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12521",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "context.persistent_memory"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.058",
+          "kind": "fixed",
+          "summary": "fix(core): Simplify system prompts and remove conflicting examples by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12360",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.059",
+          "kind": "changed",
+          "summary": "refactor(channels): move group senders into groups and resolve them per conversation by @qqqys in https://github.com/QwenLM/qwen-code/pull/12520",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.060",
+          "kind": "fixed",
+          "summary": "fix(web-shell): keep New task from a Live chat off the Live context without a trusted primary by @qqqys in https://github.com/QwenLM/qwen-code/pull/12519",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.061",
+          "kind": "fixed",
+          "summary": "fix(cli): scroll conversation on bare Up/Down in VP mode with empty input by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12518",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.062",
+          "kind": "fixed",
+          "summary": "fix(vscode-ide-companion): stop sending unregistered client id on message-edit rewind by @yar3333 in https://github.com/QwenLM/qwen-code/pull/12502",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.063",
+          "kind": "changed",
+          "summary": "feat(cua): unify App workflows and fix no-Metal capture for SDK 0.20.11 by @LaZzyMan in https://github.com/QwenLM/qwen-code/pull/12386",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.064",
+          "kind": "fixed",
+          "summary": "fix(dws): keep document threads and todos on the direct-message axis by @qqqys in https://github.com/QwenLM/qwen-code/pull/12525",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.065",
+          "kind": "fixed",
+          "summary": "fix(serve): never hold a workspace registration on the channel-control lane by @qqqys in https://github.com/QwenLM/qwen-code/pull/12527",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.066",
+          "kind": "changed",
+          "summary": "feat(web-shell): trajectory overview strip showing where a run spent its time by @qqqys in https://github.com/QwenLM/qwen-code/pull/12524",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.067",
+          "kind": "changed",
+          "summary": "feat(web-shell): load the whole trajectory window before drawing it by @qqqys in https://github.com/QwenLM/qwen-code/pull/12533",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.068",
+          "kind": "fixed",
+          "summary": "fix(web-shell): settle stale streaming messages when idle by @callmeYe in https://github.com/QwenLM/qwen-code/pull/12439",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.069",
+          "kind": "fixed",
+          "summary": "fix(core): register session commits so the amend exemption is reachable by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12463",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.070",
+          "kind": "changed",
+          "summary": "feat(web-shell): add shared URL navigation for pages and sessions by @Lilian0122 in https://github.com/QwenLM/qwen-code/pull/12499",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.071",
+          "kind": "changed",
+          "summary": "feat(web-shell): edit group senders and session operators in the channel editor by @qqqys in https://github.com/QwenLM/qwen-code/pull/12535",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.072",
+          "kind": "changed",
+          "summary": "@elizabethbrunette21 made their first contribution in https://github.com/QwenLM/qwen-code/pull/12279",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.cua-driver-rs-v0.20.11.073",
+          "kind": "changed",
+          "summary": "@yar3333 made their first contribution in https://github.com/QwenLM/qwen-code/pull/12502",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 394521657,
+        "tag_commitish": "5e562efe554214d2e458ef83d6f3d45afddd850e"
+      }
+    },
+    {
       "id": "rel.qwen-code.0.24.4-nightly.20260922.99bf4ce86b",
       "harness_id": "qwen-code",
       "version": "0.24.4-nightly.20260922.99bf4ce86b",
