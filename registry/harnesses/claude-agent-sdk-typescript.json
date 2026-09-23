@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "core",
-    "current_version": "0.3.276",
-    "version_as_of": "2026-09-18",
-    "last_verified_at": "2026-09-18T16:25:24.486185Z",
+    "current_version": "0.3.280",
+    "version_as_of": "2026-09-22",
+    "last_verified_at": "2026-09-23T04:46:36.567263Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/anthropics/claude-agent-sdk-typescript",
@@ -449,13 +449,466 @@
   ],
   "releases": [
     {
+      "id": "rel.claude-agent-sdk-typescript.0.3.280",
+      "harness_id": "claude-agent-sdk-typescript",
+      "version": "0.3.280",
+      "channel": "stable",
+      "published_at": "2026-09-22T16:38:27Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-23T04:46:32.564631Z",
+      "source_id": "src.claude-agent-sdk-typescript.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.280",
+      "raw_snapshot_path": null,
+      "raw_sha256": "8a827d64ce612404253d57a19a423604e5331e872753a680bb568ef4041ede29",
+      "title": "v0.3.280",
+      "notes_excerpt": "Added optional `fireReason` to the task-notification `SDKMessageOrigin`; a local host's declared scheduled-task fire is honored only in a process it started with `CLAUDE_CODE_HOST_SCHEDULED_RUN=1`",
+      "change_count": 9,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.280.001",
+          "kind": "added",
+          "summary": "Added optional `fireReason` to the task-notification `SDKMessageOrigin`; a local host's declared scheduled-task fire is honored only in a process it started with `CLAUDE_CODE_HOST_SCHEDULED_RUN=1`",
+          "category": "automation",
+          "surfaces": [
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "automation.schedules"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.280.002",
+          "kind": "added",
+          "summary": "Added `verbatimPrompts` option: prompts are delivered as written — no `@path` expansion, no slash-command dispatch and, on current CLIs, no ambient attachments with the prompt (Claude Code 2.1.248+)",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.280.003",
+          "kind": "added",
+          "summary": "Added `_meta` to `mcpServerStatus()` tool entries, carrying a tool's MCP Apps `ui` metadata so a host can find its `ui://` resource",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.280.004",
+          "kind": "added",
+          "summary": "Added `readMcpResource()` (alpha) to read an MCP Apps `ui://` resource from an MCP server that Claude Code connected",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.280.005",
+          "kind": "improved",
+          "summary": "Improved `askSideQuestion()`: asked while a turn is running, it now sees that turn (its prompt, replies and finished tool results so far) instead of only the last completed turn",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.280.006",
+          "kind": "improved",
+          "summary": "Improved unattended retry (`CLAUDE_CODE_RETRY_WATCHDOG`): a usage-limit wait emits `rate_limit_event` (`rejected`, `resetsAt`) as it begins; `api_retry` heartbeats continue while sub-agent work waits",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.280.007",
+          "kind": "changed",
+          "summary": "Changed `session_state_changed` events (`CLAUDE_CODE_EMIT_SESSION_STATE_EVENTS=1`) to report `requires_action` while an MCP elicitation waits on the user, as for permission prompts",
+          "category": "extensions",
+          "surfaces": [
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "security.permissions",
+            "automation.ci",
+            "tools.web_research"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.280.008",
+          "kind": "changed",
+          "summary": "Changed headless sessions to cancel an MCP server's pending form question when the tool call that drew it ends",
+          "category": "execution",
+          "surfaces": [
+            "terminal_headless"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "execution.headless",
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.280.009",
+          "kind": "changed",
+          "summary": "Updated to parity with Claude Code v2.1.280",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 393937797,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.claude-agent-sdk-typescript.0.3.278",
+      "harness_id": "claude-agent-sdk-typescript",
+      "version": "0.3.278",
+      "channel": "stable",
+      "published_at": "2026-09-19T03:10:32Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-23T04:46:32.564738Z",
+      "source_id": "src.claude-agent-sdk-typescript.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.278",
+      "raw_snapshot_path": null,
+      "raw_sha256": "f935db00bd7d4ba3e4a0d330a6b8260dda322e6e0c73e90aaf58496950cb09da",
+      "title": "v0.3.278",
+      "notes_excerpt": "Updated to parity with Claude Code v2.1.278",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.278.001",
+          "kind": "changed",
+          "summary": "Updated to parity with Claude Code v2.1.278",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 391895985,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.claude-agent-sdk-typescript.0.3.277",
+      "harness_id": "claude-agent-sdk-typescript",
+      "version": "0.3.277",
+      "channel": "stable",
+      "published_at": "2026-09-18T18:06:37Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-23T04:46:32.565284Z",
+      "source_id": "src.claude-agent-sdk-typescript.releases",
+      "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.277",
+      "raw_snapshot_path": null,
+      "raw_sha256": "cfe92db7242577b049bfa995bf3b59a837e0e285cb1ecf7813d9ba6e6206cb93",
+      "title": "v0.3.277",
+      "notes_excerpt": "Added an optional `builtin` field to `SlashCommand`, set when a command is built into Claude Code",
+      "change_count": 7,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.277.001",
+          "kind": "added",
+          "summary": "Added an optional `builtin` field to `SlashCommand`, set when a command is built into Claude Code",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.277.002",
+          "kind": "added",
+          "summary": "Added `pasted_content` to `SDKUserMessage`: text the user pasted rather than typed, appended after the typed prompt",
+          "category": "other",
+          "surfaces": [
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.277.003",
+          "kind": "added",
+          "summary": "Added optional remote-session latency fields (`first_text_post_ms`, `first_text_post_wall_ms`, `first_stream_post_queue_wait_ms`, `first_stream_post_queued_behind`) to the success result message",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.277.004",
+          "kind": "added",
+          "summary": "Added `'userSettings'` as an `updateSettings()` source, accepting only `effortLevel`, which is saved for the session's current model as `/effort` saves it",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.277.005",
+          "kind": "fixed",
+          "summary": "Fixed a resumed or forked session's `total_cost_usd`, `modelUsage` and `get_usage` totals starting at zero instead of continuing from the earlier turns (`maxBudgetUsd` is unchanged)",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork",
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.277.006",
+          "kind": "changed",
+          "summary": "Changed `SDKUsageReport` usage rows to always carry `severity` and `is_active`: the report relays only rows from a live server reply, and none while the usage fetch is failing",
+          "category": "observability",
+          "surfaces": [
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.277.007",
+          "kind": "changed",
+          "summary": "Updated to parity with Claude Code v2.1.277",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 391680517,
+        "tag_commitish": "main"
+      }
+    },
+    {
       "id": "rel.claude-agent-sdk-typescript.0.3.276",
       "harness_id": "claude-agent-sdk-typescript",
       "version": "0.3.276",
       "channel": "stable",
       "published_at": "2026-09-18T02:12:02Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.445228Z",
+      "retrieved_at": "2026-09-23T04:46:32.565364Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.276",
       "raw_snapshot_path": null,
@@ -505,7 +958,7 @@
       "channel": "stable",
       "published_at": "2026-09-17T22:33:00Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.445628Z",
+      "retrieved_at": "2026-09-23T04:46:32.565811Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.275",
       "raw_snapshot_path": null,
@@ -665,7 +1118,7 @@
       "channel": "stable",
       "published_at": "2026-09-17T00:11:58Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.446195Z",
+      "retrieved_at": "2026-09-23T04:46:32.566513Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.274",
       "raw_snapshot_path": null,
@@ -892,7 +1345,7 @@
       "channel": "stable",
       "published_at": "2026-09-15T20:22:43Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.446555Z",
+      "retrieved_at": "2026-09-23T04:46:32.566969Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.273",
       "raw_snapshot_path": null,
@@ -1058,7 +1511,7 @@
       "channel": "stable",
       "published_at": "2026-09-15T00:42:34Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.446610Z",
+      "retrieved_at": "2026-09-23T04:46:32.567044Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.272",
       "raw_snapshot_path": null,
@@ -1108,7 +1561,7 @@
       "channel": "stable",
       "published_at": "2026-09-14T22:12:14Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.446901Z",
+      "retrieved_at": "2026-09-23T04:46:32.567436Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.271",
       "raw_snapshot_path": null,
@@ -1245,7 +1698,7 @@
       "channel": "stable",
       "published_at": "2026-09-12T19:45:56Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.446955Z",
+      "retrieved_at": "2026-09-23T04:46:32.567516Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.270",
       "raw_snapshot_path": null,
@@ -1295,7 +1748,7 @@
       "channel": "stable",
       "published_at": "2026-09-11T19:18:05Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.447308Z",
+      "retrieved_at": "2026-09-23T04:46:32.567969Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.269",
       "raw_snapshot_path": null,
@@ -1457,7 +1910,7 @@
       "channel": "stable",
       "published_at": "2026-09-10T20:30:45Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.448010Z",
+      "retrieved_at": "2026-09-23T04:46:32.568853Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.268",
       "raw_snapshot_path": null,
@@ -1716,7 +2169,7 @@
       "channel": "stable",
       "published_at": "2026-09-09T19:58:41Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.448211Z",
+      "retrieved_at": "2026-09-23T04:46:32.569107Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.267",
       "raw_snapshot_path": null,
@@ -1809,7 +2262,7 @@
       "channel": "stable",
       "published_at": "2026-09-08T23:55:30Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.448265Z",
+      "retrieved_at": "2026-09-23T04:46:32.569195Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.266",
       "raw_snapshot_path": null,
@@ -1859,7 +2312,7 @@
       "channel": "stable",
       "published_at": "2026-09-08T20:37:33Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.448635Z",
+      "retrieved_at": "2026-09-23T04:46:32.569671Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.265",
       "raw_snapshot_path": null,
@@ -2012,7 +2465,7 @@
       "channel": "stable",
       "published_at": "2026-09-06T02:54:33Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.448731Z",
+      "retrieved_at": "2026-09-23T04:46:32.569746Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.263",
       "raw_snapshot_path": null,
@@ -2062,7 +2515,7 @@
       "channel": "stable",
       "published_at": "2026-09-04T19:58:15Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.448949Z",
+      "retrieved_at": "2026-09-23T04:46:32.570005Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.261",
       "raw_snapshot_path": null,
@@ -2156,7 +2609,7 @@
       "channel": "stable",
       "published_at": "2026-09-03T23:48:13Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.449378Z",
+      "retrieved_at": "2026-09-23T04:46:32.570570Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.260",
       "raw_snapshot_path": null,
@@ -2326,7 +2779,7 @@
       "channel": "stable",
       "published_at": "2026-09-02T22:33:48Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.449560Z",
+      "retrieved_at": "2026-09-23T04:46:32.570807Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.259",
       "raw_snapshot_path": null,
@@ -2418,7 +2871,7 @@
       "channel": "stable",
       "published_at": "2026-09-01T22:33:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.449612Z",
+      "retrieved_at": "2026-09-23T04:46:32.570879Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.258",
       "raw_snapshot_path": null,
@@ -2468,7 +2921,7 @@
       "channel": "stable",
       "published_at": "2026-09-01T17:53:44Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.450361Z",
+      "retrieved_at": "2026-09-23T04:46:32.572006Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.257",
       "raw_snapshot_path": null,
@@ -2759,7 +3212,7 @@
       "channel": "stable",
       "published_at": "2026-08-31T19:47:20Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.450418Z",
+      "retrieved_at": "2026-09-23T04:46:32.572093Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.252",
       "raw_snapshot_path": null,
@@ -2809,7 +3262,7 @@
       "channel": "stable",
       "published_at": "2026-08-28T18:19:38Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.450466Z",
+      "retrieved_at": "2026-09-23T04:46:32.572187Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.251",
       "raw_snapshot_path": null,
@@ -2859,7 +3312,7 @@
       "channel": "stable",
       "published_at": "2026-08-28T00:49:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.450515Z",
+      "retrieved_at": "2026-09-23T04:46:32.572263Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.250",
       "raw_snapshot_path": null,
@@ -2909,7 +3362,7 @@
       "channel": "stable",
       "published_at": "2026-08-27T22:12:02Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.450588Z",
+      "retrieved_at": "2026-09-23T04:46:32.572361Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.248",
       "raw_snapshot_path": null,
@@ -2962,7 +3415,7 @@
       "channel": "stable",
       "published_at": "2026-08-26T23:06:48Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.450741Z",
+      "retrieved_at": "2026-09-23T04:46:32.572547Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.247",
       "raw_snapshot_path": null,
@@ -3034,7 +3487,7 @@
       "channel": "stable",
       "published_at": "2026-08-25T22:31:51Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.451129Z",
+      "retrieved_at": "2026-09-23T04:46:32.572883Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.246",
       "raw_snapshot_path": null,
@@ -3154,7 +3607,7 @@
       "channel": "stable",
       "published_at": "2026-08-25T05:13:26Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.451189Z",
+      "retrieved_at": "2026-09-23T04:46:32.572959Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.245",
       "raw_snapshot_path": null,
@@ -3204,7 +3657,7 @@
       "channel": "stable",
       "published_at": "2026-08-23T00:52:19Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.451237Z",
+      "retrieved_at": "2026-09-23T04:46:32.573028Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.241",
       "raw_snapshot_path": null,
@@ -3254,7 +3707,7 @@
       "channel": "stable",
       "published_at": "2026-08-22T14:45:17Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.451282Z",
+      "retrieved_at": "2026-09-23T04:46:32.573094Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.240",
       "raw_snapshot_path": null,
@@ -3304,7 +3757,7 @@
       "channel": "stable",
       "published_at": "2026-08-21T19:55:10Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.451554Z",
+      "retrieved_at": "2026-09-23T04:46:32.573463Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.239",
       "raw_snapshot_path": null,
@@ -3421,7 +3874,7 @@
       "channel": "stable",
       "published_at": "2026-08-20T20:33:14Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.451913Z",
+      "retrieved_at": "2026-09-23T04:46:32.573915Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.238",
       "raw_snapshot_path": null,
@@ -3586,7 +4039,7 @@
       "channel": "stable",
       "published_at": "2026-08-20T00:54:27Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.451974Z",
+      "retrieved_at": "2026-09-23T04:46:32.573993Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.237",
       "raw_snapshot_path": null,
@@ -3636,7 +4089,7 @@
       "channel": "stable",
       "published_at": "2026-08-19T20:01:47Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.452055Z",
+      "retrieved_at": "2026-09-23T04:46:32.574104Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.236",
       "raw_snapshot_path": null,
@@ -3693,7 +4146,7 @@
       "channel": "stable",
       "published_at": "2026-08-18T20:39:10Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.452105Z",
+      "retrieved_at": "2026-09-23T04:46:32.574193Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.235",
       "raw_snapshot_path": null,
@@ -3743,7 +4196,7 @@
       "channel": "stable",
       "published_at": "2026-08-17T20:21:43Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.452447Z",
+      "retrieved_at": "2026-09-23T04:46:32.574645Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.234",
       "raw_snapshot_path": null,
@@ -3883,7 +4336,7 @@
       "channel": "stable",
       "published_at": "2026-08-14T22:21:46Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.452605Z",
+      "retrieved_at": "2026-09-23T04:46:32.574856Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.233",
       "raw_snapshot_path": null,
@@ -3957,7 +4410,7 @@
       "channel": "stable",
       "published_at": "2026-08-13T23:30:43Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.452828Z",
+      "retrieved_at": "2026-09-23T04:46:32.575109Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.232",
       "raw_snapshot_path": null,
@@ -4052,7 +4505,7 @@
       "channel": "stable",
       "published_at": "2026-08-13T08:39:04Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.452888Z",
+      "retrieved_at": "2026-09-23T04:46:32.575201Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.231",
       "raw_snapshot_path": null,
@@ -4102,7 +4555,7 @@
       "channel": "stable",
       "published_at": "2026-08-12T20:55:00Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.453047Z",
+      "retrieved_at": "2026-09-23T04:46:32.575414Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.229",
       "raw_snapshot_path": null,
@@ -4176,7 +4629,7 @@
       "channel": "stable",
       "published_at": "2026-08-11T19:49:39Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.453110Z",
+      "retrieved_at": "2026-09-23T04:46:32.575502Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.228",
       "raw_snapshot_path": null,
@@ -4228,7 +4681,7 @@
       "channel": "stable",
       "published_at": "2026-08-10T22:56:26Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.453163Z",
+      "retrieved_at": "2026-09-23T04:46:32.575578Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.227",
       "raw_snapshot_path": null,
@@ -4278,7 +4731,7 @@
       "channel": "stable",
       "published_at": "2026-08-08T02:48:11Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.453211Z",
+      "retrieved_at": "2026-09-23T04:46:32.575647Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.226",
       "raw_snapshot_path": null,
@@ -4328,7 +4781,7 @@
       "channel": "stable",
       "published_at": "2026-08-08T01:10:25Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.453288Z",
+      "retrieved_at": "2026-09-23T04:46:32.575749Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.225",
       "raw_snapshot_path": null,
@@ -4385,7 +4838,7 @@
       "channel": "stable",
       "published_at": "2026-08-07T04:00:57Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.453618Z",
+      "retrieved_at": "2026-09-23T04:46:32.576180Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.224",
       "raw_snapshot_path": null,
@@ -4526,7 +4979,7 @@
       "channel": "stable",
       "published_at": "2026-08-06T00:52:37Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.453904Z",
+      "retrieved_at": "2026-09-23T04:46:32.576542Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.223",
       "raw_snapshot_path": null,
@@ -4651,7 +5104,7 @@
       "channel": "stable",
       "published_at": "2026-08-04T22:40:07Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.453978Z",
+      "retrieved_at": "2026-09-23T04:46:32.576641Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.222",
       "raw_snapshot_path": null,
@@ -4706,7 +5159,7 @@
       "channel": "stable",
       "published_at": "2026-08-04T00:14:13Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.454119Z",
+      "retrieved_at": "2026-09-23T04:46:32.576826Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.221",
       "raw_snapshot_path": null,
@@ -4780,7 +5233,7 @@
       "channel": "stable",
       "published_at": "2026-07-25T01:35:41Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.454176Z",
+      "retrieved_at": "2026-09-23T04:46:32.576903Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.220",
       "raw_snapshot_path": null,
@@ -4830,7 +5283,7 @@
       "channel": "stable",
       "published_at": "2026-07-24T17:14:09Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.454513Z",
+      "retrieved_at": "2026-09-23T04:46:32.577353Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.219",
       "raw_snapshot_path": null,
@@ -4987,7 +5440,7 @@
       "channel": "stable",
       "published_at": "2026-07-22T21:24:53Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.454710Z",
+      "retrieved_at": "2026-09-23T04:46:32.577608Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.218",
       "raw_snapshot_path": null,
@@ -5083,7 +5536,7 @@
       "channel": "stable",
       "published_at": "2026-07-21T21:35:16Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.454892Z",
+      "retrieved_at": "2026-09-23T04:46:32.577846Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.217",
       "raw_snapshot_path": null,
@@ -5181,7 +5634,7 @@
       "channel": "stable",
       "published_at": "2026-07-20T22:13:57Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.455082Z",
+      "retrieved_at": "2026-09-23T04:46:32.578092Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.216",
       "raw_snapshot_path": null,
@@ -5272,7 +5725,7 @@
       "channel": "stable",
       "published_at": "2026-07-19T02:56:03Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.455139Z",
+      "retrieved_at": "2026-09-23T04:46:32.578185Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.215",
       "raw_snapshot_path": null,
@@ -5322,7 +5775,7 @@
       "channel": "stable",
       "published_at": "2026-07-18T01:20:14Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.455556Z",
+      "retrieved_at": "2026-09-23T04:46:32.578729Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.214",
       "raw_snapshot_path": null,
@@ -5505,7 +5958,7 @@
       "channel": "stable",
       "published_at": "2026-07-17T00:26:59Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.455690Z",
+      "retrieved_at": "2026-09-23T04:46:32.578898Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.212",
       "raw_snapshot_path": null,
@@ -5579,7 +6032,7 @@
       "channel": "stable",
       "published_at": "2026-07-15T23:02:33Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.455945Z",
+      "retrieved_at": "2026-09-23T04:46:32.579244Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.211",
       "raw_snapshot_path": null,
@@ -5692,7 +6145,7 @@
       "channel": "stable",
       "published_at": "2026-07-14T23:45:42Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.456009Z",
+      "retrieved_at": "2026-09-23T04:46:32.579333Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.210",
       "raw_snapshot_path": null,
@@ -5742,7 +6195,7 @@
       "channel": "stable",
       "published_at": "2026-07-14T06:36:10Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.456066Z",
+      "retrieved_at": "2026-09-23T04:46:32.579411Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.209",
       "raw_snapshot_path": null,
@@ -5792,7 +6245,7 @@
       "channel": "stable",
       "published_at": "2026-07-14T01:10:56Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.456480Z",
+      "retrieved_at": "2026-09-23T04:46:32.579944Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.208",
       "raw_snapshot_path": null,
@@ -5973,7 +6426,7 @@
       "channel": "stable",
       "published_at": "2026-07-11T00:51:58Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.456619Z",
+      "retrieved_at": "2026-09-23T04:46:32.580126Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.207",
       "raw_snapshot_path": null,
@@ -6044,7 +6497,7 @@
       "channel": "stable",
       "published_at": "2026-07-10T01:45:15Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.456713Z",
+      "retrieved_at": "2026-09-23T04:46:32.580255Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.206",
       "raw_snapshot_path": null,
@@ -6098,7 +6551,7 @@
       "channel": "stable",
       "published_at": "2026-07-08T21:22:15Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.456859Z",
+      "retrieved_at": "2026-09-23T04:46:32.580484Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.205",
       "raw_snapshot_path": null,
@@ -6168,7 +6621,7 @@
       "channel": "stable",
       "published_at": "2026-07-08T00:27:49Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.456914Z",
+      "retrieved_at": "2026-09-23T04:46:32.580563Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.204",
       "raw_snapshot_path": null,
@@ -6218,7 +6671,7 @@
       "channel": "stable",
       "published_at": "2026-07-07T21:06:08Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.457056Z",
+      "retrieved_at": "2026-09-23T04:46:32.580748Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.203",
       "raw_snapshot_path": null,
@@ -6288,7 +6741,7 @@
       "channel": "stable",
       "published_at": "2026-07-06T22:51:17Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.457176Z",
+      "retrieved_at": "2026-09-23T04:46:32.580905Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.202",
       "raw_snapshot_path": null,
@@ -6360,7 +6813,7 @@
       "channel": "stable",
       "published_at": "2026-07-03T23:50:34Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.457230Z",
+      "retrieved_at": "2026-09-23T04:46:32.580981Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.201",
       "raw_snapshot_path": null,
@@ -6410,7 +6863,7 @@
       "channel": "stable",
       "published_at": "2026-07-03T16:52:26Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.457393Z",
+      "retrieved_at": "2026-09-23T04:46:32.581207Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.200",
       "raw_snapshot_path": null,
@@ -6506,7 +6959,7 @@
       "channel": "stable",
       "published_at": "2026-07-02T23:35:12Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.457582Z",
+      "retrieved_at": "2026-09-23T04:46:32.581455Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.199",
       "raw_snapshot_path": null,
@@ -6601,7 +7054,7 @@
       "channel": "stable",
       "published_at": "2026-07-01T20:45:21Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.457851Z",
+      "retrieved_at": "2026-09-23T04:46:32.581750Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.198",
       "raw_snapshot_path": null,
@@ -6715,7 +7168,7 @@
       "channel": "stable",
       "published_at": "2026-06-30T17:56:24Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.457911Z",
+      "retrieved_at": "2026-09-23T04:46:32.581827Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.197",
       "raw_snapshot_path": null,
@@ -6765,7 +7218,7 @@
       "channel": "stable",
       "published_at": "2026-06-29T23:27:03Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.458036Z",
+      "retrieved_at": "2026-09-23T04:46:32.581988Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.196",
       "raw_snapshot_path": null,
@@ -6837,7 +7290,7 @@
       "channel": "stable",
       "published_at": "2026-06-26T21:29:35Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.458163Z",
+      "retrieved_at": "2026-09-23T04:46:32.582153Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.195",
       "raw_snapshot_path": null,
@@ -6911,7 +7364,7 @@
       "channel": "stable",
       "published_at": "2026-06-25T21:45:44Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.458276Z",
+      "retrieved_at": "2026-09-23T04:46:32.582321Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.193",
       "raw_snapshot_path": null,
@@ -6985,7 +7438,7 @@
       "channel": "stable",
       "published_at": "2026-06-24T21:58:27Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.458496Z",
+      "retrieved_at": "2026-09-23T04:46:32.582606Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.191",
       "raw_snapshot_path": null,
@@ -7099,7 +7552,7 @@
       "channel": "stable",
       "published_at": "2026-06-24T15:53:50Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.458552Z",
+      "retrieved_at": "2026-09-23T04:46:32.582683Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.190",
       "raw_snapshot_path": null,
@@ -7149,7 +7602,7 @@
       "channel": "stable",
       "published_at": "2026-06-23T21:04:00Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.458621Z",
+      "retrieved_at": "2026-09-23T04:46:32.582775Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.187",
       "raw_snapshot_path": null,
@@ -7201,7 +7654,7 @@
       "channel": "stable",
       "published_at": "2026-06-22T20:37:32Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.458853Z",
+      "retrieved_at": "2026-09-23T04:46:32.583075Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.186",
       "raw_snapshot_path": null,
@@ -7300,7 +7753,7 @@
       "channel": "stable",
       "published_at": "2026-06-20T20:59:17Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.458909Z",
+      "retrieved_at": "2026-09-23T04:46:32.583154Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.185",
       "raw_snapshot_path": null,
@@ -7350,7 +7803,7 @@
       "channel": "stable",
       "published_at": "2026-06-19T01:20:30Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.458957Z",
+      "retrieved_at": "2026-09-23T04:46:32.583249Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.183",
       "raw_snapshot_path": null,
@@ -7400,7 +7853,7 @@
       "channel": "stable",
       "published_at": "2026-06-17T22:07:35Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.459128Z",
+      "retrieved_at": "2026-09-23T04:46:32.583475Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.181",
       "raw_snapshot_path": null,
@@ -7499,7 +7952,7 @@
       "channel": "stable",
       "published_at": "2026-06-16T20:22:02Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.459349Z",
+      "retrieved_at": "2026-09-23T04:46:32.583767Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.179",
       "raw_snapshot_path": null,
@@ -7596,7 +8049,7 @@
       "channel": "stable",
       "published_at": "2026-06-15T21:35:43Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.459705Z",
+      "retrieved_at": "2026-09-23T04:46:32.584240Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.178",
       "raw_snapshot_path": null,
@@ -7735,7 +8188,7 @@
       "channel": "stable",
       "published_at": "2026-06-13T01:25:09Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.459764Z",
+      "retrieved_at": "2026-09-23T04:46:32.584327Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.177",
       "raw_snapshot_path": null,
@@ -7785,7 +8238,7 @@
       "channel": "stable",
       "published_at": "2026-06-12T21:53:27Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.459883Z",
+      "retrieved_at": "2026-09-23T04:46:32.584488Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.176",
       "raw_snapshot_path": null,
@@ -7859,7 +8312,7 @@
       "channel": "stable",
       "published_at": "2026-06-12T04:24:05Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.459935Z",
+      "retrieved_at": "2026-09-23T04:46:32.584563Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.175",
       "raw_snapshot_path": null,
@@ -7909,7 +8362,7 @@
       "channel": "stable",
       "published_at": "2026-06-12T01:16:41Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.460051Z",
+      "retrieved_at": "2026-09-23T04:46:32.584718Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.174",
       "raw_snapshot_path": null,
@@ -7962,7 +8415,7 @@
       "channel": "stable",
       "published_at": "2026-06-11T05:41:52Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.460102Z",
+      "retrieved_at": "2026-09-23T04:46:32.584792Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.173",
       "raw_snapshot_path": null,
@@ -8012,7 +8465,7 @@
       "channel": "stable",
       "published_at": "2026-06-10T20:44:59Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.460242Z",
+      "retrieved_at": "2026-09-23T04:46:32.584973Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.172",
       "raw_snapshot_path": null,
@@ -8087,7 +8540,7 @@
       "channel": "stable",
       "published_at": "2026-06-09T17:23:15Z",
       "date_precision": "second",
-      "retrieved_at": "2026-09-18T16:25:20.460348Z",
+      "retrieved_at": "2026-09-23T04:46:32.585113Z",
       "source_id": "src.claude-agent-sdk-typescript.releases",
       "source_url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.170",
       "raw_snapshot_path": null,
@@ -10849,6 +11302,54 @@
         "immutable": true,
         "github_release_id": 310615898,
         "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.claude-agent-sdk-typescript.0.3.279",
+      "harness_id": "claude-agent-sdk-typescript",
+      "version": "0.3.279",
+      "channel": "stable",
+      "published_at": null,
+      "date_precision": "unknown",
+      "retrieved_at": "2026-09-23T04:46:32.009346Z",
+      "source_id": "src.claude-agent-sdk-typescript.changelog",
+      "source_url": "https://raw.githubusercontent.com/anthropics/claude-agent-sdk-typescript/main/CHANGELOG.md",
+      "raw_snapshot_path": "raw/claude-agent-sdk-typescript/CHANGELOG.md",
+      "raw_sha256": "770313661af6293900282e647366b49de60da468e58caaa8f47260b890902d2d",
+      "title": "claude-agent-sdk-typescript 0.3.279",
+      "notes_excerpt": "Updated to parity with Claude Code v2.1.279",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.claude-agent-sdk-typescript.0.3.279.001",
+          "kind": "changed",
+          "summary": "Updated to parity with Claude Code v2.1.279",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "markdown_changelog",
+        "immutable": false
       }
     },
     {
