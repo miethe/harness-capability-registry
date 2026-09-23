@@ -1,5 +1,857 @@
 [
   {
+    "id": "rel.goose.1.52.0",
+    "harness_id": "goose",
+    "version": "1.52.0",
+    "channel": "stable",
+    "published_at": "2026-09-23T14:59:14Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-09-23T16:59:51.507530Z",
+    "source_id": "src.goose.releases",
+    "source_url": "https://github.com/aaif-goose/goose/releases/tag/v1.52.0",
+    "raw_snapshot_path": null,
+    "raw_sha256": "13c2b3fe322fc2474dbf29db0bf0c6549d2058d8b8f990138c4f64e2e68f77ed",
+    "title": "v1.52.0",
+    "notes_excerpt": "Live voice conversations in the desktop app [#12093](https://github.com/aaif-goose/goose/pull/12093)",
+    "change_count": 38,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.goose.1.52.0.001",
+        "kind": "changed",
+        "summary": "Live voice conversations in the desktop app [#12093](https://github.com/aaif-goose/goose/pull/12093)",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "desktop"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "interfaces.voice"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.002",
+        "kind": "changed",
+        "summary": "Decisions provider crate with OpenRouter and Jev implementations [#12418](https://github.com/aaif-goose/goose/pull/12418)",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide",
+          "ci"
+        ],
+        "actors": [
+          "human_operator",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.003",
+        "kind": "changed",
+        "summary": "Z.AI Coding Plan provider with streaming tool calls [#12205](https://github.com/aaif-goose/goose/pull/12205)",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.004",
+        "kind": "changed",
+        "summary": "Recipe parameter limits enforcement (max 32 params, 200 select options, 128 KiB) [#12259](https://github.com/aaif-goose/goose/pull/12259)",
+        "category": "automation",
+        "surfaces": [
+          "terminal_interactive",
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.005",
+        "kind": "changed",
+        "summary": "OpenAI provider custom base URL support in SDK [#11967](https://github.com/aaif-goose/goose/pull/11967)",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide",
+          "sdk"
+        ],
+        "actors": [
+          "human_operator",
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.006",
+        "kind": "changed",
+        "summary": "Support for Opus 5.5, GPT-6-sol, and GPT-6-luna models [#12447](https://github.com/aaif-goose/goose/pull/12447)",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.007",
+        "kind": "changed",
+        "summary": "Cancel elicitation on incomplete CLI input [#11403](https://github.com/aaif-goose/goose/pull/11403)",
+        "category": "automation",
+        "surfaces": [
+          "terminal_interactive",
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci",
+          "tools.web_research"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.008",
+        "kind": "changed",
+        "summary": "Protect custom provider configuration files [#11438](https://github.com/aaif-goose/goose/pull/11438)",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.009",
+        "kind": "changed",
+        "summary": "Prevent duplicate schedules from overwriting recipes [#12434](https://github.com/aaif-goose/goose/pull/12434)",
+        "category": "automation",
+        "surfaces": [
+          "terminal_interactive",
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci",
+          "automation.schedules"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.010",
+        "kind": "changed",
+        "summary": "Classify many-image dimension limit errors as context length-exceeded [#12208](https://github.com/aaif-goose/goose/pull/12208)",
+        "category": "context_memory",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.011",
+        "kind": "changed",
+        "summary": "Set strict:false on chat-completions tools [#12272](https://github.com/aaif-goose/goose/pull/12272)",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.012",
+        "kind": "changed",
+        "summary": "Show CoreWeave in bundled provider metadata [#12149](https://github.com/aaif-goose/goose/pull/12149)",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.013",
+        "kind": "changed",
+        "summary": "Allow 60 seconds for provider readiness [#12240](https://github.com/aaif-goose/goose/pull/12240)",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.014",
+        "kind": "changed",
+        "summary": "Write PATH to login shell files idempotently in installer [#12072](https://github.com/aaif-goose/goose/pull/12072)",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.015",
+        "kind": "changed",
+        "summary": "De-duplicate @radix-ui packages to fix pointer-events stranded on body [#11792](https://github.com/aaif-goose/goose/pull/11792)",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.016",
+        "kind": "changed",
+        "summary": "Drive pre-key model lists from the canonical registry [#11475](https://github.com/aaif-goose/goose/pull/11475)",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.017",
+        "kind": "changed",
+        "summary": "Make todo opt-in and soften its prompts [#12123](https://github.com/aaif-goose/goose/pull/12123)",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.018",
+        "kind": "changed",
+        "summary": "Prevent updates to unsupported macOS versions [#12115](https://github.com/aaif-goose/goose/pull/12115)",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.019",
+        "kind": "changed",
+        "summary": "Require recipe consent before session/new spawns extensions [#12094](https://github.com/aaif-goose/goose/pull/12094)",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive",
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "extensions.plugins",
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.020",
+        "kind": "changed",
+        "summary": "Skills follow working directory updates [#11443](https://github.com/aaif-goose/goose/pull/11443)",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.skills"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.021",
+        "kind": "changed",
+        "summary": "Create updater staging atomically [#11741](https://github.com/aaif-goose/goose/pull/11741)",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.022",
+        "kind": "changed",
+        "summary": "Require opt-in for roaming TCP bridge [#11701](https://github.com/aaif-goose/goose/pull/11701)",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.023",
+        "kind": "changed",
+        "summary": "Omit unsupported socket MCP servers [#11417](https://github.com/aaif-goose/goose/pull/11417)",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.024",
+        "kind": "changed",
+        "summary": "Let recipe settings outrank GOOSE_SUBAGENT_MODEL/PROVIDER [#12070](https://github.com/aaif-goose/goose/pull/12070)",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive",
+          "ide",
+          "ci"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "orchestration.subagents",
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.025",
+        "kind": "changed",
+        "summary": "Send session usage updates after each provider call [#12006](https://github.com/aaif-goose/goose/pull/12006)",
+        "category": "session_state",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "observability.usage_cost"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.026",
+        "kind": "changed",
+        "summary": "Start a chat with no extensions when the user selects none [#11908](https://github.com/aaif-goose/goose/pull/11908)",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.027",
+        "kind": "changed",
+        "summary": "Databricks GLM-5.3 and Kimi K3 reasoning effort [#12079](https://github.com/aaif-goose/goose/pull/12079)",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.028",
+        "kind": "changed",
+        "summary": "Avoid splitting graphemes in skills list [#12074](https://github.com/aaif-goose/goose/pull/12074)",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.skills"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.029",
+        "kind": "changed",
+        "summary": "Keep the subagent prompt prefix cacheable [#12062](https://github.com/aaif-goose/goose/pull/12062)",
+        "category": "orchestration",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "orchestration.subagents"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.030",
+        "kind": "changed",
+        "summary": "Install libclang and cmake in devcontainer [#12091](https://github.com/aaif-goose/goose/pull/12091)",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.031",
+        "kind": "changed",
+        "summary": "Redesign settings as a full-screen view [#12163](https://github.com/aaif-goose/goose/pull/12163)",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.032",
+        "kind": "changed",
+        "summary": "Split extension transports out of ExtensionManager [#12088](https://github.com/aaif-goose/goose/pull/12088)",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.033",
+        "kind": "changed",
+        "summary": "Compress canonical_models.json [#12385](https://github.com/aaif-goose/goose/pull/12385)",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.034",
+        "kind": "fixed",
+        "summary": "Resolve data_dir from Paths::data_dir() instead of config [#12203](https://github.com/aaif-goose/goose/pull/12203)",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.035",
+        "kind": "changed",
+        "summary": "Use the real developer tool names in the hooks guide [#12260](https://github.com/aaif-goose/goose/pull/12260)",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "extensions.hooks"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.036",
+        "kind": "fixed",
+        "summary": "Fix stale declarative provider file paths in providers.md [#12192](https://github.com/aaif-goose/goose/pull/12192)",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.037",
+        "kind": "changed",
+        "summary": "Clarify public crate APIs [#12186](https://github.com/aaif-goose/goose/pull/12186)",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.goose.1.52.0.038",
+        "kind": "removed",
+        "summary": "Remove Rube extension documentation (service discontinued) [#12116](https://github.com/aaif-goose/goose/pull/12116)",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 394774549,
+      "tag_commitish": "main"
+    }
+  },
+  {
     "id": "rel.goose.1.51.0",
     "harness_id": "goose",
     "version": "1.51.0",
