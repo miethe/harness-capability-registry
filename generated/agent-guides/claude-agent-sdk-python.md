@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: claude-agent-sdk-python
-generated_at: 2026-09-24T11:47:50.490238Z
+generated_at: 2026-09-24T21:33:06.153008Z
 artifact_kind: harness_capability_guide
 ---
 
