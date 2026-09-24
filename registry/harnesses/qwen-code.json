@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "secondary",
-    "current_version": "0.24.5-preview.0",
-    "version_as_of": "2026-09-22",
-    "last_verified_at": "2026-09-23T04:46:36.567263Z",
+    "current_version": "0.24.5",
+    "version_as_of": "2026-09-24",
+    "last_verified_at": "2026-09-24T21:32:48.407064Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/QwenLM/qwen-code",
@@ -414,6 +414,5442 @@
     }
   ],
   "releases": [
+    {
+      "id": "rel.qwen-code.sdk-typescript-v0.1.15",
+      "harness_id": "qwen-code",
+      "version": "sdk-typescript-v0.1.15",
+      "channel": "stable",
+      "published_at": "2026-09-24T18:09:07Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-24T21:32:27.598373Z",
+      "source_id": "src.qwen.releases",
+      "source_url": "https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.15",
+      "raw_snapshot_path": null,
+      "raw_sha256": "2de6cabda67b60e682830b9f779829e095526c0ff3f08fcbb46470221f3b1b0c",
+      "title": "SDK TypeScript Release v0.1.15",
+      "notes_excerpt": "Managed memory availability now respects the `memory.enableManagedAutoMemory` setting (#6941). Hosts that disable managed auto memory no longer see remember/dream requests admitted or managed-memory instructions in the system prompt; local patches can be removed.",
+      "change_count": 103,
+      "flags": {
+        "security": true,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.001",
+          "kind": "changed",
+          "summary": "Managed memory availability now respects the `memory.enableManagedAutoMemory` setting (#6941). Hosts that disable managed auto memory no longer see remember/dream requests admitted or managed-memory instructions in the system prompt; local patches can be removed.",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "context.persistent_memory"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.002",
+          "kind": "changed",
+          "summary": "Size-triggered microcompaction now clears old tool results toward a low watermark (#8464), so it no longer rewrites another part of the conversation prefix on every subsequent turn. Provider prompt-cache reuse is preserved across long tool-heavy sessions, reducing cached-input cost.",
+          "category": "session_state",
+          "surfaces": [
+            "ide",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci",
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.003",
+          "kind": "changed",
+          "summary": "chore: bump version to 0.8.2 by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1632",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.004",
+          "kind": "changed",
+          "summary": "chore(release): sdk-typescript v0.1.4 by @qwen-code-ci-bot in https://github.com/QwenLM/qwen-code/pull/1633",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk",
+            "ci"
+          ],
+          "actors": [
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.005",
+          "kind": "fixed",
+          "summary": "Fix: Use resolved authType to initialize ACP agent by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1622",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.006",
+          "kind": "added",
+          "summary": "Add parentToolCallId and subagentType for ACP subagent tracking by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1620",
+          "category": "orchestration",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.007",
+          "kind": "changed",
+          "summary": "feat(core): improve error message when skill is invoked as tool by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1623",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.008",
+          "kind": "fixed",
+          "summary": "fix(acp): stream subagent text + reasoning chunks by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1626",
+          "category": "orchestration",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.009",
+          "kind": "fixed",
+          "summary": "fix: ensure output-language.md is created before config initialization by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1637",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.010",
+          "kind": "fixed",
+          "summary": "fix(security): prevent command injection via newline bypass in shell command validation by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1638",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.011",
+          "kind": "fixed",
+          "summary": "Fix Claude plugin resource collection to respect marketplace config by @LaZzyMan in https://github.com/QwenLM/qwen-code/pull/1639",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.012",
+          "kind": "changed",
+          "summary": "feat(core): improve retry logic for better 429/5xx error handling by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1628",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.013",
+          "kind": "changed",
+          "summary": "feat: add extra_body support for OpenAI-compatible providers by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1654",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.014",
+          "kind": "changed",
+          "summary": "Support model selection through ACP in vscode ide companion by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/1582",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.015",
+          "kind": "changed",
+          "summary": "feat: add multi-modal input support (image, PDF, audio) across all content generators by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1564",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.016",
+          "kind": "added",
+          "summary": "Add Zed extension for Qwen Code agent server by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1630",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.017",
+          "kind": "changed",
+          "summary": "feat: clarify output formats for non-interactive mode by @LaZzyMan in https://github.com/QwenLM/qwen-code/pull/1579",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "terminal_headless"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "execution.headless"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.018",
+          "kind": "changed",
+          "summary": "feat: add concurrent runner for batch CLI execution by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1640",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.self_hosted"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.019",
+          "kind": "added",
+          "summary": "Add experimental LSP support for code intelligence by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/1401",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.020",
+          "kind": "fixed",
+          "summary": "Fix: React/React-DOM version inconsistency in package.json and lockfile by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1659",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.021",
+          "kind": "changed",
+          "summary": "feat(webui): implement unified UI architecture with shared component library by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/1543",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.022",
+          "kind": "changed",
+          "summary": "chore: bump version to 0.9.0 by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1661",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.023",
+          "kind": "added",
+          "summary": "Add contextWindowSize Configuration Support by @xuewenjie123 in https://github.com/QwenLM/qwen-code/pull/1539",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.024",
+          "kind": "fixed",
+          "summary": "fix(core): avoid passing undici agent to Anthropic SDK by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1663",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk",
+            "ci"
+          ],
+          "actors": [
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.025",
+          "kind": "fixed",
+          "summary": "fix(vscode-ide-companion): fix race conditions and improve @ file completion search by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/1676",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.026",
+          "kind": "fixed",
+          "summary": "fix(core): properly cleanup MCP server subprocesses on exit by @tt-a1i in https://github.com/QwenLM/qwen-code/pull/1285",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.027",
+          "kind": "changed",
+          "summary": "test(cli): stabilize AuthDialog ESC assertion by @liqiongyu in https://github.com/QwenLM/qwen-code/pull/1535",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.028",
+          "kind": "fixed",
+          "summary": "fix(cli): expand MCP @server: resource references by @liqiongyu in https://github.com/QwenLM/qwen-code/pull/1531",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.029",
+          "kind": "fixed",
+          "summary": "fix(core): auto-enable WebFetch and WebSearch tools in Plan mode by @afarber in https://github.com/QwenLM/qwen-code/pull/1686",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.030",
+          "kind": "changed",
+          "summary": "feat(core): add symlink support for skill manager by @DragonnZhang in https://github.com/QwenLM/qwen-code/pull/1690",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.031",
+          "kind": "fixed",
+          "summary": "fix: normalize skill file content in extensions to handle BOM and CRLF by @LaZzyMan in https://github.com/QwenLM/qwen-code/pull/1667",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.skills",
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.032",
+          "kind": "fixed",
+          "summary": "fix(ci): honor manual preview version input by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1665",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.033",
+          "kind": "changed",
+          "summary": "build: Improve build efficiency and add dev mode by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1681",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.034",
+          "kind": "fixed",
+          "summary": "fix(core): handle heredoc in command substitution guard by @liqiongyu in https://github.com/QwenLM/qwen-code/pull/1701",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.035",
+          "kind": "changed",
+          "summary": "feat: Preserve UTF-8 BOM when editing files by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1680",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.036",
+          "kind": "fixed",
+          "summary": "fix(core): Preserve trailing whitespace in newString during edits by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1688",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.037",
+          "kind": "fixed",
+          "summary": "fix: enable Shift+Tab shortcut in Windows PowerShell by @LaZzyMan in https://github.com/QwenLM/qwen-code/pull/1607",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.038",
+          "kind": "fixed",
+          "summary": "fix(core): enforce tool restrictions in subagents by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1691",
+          "category": "orchestration",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.039",
+          "kind": "changed",
+          "summary": "[AnthropicContentGenerator] optimize: ADD cache_control for system and last user text message by @Weaxs in https://github.com/QwenLM/qwen-code/pull/1613",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.040",
+          "kind": "changed",
+          "summary": "refactor(i18n): translate Agent as 智能体 by @itchina110 in https://github.com/QwenLM/qwen-code/pull/1718",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.041",
+          "kind": "fixed",
+          "summary": "fix(docker): fix build error and enable manual version builds by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1722",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.042",
+          "kind": "changed",
+          "summary": "chore(release): Bump version to 0.10.0 by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1720",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.043",
+          "kind": "fixed",
+          "summary": "fix(settings): rename negative settings to positive naming (disable* -> enable*) by @afarber in https://github.com/QwenLM/qwen-code/pull/1330",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.044",
+          "kind": "changed",
+          "summary": "ci(sdk-release): use stable CLI tags for SDK releases by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1710",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk",
+            "ci"
+          ],
+          "actors": [
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.045",
+          "kind": "changed",
+          "summary": "feat(query): add support for resuming sessions with session ID by @DragonnZhang in https://github.com/QwenLM/qwen-code/pull/1714",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.046",
+          "kind": "added",
+          "summary": "add hint for installing external source extensions by @LaZzyMan in https://github.com/QwenLM/qwen-code/pull/1694",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.047",
+          "kind": "changed",
+          "summary": "Feat/javasdk alpha 202501 by @gwinthis in https://github.com/QwenLM/qwen-code/pull/1717",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.048",
+          "kind": "fixed",
+          "summary": "Fix: clarify is_background parameter is required in docs and examples by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1716",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.049",
+          "kind": "changed",
+          "summary": "feat: Remove Smart Edit tool and ClearcutLogger by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1684",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.050",
+          "kind": "added",
+          "summary": "Add export command for session history with markdown and HTML formats by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1515",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.051",
+          "kind": "added",
+          "summary": "Add FORK_MODE support to ProcessTransport for Electron IPC integration by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1719",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.052",
+          "kind": "changed",
+          "summary": "feat(sdk): add resume, continue options and extend authType support by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1726",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.053",
+          "kind": "fixed",
+          "summary": "Fix ACP model selection to handle all configured authentication types by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1555",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.054",
+          "kind": "changed",
+          "summary": "refactor: remove read_many_files tool, add readManyFiles utility for user @-commands by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1673",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.055",
+          "kind": "fixed",
+          "summary": "fix(vscode-ide-companion): Fix UI display issues with server-side timestamp and file path extraction by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/1682",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.056",
+          "kind": "changed",
+          "summary": "chore: Reduce Qwen OAuth free quota from 2000 to 1000 requests per day by @pomelo-nwu in https://github.com/QwenLM/qwen-code/pull/1730",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.057",
+          "kind": "fixed",
+          "summary": "fix(ui): resolve auth not updating in top-right corner by @DennisYu07 in https://github.com/QwenLM/qwen-code/pull/1670",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.058",
+          "kind": "changed",
+          "summary": "feat: debug mode output refactor — route console calls to logfile-first debugLogger by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1610",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.059",
+          "kind": "fixed",
+          "summary": "fix: use openai model instead of index=0 in acp integration test by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1733",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.060",
+          "kind": "fixed",
+          "summary": "fix(cli): route sandbox diagnostic messages to stderr by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1735",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.061",
+          "kind": "added",
+          "summary": "Add CLI source selection for SDK releases and fix subagent output handler by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1732",
+          "category": "orchestration",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.062",
+          "kind": "changed",
+          "summary": "feat(paste): add large paste placeholder and fix enter-submit on macOS by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1713",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.063",
+          "kind": "fixed",
+          "summary": "fix(cli): prevent Tab key from cycling approval mode when autocomplete is active on Windows by @LaZzyMan in https://github.com/QwenLM/qwen-code/pull/1736",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.064",
+          "kind": "changed",
+          "summary": "feat: promote Agent Skills from experimental to stable by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1738",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.065",
+          "kind": "changed",
+          "summary": "feat: add source information tracking in telemetry logs by @DennisYu07 in https://github.com/QwenLM/qwen-code/pull/1653",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.066",
+          "kind": "changed",
+          "summary": "docs: Update Linux/Mac installation commands in README by @DennisYu07 in https://github.com/QwenLM/qwen-code/pull/1739",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.067",
+          "kind": "changed",
+          "summary": "feat(settings): add settings.env field for environment variable configuration by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1751",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.068",
+          "kind": "fixed",
+          "summary": "fix(mcp): improve MCP server management and authentication by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1752",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.069",
+          "kind": "fixed",
+          "summary": "fix(core): properly handle MCP multi-part tool results in OpenAI converter by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1755",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.070",
+          "kind": "fixed",
+          "summary": "Fix CLI argument parsing for /dist/cli/cli.js entry point by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1758",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.071",
+          "kind": "fixed",
+          "summary": "fix(integration-tests): correct MCP tool name in simple-mcp-server test by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1763",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.072",
+          "kind": "fixed",
+          "summary": "Fix SDK MCP integration tests by updating hardcoded tool names to use constants by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1769",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.073",
+          "kind": "fixed",
+          "summary": "Fix: Warning in installation shell script by @DennisYu07 in https://github.com/QwenLM/qwen-code/pull/1771",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.074",
+          "kind": "fixed",
+          "summary": "fix(ui): resolve model not updating in top-right corner by @DennisYu07 in https://github.com/QwenLM/qwen-code/pull/1662",
+          "category": "models_providers",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.075",
+          "kind": "fixed",
+          "summary": "fix(cli): use PowerShell Get-Command for Windows sandbox detection by @afarber in https://github.com/QwenLM/qwen-code/pull/1604",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.076",
+          "kind": "fixed",
+          "summary": "fix: prioritize local path detection in extension installation by @LaZzyMan in https://github.com/QwenLM/qwen-code/pull/1770",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.077",
+          "kind": "fixed",
+          "summary": "fix(auth-model-login-ui): prevent Enter key from triggering empty message submission by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/1773",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.078",
+          "kind": "changed",
+          "summary": "feat: add MCP tool progress update support in TUI and SDK mode by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/1756",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent",
+            "external_orchestrator"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.079",
+          "kind": "changed",
+          "summary": "feat: add Coding Plan authentication mode with unified AuthDialog by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1788",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.080",
+          "kind": "changed",
+          "summary": "feat(coding-plan): implement Coding Plan configuration management and update prompts by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1805",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.081",
+          "kind": "changed",
+          "summary": "docs: update authentication documentation with Coding Plan setup guide by @joeytoday in https://github.com/QwenLM/qwen-code/pull/1800",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.082",
+          "kind": "changed",
+          "summary": "chore: bump version to 0.10.1 by @qwen-code-ci-bot in https://github.com/QwenLM/qwen-code/pull/1808",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.083",
+          "kind": "fixed",
+          "summary": "Fix: Fix node installation permission issue in shell script by @DennisYu07 in https://github.com/QwenLM/qwen-code/pull/1819",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.084",
+          "kind": "fixed",
+          "summary": "fix: prevent AbortSignal listener memory leak by @LaZzyMan in https://github.com/QwenLM/qwen-code/pull/1811",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "context.persistent_memory"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.085",
+          "kind": "changed",
+          "summary": "feat: add TPM throttling error handling with 1-minute retry delay by @wenshao in https://github.com/QwenLM/qwen-code/pull/1791",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.086",
+          "kind": "fixed",
+          "summary": "fix: correct showLineNumbers default value to true by @LaZzyMan in https://github.com/QwenLM/qwen-code/pull/1813",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.087",
+          "kind": "fixed",
+          "summary": "fix: support JSON Schema draft-2020-12 for MCP tools (fixes #1818) by @LaZzyMan in https://github.com/QwenLM/qwen-code/pull/1821",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "execution.structured_output",
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.088",
+          "kind": "added",
+          "summary": "Add dev launch config and preserve existing NODE_OPTIONS by @DragonnZhang in https://github.com/QwenLM/qwen-code/pull/1784",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.089",
+          "kind": "fixed",
+          "summary": "Fix abort listener accumulation in subagent while loop by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1825",
+          "category": "orchestration",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.090",
+          "kind": "changed",
+          "summary": "refactor(cli): unify Escape key handling in AppContainer by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1824",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.091",
+          "kind": "fixed",
+          "summary": "Fix auth UI to use semantic theme colors and correct selection sync by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1823",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.092",
+          "kind": "added",
+          "summary": "Add --session-id support for CLI and SDK by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1822",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.093",
+          "kind": "changed",
+          "summary": "chore: bump version to 0.10.2 by @qwen-code-ci-bot in https://github.com/QwenLM/qwen-code/pull/1844",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.094",
+          "kind": "changed",
+          "summary": "docs: improve settings.json configuration guide with quick setup examples by @pomelo-nwu in https://github.com/QwenLM/qwen-code/pull/1850",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.095",
+          "kind": "changed",
+          "summary": "feat: update readme by @pomelo-nwu in https://github.com/QwenLM/qwen-code/pull/1853",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.096",
+          "kind": "changed",
+          "summary": "docs: add news banner about Qwen3.5-Plus launch by @pomelo-nwu in https://github.com/QwenLM/qwen-code/pull/1854",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.097",
+          "kind": "fixed",
+          "summary": "Fix sandbox user permission in integration tests by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1843",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "security.sandbox",
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.098",
+          "kind": "added",
+          "summary": "Add Coding Plan Global/Intl region support by @Mingholy in https://github.com/QwenLM/qwen-code/pull/1860",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.099",
+          "kind": "changed",
+          "summary": "chore: bump version to 0.10.3 by @qwen-code-ci-bot in https://github.com/QwenLM/qwen-code/pull/1863",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.100",
+          "kind": "changed",
+          "summary": "chore: bump version to 0.10.4 by @qwen-code-ci-bot in https://github.com/QwenLM/qwen-code/pull/1864",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.101",
+          "kind": "changed",
+          "summary": "@itchina110 made their first contribution in https://github.com/QwenLM/qwen-code/pull/1718",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.102",
+          "kind": "changed",
+          "summary": "@joeytoday made their first contribution in https://github.com/QwenLM/qwen-code/pull/1800",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.sdk-typescript-v0.1.15.103",
+          "kind": "changed",
+          "summary": "@wenshao made their first contribution in https://github.com/QwenLM/qwen-code/pull/1791",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 395942329,
+        "tag_commitish": "release/sdk-typescript/v0.1.15"
+      }
+    },
+    {
+      "id": "rel.qwen-code.desktop-v0.24.5",
+      "harness_id": "qwen-code",
+      "version": "desktop-v0.24.5",
+      "channel": "stable",
+      "published_at": "2026-09-24T17:41:47Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-24T21:32:27.602142Z",
+      "source_id": "src.qwen.releases",
+      "source_url": "https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.24.5",
+      "raw_snapshot_path": null,
+      "raw_sha256": "4f918c1fb89f19d21b73e57382c9778b5b9608ec300b5efd3a039b8e5557dd84",
+      "title": "Qwen Code Desktop v0.24.5",
+      "notes_excerpt": "fix(serve): preserve session creation failure diagnostics by @callmeYe in https://github.com/QwenLM/qwen-code/pull/12331",
+      "change_count": 56,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.001",
+          "kind": "fixed",
+          "summary": "fix(serve): preserve session creation failure diagnostics by @callmeYe in https://github.com/QwenLM/qwen-code/pull/12331",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.002",
+          "kind": "changed",
+          "summary": "feat(sdk-java): Add managed runtime attestation client by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12522",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.003",
+          "kind": "changed",
+          "summary": "feat(web-shell): select a time range on the trajectory overview to narrow the table by @qqqys in https://github.com/QwenLM/qwen-code/pull/12543",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.004",
+          "kind": "changed",
+          "summary": "feat(serve,web-shell): set the Qwen Live endpoint and model from settings by @qqqys in https://github.com/QwenLM/qwen-code/pull/12529",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.005",
+          "kind": "changed",
+          "summary": "feat(channels): separate private and group access policies by @qqqys in https://github.com/QwenLM/qwen-code/pull/12547",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.006",
+          "kind": "fixed",
+          "summary": "fix(core): bound oversized images returned by MCP tools by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/10835",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.007",
+          "kind": "changed",
+          "summary": "feat(serve): run Qwen Live through the Web Shell, native macOS Host opt-in by @qqqys in https://github.com/QwenLM/qwen-code/pull/12534",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.008",
+          "kind": "changed",
+          "summary": "feat(web-shell): search within the current conversation by @samuelhsin in https://github.com/QwenLM/qwen-code/pull/12234",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.009",
+          "kind": "changed",
+          "summary": "perf(serve): use catalog for workspace extension activation projection by @callmeYe in https://github.com/QwenLM/qwen-code/pull/12541",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.010",
+          "kind": "fixed",
+          "summary": "fix(core): decide MCP media handling from the bytes, not the label by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12567",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.011",
+          "kind": "fixed",
+          "summary": "fix(core): read a backslash inside single quotes as literal when splitting by @TianYuan1024 in https://github.com/QwenLM/qwen-code/pull/11765",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.012",
+          "kind": "changed",
+          "summary": "perf(web-shell): derive the session workflow projection once and share it across surfaces (#10865) by @now-ing in https://github.com/QwenLM/qwen-code/pull/11237",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.013",
+          "kind": "fixed",
+          "summary": "fix(skills): reload changed content after refresh by @jkxiao in https://github.com/QwenLM/qwen-code/pull/12182",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.014",
+          "kind": "changed",
+          "summary": "feat(web-shell): add host controls for model management by @Lilian0122 in https://github.com/QwenLM/qwen-code/pull/12345",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.015",
+          "kind": "fixed",
+          "summary": "fix(cli): keep CoreToolScheduler stable across callback identity changes by @kabishou11 in https://github.com/QwenLM/qwen-code/pull/12069",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "automation.schedules"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.016",
+          "kind": "fixed",
+          "summary": "fix(web-shell): make mobile access opt-in and simplify split composer by @ytahdn in https://github.com/QwenLM/qwen-code/pull/12537",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "web",
+            "mobile"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.017",
+          "kind": "changed",
+          "summary": "test(cli): yield the event loop between base-tree tests by @wenshao in https://github.com/QwenLM/qwen-code/pull/12573",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.018",
+          "kind": "changed",
+          "summary": "feat(browser-use): make the bundled runtime self-contained by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/12548",
+          "category": "research_tools",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "tools.browser_computer"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.019",
+          "kind": "fixed",
+          "summary": "fix(cli): keep 64-bit file ids exact in the two identity comparators by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12568",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.020",
+          "kind": "fixed",
+          "summary": "fix(cli): keep plan-identity guards exact for 64-bit file ids by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12577",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.021",
+          "kind": "fixed",
+          "summary": "fix(java): Deliver broker cancellation after a dispatch lease lapses by @wenshao in https://github.com/QwenLM/qwen-code/pull/12583",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.022",
+          "kind": "changed",
+          "summary": "feat(web-shell): zoom and pan the trajectory overview by @qqqys in https://github.com/QwenLM/qwen-code/pull/12557",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.023",
+          "kind": "fixed",
+          "summary": "fix(core): label each reattached image so older ones are not read as current by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12549",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.024",
+          "kind": "changed",
+          "summary": "feat(review): audit the applied --fix for unpinned new assumptions by @wenshao in https://github.com/QwenLM/qwen-code/pull/10169",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.025",
+          "kind": "changed",
+          "summary": "feat(channels): route messages to prefix-specific sessions by @qqqys in https://github.com/QwenLM/qwen-code/pull/12595",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.026",
+          "kind": "fixed",
+          "summary": "fix(java): Fence lapsed tool executions by the repository clock by @wenshao in https://github.com/QwenLM/qwen-code/pull/12608",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.027",
+          "kind": "changed",
+          "summary": "feat(web-shell): show the trajectory over real time, idle included by @qqqys in https://github.com/QwenLM/qwen-code/pull/12607",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.028",
+          "kind": "fixed",
+          "summary": "fix(review): correct what the fix audit tells its reader by @wenshao in https://github.com/QwenLM/qwen-code/pull/12610",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.029",
+          "kind": "fixed",
+          "summary": "fix(serve): report serve.channels restore failures in channel status by @qqqys in https://github.com/QwenLM/qwen-code/pull/12542",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.030",
+          "kind": "changed",
+          "summary": "test(review): drive the fix-audit build through the yargs command by @wenshao in https://github.com/QwenLM/qwen-code/pull/12614",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.031",
+          "kind": "changed",
+          "summary": "feat(sdk-java): Adopt a Managed Runtime only after attestation by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12552",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.032",
+          "kind": "changed",
+          "summary": "feat(web-shell): inspect session tool calls by prompt by @ytahdn in https://github.com/QwenLM/qwen-code/pull/12466",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.033",
+          "kind": "changed",
+          "summary": "feat(web-shell): support selective host artifact integration by @dreamWB in https://github.com/QwenLM/qwen-code/pull/12588",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.034",
+          "kind": "fixed",
+          "summary": "fix(web-shell): stop rendering empty args and input JSON in tool cards by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12601",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.035",
+          "kind": "changed",
+          "summary": "feat(live): stream shared screens into browser voice calls by @qqqys in https://github.com/QwenLM/qwen-code/pull/12623",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "tools.browser_computer",
+            "interfaces.voice"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.036",
+          "kind": "changed",
+          "summary": "docs(extensions): cover workflow reload and add Chinese design by @BlackishGreen33 in https://github.com/QwenLM/qwen-code/pull/12625",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.037",
+          "kind": "fixed",
+          "summary": "fix(core): cover every commit spelling and the promoted path in session-commit registration by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12556",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.038",
+          "kind": "changed",
+          "summary": "feat(desktop): add QWEN_DESKTOP_DISABLE_UPDATES opt-out for the startup update check by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12587",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "desktop"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.039",
+          "kind": "changed",
+          "summary": "perf(cli): stop one-shot runs from booting the CLI twice by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12602",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.040",
+          "kind": "changed",
+          "summary": "perf(cli): skip interactive-only probes on headless startup by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12603",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "terminal_headless"
+          ],
+          "actors": [
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "execution.headless"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.041",
+          "kind": "changed",
+          "summary": "docs: fix /clear description, .qwen note, and outdated CLI name by @yc2bgr8 in https://github.com/QwenLM/qwen-code/pull/12555",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.042",
+          "kind": "changed",
+          "summary": "docs(conversations-recovery): document non-graceful ACP writer recovery by @dvd233 in https://github.com/QwenLM/qwen-code/pull/12268",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.043",
+          "kind": "changed",
+          "summary": "docs: fix comments and JSDoc that contradict the actual code by @sxh313 in https://github.com/QwenLM/qwen-code/pull/11950",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.044",
+          "kind": "fixed",
+          "summary": "fix(cli): honor the usage-statistics opt-out under --bare by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12604",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.045",
+          "kind": "fixed",
+          "summary": "fix(ci): trust the job workspace as a git safe.directory before checkout by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12648",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.046",
+          "kind": "changed",
+          "summary": "test(review): add hard-link witness test to save-artifact overwrite guard (#12578) by @holny in https://github.com/QwenLM/qwen-code/pull/12581",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.047",
+          "kind": "changed",
+          "summary": "test(java): make the local-process provisioner tests deterministic by @wenshao in https://github.com/QwenLM/qwen-code/pull/12639",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.048",
+          "kind": "changed",
+          "summary": "feat(review): record per-file content verdicts that survive a rebase by @wenshao in https://github.com/QwenLM/qwen-code/pull/9661",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.049",
+          "kind": "changed",
+          "summary": "feat(web-shell): manage the repository's worktrees from the git dialog by @wenshao in https://github.com/QwenLM/qwen-code/pull/12154",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.050",
+          "kind": "changed",
+          "summary": "docs(tools): add Firecrawl to the web search MCP services by @JuampiHernandez in https://github.com/QwenLM/qwen-code/pull/12646",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "tools.web_research"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.051",
+          "kind": "changed",
+          "summary": "@jkxiao made their first contribution in https://github.com/QwenLM/qwen-code/pull/12182",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.052",
+          "kind": "changed",
+          "summary": "@BlackishGreen33 made their first contribution in https://github.com/QwenLM/qwen-code/pull/12625",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.053",
+          "kind": "changed",
+          "summary": "@yc2bgr8 made their first contribution in https://github.com/QwenLM/qwen-code/pull/12555",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.054",
+          "kind": "changed",
+          "summary": "@sxh313 made their first contribution in https://github.com/QwenLM/qwen-code/pull/11950",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.055",
+          "kind": "changed",
+          "summary": "@holny made their first contribution in https://github.com/QwenLM/qwen-code/pull/12581",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.desktop-v0.24.5.056",
+          "kind": "changed",
+          "summary": "@JuampiHernandez made their first contribution in https://github.com/QwenLM/qwen-code/pull/12646",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 395923190,
+        "tag_commitish": "59c8e93c0e9b34db77beb1b087e4076916532513"
+      }
+    },
+    {
+      "id": "rel.qwen-code.0.24.5",
+      "harness_id": "qwen-code",
+      "version": "0.24.5",
+      "channel": "stable",
+      "published_at": "2026-09-24T16:59:46Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-24T21:32:27.590669Z",
+      "source_id": "src.qwen.releases",
+      "source_url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.24.5",
+      "raw_snapshot_path": null,
+      "raw_sha256": "89426f77c6631f884401cde67c3f392355fd3cc5f5788e8f710cc031660e2772",
+      "title": "Release v0.24.5",
+      "notes_excerpt": "feat(channels): decouple group-member access from senderPolicy ([#12475](https://github.com/QwenLM/qwen-code/pull/12475)) by @qwen-code-dev-bot",
+      "change_count": 94,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.qwen-code.0.24.5.001",
+          "kind": "changed",
+          "summary": "feat(channels): decouple group-member access from senderPolicy ([#12475](https://github.com/QwenLM/qwen-code/pull/12475)) by @qwen-code-dev-bot",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "administrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.002",
+          "kind": "changed",
+          "summary": "feat(cli): Add managed runtime attestation worker ([#12506](https://github.com/QwenLM/qwen-code/pull/12506)) by @doudouOUC",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.003",
+          "kind": "changed",
+          "summary": "feat(serve): restore serve.channels once for a workspace registered after boot ([#12396](https://github.com/QwenLM/qwen-code/pull/12396)) by @qqqys",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.004",
+          "kind": "changed",
+          "summary": "feat(core): record when each tool call started ([#12517](https://github.com/QwenLM/qwen-code/pull/12517)) by @qqqys",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.005",
+          "kind": "changed",
+          "summary": "feat(cua): unify App workflows and fix no-Metal capture for SDK 0.20.11 ([#12386](https://github.com/QwenLM/qwen-code/pull/12386)) by @LaZzyMan",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.006",
+          "kind": "changed",
+          "summary": "feat(web-shell): trajectory overview strip showing where a run spent its time ([#12524](https://github.com/QwenLM/qwen-code/pull/12524)) by @qqqys",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.007",
+          "kind": "changed",
+          "summary": "feat(web-shell): load the whole trajectory window before drawing it ([#12533](https://github.com/QwenLM/qwen-code/pull/12533)) by @qqqys",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.008",
+          "kind": "changed",
+          "summary": "feat(web-shell): add shared URL navigation for pages and sessions ([#12499](https://github.com/QwenLM/qwen-code/pull/12499)) by @Lilian0122",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.009",
+          "kind": "changed",
+          "summary": "feat(web-shell): edit group senders and session operators in the channel editor ([#12535](https://github.com/QwenLM/qwen-code/pull/12535)) by @qqqys",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.010",
+          "kind": "changed",
+          "summary": "feat(sdk-java): Add managed runtime attestation client ([#12522](https://github.com/QwenLM/qwen-code/pull/12522)) by @doudouOUC",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.011",
+          "kind": "changed",
+          "summary": "feat(web-shell): select a time range on the trajectory overview to narrow the table ([#12543](https://github.com/QwenLM/qwen-code/pull/12543)) by @qqqys",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.012",
+          "kind": "changed",
+          "summary": "feat(serve,web-shell): set the Qwen Live endpoint and model from settings ([#12529](https://github.com/QwenLM/qwen-code/pull/12529)) by @qqqys",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.013",
+          "kind": "changed",
+          "summary": "feat(channels): separate private and group access policies ([#12547](https://github.com/QwenLM/qwen-code/pull/12547)) by @qqqys",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.014",
+          "kind": "changed",
+          "summary": "feat(serve): run Qwen Live through the Web Shell, native macOS Host opt-in ([#12534](https://github.com/QwenLM/qwen-code/pull/12534)) by @qqqys",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.015",
+          "kind": "changed",
+          "summary": "feat(web-shell): search within the current conversation ([#12234](https://github.com/QwenLM/qwen-code/pull/12234)) by @samuelhsin",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.016",
+          "kind": "changed",
+          "summary": "feat(web-shell): add host controls for model management ([#12345](https://github.com/QwenLM/qwen-code/pull/12345)) by @Lilian0122",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.017",
+          "kind": "changed",
+          "summary": "feat(browser-use): make the bundled runtime self-contained ([#12548](https://github.com/QwenLM/qwen-code/pull/12548)) by @tanzhenxin",
+          "category": "research_tools",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "tools.browser_computer"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.018",
+          "kind": "changed",
+          "summary": "feat(web-shell): zoom and pan the trajectory overview ([#12557](https://github.com/QwenLM/qwen-code/pull/12557)) by @qqqys",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.019",
+          "kind": "changed",
+          "summary": "feat(review): audit the applied --fix for unpinned new assumptions ([#10169](https://github.com/QwenLM/qwen-code/pull/10169)) by @wenshao",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.020",
+          "kind": "changed",
+          "summary": "feat(channels): route messages to prefix-specific sessions ([#12595](https://github.com/QwenLM/qwen-code/pull/12595)) by @qqqys",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.021",
+          "kind": "changed",
+          "summary": "feat(web-shell): show the trajectory over real time, idle included ([#12607](https://github.com/QwenLM/qwen-code/pull/12607)) by @qqqys",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.022",
+          "kind": "changed",
+          "summary": "feat(sdk-java): Adopt a Managed Runtime only after attestation ([#12552](https://github.com/QwenLM/qwen-code/pull/12552)) by @doudouOUC",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive",
+            "sdk"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.023",
+          "kind": "changed",
+          "summary": "feat(web-shell): inspect session tool calls by prompt ([#12466](https://github.com/QwenLM/qwen-code/pull/12466)) by @ytahdn",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.024",
+          "kind": "changed",
+          "summary": "feat(web-shell): support selective host artifact integration ([#12588](https://github.com/QwenLM/qwen-code/pull/12588)) by @dreamWB",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.025",
+          "kind": "changed",
+          "summary": "feat(live): stream shared screens into browser voice calls ([#12623](https://github.com/QwenLM/qwen-code/pull/12623)) by @qqqys",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "tools.browser_computer",
+            "interfaces.voice"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.026",
+          "kind": "changed",
+          "summary": "feat(desktop): add QWEN_DESKTOP_DISABLE_UPDATES opt-out for the startup update check ([#12587](https://github.com/QwenLM/qwen-code/pull/12587)) by @yiliang114",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "desktop"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.027",
+          "kind": "changed",
+          "summary": "feat(review): record per-file content verdicts that survive a rebase ([#9661](https://github.com/QwenLM/qwen-code/pull/9661)) by @wenshao",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.028",
+          "kind": "changed",
+          "summary": "feat(web-shell): manage the repository's worktrees from the git dialog ([#12154](https://github.com/QwenLM/qwen-code/pull/12154)) by @wenshao",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.029",
+          "kind": "fixed",
+          "summary": "fix(vscode-ide-companion): regenerate NOTICES.txt after release dependency reorder (#12479) ([#12483](https://github.com/QwenLM/qwen-code/pull/12483)) by @qwen-code-dev-bot",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.030",
+          "kind": "fixed",
+          "summary": "fix(java): Fence stale tool dispatch owners ([#12477](https://github.com/QwenLM/qwen-code/pull/12477)) by @doudouOUC",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.031",
+          "kind": "fixed",
+          "summary": "fix(java): Make JDBC lease clocks timezone and storage safe ([#12478](https://github.com/QwenLM/qwen-code/pull/12478)) by @doudouOUC",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.032",
+          "kind": "fixed",
+          "summary": "fix(cli): hide external editor option when the configured editor is unavailable ([#12498](https://github.com/QwenLM/qwen-code/pull/12498)) by @yiliang114",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.033",
+          "kind": "fixed",
+          "summary": "fix(review): Move trusted state outside workspaces ([#12491](https://github.com/QwenLM/qwen-code/pull/12491)) by @doudouOUC",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.034",
+          "kind": "fixed",
+          "summary": "fix(cli): report clipboard unavailability on Linux instead of failing silently ([#12489](https://github.com/QwenLM/qwen-code/pull/12489)) by @yiliang114",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.035",
+          "kind": "fixed",
+          "summary": "fix(release): keep manifest layout when bumping versions ([#12487](https://github.com/QwenLM/qwen-code/pull/12487)) by @yiliang114",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.036",
+          "kind": "fixed",
+          "summary": "fix(chrome-extension): make the store release fail where it can be read ([#12392](https://github.com/QwenLM/qwen-code/pull/12392)) by @tanzhenxin",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins",
+            "tools.browser_computer"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.037",
+          "kind": "fixed",
+          "summary": "fix(cli): report clipboard unavailability when the native module throws ([#12508](https://github.com/QwenLM/qwen-code/pull/12508)) by @yiliang114",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.038",
+          "kind": "fixed",
+          "summary": "fix(web-shell): keep mobile composer controls reachable above a soft keyboard ([#12462](https://github.com/QwenLM/qwen-code/pull/12462)) by @wenshao",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "web",
+            "mobile"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.039",
+          "kind": "fixed",
+          "summary": "fix(web-shell): open an ordinary task from New task in a Live chat ([#12516](https://github.com/QwenLM/qwen-code/pull/12516)) by @qqqys",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.040",
+          "kind": "fixed",
+          "summary": "fix(channels): one operator rule for shared sessions, with an explicit operators list ([#12515](https://github.com/QwenLM/qwen-code/pull/12515)) by @qqqys",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.041",
+          "kind": "fixed",
+          "summary": "fix(core): Simplify system prompts and remove conflicting examples ([#12360](https://github.com/QwenLM/qwen-code/pull/12360)) by @doudouOUC",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.042",
+          "kind": "fixed",
+          "summary": "fix(web-shell): keep New task from a Live chat off the Live context without a trusted primary ([#12519](https://github.com/QwenLM/qwen-code/pull/12519)) by @qqqys",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.043",
+          "kind": "fixed",
+          "summary": "fix(cli): scroll conversation on bare Up/Down in VP mode with empty input ([#12518](https://github.com/QwenLM/qwen-code/pull/12518)) by @yiliang114",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.044",
+          "kind": "fixed",
+          "summary": "fix(vscode-ide-companion): stop sending unregistered client id on message-edit rewind ([#12502](https://github.com/QwenLM/qwen-code/pull/12502)) by @yar3333",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.045",
+          "kind": "fixed",
+          "summary": "fix(dws): keep document threads and todos on the direct-message axis ([#12525](https://github.com/QwenLM/qwen-code/pull/12525)) by @qqqys",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.046",
+          "kind": "fixed",
+          "summary": "fix(serve): never hold a workspace registration on the channel-control lane ([#12527](https://github.com/QwenLM/qwen-code/pull/12527)) by @qqqys",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.047",
+          "kind": "fixed",
+          "summary": "fix(web-shell): settle stale streaming messages when idle ([#12439](https://github.com/QwenLM/qwen-code/pull/12439)) by @callmeYe",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.048",
+          "kind": "fixed",
+          "summary": "fix(core): register session commits so the amend exemption is reachable ([#12463](https://github.com/QwenLM/qwen-code/pull/12463)) by @yiliang114",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.049",
+          "kind": "fixed",
+          "summary": "fix(serve): preserve session creation failure diagnostics ([#12331](https://github.com/QwenLM/qwen-code/pull/12331)) by @callmeYe",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.050",
+          "kind": "fixed",
+          "summary": "fix(core): bound oversized images returned by MCP tools ([#10835](https://github.com/QwenLM/qwen-code/pull/10835)) by @yiliang114",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.051",
+          "kind": "fixed",
+          "summary": "fix(core): decide MCP media handling from the bytes, not the label ([#12567](https://github.com/QwenLM/qwen-code/pull/12567)) by @yiliang114",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.052",
+          "kind": "fixed",
+          "summary": "fix(core): read a backslash inside single quotes as literal when splitting ([#11765](https://github.com/QwenLM/qwen-code/pull/11765)) by @TianYuan1024",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.053",
+          "kind": "fixed",
+          "summary": "fix(skills): reload changed content after refresh ([#12182](https://github.com/QwenLM/qwen-code/pull/12182)) by @jkxiao",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.054",
+          "kind": "fixed",
+          "summary": "fix(cli): keep CoreToolScheduler stable across callback identity changes ([#12069](https://github.com/QwenLM/qwen-code/pull/12069)) by @kabishou11",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "automation.schedules"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.055",
+          "kind": "fixed",
+          "summary": "fix(web-shell): make mobile access opt-in and simplify split composer ([#12537](https://github.com/QwenLM/qwen-code/pull/12537)) by @ytahdn",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "web",
+            "mobile"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.056",
+          "kind": "fixed",
+          "summary": "fix(cli): keep 64-bit file ids exact in the two identity comparators ([#12568](https://github.com/QwenLM/qwen-code/pull/12568)) by @yiliang114",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.057",
+          "kind": "fixed",
+          "summary": "fix(cli): keep plan-identity guards exact for 64-bit file ids ([#12577](https://github.com/QwenLM/qwen-code/pull/12577)) by @yiliang114",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.058",
+          "kind": "fixed",
+          "summary": "fix(java): Deliver broker cancellation after a dispatch lease lapses ([#12583](https://github.com/QwenLM/qwen-code/pull/12583)) by @wenshao",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.059",
+          "kind": "fixed",
+          "summary": "fix(core): label each reattached image so older ones are not read as current ([#12549](https://github.com/QwenLM/qwen-code/pull/12549)) by @yiliang114",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.060",
+          "kind": "fixed",
+          "summary": "fix(java): Fence lapsed tool executions by the repository clock ([#12608](https://github.com/QwenLM/qwen-code/pull/12608)) by @wenshao",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.061",
+          "kind": "fixed",
+          "summary": "fix(review): correct what the fix audit tells its reader ([#12610](https://github.com/QwenLM/qwen-code/pull/12610)) by @wenshao",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.062",
+          "kind": "fixed",
+          "summary": "fix(serve): report serve.channels restore failures in channel status ([#12542](https://github.com/QwenLM/qwen-code/pull/12542)) by @qqqys",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.063",
+          "kind": "fixed",
+          "summary": "fix(web-shell): stop rendering empty args and input JSON in tool cards ([#12601](https://github.com/QwenLM/qwen-code/pull/12601)) by @yiliang114",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.064",
+          "kind": "fixed",
+          "summary": "fix(core): cover every commit spelling and the promoted path in session-commit registration ([#12556](https://github.com/QwenLM/qwen-code/pull/12556)) by @yiliang114",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.065",
+          "kind": "fixed",
+          "summary": "fix(cli): honor the usage-statistics opt-out under --bare ([#12604](https://github.com/QwenLM/qwen-code/pull/12604)) by @yiliang114",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.066",
+          "kind": "fixed",
+          "summary": "fix(ci): trust the job workspace as a git safe.directory before checkout ([#12648](https://github.com/QwenLM/qwen-code/pull/12648)) by @yiliang114",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.067",
+          "kind": "changed",
+          "summary": "perf(core): move the Agent tool's prompt-writing guidance into a bundled skill ([#12323](https://github.com/QwenLM/qwen-code/pull/12323)) by @yiliang114",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.068",
+          "kind": "changed",
+          "summary": "perf(serve): use catalog for workspace extension activation projection ([#12541](https://github.com/QwenLM/qwen-code/pull/12541)) by @callmeYe",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.069",
+          "kind": "changed",
+          "summary": "perf(web-shell): derive the session workflow projection once and share it across surfaces (#10865) ([#11237](https://github.com/QwenLM/qwen-code/pull/11237)) by @now-ing",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.070",
+          "kind": "changed",
+          "summary": "perf(cli): stop one-shot runs from booting the CLI twice ([#12602](https://github.com/QwenLM/qwen-code/pull/12602)) by @yiliang114",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.071",
+          "kind": "changed",
+          "summary": "perf(cli): skip interactive-only probes on headless startup ([#12603](https://github.com/QwenLM/qwen-code/pull/12603)) by @yiliang114",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive",
+            "terminal_headless"
+          ],
+          "actors": [
+            "external_orchestrator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "execution.headless"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.072",
+          "kind": "fixed",
+          "summary": "fix(core,docs): correct what the deferred-tool bridge made stale or untested ([#12355](https://github.com/QwenLM/qwen-code/pull/12355)) by @yiliang114",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.073",
+          "kind": "changed",
+          "summary": "docs(plans): record why CI test time is bound by module import, not scheduling ([#10909](https://github.com/QwenLM/qwen-code/pull/10909)) by @yiliang114",
+          "category": "automation",
+          "surfaces": [
+            "terminal_interactive",
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.074",
+          "kind": "changed",
+          "summary": "docs(verify-pr): add persisted-state, steady-state and skip-coverage rules ([#12456](https://github.com/QwenLM/qwen-code/pull/12456)) by @wenshao",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.075",
+          "kind": "changed",
+          "summary": "docs(browser-use): point users at the Chrome Web Store listing ([#12510](https://github.com/QwenLM/qwen-code/pull/12510)) by @tanzhenxin",
+          "category": "research_tools",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "tools.browser_computer"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.076",
+          "kind": "changed",
+          "summary": "docs(design): add Chinese translation of the memory pressure monitor design ([#12521](https://github.com/QwenLM/qwen-code/pull/12521)) by @yiliang114",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "context.persistent_memory"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.077",
+          "kind": "changed",
+          "summary": "docs(extensions): cover workflow reload and add Chinese design ([#12625](https://github.com/QwenLM/qwen-code/pull/12625)) by @BlackishGreen33",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.078",
+          "kind": "changed",
+          "summary": "docs: fix /clear description, .qwen note, and outdated CLI name ([#12555](https://github.com/QwenLM/qwen-code/pull/12555)) by @yc2bgr8",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.079",
+          "kind": "changed",
+          "summary": "docs(conversations-recovery): document non-graceful ACP writer recovery ([#12268](https://github.com/QwenLM/qwen-code/pull/12268)) by @dvd233",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.080",
+          "kind": "changed",
+          "summary": "docs: fix comments and JSDoc that contradict the actual code ([#11950](https://github.com/QwenLM/qwen-code/pull/11950)) by @sxh313",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.081",
+          "kind": "changed",
+          "summary": "docs(tools): add Firecrawl to the web search MCP services ([#12646](https://github.com/QwenLM/qwen-code/pull/12646)) by @JuampiHernandez",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive",
+            "web"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "tools.web_research"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.082",
+          "kind": "changed",
+          "summary": "chore(vscode-ide-companion): regenerate NOTICES.txt after dependency reorder (#12481) ([#12485](https://github.com/QwenLM/qwen-code/pull/12485)) by @qwen-code-dev-bot",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.083",
+          "kind": "changed",
+          "summary": "refactor(channels): move group senders into groups and resolve them per conversation ([#12520](https://github.com/QwenLM/qwen-code/pull/12520)) by @qqqys",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.084",
+          "kind": "changed",
+          "summary": "test(cli): yield the event loop between base-tree tests ([#12573](https://github.com/QwenLM/qwen-code/pull/12573)) by @wenshao",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.085",
+          "kind": "changed",
+          "summary": "test(review): drive the fix-audit build through the yargs command ([#12614](https://github.com/QwenLM/qwen-code/pull/12614)) by @wenshao",
+          "category": "execution",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.086",
+          "kind": "changed",
+          "summary": "test(review): add hard-link witness test to save-artifact overwrite guard (#12578) ([#12581](https://github.com/QwenLM/qwen-code/pull/12581)) by @holny",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "interfaces.artifacts"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.087",
+          "kind": "changed",
+          "summary": "test(java): make the local-process provisioner tests deterministic ([#12639](https://github.com/QwenLM/qwen-code/pull/12639)) by @wenshao",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.088",
+          "kind": "changed",
+          "summary": "@yar3333 made their first contribution in [#12502](https://github.com/QwenLM/qwen-code/pull/12502)",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.089",
+          "kind": "changed",
+          "summary": "@jkxiao made their first contribution in [#12182](https://github.com/QwenLM/qwen-code/pull/12182)",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.090",
+          "kind": "changed",
+          "summary": "@BlackishGreen33 made their first contribution in [#12625](https://github.com/QwenLM/qwen-code/pull/12625)",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.091",
+          "kind": "changed",
+          "summary": "@yc2bgr8 made their first contribution in [#12555](https://github.com/QwenLM/qwen-code/pull/12555)",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.092",
+          "kind": "changed",
+          "summary": "@sxh313 made their first contribution in [#11950](https://github.com/QwenLM/qwen-code/pull/11950)",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.093",
+          "kind": "changed",
+          "summary": "@holny made their first contribution in [#12581](https://github.com/QwenLM/qwen-code/pull/12581)",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.qwen-code.0.24.5.094",
+          "kind": "changed",
+          "summary": "@JuampiHernandez made their first contribution in [#12646](https://github.com/QwenLM/qwen-code/pull/12646)",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 395892660,
+        "tag_commitish": "release/v0.24.5"
+      }
+    },
     {
       "id": "rel.qwen-code.0.24.4-nightly.20260923.d0cd622a68",
       "harness_id": "qwen-code",
