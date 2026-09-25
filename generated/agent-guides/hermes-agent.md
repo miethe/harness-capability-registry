@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: hermes-agent
-generated_at: 2026-09-25T04:59:21.671881Z
+generated_at: 2026-09-25T11:52:46.035566Z
 artifact_kind: harness_capability_guide
 ---
 
