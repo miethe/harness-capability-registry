@@ -1,5 +1,3078 @@
 [
   {
+    "id": "rel.openai-codex.rust-v0.158.0-alpha.13",
+    "harness_id": "openai-codex",
+    "version": "rust-v0.158.0-alpha.13",
+    "channel": "alpha",
+    "published_at": "2026-09-25T04:29:26Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-09-25T04:58:14.569616Z",
+    "source_id": "src.codex.releases",
+    "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0-alpha.13",
+    "raw_snapshot_path": null,
+    "raw_sha256": "953554dd26feb3885a1d30301feb422e01487b5ff56503a13c5d7e17da802ad1",
+    "title": "0.158.0-alpha.13",
+    "notes_excerpt": "Release 0.158.0-alpha.13",
+    "change_count": 1,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.openai-codex.rust-v0.158.0-alpha.13.001",
+        "kind": "changed",
+        "summary": "Release 0.158.0-alpha.13",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 396298433,
+      "tag_commitish": "main"
+    }
+  },
+  {
+    "id": "rel.openai-codex.rust-v0.157.0",
+    "harness_id": "openai-codex",
+    "version": "rust-v0.157.0",
+    "channel": "stable",
+    "published_at": "2026-09-25T02:31:06Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-09-25T04:58:14.569474Z",
+    "source_id": "src.codex.releases",
+    "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.157.0",
+    "raw_snapshot_path": null,
+    "raw_sha256": "98b092e0dfc624d32a1cd0d5ac35fd94dd76b5727d6ff5fe839c9cf0d5a186d1",
+    "title": "0.157.0",
+    "notes_excerpt": "Added GPT-6 Sol and Luna, including Amazon Bedrock support and migration prompts for older models. (#47332, #47347)",
+    "change_count": 138,
+    "flags": {
+      "security": true,
+      "breaking": true,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.001",
+        "kind": "added",
+        "summary": "Added GPT-6 Sol and Luna, including Amazon Bedrock support and migration prompts for older models. (#47332, #47347)",
+        "category": "models_providers",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.002",
+        "kind": "changed",
+        "summary": "Enabled fullscreen transcripts by default and added Shift-click to extend text selections. (#47178, #47414)",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.003",
+        "kind": "changed",
+        "summary": "Enabled automatic background-server startup for eligible interactive sessions, with recovery choices when server settings are incompatible. (#47179, #47318)",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.004",
+        "kind": "added",
+        "summary": "Added an `f` shortcut to fork conversations open in another app, preserving drafts and queued prompts. (#47185)",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.005",
+        "kind": "changed",
+        "summary": "Made `/import` available in remote sessions and local background-server sessions. (#47317)",
+        "category": "session_state",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.006",
+        "kind": "improved",
+        "summary": "Improved terminal rendering with Unicode bullets, checkboxes, aligned equations, and optimization notation. (#47191, #47322)",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.007",
+        "kind": "changed",
+        "summary": "Preserved active voice conversations when switching threads. (#47381)",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "interfaces.voice"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.008",
+        "kind": "changed",
+        "summary": "Recovered unsent question answers into the composer when turns end, without disrupting active history searches. (#47422, #47423)",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.009",
+        "kind": "changed",
+        "summary": "Respected tmux mouse settings and restored native scrollback for Terminal.app over SSH in automatic screen mode. (#47399, #47417)",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.010",
+        "kind": "fixed",
+        "summary": "Fixed configured proxy routing for realtime connections and standalone web search, including search redirects. (#47101, #47142, #47204)",
+        "category": "interfaces",
+        "surfaces": [
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "tools.web_research"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.011",
+        "kind": "added",
+        "summary": "Added retries for transient file-upload failures and increased the upload timeout to five minutes. (#47122, #47393)",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.012",
+        "kind": "changed",
+        "summary": "Enforced network restrictions across redirects and ongoing HTTP and WebSocket traffic, including cancellation when policy changes revoke access. (#47389, #47407)",
+        "category": "security_governance",
+        "surfaces": [
+          "web"
+        ],
+        "actors": [
+          "administrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.013",
+        "kind": "changed",
+        "summary": "#47063 Add a partial index for agent message board root posts @jif-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.014",
+        "kind": "changed",
+        "summary": "#47064 Stop redundant message-board reads when limits reach one @jif-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.015",
+        "kind": "changed",
+        "summary": "#47065 Deduplicate deprecation notices in the TUI transcript @etraut-openai",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.016",
+        "kind": "changed",
+        "summary": "#47068 Highlight selected newlines in the transcript view @etraut-openai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.017",
+        "kind": "changed",
+        "summary": "#47073 Wait for thread idle in Guardian context budget tests @jif-oai",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.018",
+        "kind": "changed",
+        "summary": "#47074 Refresh host-supplied cloud skills at turn startup @TAFOYA-OAI",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.skills"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.019",
+        "kind": "changed",
+        "summary": "#47075 Include attributed previews in agent message board notifications @jif-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.020",
+        "kind": "changed",
+        "summary": "#47077 Serialize environment updates and cancel removed pending attachments @sayan-oai",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.021",
+        "kind": "changed",
+        "summary": "#47079 Mask daemon socket paths exposed through ancestor bind mounts @nicksteele-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.022",
+        "kind": "changed",
+        "summary": "#47081 Track cumulative MCP attribution across requests and thread history @peilin-openai",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.023",
+        "kind": "changed",
+        "summary": "#47082 Show the voice toggle in the TUI shortcut overlay @etraut-openai",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "interfaces.voice"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.024",
+        "kind": "changed",
+        "summary": "#47083 Extract per-thread enrichment into a dedicated async helper @aibrahim-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.025",
+        "kind": "changed",
+        "summary": "#47084 Avoid building a host SQLite driver for SQLx macros @aibrahim-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.026",
+        "kind": "changed",
+        "summary": "#47085 Update model catalog descriptions and GPT-5.6-Sol priority @andrewgu-oai",
+        "category": "observability",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.027",
+        "kind": "changed",
+        "summary": "#47086 Format analytics credit usage with consistent decimal precision @fcoury-oai",
+        "category": "observability",
+        "surfaces": [
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci",
+          "observability.usage_cost"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.028",
+        "kind": "changed",
+        "summary": "#47088 Disable unused default dependency features @aibrahim-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.029",
+        "kind": "changed",
+        "summary": "#47089 Centralize JSON-RPC response serialization through payloads @aibrahim-oai",
+        "category": "other",
+        "surfaces": [
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.030",
+        "kind": "changed",
+        "summary": "#47094 Restrict Unix local MCP servers to stdio descriptors @yuzhu-oai",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.031",
+        "kind": "changed",
+        "summary": "#47095 Remove the `rust-release-prepare` workflow @andrewgu-oai",
+        "category": "automation",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.032",
+        "kind": "changed",
+        "summary": "#47096 Keep TUI hints immediately above the composer @fcoury-oai",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.033",
+        "kind": "changed",
+        "summary": "#47100 Preserve assistant answers in bounded TUI task responses @etraut-openai",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.034",
+        "kind": "changed",
+        "summary": "#47101 Honor configured proxies for realtime WebSocket connections @celia-oai",
+        "category": "interfaces",
+        "surfaces": [
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.035",
+        "kind": "changed",
+        "summary": "#47106 Preserve originating turn metadata for yielded skill calls @eddie-openai",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.skills"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.036",
+        "kind": "changed",
+        "summary": "#47108 Preserve required Windows runtime variables for filesystem helpers @iceweasel-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.037",
+        "kind": "changed",
+        "summary": "#47112 Lowercase the retry hint for conversations open in another app @fcoury-oai",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.038",
+        "kind": "changed",
+        "summary": "#47113 Persist thread creator identity in rollouts and SQLite @nornagon-openai",
+        "category": "interfaces",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.039",
+        "kind": "changed",
+        "summary": "#47114 Preserve and expose thread item lifecycle timestamps @chiam-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.040",
+        "kind": "changed",
+        "summary": "#47116 Honor the configured product SKU in remote plugin requests @jessedu-oai",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.041",
+        "kind": "changed",
+        "summary": "#47118 Support model-catalog overrides for Code Mode tool messages @rhan-oai",
+        "category": "observability",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.042",
+        "kind": "changed",
+        "summary": "#47121 Pass thread IDs to attachment uploads @kchainani-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.043",
+        "kind": "changed",
+        "summary": "#47122 Increase OpenAI file blob upload timeout from 60 seconds to 5 minutes @wilkes-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.044",
+        "kind": "changed",
+        "summary": "#47125 Add extra policy configuration for Guardian reviews @won-openai",
+        "category": "security_governance",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "administrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.045",
+        "kind": "changed",
+        "summary": "#47129 Preserve foreign working directories in extension tool environments @anp-oai",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.046",
+        "kind": "changed",
+        "summary": "#47130 Remove the `ultrafast` service tier from `gpt-5.6-sol` @andrewgu-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.047",
+        "kind": "changed",
+        "summary": "#47132 Support caller-provided MITM CAs in the network proxy @viyatb-oai",
+        "category": "interfaces",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.048",
+        "kind": "changed",
+        "summary": "#47137 Prevent horizontal transcript selection from triggering autoscroll @imac-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.049",
+        "kind": "changed",
+        "summary": "#47142 Honor system proxy settings for standalone web search @celia-oai",
+        "category": "interfaces",
+        "surfaces": [
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "tools.web_research"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.050",
+        "kind": "changed",
+        "summary": "#47143 Extract exec-server CLI startup into a dedicated module @anp-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.051",
+        "kind": "changed",
+        "summary": "#47149 Update code mode catalog snapshot hashes @andrewgu-oai",
+        "category": "observability",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.052",
+        "kind": "changed",
+        "summary": "#47155 Ignore stale thread-close notifications after resuming a thread @etraut-openai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.053",
+        "kind": "changed",
+        "summary": "#47158 Harden gateway OAuth credential persistence and error redaction @alexsong-oai",
+        "category": "security_governance",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": true,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.054",
+        "kind": "changed",
+        "summary": "#47159 Expose HTTP origins in MCP server status @frantic-openai",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.055",
+        "kind": "changed",
+        "summary": "#47162 Apply workspace routing to Guardian v2 classifier requests @acrognale-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.056",
+        "kind": "changed",
+        "summary": "#47170 Add explicit gateway login control and authentication status @alexsong-oai",
+        "category": "observability",
+        "surfaces": [
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.057",
+        "kind": "changed",
+        "summary": "#47174 Preserve empty cell metadata under pending tool-call pressure @ningyi-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.058",
+        "kind": "changed",
+        "summary": "#47178 Enable the fullscreen transcript by default @etraut-openai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.059",
+        "kind": "changed",
+        "summary": "#47179 Enable automatic daemon startup by default @etraut-openai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.060",
+        "kind": "changed",
+        "summary": "#47185 Allow forking conversations locked by another app in the TUI @fcoury-oai",
+        "category": "session_state",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.061",
+        "kind": "changed",
+        "summary": "#47191 Render aligned equations and optimization notation in TUI math @etraut-openai",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.062",
+        "kind": "changed",
+        "summary": "#47199 Separate thread preparation from execution persistence @dermanyang-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.063",
+        "kind": "changed",
+        "summary": "#47204 Resolve proxy routes for standalone web search redirects @celia-oai",
+        "category": "interfaces",
+        "surfaces": [
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "tools.web_research"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.064",
+        "kind": "changed",
+        "summary": "#47207 Add explicit gateway OAuth sign-in to app-server @alexsong-oai",
+        "category": "security_governance",
+        "surfaces": [
+          "sdk",
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "execution.sdk_embedding",
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.065",
+        "kind": "changed",
+        "summary": "#47212 Preserve MCP request trace context across transport workers @bromano-oai",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.066",
+        "kind": "changed",
+        "summary": "#47235 Route multi-agent spawning through `SpawnRequest` @jif-oai",
+        "category": "orchestration",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "orchestration.parallel_background"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.067",
+        "kind": "changed",
+        "summary": "#47236 Suppress agent message board notifications to the post author @jif-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.068",
+        "kind": "changed",
+        "summary": "#47240 Prevent V2 agent eviction from racing with queued messages @jif-oai",
+        "category": "automation",
+        "surfaces": [
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.069",
+        "kind": "changed",
+        "summary": "#47244 Centralize agent resume handling in `LocalAgentControl` @jif-oai",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.070",
+        "kind": "changed",
+        "summary": "#47248 Add explicit app and account targets to MCP resource reads @victor-openai",
+        "category": "extensions",
+        "surfaces": [
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.071",
+        "kind": "changed",
+        "summary": "#47249 Drop descendant channel posts from retained remote compaction v2 history @jif-oai",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.072",
+        "kind": "changed",
+        "summary": "#47252 Return agent snapshots from `close_agent` @jif-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.073",
+        "kind": "changed",
+        "summary": "#47257 Preserve explicit message-board unsubscribes when posting @jif-oai",
+        "category": "automation",
+        "surfaces": [
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.074",
+        "kind": "changed",
+        "summary": "#47258 Test spawn settings reporting after child removal @jif-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.075",
+        "kind": "changed",
+        "summary": "#47259 Subscribe authors to message-board channels created by posting @jif-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.076",
+        "kind": "changed",
+        "summary": "#47263 Expose hosted plugin extensions in app-server summaries @victor-openai",
+        "category": "extensions",
+        "surfaces": [
+          "sdk"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "execution.sdk_embedding",
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.077",
+        "kind": "changed",
+        "summary": "#47267 Stream agent snapshots from local status subscriptions @jif-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.078",
+        "kind": "changed",
+        "summary": "#47271 Implement `AgentControl` for `LocalAgentControl` @jif-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.079",
+        "kind": "changed",
+        "summary": "#47272 Allow Guardian sync review across compaction hash differences @felixxia-oai",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.080",
+        "kind": "changed",
+        "summary": "#47275 Enable Guardian thread context by default @felixxia-oai",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.081",
+        "kind": "changed",
+        "summary": "#47281 Add regression coverage for message board unsubscribe persistence @jif-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.082",
+        "kind": "changed",
+        "summary": "#47287 Update the Guardian extra-policy snapshot for retained instructions @felixxia-oai",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "administrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.083",
+        "kind": "changed",
+        "summary": "#47292 Consolidate agent operations in the `AgentControl` implementation @jif-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.084",
+        "kind": "changed",
+        "summary": "#47301 Separate local agent runtime state from controller handles @jif-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.085",
+        "kind": "changed",
+        "summary": "#47302 Use compact display metadata for Guardian review threads @charliemarsh-oai",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.086",
+        "kind": "changed",
+        "summary": "#47303 Clean up legacy Guardian thread metadata in SQLite @charliemarsh-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.087",
+        "kind": "changed",
+        "summary": "#47317 Enable `/import` in remote and local daemon sessions @etraut-openai",
+        "category": "session_state",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.088",
+        "kind": "changed",
+        "summary": "#47318 Offer explicit recovery for incompatible background servers @etraut-openai",
+        "category": "automation",
+        "surfaces": [
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.089",
+        "kind": "changed",
+        "summary": "#47319 Match agent status symbols to the selected row style @etraut-openai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.090",
+        "kind": "changed",
+        "summary": "#47320 Fix Escape navigation in read-only agent sessions @etraut-openai",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": true,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.091",
+        "kind": "changed",
+        "summary": "#47321 Honor the system clock preference across more TUI timestamps @etraut-openai",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.092",
+        "kind": "changed",
+        "summary": "#47322 Render TUI Markdown lists with Unicode bullets and checkboxes @etraut-openai",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.093",
+        "kind": "changed",
+        "summary": "#47323 Persist resume metadata in compaction checkpoints @owenlin0",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.094",
+        "kind": "changed",
+        "summary": "#47325 Keep report reason tags within Sentry limits @ningyi-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.095",
+        "kind": "changed",
+        "summary": "#47326 Restrict MCP OAuth authorization endpoints to HTTP(S) @viyatb-oai",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.096",
+        "kind": "changed",
+        "summary": "#47327 Preserve image generation request IDs on failure @chrisdong-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.097",
+        "kind": "changed",
+        "summary": "#47329 Standardize TUI menu description wording and punctuation @etraut-openai",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.098",
+        "kind": "changed",
+        "summary": "#47330 Identify failed SQLite databases in `codex doctor` output @dkovalenko-oai",
+        "category": "interfaces",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.099",
+        "kind": "changed",
+        "summary": "#47331 Avoid redundant spacing above the transcript composer @fcoury-oai",
+        "category": "automation",
+        "surfaces": [
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.100",
+        "kind": "changed",
+        "summary": "#47332 Add GPT-6 Sol and Luna to the model catalog @andrewgu-oai",
+        "category": "observability",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.101",
+        "kind": "changed",
+        "summary": "#47338 Move the activity inspection hint into keyboard shortcut help @fcoury-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.102",
+        "kind": "changed",
+        "summary": "#47340 Add conditional turn interruption that preserves pending input @pmccrary-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.103",
+        "kind": "changed",
+        "summary": "#47342 Skip stored title lookups for ephemeral forks @keyz",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.104",
+        "kind": "changed",
+        "summary": "#47347 Add GPT-6 Sol and Luna to Amazon Bedrock catalogs @celia-oai",
+        "category": "observability",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.105",
+        "kind": "changed",
+        "summary": "#47348 Overlap subagent spawn persistence and clean up cancelled children @owenlin0",
+        "category": "orchestration",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "orchestration.subagents"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.106",
+        "kind": "changed",
+        "summary": "#47349 Move plugin recommendations into developer context @adaley-openai",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.107",
+        "kind": "changed",
+        "summary": "#47350 Reuse cloud skill catalogs across turns until invalidated @hlevy-openai",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.skills"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.108",
+        "kind": "changed",
+        "summary": "#47353 Preserve `invalid_prompt` as a distinct error classification @rennie-openai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.109",
+        "kind": "changed",
+        "summary": "#47355 Reserve spacing after recaps at the transcript tail @fcoury-oai",
+        "category": "automation",
+        "surfaces": [
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.110",
+        "kind": "changed",
+        "summary": "#47358 Color paths and URLs in `codex doctor` by check status @dkovalenko-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.111",
+        "kind": "changed",
+        "summary": "#47360 Preserve user prompt URL destinations across terminal widths @fcoury-oai",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.112",
+        "kind": "changed",
+        "summary": "#47361 Restrict Windows sandbox default object access to the logon session @viyatb-oai",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "security.sandbox"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.113",
+        "kind": "changed",
+        "summary": "#47362 Bound inbound exec-server requests across client transports @viyatb-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.114",
+        "kind": "changed",
+        "summary": "#47365 Resume model context from the latest compaction boundary @owenlin0",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.115",
+        "kind": "changed",
+        "summary": "#47369 Overlap agent metadata reads when resuming a V2 root @vkg-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.116",
+        "kind": "changed",
+        "summary": "#47375 Add an opt-in preference for the local MXC sandbox @iceweasel-oai",
+        "category": "security_governance",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "security.sandbox"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.117",
+        "kind": "changed",
+        "summary": "#47377 Add opt-in reasoning status for realtime V3 delegations @guinness-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.118",
+        "kind": "changed",
+        "summary": "#47380 Route TUI voice controls through the app @etraut-openai",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "interfaces.voice"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.119",
+        "kind": "changed",
+        "summary": "#47381 Keep voice conversations running across TUI thread navigation @etraut-openai",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "interfaces.voice"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.120",
+        "kind": "changed",
+        "summary": "#47382 Show a voice badge in the agents overview @etraut-openai",
+        "category": "interfaces",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "interfaces.voice"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.121",
+        "kind": "changed",
+        "summary": "#47384 Restore composer hints after clearing selection at the transcript bottom @fcoury-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.122",
+        "kind": "changed",
+        "summary": "#47389 Enforce network policy throughout HTTP and WebSocket requests @acrognale-oai",
+        "category": "security_governance",
+        "surfaces": [
+          "web"
+        ],
+        "actors": [
+          "administrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.123",
+        "kind": "changed",
+        "summary": "#47393 Retry transient OpenAI file blob upload failures @mtsui-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.124",
+        "kind": "changed",
+        "summary": "#47397 Refresh bundled model metadata and instructions @andrewgu-oai",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.125",
+        "kind": "changed",
+        "summary": "#47399 Respect tmux mouse settings in fullscreen and overlays @fcoury-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.126",
+        "kind": "changed",
+        "summary": "#47407 Enforce application network policy across app-server requests @acrognale-oai",
+        "category": "security_governance",
+        "surfaces": [
+          "sdk"
+        ],
+        "actors": [
+          "administrator"
+        ],
+        "capability_refs": [
+          "execution.sdk_embedding"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.127",
+        "kind": "changed",
+        "summary": "#47408 Enforce application network policy for AWS auth and telemetry @acrognale-oai",
+        "category": "security_governance",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "administrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.128",
+        "kind": "changed",
+        "summary": "#47410 Honor network policy in remote control and recover remote execution @acrognale-oai",
+        "category": "session_state",
+        "surfaces": [
+          "remote"
+        ],
+        "actors": [
+          "administrator"
+        ],
+        "capability_refs": [
+          "runtime.remote_cloud"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.129",
+        "kind": "changed",
+        "summary": "#47411 Apply shared network policy throughout embedded Codex startup @acrognale-oai",
+        "category": "security_governance",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "administrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.130",
+        "kind": "changed",
+        "summary": "#47413 Cache decrypted gateway OAuth secrets per backend @charliemarsh-oai",
+        "category": "security_governance",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.131",
+        "kind": "changed",
+        "summary": "#47414 Support Shift-click to extend transcript selections @etraut-openai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.132",
+        "kind": "changed",
+        "summary": "#47417 Use native scrollback for Terminal.app over SSH in auto mode @fcoury-oai",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.133",
+        "kind": "changed",
+        "summary": "#47422 Recover unsent question drafts when TUI turns end @imac-oai",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.134",
+        "kind": "changed",
+        "summary": "#47423 Preserve history search during background draft recovery @imac-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.135",
+        "kind": "changed",
+        "summary": "#47424 Clear pending async question notifications when turns end @imac-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.136",
+        "kind": "changed",
+        "summary": "#47428 Apply inherited environment settings at turn boundaries @sayan-oai",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.137",
+        "kind": "changed",
+        "summary": "#47435 Allow environment selection updates during an active turn @sayan-oai",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.openai-codex.rust-v0.157.0.138",
+        "kind": "changed",
+        "summary": "#47437 Stabilize retry timing and WebSocket tests @anp-oai",
+        "category": "interfaces",
+        "surfaces": [
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 396234532,
+      "tag_commitish": "main"
+    }
+  },
+  {
+    "id": "rel.openai-codex.rust-v0.158.0-alpha.12",
+    "harness_id": "openai-codex",
+    "version": "rust-v0.158.0-alpha.12",
+    "channel": "alpha",
+    "published_at": "2026-09-25T00:54:29Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-09-25T04:58:14.569878Z",
+    "source_id": "src.codex.releases",
+    "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0-alpha.12",
+    "raw_snapshot_path": null,
+    "raw_sha256": "2d34f0ea8b84a7c21d168cc663543a33076c7e34694c97a02c5ad4e9e65fa41c",
+    "title": "0.158.0-alpha.12",
+    "notes_excerpt": "Release 0.158.0-alpha.12",
+    "change_count": 1,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.openai-codex.rust-v0.158.0-alpha.12.001",
+        "kind": "changed",
+        "summary": "Release 0.158.0-alpha.12",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 396192765,
+      "tag_commitish": "main"
+    }
+  },
+  {
+    "id": "rel.openai-codex.rust-v0.158.0-alpha.11",
+    "harness_id": "openai-codex",
+    "version": "rust-v0.158.0-alpha.11",
+    "channel": "alpha",
+    "published_at": "2026-09-24T23:23:08Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-09-25T04:58:14.569937Z",
+    "source_id": "src.codex.releases",
+    "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0-alpha.11",
+    "raw_snapshot_path": null,
+    "raw_sha256": "7f9123ef19e4304e3f44fbbd17b8c5b08de45121b712cb94e6d840609d5f21cd",
+    "title": "0.158.0-alpha.11",
+    "notes_excerpt": "Release 0.158.0-alpha.11",
+    "change_count": 1,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.openai-codex.rust-v0.158.0-alpha.11.001",
+        "kind": "changed",
+        "summary": "Release 0.158.0-alpha.11",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 396151143,
+      "tag_commitish": "main"
+    }
+  },
+  {
+    "id": "rel.openai-codex.rust-v0.157.0-alpha.11.1",
+    "harness_id": "openai-codex",
+    "version": "rust-v0.157.0-alpha.11.1",
+    "channel": "alpha",
+    "published_at": "2026-09-24T21:50:10Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-09-25T04:58:14.570048Z",
+    "source_id": "src.codex.releases",
+    "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.157.0-alpha.11.1",
+    "raw_snapshot_path": null,
+    "raw_sha256": "f66e00c5123654c7db0931975f96f6edffcc4d393984cc6f99b0a551d7b33281",
+    "title": "0.157.0-alpha.11.1",
+    "notes_excerpt": "Release 0.157.0-alpha.11.1",
+    "change_count": 1,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.openai-codex.rust-v0.157.0-alpha.11.1.001",
+        "kind": "changed",
+        "summary": "Release 0.157.0-alpha.11.1",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 396105911,
+      "tag_commitish": "main"
+    }
+  },
+  {
     "id": "rel.openai-codex.rust-v0.158.0-alpha.10",
     "harness_id": "openai-codex",
     "version": "rust-v0.158.0-alpha.10",

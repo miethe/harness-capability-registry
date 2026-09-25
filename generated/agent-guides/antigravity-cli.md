@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: antigravity-cli
-generated_at: 2026-09-24T21:33:06.153008Z
+generated_at: 2026-09-25T04:59:21.671881Z
 artifact_kind: harness_capability_guide
 ---
 
@@ -9,8 +9,8 @@ artifact_kind: harness_capability_guide
 
 **Vendor:** Google  
 **Lifecycle:** active  
-**Current version in registry:** 1.2.10  
-**Last verified:** 2026-09-24T11:47:35.522502Z
+**Current version in registry:** 1.2.11  
+**Last verified:** 2026-09-25T04:59:08.329225Z
 
 > UI availability does not imply that an in-harness model or an external orchestrator can invoke the capability. Use the actor-specific sections below.
 
