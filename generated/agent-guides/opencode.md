@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: opencode
-generated_at: 2026-09-25T17:13:20.706527Z
+generated_at: 2026-09-26T11:26:44.927036Z
 artifact_kind: harness_capability_guide
 ---
 
