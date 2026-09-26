@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "secondary",
-    "current_version": "1.0.89-3",
-    "version_as_of": "2026-09-24",
-    "last_verified_at": "2026-09-24T21:32:48.407064Z",
+    "current_version": "1.0.89-4",
+    "version_as_of": "2026-09-25",
+    "last_verified_at": "2026-09-26T11:26:33.114605Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/github/copilot-cli",
@@ -229,6 +229,207 @@
     }
   ],
   "releases": [
+    {
+      "id": "rel.github-copilot-cli.1.0.89-4",
+      "harness_id": "github-copilot-cli",
+      "version": "1.0.89-4",
+      "channel": "prerelease",
+      "published_at": "2026-09-25T21:13:10Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-26T11:26:25.741875Z",
+      "source_id": "src.copilot-cli.releases",
+      "source_url": "https://github.com/github/copilot-cli/releases/tag/v1.0.89-4",
+      "raw_snapshot_path": null,
+      "raw_sha256": "a69ef845825e508eac692df6c10f15e58ee23009b531d87b14cceb6bfa82f57f",
+      "title": "1.0.89-4",
+      "notes_excerpt": "Auto suggests a routing tier and lets you switch with a shortcut or click",
+      "change_count": 8,
+      "flags": {
+        "security": false,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.github-copilot-cli.1.0.89-4.001",
+          "kind": "changed",
+          "summary": "Auto suggests a routing tier and lets you switch with a shortcut or click",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.89-4.002",
+          "kind": "changed",
+          "summary": "Auto shows a quick feedback prompt after switching away to a manually selected model",
+          "category": "models_providers",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.89-4.003",
+          "kind": "changed",
+          "summary": "Direct plugin installs can now be enabled and disabled. One already recorded as disabled now stops loading; re-enable it with copilot plugin enable",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.89-4.004",
+          "kind": "fixed",
+          "summary": "Fix Auto tier selection to cycle correctly in /model and remove the unsupported Fast profile; a previously stored, exported, or resumed Fast preference now falls back to Balance instead of routing on it",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.89-4.005",
+          "kind": "changed",
+          "summary": "Run wrapped gh and git commands, such as `timeout 60 gh ...`, correctly in sandboxed sessions",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.89-4.006",
+          "kind": "changed",
+          "summary": "ACP sessions stay connected when clients pause reading large responses",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.89-4.007",
+          "kind": "changed",
+          "summary": "Gemini models no longer fail every request with 400 invalid request body when an MCP server exposes a tool whose schema puts a type or properties beside anyOf, such as a nullable discriminated union",
+          "category": "extensions",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator",
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.89-4.008",
+          "kind": "changed",
+          "summary": "GitHub MCP tools connect correctly on first CLI startup after sign-in",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 396929614,
+        "tag_commitish": "main"
+      }
+    },
     {
       "id": "rel.github-copilot-cli.1.0.89-3",
       "harness_id": "github-copilot-cli",
