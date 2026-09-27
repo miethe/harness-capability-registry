@@ -1,6 +1,6 @@
 # Registry Coverage Report
 
-Generated for registry state: 2026-09-27T12:04:01.907542Z
+Generated for registry state: 2026-09-27T16:59:45.724236Z
 
 | Harness | Verified capabilities | Candidate | Unknown | Releases |
 |---|---:|---:|---:|---:|
