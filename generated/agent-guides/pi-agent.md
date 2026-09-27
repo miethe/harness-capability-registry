@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: pi-agent
-generated_at: 2026-09-27T05:20:40.588952Z
+generated_at: 2026-09-27T12:04:01.907542Z
 artifact_kind: harness_capability_guide
 ---
 
