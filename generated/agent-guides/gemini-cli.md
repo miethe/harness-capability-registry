@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: gemini-cli
-generated_at: 2026-09-28T05:25:36.012957Z
+generated_at: 2026-09-28T23:18:09.106828Z
 artifact_kind: harness_capability_guide
 ---
 
