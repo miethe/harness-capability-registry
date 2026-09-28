@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: opencode
-generated_at: 2026-09-27T16:59:45.724236Z
+generated_at: 2026-09-28T05:25:36.012957Z
 artifact_kind: harness_capability_guide
 ---
 
@@ -9,8 +9,8 @@ artifact_kind: harness_capability_guide
 
 **Vendor:** Anomaly  
 **Lifecycle:** active  
-**Current version in registry:** 1.18.32  
-**Last verified:** 2026-09-23T04:46:36.567263Z
+**Current version in registry:** 1.18.33  
+**Last verified:** 2026-09-28T05:25:23.974767Z
 
 > UI availability does not imply that an in-harness model or an external orchestrator can invoke the capability. Use the actor-specific sections below.
 
