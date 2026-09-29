@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: claude-code
-generated_at: 2026-09-29T05:46:08.691745Z
+generated_at: 2026-09-29T22:17:15.763554Z
 artifact_kind: harness_capability_guide
 ---
 
@@ -9,8 +9,8 @@ artifact_kind: harness_capability_guide
 
 **Vendor:** Anthropic  
 **Lifecycle:** active  
-**Current version in registry:** 2.1.284  
-**Last verified:** 2026-09-28T23:17:56.217872Z
+**Current version in registry:** 2.1.285  
+**Last verified:** 2026-09-29T22:16:57.909285Z
 
 > UI availability does not imply that an in-harness model or an external orchestrator can invoke the capability. Use the actor-specific sections below.
 
