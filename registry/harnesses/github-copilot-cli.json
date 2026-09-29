@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "secondary",
-    "current_version": "1.0.90-0",
-    "version_as_of": "2026-09-28",
-    "last_verified_at": "2026-09-28T23:17:56.217872Z",
+    "current_version": "1.0.90-1",
+    "version_as_of": "2026-09-29",
+    "last_verified_at": "2026-09-29T05:45:52.149877Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/github/copilot-cli",
@@ -229,6 +229,80 @@
     }
   ],
   "releases": [
+    {
+      "id": "rel.github-copilot-cli.1.0.90-1",
+      "harness_id": "github-copilot-cli",
+      "version": "1.0.90-1",
+      "channel": "prerelease",
+      "published_at": "2026-09-29T02:11:48Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-09-29T05:45:40.452667Z",
+      "source_id": "src.copilot-cli.releases",
+      "source_url": "https://github.com/github/copilot-cli/releases/tag/v1.0.90-1",
+      "raw_snapshot_path": null,
+      "raw_sha256": "6cf7afddd63cae1dc729adf28357d9822ad5ebf048c17a247e170dffd5e3e75b",
+      "title": "1.0.90-1",
+      "notes_excerpt": "MCP OAuth sign-in to servers such as Datadog reuses a still-valid cached token",
+      "change_count": 2,
+      "flags": {
+        "security": false,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.github-copilot-cli.1.0.90-1.001",
+          "kind": "changed",
+          "summary": "MCP OAuth sign-in to servers such as Datadog reuses a still-valid cached token",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.90-1.002",
+          "kind": "changed",
+          "summary": "Withdrawn running prompts stay removed after session resume",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 398769553,
+        "tag_commitish": "main"
+      }
+    },
     {
       "id": "rel.github-copilot-cli.1.0.90-0",
       "harness_id": "github-copilot-cli",
