@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: qwen-code
-generated_at: 2026-09-29T22:17:15.763554Z
+generated_at: 2026-09-30T22:17:54.823274Z
 artifact_kind: harness_capability_guide
 ---
 

@@ -1,5 +1,206 @@
 [
   {
+    "id": "rel.gemini-cli.0.64.0-nightly.20260930.g38700b4b3",
+    "harness_id": "gemini-cli",
+    "version": "0.64.0-nightly.20260930.g38700b4b3",
+    "channel": "nightly",
+    "published_at": "2026-09-30T01:33:55Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-09-30T22:17:21.646773Z",
+    "source_id": "src.gemini.releases",
+    "source_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0-nightly.20260930.g38700b4b3",
+    "raw_snapshot_path": null,
+    "raw_sha256": "99020f9c5f050aaa5cc527442454c027379b47d9c991a49b2d4b0b87de2b0b49",
+    "title": "Release v0.64.0-nightly.20260930.g38700b4b3",
+    "notes_excerpt": "fix(core): enable autonomous plan execution in non-interactive mode by @urielefrenvirtusa in https://github.com/google-gemini/gemini-cli/pull/29539",
+    "change_count": 8,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.gemini-cli.0.64.0-nightly.20260930.g38700b4b3.001",
+        "kind": "fixed",
+        "summary": "fix(core): enable autonomous plan execution in non-interactive mode by @urielefrenvirtusa in https://github.com/google-gemini/gemini-cli/pull/29539",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive",
+          "terminal_headless"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [
+          "execution.headless"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.gemini-cli.0.64.0-nightly.20260930.g38700b4b3.002",
+        "kind": "fixed",
+        "summary": "fix(core): disable truncation when maxChars <= 0 in formatTruncatedToolOutput by @diegogodinezr in https://github.com/google-gemini/gemini-cli/pull/29542",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.gemini-cli.0.64.0-nightly.20260930.g38700b4b3.003",
+        "kind": "changed",
+        "summary": "refactor(a2a-server): implement V1 to V2 settings migration logic by @jvargassanchez-dot in https://github.com/google-gemini/gemini-cli/pull/29450",
+        "category": "observability",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.gemini-cli.0.64.0-nightly.20260930.g38700b4b3.004",
+        "kind": "fixed",
+        "summary": "fix(acp): bridge PromptResponse.usage and emit usage_update notifications (#29389) by @elberthc-byte in https://github.com/google-gemini/gemini-cli/pull/29549",
+        "category": "observability",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "observability.usage_cost"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.gemini-cli.0.64.0-nightly.20260930.g38700b4b3.005",
+        "kind": "changed",
+        "summary": "Changelog for v0.63.0-preview.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29565",
+        "category": "observability",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.gemini-cli.0.64.0-nightly.20260930.g38700b4b3.006",
+        "kind": "fixed",
+        "summary": "fix(cli): propagate resolved folder trust state in headless mode (#29031) by @amelidev in https://github.com/google-gemini/gemini-cli/pull/29528",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive",
+          "terminal_headless",
+          "ide"
+        ],
+        "actors": [
+          "human_operator",
+          "external_orchestrator",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "execution.headless"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.gemini-cli.0.64.0-nightly.20260930.g38700b4b3.007",
+        "kind": "changed",
+        "summary": "chore(release): bump version to 0.64.0-nightly.20260929.gd75234cae by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29567",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.gemini-cli.0.64.0-nightly.20260930.g38700b4b3.008",
+        "kind": "changed",
+        "summary": "@elberthc-byte made their first contribution in https://github.com/google-gemini/gemini-cli/pull/29549",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 399647199,
+      "tag_commitish": "release/v0.64.0-nightly.20260930.g38700b4b3"
+    }
+  },
+  {
     "id": "rel.gemini-cli.0.62.0",
     "harness_id": "gemini-cli",
     "version": "0.62.0",
