@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: anthropic-typescript-sdk
-generated_at: 2026-10-01T13:16:16.355647Z
+generated_at: 2026-10-01T22:43:20.932108Z
 artifact_kind: harness_capability_guide
 ---
 

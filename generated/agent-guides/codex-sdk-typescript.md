@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: codex-sdk-typescript
-generated_at: 2026-10-01T13:16:16.355647Z
+generated_at: 2026-10-01T22:43:20.932108Z
 artifact_kind: harness_capability_guide
 ---
 
@@ -9,8 +9,8 @@ artifact_kind: harness_capability_guide
 
 **Vendor:** OpenAI  
 **Lifecycle:** active  
-**Current version in registry:** 0.161.0-alpha.11  
-**Last verified:** 2026-10-01T13:16:04.532294Z
+**Current version in registry:** 0.161.0-alpha.13  
+**Last verified:** 2026-10-01T22:43:03.817036Z
 
 > UI availability does not imply that an in-harness model or an external orchestrator can invoke the capability. Use the actor-specific sections below.
 

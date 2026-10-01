@@ -1517,6 +1517,2037 @@
   ],
   "releases": [
     {
+      "id": "rel.openai-codex.rust-v0.160.0",
+      "harness_id": "openai-codex",
+      "version": "rust-v0.160.0",
+      "channel": "stable",
+      "published_at": "2026-10-01T20:19:13Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T22:42:08.079716Z",
+      "source_id": "src.codex.releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.160.0",
+      "raw_snapshot_path": null,
+      "raw_sha256": "cc1ac8ec35b1ba705cb24ad5223e4bec92f0906dd0f462c46446a64f3d5d7b94",
+      "title": "0.160.0",
+      "notes_excerpt": "Browse older tasks in the agent command center with a keyboard-accessible “Show more” action. (#49106)",
+      "change_count": 68,
+      "flags": {
+        "security": true,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.001",
+          "kind": "changed",
+          "summary": "Browse older tasks in the agent command center with a keyboard-accessible “Show more” action. (#49106)",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.002",
+          "kind": "changed",
+          "summary": "Select transcript text and paste with middle-click in fullscreen mode on supported local Linux X11 terminals. (#49112)",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.003",
+          "kind": "changed",
+          "summary": "Start sessions outside a project with workspace defaults when policy permits, and restore saved permissions when resuming. (#49160)",
+          "category": "security_governance",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator",
+            "administrator"
+          ],
+          "capability_refs": [
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.004",
+          "kind": "added",
+          "summary": "Added opt-in Guardian review capabilities to retrieve earlier user instructions and include context from agent handoffs. (#49036, #49057)",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.005",
+          "kind": "changed",
+          "summary": "Unsent queued messages now resume after reconnection once uncertain submissions are resolved, avoiding duplicate sends. (#49105)",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.006",
+          "kind": "changed",
+          "summary": "The terminal UI now preserves server provider, reasoning-summary, and verbosity settings and shows the correct sessions in resume and fork history. (#49144, #49161, #49171)",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.007",
+          "kind": "fixed",
+          "summary": "Fixed Windows sandbox PowerShell fallbacks and long-path permission repairs, and suppressed unwanted console windows from background helpers. (#49019, #49058, #49098, #49164, #49386)",
+          "category": "security_governance",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox",
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.008",
+          "kind": "changed",
+          "summary": "Subagents now retain environments that are still starting and receive their configuration or preparation failure. (#49075)",
+          "category": "orchestration",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.009",
+          "kind": "changed",
+          "summary": "Prevented SQLite stalls during connection setup and logging, and surfaced initialization errors instead of masking them as timeouts. (#49032, #49102)",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.010",
+          "kind": "changed",
+          "summary": "Explicit provider model catalogs no longer include unsupported bundled models or reuse stale entries after refresh failures. (#49135)",
+          "category": "models_providers",
+          "surfaces": [
+            "ide",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.011",
+          "kind": "changed",
+          "summary": "Clarified how provider credentials use the configured storage backend and how `env_key` identifies the API-key environment variable. (#49118)",
+          "category": "security_governance",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator",
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.012",
+          "kind": "changed",
+          "summary": "Reduced repeated plugin-loading work by caching parsed manifests and reusing HTTP connections for remote plugin requests. (#49099, #49100)",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.013",
+          "kind": "added",
+          "summary": "Added background reclamation of unused log database space to reduce disk usage. (#49069)",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.014",
+          "kind": "changed",
+          "summary": "#48983 Avoid full metadata rewrites for thread timestamp updates @jif-oai",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.015",
+          "kind": "changed",
+          "summary": "#49000 Isolate the memory startup metadata test from Git enrichment @jif-oai",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "context.persistent_memory"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.016",
+          "kind": "changed",
+          "summary": "#49019 Use a compatible PowerShell fallback for the Windows MXC sandbox @iceweasel-oai",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.017",
+          "kind": "changed",
+          "summary": "#49028 Use the numeric ioctl value in the macOS sandbox policy @aionescu-oai",
+          "category": "security_governance",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "administrator"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.018",
+          "kind": "changed",
+          "summary": "#49031 Clarify ChatGPT sign-in success copy @bc-openai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.019",
+          "kind": "changed",
+          "summary": "#49032 Avoid SQLite stalls from connection setup and stderr span logging @jif-oai",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.020",
+          "kind": "changed",
+          "summary": "#49036 Add opt-in conversation history retrieval to Guardian reviews @felixxia-oai",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.021",
+          "kind": "changed",
+          "summary": "#49037 Show the Plan mode cycling hint in the fullscreen status line @fcoury-oai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.022",
+          "kind": "changed",
+          "summary": "#49038 Preserve encrypted agent messages in Guardian reviews @felixxia-oai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.023",
+          "kind": "changed",
+          "summary": "#49041 Copy selections within inline code as plain text @fcoury-oai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.024",
+          "kind": "changed",
+          "summary": "#49043 Update Pro plan display names in the TUI @etraut-openai",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.025",
+          "kind": "changed",
+          "summary": "#49057 Add handoff-aware root context for Guardian reviews @jif-oai",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.026",
+          "kind": "changed",
+          "summary": "#49058 Fix Windows sandbox ACL repair for long runtime paths @darius-oai",
+          "category": "security_governance",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.027",
+          "kind": "changed",
+          "summary": "#49060 Update Guardian messaging snapshots for native agent messages @dkovalenko-oai",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.028",
+          "kind": "changed",
+          "summary": "#49065 Update Guardian handoff snapshot for separate agent messages @cassirer-openai",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.029",
+          "kind": "changed",
+          "summary": "#49067 Keep configuration values out of Windows sandbox policy events @zm-oai",
+          "category": "security_governance",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "administrator"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.030",
+          "kind": "changed",
+          "summary": "#49069 Reclaim unused SQLite log database pages in the background @dkovalenko-oai",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.031",
+          "kind": "changed",
+          "summary": "#49073 Surface realtime voice catalog failures in the TUI @etraut-openai",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "interfaces.voice"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.032",
+          "kind": "changed",
+          "summary": "#49074 Propagate Cargo package versions to Bazel Rust targets @tamird",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.033",
+          "kind": "changed",
+          "summary": "#49075 Preserve pending environments when spawning subagents @sayan-oai",
+          "category": "orchestration",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.034",
+          "kind": "changed",
+          "summary": "#49076 Avoid collecting unused Git metadata in skill analytics @tamird",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.035",
+          "kind": "changed",
+          "summary": "#49079 Update and centralize TUI subscription labels @etraut-openai",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.036",
+          "kind": "changed",
+          "summary": "#49082 Skip remote Git discovery for Guardian diff paths @jif-oai",
+          "category": "interfaces",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.037",
+          "kind": "changed",
+          "summary": "#49084 Track app-server running turns incrementally @tamird",
+          "category": "other",
+          "surfaces": [
+            "sdk"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "execution.sdk_embedding"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.038",
+          "kind": "changed",
+          "summary": "#49089 Render follow-up directive labels in the TUI and copied responses @etraut-openai",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.039",
+          "kind": "changed",
+          "summary": "#49093 Simplify startup promotions to platform-specific desktop app tips @etraut-openai",
+          "category": "interfaces",
+          "surfaces": [
+            "desktop",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.040",
+          "kind": "changed",
+          "summary": "#49096 Update `h2` from 0.4.16 to 0.4.19 in Cargo and Bazel lockfiles @cassirer-openai",
+          "category": "distribution_runtime",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.041",
+          "kind": "changed",
+          "summary": "#49097 Notify lifecycle extensions of compaction usage limits @xli-oai",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins",
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.042",
+          "kind": "changed",
+          "summary": "#49098 Resolve Windows sandbox PowerShell fallbacks on the exec server @zm-oai",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.043",
+          "kind": "changed",
+          "summary": "#49099 Cache parsed plugin manifests across plugin workflows @dkovalenko-oai",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.044",
+          "kind": "changed",
+          "summary": "#49100 Reuse the HTTP connection pool for remote plugin requests @dkovalenko-oai",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.045",
+          "kind": "changed",
+          "summary": "#49102 Preserve SQLite vacuum modes and surface pool initialization errors @bc-openai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.046",
+          "kind": "changed",
+          "summary": "#49103 Balance Windows Bazel test shards using duration estimates @jgershen-oai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.047",
+          "kind": "changed",
+          "summary": "#49105 Resume unsent TUI input after reconnecting @etraut-openai",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.048",
+          "kind": "changed",
+          "summary": "#49106 Add history pagination to the agent command center @bc-openai",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.049",
+          "kind": "changed",
+          "summary": "#49112 Add X11 primary selection and middle-click paste support @fcoury-oai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.050",
+          "kind": "changed",
+          "summary": "#49114 Point remote compaction tests at the mock ChatGPT server @OLI-OAI",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.051",
+          "kind": "changed",
+          "summary": "#49117 Attribute analytics requests to each thread's product SKU @papayo-oai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.052",
+          "kind": "changed",
+          "summary": "#49118 Correct provider authentication storage documentation @celia-oai",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.053",
+          "kind": "changed",
+          "summary": "#49119 Add recovery guidance to content-filter retries @won-openai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.054",
+          "kind": "changed",
+          "summary": "#49127 Deduplicate cloud and executor skill listings before budgeting @TAFOYA-OAI",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.skills"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.055",
+          "kind": "changed",
+          "summary": "#49130 Move content-filter guidance into the shared Responses retry handler @won-openai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.056",
+          "kind": "changed",
+          "summary": "#49135 Treat explicit provider model catalogs as authoritative @andrewgu-oai",
+          "category": "models_providers",
+          "surfaces": [
+            "ide",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.057",
+          "kind": "changed",
+          "summary": "#49136 Remove the plus separator after Option symbols in TUI key hints @bc-openai",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.058",
+          "kind": "changed",
+          "summary": "#49138 Expose original error details to turn lifecycle contributors @bryanashley",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.059",
+          "kind": "changed",
+          "summary": "#49144 Preserve server reasoning summary and verbosity settings in the TUI @etraut-openai",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.060",
+          "kind": "changed",
+          "summary": "#49145 Hide reasoning summary settings in `/status` for server connections @etraut-openai",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.061",
+          "kind": "changed",
+          "summary": "#49147 Simplify cloud task base URL normalization @akira-oai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "runtime.remote_cloud"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.062",
+          "kind": "changed",
+          "summary": "#49153 Omit blockquote markers when copying quoted selections in the TUI @bc-openai",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.063",
+          "kind": "changed",
+          "summary": "#49160 Support projectless TUI sessions with workspace defaults @etraut-openai",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.064",
+          "kind": "changed",
+          "summary": "#49161 Honor app-server provider defaults in the TUI @etraut-openai",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide",
+            "sdk"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "execution.sdk_embedding"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.065",
+          "kind": "changed",
+          "summary": "#49164 Suppress Windows console windows for background subprocesses @etraut-openai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.066",
+          "kind": "changed",
+          "summary": "#49171 Fix model provider lookup for TUI history @etraut-openai",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.067",
+          "kind": "changed",
+          "summary": "#49386 [0.160] Backport remaining Windows console fix to frozen alpha.6 @andrewgu-oai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.160.0.068",
+          "kind": "changed",
+          "summary": "#49763 [0.160] Backport maintenance-line catalog and security reminder updates @andrewgu-oai",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 401312540,
+        "tag_commitish": "a956835d020762cb2b570053af06f643a11c0ecc"
+      }
+    },
+    {
+      "id": "rel.openai-codex.rust-v0.159.0-alpha.12.1",
+      "harness_id": "openai-codex",
+      "version": "rust-v0.159.0-alpha.12.1",
+      "channel": "alpha",
+      "published_at": "2026-10-01T19:37:00Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T22:42:08.080249Z",
+      "source_id": "src.codex.releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.159.0-alpha.12.1",
+      "raw_snapshot_path": null,
+      "raw_sha256": "6aef58fb262dff67bdebb40a7006cd15958425f8b32885bbe043ee3e59f2c0ea",
+      "title": "0.159.0-alpha.12.1",
+      "notes_excerpt": "Release 0.159.0-alpha.12.1",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-codex.rust-v0.159.0-alpha.12.1.001",
+          "kind": "changed",
+          "summary": "Release 0.159.0-alpha.12.1",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 401290664,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.openai-codex.rust-v0.161.0-alpha.13",
+      "harness_id": "openai-codex",
+      "version": "rust-v0.161.0-alpha.13",
+      "channel": "alpha",
+      "published_at": "2026-10-01T16:35:03Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T22:42:08.080055Z",
+      "source_id": "src.codex.releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.13",
+      "raw_snapshot_path": null,
+      "raw_sha256": "717ac4464c6c054549b1d28e1890d5a2b5ef6a2916010fba38f571970223c41b",
+      "title": "0.161.0-alpha.13",
+      "notes_excerpt": "Release 0.161.0-alpha.13",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-codex.rust-v0.161.0-alpha.13.001",
+          "kind": "changed",
+          "summary": "Release 0.161.0-alpha.13",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 401156642,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.openai-codex.rust-v0.161.0-alpha.12",
+      "harness_id": "openai-codex",
+      "version": "rust-v0.161.0-alpha.12",
+      "channel": "alpha",
+      "published_at": "2026-10-01T14:43:50Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T22:42:08.080106Z",
+      "source_id": "src.codex.releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.12",
+      "raw_snapshot_path": null,
+      "raw_sha256": "99803e156af9c8fee7096bfe8607f0872cd18fba1bb3dd950214f9861e67018f",
+      "title": "0.161.0-alpha.12",
+      "notes_excerpt": "Release 0.161.0-alpha.12",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-codex.rust-v0.161.0-alpha.12.001",
+          "kind": "changed",
+          "summary": "Release 0.161.0-alpha.12",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 401063591,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.openai-codex.rust-v0.161.0-alpha.11",
+      "harness_id": "openai-codex",
+      "version": "rust-v0.161.0-alpha.11",
+      "channel": "alpha",
+      "published_at": "2026-10-01T12:20:46Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T22:42:08.080153Z",
+      "source_id": "src.codex.releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.11",
+      "raw_snapshot_path": null,
+      "raw_sha256": "f5b2ccaf470b4d539785373b098bb546cecbe807550db15c93f024f9eca4009a",
+      "title": "0.161.0-alpha.11",
+      "notes_excerpt": "Release 0.161.0-alpha.11",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-codex.rust-v0.161.0-alpha.11.001",
+          "kind": "changed",
+          "summary": "Release 0.161.0-alpha.11",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 400940186,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.openai-codex.rust-v0.161.0-alpha.10",
+      "harness_id": "openai-codex",
+      "version": "rust-v0.161.0-alpha.10",
+      "channel": "alpha",
+      "published_at": "2026-10-01T10:26:38Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T22:42:08.080199Z",
+      "source_id": "src.codex.releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.10",
+      "raw_snapshot_path": null,
+      "raw_sha256": "9dcbb84966c01a9ec628ae7f0c005a86c268c2b67f196d0c23c1ffee0c92007e",
+      "title": "0.161.0-alpha.10",
+      "notes_excerpt": "Release 0.161.0-alpha.10",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-codex.rust-v0.161.0-alpha.10.001",
+          "kind": "changed",
+          "summary": "Release 0.161.0-alpha.10",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 400858796,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.openai-codex.rust-v0.161.0-alpha.9",
+      "harness_id": "openai-codex",
+      "version": "rust-v0.161.0-alpha.9",
+      "channel": "alpha",
+      "published_at": "2026-10-01T08:35:22Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T22:42:08.079843Z",
+      "source_id": "src.codex.releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.9",
+      "raw_snapshot_path": null,
+      "raw_sha256": "42dfb1449bf910724292148012ac649bf10f78fda755f740b982f6ec564a3819",
+      "title": "0.161.0-alpha.9",
+      "notes_excerpt": "Release 0.161.0-alpha.9",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-codex.rust-v0.161.0-alpha.9.001",
+          "kind": "changed",
+          "summary": "Release 0.161.0-alpha.9",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 400778004,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.openai-codex.rust-v0.161.0-alpha.8",
+      "harness_id": "openai-codex",
+      "version": "rust-v0.161.0-alpha.8",
+      "channel": "alpha",
+      "published_at": "2026-10-01T06:24:10Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T22:42:08.079899Z",
+      "source_id": "src.codex.releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.8",
+      "raw_snapshot_path": null,
+      "raw_sha256": "d1f272c6bd193d963b2fd8c6c3e99d8274a2d405ecb13e1626bfc2c5e14ce01d",
+      "title": "0.161.0-alpha.8",
+      "notes_excerpt": "Release 0.161.0-alpha.8",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-codex.rust-v0.161.0-alpha.8.001",
+          "kind": "changed",
+          "summary": "Release 0.161.0-alpha.8",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 400698028,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.openai-codex.rust-v0.161.0-alpha.7",
+      "harness_id": "openai-codex",
+      "version": "rust-v0.161.0-alpha.7",
+      "channel": "alpha",
+      "published_at": "2026-10-01T03:54:35Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T22:42:08.079952Z",
+      "source_id": "src.codex.releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.7",
+      "raw_snapshot_path": null,
+      "raw_sha256": "ae2a0084c0ee63fc309e8507647c6303ae88b85161e6ff1dd226cba5889dfdbd",
+      "title": "0.161.0-alpha.7",
+      "notes_excerpt": "Release 0.161.0-alpha.7",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-codex.rust-v0.161.0-alpha.7.001",
+          "kind": "changed",
+          "summary": "Release 0.161.0-alpha.7",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 400636696,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.openai-codex.rust-v0.161.0-alpha.6",
+      "harness_id": "openai-codex",
+      "version": "rust-v0.161.0-alpha.6",
+      "channel": "alpha",
+      "published_at": "2026-10-01T02:34:10Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T22:42:08.080001Z",
+      "source_id": "src.codex.releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.161.0-alpha.6",
+      "raw_snapshot_path": null,
+      "raw_sha256": "b3b9ab8604c4c74a4a4172af023366e338a60f75d9dd1a1bbb373045b8f8a46f",
+      "title": "0.161.0-alpha.6",
+      "notes_excerpt": "Release 0.161.0-alpha.6",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-codex.rust-v0.161.0-alpha.6.001",
+          "kind": "changed",
+          "summary": "Release 0.161.0-alpha.6",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 400602811,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.openai-codex.rust-v0.160.0-alpha.6.2",
+      "harness_id": "openai-codex",
+      "version": "rust-v0.160.0-alpha.6.2",
+      "channel": "alpha",
+      "published_at": "2026-10-01T00:08:35Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T22:42:08.080609Z",
+      "source_id": "src.codex.releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.160.0-alpha.6.2",
+      "raw_snapshot_path": null,
+      "raw_sha256": "47d6d997ffa10dcbffd6630814796220993038a8745c7465b6c6d3b4b1bfc6d1",
+      "title": "0.160.0-alpha.6.2",
+      "notes_excerpt": "Release 0.160.0-alpha.6.2",
+      "change_count": 1,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-codex.rust-v0.160.0-alpha.6.2.001",
+          "kind": "changed",
+          "summary": "Release 0.160.0-alpha.6.2",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 400525499,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.openai-codex.rust-v0.159.3",
+      "harness_id": "openai-codex",
+      "version": "rust-v0.159.3",
+      "channel": "stable",
+      "published_at": "2026-09-30T22:57:34Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T22:42:08.080401Z",
+      "source_id": "src.codex.releases",
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.159.3",
+      "raw_snapshot_path": null,
+      "raw_sha256": "a4a6cb2e232bdcb92eaf4313e1ffa83e50228d66e0458f5233ac7d9bbbdfd828",
+      "title": "0.159.3",
+      "notes_excerpt": "Eligible local sessions signed in with ChatGPT can now show optional reminders to complete account security setup. (#49744)",
+      "change_count": 2,
+      "flags": {
+        "security": true,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.openai-codex.rust-v0.159.3.001",
+          "kind": "changed",
+          "summary": "Eligible local sessions signed in with ChatGPT can now show optional reminders to complete account security setup. (#49744)",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.openai-codex.rust-v0.159.3.002",
+          "kind": "changed",
+          "summary": "#49744 [0.159] Backport account security setup reminders for 0.159.3 @andrewgu-oai",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 400492869,
+        "tag_commitish": "main"
+      }
+    },
+    {
       "id": "rel.openai-codex.rust-v0.161.0-alpha.5",
       "harness_id": "openai-codex",
       "version": "rust-v0.161.0-alpha.5",
