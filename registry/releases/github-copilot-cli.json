@@ -1,5 +1,238 @@
 [
   {
+    "id": "rel.github-copilot-cli.1.0.92-0",
+    "harness_id": "github-copilot-cli",
+    "version": "1.0.92-0",
+    "channel": "prerelease",
+    "published_at": "2026-10-01T21:49:15Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-10-01T22:42:54.111115Z",
+    "source_id": "src.copilot-cli.releases",
+    "source_url": "https://github.com/github/copilot-cli/releases/tag/v1.0.92-0",
+    "raw_snapshot_path": null,
+    "raw_sha256": "7066765b10a2fd1cacb37be597b6decb2d960d3620bf5d7a19bad1b4803a2942",
+    "title": "1.0.92-0",
+    "notes_excerpt": "MCP tools continue working after OAuth reauthentication when tool definitions are unchanged",
+    "change_count": 1,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.github-copilot-cli.1.0.92-0.001",
+        "kind": "changed",
+        "summary": "MCP tools continue working after OAuth reauthentication when tool definitions are unchanged",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 401381666,
+      "tag_commitish": "main"
+    }
+  },
+  {
+    "id": "rel.github-copilot-cli.1.0.91",
+    "harness_id": "github-copilot-cli",
+    "version": "1.0.91",
+    "channel": "stable",
+    "published_at": "2026-10-01T17:25:02Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-10-01T22:42:54.111702Z",
+    "source_id": "src.copilot-cli.releases",
+    "source_url": "https://github.com/github/copilot-cli/releases/tag/v1.0.91",
+    "raw_snapshot_path": null,
+    "raw_sha256": "edb6b08876907897b8a9609666c46c1b7ff18b3438848ad865abe7a0e98fc30b",
+    "title": "1.0.91",
+    "notes_excerpt": "Add `copilot sandbox ca` commands to check, create, trust, rotate, and remove proxy CA trust, including unattended Windows setup; `/sandbox ca install` becomes `create` and `trust`",
+    "change_count": 7,
+    "flags": {
+      "security": true,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.github-copilot-cli.1.0.91.001",
+        "kind": "added",
+        "summary": "Add `copilot sandbox ca` commands to check, create, trust, rotate, and remove proxy CA trust, including unattended Windows setup; `/sandbox ca install` becomes `create` and `trust`",
+        "category": "security_governance",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "security.sandbox"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.91.002",
+        "kind": "changed",
+        "summary": "Session timelines now clear busy status after interrupted turns finish.",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.91.003",
+        "kind": "changed",
+        "summary": "Sandboxed commands run on Windows versions without filesystem enumeration support, with a warning that PowerShell's current location may be wrong",
+        "category": "execution",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "security.sandbox"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.91.004",
+        "kind": "changed",
+        "summary": "Footer text selection stays on the same visible line when the footer grows or shrinks.",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.91.005",
+        "kind": "changed",
+        "summary": "Offer sandbox network bypass for Node/npm EACCES socket denials on Windows",
+        "category": "security_governance",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "security.sandbox"
+        ],
+        "security_relevant": true,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.91.006",
+        "kind": "changed",
+        "summary": "CLI shutdown flushes pending telemetry before exit, with a bounded delay when telemetry is still initializing.",
+        "category": "observability",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.91.007",
+        "kind": "changed",
+        "summary": "Complete, statically analyzable read-only shell pipelines can now enter execution-evidence review, while incomplete or unbound pipelines require explicit approval.",
+        "category": "execution",
+        "surfaces": [
+          "ide",
+          "ci"
+        ],
+        "actors": [
+          "human_operator",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "security.permissions",
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 401192726,
+      "tag_commitish": "main"
+    }
+  },
+  {
     "id": "rel.github-copilot-cli.1.0.91-1",
     "harness_id": "github-copilot-cli",
     "version": "1.0.91-1",
