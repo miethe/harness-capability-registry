@@ -1,5 +1,850 @@
 [
   {
+    "id": "rel.qwen-code.0.24.7-nightly.20260930.57e720bc97",
+    "harness_id": "qwen-code",
+    "version": "0.24.7-nightly.20260930.57e720bc97",
+    "channel": "nightly",
+    "published_at": "2026-09-30T22:19:59Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-10-01T13:15:49.305985Z",
+    "source_id": "src.qwen.releases",
+    "source_url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.24.7-nightly.20260930.57e720bc97",
+    "raw_snapshot_path": null,
+    "raw_sha256": "e3f4a1c0120111b41d327bb2d7ef38f5b63d2ec30a70160bdda4031dbc2f68b0",
+    "title": "Release v0.24.7-nightly.20260930.57e720bc97",
+    "notes_excerpt": "fix(core): align Code Mode text with lazy tool discovery by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/12990",
+    "change_count": 39,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.001",
+        "kind": "fixed",
+        "summary": "fix(core): align Code Mode text with lazy tool discovery by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/12990",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.002",
+        "kind": "fixed",
+        "summary": "fix(permissions): honor approved cross-directory tool calls by @tanzhenxin in https://github.com/QwenLM/qwen-code/pull/12987",
+        "category": "security_governance",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "security.permissions"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.003",
+        "kind": "fixed",
+        "summary": "fix(cli): stop swallowing Enter while completion suggestions load (#13015) by @qwen-code-dev-bot in https://github.com/QwenLM/qwen-code/pull/13021",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.004",
+        "kind": "fixed",
+        "summary": "fix(cli): isolate daemon extension settings loads from shared process state by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/13022",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.005",
+        "kind": "changed",
+        "summary": "test(managed-agent): record Hosted latency baseline by @wenshao in https://github.com/QwenLM/qwen-code/pull/12945",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.006",
+        "kind": "changed",
+        "summary": "feat(agents): add local workspace-agent collaboration by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/11206",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.007",
+        "kind": "changed",
+        "summary": "feat(serve): implement generic Broker provider controls by @wenshao in https://github.com/QwenLM/qwen-code/pull/12868",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.008",
+        "kind": "changed",
+        "summary": "feat(managed-agent): enable G0 public Workspace file turns by @wenshao in https://github.com/QwenLM/qwen-code/pull/12955",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.009",
+        "kind": "fixed",
+        "summary": "fix(serve): upload session attachments in 512 KiB chunks by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12923",
+        "category": "session_state",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.010",
+        "kind": "changed",
+        "summary": "test(managed-agent): Pin M4 close anchors and the published definition (M4 follow-up) by @wenshao in https://github.com/QwenLM/qwen-code/pull/12995",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.011",
+        "kind": "fixed",
+        "summary": "fix(cli): Bound how long a relaunched child outlives its supervisor by @wenshao in https://github.com/QwenLM/qwen-code/pull/13036",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.012",
+        "kind": "changed",
+        "summary": "test(managed-agent): gate provider retries and release ordering by @wenshao in https://github.com/QwenLM/qwen-code/pull/13061",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.013",
+        "kind": "changed",
+        "summary": "test(managed-agent): stop racing the recovery scanner in turn-claim tests by @wenshao in https://github.com/QwenLM/qwen-code/pull/13032",
+        "category": "automation",
+        "surfaces": [
+          "terminal_interactive",
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.014",
+        "kind": "fixed",
+        "summary": "fix(core): honor NO_PROXY for usage-statistics RUM uploads by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/13023",
+        "category": "observability",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "observability.usage_cost"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.015",
+        "kind": "fixed",
+        "summary": "fix(runtime-broker): answer a refused provider start as unknown instead of prepared by @wenshao in https://github.com/QwenLM/qwen-code/pull/13064",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.016",
+        "kind": "fixed",
+        "summary": "fix(runtime-broker): keep the UNKNOWN answer when the original Runtime cannot answer by @wenshao in https://github.com/QwenLM/qwen-code/pull/13069",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.017",
+        "kind": "changed",
+        "summary": "feat(sdk-java): Add audited Hosted Workspace operator recovery by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12977",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.018",
+        "kind": "fixed",
+        "summary": "fix(workflow): reject unsupported scripts and oversized batches early by @qqqys in https://github.com/QwenLM/qwen-code/pull/13012",
+        "category": "automation",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.019",
+        "kind": "fixed",
+        "summary": "fix(hooks): deliver pre-tool and ACP failure context to the model by @qqqys in https://github.com/QwenLM/qwen-code/pull/13006",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "extensions.hooks"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.020",
+        "kind": "fixed",
+        "summary": "fix(core): keep delivered notification turns out of ACP rewind ordinals by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/13029",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.021",
+        "kind": "fixed",
+        "summary": "fix(core): honor usage-statistics opt-out for extension lifecycle events by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12789",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.plugins",
+          "observability.usage_cost"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.022",
+        "kind": "changed",
+        "summary": "feat(memory): bundle Mem0 with the main CLI by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12891",
+        "category": "context_memory",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "context.persistent_memory"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.023",
+        "kind": "changed",
+        "summary": "feat(agents): add A2A access and sharing for workspace agents by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/12851",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.024",
+        "kind": "changed",
+        "summary": "feat(managed-agent): ask for Hosted tool approvals (D6a) by @wenshao in https://github.com/QwenLM/qwen-code/pull/13071",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "security.permissions"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.025",
+        "kind": "fixed",
+        "summary": "fix(web-shell): prevent stats header overlap and raw JSON output by @qqqys in https://github.com/QwenLM/qwen-code/pull/13091",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive",
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.026",
+        "kind": "fixed",
+        "summary": "fix(managed-agent): Settle task event and cancel semantics by @wenshao in https://github.com/QwenLM/qwen-code/pull/12998",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.027",
+        "kind": "fixed",
+        "summary": "fix(managed-agent): guard queued Hosted approval expiry by @wenshao in https://github.com/QwenLM/qwen-code/pull/13098",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "security.permissions"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.028",
+        "kind": "changed",
+        "summary": "feat(managed-agent): Add durable remote Shell result delivery by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/12894",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.029",
+        "kind": "changed",
+        "summary": "feat(managed-agent): Implement private Hosted MCP runtime (H1) by @wenshao in https://github.com/QwenLM/qwen-code/pull/12946",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.030",
+        "kind": "changed",
+        "summary": "perf(sdk-java): Serialize runtime broker JSON directly to bytes by @wenshao in https://github.com/QwenLM/qwen-code/pull/13108",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive",
+          "sdk"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.031",
+        "kind": "changed",
+        "summary": "test(cli): give the settlement retry waitFors an explicit timeout (#13034) by @qwen-code-dev-bot in https://github.com/QwenLM/qwen-code/pull/13058",
+        "category": "automation",
+        "surfaces": [
+          "terminal_interactive",
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.032",
+        "kind": "changed",
+        "summary": "test(managed-agent): state which coordinator refusal paths are real by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/13099",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.033",
+        "kind": "changed",
+        "summary": "docs(managed-agent): name the real worker entry in the E2E README by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/13093",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.034",
+        "kind": "changed",
+        "summary": "feat(managed-agent): Serve durable permission Actions (D6b) by @wenshao in https://github.com/QwenLM/qwen-code/pull/13101",
+        "category": "security_governance",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "security.permissions"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.035",
+        "kind": "changed",
+        "summary": "test(managed-agent): close the G0 admission follow-ups by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/13095",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.036",
+        "kind": "fixed",
+        "summary": "fix(web-shell): preserve large context usage snapshots by @qqqys in https://github.com/QwenLM/qwen-code/pull/13097",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive",
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "observability.usage_cost"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.037",
+        "kind": "fixed",
+        "summary": "fix(managed-agent): Complete tenant scope 403 contract by @yiliang114 in https://github.com/QwenLM/qwen-code/pull/13117",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.038",
+        "kind": "changed",
+        "summary": "feat(managed-agent): add verified W1a workspace cold restore by @doudouOUC in https://github.com/QwenLM/qwen-code/pull/13088",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.qwen-code.0.24.7-nightly.20260930.57e720bc97.039",
+        "kind": "changed",
+        "summary": "feat(web-shell): add a collapsible trajectory waterfall by @qqqys in https://github.com/QwenLM/qwen-code/pull/13081",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive",
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 400478972,
+      "tag_commitish": "release/v0.24.7-nightly.20260930.57e720bc97"
+    }
+  },
+  {
     "id": "rel.qwen-code.0.24.7-nightly.20260929.b906f937ec",
     "harness_id": "qwen-code",
     "version": "0.24.7-nightly.20260929.b906f937ec",

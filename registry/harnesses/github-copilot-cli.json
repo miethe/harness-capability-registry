@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "secondary",
-    "current_version": "1.0.90",
-    "version_as_of": "2026-09-30",
-    "last_verified_at": "2026-09-30T22:17:40.950610Z",
+    "current_version": "1.0.91-1",
+    "version_as_of": "2026-10-01",
+    "last_verified_at": "2026-10-01T13:16:04.532294Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/github/copilot-cli",
@@ -229,6 +229,217 @@
     }
   ],
   "releases": [
+    {
+      "id": "rel.github-copilot-cli.1.0.91-1",
+      "harness_id": "github-copilot-cli",
+      "version": "1.0.91-1",
+      "channel": "prerelease",
+      "published_at": "2026-10-01T06:15:57Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T13:15:56.706193Z",
+      "source_id": "src.copilot-cli.releases",
+      "source_url": "https://github.com/github/copilot-cli/releases/tag/v1.0.91-1",
+      "raw_snapshot_path": null,
+      "raw_sha256": "0fec098a748370baf5c7f14768ffedff0ecce452e2454cae432dbe2398465690",
+      "title": "1.0.91-1",
+      "notes_excerpt": "Add `copilot sandbox ca` commands to check, create, trust, rotate, and remove proxy CA trust, including unattended Windows setup; `/sandbox ca install` becomes `create` and `trust`",
+      "change_count": 5,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.github-copilot-cli.1.0.91-1.001",
+          "kind": "added",
+          "summary": "Add `copilot sandbox ca` commands to check, create, trust, rotate, and remove proxy CA trust, including unattended Windows setup; `/sandbox ca install` becomes `create` and `trust`",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.91-1.002",
+          "kind": "changed",
+          "summary": "CLI shutdown flushes pending telemetry before exit, with a bounded delay when telemetry is still initializing.",
+          "category": "observability",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.91-1.003",
+          "kind": "changed",
+          "summary": "Session timelines now clear busy status after interrupted turns finish.",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.91-1.004",
+          "kind": "changed",
+          "summary": "Sandboxed commands run on Windows versions without filesystem enumeration support, with a warning that PowerShell's current location may be wrong",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.91-1.005",
+          "kind": "changed",
+          "summary": "Footer text selection stays on the same visible line when the footer grows or shrinks.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 400693850,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.github-copilot-cli.1.0.91-0",
+      "harness_id": "github-copilot-cli",
+      "version": "1.0.91-0",
+      "channel": "prerelease",
+      "published_at": "2026-09-30T23:18:00Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-01T13:15:56.706389Z",
+      "source_id": "src.copilot-cli.releases",
+      "source_url": "https://github.com/github/copilot-cli/releases/tag/v1.0.91-0",
+      "raw_snapshot_path": null,
+      "raw_sha256": "acbc94c829e1ec86b4b5c3aa2e41d24e9796b04bcf38b28eee70a8d8f3224ebb",
+      "title": "1.0.91-0",
+      "notes_excerpt": "Complete, statically analyzable read-only shell pipelines can now enter execution-evidence review, while incomplete or unbound pipelines require explicit approval.",
+      "change_count": 2,
+      "flags": {
+        "security": true,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.github-copilot-cli.1.0.91-0.001",
+          "kind": "changed",
+          "summary": "Complete, statically analyzable read-only shell pipelines can now enter execution-evidence review, while incomplete or unbound pipelines require explicit approval.",
+          "category": "execution",
+          "surfaces": [
+            "ide",
+            "ci"
+          ],
+          "actors": [
+            "human_operator",
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "security.permissions",
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.91-0.002",
+          "kind": "changed",
+          "summary": "Offer sandbox network bypass for Node/npm EACCES socket denials on Windows",
+          "category": "security_governance",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 400504518,
+        "tag_commitish": "main"
+      }
+    },
     {
       "id": "rel.github-copilot-cli.1.0.90",
       "harness_id": "github-copilot-cli",
