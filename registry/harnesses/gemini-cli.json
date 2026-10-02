@@ -7,9 +7,9 @@
     "lifecycle": "legacy",
     "maturity": "legacy_for_individuals",
     "tracking_priority": "historical",
-    "current_version": "0.64.0-nightly.20261001.gc6bccb7ec",
-    "version_as_of": "2026-10-01",
-    "last_verified_at": "2026-10-01T13:16:04.532294Z",
+    "current_version": "0.64.0-nightly.20261002.gc9096a847",
+    "version_as_of": "2026-10-02",
+    "last_verified_at": "2026-10-02T05:39:01.371768Z",
     "predecessor": null,
     "successor": "antigravity-cli",
     "repo_url": "https://github.com/google-gemini/gemini-cli",
@@ -657,6 +657,198 @@
     }
   ],
   "releases": [
+    {
+      "id": "rel.gemini-cli.0.64.0-nightly.20261002.gc9096a847",
+      "harness_id": "gemini-cli",
+      "version": "0.64.0-nightly.20261002.gc9096a847",
+      "channel": "nightly",
+      "published_at": "2026-10-02T01:33:21Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-02T05:38:44.257150Z",
+      "source_id": "src.gemini.releases",
+      "source_url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0-nightly.20261002.gc9096a847",
+      "raw_snapshot_path": null,
+      "raw_sha256": "7953e9d28cfc18e85bf1bd1e8727e166424db367999ae74c2e33fed641726a21",
+      "title": "Release v0.64.0-nightly.20261002.gc9096a847",
+      "notes_excerpt": "fix(core): implement append-only delta patching and bounded history windowing in ChatRecordingService by @jvargassanchez-dot in https://github.com/google-gemini/gemini-cli/pull/29568",
+      "change_count": 8,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.gemini-cli.0.64.0-nightly.20261002.gc9096a847.001",
+          "kind": "fixed",
+          "summary": "fix(core): implement append-only delta patching and bounded history windowing in ChatRecordingService by @jvargassanchez-dot in https://github.com/google-gemini/gemini-cli/pull/29568",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.gemini-cli.0.64.0-nightly.20261002.gc9096a847.002",
+          "kind": "fixed",
+          "summary": "fix(cli): persist state atomically and recover from backup on corruption by @urielefrenvirtusa in https://github.com/google-gemini/gemini-cli/pull/29558",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.gemini-cli.0.64.0-nightly.20261002.gc9096a847.003",
+          "kind": "fixed",
+          "summary": "fix(cli): ensure Ctrl+C emergency abort reaches cancellation handler during active operations by @urielefrenvirtusa in https://github.com/google-gemini/gemini-cli/pull/29586",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.gemini-cli.0.64.0-nightly.20261002.gc9096a847.004",
+          "kind": "fixed",
+          "summary": "fix(cli): resolve @file:line references and prevent ghost text wrap hang by @jesussamuel-byte in https://github.com/google-gemini/gemini-cli/pull/29581",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.gemini-cli.0.64.0-nightly.20261002.gc9096a847.005",
+          "kind": "fixed",
+          "summary": "fix(ui): ensure Windows ConPTY forwards IME cursor position by @jesussamuel-byte in https://github.com/google-gemini/gemini-cli/pull/29560",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.gemini-cli.0.64.0-nightly.20261002.gc9096a847.006",
+          "kind": "fixed",
+          "summary": "fix(cli): retry directory removal on Windows locking errors during extension updates by @jesussamuel-byte in https://github.com/google-gemini/gemini-cli/pull/29540",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.plugins"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.gemini-cli.0.64.0-nightly.20261002.gc9096a847.007",
+          "kind": "fixed",
+          "summary": "fix(acp): resolve session by exact id and handle listener cleanup on session failure by @diegogodinezr in https://github.com/google-gemini/gemini-cli/pull/29580",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.gemini-cli.0.64.0-nightly.20261002.gc9096a847.008",
+          "kind": "fixed",
+          "summary": "fix(cli): preserve scroll position and partition pending height budget by @luisfelipe-alt in https://github.com/google-gemini/gemini-cli/pull/29520",
+          "category": "other",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 401476363,
+        "tag_commitish": "release/v0.64.0-nightly.20261002.gc9096a847"
+      }
+    },
     {
       "id": "rel.gemini-cli.0.64.0-nightly.20261001.gc6bccb7ec",
       "harness_id": "gemini-cli",
