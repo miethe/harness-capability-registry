@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "core",
-    "current_version": "1.2.14",
-    "version_as_of": "2026-09-30",
-    "last_verified_at": "2026-09-30T22:17:40.950610Z",
+    "current_version": "1.2.15",
+    "version_as_of": "2026-10-02",
+    "last_verified_at": "2026-10-02T22:15:53.014951Z",
     "predecessor": "gemini-cli",
     "successor": null,
     "repo_url": "https://github.com/google-antigravity/antigravity-cli",
@@ -1294,13 +1294,344 @@
   ],
   "releases": [
     {
+      "id": "rel.antigravity-cli.1.2.15",
+      "harness_id": "antigravity-cli",
+      "version": "1.2.15",
+      "channel": "stable",
+      "published_at": "2026-10-02T17:00:58Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-02T22:15:32.414559Z",
+      "source_id": "src.antigravity.releases",
+      "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.15",
+      "raw_snapshot_path": null,
+      "raw_sha256": "ad5d0ab461be49f1aaa3189be4f8f5afc0e4e0e64e34169fbf233c5222ee2591",
+      "title": "1.2.15",
+      "notes_excerpt": "Added prebuilt native Android binaries of the CLI that can run directly in Termux, without requiring a proot-distro environment.",
+      "change_count": 14,
+      "flags": {
+        "security": false,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.antigravity-cli.1.2.15.001",
+          "kind": "added",
+          "summary": "Added prebuilt native Android binaries of the CLI that can run directly in Termux, without requiring a proot-distro environment.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.002",
+          "kind": "improved",
+          "summary": "Improved responsiveness while typing, scrolling, and streaming agent output by sharply reducing the memory the CLI allocates on every update and redraw",
+          "category": "context_memory",
+          "surfaces": [
+            "ci"
+          ],
+          "actors": [
+            "ci_runner"
+          ],
+          "capability_refs": [
+            "context.persistent_memory",
+            "automation.ci"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.003",
+          "kind": "improved",
+          "summary": "Improved `-p \"/usage\"` to show quota reset times in your local time zone when printing to a terminal; piped and `--json` output still use UTC timestamps, so existing scripts are unaffected",
+          "category": "observability",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.004",
+          "kind": "improved",
+          "summary": "Improved the always-allow suggestion when approving `repo` commands: it is now limited to the subcommand, such as `repo status`, instead of allowing every `repo` command, matching `git`, `hg`, and `jj`",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.005",
+          "kind": "improved",
+          "summary": "Improved how the agent handles a permission request that is not approved, such as one raised by a subagent that cannot ask you: it now respects the denial and no longer tries to work around it with other commands, scripts, or tools",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents",
+            "security.permissions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.006",
+          "kind": "fixed",
+          "summary": "Fixed the conversation view freezing for the rest of the session, with no new steps appearing while the agent kept working, after redraws such as several quick terminal resizes in a long conversation; the CLI now reconnects automatically, warns only if reconnecting fails, and sending a new message recovers a lost connection",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.007",
+          "kind": "fixed",
+          "summary": "Fixed requests made after your plan quota is used up and your AI credits balance cannot cover them: instead of retrying on `Working...` for about two and a half minutes and then showing the generic \"Agent execution terminated due to error.\", the CLI now immediately says \"Your AI credits balance is too low to continue.\"",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "observability.usage_cost"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.008",
+          "kind": "fixed",
+          "summary": "Fixed text like `Ga=q,f=32,s=1,v=1,i=31;AAAAAA==` being left behind in macOS Terminal.app after exiting the CLI over SSH; the CLI now asks the terminal to identify itself before probing for image support, and over SSH only Kitty and Ghostty are treated as image-capable, so WezTerm and Konsole no longer show garbled image placeholders",
+          "category": "interfaces",
+          "surfaces": [
+            "terminal_interactive",
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.009",
+          "kind": "fixed",
+          "summary": "Fixed the Vim mode cursor stopping inside emoji such as 👩‍💻 or ⚠️ and characters with combining marks such as Devanagari: `h`, `l`, and other motions now move over whole characters, and `x` and `r` delete or replace the whole character instead of a hidden part of it",
+          "category": "interfaces",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.010",
+          "kind": "fixed",
+          "summary": "Fixed the search box in the `/resume` conversation picker wrapping long queries so that their beginning scrolled out of view; the box now uses the full terminal width",
+          "category": "session_state",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "sessions.resume_fork"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.011",
+          "kind": "fixed",
+          "summary": "Fixed the agent being blocked from reading your global rules and customization files in `~/.gemini/config`, including the `rules/` folder, `AGENTS.md`, `GEMINI.md`, `skills.json`, `rules.json`, `plugins.json`, and `agents.json`; it can now read them and asks before editing them, while other files in that folder stay off-limits",
+          "category": "extensions",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.skills",
+            "extensions.plugins",
+            "context.project_instructions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.012",
+          "kind": "fixed",
+          "summary": "Fixed global rules being added to the agent's context more than once when `~/.gemini/GEMINI.md`, `~/.gemini/AGENTS.md`, or their `~/.gemini/config/` counterparts are symlinks to the same file",
+          "category": "context_memory",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "context.project_instructions"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.013",
+          "kind": "fixed",
+          "summary": "Fixed signing in to MCP servers whose OAuth client registration responds with HTTP `200` instead of `201`, which previously failed with `registration failed with status 200`",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.antigravity-cli.1.2.15.014",
+          "kind": "fixed",
+          "summary": "Fixed large WebP images opened by the agent not being scaled down to fit image size limits the way PNG and JPEG images are",
+          "category": "interfaces",
+          "surfaces": [
+            "web"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 402002153,
+        "tag_commitish": "main"
+      }
+    },
+    {
       "id": "rel.antigravity-cli.1.2.14",
       "harness_id": "antigravity-cli",
       "version": "1.2.14",
       "channel": "stable",
       "published_at": "2026-09-30T04:03:27Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:19.999546Z",
+      "retrieved_at": "2026-10-02T22:15:32.415500Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.14",
       "raw_snapshot_path": null,
@@ -1517,7 +1848,7 @@
       "channel": "stable",
       "published_at": "2026-09-29T03:58:00Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:19.999972Z",
+      "retrieved_at": "2026-10-02T22:15:32.415898Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.13",
       "raw_snapshot_path": null,
@@ -1633,7 +1964,7 @@
       "channel": "stable",
       "published_at": "2026-09-27T05:06:09Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.000534Z",
+      "retrieved_at": "2026-10-02T22:15:32.416455Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.12",
       "raw_snapshot_path": null,
@@ -1771,7 +2102,7 @@
       "channel": "stable",
       "published_at": "2026-09-25T04:22:17Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.001015Z",
+      "retrieved_at": "2026-10-02T22:15:32.416954Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.11",
       "raw_snapshot_path": null,
@@ -1915,7 +2246,7 @@
       "channel": "stable",
       "published_at": "2026-09-24T06:26:54Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.002131Z",
+      "retrieved_at": "2026-10-02T22:15:32.418064Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.10",
       "raw_snapshot_path": null,
@@ -2200,7 +2531,7 @@
       "channel": "stable",
       "published_at": "2026-09-23T04:42:15Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.003309Z",
+      "retrieved_at": "2026-10-02T22:15:32.419197Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.9",
       "raw_snapshot_path": null,
@@ -2555,7 +2886,7 @@
       "channel": "stable",
       "published_at": "2026-09-22T04:12:17Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.004232Z",
+      "retrieved_at": "2026-10-02T22:15:32.420101Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.8",
       "raw_snapshot_path": null,
@@ -2816,7 +3147,7 @@
       "channel": "stable",
       "published_at": "2026-09-19T01:01:46Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.005341Z",
+      "retrieved_at": "2026-10-02T22:15:32.421245Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.7",
       "raw_snapshot_path": null,
@@ -3142,7 +3473,7 @@
       "channel": "stable",
       "published_at": "2026-09-18T04:21:05Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.006439Z",
+      "retrieved_at": "2026-10-02T22:15:32.422349Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.6",
       "raw_snapshot_path": null,
@@ -3402,7 +3733,7 @@
       "channel": "stable",
       "published_at": "2026-09-17T04:10:06Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.007113Z",
+      "retrieved_at": "2026-10-02T22:15:32.423019Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.5",
       "raw_snapshot_path": null,
@@ -3583,7 +3914,7 @@
       "channel": "stable",
       "published_at": "2026-09-16T03:54:29Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.008074Z",
+      "retrieved_at": "2026-10-02T22:15:32.423975Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.4",
       "raw_snapshot_path": null,
@@ -3897,7 +4228,7 @@
       "channel": "stable",
       "published_at": "2026-09-15T02:03:04Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.008516Z",
+      "retrieved_at": "2026-10-02T22:15:32.424418Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.3",
       "raw_snapshot_path": null,
@@ -4037,7 +4368,7 @@
       "channel": "stable",
       "published_at": "2026-09-12T03:51:08Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.009327Z",
+      "retrieved_at": "2026-10-02T22:15:32.425247Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.2",
       "raw_snapshot_path": null,
@@ -4270,7 +4601,7 @@
       "channel": "stable",
       "published_at": "2026-09-11T06:46:48Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.010123Z",
+      "retrieved_at": "2026-10-02T22:15:32.426079Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.1",
       "raw_snapshot_path": null,
@@ -4503,7 +4834,7 @@
       "channel": "stable",
       "published_at": "2026-09-10T01:43:29Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.011119Z",
+      "retrieved_at": "2026-10-02T22:15:32.427050Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.2.0",
       "raw_snapshot_path": null,
@@ -4752,7 +5083,7 @@
       "channel": "stable",
       "published_at": "2026-09-09T00:43:52Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.012692Z",
+      "retrieved_at": "2026-10-02T22:15:32.428611Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.28",
       "raw_snapshot_path": null,
@@ -5143,7 +5474,7 @@
       "channel": "stable",
       "published_at": "2026-09-05T04:23:25Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.013801Z",
+      "retrieved_at": "2026-10-02T22:15:32.429738Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.27",
       "raw_snapshot_path": null,
@@ -5448,7 +5779,7 @@
       "channel": "stable",
       "published_at": "2026-09-04T03:28:48Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.014451Z",
+      "retrieved_at": "2026-10-02T22:15:32.430388Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.26",
       "raw_snapshot_path": null,
@@ -5675,7 +6006,7 @@
       "channel": "stable",
       "published_at": "2026-09-03T02:30:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.015167Z",
+      "retrieved_at": "2026-10-02T22:15:32.431131Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.25",
       "raw_snapshot_path": null,
@@ -5922,7 +6253,7 @@
       "channel": "stable",
       "published_at": "2026-09-02T02:38:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.015717Z",
+      "retrieved_at": "2026-10-02T22:15:32.431689Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.24",
       "raw_snapshot_path": null,
@@ -6104,7 +6435,7 @@
       "channel": "stable",
       "published_at": "2026-09-01T04:47:50Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.016668Z",
+      "retrieved_at": "2026-10-02T22:15:32.432642Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.23",
       "raw_snapshot_path": null,
@@ -6408,7 +6739,7 @@
       "channel": "stable",
       "published_at": "2026-08-27T04:03:21Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.017585Z",
+      "retrieved_at": "2026-10-02T22:15:32.433561Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.22",
       "raw_snapshot_path": null,
@@ -6675,7 +7006,7 @@
       "channel": "stable",
       "published_at": "2026-08-26T02:21:06Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.018552Z",
+      "retrieved_at": "2026-10-02T22:15:32.434524Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.21",
       "raw_snapshot_path": null,
@@ -6949,7 +7280,7 @@
       "channel": "stable",
       "published_at": "2026-08-25T02:58:27Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.019449Z",
+      "retrieved_at": "2026-10-02T22:15:32.435391Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.20",
       "raw_snapshot_path": null,
@@ -7177,7 +7508,7 @@
       "channel": "stable",
       "published_at": "2026-08-22T23:30:26Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.019698Z",
+      "retrieved_at": "2026-10-02T22:15:32.435637Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.19",
       "raw_snapshot_path": null,
@@ -7268,7 +7599,7 @@
       "channel": "stable",
       "published_at": "2026-08-22T01:46:57Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.020709Z",
+      "retrieved_at": "2026-10-02T22:15:32.436714Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.18",
       "raw_snapshot_path": null,
@@ -7547,7 +7878,7 @@
       "channel": "stable",
       "published_at": "2026-08-20T22:13:58Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.021021Z",
+      "retrieved_at": "2026-10-02T22:15:32.437035Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.17",
       "raw_snapshot_path": null,
@@ -7664,7 +7995,7 @@
       "channel": "stable",
       "published_at": "2026-08-20T04:14:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.022605Z",
+      "retrieved_at": "2026-10-02T22:15:32.438593Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.16",
       "raw_snapshot_path": null,
@@ -8072,7 +8403,7 @@
       "channel": "stable",
       "published_at": "2026-08-19T04:11:33Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.023670Z",
+      "retrieved_at": "2026-10-02T22:15:32.439658Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.15",
       "raw_snapshot_path": null,
@@ -8407,7 +8738,7 @@
       "channel": "stable",
       "published_at": "2026-08-18T04:10:43Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.024857Z",
+      "retrieved_at": "2026-10-02T22:15:32.440792Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.14",
       "raw_snapshot_path": null,
@@ -8739,7 +9070,7 @@
       "channel": "stable",
       "published_at": "2026-08-14T02:26:19Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.026756Z",
+      "retrieved_at": "2026-10-02T22:15:32.442707Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.13",
       "raw_snapshot_path": null,
@@ -9214,7 +9545,7 @@
       "channel": "stable",
       "published_at": "2026-08-11T01:26:58Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.029098Z",
+      "retrieved_at": "2026-10-02T22:15:32.445052Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.12",
       "raw_snapshot_path": null,
@@ -9805,7 +10136,7 @@
       "channel": "stable",
       "published_at": "2026-08-07T02:35:23Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.030981Z",
+      "retrieved_at": "2026-10-02T22:15:32.446861Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.11",
       "raw_snapshot_path": null,
@@ -10232,7 +10563,7 @@
       "channel": "stable",
       "published_at": "2026-08-03T15:45:42Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.032533Z",
+      "retrieved_at": "2026-10-02T22:15:32.448428Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.10",
       "raw_snapshot_path": null,
@@ -10652,7 +10983,7 @@
       "channel": "stable",
       "published_at": "2026-07-31T05:12:14Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.033449Z",
+      "retrieved_at": "2026-10-02T22:15:32.449344Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.9",
       "raw_snapshot_path": null,
@@ -10931,7 +11262,7 @@
       "channel": "stable",
       "published_at": "2026-07-28T00:59:10Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.034217Z",
+      "retrieved_at": "2026-10-02T22:15:32.450082Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.8",
       "raw_snapshot_path": null,
@@ -11122,7 +11453,7 @@
       "channel": "stable",
       "published_at": "2026-07-26T00:43:16Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.034656Z",
+      "retrieved_at": "2026-10-02T22:15:32.450519Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.7",
       "raw_snapshot_path": null,
@@ -11283,7 +11614,7 @@
       "channel": "stable",
       "published_at": "2026-07-24T03:02:18Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.036235Z",
+      "retrieved_at": "2026-10-02T22:15:32.452104Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.6",
       "raw_snapshot_path": null,
@@ -11737,7 +12068,7 @@
       "channel": "stable",
       "published_at": "2026-07-21T02:33:39Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.037275Z",
+      "retrieved_at": "2026-10-02T22:15:32.453157Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.5",
       "raw_snapshot_path": null,
@@ -12228,7 +12559,7 @@
       "channel": "stable",
       "published_at": "2026-07-16T01:01:57Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.039105Z",
+      "retrieved_at": "2026-10-02T22:15:32.455001Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.3",
       "raw_snapshot_path": null,
@@ -12600,7 +12931,7 @@
       "channel": "stable",
       "published_at": "2026-07-13T23:26:02Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.039918Z",
+      "retrieved_at": "2026-10-02T22:15:32.455821Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.2",
       "raw_snapshot_path": null,
@@ -12828,7 +13159,7 @@
       "channel": "stable",
       "published_at": "2026-07-10T03:40:13Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.040838Z",
+      "retrieved_at": "2026-10-02T22:15:32.456747Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.1",
       "raw_snapshot_path": null,
@@ -13117,7 +13448,7 @@
       "channel": "stable",
       "published_at": "2026-07-08T03:25:54Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.042168Z",
+      "retrieved_at": "2026-10-02T22:15:32.458030Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.1.0",
       "raw_snapshot_path": null,
@@ -13446,7 +13777,7 @@
       "channel": "stable",
       "published_at": "2026-07-02T18:37:15Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.042654Z",
+      "retrieved_at": "2026-10-02T22:15:32.458510Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.16",
       "raw_snapshot_path": null,
@@ -13603,7 +13934,7 @@
       "channel": "stable",
       "published_at": "2026-07-01T22:59:00Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.043380Z",
+      "retrieved_at": "2026-10-02T22:15:32.459263Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.15",
       "raw_snapshot_path": null,
@@ -13832,7 +14163,7 @@
       "channel": "stable",
       "published_at": "2026-06-30T02:28:33Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.043876Z",
+      "retrieved_at": "2026-10-02T22:15:32.459755Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.14",
       "raw_snapshot_path": null,
@@ -14011,7 +14342,7 @@
       "channel": "stable",
       "published_at": "2026-06-27T01:58:53Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.044497Z",
+      "retrieved_at": "2026-10-02T22:15:32.460351Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.13",
       "raw_snapshot_path": null,
@@ -14199,7 +14530,7 @@
       "channel": "stable",
       "published_at": "2026-06-24T23:17:33Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.045254Z",
+      "retrieved_at": "2026-10-02T22:15:32.461105Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.12",
       "raw_snapshot_path": null,
@@ -14426,7 +14757,7 @@
       "channel": "stable",
       "published_at": "2026-06-24T05:30:00Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.046588Z",
+      "retrieved_at": "2026-10-02T22:15:32.462463Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.11",
       "raw_snapshot_path": null,
@@ -14796,7 +15127,7 @@
       "channel": "stable",
       "published_at": "2026-06-19T04:36:23Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.047442Z",
+      "retrieved_at": "2026-10-02T22:15:32.463326Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.10",
       "raw_snapshot_path": null,
@@ -15100,7 +15431,7 @@
       "channel": "stable",
       "published_at": "2026-06-17T02:48:46Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.048182Z",
+      "retrieved_at": "2026-10-02T22:15:32.464067Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.9",
       "raw_snapshot_path": null,
@@ -15328,7 +15659,7 @@
       "channel": "stable",
       "published_at": "2026-06-12T22:56:40Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.049454Z",
+      "retrieved_at": "2026-10-02T22:15:32.465341Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.8",
       "raw_snapshot_path": null,
@@ -15727,7 +16058,7 @@
       "channel": "stable",
       "published_at": "2026-06-09T20:40:53Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.050512Z",
+      "retrieved_at": "2026-10-02T22:15:32.466398Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.7",
       "raw_snapshot_path": null,
@@ -16054,7 +16385,7 @@
       "channel": "stable",
       "published_at": "2026-06-06T00:43:00Z",
       "date_precision": "second",
-      "retrieved_at": "2026-10-02T12:36:20.051132Z",
+      "retrieved_at": "2026-10-02T22:15:32.467017Z",
       "source_id": "src.antigravity.releases",
       "source_url": "https://github.com/google-antigravity/antigravity-cli/releases/tag/1.0.6",
       "raw_snapshot_path": null,

@@ -7,9 +7,9 @@
     "lifecycle": "active",
     "maturity": "stable",
     "tracking_priority": "secondary",
-    "current_version": "1.0.92-0",
-    "version_as_of": "2026-10-01",
-    "last_verified_at": "2026-10-01T22:43:03.817036Z",
+    "current_version": "1.0.92-3",
+    "version_as_of": "2026-10-02",
+    "last_verified_at": "2026-10-02T22:15:53.014951Z",
     "predecessor": null,
     "successor": null,
     "repo_url": "https://github.com/github/copilot-cli",
@@ -229,6 +229,372 @@
     }
   ],
   "releases": [
+    {
+      "id": "rel.github-copilot-cli.1.0.92-3",
+      "harness_id": "github-copilot-cli",
+      "version": "1.0.92-3",
+      "channel": "prerelease",
+      "published_at": "2026-10-02T22:06:14Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-02T22:15:43.707452Z",
+      "source_id": "src.copilot-cli.releases",
+      "source_url": "https://github.com/github/copilot-cli/releases/tag/v1.0.92-3",
+      "raw_snapshot_path": null,
+      "raw_sha256": "bb75582c0dcc07c6120c69b811ead5cfdb2347f258e4421894534884c0a047f3",
+      "title": "1.0.92-3",
+      "notes_excerpt": "Add a pre-conversation Ctrl+E environment picker to switch between local and cloud runs",
+      "change_count": 6,
+      "flags": {
+        "security": true,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.github-copilot-cli.1.0.92-3.001",
+          "kind": "added",
+          "summary": "Add a pre-conversation Ctrl+E environment picker to switch between local and cloud runs",
+          "category": "session_state",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.92-3.002",
+          "kind": "changed",
+          "summary": "Keyboard, paste, and mouse input now stay ordered and responsive during rapid interaction.",
+          "category": "other",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "external_orchestrator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.92-3.003",
+          "kind": "changed",
+          "summary": "Sandboxed shell commands offer a network bypass prompt whenever the proxy blocks a destination",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.92-3.004",
+          "kind": "changed",
+          "summary": "Sandboxed scripts that run Git now authenticate with masked credentials and SSH remote rewrites",
+          "category": "security_governance",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.92-3.005",
+          "kind": "changed",
+          "summary": "Sub-agents keep working after you replace your GitHub authentication credentials",
+          "category": "security_governance",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": true,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.92-3.006",
+          "kind": "removed",
+          "summary": "Remove retired models from the model picker and supported CLI selections",
+          "category": "models_providers",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 402185992,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.github-copilot-cli.1.0.92-2",
+      "harness_id": "github-copilot-cli",
+      "version": "1.0.92-2",
+      "channel": "prerelease",
+      "published_at": "2026-10-02T19:04:04Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-02T22:15:43.707642Z",
+      "source_id": "src.copilot-cli.releases",
+      "source_url": "https://github.com/github/copilot-cli/releases/tag/v1.0.92-2",
+      "raw_snapshot_path": null,
+      "raw_sha256": "088dd2ac4bdcc022208ebd95acbd0c40e1225782089fc2fcc83608542864b865",
+      "title": "1.0.92-2",
+      "notes_excerpt": "Sandboxed commands on Windows write temporary files to the granted temp directory, so tools that rename a temp file into place work",
+      "change_count": 2,
+      "flags": {
+        "security": false,
+        "breaking": false,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.github-copilot-cli.1.0.92-2.001",
+          "kind": "changed",
+          "summary": "Sandboxed commands on Windows write temporary files to the granted temp directory, so tools that rename a temp file into place work",
+          "category": "execution",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.92-2.002",
+          "kind": "changed",
+          "summary": "Prompt-mode sessions fire a single sessionEnd hook after Stop-hook continuations complete",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "extensions.hooks"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 402081249,
+        "tag_commitish": "main"
+      }
+    },
+    {
+      "id": "rel.github-copilot-cli.1.0.92-1",
+      "harness_id": "github-copilot-cli",
+      "version": "1.0.92-1",
+      "channel": "prerelease",
+      "published_at": "2026-10-02T16:09:17Z",
+      "date_precision": "second",
+      "retrieved_at": "2026-10-02T22:15:43.708034Z",
+      "source_id": "src.copilot-cli.releases",
+      "source_url": "https://github.com/github/copilot-cli/releases/tag/v1.0.92-1",
+      "raw_snapshot_path": null,
+      "raw_sha256": "47e5fb70b785c96de5651d3e6214683d1c900b73fc0a1826a2c6594f6d753599",
+      "title": "1.0.92-1",
+      "notes_excerpt": "Reconnect to remote MCP servers after idle Streamable HTTP sessions expire",
+      "change_count": 5,
+      "flags": {
+        "security": false,
+        "breaking": true,
+        "deprecation": false
+      },
+      "changes": [
+        {
+          "id": "chg.github-copilot-cli.1.0.92-1.001",
+          "kind": "changed",
+          "summary": "Reconnect to remote MCP servers after idle Streamable HTTP sessions expire",
+          "category": "extensions",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "extensions.mcp_client"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.92-1.002",
+          "kind": "changed",
+          "summary": "Messaging a running background agent now steers its active turn at the next processing opportunity.",
+          "category": "orchestration",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [
+            "orchestration.parallel_background"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.92-1.003",
+          "kind": "changed",
+          "summary": "Context rollovers keep your latest requests in the recovery context.",
+          "category": "context_memory",
+          "surfaces": [
+            "unspecified"
+          ],
+          "actors": [
+            "unspecified"
+          ],
+          "capability_refs": [],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.92-1.004",
+          "kind": "changed",
+          "summary": "Hide the automatic sandbox CA setup prompt on Windows accounts that cannot self-elevate",
+          "category": "security_governance",
+          "surfaces": [
+            "ide"
+          ],
+          "actors": [
+            "human_operator"
+          ],
+          "capability_refs": [
+            "security.sandbox"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": false,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        },
+        {
+          "id": "chg.github-copilot-cli.1.0.92-1.005",
+          "kind": "changed",
+          "summary": "Copilot no longer describes a subagent as configured when the current session cannot run it. Previously a session that could not use rubber-duck still reported it as set up in /subagents, and asking for it failed instead of being skipped cleanly.",
+          "category": "orchestration",
+          "surfaces": [
+            "terminal_interactive"
+          ],
+          "actors": [
+            "in_harness_agent"
+          ],
+          "capability_refs": [
+            "orchestration.subagents"
+          ],
+          "security_relevant": false,
+          "breaking_or_deprecated": true,
+          "normalization": {
+            "method": "deterministic_heuristic_v1",
+            "confidence": "candidate",
+            "review_status": "unreviewed"
+          }
+        }
+      ],
+      "provenance": {
+        "authority": "official_primary",
+        "ingestion": "github_releases_api",
+        "immutable": true,
+        "github_release_id": 401965605,
+        "tag_commitish": "main"
+      }
+    },
     {
       "id": "rel.github-copilot-cli.1.0.92-0",
       "harness_id": "github-copilot-cli",
