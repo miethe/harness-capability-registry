@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: anthropic-python-sdk
-generated_at: 2026-10-02T12:37:37.730101Z
+generated_at: 2026-10-02T22:16:06.888811Z
 artifact_kind: harness_capability_guide
 ---
 
