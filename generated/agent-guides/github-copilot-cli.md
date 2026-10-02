@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: github-copilot-cli
-generated_at: 2026-10-02T05:39:14.708438Z
+generated_at: 2026-10-02T12:37:37.730101Z
 artifact_kind: harness_capability_guide
 ---
 
