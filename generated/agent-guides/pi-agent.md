@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: pi-agent
-generated_at: 2026-10-03T11:41:28.891486Z
+generated_at: 2026-10-03T16:19:58.830059Z
 artifact_kind: harness_capability_guide
 ---
 
@@ -9,8 +9,8 @@ artifact_kind: harness_capability_guide
 
 **Vendor:** Earendil Works  
 **Lifecycle:** active  
-**Current version in registry:** 1.0.0  
-**Last verified:** 2026-10-01T22:43:03.817036Z
+**Current version in registry:** 1.0.1  
+**Last verified:** 2026-10-03T16:19:43.979154Z
 
 > UI availability does not imply that an in-harness model or an external orchestrator can invoke the capability. Use the actor-specific sections below.
 

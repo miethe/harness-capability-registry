@@ -1,5 +1,631 @@
 [
   {
+    "id": "rel.pi-agent.1.0.1",
+    "harness_id": "pi-agent",
+    "version": "1.0.1",
+    "channel": "stable",
+    "published_at": "2026-10-03T16:14:00Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-10-03T16:19:37.656393Z",
+    "source_id": "src.pi.releases",
+    "source_url": "https://github.com/earendil-works/pi/releases/tag/v1.0.1",
+    "raw_snapshot_path": null,
+    "raw_sha256": "a56fa2ef1ba53a0452b6007ebe046cfe69d03689ae9a1d38f49c15ff3ab43c92",
+    "title": "v1.0.1",
+    "notes_excerpt": "**Nix flake** — `nix run github:earendil-works/pi/stable` runs the latest release, and `nix profile add github:earendil-works/pi/stable` installs it. See [Install pi](https://github.com/earendil-works/pi/blob/v1.0.1/packages/coding-agent/docs/quickstart.md#1-install-pi).",
+    "change_count": 27,
+    "flags": {
+      "security": false,
+      "breaking": true,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.pi-agent.1.0.1.001",
+        "kind": "changed",
+        "summary": "**Nix flake** — `nix run github:earendil-works/pi/stable` runs the latest release, and `nix profile add github:earendil-works/pi/stable` installs it. See [Install pi](https://github.com/earendil-works/pi/blob/v1.0.1/packages/coding-agent/docs/quickstart.md#1-install-pi).",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.002",
+        "kind": "changed",
+        "summary": "**Project overrides for MCP servers** — `.pi/mcp.json` and `/mcp` can enable, disable, or change the exposure of a user-level server for one project. See [Configure servers](https://github.com/earendil-works/pi/blob/v1.0.1/packages/coding-agent/docs/mcp.md#configure-servers).",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.003",
+        "kind": "changed",
+        "summary": "**MCP Client ID Metadata Documents** — `oauth.clientRegistration: \"cimd\"` lets authorization servers allow pi by its document URL instead of dynamic registration. See [Authenticate with OAuth](https://github.com/earendil-works/pi/blob/v1.0.1/packages/coding-agent/docs/mcp.md#authenticate-with-oauth).",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive",
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.004",
+        "kind": "changed",
+        "summary": "**Tool renderers for any tool** — `pi.registerToolRenderer()` draws calls to tools that are not registered yet, such as MCP tools in resumed sessions. See [Tool rendering](https://github.com/earendil-works/pi/blob/v1.0.1/packages/coding-agent/docs/extensions.md#tool-rendering).",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client",
+          "extensions.plugins",
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.005",
+        "kind": "changed",
+        "summary": "**Cloudflare Clef classifiers** — `@cf/cloudflare/clef` and `@cf/cloudflare/clef-flash` are usable from codemode scripts and extensions. See [Use classifier models](https://github.com/earendil-works/pi/blob/v1.0.1/packages/coding-agent/docs/models.md#use-classifier-models).",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.006",
+        "kind": "added",
+        "summary": "Added a copy key (`app.message.copy`, default `ctrl+x`) to OAuth sign-in screens in `/login`, `/mcp`, and `/mcp login`, which copies the sign-in URL when the browser cannot be opened or the wrapped link cannot be selected.",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive",
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "tools.browser_computer"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.007",
+        "kind": "added",
+        "summary": "Added `oauth.clientRegistration: \"cimd\"` for MCP servers, which identifies pi with its Client ID Metadata Document on pi.dev instead of dynamic client registration, so authorization servers can allow pi by URL ([#10302](https://github.com/earendil-works/pi/issues/10302))",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive",
+          "ide",
+          "ci"
+        ],
+        "actors": [
+          "human_operator",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client",
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.008",
+        "kind": "added",
+        "summary": "Added project overrides for user-level MCP servers: a `.pi/mcp.json` entry without `command` or `url` sets only `enabled`, `exposure`, and `toolExposure` of the user-level server, and `/mcp` can enable or disable a server for the current project ([#10277](https://github.com/earendil-works/pi/issues/10277))",
+        "category": "execution",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.009",
+        "kind": "added",
+        "summary": "Added Cloudflare's Clef and Clef Flash classifier models to `cloudflare-workers-ai`, usable from codemode scripts and extensions ([#10316](https://github.com/earendil-works/pi/pull/10316) by [@ndisidore](https://github.com/ndisidore), [#10322](https://github.com/earendil-works/pi/pull/10322) by [@RealAlexandreAI](https://github.com/RealAlexandreAI))",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.010",
+        "kind": "added",
+        "summary": "Added `pi.registerToolRenderer()`, which chooses how calls to a tool are drawn, including tools that are not registered ([#10285](https://github.com/earendil-works/pi/issues/10285))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.011",
+        "kind": "added",
+        "summary": "Added a Nix flake for macOS and Linux: `nix run github:earendil-works/pi/stable` runs the latest release, and `nix profile add github:earendil-works/pi/stable` installs it. See [Install pi](https://github.com/earendil-works/pi/blob/v1.0.1/packages/coding-agent/docs/quickstart.md#1-install-pi) ([#9137](https://github.com/earendil-works/pi/pull/9137))",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.012",
+        "kind": "changed",
+        "summary": "`pi update` on global npm installations now recommends migrating to the managed installation from the pi.dev installer, which pins all dependencies.",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.013",
+        "kind": "changed",
+        "summary": "Anthropic tools added or redefined mid-conversation are now defined inline in the conversation, so redefining a tool under the same name keeps the prompt cache instead of resending the full tool list.",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.014",
+        "kind": "fixed",
+        "summary": "Fixed installations resolving vulnerable `brace-expansion` 5.0.9 by pinning `brace-expansion` 5.0.12 as a direct dependency (GHSA-q2hr-2g5m-vwhr, GHSA-qhr7-859c-m2p7, GHSA-6j4f-fj2g-mc7p) ([#10288](https://github.com/earendil-works/pi/issues/10288))",
+        "category": "distribution_runtime",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.015",
+        "kind": "fixed",
+        "summary": "Fixed a trailing comma in `--models` adding an extra model to the model cycle ([#10334](https://github.com/earendil-works/pi/issues/10334))",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.016",
+        "kind": "fixed",
+        "summary": "Fixed a `codemode` script that prints in a loop crashing pi by running out of memory: a script fails once its output passes 16 Mi characters or 100000 items ([#10283](https://github.com/earendil-works/pi/issues/10283))",
+        "category": "context_memory",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "context.persistent_memory"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.017",
+        "kind": "fixed",
+        "summary": "Fixed JPEG, GIF, and WebP images rendered by extensions through `Image` not appearing in Kitty, Ghostty, WezTerm, and Warp ([#10292](https://github.com/earendil-works/pi/issues/10292))",
+        "category": "extensions",
+        "surfaces": [
+          "terminal_interactive",
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.plugins"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.018",
+        "kind": "fixed",
+        "summary": "Fixed MCP tool calls in resumed sessions and HTML exports rendering fully expanded until their server connected, or for good if it never did ([#10285](https://github.com/earendil-works/pi/issues/10285))",
+        "category": "session_state",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client",
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.019",
+        "kind": "fixed",
+        "summary": "Fixed fullscreen Kitty images collapsing to a one-row strip after scrolling in WezTerm ([#10319](https://github.com/earendil-works/pi/issues/10319))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.020",
+        "kind": "fixed",
+        "summary": "Fixed \"Selected model is at capacity\" provider errors ending the turn instead of being retried ([#10278](https://github.com/earendil-works/pi/issues/10278))",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive",
+          "ide",
+          "ci"
+        ],
+        "actors": [
+          "human_operator",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.021",
+        "kind": "fixed",
+        "summary": "Fixed Cloudflare AI Gateway Claude models failing with a 404 by using dashed model IDs (`claude-opus-5-5` instead of `claude-opus-5.5`)",
+        "category": "models_providers",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.022",
+        "kind": "fixed",
+        "summary": "Fixed Sign in with ChatGPT continuing when its callback port is taken by another login, which made the browser show \"OAuth state mismatch\"; it now fails with a port-in-use error ([#10265](https://github.com/earendil-works/pi/issues/10265))",
+        "category": "security_governance",
+        "surfaces": [
+          "terminal_interactive",
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "tools.browser_computer"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.023",
+        "kind": "fixed",
+        "summary": "Fixed Amazon Bedrock OpenAI models costing requests above 272k input tokens at the short-context rate; Bedrock models now include the pricing tiers listed on models.dev ([#10326](https://github.com/earendil-works/pi/issues/10326))",
+        "category": "observability",
+        "surfaces": [
+          "terminal_interactive",
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci",
+          "observability.usage_cost"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.024",
+        "kind": "fixed",
+        "summary": "Fixed Amazon Bedrock Claude requests failing with \"Invalid `signature` in `thinking` block\" after the system prompt or tools changed ([#10324](https://github.com/earendil-works/pi/issues/10324))",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "human_operator",
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.025",
+        "kind": "fixed",
+        "summary": "Fixed Together DeepSeek V4 Pro losing its thinking level controls after Together renamed it to `deepseek-ai/DeepSeek-V4-Pro-0813` ([#10336](https://github.com/earendil-works/pi/pull/10336) by [@cv](https://github.com/cv))",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.026",
+        "kind": "fixed",
+        "summary": "Fixed the default NVIDIA model pointing at `nvidia/nemotron-3-super-120b-a12b`, which NVIDIA no longer serves; the default is now `nvidia/nemotron-3-ultra-550b-a55b`",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.1.027",
+        "kind": "removed",
+        "summary": "Removed `npm-shrinkwrap.json` from the published package. npm installations no longer pin transitive dependencies, and library consumers can now override them. Use the pi.dev installer for pinned installations ([#5653](https://github.com/earendil-works/pi/issues/5653))",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide",
+          "ci"
+        ],
+        "actors": [
+          "human_operator",
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 402502529,
+      "tag_commitish": "main"
+    }
+  },
+  {
     "id": "rel.pi-agent.1.0.0",
     "harness_id": "pi-agent",
     "version": "1.0.0",
