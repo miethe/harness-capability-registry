@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: claude-code
-generated_at: 2026-10-02T22:16:06.888811Z
+generated_at: 2026-10-03T05:20:37.840349Z
 artifact_kind: harness_capability_guide
 ---
 
