@@ -1,6 +1,6 @@
 # Registry Coverage Report
 
-Generated for registry state: 2026-10-03T11:41:28.891486Z
+Generated for registry state: 2026-10-03T16:19:58.830059Z
 
 | Harness | Verified capabilities | Candidate | Unknown | Releases |
 |---|---:|---:|---:|---:|
@@ -21,7 +21,7 @@ Generated for registry state: 2026-10-03T11:41:28.891486Z
 | OpenAI Agents SDK — Python | 9 | 1 | 0 | 41 |
 | OpenAI Codex | 30 | 2 | 0 | 489 |
 | OpenCode | 16 | 3 | 0 | 111 |
-| Pi Agent Harness | 5 | 0 | 0 | 72 |
+| Pi Agent Harness | 5 | 0 | 0 | 73 |
 | Qwen Code | 5 | 3 | 0 | 356 |
 | goose | 7 | 4 | 0 | 26 |
 
