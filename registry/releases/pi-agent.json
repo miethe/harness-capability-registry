@@ -1,5 +1,77 @@
 [
   {
+    "id": "rel.pi-agent.1.0.2",
+    "harness_id": "pi-agent",
+    "version": "1.0.2",
+    "channel": "stable",
+    "published_at": "2026-10-04T00:56:36Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-10-04T05:53:30.593024Z",
+    "source_id": "src.pi.releases",
+    "source_url": "https://github.com/earendil-works/pi/releases/tag/v1.0.2",
+    "raw_snapshot_path": null,
+    "raw_sha256": "fe0104e4df1de68896ee31b5df12ccaa4b01ed5700733bb0b021b4595af7f4d2",
+    "title": "v1.0.2",
+    "notes_excerpt": "**Sampling by thinking level** — `samplingParamsByThinkingLevel` in `models.json` sets sampling parameters such as `temperature` and `top_p` for each thinking level on OpenAI-compatible APIs. See [Configure sampling by thinking level](https://github.com/earendil-works/pi/blob/v1.0.2/packages/coding-agent/docs/models.md#configure-sampling-by-thinking-level).",
+    "change_count": 2,
+    "flags": {
+      "security": false,
+      "breaking": false,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.pi-agent.1.0.2.001",
+        "kind": "changed",
+        "summary": "**Sampling by thinking level** — `samplingParamsByThinkingLevel` in `models.json` sets sampling parameters such as `temperature` and `top_p` for each thinking level on OpenAI-compatible APIs. See [Configure sampling by thinking level](https://github.com/earendil-works/pi/blob/v1.0.2/packages/coding-agent/docs/models.md#configure-sampling-by-thinking-level).",
+        "category": "models_providers",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.pi-agent.1.0.2.002",
+        "kind": "added",
+        "summary": "Added `samplingParamsByThinkingLevel` to `models.json` for per-thinking-level sampling parameter overrides on OpenAI-compatible APIs. See [Configure sampling by thinking level](https://github.com/earendil-works/pi/blob/v1.0.2/packages/coding-agent/docs/models.md#configure-sampling-by-thinking-level) ([#9776](https://github.com/earendil-works/pi/pull/9776) by [@mrexodia](https://github.com/mrexodia))",
+        "category": "interfaces",
+        "surfaces": [
+          "terminal_interactive",
+          "ide"
+        ],
+        "actors": [
+          "human_operator",
+          "external_orchestrator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 402755206,
+      "tag_commitish": "main"
+    }
+  },
+  {
     "id": "rel.pi-agent.1.0.1",
     "harness_id": "pi-agent",
     "version": "1.0.1",
