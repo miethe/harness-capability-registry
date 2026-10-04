@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: openai-agents-sdk-python
-generated_at: 2026-10-04T05:53:53.827430Z
+generated_at: 2026-10-04T12:23:49.901877Z
 artifact_kind: harness_capability_guide
 ---
 
