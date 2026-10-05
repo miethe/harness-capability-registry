@@ -1,5 +1,561 @@
 [
   {
+    "id": "rel.github-copilot-cli.1.0.92-4",
+    "harness_id": "github-copilot-cli",
+    "version": "1.0.92-4",
+    "channel": "prerelease",
+    "published_at": "2026-10-04T19:32:32Z",
+    "date_precision": "second",
+    "retrieved_at": "2026-10-05T05:41:34.897968Z",
+    "source_id": "src.copilot-cli.releases",
+    "source_url": "https://github.com/github/copilot-cli/releases/tag/v1.0.92-4",
+    "raw_snapshot_path": null,
+    "raw_sha256": "9a1f7a673c204500c3843d7434bbd6693c731871a2a23d8ef0013263d8ff92c0",
+    "title": "1.0.92-4",
+    "notes_excerpt": "Add `copilot config` subcommands to list, read, set, and remove settings.",
+    "change_count": 25,
+    "flags": {
+      "security": true,
+      "breaking": true,
+      "deprecation": false
+    },
+    "changes": [
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.001",
+        "kind": "added",
+        "summary": "Add `copilot config` subcommands to list, read, set, and remove settings.",
+        "category": "execution",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.002",
+        "kind": "improved",
+        "summary": "Improve first-run startup by extracting the bundled CLI package in a child process",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.003",
+        "kind": "improved",
+        "summary": "Improve startup responsiveness when connecting many MCP servers at once",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.004",
+        "kind": "changed",
+        "summary": "Canvas actions can now return images to the model in invoke_canvas_action.",
+        "category": "models_providers",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.005",
+        "kind": "changed",
+        "summary": "Legacy HTTP+SSE MCP connections no longer hang indefinitely when a message POST is never acknowledged; the acknowledgement is bounded by the server's configured timeout",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.006",
+        "kind": "changed",
+        "summary": "Voice runtime install errors name why the download from nuget.org failed, not only the fallback feed's 401",
+        "category": "interfaces",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "interfaces.voice"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.007",
+        "kind": "changed",
+        "summary": "Compaction keeps your latest prompt when requests exceed context limits",
+        "category": "context_memory",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.008",
+        "kind": "changed",
+        "summary": "Large Anthropic requests rejected by provider size limits now retry after downscaling images or removing attachments",
+        "category": "interfaces",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.009",
+        "kind": "changed",
+        "summary": "Custom agent model entries keep model-bound reasoning effort only when that model is selected",
+        "category": "models_providers",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.010",
+        "kind": "changed",
+        "summary": "Shell tool calls now stream live stdout and stderr output reliably in the timeline",
+        "category": "execution",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.011",
+        "kind": "changed",
+        "summary": "Usage reporting preserves provider-reported reasoning token totals when available",
+        "category": "observability",
+        "surfaces": [
+          "ide"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "observability.usage_cost"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.012",
+        "kind": "changed",
+        "summary": "Sessions no longer slow to a crawl for minutes after the agent writes a very large file in one step",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": true,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.013",
+        "kind": "changed",
+        "summary": "Sandboxed shells now withhold ambient GITHUB_TOKEN unless explicitly configured.",
+        "category": "execution",
+        "surfaces": [
+          "ci"
+        ],
+        "actors": [
+          "ci_runner"
+        ],
+        "capability_refs": [
+          "security.sandbox",
+          "automation.ci"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.014",
+        "kind": "changed",
+        "summary": "Plan usage reflects the current billing period after quota resets",
+        "category": "observability",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "observability.usage_cost"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.015",
+        "kind": "changed",
+        "summary": "Custom agents launched through ACP task calls now resolve and run correctly",
+        "category": "other",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.016",
+        "kind": "changed",
+        "summary": "Remote session resume now uses your configured GitHub auth for --resume and --connect",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "sessions.resume_fork"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.017",
+        "kind": "changed",
+        "summary": "Entra sign-in falls back to browser auth when no broker is available and shows a manual URL when auto-open fails",
+        "category": "research_tools",
+        "surfaces": [
+          "web"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "tools.browser_computer"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.018",
+        "kind": "changed",
+        "summary": "`copilot sandbox ca` commands now respect `--config-dir` (including with `-C`).",
+        "category": "execution",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "security.sandbox"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.019",
+        "kind": "changed",
+        "summary": "Search commands avoid sandbox bypass prompts when access is already granted",
+        "category": "execution",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "human_operator"
+        ],
+        "capability_refs": [
+          "security.sandbox"
+        ],
+        "security_relevant": true,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.020",
+        "kind": "changed",
+        "summary": "Sandboxed uv commands can write to the uv cache by default when dev tool access is enabled",
+        "category": "execution",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "security.sandbox"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.021",
+        "kind": "changed",
+        "summary": "pnpm commands run in sandboxed sessions without lock-file permission errors",
+        "category": "security_governance",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [
+          "security.sandbox",
+          "security.permissions"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.022",
+        "kind": "changed",
+        "summary": "Pressing `n` repeatedly in the Sessions tab reliably creates each new session",
+        "category": "session_state",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.023",
+        "kind": "changed",
+        "summary": "Reverse search updates results when command history finishes loading at startup",
+        "category": "execution",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.024",
+        "kind": "changed",
+        "summary": "MCP tools recover within the same turn when server instructions change",
+        "category": "extensions",
+        "surfaces": [
+          "unspecified"
+        ],
+        "actors": [
+          "in_harness_agent"
+        ],
+        "capability_refs": [
+          "extensions.mcp_client"
+        ],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      },
+      {
+        "id": "chg.github-copilot-cli.1.0.92-4.025",
+        "kind": "changed",
+        "summary": "Changing experimental mode with /experimental or /settings takes effect after restart even when launched with an opposing experimental flag",
+        "category": "other",
+        "surfaces": [
+          "terminal_interactive"
+        ],
+        "actors": [
+          "unspecified"
+        ],
+        "capability_refs": [],
+        "security_relevant": false,
+        "breaking_or_deprecated": false,
+        "normalization": {
+          "method": "deterministic_heuristic_v1",
+          "confidence": "candidate",
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "provenance": {
+      "authority": "official_primary",
+      "ingestion": "github_releases_api",
+      "immutable": true,
+      "github_release_id": 403175150,
+      "tag_commitish": "main"
+    }
+  },
+  {
     "id": "rel.github-copilot-cli.1.0.92-3",
     "harness_id": "github-copilot-cli",
     "version": "1.0.92-3",

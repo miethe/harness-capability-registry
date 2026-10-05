@@ -1,7 +1,7 @@
 ---
 schema_version: 0.1
 harness_id: github-copilot-cli
-generated_at: 2026-10-04T12:23:49.901877Z
+generated_at: 2026-10-05T05:41:55.429107Z
 artifact_kind: harness_capability_guide
 ---
 
@@ -9,8 +9,8 @@ artifact_kind: harness_capability_guide
 
 **Vendor:** GitHub  
 **Lifecycle:** active  
-**Current version in registry:** 1.0.92-3  
-**Last verified:** 2026-10-02T22:15:53.014951Z
+**Current version in registry:** 1.0.92-4  
+**Last verified:** 2026-10-05T05:41:43.486758Z
 
 > UI availability does not imply that an in-harness model or an external orchestrator can invoke the capability. Use the actor-specific sections below.
 

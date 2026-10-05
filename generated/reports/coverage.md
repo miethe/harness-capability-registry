@@ -1,6 +1,6 @@
 # Registry Coverage Report
 
-Generated for registry state: 2026-10-04T12:23:49.901877Z
+Generated for registry state: 2026-10-05T05:41:55.429107Z
 
 | Harness | Verified capabilities | Candidate | Unknown | Releases |
 |---|---:|---:|---:|---:|
@@ -11,18 +11,18 @@ Generated for registry state: 2026-10-04T12:23:49.901877Z
 | Claude Agent SDK — TypeScript | 9 | 0 | 0 | 174 |
 | Claude Code | 34 | 2 | 0 | 164 |
 | Codex SDK — Python | 6 | 0 | 0 | 17 |
-| Codex SDK — TypeScript | 3 | 1 | 0 | 477 |
-| Gemini CLI | 12 | 1 | 0 | 188 |
-| GitHub Copilot CLI | 4 | 0 | 0 | 226 |
+| Codex SDK — TypeScript | 3 | 1 | 0 | 479 |
+| Gemini CLI | 12 | 1 | 0 | 189 |
+| GitHub Copilot CLI | 4 | 0 | 0 | 227 |
 | Hermes Agent | 19 | 2 | 0 | 37 |
-| OpenAI API SDK — Node | 3 | 0 | 0 | 45 |
+| OpenAI API SDK — Node | 3 | 0 | 0 | 46 |
 | OpenAI API SDK — Python | 3 | 0 | 0 | 57 |
 | OpenAI Agents SDK — JavaScript/TypeScript | 9 | 1 | 0 | 34 |
 | OpenAI Agents SDK — Python | 9 | 1 | 0 | 41 |
-| OpenAI Codex | 30 | 2 | 0 | 491 |
+| OpenAI Codex | 30 | 2 | 0 | 493 |
 | OpenCode | 16 | 3 | 0 | 111 |
 | Pi Agent Harness | 5 | 0 | 0 | 74 |
-| Qwen Code | 5 | 3 | 0 | 357 |
+| Qwen Code | 5 | 3 | 0 | 358 |
 | goose | 7 | 4 | 0 | 26 |
 
 ## Interpretation
